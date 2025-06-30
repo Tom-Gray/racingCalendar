@@ -618,24 +618,22 @@ func extractDateComponents(text string) (year, month, day int) {
 	}
 
 	// Extract numbers and month names
-	re := regexp.MustCompile(`(\d{1,2})|(\d{4})|(\w+)`)
+	re := regexp.MustCompile(`\b(\d{4})\b|\b(\d{1,2})\b|\b(\w+)\b`)
 	matches := re.FindAllString(strings.ToLower(text), -1)
 
 	var numbers []int
 	var monthName string
 
 	for _, match := range matches {
-		if len(match) == 4 {
-			// Check if this is a 4-digit number (likely a year)
-			var yearNum int
-			if n, err := fmt.Sscanf(match, "%d", &yearNum); n == 1 && err == nil && yearNum >= 1900 && yearNum <= 2100 {
-				year = yearNum
-			}
-		} else if len(match) <= 2 {
-			// Check if this is a 1-2 digit number (likely a day)
-			var dayNum int
-			if n, err := fmt.Sscanf(match, "%d", &dayNum); n == 1 && err == nil && dayNum >= 1 && dayNum <= 31 {
-				numbers = append(numbers, dayNum)
+		// Try to parse as number
+		var num int
+		if n, err := fmt.Sscanf(match, "%d", &num); n == 1 && err == nil {
+			if num >= 1900 && num <= 2100 {
+				// This is likely a year
+				year = num
+			} else if num >= 1 && num <= 31 {
+				// This is likely a day
+				numbers = append(numbers, num)
 			}
 		} else if _, exists := monthMap[match]; exists {
 			monthName = match
