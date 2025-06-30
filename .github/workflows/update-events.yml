@@ -66,4 +66,4 @@ jobs:
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         publish_dir: ./
-        exclude_assets: '.github,go.mod,go.sum,main.go,PRD.md,README.md'
+        exclude_assets: '.github,go.mod,go.sum,main.go,README.md,cmd/,serve.sh,package.json,server.js'
