@@ -4,87 +4,104 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Victorian Cycling Events - EntryBoss Discovery Tool</title>
-    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="tailwind-overrides.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#667eea',
+                        secondary: '#764ba2'
+                    }
+                }
+            }
+        }
+    </script>
 </head>
-<body>
-    <header class="header">
-        <div class="container">
-            <h1 class="title">Victorian Cycling Events</h1>
-            <p class="subtitle">Discover upcoming cycling events across Victoria</p>
+<body class="min-h-screen flex flex-col bg-gray-50 font-sans text-gray-800">
+    <header class="bg-gradient-to-br from-primary to-secondary text-white shadow-lg">
+        <div class="max-w-6xl mx-auto px-5 py-8">
+            <h1 class="text-4xl font-bold mb-2">Victorian Cycling Events</h1>
+            <p class="text-lg opacity-90">Discover upcoming cycling events across Victoria</p>
         </div>
     </header>
 
     <!-- Onboarding Banner -->
-    <div id="onboarding-banner" class="onboarding-banner hidden">
-        <div class="container">
-            <div class="onboarding-content">
-                <span class="onboarding-text">To get started, Filter by your favourite clubs!</span>
-                <div class="onboarding-arrow">↓</div>
-                <button id="dismiss-onboarding" class="dismiss-btn">×</button>
+    <div id="onboarding-banner" class="bg-yellow-200 border-l-4 border-yellow-500 hidden animate-pulse">
+        <div class="max-w-6xl mx-auto px-5 py-4">
+            <div class="flex items-center gap-4 relative">
+                <span class="font-semibold text-gray-800">To get started, Filter by your favourite clubs!</span>
+                <div class="text-2xl text-orange-500 animate-bounce">↓</div>
+                <button id="dismiss-onboarding" class="ml-auto text-2xl text-gray-600 hover:text-gray-800 px-1">×</button>
             </div>
         </div>
     </div>
 
-    <main class="main">
-        <div class="container">
+    <main class="flex-1 py-8">
+        <div class="max-w-6xl mx-auto px-5">
             <!-- Controls -->
-            <div class="controls">
-                <div class="view-toggle">
-                    <button id="calendar-view-btn" class="toggle-btn active">Calendar View</button>
-                    <button id="list-view-btn" class="toggle-btn">List View</button>
-                </div>
-                
-                <div class="filter-section">
-                    <div class="filter-input-container">
-                        <input 
-                            type="text" 
-                            id="club-search" 
-                            placeholder="Search clubs..." 
-                            class="club-search-input"
-                        >
-                        <div id="club-dropdown" class="club-dropdown hidden"></div>
+            <div class="bg-white rounded-xl shadow-lg p-6 mb-8">
+                <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-6">
+                    <div class="flex bg-gray-100 rounded-lg p-1">
+                        <button id="calendar-view-btn" class="px-6 py-2 rounded-md font-medium transition-all bg-primary text-white shadow-sm">Calendar View</button>
+                        <button id="list-view-btn" class="px-6 py-2 rounded-md font-medium transition-all text-gray-600 hover:text-gray-800">List View</button>
                     </div>
                     
-                    <div id="selected-clubs" class="selected-clubs"></div>
+                    <div class="flex-1 lg:max-w-md">
+                        <div class="relative">
+                            <input 
+                                type="text" 
+                                id="club-search" 
+                                placeholder="Search clubs..." 
+                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
+                            >
+                            <div id="club-dropdown" class="absolute top-full left-0 right-0 bg-white border border-gray-200 rounded-lg shadow-lg mt-1 hidden z-10 max-h-60 overflow-y-auto"></div>
+                        </div>
+                    </div>
                 </div>
+                
+                <div id="selected-clubs" class="flex flex-wrap gap-2 mt-6"></div>
             </div>
 
             <!-- Loading State -->
-            <div id="loading" class="loading">
-                <div class="spinner"></div>
-                <p>Loading events...</p>
+            <div id="loading" class="text-center py-12 bg-white rounded-xl shadow-lg">
+                <div class="inline-block w-10 h-10 border-4 border-gray-200 border-t-primary rounded-full animate-spin mb-4"></div>
+                <p class="text-gray-600">Loading events...</p>
             </div>
 
             <!-- Error State -->
-            <div id="error" class="error hidden">
-                <p>Failed to load events. Please try again later.</p>
+            <div id="error" class="text-center py-12 bg-white rounded-xl shadow-lg hidden">
+                <p class="text-red-600">Failed to load events. Please try again later.</p>
             </div>
 
             <!-- Calendar View -->
-            <div id="calendar-view" class="calendar-view">
-                <div class="calendar-header">
-                    <h2 id="calendar-title">Next 4 Weeks</h2>
+            <div id="calendar-view" class="bg-white rounded-xl shadow-lg overflow-hidden">
+                <div class="px-6 py-4 bg-gray-50 border-b border-gray-200">
+                    <h2 id="calendar-title" class="text-xl font-semibold text-gray-800">Next 4 Weeks</h2>
                 </div>
-                <div id="calendar-grid" class="calendar-grid"></div>
+                <div id="calendar-grid" class="grid grid-cols-7 gap-px bg-gray-200 p-4"></div>
             </div>
 
             <!-- List View -->
-            <div id="list-view" class="list-view hidden">
-                <div class="list-header">
-                    <h2>Upcoming Events</h2>
+            <div id="list-view" class="bg-white rounded-xl shadow-lg overflow-hidden hidden">
+                <div class="px-6 py-4 bg-gray-50 border-b border-gray-200">
+                    <h2 class="text-xl font-semibold text-gray-800">Upcoming Events</h2>
                 </div>
-                <div id="events-list" class="events-list"></div>
+                <div id="events-list" class="divide-y divide-gray-200"></div>
             </div>
         </div>
     </main>
 
-    <footer class="footer">
-        <div class="container">
-            <p>Data sourced from <a href="https://entryboss.cc" target="_blank" rel="noopener">EntryBoss</a></p>
-            <p>Events link directly to EntryBoss for registration</p>
+    <footer class="bg-gray-800 text-white py-6 mt-8">
+        <div class="max-w-6xl mx-auto px-5 text-center">
+            <p class="mb-2">Data sourced from <a href="https://entryboss.cc" target="_blank" rel="noopener" class="text-primary hover:text-blue-300 transition-colors">EntryBoss</a></p>
+            <p class="text-gray-400">Events link directly to EntryBoss for registration</p>
         </div>
     </footer>
 
     <script src="script.js"></script>
+</body>
+</html>
 </body>
 </html>

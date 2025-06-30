@@ -361,13 +361,17 @@ function switchView(view) {
     currentView = view;
     
     if (view === 'calendar') {
-        calendarViewBtn.classList.add('active');
-        listViewBtn.classList.remove('active');
+        calendarViewBtn.classList.add('bg-primary', 'text-white', 'shadow-sm');
+        calendarViewBtn.classList.remove('text-gray-600', 'hover:text-gray-800');
+        listViewBtn.classList.remove('bg-primary', 'text-white', 'shadow-sm');
+        listViewBtn.classList.add('text-gray-600', 'hover:text-gray-800');
         calendarView.classList.remove('hidden');
         listView.classList.add('hidden');
     } else {
-        listViewBtn.classList.add('active');
-        calendarViewBtn.classList.remove('active');
+        listViewBtn.classList.add('bg-primary', 'text-white', 'shadow-sm');
+        listViewBtn.classList.remove('text-gray-600', 'hover:text-gray-800');
+        calendarViewBtn.classList.remove('bg-primary', 'text-white', 'shadow-sm');
+        calendarViewBtn.classList.add('text-gray-600', 'hover:text-gray-800');
         listView.classList.remove('hidden');
         calendarView.classList.add('hidden');
     }
@@ -396,11 +400,11 @@ function showFilteredClubs(filteredClubs) {
     clubDropdown.innerHTML = '';
     
     if (filteredClubs.length === 0) {
-        clubDropdown.innerHTML = '<div class="club-dropdown-item">No clubs found</div>';
+        clubDropdown.innerHTML = '<div class="px-4 py-3 text-gray-500">No clubs found</div>';
     } else {
         filteredClubs.forEach(club => {
             const item = document.createElement('div');
-            item.className = 'club-dropdown-item';
+            item.className = 'px-4 py-3 hover:bg-gray-100 cursor-pointer transition-colors border-b border-gray-100 last:border-b-0';
             item.textContent = club;
             item.addEventListener('click', () => addClubFilter(club));
             clubDropdown.appendChild(item);
@@ -450,7 +454,7 @@ function updateSelectedClubsDisplay() {
     
     [...selectedClubs].sort().forEach(club => {
         const tag = document.createElement('div');
-        tag.className = 'club-tag';
+        tag.className = 'inline-flex items-center gap-2 px-4 py-2 rounded-full text-white font-medium text-sm border-2 border-white/30 shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all';
         
         // Apply the club's assigned color
         const clubColor = assignClubColor(club);
@@ -460,7 +464,7 @@ function updateSelectedClubsDisplay() {
         name.textContent = club;
         
         const removeBtn = document.createElement('button');
-        removeBtn.className = 'club-tag-remove';
+        removeBtn.className = 'w-5 h-5 rounded-full flex items-center justify-center hover:bg-white/20 transition-colors text-sm';
         removeBtn.innerHTML = '×';
         removeBtn.addEventListener('click', () => removeClubFilter(club));
         
@@ -505,7 +509,7 @@ function renderCalendar(events) {
     const dayNames = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
     dayNames.forEach(day => {
         const header = document.createElement('div');
-        header.className = 'calendar-day-header';
+        header.className = 'bg-gray-100 p-3 text-center font-semibold text-gray-700 text-sm';
         header.textContent = day;
         calendarGrid.appendChild(header);
     });
@@ -521,10 +525,10 @@ function renderCalendar(events) {
 
 function createCalendarDay(date, events) {
     const dayElement = document.createElement('div');
-    dayElement.className = 'calendar-day';
+    dayElement.className = 'bg-white p-3 min-h-[120px] border border-gray-100';
     
     const dayNumber = document.createElement('div');
-    dayNumber.className = 'calendar-day-number';
+    dayNumber.className = 'font-semibold mb-2 text-gray-800';
     dayNumber.textContent = date.getDate();
     dayElement.appendChild(dayNumber);
     
@@ -537,7 +541,7 @@ function createCalendarDay(date, events) {
     // Add events to day
     dayEvents.slice(0, 3).forEach(event => { // Limit to 3 events per day for space
         const eventElement = document.createElement('div');
-        eventElement.className = 'calendar-event';
+        eventElement.className = 'text-white px-2 py-1 mb-1 rounded text-xs cursor-pointer transition-all hover:shadow-md hover:-translate-y-0.5 border-l-2 border-white/30';
         eventElement.textContent = truncateText(event.eventName, 20);
         eventElement.title = `${event.eventName} - ${event.clubName}`;
         
@@ -545,6 +549,8 @@ function createCalendarDay(date, events) {
         if (selectedClubs.has(event.clubName)) {
             const clubColor = assignClubColor(event.clubName);
             eventElement.style.backgroundColor = clubColor;
+        } else {
+            eventElement.style.backgroundColor = '#667eea';
         }
         
         eventElement.addEventListener('click', () => openEvent(event));
@@ -554,9 +560,8 @@ function createCalendarDay(date, events) {
     // Show "+X more" if there are more events
     if (dayEvents.length > 3) {
         const moreElement = document.createElement('div');
-        moreElement.className = 'calendar-event';
+        moreElement.className = 'text-white px-2 py-1 mb-1 rounded text-xs bg-gray-500';
         moreElement.textContent = `+${dayEvents.length - 3} more`;
-        moreElement.style.background = '#95a5a6';
         dayElement.appendChild(moreElement);
     }
     
@@ -569,8 +574,8 @@ function renderEventsList(events) {
     
     if (events.length === 0) {
         const noEvents = document.createElement('div');
-        noEvents.className = 'event-item';
-        noEvents.innerHTML = '<div class="event-name">No events found</div>';
+        noEvents.className = 'px-6 py-8 text-center text-gray-500';
+        noEvents.innerHTML = '<div class="text-lg">No events found</div>';
         eventsList.appendChild(noEvents);
         return;
     }
@@ -583,29 +588,32 @@ function renderEventsList(events) {
 
 function createEventListItem(event) {
     const eventElement = document.createElement('div');
-    eventElement.className = 'event-item';
+    eventElement.className = 'px-6 py-4 hover:bg-gray-50 cursor-pointer transition-colors';
     eventElement.addEventListener('click', () => openEvent(event));
     
     const eventName = document.createElement('div');
-    eventName.className = 'event-name';
+    eventName.className = 'text-lg font-semibold text-gray-900 mb-2';
     eventName.textContent = event.eventName;
     
     const eventDetails = document.createElement('div');
-    eventDetails.className = 'event-details';
+    eventDetails.className = 'flex items-center gap-4 text-sm text-gray-600';
     
     const eventDate = document.createElement('span');
-    eventDate.className = 'event-date';
+    eventDate.className = 'font-medium';
     eventDate.textContent = formatDate(event.eventDate);
     
     const eventClub = document.createElement('span');
-    eventClub.className = 'event-club';
+    eventClub.className = 'px-3 py-1 rounded-full text-sm';
     eventClub.textContent = event.clubName;
     
     // Apply club color if the club is selected
     if (selectedClubs.has(event.clubName)) {
         const clubColor = assignClubColor(event.clubName);
-        eventClub.style.color = clubColor;
-        eventClub.style.fontWeight = 'bold';
+        eventClub.style.backgroundColor = clubColor;
+        eventClub.style.color = 'white';
+        eventClub.classList.add('font-medium');
+    } else {
+        eventClub.classList.add('bg-gray-200', 'text-gray-700');
     }
     
     eventDetails.appendChild(eventDate);
