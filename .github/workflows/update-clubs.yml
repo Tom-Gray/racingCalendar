@@ -55,7 +55,7 @@ jobs:
     
     - name: Update events after clubs update
       if: steps.changes.outputs.changes == 'true'
-      run: go run main.go update-events
+      run: go run cmd/main.go update-events
     
     - name: Commit events update
       if: steps.changes.outputs.changes == 'true'

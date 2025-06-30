@@ -38,7 +38,7 @@ jobs:
       run: go run cmd/main.go update-clubs
     
     - name: Update events
-      run: go run main.go update-events
+      run: go run cmd/main.go update-events
     
     - name: Check for changes
       id: changes
