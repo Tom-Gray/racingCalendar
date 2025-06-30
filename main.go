@@ -491,10 +491,11 @@ func parseDateFromText(text string) string {
 		pattern string
 		layout  string
 	}{
-		{`(\w{3}),?\s+(\d{1,2})\s+(\w{3})\s+(\d{4})`, "Mon, 2 Jan 2006"}, // "Sat, 5 Jul 2025"
-		{`(\d{1,2})\s+(\w{3})\s+(\d{4})`, "2 Jan 2006"},                  // "5 Jul 2025"
-		{`(\d{4})-(\d{2})-(\d{2})`, "2006-01-02"},                        // "2025-07-05"
-		{`(\w{3})\s+(\d{1,2})\s+(\w{3})\s+(\d{4})`, "Mon 2 Jan 2006"},    // "Sun 6 Jul 2025"
+		{`(\w{3}),?\s+(\d{1,2})\s+(\w{3})\s+(\d{4})`, "Mon, 2 Jan 2006"},    // "Sat, 5 Jul 2025"
+		{`(\w+),?\s+(\d{1,2})\s+(\w+)\s+(\d{4})`, "Monday, 2 January 2006"}, // "Sunday, 13 July 2025"
+		{`(\d{1,2})\s+(\w{3})\s+(\d{4})`, "2 Jan 2006"},                     // "5 Jul 2025"
+		{`(\d{4})-(\d{2})-(\d{2})`, "2006-01-02"},                           // "2025-07-05"
+		{`(\w{3})\s+(\d{1,2})\s+(\w{3})\s+(\d{4})`, "Mon 2 Jan 2006"},       // "Sun 6 Jul 2025"
 	}
 
 	for _, dp := range datePatterns {
@@ -519,10 +520,10 @@ func convertToISO8601(dateStr, layout string) string {
 	// Try common variations
 	layouts := []string{
 		"Mon, 2 Jan 2006",
+		"Monday, 2 January 2006",
 		"2 Jan 2006",
 		"2006-01-02",
 		"Mon 2 Jan 2006",
-		"Monday, 2 January 2006",
 		"2 January 2006",
 		"Jan 2, 2006",
 		"January 2, 2006",
