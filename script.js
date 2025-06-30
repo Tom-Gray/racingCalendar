@@ -34,6 +34,7 @@ const CLUB_COLOR_PALETTE = [
 let calendarViewBtn, listViewBtn, clubSearchInput, clubDropdown;
 let selectedClubsContainer, calendarView, listView, calendarGrid, eventsList;
 let loadingElement, errorElement, onboardingBanner;
+let toggleClubListBtn, clubListPanel, clubListContainer;
 
 // Initialize the app
 document.addEventListener('DOMContentLoaded', function() {
@@ -52,7 +53,6 @@ function initializeElements() {
     calendarViewBtn = document.getElementById('calendar-view-btn');
     listViewBtn = document.getElementById('list-view-btn');
     clubSearchInput = document.getElementById('club-search');
-    clubDropdown = document.getElementById('club-dropdown');
     selectedClubsContainer = document.getElementById('selected-clubs');
     calendarView = document.getElementById('calendar-view');
     listView = document.getElementById('list-view');
@@ -61,6 +61,8 @@ function initializeElements() {
     loadingElement = document.getElementById('loading');
     errorElement = document.getElementById('error');
     onboardingBanner = document.getElementById('onboarding-banner');
+    clubListPanel = document.getElementById('club-list-panel');
+    clubListContainer = document.getElementById('club-list-container');
 }
 
 function setupEventListeners() {
@@ -68,12 +70,18 @@ function setupEventListeners() {
     calendarViewBtn.addEventListener('click', () => switchView('calendar'));
     listViewBtn.addEventListener('click', () => switchView('list'));
     
-    // Club search
+    // Club search - unified behavior
     clubSearchInput.addEventListener('input', handleClubSearch);
-    clubSearchInput.addEventListener('focus', showClubDropdown);
-    clubSearchInput.addEventListener('blur', () => {
-        // Delay hiding to allow clicks on dropdown items
-        setTimeout(() => hideClubDropdown(), 200);
+    clubSearchInput.addEventListener('focus', showClubList);
+    clubSearchInput.addEventListener('blur', (e) => {
+        // Only hide if the new focus target is not within the club list panel
+        setTimeout(() => {
+            const activeElement = document.activeElement;
+            if (!clubListPanel.contains(activeElement) && 
+                !clubSearchInput.contains(activeElement)) {
+                hideClubList();
+            }
+        }, 400); // Increased delay for Chrome compatibility
     });
     
     // Onboarding dismiss
@@ -82,10 +90,10 @@ function setupEventListeners() {
         dismissBtn.addEventListener('click', dismissOnboarding);
     }
     
-    // Click outside to close dropdown
-    document.addEventListener('click', (e) => {
-        if (!clubSearchInput.contains(e.target) && !clubDropdown.contains(e.target)) {
-            hideClubDropdown();
+    // Click outside to close club list - improved detection
+    document.addEventListener('mousedown', (e) => {
+        if (!clubSearchInput.contains(e.target) && !clubListPanel.contains(e.target)) {
+            hideClubList();
         }
     });
 }
@@ -384,43 +392,15 @@ function switchView(view) {
 function handleClubSearch(e) {
     const query = e.target.value.toLowerCase();
     
-    if (query.length === 0) {
-        hideClubDropdown();
-        return;
-    }
-    
-    const filteredClubs = clubs.filter(club => 
-        club.toLowerCase().includes(query) && !selectedClubs.has(club)
-    );
-    
-    showFilteredClubs(filteredClubs);
-}
-
-function showFilteredClubs(filteredClubs) {
-    clubDropdown.innerHTML = '';
-    
-    if (filteredClubs.length === 0) {
-        clubDropdown.innerHTML = '<div class="px-4 py-3 text-gray-500">No clubs found</div>';
+    // Always show the club list when typing (unified behavior)
+    if (clubListPanel.classList.contains('hidden')) {
+        showClubList();
     } else {
-        filteredClubs.forEach(club => {
-            const item = document.createElement('div');
-            item.className = 'px-4 py-3 hover:bg-gray-100 cursor-pointer transition-colors border-b border-gray-100 last:border-b-0';
-            item.textContent = club;
-            item.addEventListener('click', () => addClubFilter(club));
-            clubDropdown.appendChild(item);
-        });
+        // Update the existing club list with filtered results
+        renderClubList();
     }
-    
-    showClubDropdown();
 }
 
-function showClubDropdown() {
-    clubDropdown.classList.remove('hidden');
-}
-
-function hideClubDropdown() {
-    clubDropdown.classList.add('hidden');
-}
 
 // Assign a color to a club if it doesn't have one
 function assignClubColor(club) {
@@ -434,9 +414,9 @@ function assignClubColor(club) {
 function addClubFilter(club) {
     selectedClubs.add(club);
     assignClubColor(club); // Assign color when club is selected
-    clubSearchInput.value = '';
-    hideClubDropdown();
+    // Keep search text for continued filtering - don't clear the search box
     updateSelectedClubsDisplay();
+    updateClubList(); // Update the club list checkboxes
     updateDisplay();
     saveState();
 }
@@ -445,8 +425,86 @@ function removeClubFilter(club) {
     selectedClubs.delete(club);
     // Keep the color assigned even after removal for consistency
     updateSelectedClubsDisplay();
+    updateClubList(); // Update the club list checkboxes
     updateDisplay();
     saveState();
+}
+
+// Club List Management
+
+function showClubList() {
+    clubListPanel.classList.remove('hidden');
+    renderClubList();
+}
+
+function hideClubList() {
+    clubListPanel.classList.add('hidden');
+}
+
+function renderClubList() {
+    clubListContainer.innerHTML = '';
+    
+    const query = clubSearchInput.value.toLowerCase();
+    const filteredClubs = query.length > 0 
+        ? clubs.filter(club => club.toLowerCase().includes(query))
+        : clubs;
+    
+    filteredClubs.forEach(club => {
+        const clubItem = document.createElement('div');
+        clubItem.className = 'flex items-center gap-3 px-3 py-2 hover:bg-gray-50 transition-colors';
+        
+        const checkbox = document.createElement('input');
+        checkbox.type = 'checkbox';
+        checkbox.id = `club-${club.replace(/\s+/g, '-').toLowerCase()}`;
+        checkbox.className = 'w-4 h-4 text-primary bg-gray-100 border-gray-300 rounded focus:ring-primary focus:ring-2';
+        checkbox.checked = selectedClubs.has(club);
+        checkbox.addEventListener('change', (e) => {
+            e.stopPropagation(); // Prevent event bubbling
+            handleClubCheckbox(club, checkbox.checked);
+        });
+        
+        const label = document.createElement('label');
+        label.htmlFor = checkbox.id;
+        label.className = 'flex-1 text-sm text-gray-700 cursor-pointer';
+        label.textContent = club;
+        label.addEventListener('mousedown', (e) => {
+            e.preventDefault(); // Prevent focus loss on label click
+        });
+        
+        clubItem.appendChild(checkbox);
+        clubItem.appendChild(label);
+        clubListContainer.appendChild(clubItem);
+    });
+    
+    if (filteredClubs.length === 0) {
+        const noClubs = document.createElement('div');
+        noClubs.className = 'px-3 py-4 text-center text-gray-500 text-sm';
+        noClubs.textContent = 'No clubs found';
+        clubListContainer.appendChild(noClubs);
+    }
+}
+
+function updateClubList() {
+    // Only update if the club list is currently visible
+    if (!clubListPanel.classList.contains('hidden')) {
+        renderClubList();
+    }
+}
+
+function handleClubCheckbox(club, isChecked) {
+    if (isChecked) {
+        selectedClubs.add(club);
+        assignClubColor(club);
+    } else {
+        selectedClubs.delete(club);
+    }
+    
+    updateSelectedClubsDisplay();
+    updateDisplay();
+    saveState();
+    
+    // Keep the club list open for continued multi-selection
+    // Do not close the list or clear the search box
 }
 
 function updateSelectedClubsDisplay() {
