@@ -19,6 +19,7 @@ import (
 type Club struct {
 	ClubName string `json:"clubName"`
 	ClubURL  string `json:"clubUrl"`
+	LastSeen string `json:"lastSeen"`
 }
 
 // Event represents a cycling event
@@ -72,6 +73,23 @@ func main() {
 }
 
 func updateClubs() error {
+	// Load existing clubs from clubs.json if it exists
+	var existingClubs []Club
+	if data, err := os.ReadFile("clubs.json"); err == nil {
+		if err := json.Unmarshal(data, &existingClubs); err != nil {
+			fmt.Printf("Warning: failed to parse existing clubs.json: %v\n", err)
+		}
+	}
+
+	// Create map using clubURL as key for fast lookup and deduplication
+	clubMap := make(map[string]Club)
+	for _, club := range existingClubs {
+		// Handle migration: if existing club doesn't have lastSeen, don't overwrite it yet
+		clubMap[club.ClubURL] = club
+	}
+
+	currentTime := time.Now().Format(time.RFC3339)
+
 	// Fetch the main EntryBoss page
 	resp, err := http.Get("https://entryboss.cc/")
 	if err != nil {
@@ -89,7 +107,7 @@ func updateClubs() error {
 	}
 
 	// Find Victorian clubs from the dropdown menu
-	clubs := make(map[string]Club)
+	scrapedClubs := make(map[string]Club)
 
 	// Look for the VIC section in the dropdown
 	var inVicSection bool
@@ -118,9 +136,10 @@ func updateClubs() error {
 				clubName := strings.TrimSpace(link.Text())
 				if clubName != "" {
 					fullURL := "https://entryboss.cc" + href
-					clubs[clubName] = Club{
+					scrapedClubs[fullURL] = Club{
 						ClubName: clubName,
 						ClubURL:  fullURL,
+						LastSeen: currentTime,
 					}
 					fmt.Printf("Found Victorian club: %s -> %s\n", clubName, fullURL)
 				}
@@ -129,7 +148,7 @@ func updateClubs() error {
 	})
 
 	// Fallback: also look for any links that might be Victorian based on content
-	if len(clubs) == 0 {
+	if len(scrapedClubs) == 0 {
 		fmt.Println("No clubs found in dropdown, trying fallback method...")
 
 		// Look for calendar links and try to identify Victorian ones
@@ -150,18 +169,47 @@ func updateClubs() error {
 
 			if clubName != "" && isVictorianClub(clubName, href) {
 				fullURL := "https://entryboss.cc" + href
-				clubs[clubName] = Club{
+				scrapedClubs[fullURL] = Club{
 					ClubName: clubName,
 					ClubURL:  fullURL,
+					LastSeen: currentTime,
 				}
 				fmt.Printf("Found Victorian club (fallback): %s -> %s\n", clubName, fullURL)
 			}
 		})
 	}
 
+	// Merge scraped clubs with existing clubs
+	newClubsCount := 0
+	updatedClubsCount := 0
+
+	for clubURL, scrapedClub := range scrapedClubs {
+		if existingClub, exists := clubMap[clubURL]; exists {
+			// Update existing club with new lastSeen time and potentially updated name
+			existingClub.ClubName = scrapedClub.ClubName // Update name in case it changed
+			existingClub.LastSeen = currentTime
+			clubMap[clubURL] = existingClub
+			updatedClubsCount++
+		} else {
+			// Add new club
+			clubMap[clubURL] = scrapedClub
+			newClubsCount++
+		}
+	}
+
+	// Handle migration: set lastSeen for existing clubs that don't have it
+	migrationCount := 0
+	for clubURL, club := range clubMap {
+		if club.LastSeen == "" {
+			club.LastSeen = currentTime
+			clubMap[clubURL] = club
+			migrationCount++
+		}
+	}
+
 	// Convert map to slice and sort
 	var clubList []Club
-	for _, club := range clubs {
+	for _, club := range clubMap {
 		clubList = append(clubList, club)
 	}
 
@@ -179,7 +227,15 @@ func updateClubs() error {
 		return fmt.Errorf("failed to write clubs.json: %w", err)
 	}
 
-	fmt.Printf("Found %d Victorian clubs\n", len(clubList))
+	fmt.Printf("Club update summary:\n")
+	fmt.Printf("  Total clubs: %d\n", len(clubList))
+	fmt.Printf("  New clubs found: %d\n", newClubsCount)
+	fmt.Printf("  Existing clubs updated: %d\n", updatedClubsCount)
+	if migrationCount > 0 {
+		fmt.Printf("  Clubs migrated (added lastSeen): %d\n", migrationCount)
+	}
+	fmt.Printf("  Clubs preserved from previous runs: %d\n", len(clubList)-len(scrapedClubs))
+
 	return nil
 }
 
@@ -569,12 +625,18 @@ func extractDateComponents(text string) (year, month, day int) {
 	var monthName string
 
 	for _, match := range matches {
-		if num, err := time.Parse("2006", match); err == nil && len(match) == 4 {
-			// This is likely a year
-			year = num.Year()
-		} else if num, err := time.Parse("2", match); err == nil {
-			// This is a day
-			numbers = append(numbers, num.Day())
+		if len(match) == 4 {
+			// Check if this is a 4-digit number (likely a year)
+			var yearNum int
+			if n, err := fmt.Sscanf(match, "%d", &yearNum); n == 1 && err == nil && yearNum >= 1900 && yearNum <= 2100 {
+				year = yearNum
+			}
+		} else if len(match) <= 2 {
+			// Check if this is a 1-2 digit number (likely a day)
+			var dayNum int
+			if n, err := fmt.Sscanf(match, "%d", &dayNum); n == 1 && err == nil && dayNum >= 1 && dayNum <= 31 {
+				numbers = append(numbers, dayNum)
+			}
 		} else if _, exists := monthMap[match]; exists {
 			monthName = match
 		}
