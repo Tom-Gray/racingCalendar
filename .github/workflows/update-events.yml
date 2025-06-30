@@ -35,7 +35,7 @@ jobs:
     
     - name: Update clubs (if requested)
       if: ${{ github.event.inputs.update_clubs == 'true' }}
-      run: go run main.go update-clubs
+      run: go run cmd/main.go update-clubs
     
     - name: Update events
       run: go run main.go update-events

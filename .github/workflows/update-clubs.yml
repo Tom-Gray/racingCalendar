@@ -31,7 +31,7 @@ jobs:
       run: go mod tidy
     
     - name: Update clubs list
-      run: go run main.go update-clubs
+      run: go run cmd/main.go update-clubs
     
     - name: Check for changes
       id: changes
