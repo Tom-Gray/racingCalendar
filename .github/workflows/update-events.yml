@@ -1,0 +1,66 @@
+name: Update Events Data
+
+on:
+  schedule:
+    # Run daily at 6 AM UTC (4 PM AEST)
+    - cron: '0 6 * * *'
+  workflow_dispatch:
+    inputs:
+      update_clubs:
+        description: 'Also update clubs list'
+        required: false
+        default: false
+        type: boolean
+
+jobs:
+  update-data:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+      with:
+        token: ${{ secrets.GITHUB_TOKEN }}
+    
+    - name: Set up Go
+      uses: actions/setup-go@v4
+      with:
+        go-version: '1.21'
+    
+    - name: Install dependencies
+      run: go mod tidy
+    
+    - name: Update clubs (if requested)
+      if: ${{ github.event.inputs.update_clubs == 'true' }}
+      run: go run main.go update-clubs
+    
+    - name: Update events
+      run: go run main.go update-events
+    
+    - name: Check for changes
+      id: changes
+      run: |
+        if git diff --quiet; then
+          echo "No changes detected"
+          echo "changes=false" >> $GITHUB_OUTPUT
+        else
+          echo "Changes detected"
+          echo "changes=true" >> $GITHUB_OUTPUT
+        fi
+    
+    - name: Commit and push changes
+      if: steps.changes.outputs.changes == 'true'
+      run: |
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        git add events.json clubs.json
+        git commit -m "Auto-update events data $(date '+%Y-%m-%d %H:%M:%S')" || exit 0
+        git push
+    
+    - name: Deploy to GitHub Pages
+      if: steps.changes.outputs.changes == 'true'
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./
+        exclude_assets: '.github,go.mod,go.sum,main.go,PRD.md,README.md'

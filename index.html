@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Victorian Cycling Events - EntryBoss Discovery Tool</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <h1 class="title">Victorian Cycling Events</h1>
+            <p class="subtitle">Discover upcoming cycling events across Victoria</p>
+        </div>
+    </header>
+
+    <!-- Onboarding Banner -->
+    <div id="onboarding-banner" class="onboarding-banner hidden">
+        <div class="container">
+            <div class="onboarding-content">
+                <span class="onboarding-text">To get started, Filter by your favourite clubs!</span>
+                <div class="onboarding-arrow">↓</div>
+                <button id="dismiss-onboarding" class="dismiss-btn">×</button>
+            </div>
+        </div>
+    </div>
+
+    <main class="main">
+        <div class="container">
+            <!-- Controls -->
+            <div class="controls">
+                <div class="view-toggle">
+                    <button id="calendar-view-btn" class="toggle-btn active">Calendar View</button>
+                    <button id="list-view-btn" class="toggle-btn">List View</button>
+                </div>
+                
+                <div class="filter-section">
+                    <div class="filter-input-container">
+                        <input 
+                            type="text" 
+                            id="club-search" 
+                            placeholder="Search clubs..." 
+                            class="club-search-input"
+                        >
+                        <div id="club-dropdown" class="club-dropdown hidden"></div>
+                    </div>
+                    
+                    <div id="selected-clubs" class="selected-clubs"></div>
+                </div>
+            </div>
+
+            <!-- Loading State -->
+            <div id="loading" class="loading">
+                <div class="spinner"></div>
+                <p>Loading events...</p>
+            </div>
+
+            <!-- Error State -->
+            <div id="error" class="error hidden">
+                <p>Failed to load events. Please try again later.</p>
+            </div>
+
+            <!-- Calendar View -->
+            <div id="calendar-view" class="calendar-view">
+                <div class="calendar-header">
+                    <h2 id="calendar-title">Next 4 Weeks</h2>
+                </div>
+                <div id="calendar-grid" class="calendar-grid"></div>
+            </div>
+
+            <!-- List View -->
+            <div id="list-view" class="list-view hidden">
+                <div class="list-header">
+                    <h2>Upcoming Events</h2>
+                </div>
+                <div id="events-list" class="events-list"></div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>Data sourced from <a href="https://entryboss.cc" target="_blank" rel="noopener">EntryBoss</a></p>
+            <p>Events link directly to EntryBoss for registration</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
