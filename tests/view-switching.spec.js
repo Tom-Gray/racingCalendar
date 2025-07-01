@@ -1,42 +1,32 @@
 const { test, expect } = require('@playwright/test');
 
 test.describe('View Switching', () => {
-  test.beforeEach(async ({ page }) => {
+  test('should allow view switching on desktop', async ({ page }) => {
+    await page.setViewportSize({ width: 1200, height: 800 });
     await page.goto('/');
-    // Wait for the page to load completely
     await expect(page.locator('#loading')).toBeHidden({ timeout: 10000 });
-  });
-
-  test('should start with calendar view by default', async ({ page }) => {
-    // Calendar view should be visible by default
+    
+    // Initially should show calendar view
     await expect(page.locator('#calendar-view')).toBeVisible();
     await expect(page.locator('#list-view')).toBeHidden();
     
-    // Calendar button should be active (have primary styling)
+    // Calendar button should be active
     await expect(page.locator('#calendar-view-btn')).toHaveClass(/bg-primary/);
     await expect(page.locator('#list-view-btn')).not.toHaveClass(/bg-primary/);
-  });
-
-  test('should switch to list view when clicking list button', async ({ page }) => {
-    // Click the list view button
-    await page.locator('#list-view-btn').click();
     
-    // List view should now be visible, calendar hidden
+    // Switch to list view
+    await page.click('#list-view-btn');
+    
+    // List view should now be visible
     await expect(page.locator('#list-view')).toBeVisible();
     await expect(page.locator('#calendar-view')).toBeHidden();
     
-    // List button should now be active
+    // List button should be active
     await expect(page.locator('#list-view-btn')).toHaveClass(/bg-primary/);
     await expect(page.locator('#calendar-view-btn')).not.toHaveClass(/bg-primary/);
-  });
-
-  test('should switch back to calendar view', async ({ page }) => {
-    // First switch to list view
-    await page.locator('#list-view-btn').click();
-    await expect(page.locator('#list-view')).toBeVisible();
     
-    // Then switch back to calendar view
-    await page.locator('#calendar-view-btn').click();
+    // Switch back to calendar view
+    await page.click('#calendar-view-btn');
     
     // Calendar view should be visible again
     await expect(page.locator('#calendar-view')).toBeVisible();
@@ -47,139 +37,167 @@ test.describe('View Switching', () => {
     await expect(page.locator('#list-view-btn')).not.toHaveClass(/bg-primary/);
   });
 
-  test('should display events in calendar view', async ({ page }) => {
-    // Ensure we're in calendar view
-    await page.locator('#calendar-view-btn').click();
-    await expect(page.locator('#calendar-view')).toBeVisible();
+  test('should prevent view switching on mobile', async ({ page }) => {
+    await page.setViewportSize({ width: 375, height: 667 });
+    await page.goto('/');
+    await expect(page.locator('#loading')).toBeHidden({ timeout: 10000 });
     
-    // Calendar should have a grid structure
+    // View toggle buttons should not be visible
+    await expect(page.locator('.view-toggle')).toBeHidden();
+    await expect(page.locator('#calendar-view-btn')).toBeHidden();
+    await expect(page.locator('#list-view-btn')).toBeHidden();
+    
+    // List view should be forced to be visible
+    await expect(page.locator('#list-view')).toBeVisible();
+    
+    // Calendar view should be hidden via CSS
+    const calendarView = page.locator('#calendar-view');
+    const isHidden = await calendarView.evaluate(el => {
+      const style = window.getComputedStyle(el);
+      return style.display === 'none';
+    });
+    expect(isHidden).toBe(true);
+  });
+
+  test('should maintain view preference on desktop when resizing', async ({ page }) => {
+    await page.setViewportSize({ width: 1200, height: 800 });
+    await page.goto('/');
+    await expect(page.locator('#loading')).toBeHidden({ timeout: 10000 });
+    
+    // Switch to list view
+    await page.click('#list-view-btn');
+    await expect(page.locator('#list-view')).toBeVisible();
+    
+    // Resize to tablet size (still above mobile breakpoint)
+    await page.setViewportSize({ width: 800, height: 600 });
+    await page.waitForTimeout(100);
+    
+    // Should still show list view
+    await expect(page.locator('#list-view')).toBeVisible();
+    await expect(page.locator('#calendar-view')).toBeHidden();
+    await expect(page.locator('#list-view-btn')).toHaveClass(/bg-primary/);
+  });
+
+  test('should handle rapid view switching', async ({ page }) => {
+    await page.setViewportSize({ width: 1200, height: 800 });
+    await page.goto('/');
+    await expect(page.locator('#loading')).toBeHidden({ timeout: 10000 });
+    
+    // Rapidly switch between views
+    for (let i = 0; i < 5; i++) {
+      await page.click('#list-view-btn');
+      await expect(page.locator('#list-view')).toBeVisible();
+      
+      await page.click('#calendar-view-btn');
+      await expect(page.locator('#calendar-view')).toBeVisible();
+    }
+    
+    // Should end up in calendar view
+    await expect(page.locator('#calendar-view')).toBeVisible();
+    await expect(page.locator('#list-view')).toBeHidden();
+  });
+
+  test('should show appropriate content in each view', async ({ page }) => {
+    await page.setViewportSize({ width: 1200, height: 800 });
+    await page.goto('/');
+    await expect(page.locator('#loading')).toBeHidden({ timeout: 10000 });
+    
+    // Calendar view should show calendar grid
+    await expect(page.locator('#calendar-view')).toBeVisible();
     await expect(page.locator('#calendar-grid')).toBeVisible();
-    
-    // Should have day headers (Sun, Mon, Tue, etc.)
-    const dayHeaders = page.locator('#calendar-grid > div').first();
-    await expect(dayHeaders).toBeVisible();
-    
-    // Calendar title should be visible
     await expect(page.locator('#calendar-title')).toContainText('Next 4 Weeks');
-  });
-
-  test('should display events in list view', async ({ page }) => {
-    // Switch to list view
-    await page.locator('#list-view-btn').click();
-    await expect(page.locator('#list-view')).toBeVisible();
     
-    // List view should have events container
+    // Switch to list view
+    await page.click('#list-view-btn');
+    
+    // List view should show events list
+    await expect(page.locator('#list-view')).toBeVisible();
     await expect(page.locator('#events-list')).toBeVisible();
+    await expect(page.locator('#list-view h2')).toContainText('Upcoming Events');
     
-    // Should have a title
-    const listTitle = page.locator('#list-view h2');
-    await expect(listTitle).toContainText('Upcoming Events');
+    // Should have event items
+    const eventItems = page.locator('#events-list .event-item');
+    const eventCount = await eventItems.count();
+    expect(eventCount).toBeGreaterThan(0);
   });
 
-  test('should show events in both views when clubs are selected', async ({ page }) => {
-    // First select a club to ensure we have events to display
-    await page.locator('#club-search').click();
-    await expect(page.locator('#club-list-panel')).toBeVisible();
+  test('should preserve view state across page reloads on desktop', async ({ page }) => {
+    await page.setViewportSize({ width: 1200, height: 800 });
+    await page.goto('/');
+    await expect(page.locator('#loading')).toBeHidden({ timeout: 10000 });
     
-    const firstCheckbox = page.locator('#club-list-container input[type="checkbox"]').first();
-    await firstCheckbox.check();
-    
-    // Wait for events to filter
-    await page.waitForTimeout(1000);
-    
-    // Test calendar view shows events
-    await page.locator('#calendar-view-btn').click();
-    await expect(page.locator('#calendar-view')).toBeVisible();
-    
-    // Calendar should have some content (events or empty days)
-    const calendarContent = page.locator('#calendar-grid');
-    await expect(calendarContent).toBeVisible();
-    
-    // Test list view shows events
-    await page.locator('#list-view-btn').click();
-    await expect(page.locator('#list-view')).toBeVisible();
-    
-    // List should either have events or show "No events found"
-    const eventsList = page.locator('#events-list');
-    await expect(eventsList).toBeVisible();
-  });
-
-  test('should persist view selection after page reload', async ({ page }) => {
     // Switch to list view
-    await page.locator('#list-view-btn').click();
+    await page.click('#list-view-btn');
     await expect(page.locator('#list-view')).toBeVisible();
-    
-    // Wait for state to be saved
-    await page.waitForTimeout(1000);
     
     // Reload the page
     await page.reload();
     await expect(page.locator('#loading')).toBeHidden({ timeout: 10000 });
     
-    // Should still be in list view
+    // Should remember list view preference
     await expect(page.locator('#list-view')).toBeVisible();
     await expect(page.locator('#calendar-view')).toBeHidden();
     await expect(page.locator('#list-view-btn')).toHaveClass(/bg-primary/);
   });
 
   test('should handle view switching with filtered events', async ({ page }) => {
-    // Select a club first
-    await page.locator('#club-search').click();
-    await expect(page.locator('#club-list-panel')).toBeVisible();
-    
-    const firstCheckbox = page.locator('#club-list-container input[type="checkbox"]').first();
-    await firstCheckbox.check();
-    
-    // Close the dropdown
-    await page.locator('header').click();
-    await page.waitForTimeout(500);
-    
-    // Switch between views and ensure filtering persists
-    await page.locator('#list-view-btn').click();
-    await expect(page.locator('#list-view')).toBeVisible();
-    
-    // Selected club should still be visible
-    await expect(page.locator('#selected-clubs > div')).toHaveCount(1);
-    
-    // Switch back to calendar
-    await page.locator('#calendar-view-btn').click();
-    await expect(page.locator('#calendar-view')).toBeVisible();
-    
-    // Selected club should still be there
-    await expect(page.locator('#selected-clubs > div')).toHaveCount(1);
-  });
-
-  test('should handle empty state in list view', async ({ page }) => {
-    // Clear any existing selections by reloading
-    await page.context().clearCookies();
-    await page.reload();
+    await page.setViewportSize({ width: 1200, height: 800 });
+    await page.goto('/');
     await expect(page.locator('#loading')).toBeHidden({ timeout: 10000 });
     
-    // Select a club that might not have events, or clear all selections
-    // This test checks that the list view handles empty states gracefully
-    await page.locator('#list-view-btn').click();
+    // Add a club filter
+    await page.click('#club-search');
+    await expect(page.locator('#club-list-panel')).toBeVisible();
+    
+    const firstClub = page.locator('#club-list-container input[type="checkbox"]').first();
+    await firstClub.click();
+    
+    // Should see selected club
+    await expect(page.locator('#selected-clubs .club-tag')).toHaveCount(1);
+    
+    // Switch to list view with filter active
+    await page.click('#list-view-btn');
     await expect(page.locator('#list-view')).toBeVisible();
     
-    // List should be visible even if empty
-    await expect(page.locator('#events-list')).toBeVisible();
+    // Should show filtered events in list view (may be 0 or more depending on filter)
+    const filteredEventItems = page.locator('#events-list .event-item');
+    const filteredCount = await filteredEventItems.count();
+    expect(filteredCount).toBeGreaterThanOrEqual(0);
+    
+    // Switch back to calendar view
+    await page.click('#calendar-view-btn');
+    await expect(page.locator('#calendar-view')).toBeVisible();
+    
+    // Filter should still be active
+    await expect(page.locator('#selected-clubs .club-tag')).toHaveCount(1);
   });
 
-  test('should maintain responsive design in both views', async ({ page }) => {
-    // Test mobile viewport
-    await page.setViewportSize({ width: 375, height: 667 });
+  test('should handle breakpoint transitions correctly', async ({ page }) => {
+    // Start at desktop size
+    await page.setViewportSize({ width: 1200, height: 800 });
+    await page.goto('/');
+    await expect(page.locator('#loading')).toBeHidden({ timeout: 10000 });
     
-    // Test calendar view on mobile
-    await page.locator('#calendar-view-btn').click();
-    await expect(page.locator('#calendar-view')).toBeVisible();
-    await expect(page.locator('#calendar-grid')).toBeVisible();
-    
-    // Test list view on mobile
-    await page.locator('#list-view-btn').click();
+    // Switch to list view on desktop
+    await page.click('#list-view-btn');
     await expect(page.locator('#list-view')).toBeVisible();
-    await expect(page.locator('#events-list')).toBeVisible();
     
-    // View toggle buttons should still be accessible
-    await expect(page.locator('#calendar-view-btn')).toBeVisible();
-    await expect(page.locator('#list-view-btn')).toBeVisible();
+    // Resize to mobile (below 767px)
+    await page.setViewportSize({ width: 375, height: 667 });
+    await page.waitForTimeout(100);
+    
+    // Should still show list view but hide toggle buttons
+    await expect(page.locator('#list-view')).toBeVisible();
+    await expect(page.locator('.view-toggle')).toBeHidden();
+    
+    // Resize back to desktop
+    await page.setViewportSize({ width: 1200, height: 800 });
+    await page.waitForTimeout(100);
+    
+    // Toggle buttons should be visible again
+    await expect(page.locator('.view-toggle')).toBeVisible();
+    // Should remember list view preference
+    await expect(page.locator('#list-view')).toBeVisible();
+    await expect(page.locator('#list-view-btn')).toHaveClass(/bg-primary/);
   });
 });

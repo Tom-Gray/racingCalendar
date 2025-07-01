@@ -38,21 +38,39 @@ test.describe('Basic Functionality', () => {
     await expect(page.locator('#error')).toBeHidden();
   });
 
-  test('should have working navigation buttons', async ({ page }) => {
+  test('should have working navigation buttons on desktop', async ({ page }) => {
+    // Set desktop viewport
+    await page.setViewportSize({ width: 1200, height: 800 });
     await page.goto('/');
     
     // Wait for page to load
     await expect(page.locator('#loading')).toBeHidden({ timeout: 10000 });
     
-    // Check that view toggle buttons exist and are clickable
+    // Check that view toggle buttons exist and are clickable on desktop
     await expect(page.locator('#calendar-view-btn')).toBeVisible();
     await expect(page.locator('#list-view-btn')).toBeVisible();
+    await expect(page.locator('.view-toggle')).toBeVisible();
     
     // Check that club search input exists
     await expect(page.locator('#club-search')).toBeVisible();
   });
 
-  test('should handle responsive design', async ({ page }) => {
+  test('should hide navigation buttons on mobile', async ({ page }) => {
+    // Set mobile viewport
+    await page.setViewportSize({ width: 375, height: 667 });
+    await page.goto('/');
+    
+    // Wait for page to load
+    await expect(page.locator('#loading')).toBeHidden({ timeout: 10000 });
+    
+    // View toggle buttons should be hidden on mobile
+    await expect(page.locator('.view-toggle')).toBeHidden();
+    
+    // But club search should still be visible
+    await expect(page.locator('#club-search')).toBeVisible();
+  });
+
+  test('should handle desktop responsive design', async ({ page }) => {
     // Test desktop view
     await page.setViewportSize({ width: 1200, height: 800 });
     await page.goto('/');
@@ -61,14 +79,42 @@ test.describe('Basic Functionality', () => {
     // Check that controls are visible in desktop layout
     await expect(page.locator('.lg\\:flex-row')).toBeVisible();
     
+    // Both view toggle buttons should be visible
+    await expect(page.locator('.view-toggle')).toBeVisible();
+    
+    // User should be able to switch between views
+    await page.click('#list-view-btn');
+    await expect(page.locator('#list-view')).toBeVisible();
+    await expect(page.locator('#calendar-view')).toBeHidden();
+    
+    await page.click('#calendar-view-btn');
+    await expect(page.locator('#calendar-view')).toBeVisible();
+    await expect(page.locator('#list-view')).toBeHidden();
+  });
+
+  test('should force list view on mobile', async ({ page }) => {
     // Test mobile view
     await page.setViewportSize({ width: 375, height: 667 });
-    await page.reload();
+    await page.goto('/');
     await expect(page.locator('#loading')).toBeHidden({ timeout: 10000 });
     
     // Page should still be functional on mobile
     await expect(page.locator('h1')).toBeVisible();
     await expect(page.locator('#club-search')).toBeVisible();
+    
+    // View toggle should be hidden on mobile
+    await expect(page.locator('.view-toggle')).toBeHidden();
+    
+    // List view should be forced to be visible on mobile
+    await expect(page.locator('#list-view')).toBeVisible();
+    
+    // Calendar view should be hidden on mobile (via CSS)
+    const calendarView = page.locator('#calendar-view');
+    const isHidden = await calendarView.evaluate(el => {
+      const style = window.getComputedStyle(el);
+      return style.display === 'none';
+    });
+    expect(isHidden).toBe(true);
   });
 
   test('should not have console errors', async ({ page }) => {
