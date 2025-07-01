@@ -6,13 +6,13 @@ test.describe('Basic Functionality', () => {
     await page.goto('/');
     
     // Check that the page title is correct
-    await expect(page).toHaveTitle(/Victorian Cycling Events/);
+    await expect(page).toHaveTitle(/Victorian Cycling Races/);
     
     // Check that the main header is visible
-    await expect(page.locator('h1')).toContainText('Victorian Cycling Events');
+    await expect(page.locator('h1')).toContainText('Victorian Cycling Races');
     
     // Check that the subtitle is visible
-    await expect(page.locator('header p')).toContainText('Discover upcoming cycling events across Victoria');
+    await expect(page.locator('header p')).toContainText('Discover upcoming cycling races across Victoria');
   });
 
   test('should load events data', async ({ page }) => {
