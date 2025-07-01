@@ -9,6 +9,10 @@ test-results/
 playwright-report/
 playwright/.cache/
 
+# Testing files (exclude from GitHub Pages deployment)
+tests/
+playwright.config.js
+
 # OS generated files
 .DS_Store
 .DS_Store?

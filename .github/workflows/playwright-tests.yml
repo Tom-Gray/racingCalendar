@@ -1,10 +1,15 @@
-name: Playwright Tests
+name: Test and Deploy
 
 on:
   push:
-    branches: [ main ]
+    branches: [ main, master ]
   pull_request:
-    branches: [ main ]
+    branches: [ main, master ]
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
 
 jobs:
   test:
@@ -43,7 +48,33 @@ jobs:
         path: test-results/
         retention-days: 30
 
-  # Optional: Run tests on multiple operating systems
+  # Deploy to GitHub Pages only after tests pass and only on main branch pushes
+  deploy:
+    needs: test
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+    
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+    
+    - name: Setup Pages
+      uses: actions/configure-pages@v4
+    
+    - name: Upload artifact
+      uses: actions/upload-pages-artifact@v3
+      with:
+        path: '.'
+    
+    - name: Deploy to GitHub Pages
+      id: deployment
+      uses: actions/deploy-pages@v4
+
+  # Optional: Run tests on multiple operating systems (commented out to reduce CI time)
   # test-cross-platform:
   #   timeout-minutes: 60
   #   runs-on: ${{ matrix.os }}

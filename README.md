@@ -60,8 +60,12 @@ This project includes comprehensive end-to-end tests using [Playwright](https://
 - ✅ Event interaction (clicking to open EntryBoss)
 - ✅ Cross-browser compatibility (Chrome, Firefox, Safari)
 
-### Continuous Integration
+### Continuous Integration & Deployment
 
-Tests automatically run on every push and pull request via GitHub Actions, testing across multiple browsers and operating systems.
+- **Tests** automatically run on every push and pull request via GitHub Actions
+- **Deployment** to GitHub Pages happens automatically after tests pass on the main branch
+- Tests run across multiple browsers (Chrome, Firefox, Safari) and viewports (desktop/mobile)
+
+The workflow ensures your site is only deployed when all tests pass, giving you confidence that the live site works correctly.
 
 For detailed testing documentation, see [tests/README.md](tests/README.md).

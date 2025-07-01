@@ -88,10 +88,16 @@ Tests automatically run on:
 - Every pull request
 - Multiple operating systems (Ubuntu, Windows, macOS)
 
+### Automated Deployment
+- **GitHub Pages deployment** happens automatically after tests pass on the main branch
+- This ensures your live site is only updated when all tests are green
+- Failed tests will prevent deployment, protecting your users from broken functionality
+
 ### Viewing Test Results in GitHub
 1. Go to the "Actions" tab in your GitHub repository
 2. Click on the latest workflow run
 3. Download test artifacts to see detailed reports and screenshots
+4. If tests pass on main branch, you'll see the deployment step complete successfully
 
 ## Writing New Tests
 
