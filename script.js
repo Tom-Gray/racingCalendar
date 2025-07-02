@@ -3,7 +3,7 @@ let events = [];
 let clubs = [];
 let selectedClubs = new Set();
 let clubColors = new Map(); // New: track assigned colors for clubs
-let currentView = 'calendar';
+let currentView = 'list';
 let isFirstTime = true;
 
 // Color palette for clubs
@@ -36,6 +36,11 @@ let selectedClubsContainer, calendarView, listView, calendarGrid, eventsList;
 let loadingElement, errorElement, onboardingBanner;
 let toggleClubListBtn, clubListPanel, clubListContainer;
 
+// Mobile detection
+function isMobileDevice() {
+    return window.innerWidth <= 767;
+}
+
 /* Removed Android Chrome Detection and Fallback Code */
 
 /* Removed debug logging functionality */
@@ -47,12 +52,18 @@ document.addEventListener('DOMContentLoaded', function() {
         loadState();
         setupEventListeners();
         loadEvents();
-        
+
+        // Responsive view logic on load
+        handleResponsiveViews();
+
         // Show onboarding if first time
         if (isFirstTime) {
             showOnboarding();
         }
-        
+
+        // Responsive view logic on resize
+        window.addEventListener('resize', handleResponsiveViews);
+
     } catch (error) {
         console.error(`Initialization failed: ${error.message}`);
         showCriticalError(error);
@@ -95,9 +106,13 @@ function initializeElements() {
 }
 
 function setupEventListeners() {
-    // View toggle
-    calendarViewBtn.addEventListener('click', () => switchView('calendar'));
-    listViewBtn.addEventListener('click', () => switchView('list'));
+    // View toggle - only add listeners if buttons exist (they're hidden on mobile)
+    if (calendarViewBtn) {
+        calendarViewBtn.addEventListener('click', () => switchView('calendar'));
+    }
+    if (listViewBtn) {
+        listViewBtn.addEventListener('click', () => switchView('list'));
+    }
     
     // Club search - unified behavior
     clubSearchInput.addEventListener('input', handleClubSearch);
@@ -138,8 +153,13 @@ function loadState() {
         selectedClubs = new Set(JSON.parse(savedFilters));
     }
     
-    // Default to list view for new sessions
-    currentView = savedView || 'list';
+    // Force list view on mobile devices, otherwise use saved preference or default to list
+    if (isMobileDevice()) {
+        currentView = 'list';
+    } else {
+        // On desktop, allow calendar view as an option
+        currentView = savedView || 'list';
+    }
     
     if (savedColors) {
         const colorData = JSON.parse(savedColors);
@@ -463,22 +483,58 @@ function showError() {
 
 // View Management
 function switchView(view) {
+    console.log(`switchView called with: ${view}`);
+    console.log('Is mobile device:', isMobileDevice());
+    
+    // Force list view on mobile devices
+    if (isMobileDevice() && view === 'calendar') {
+        console.log('Forcing list view on mobile device');
+        view = 'list';
+    }
+    
+    console.log(`Final view to switch to: ${view}`);
     currentView = view;
     
     if (view === 'calendar') {
-        calendarViewBtn.classList.add('bg-primary', 'text-white', 'shadow-sm');
-        calendarViewBtn.classList.remove('text-gray-600', 'hover:text-gray-800');
-        listViewBtn.classList.remove('bg-primary', 'text-white', 'shadow-sm');
-        listViewBtn.classList.add('text-gray-600', 'hover:text-gray-800');
+        console.log('Switching to calendar view');
+        // Only update button styles if buttons exist (they're hidden on mobile)
+        if (calendarViewBtn) {
+            calendarViewBtn.classList.add('bg-primary', 'text-white', 'shadow-sm');
+            calendarViewBtn.classList.remove('text-gray-600', 'hover:text-gray-800');
+            console.log('Updated calendar button styles');
+        } else {
+            console.log('Calendar view button not found');
+        }
+        if (listViewBtn) {
+            listViewBtn.classList.remove('bg-primary', 'text-white', 'shadow-sm');
+            listViewBtn.classList.add('text-gray-600', 'hover:text-gray-800');
+            console.log('Updated list button styles');
+        } else {
+            console.log('List view button not found');
+        }
         calendarView.classList.remove('hidden');
         listView.classList.add('hidden');
+        console.log('Calendar view shown, list view hidden');
     } else {
-        listViewBtn.classList.add('bg-primary', 'text-white', 'shadow-sm');
-        listViewBtn.classList.remove('text-gray-600', 'hover:text-gray-800');
-        calendarViewBtn.classList.remove('bg-primary', 'text-white', 'shadow-sm');
-        calendarViewBtn.classList.add('text-gray-600', 'hover:text-gray-800');
+        console.log('Switching to list view');
+        // Only update button styles if buttons exist (they're hidden on mobile)
+        if (listViewBtn) {
+            listViewBtn.classList.add('bg-primary', 'text-white', 'shadow-sm');
+            listViewBtn.classList.remove('text-gray-600', 'hover:text-gray-800');
+            console.log('Updated list button styles');
+        } else {
+            console.log('List view button not found');
+        }
+        if (calendarViewBtn) {
+            calendarViewBtn.classList.remove('bg-primary', 'text-white', 'shadow-sm');
+            calendarViewBtn.classList.add('text-gray-600', 'hover:text-gray-800');
+            console.log('Updated calendar button styles');
+        } else {
+            console.log('Calendar view button not found');
+        }
         listView.classList.remove('hidden');
         calendarView.classList.add('hidden');
+        console.log('List view shown, calendar view hidden');
     }
     
     saveState();
@@ -824,12 +880,21 @@ function truncateText(text, maxLength) {
     return text.substring(0, maxLength - 3) + '...';
 }
 
-// Initialize view state
-document.addEventListener('DOMContentLoaded', function() {
-    // Set initial view state
-    if (currentView === 'list') {
+// Responsive view logic for mobile/desktop
+function handleResponsiveViews() {
+    // Hide/show toggle and calendar view based on device width
+    const viewToggle = document.querySelector('.view-toggle');
+    if (isMobileDevice()) {
+        // Hide calendar view and toggle on mobile
+        if (viewToggle) viewToggle.classList.add('hidden');
+        if (calendarView) calendarView.classList.add('hidden');
+        if (listView) listView.classList.remove('hidden');
+        // Always switch to list view on mobile
         switchView('list');
     } else {
-        switchView('calendar');
+        // Show toggle and calendar view on desktop
+        if (viewToggle) viewToggle.classList.remove('hidden');
+        // Only show the correct view (calendar or list) based on currentView
+        switchView(currentView);
     }
-});
+}

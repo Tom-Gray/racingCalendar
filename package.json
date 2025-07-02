@@ -11,7 +11,9 @@
     "test:headed": "playwright test --headed",
     "test:debug": "playwright test --debug",
     "test:report": "playwright show-report",
-    "test:install": "playwright install"
+    "test:install": "playwright install",
+    "test:data": "playwright test tests/data-loading.spec.js",
+    "test:deploy": "playwright test tests/data-loading.spec.js --reporter=line"
   },
   "keywords": [
     "cycling",
