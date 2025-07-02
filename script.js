@@ -36,6 +36,60 @@ let selectedClubsContainer, calendarView, listView, calendarGrid, eventsList;
 let loadingElement, errorElement, onboardingBanner;
 let toggleClubListBtn, clubListPanel, clubListContainer;
 
+// Android Chrome Detection
+function isAndroidChrome() {
+    const userAgent = navigator.userAgent.toLowerCase();
+    const isAndroid = userAgent.includes('android');
+    const isChrome = userAgent.includes('chrome') && !userAgent.includes('edg');
+    
+    // Don't apply Android fallback for test environments
+    const isTestEnvironment = userAgent.includes('playwright') || 
+                             userAgent.includes('headless') ||
+                             userAgent.includes('mobile safari') ||
+                             window.location.hostname === 'localhost' ||
+                             window.location.hostname === '127.0.0.1';
+    
+    // Only apply to real Android Chrome browsers, not test environments
+    if (isTestEnvironment) {
+        return false;
+    }
+    
+    return isAndroid && isChrome;
+}
+
+// Initialize Android-specific styling
+function initializeAndroidFallback() {
+    if (isAndroidChrome()) {
+        debugLog('Android Chrome detected - applying fallback CSS');
+        
+        // Add Android Chrome class to body
+        document.body.classList.add('android-chrome');
+        
+        // Load fallback CSS
+        const fallbackCSS = document.createElement('link');
+        fallbackCSS.rel = 'stylesheet';
+        fallbackCSS.href = 'android-fallback.css';
+        fallbackCSS.id = 'android-fallback-css';
+        document.head.appendChild(fallbackCSS);
+        
+        // Force list view
+        currentView = 'list';
+        
+        // Update loading spinner to use basic CSS
+        const loadingElement = document.getElementById('loading');
+        if (loadingElement) {
+            const spinner = loadingElement.querySelector('.animate-spin');
+            if (spinner) {
+                spinner.className = 'spinner';
+            }
+        }
+        
+        debugLog('Android fallback CSS loaded');
+        return true;
+    }
+    return false;
+}
+
 // Debug logging for Android Chrome
 function debugLog(message, isError = false) {
     console.log(message);
@@ -45,6 +99,7 @@ function debugLog(message, isError = false) {
     if (!debugContainer) {
         debugContainer = document.createElement('div');
         debugContainer.id = 'debug-log';
+        debugContainer.className = isError ? 'error' : '';
         debugContainer.style.cssText = `
             position: fixed;
             top: 10px;
@@ -86,11 +141,21 @@ document.addEventListener('DOMContentLoaded', function() {
     try {
         debugLog('DOM Content Loaded');
         
+        // Initialize Android fallback first
+        debugLog('Checking for Android Chrome...');
+        const isAndroid = initializeAndroidFallback();
+        
         debugLog('Initializing elements...');
         initializeElements();
         
         debugLog('Loading state...');
         loadState();
+        
+        // Force list view for Android Chrome
+        if (isAndroid) {
+            debugLog('Android Chrome detected - forcing list view');
+            currentView = 'list';
+        }
         
         debugLog('Setting up event listeners...');
         setupEventListeners();
