@@ -74,7 +74,7 @@ jobs:
       id: deployment
       uses: actions/deploy-pages@v4
 
-  # Optional: Run tests on multiple operating systems (commented out to reduce CI time)
+  # Cross-platform testing (now enabled with Windows fix)
   test-cross-platform:
     timeout-minutes: 60
     runs-on: ${{ matrix.os }}

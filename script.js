@@ -726,13 +726,29 @@ function updateSelectedClubsDisplay() {
 
 // Display Updates
 function updateDisplay() {
-    const filteredEvents = getFilteredEvents();
-    updateSelectedClubsDisplay();
-    
-    if (currentView === 'calendar') {
-        renderCalendar(filteredEvents);
-    } else {
-        renderEventsList(filteredEvents);
+    try {
+        debugLog('Starting updateDisplay');
+        
+        const filteredEvents = getFilteredEvents();
+        debugLog(`Filtered events count: ${filteredEvents.length}`);
+        debugLog(`Current view: ${currentView}`);
+        debugLog(`Selected clubs: ${selectedClubs.size}`);
+        
+        updateSelectedClubsDisplay();
+        debugLog('Updated selected clubs display');
+        
+        if (currentView === 'calendar') {
+            debugLog('Rendering calendar view');
+            renderCalendar(filteredEvents);
+        } else {
+            debugLog('Rendering list view');
+            renderEventsList(filteredEvents);
+        }
+        
+        debugLog('updateDisplay completed');
+        
+    } catch (error) {
+        debugLog(`updateDisplay failed: ${error.message}`, true);
     }
 }
 
@@ -746,30 +762,65 @@ function getFilteredEvents() {
 
 // Calendar Rendering
 function renderCalendar(events) {
-    calendarGrid.innerHTML = '';
-    
-    const today = new Date();
-    const startDate = new Date(today);
-    startDate.setDate(today.getDate() - today.getDay()); // Start of current week
-    
-    const endDate = new Date(startDate);
-    endDate.setDate(startDate.getDate() + 28); // 4 weeks
-    
-    // Create day headers
-    const dayNames = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
-    dayNames.forEach(day => {
-        const header = document.createElement('div');
-        header.className = 'bg-gray-100 p-3 text-center font-semibold text-gray-700 text-sm';
-        header.textContent = day;
-        calendarGrid.appendChild(header);
-    });
-    
-    // Create calendar days
-    const currentDate = new Date(startDate);
-    while (currentDate <= endDate) {
-        const dayElement = createCalendarDay(currentDate, events);
-        calendarGrid.appendChild(dayElement);
-        currentDate.setDate(currentDate.getDate() + 1);
+    try {
+        debugLog(`Starting renderCalendar with ${events.length} events`);
+        
+        if (!calendarGrid) {
+            debugLog('calendarGrid element not found!', true);
+            return;
+        }
+        
+        calendarGrid.innerHTML = '';
+        debugLog('Cleared calendar grid');
+        
+        const today = new Date();
+        const startDate = new Date(today);
+        startDate.setDate(today.getDate() - today.getDay()); // Start of current week
+        
+        const endDate = new Date(startDate);
+        endDate.setDate(startDate.getDate() + 28); // 4 weeks
+        
+        debugLog(`Calendar date range: ${startDate.toDateString()} to ${endDate.toDateString()}`);
+        
+        // Create day headers
+        const dayNames = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+        dayNames.forEach(day => {
+            const header = document.createElement('div');
+            header.className = 'bg-gray-100 p-3 text-center font-semibold text-gray-700 text-sm';
+            header.textContent = day;
+            calendarGrid.appendChild(header);
+        });
+        debugLog('Added day headers');
+        
+        // Create calendar days
+        let dayCount = 0;
+        let eventsRendered = 0;
+        const currentDate = new Date(startDate);
+        while (currentDate <= endDate) {
+            const dayElement = createCalendarDay(currentDate, events);
+            calendarGrid.appendChild(dayElement);
+            dayCount++;
+            
+            // Count events for this day
+            const dayEvents = events.filter(event => {
+                const eventDate = new Date(event.eventDate);
+                return eventDate.toDateString() === currentDate.toDateString();
+            });
+            eventsRendered += dayEvents.length;
+            
+            currentDate.setDate(currentDate.getDate() + 1);
+        }
+        
+        debugLog(`Rendered ${dayCount} calendar days with ${eventsRendered} total events`);
+        
+        // Check if calendar view is visible
+        const isCalendarVisible = !calendarView.classList.contains('hidden');
+        debugLog(`Calendar view visible: ${isCalendarVisible}`);
+        
+        debugLog('renderCalendar completed');
+        
+    } catch (error) {
+        debugLog(`renderCalendar failed: ${error.message}`, true);
     }
 }
 
@@ -820,20 +871,45 @@ function createCalendarDay(date, events) {
 
 // List Rendering
 function renderEventsList(events) {
-    eventsList.innerHTML = '';
-    
-    if (events.length === 0) {
-        const noEvents = document.createElement('div');
-        noEvents.className = 'px-6 py-8 text-center text-gray-500';
-        noEvents.innerHTML = '<div class="text-lg">No events found</div>';
-        eventsList.appendChild(noEvents);
-        return;
+    try {
+        debugLog(`Starting renderEventsList with ${events.length} events`);
+        
+        if (!eventsList) {
+            debugLog('eventsList element not found!', true);
+            return;
+        }
+        
+        eventsList.innerHTML = '';
+        debugLog('Cleared events list');
+        
+        if (events.length === 0) {
+            debugLog('No events to display, showing empty message');
+            const noEvents = document.createElement('div');
+            noEvents.className = 'px-6 py-8 text-center text-gray-500';
+            noEvents.innerHTML = '<div class="text-lg">No events found</div>';
+            eventsList.appendChild(noEvents);
+            debugLog('Added no events message');
+            return;
+        }
+        
+        let eventsRendered = 0;
+        events.forEach(event => {
+            const eventElement = createEventListItem(event);
+            eventsList.appendChild(eventElement);
+            eventsRendered++;
+        });
+        
+        debugLog(`Rendered ${eventsRendered} event list items`);
+        
+        // Check if list view is visible
+        const isListVisible = !listView.classList.contains('hidden');
+        debugLog(`List view visible: ${isListVisible}`);
+        
+        debugLog('renderEventsList completed');
+        
+    } catch (error) {
+        debugLog(`renderEventsList failed: ${error.message}`, true);
     }
-    
-    events.forEach(event => {
-        const eventElement = createEventListItem(event);
-        eventsList.appendChild(eventElement);
-    });
 }
 
 function createEventListItem(event) {
