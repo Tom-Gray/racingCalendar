@@ -5,16 +5,101 @@
     display: none !important;
 }
 
-/* Calendar grid responsive adjustments */
-@media (max-width: 768px) {
+/* Mobile-first responsive design */
+@media (max-width: 767px) {
+    /* Force List View on mobile */
+    #calendar-view {
+        display: none !important;
+    }
+    
+    #list-view {
+        display: block !important;
+    }
+    
+    /* Hide view toggle buttons on mobile */
+    .view-toggle {
+        display: none !important;
+    }
+    
+    /* Enhanced mobile list view */
+    #events-list .event-item {
+        padding: 1rem;
+        border-left: 4px solid transparent;
+    }
+    
+    #events-list .event-item:hover {
+        background-color: #f8fafc;
+    }
+    
+    .event-name {
+        font-size: 1rem;
+        line-height: 1.4;
+        margin-bottom: 0.5rem;
+    }
+    
+    .event-details {
+        flex-direction: column;
+        gap: 0.5rem;
+        align-items: flex-start;
+    }
+    
+    .event-club-tag {
+        align-self: flex-start;
+    }
+    
+    /* Mobile header adjustments */
+    header .max-w-6xl {
+        padding: 1.5rem 1rem;
+    }
+    
+    header h1 {
+        font-size: 2rem;
+    }
+    
+    header p {
+        font-size: 1rem;
+    }
+    
+    /* Mobile controls adjustments */
+    .controls-container {
+        padding: 1rem;
+    }
+    
+    /* Mobile club search */
+    #club-search {
+        font-size: 1rem;
+    }
+    
+    /* Mobile selected clubs display */
+    #selected-clubs {
+        gap: 0.5rem;
+    }
+    
+    #selected-clubs .club-tag {
+        font-size: 0.875rem;
+        padding: 0.5rem 0.75rem;
+    }
+}
+
+/* Tablet and desktop - keep original calendar behavior */
+@media (min-width: 768px) {
+    /* Calendar grid responsive adjustments for tablets */
     #calendar-grid {
         grid-template-columns: repeat(7, 1fr);
         gap: 1px;
     }
     
     .calendar-event {
-        font-size: 0.7rem;
-        padding: 0.125rem 0.25rem;
+        font-size: 0.75rem;
+        padding: 0.25rem 0.5rem;
+    }
+}
+
+/* Desktop optimizations */
+@media (min-width: 1024px) {
+    .calendar-event {
+        font-size: 0.875rem;
+        padding: 0.375rem 0.5rem;
     }
 }
 
@@ -23,4 +108,24 @@
     transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     transition-duration: 150ms;
+}
+
+/* Mobile-friendly touch targets */
+@media (max-width: 767px) {
+    button, .clickable {
+        min-height: 44px;
+        min-width: 44px;
+    }
+    
+    /* Larger touch targets for club list items */
+    #club-list-container .flex {
+        padding: 0.75rem;
+        min-height: 44px;
+    }
+    
+    /* Better spacing for mobile forms */
+    input[type="text"], input[type="search"] {
+        padding: 0.75rem 1rem;
+        font-size: 1rem;
+    }
 }

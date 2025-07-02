@@ -332,7 +332,10 @@ function showFallbackNotice() {
             For full functionality, please run: <code>python3 -m http.server 8000</code> 
             and open <a href="http://localhost:8000" target="_blank">http://localhost:8000</a>
         `;
-        document.querySelector('.container').insertBefore(notice, document.querySelector('.controls'));
+        const controlsContainer = document.querySelector('.controls-container');
+        if (controlsContainer) {
+            controlsContainer.parentNode.insertBefore(notice, controlsContainer);
+        }
     }
 }
 
@@ -512,7 +515,7 @@ function updateSelectedClubsDisplay() {
     
     [...selectedClubs].sort().forEach(club => {
         const tag = document.createElement('div');
-        tag.className = 'inline-flex items-center gap-2 px-4 py-2 rounded-full text-white font-medium text-sm border-2 border-white/30 shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all';
+        tag.className = 'club-tag inline-flex items-center gap-2 px-4 py-2 rounded-full text-white font-medium text-sm border-2 border-white/30 shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all';
         
         // Apply the club's assigned color
         const clubColor = assignClubColor(club);
@@ -646,22 +649,22 @@ function renderEventsList(events) {
 
 function createEventListItem(event) {
     const eventElement = document.createElement('div');
-    eventElement.className = 'px-6 py-4 hover:bg-gray-50 cursor-pointer transition-colors';
+    eventElement.className = 'event-item px-6 py-4 hover:bg-gray-50 cursor-pointer transition-colors';
     eventElement.addEventListener('click', () => openEvent(event));
     
     const eventName = document.createElement('div');
-    eventName.className = 'text-lg font-semibold text-gray-900 mb-2';
+    eventName.className = 'event-name text-lg font-semibold text-gray-900 mb-2';
     eventName.textContent = event.eventName;
     
     const eventDetails = document.createElement('div');
-    eventDetails.className = 'flex items-center gap-4 text-sm text-gray-600';
+    eventDetails.className = 'event-details flex items-center gap-4 text-sm text-gray-600';
     
     const eventDate = document.createElement('span');
     eventDate.className = 'font-medium';
     eventDate.textContent = formatDate(event.eventDate);
     
     const eventClub = document.createElement('span');
-    eventClub.className = 'px-3 py-1 rounded-full text-sm';
+    eventClub.className = 'event-club-tag px-3 py-1 rounded-full text-sm';
     eventClub.textContent = event.clubName;
     
     // Apply club color if the club is selected
@@ -670,6 +673,8 @@ function createEventListItem(event) {
         eventClub.style.backgroundColor = clubColor;
         eventClub.style.color = 'white';
         eventClub.classList.add('font-medium');
+        // Add colored border for mobile
+        eventElement.style.borderLeftColor = clubColor;
     } else {
         eventClub.classList.add('bg-gray-200', 'text-gray-700');
     }
