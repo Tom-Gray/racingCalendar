@@ -55,7 +55,7 @@ test.describe('Basic Functionality', () => {
     await expect(page.locator('#club-search')).toBeVisible();
   });
 
-  test('should hide navigation buttons on mobile', async ({ page }) => {
+  test('should show navigation buttons on mobile', async ({ page }) => {
     // Set mobile viewport
     await page.setViewportSize({ width: 375, height: 667 });
     await page.goto('/');
@@ -63,10 +63,10 @@ test.describe('Basic Functionality', () => {
     // Wait for page to load
     await expect(page.locator('#loading')).toBeHidden({ timeout: 10000 });
     
-    // View toggle buttons should be hidden on mobile
-    await expect(page.locator('.view-toggle')).toBeHidden();
+    // View toggle buttons should be visible on mobile now
+    await expect(page.locator('.view-toggle')).toBeVisible();
     
-    // But club search should still be visible
+    // Club search should still be visible
     await expect(page.locator('#club-search')).toBeVisible();
   });
 
@@ -92,7 +92,7 @@ test.describe('Basic Functionality', () => {
     await expect(page.locator('#list-view')).toBeHidden();
   });
 
-  test('should force list view on mobile', async ({ page }) => {
+  test('should show list view by default on mobile', async ({ page }) => {
     // Test mobile view
     await page.setViewportSize({ width: 375, height: 667 });
     await page.goto('/');
@@ -102,19 +102,17 @@ test.describe('Basic Functionality', () => {
     await expect(page.locator('h1')).toBeVisible();
     await expect(page.locator('#club-search')).toBeVisible();
     
-    // View toggle should be hidden on mobile
-    await expect(page.locator('.view-toggle')).toBeHidden();
+    // View toggle should be visible on mobile now
+    await expect(page.locator('.view-toggle')).toBeVisible();
     
-    // List view should be forced to be visible on mobile
+    // List view should be the default view (but not forced)
     await expect(page.locator('#list-view')).toBeVisible();
+    await expect(page.locator('#calendar-view')).toBeHidden();
     
-    // Calendar view should be hidden on mobile (via CSS)
-    const calendarView = page.locator('#calendar-view');
-    const isHidden = await calendarView.evaluate(el => {
-      const style = window.getComputedStyle(el);
-      return style.display === 'none';
-    });
-    expect(isHidden).toBe(true);
+    // Should be able to switch to calendar view on mobile
+    await page.click('#calendar-view-btn');
+    await expect(page.locator('#calendar-view')).toBeVisible();
+    await expect(page.locator('#list-view')).toBeHidden();
   });
 
   test('should not have console errors', async ({ page }) => {
