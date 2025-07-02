@@ -36,33 +36,196 @@ let selectedClubsContainer, calendarView, listView, calendarGrid, eventsList;
 let loadingElement, errorElement, onboardingBanner;
 let toggleClubListBtn, clubListPanel, clubListContainer;
 
-// Initialize the app
-document.addEventListener('DOMContentLoaded', function() {
-    initializeElements();
-    loadState();
-    setupEventListeners();
-    loadEvents();
+// Android Chrome Detection
+// function isAndroidChrome() {
+//     const userAgent = navigator.userAgent.toLowerCase();
+//     const isAndroid = userAgent.includes('android');
+//     const isChrome = userAgent.includes('chrome') && !userAgent.includes('edg');
     
-    // Show onboarding if first time
-    if (isFirstTime) {
-        showOnboarding();
+//     // Don't apply Android fallback for test environments
+//     const isTestEnvironment = userAgent.includes('playwright') || 
+//                              userAgent.includes('headless') ||
+//                              userAgent.includes('mobile safari') ||
+//                              window.location.hostname === 'localhost' ||
+//                              window.location.hostname === '127.0.0.1';
+    
+//     // Only apply to real Android Chrome browsers, not test environments
+//     if (isTestEnvironment) {
+//         return false;
+//     }
+    
+//     return isAndroid && isChrome;
+// }
+
+// Initialize Android-specific styling
+// function initializeAndroidFallback() {
+//     if (isAndroidChrome()) {
+//         debugLog('Android Chrome detected - applying fallback CSS');
+        
+//         // Add Android Chrome class to body
+//         document.body.classList.add('android-chrome');
+        
+//         // Load fallback CSS
+//         const fallbackCSS = document.createElement('link');
+//         fallbackCSS.rel = 'stylesheet';
+//         fallbackCSS.href = 'android-fallback.css';
+//         fallbackCSS.id = 'android-fallback-css';
+//         document.head.appendChild(fallbackCSS);
+        
+//         // Force list view
+//         currentView = 'list';
+        
+//         // Update loading spinner to use basic CSS
+//         const loadingElement = document.getElementById('loading');
+//         if (loadingElement) {
+//             const spinner = loadingElement.querySelector('.animate-spin');
+//             if (spinner) {
+//                 spinner.className = 'spinner';
+//             }
+//         }
+        
+//         debugLog('Android fallback CSS loaded');
+//         return true;
+//     }
+//     return false;
+// }
+
+// Debug logging for Android Chrome
+function debugLog(message, isError = false) {
+    console.log(message);
+    
+    // Also show on page for mobile debugging
+    let debugContainer = document.getElementById('debug-log');
+    if (!debugContainer) {
+        debugContainer = document.createElement('div');
+        debugContainer.id = 'debug-log';
+        debugContainer.className = isError ? 'error' : '';
+        debugContainer.style.cssText = `
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            background: ${isError ? '#ff6b6b' : '#4ecdc4'};
+            color: white;
+            padding: 8px;
+            border-radius: 4px;
+            font-size: 12px;
+            max-width: 200px;
+            z-index: 9999;
+            word-wrap: break-word;
+        `;
+        document.body.appendChild(debugContainer);
+    }
+    
+    const logEntry = document.createElement('div');
+    logEntry.textContent = `${new Date().toLocaleTimeString()}: ${message}`;
+    logEntry.style.marginBottom = '4px';
+    debugContainer.appendChild(logEntry);
+    
+    // Keep only last 5 entries
+    while (debugContainer.children.length > 5) {
+        debugContainer.removeChild(debugContainer.firstChild);
+    }
+    
+    // Auto-hide after 10 seconds for non-errors
+    if (!isError) {
+        setTimeout(() => {
+            if (logEntry.parentNode) {
+                logEntry.parentNode.removeChild(logEntry);
+            }
+        }, 10000);
+    }
+}
+
+// Initialize the app with error handling
+document.addEventListener('DOMContentLoaded', function() {
+    try {
+        debugLog('DOM Content Loaded');
+        
+        // Initialize Android fallback first
+        debugLog('Checking for Android Chrome...');
+        //const isAndroid = initializeAndroidFallback();
+        
+        debugLog('Initializing elements...');
+        initializeElements();
+        
+        debugLog('Loading state...');
+        loadState();
+        
+        // Force list view for Android Chrome
+        // if (isAndroid) {
+        //     debugLog('Android Chrome detected - forcing list view');
+        //     currentView = 'list';
+        // }
+        
+        debugLog('Setting up event listeners...');
+        setupEventListeners();
+        
+        debugLog('Loading events...');
+        loadEvents();
+        
+        // Show onboarding if first time
+        if (isFirstTime) {
+            debugLog('Showing onboarding');
+            showOnboarding();
+        }
+        
+        debugLog('Initialization complete');
+        
+    } catch (error) {
+        debugLog(`Initialization failed: ${error.message}`, true);
+        showCriticalError(error);
     }
 });
 
+// Fallback initialization if DOMContentLoaded doesn't fire
+setTimeout(() => {
+    if (!document.getElementById('debug-log')) {
+        debugLog('Fallback initialization triggered');
+        document.dispatchEvent(new Event('DOMContentLoaded'));
+    }
+}, 2000);
+
 function initializeElements() {
-    calendarViewBtn = document.getElementById('calendar-view-btn');
-    listViewBtn = document.getElementById('list-view-btn');
-    clubSearchInput = document.getElementById('club-search');
-    selectedClubsContainer = document.getElementById('selected-clubs');
-    calendarView = document.getElementById('calendar-view');
-    listView = document.getElementById('list-view');
-    calendarGrid = document.getElementById('calendar-grid');
-    eventsList = document.getElementById('events-list');
-    loadingElement = document.getElementById('loading');
-    errorElement = document.getElementById('error');
-    onboardingBanner = document.getElementById('onboarding-banner');
-    clubListPanel = document.getElementById('club-list-panel');
-    clubListContainer = document.getElementById('club-list-container');
+    try {
+        calendarViewBtn = document.getElementById('calendar-view-btn');
+        listViewBtn = document.getElementById('list-view-btn');
+        clubSearchInput = document.getElementById('club-search');
+        selectedClubsContainer = document.getElementById('selected-clubs');
+        calendarView = document.getElementById('calendar-view');
+        listView = document.getElementById('list-view');
+        calendarGrid = document.getElementById('calendar-grid');
+        eventsList = document.getElementById('events-list');
+        loadingElement = document.getElementById('loading');
+        errorElement = document.getElementById('error');
+        onboardingBanner = document.getElementById('onboarding-banner');
+        clubListPanel = document.getElementById('club-list-panel');
+        clubListContainer = document.getElementById('club-list-container');
+        
+        // Check for missing critical elements
+        const criticalElements = {
+            'loading': loadingElement,
+            'calendar-view': calendarView,
+            'list-view': listView,
+            'events-list': eventsList
+        };
+        
+        const missingElements = [];
+        for (const [name, element] of Object.entries(criticalElements)) {
+            if (!element) {
+                missingElements.push(name);
+            }
+        }
+        
+        if (missingElements.length > 0) {
+            throw new Error(`Missing critical elements: ${missingElements.join(', ')}`);
+        }
+        
+        debugLog(`Elements initialized successfully`);
+        
+    } catch (error) {
+        debugLog(`Element initialization failed: ${error.message}`, true);
+        throw error;
+    }
 }
 
 function setupEventListeners() {
@@ -148,15 +311,54 @@ function getCookie(name) {
     return null;
 }
 
-// Data Loading
+// Critical error handler for Android Chrome
+function showCriticalError(error) {
+    debugLog(`Critical error: ${error.message}`, true);
+    
+    // Create a visible error display
+    const errorDisplay = document.createElement('div');
+    errorDisplay.style.cssText = `
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: #ff6b6b;
+        color: white;
+        padding: 20px;
+        border-radius: 8px;
+        max-width: 90%;
+        text-align: center;
+        z-index: 10000;
+        font-family: Arial, sans-serif;
+    `;
+    errorDisplay.innerHTML = `
+        <h3>App Failed to Start</h3>
+        <p>Error: ${error.message}</p>
+        <button onclick="location.reload()" style="
+            background: white;
+            color: #ff6b6b;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            margin-top: 10px;
+            cursor: pointer;
+        ">Reload Page</button>
+    `;
+    document.body.appendChild(errorDisplay);
+}
+
+// Data Loading with Android Chrome compatibility
 async function loadEvents() {
     try {
+        debugLog('Starting loadEvents');
         showLoading();
         
         // Check if we're running from file:// protocol
         const isFileProtocol = window.location.protocol === 'file:';
+        debugLog(`Protocol: ${window.location.protocol}`);
         
         if (isFileProtocol) {
+            debugLog('File protocol detected, using fallback');
             console.warn('Running from file:// protocol. CORS restrictions may prevent data loading.');
             console.log('To run properly, please use a local server:');
             console.log('1. Run: python3 -m http.server 8000');
@@ -167,50 +369,102 @@ async function loadEvents() {
             return;
         }
         
-        // Load both events and clubs data
-        const [eventsResponse, clubsResponse] = await Promise.all([
-            fetch('./events.json'),
-            fetch('./clubs.json')
-        ]);
+        debugLog('Attempting to fetch data files');
         
-        if (!eventsResponse.ok) {
-            throw new Error(`Failed to load events: ${eventsResponse.status}`);
+        // Android Chrome-specific fetch with timeout and better error handling
+        const fetchWithTimeout = async (url, timeout = 10000) => {
+            const controller = new AbortController();
+            const timeoutId = setTimeout(() => controller.abort(), timeout);
+            
+            try {
+                const response = await fetch(url, {
+                    signal: controller.signal,
+                    cache: 'no-cache', // Prevent Android Chrome caching issues
+                    headers: {
+                        'Cache-Control': 'no-cache',
+                        'Pragma': 'no-cache'
+                    }
+                });
+                clearTimeout(timeoutId);
+                return response;
+            } catch (error) {
+                clearTimeout(timeoutId);
+                throw error;
+            }
+        };
+        
+        // Load events first (more critical)
+        let eventsResponse;
+        try {
+            debugLog('Fetching events.json');
+            eventsResponse = await fetchWithTimeout('./events.json');
+            debugLog(`Events response status: ${eventsResponse.status}`);
+        } catch (fetchError) {
+            debugLog(`Events fetch failed: ${fetchError.message}`, true);
+            throw new Error(`Failed to fetch events.json: ${fetchError.message}`);
         }
         
-        events = await eventsResponse.json();
-        console.log(`Loaded ${events.length} events`);
+        if (!eventsResponse.ok) {
+            throw new Error(`Failed to load events: ${eventsResponse.status} ${eventsResponse.statusText}`);
+        }
+        
+        try {
+            events = await eventsResponse.json();
+            debugLog(`Loaded ${events.length} events`);
+        } catch (parseError) {
+            debugLog(`Events JSON parse failed: ${parseError.message}`, true);
+            throw new Error(`Failed to parse events.json: ${parseError.message}`);
+        }
+        
+        // Load clubs (less critical, can fallback)
+        let clubsResponse;
+        try {
+            debugLog('Fetching clubs.json');
+            clubsResponse = await fetchWithTimeout('./clubs.json');
+            debugLog(`Clubs response status: ${clubsResponse.status}`);
+        } catch (fetchError) {
+            debugLog(`Clubs fetch failed, will extract from events: ${fetchError.message}`);
+            clubsResponse = null;
+        }
         
         // Try to load clubs from clubs.json, fallback to extracting from events
-        if (clubsResponse.ok) {
+        if (clubsResponse && clubsResponse.ok) {
             try {
                 const clubsData = await clubsResponse.json();
                 clubs = clubsData.map(club => club.clubName).sort();
-                console.log(`Loaded ${clubs.length} clubs from clubs.json`);
+                debugLog(`Loaded ${clubs.length} clubs from clubs.json`);
             } catch (clubsError) {
-                console.warn('Failed to parse clubs.json, extracting from events:', clubsError);
+                debugLog(`Failed to parse clubs.json, extracting from events: ${clubsError.message}`);
                 clubs = [...new Set(events.map(event => event.clubName))].sort();
-                console.log(`Extracted ${clubs.length} clubs from events`);
+                debugLog(`Extracted ${clubs.length} clubs from events`);
             }
         } else {
-            console.warn('clubs.json not found, extracting clubs from events');
+            debugLog('clubs.json not available, extracting clubs from events');
             clubs = [...new Set(events.map(event => event.clubName))].sort();
-            console.log(`Extracted ${clubs.length} clubs from events`);
+            debugLog(`Extracted ${clubs.length} clubs from events`);
         }
         
         // Assign colors to clubs
+        debugLog('Assigning club colors');
         assignClubColors();
         
+        debugLog('Hiding loading and updating display');
         hideLoading();
         updateDisplay();
         
+        debugLog('loadEvents completed successfully');
+        
     } catch (error) {
+        debugLog(`loadEvents failed: ${error.message}`, true);
         console.error('Failed to load data:', error);
         
-        // If fetch fails (likely due to CORS), try fallback data
-        if (error.message.includes('fetch') || error.name === 'TypeError') {
-            console.log('Fetch failed, trying fallback data...');
+        // If fetch fails (likely due to CORS or network), try fallback data
+        if (error.message.includes('fetch') || error.message.includes('Failed to fetch') || 
+            error.name === 'TypeError' || error.name === 'AbortError') {
+            debugLog('Network error detected, trying fallback data');
             await loadFallbackData();
         } else {
+            debugLog('Non-network error, showing error state');
             showError();
         }
     }
@@ -537,13 +791,29 @@ function updateSelectedClubsDisplay() {
 
 // Display Updates
 function updateDisplay() {
-    const filteredEvents = getFilteredEvents();
-    updateSelectedClubsDisplay();
-    
-    if (currentView === 'calendar') {
-        renderCalendar(filteredEvents);
-    } else {
-        renderEventsList(filteredEvents);
+    try {
+        debugLog('Starting updateDisplay');
+        
+        const filteredEvents = getFilteredEvents();
+        debugLog(`Filtered events count: ${filteredEvents.length}`);
+        debugLog(`Current view: ${currentView}`);
+        debugLog(`Selected clubs: ${selectedClubs.size}`);
+        
+        updateSelectedClubsDisplay();
+        debugLog('Updated selected clubs display');
+        
+        if (currentView === 'calendar') {
+            debugLog('Rendering calendar view');
+            renderCalendar(filteredEvents);
+        } else {
+            debugLog('Rendering list view');
+            renderEventsList(filteredEvents);
+        }
+        
+        debugLog('updateDisplay completed');
+        
+    } catch (error) {
+        debugLog(`updateDisplay failed: ${error.message}`, true);
     }
 }
 
@@ -557,30 +827,65 @@ function getFilteredEvents() {
 
 // Calendar Rendering
 function renderCalendar(events) {
-    calendarGrid.innerHTML = '';
-    
-    const today = new Date();
-    const startDate = new Date(today);
-    startDate.setDate(today.getDate() - today.getDay()); // Start of current week
-    
-    const endDate = new Date(startDate);
-    endDate.setDate(startDate.getDate() + 28); // 4 weeks
-    
-    // Create day headers
-    const dayNames = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
-    dayNames.forEach(day => {
-        const header = document.createElement('div');
-        header.className = 'bg-gray-100 p-3 text-center font-semibold text-gray-700 text-sm';
-        header.textContent = day;
-        calendarGrid.appendChild(header);
-    });
-    
-    // Create calendar days
-    const currentDate = new Date(startDate);
-    while (currentDate <= endDate) {
-        const dayElement = createCalendarDay(currentDate, events);
-        calendarGrid.appendChild(dayElement);
-        currentDate.setDate(currentDate.getDate() + 1);
+    try {
+        debugLog(`Starting renderCalendar with ${events.length} events`);
+        
+        if (!calendarGrid) {
+            debugLog('calendarGrid element not found!', true);
+            return;
+        }
+        
+        calendarGrid.innerHTML = '';
+        debugLog('Cleared calendar grid');
+        
+        const today = new Date();
+        const startDate = new Date(today);
+        startDate.setDate(today.getDate() - today.getDay()); // Start of current week
+        
+        const endDate = new Date(startDate);
+        endDate.setDate(startDate.getDate() + 28); // 4 weeks
+        
+        debugLog(`Calendar date range: ${startDate.toDateString()} to ${endDate.toDateString()}`);
+        
+        // Create day headers
+        const dayNames = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+        dayNames.forEach(day => {
+            const header = document.createElement('div');
+            header.className = 'bg-gray-100 p-3 text-center font-semibold text-gray-700 text-sm';
+            header.textContent = day;
+            calendarGrid.appendChild(header);
+        });
+        debugLog('Added day headers');
+        
+        // Create calendar days
+        let dayCount = 0;
+        let eventsRendered = 0;
+        const currentDate = new Date(startDate);
+        while (currentDate <= endDate) {
+            const dayElement = createCalendarDay(currentDate, events);
+            calendarGrid.appendChild(dayElement);
+            dayCount++;
+            
+            // Count events for this day
+            const dayEvents = events.filter(event => {
+                const eventDate = new Date(event.eventDate);
+                return eventDate.toDateString() === currentDate.toDateString();
+            });
+            eventsRendered += dayEvents.length;
+            
+            currentDate.setDate(currentDate.getDate() + 1);
+        }
+        
+        debugLog(`Rendered ${dayCount} calendar days with ${eventsRendered} total events`);
+        
+        // Check if calendar view is visible
+        const isCalendarVisible = !calendarView.classList.contains('hidden');
+        debugLog(`Calendar view visible: ${isCalendarVisible}`);
+        
+        debugLog('renderCalendar completed');
+        
+    } catch (error) {
+        debugLog(`renderCalendar failed: ${error.message}`, true);
     }
 }
 
@@ -631,20 +936,45 @@ function createCalendarDay(date, events) {
 
 // List Rendering
 function renderEventsList(events) {
-    eventsList.innerHTML = '';
-    
-    if (events.length === 0) {
-        const noEvents = document.createElement('div');
-        noEvents.className = 'px-6 py-8 text-center text-gray-500';
-        noEvents.innerHTML = '<div class="text-lg">No events found</div>';
-        eventsList.appendChild(noEvents);
-        return;
+    try {
+        debugLog(`Starting renderEventsList with ${events.length} events`);
+        
+        if (!eventsList) {
+            debugLog('eventsList element not found!', true);
+            return;
+        }
+        
+        eventsList.innerHTML = '';
+        debugLog('Cleared events list');
+        
+        if (events.length === 0) {
+            debugLog('No events to display, showing empty message');
+            const noEvents = document.createElement('div');
+            noEvents.className = 'px-6 py-8 text-center text-gray-500';
+            noEvents.innerHTML = '<div class="text-lg">No events found</div>';
+            eventsList.appendChild(noEvents);
+            debugLog('Added no events message');
+            return;
+        }
+        
+        let eventsRendered = 0;
+        events.forEach(event => {
+            const eventElement = createEventListItem(event);
+            eventsList.appendChild(eventElement);
+            eventsRendered++;
+        });
+        
+        debugLog(`Rendered ${eventsRendered} event list items`);
+        
+        // Check if list view is visible
+        const isListVisible = !listView.classList.contains('hidden');
+        debugLog(`List view visible: ${isListVisible}`);
+        
+        debugLog('renderEventsList completed');
+        
+    } catch (error) {
+        debugLog(`renderEventsList failed: ${error.message}`, true);
     }
-    
-    events.forEach(event => {
-        const eventElement = createEventListItem(event);
-        eventsList.appendChild(eventElement);
-    });
 }
 
 function createEventListItem(event) {
