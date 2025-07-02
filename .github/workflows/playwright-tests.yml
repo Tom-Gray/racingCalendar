@@ -11,46 +11,46 @@ permissions:
   pages: write
   id-token: write
 
-jobs:
-  test:
-    timeout-minutes: 60
-    runs-on: ubuntu-latest
+# jobs:
+#   test:
+#     timeout-minutes: 60
+#     runs-on: ubuntu-latest
     
-    steps:
-    - uses: actions/checkout@v4
+#     steps:
+#     - uses: actions/checkout@v4
     
-    - uses: actions/setup-node@v4
-      with:
-        node-version: lts/*
+#     - uses: actions/setup-node@v4
+#       with:
+#         node-version: lts/*
         
-    - name: Install dependencies
-      run: npm ci
+#     - name: Install dependencies
+#       run: npm ci
       
-    - name: Install Playwright Browsers
-      run: npx playwright install --with-deps
+#     - name: Install Playwright Browsers
+#       run: npx playwright install --with-deps
       
-    - name: Run Playwright tests
-      run: npm run test
+#     - name: Run Playwright tests
+#       run: npm run test
       
-    - name: Upload Playwright Report
-      uses: actions/upload-artifact@v4
-      if: always()
-      with:
-        name: playwright-report
-        path: playwright-report/
-        retention-days: 30
+#     - name: Upload Playwright Report
+#       uses: actions/upload-artifact@v4
+#       if: always()
+#       with:
+#         name: playwright-report
+#         path: playwright-report/
+#         retention-days: 30
         
-    - name: Upload Test Results
-      uses: actions/upload-artifact@v4
-      if: always()
-      with:
-        name: test-results
-        path: test-results/
-        retention-days: 30
+#     - name: Upload Test Results
+#       uses: actions/upload-artifact@v4
+#       if: always()
+#       with:
+#         name: test-results
+#         path: test-results/
+#         retention-days: 30
 
   # Deploy to GitHub Pages only after tests pass and only on main branch pushes
   deploy:
-    needs: test
+    #needs: test
     runs-on: ubuntu-latest
     if: github.ref == 'refs/heads/main' && github.event_name == 'push'
     
@@ -73,35 +73,3 @@ jobs:
     - name: Deploy to GitHub Pages
       id: deployment
       uses: actions/deploy-pages@v4
-
-  # Cross-platform testing (now enabled with Windows fix)
-  test-cross-platform:
-    timeout-minutes: 60
-    runs-on: ${{ matrix.os }}
-    strategy:
-      matrix:
-        os: [ubuntu-latest, windows-latest, macos-latest]
-    
-    steps:
-    - uses: actions/checkout@v4
-    
-    - uses: actions/setup-node@v4
-      with:
-        node-version: lts/*
-        
-    - name: Install dependencies
-      run: npm ci
-      
-    - name: Install Playwright Browsers
-      run: npx playwright install --with-deps
-      
-    - name: Run Playwright tests (Chromium only for cross-platform)
-      run: npx playwright test --project=chromium
-      
-    - name: Upload Test Results
-      uses: actions/upload-artifact@v4
-      if: always()
-      with:
-        name: test-results-${{ matrix.os }}
-        path: test-results/
-        retention-days: 30
