@@ -618,8 +618,23 @@ function renderClubList() {
         
         const label = document.createElement('label');
         label.htmlFor = checkbox.id;
-        label.className = 'flex-1 text-sm text-gray-700 cursor-pointer';
-        label.textContent = club;
+        label.className = 'flex-1 text-sm text-gray-700 cursor-pointer flex items-center justify-between';
+        
+        // Count events for this club
+        const eventCount = events.filter(event => event.clubName === club).length;
+        
+        // Create club name span
+        const clubNameSpan = document.createElement('span');
+        clubNameSpan.textContent = club;
+        
+        // Create event count span
+        const eventCountSpan = document.createElement('span');
+        eventCountSpan.className = 'text-gray-500 text-xs ml-2';
+        eventCountSpan.textContent = `(${eventCount})`;
+        
+        label.appendChild(clubNameSpan);
+        label.appendChild(eventCountSpan);
+        
         label.addEventListener('mousedown', (e) => {
             e.preventDefault(); // Prevent focus loss on label click
         });
