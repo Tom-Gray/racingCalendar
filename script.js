@@ -3,7 +3,7 @@ let events = [];
 let clubs = [];
 let selectedClubs = new Set();
 let clubColors = new Map(); // New: track assigned colors for clubs
-let currentView = 'calendar';
+let currentView = 'list';
 let isFirstTime = true;
 
 // Color palette for clubs
@@ -36,202 +36,83 @@ let selectedClubsContainer, calendarView, listView, calendarGrid, eventsList;
 let loadingElement, errorElement, onboardingBanner;
 let toggleClubListBtn, clubListPanel, clubListContainer;
 
-// Android Chrome Detection
-// function isAndroidChrome() {
-//     const userAgent = navigator.userAgent.toLowerCase();
-//     const isAndroid = userAgent.includes('android');
-//     const isChrome = userAgent.includes('chrome') && !userAgent.includes('edg');
-    
-//     // Don't apply Android fallback for test environments
-//     const isTestEnvironment = userAgent.includes('playwright') || 
-//                              userAgent.includes('headless') ||
-//                              userAgent.includes('mobile safari') ||
-//                              window.location.hostname === 'localhost' ||
-//                              window.location.hostname === '127.0.0.1';
-    
-//     // Only apply to real Android Chrome browsers, not test environments
-//     if (isTestEnvironment) {
-//         return false;
-//     }
-    
-//     return isAndroid && isChrome;
-// }
-
-// Initialize Android-specific styling
-// function initializeAndroidFallback() {
-//     if (isAndroidChrome()) {
-//         debugLog('Android Chrome detected - applying fallback CSS');
-        
-//         // Add Android Chrome class to body
-//         document.body.classList.add('android-chrome');
-        
-//         // Load fallback CSS
-//         const fallbackCSS = document.createElement('link');
-//         fallbackCSS.rel = 'stylesheet';
-//         fallbackCSS.href = 'android-fallback.css';
-//         fallbackCSS.id = 'android-fallback-css';
-//         document.head.appendChild(fallbackCSS);
-        
-//         // Force list view
-//         currentView = 'list';
-        
-//         // Update loading spinner to use basic CSS
-//         const loadingElement = document.getElementById('loading');
-//         if (loadingElement) {
-//             const spinner = loadingElement.querySelector('.animate-spin');
-//             if (spinner) {
-//                 spinner.className = 'spinner';
-//             }
-//         }
-        
-//         debugLog('Android fallback CSS loaded');
-//         return true;
-//     }
-//     return false;
-// }
-
-// Debug logging for Android Chrome
-function debugLog(message, isError = false) {
-    console.log(message);
-    
-    // Also show on page for mobile debugging
-    let debugContainer = document.getElementById('debug-log');
-    if (!debugContainer) {
-        debugContainer = document.createElement('div');
-        debugContainer.id = 'debug-log';
-        debugContainer.className = isError ? 'error' : '';
-        debugContainer.style.cssText = `
-            position: fixed;
-            top: 10px;
-            right: 10px;
-            background: ${isError ? '#ff6b6b' : '#4ecdc4'};
-            color: white;
-            padding: 8px;
-            border-radius: 4px;
-            font-size: 12px;
-            max-width: 200px;
-            z-index: 9999;
-            word-wrap: break-word;
-        `;
-        document.body.appendChild(debugContainer);
-    }
-    
-    const logEntry = document.createElement('div');
-    logEntry.textContent = `${new Date().toLocaleTimeString()}: ${message}`;
-    logEntry.style.marginBottom = '4px';
-    debugContainer.appendChild(logEntry);
-    
-    // Keep only last 5 entries
-    while (debugContainer.children.length > 5) {
-        debugContainer.removeChild(debugContainer.firstChild);
-    }
-    
-    // Auto-hide after 10 seconds for non-errors
-    if (!isError) {
-        setTimeout(() => {
-            if (logEntry.parentNode) {
-                logEntry.parentNode.removeChild(logEntry);
-            }
-        }, 10000);
-    }
+// Mobile detection
+function isMobileDevice() {
+    return window.innerWidth <= 767;
 }
+
+/* Removed Android Chrome Detection and Fallback Code */
+
+/* Removed debug logging functionality */
 
 // Initialize the app with error handling
 document.addEventListener('DOMContentLoaded', function() {
     try {
-        debugLog('DOM Content Loaded');
-        
-        // Initialize Android fallback first
-        debugLog('Checking for Android Chrome...');
-        //const isAndroid = initializeAndroidFallback();
-        
-        debugLog('Initializing elements...');
         initializeElements();
-        
-        debugLog('Loading state...');
         loadState();
-        
-        // Force list view for Android Chrome
-        // if (isAndroid) {
-        //     debugLog('Android Chrome detected - forcing list view');
-        //     currentView = 'list';
-        // }
-        
-        debugLog('Setting up event listeners...');
         setupEventListeners();
-        
-        debugLog('Loading events...');
         loadEvents();
-        
+
+        // Responsive view logic on load
+        handleResponsiveViews();
+
         // Show onboarding if first time
         if (isFirstTime) {
-            debugLog('Showing onboarding');
             showOnboarding();
         }
-        
-        debugLog('Initialization complete');
-        
+
+        // Responsive view logic on resize
+        window.addEventListener('resize', handleResponsiveViews);
+
     } catch (error) {
-        debugLog(`Initialization failed: ${error.message}`, true);
+        console.error(`Initialization failed: ${error.message}`);
         showCriticalError(error);
     }
 });
 
-// Fallback initialization if DOMContentLoaded doesn't fire
-setTimeout(() => {
-    if (!document.getElementById('debug-log')) {
-        debugLog('Fallback initialization triggered');
-        document.dispatchEvent(new Event('DOMContentLoaded'));
-    }
-}, 2000);
-
 function initializeElements() {
-    try {
-        calendarViewBtn = document.getElementById('calendar-view-btn');
-        listViewBtn = document.getElementById('list-view-btn');
-        clubSearchInput = document.getElementById('club-search');
-        selectedClubsContainer = document.getElementById('selected-clubs');
-        calendarView = document.getElementById('calendar-view');
-        listView = document.getElementById('list-view');
-        calendarGrid = document.getElementById('calendar-grid');
-        eventsList = document.getElementById('events-list');
-        loadingElement = document.getElementById('loading');
-        errorElement = document.getElementById('error');
-        onboardingBanner = document.getElementById('onboarding-banner');
-        clubListPanel = document.getElementById('club-list-panel');
-        clubListContainer = document.getElementById('club-list-container');
-        
-        // Check for missing critical elements
-        const criticalElements = {
-            'loading': loadingElement,
-            'calendar-view': calendarView,
-            'list-view': listView,
-            'events-list': eventsList
-        };
-        
-        const missingElements = [];
-        for (const [name, element] of Object.entries(criticalElements)) {
-            if (!element) {
-                missingElements.push(name);
-            }
+    calendarViewBtn = document.getElementById('calendar-view-btn');
+    listViewBtn = document.getElementById('list-view-btn');
+    clubSearchInput = document.getElementById('club-search');
+    selectedClubsContainer = document.getElementById('selected-clubs');
+    calendarView = document.getElementById('calendar-view');
+    listView = document.getElementById('list-view');
+    calendarGrid = document.getElementById('calendar-grid');
+    eventsList = document.getElementById('events-list');
+    loadingElement = document.getElementById('loading');
+    errorElement = document.getElementById('error');
+    onboardingBanner = document.getElementById('onboarding-banner');
+    clubListPanel = document.getElementById('club-list-panel');
+    clubListContainer = document.getElementById('club-list-container');
+    
+    // Check for missing critical elements
+    const criticalElements = {
+        'loading': loadingElement,
+        'calendar-view': calendarView,
+        'list-view': listView,
+        'events-list': eventsList
+    };
+    
+    const missingElements = [];
+    for (const [name, element] of Object.entries(criticalElements)) {
+        if (!element) {
+            missingElements.push(name);
         }
-        
-        if (missingElements.length > 0) {
-            throw new Error(`Missing critical elements: ${missingElements.join(', ')}`);
-        }
-        
-        debugLog(`Elements initialized successfully`);
-        
-    } catch (error) {
-        debugLog(`Element initialization failed: ${error.message}`, true);
-        throw error;
+    }
+    
+    if (missingElements.length > 0) {
+        throw new Error(`Missing critical elements: ${missingElements.join(', ')}`);
     }
 }
 
 function setupEventListeners() {
-    // View toggle
-    calendarViewBtn.addEventListener('click', () => switchView('calendar'));
-    listViewBtn.addEventListener('click', () => switchView('list'));
+    // View toggle - only add listeners if buttons exist (they're hidden on mobile)
+    if (calendarViewBtn) {
+        calendarViewBtn.addEventListener('click', () => switchView('calendar'));
+    }
+    if (listViewBtn) {
+        listViewBtn.addEventListener('click', () => switchView('list'));
+    }
     
     // Club search - unified behavior
     clubSearchInput.addEventListener('input', handleClubSearch);
@@ -272,8 +153,12 @@ function loadState() {
         selectedClubs = new Set(JSON.parse(savedFilters));
     }
     
-    if (savedView) {
-        currentView = savedView;
+    // Force list view on mobile devices, otherwise use saved preference or default to list
+    if (isMobileDevice()) {
+        currentView = 'list';
+    } else {
+        // On desktop, allow calendar view as an option
+        currentView = savedView || 'list';
     }
     
     if (savedColors) {
@@ -311,9 +196,9 @@ function getCookie(name) {
     return null;
 }
 
-// Critical error handler for Android Chrome
+// Critical error handler
 function showCriticalError(error) {
-    debugLog(`Critical error: ${error.message}`, true);
+    console.error(`Critical error: ${error.message}`);
     
     // Create a visible error display
     const errorDisplay = document.createElement('div');
@@ -347,18 +232,15 @@ function showCriticalError(error) {
     document.body.appendChild(errorDisplay);
 }
 
-// Data Loading with Android Chrome compatibility
+// Data Loading
 async function loadEvents() {
     try {
-        debugLog('Starting loadEvents');
         showLoading();
         
         // Check if we're running from file:// protocol
         const isFileProtocol = window.location.protocol === 'file:';
-        debugLog(`Protocol: ${window.location.protocol}`);
         
         if (isFileProtocol) {
-            debugLog('File protocol detected, using fallback');
             console.warn('Running from file:// protocol. CORS restrictions may prevent data loading.');
             console.log('To run properly, please use a local server:');
             console.log('1. Run: python3 -m http.server 8000');
@@ -369,9 +251,7 @@ async function loadEvents() {
             return;
         }
         
-        debugLog('Attempting to fetch data files');
-        
-        // Android Chrome-specific fetch with timeout and better error handling
+        // Fetch with timeout and better error handling
         const fetchWithTimeout = async (url, timeout = 10000) => {
             const controller = new AbortController();
             const timeoutId = setTimeout(() => controller.abort(), timeout);
@@ -379,7 +259,7 @@ async function loadEvents() {
             try {
                 const response = await fetch(url, {
                     signal: controller.signal,
-                    cache: 'no-cache', // Prevent Android Chrome caching issues
+                    cache: 'no-cache',
                     headers: {
                         'Cache-Control': 'no-cache',
                         'Pragma': 'no-cache'
@@ -396,11 +276,8 @@ async function loadEvents() {
         // Load events first (more critical)
         let eventsResponse;
         try {
-            debugLog('Fetching events.json');
             eventsResponse = await fetchWithTimeout('./events.json');
-            debugLog(`Events response status: ${eventsResponse.status}`);
         } catch (fetchError) {
-            debugLog(`Events fetch failed: ${fetchError.message}`, true);
             throw new Error(`Failed to fetch events.json: ${fetchError.message}`);
         }
         
@@ -410,20 +287,15 @@ async function loadEvents() {
         
         try {
             events = await eventsResponse.json();
-            debugLog(`Loaded ${events.length} events`);
         } catch (parseError) {
-            debugLog(`Events JSON parse failed: ${parseError.message}`, true);
             throw new Error(`Failed to parse events.json: ${parseError.message}`);
         }
         
         // Load clubs (less critical, can fallback)
         let clubsResponse;
         try {
-            debugLog('Fetching clubs.json');
             clubsResponse = await fetchWithTimeout('./clubs.json');
-            debugLog(`Clubs response status: ${clubsResponse.status}`);
         } catch (fetchError) {
-            debugLog(`Clubs fetch failed, will extract from events: ${fetchError.message}`);
             clubsResponse = null;
         }
         
@@ -432,39 +304,27 @@ async function loadEvents() {
             try {
                 const clubsData = await clubsResponse.json();
                 clubs = clubsData.map(club => club.clubName).sort();
-                debugLog(`Loaded ${clubs.length} clubs from clubs.json`);
             } catch (clubsError) {
-                debugLog(`Failed to parse clubs.json, extracting from events: ${clubsError.message}`);
                 clubs = [...new Set(events.map(event => event.clubName))].sort();
-                debugLog(`Extracted ${clubs.length} clubs from events`);
             }
         } else {
-            debugLog('clubs.json not available, extracting clubs from events');
             clubs = [...new Set(events.map(event => event.clubName))].sort();
-            debugLog(`Extracted ${clubs.length} clubs from events`);
         }
         
         // Assign colors to clubs
-        debugLog('Assigning club colors');
         assignClubColors();
         
-        debugLog('Hiding loading and updating display');
         hideLoading();
         updateDisplay();
         
-        debugLog('loadEvents completed successfully');
-        
     } catch (error) {
-        debugLog(`loadEvents failed: ${error.message}`, true);
         console.error('Failed to load data:', error);
         
         // If fetch fails (likely due to CORS or network), try fallback data
         if (error.message.includes('fetch') || error.message.includes('Failed to fetch') || 
             error.name === 'TypeError' || error.name === 'AbortError') {
-            debugLog('Network error detected, trying fallback data');
             await loadFallbackData();
         } else {
-            debugLog('Non-network error, showing error state');
             showError();
         }
     }
@@ -623,22 +483,58 @@ function showError() {
 
 // View Management
 function switchView(view) {
+    console.log(`switchView called with: ${view}`);
+    console.log('Is mobile device:', isMobileDevice());
+    
+    // Force list view on mobile devices
+    if (isMobileDevice() && view === 'calendar') {
+        console.log('Forcing list view on mobile device');
+        view = 'list';
+    }
+    
+    console.log(`Final view to switch to: ${view}`);
     currentView = view;
     
     if (view === 'calendar') {
-        calendarViewBtn.classList.add('bg-primary', 'text-white', 'shadow-sm');
-        calendarViewBtn.classList.remove('text-gray-600', 'hover:text-gray-800');
-        listViewBtn.classList.remove('bg-primary', 'text-white', 'shadow-sm');
-        listViewBtn.classList.add('text-gray-600', 'hover:text-gray-800');
+        console.log('Switching to calendar view');
+        // Only update button styles if buttons exist (they're hidden on mobile)
+        if (calendarViewBtn) {
+            calendarViewBtn.classList.add('bg-primary', 'text-white', 'shadow-sm');
+            calendarViewBtn.classList.remove('text-gray-600', 'hover:text-gray-800');
+            console.log('Updated calendar button styles');
+        } else {
+            console.log('Calendar view button not found');
+        }
+        if (listViewBtn) {
+            listViewBtn.classList.remove('bg-primary', 'text-white', 'shadow-sm');
+            listViewBtn.classList.add('text-gray-600', 'hover:text-gray-800');
+            console.log('Updated list button styles');
+        } else {
+            console.log('List view button not found');
+        }
         calendarView.classList.remove('hidden');
         listView.classList.add('hidden');
+        console.log('Calendar view shown, list view hidden');
     } else {
-        listViewBtn.classList.add('bg-primary', 'text-white', 'shadow-sm');
-        listViewBtn.classList.remove('text-gray-600', 'hover:text-gray-800');
-        calendarViewBtn.classList.remove('bg-primary', 'text-white', 'shadow-sm');
-        calendarViewBtn.classList.add('text-gray-600', 'hover:text-gray-800');
+        console.log('Switching to list view');
+        // Only update button styles if buttons exist (they're hidden on mobile)
+        if (listViewBtn) {
+            listViewBtn.classList.add('bg-primary', 'text-white', 'shadow-sm');
+            listViewBtn.classList.remove('text-gray-600', 'hover:text-gray-800');
+            console.log('Updated list button styles');
+        } else {
+            console.log('List view button not found');
+        }
+        if (calendarViewBtn) {
+            calendarViewBtn.classList.remove('bg-primary', 'text-white', 'shadow-sm');
+            calendarViewBtn.classList.add('text-gray-600', 'hover:text-gray-800');
+            console.log('Updated calendar button styles');
+        } else {
+            console.log('Calendar view button not found');
+        }
         listView.classList.remove('hidden');
         calendarView.classList.add('hidden');
+        console.log('List view shown, calendar view hidden');
     }
     
     saveState();
@@ -791,29 +687,13 @@ function updateSelectedClubsDisplay() {
 
 // Display Updates
 function updateDisplay() {
-    try {
-        debugLog('Starting updateDisplay');
-        
-        const filteredEvents = getFilteredEvents();
-        debugLog(`Filtered events count: ${filteredEvents.length}`);
-        debugLog(`Current view: ${currentView}`);
-        debugLog(`Selected clubs: ${selectedClubs.size}`);
-        
-        updateSelectedClubsDisplay();
-        debugLog('Updated selected clubs display');
-        
-        if (currentView === 'calendar') {
-            debugLog('Rendering calendar view');
-            renderCalendar(filteredEvents);
-        } else {
-            debugLog('Rendering list view');
-            renderEventsList(filteredEvents);
-        }
-        
-        debugLog('updateDisplay completed');
-        
-    } catch (error) {
-        debugLog(`updateDisplay failed: ${error.message}`, true);
+    const filteredEvents = getFilteredEvents();
+    updateSelectedClubsDisplay();
+    
+    if (currentView === 'calendar') {
+        renderCalendar(filteredEvents);
+    } else {
+        renderEventsList(filteredEvents);
     }
 }
 
@@ -827,65 +707,35 @@ function getFilteredEvents() {
 
 // Calendar Rendering
 function renderCalendar(events) {
-    try {
-        debugLog(`Starting renderCalendar with ${events.length} events`);
-        
-        if (!calendarGrid) {
-            debugLog('calendarGrid element not found!', true);
-            return;
-        }
-        
-        calendarGrid.innerHTML = '';
-        debugLog('Cleared calendar grid');
-        
-        const today = new Date();
-        const startDate = new Date(today);
-        startDate.setDate(today.getDate() - today.getDay()); // Start of current week
-        
-        const endDate = new Date(startDate);
-        endDate.setDate(startDate.getDate() + 28); // 4 weeks
-        
-        debugLog(`Calendar date range: ${startDate.toDateString()} to ${endDate.toDateString()}`);
-        
-        // Create day headers
-        const dayNames = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
-        dayNames.forEach(day => {
-            const header = document.createElement('div');
-            header.className = 'bg-gray-100 p-3 text-center font-semibold text-gray-700 text-sm';
-            header.textContent = day;
-            calendarGrid.appendChild(header);
-        });
-        debugLog('Added day headers');
-        
-        // Create calendar days
-        let dayCount = 0;
-        let eventsRendered = 0;
-        const currentDate = new Date(startDate);
-        while (currentDate <= endDate) {
-            const dayElement = createCalendarDay(currentDate, events);
-            calendarGrid.appendChild(dayElement);
-            dayCount++;
-            
-            // Count events for this day
-            const dayEvents = events.filter(event => {
-                const eventDate = new Date(event.eventDate);
-                return eventDate.toDateString() === currentDate.toDateString();
-            });
-            eventsRendered += dayEvents.length;
-            
-            currentDate.setDate(currentDate.getDate() + 1);
-        }
-        
-        debugLog(`Rendered ${dayCount} calendar days with ${eventsRendered} total events`);
-        
-        // Check if calendar view is visible
-        const isCalendarVisible = !calendarView.classList.contains('hidden');
-        debugLog(`Calendar view visible: ${isCalendarVisible}`);
-        
-        debugLog('renderCalendar completed');
-        
-    } catch (error) {
-        debugLog(`renderCalendar failed: ${error.message}`, true);
+    if (!calendarGrid) {
+        console.error('calendarGrid element not found!');
+        return;
+    }
+    
+    calendarGrid.innerHTML = '';
+    
+    const today = new Date();
+    const startDate = new Date(today);
+    startDate.setDate(today.getDate() - today.getDay()); // Start of current week
+    
+    const endDate = new Date(startDate);
+    endDate.setDate(startDate.getDate() + 28); // 4 weeks
+    
+    // Create day headers
+    const dayNames = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+    dayNames.forEach(day => {
+        const header = document.createElement('div');
+        header.className = 'bg-gray-100 p-3 text-center font-semibold text-gray-700 text-sm';
+        header.textContent = day;
+        calendarGrid.appendChild(header);
+    });
+    
+    // Create calendar days
+    const currentDate = new Date(startDate);
+    while (currentDate <= endDate) {
+        const dayElement = createCalendarDay(currentDate, events);
+        calendarGrid.appendChild(dayElement);
+        currentDate.setDate(currentDate.getDate() + 1);
     }
 }
 
@@ -936,45 +786,25 @@ function createCalendarDay(date, events) {
 
 // List Rendering
 function renderEventsList(events) {
-    try {
-        debugLog(`Starting renderEventsList with ${events.length} events`);
-        
-        if (!eventsList) {
-            debugLog('eventsList element not found!', true);
-            return;
-        }
-        
-        eventsList.innerHTML = '';
-        debugLog('Cleared events list');
-        
-        if (events.length === 0) {
-            debugLog('No events to display, showing empty message');
-            const noEvents = document.createElement('div');
-            noEvents.className = 'px-6 py-8 text-center text-gray-500';
-            noEvents.innerHTML = '<div class="text-lg">No events found</div>';
-            eventsList.appendChild(noEvents);
-            debugLog('Added no events message');
-            return;
-        }
-        
-        let eventsRendered = 0;
-        events.forEach(event => {
-            const eventElement = createEventListItem(event);
-            eventsList.appendChild(eventElement);
-            eventsRendered++;
-        });
-        
-        debugLog(`Rendered ${eventsRendered} event list items`);
-        
-        // Check if list view is visible
-        const isListVisible = !listView.classList.contains('hidden');
-        debugLog(`List view visible: ${isListVisible}`);
-        
-        debugLog('renderEventsList completed');
-        
-    } catch (error) {
-        debugLog(`renderEventsList failed: ${error.message}`, true);
+    if (!eventsList) {
+        console.error('eventsList element not found!');
+        return;
     }
+    
+    eventsList.innerHTML = '';
+    
+    if (events.length === 0) {
+        const noEvents = document.createElement('div');
+        noEvents.className = 'px-6 py-8 text-center text-gray-500';
+        noEvents.innerHTML = '<div class="text-lg">No events found</div>';
+        eventsList.appendChild(noEvents);
+        return;
+    }
+    
+    events.forEach(event => {
+        const eventElement = createEventListItem(event);
+        eventsList.appendChild(eventElement);
+    });
 }
 
 function createEventListItem(event) {
@@ -1050,12 +880,21 @@ function truncateText(text, maxLength) {
     return text.substring(0, maxLength - 3) + '...';
 }
 
-// Initialize view state
-document.addEventListener('DOMContentLoaded', function() {
-    // Set initial view state
-    if (currentView === 'list') {
+// Responsive view logic for mobile/desktop
+function handleResponsiveViews() {
+    // Hide/show toggle and calendar view based on device width
+    const viewToggle = document.querySelector('.view-toggle');
+    if (isMobileDevice()) {
+        // Hide calendar view and toggle on mobile
+        if (viewToggle) viewToggle.classList.add('hidden');
+        if (calendarView) calendarView.classList.add('hidden');
+        if (listView) listView.classList.remove('hidden');
+        // Always switch to list view on mobile
         switchView('list');
     } else {
-        switchView('calendar');
+        // Show toggle and calendar view on desktop
+        if (viewToggle) viewToggle.classList.remove('hidden');
+        // Only show the correct view (calendar or list) based on currentView
+        switchView(currentView);
     }
-});
+}

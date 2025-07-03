@@ -7,20 +7,6 @@
 
 /* Mobile-first responsive design */
 @media (max-width: 767px) {
-    /* Force List View on mobile */
-    #calendar-view {
-        display: none !important;
-    }
-    
-    #list-view {
-        display: block !important;
-    }
-    
-    /* Hide view toggle buttons on mobile */
-    .view-toggle {
-        display: none !important;
-    }
-    
     /* Enhanced mobile list view */
     #events-list .event-item {
         padding: 1rem;
