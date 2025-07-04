@@ -728,30 +728,82 @@ function renderCalendar(events) {
     }
     
     calendarGrid.innerHTML = '';
+    calendarGrid.className = 'space-y-6'; // Change from grid to flex column
     
     const today = new Date();
     const startDate = new Date(today);
     startDate.setDate(today.getDate() - today.getDay()); // Start of current week
     
-    const endDate = new Date(startDate);
-    endDate.setDate(startDate.getDate() + 28); // 4 weeks
-    
-    // Create day headers
-    const dayNames = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
-    dayNames.forEach(day => {
-        const header = document.createElement('div');
-        header.className = 'bg-gray-100 p-3 text-center font-semibold text-gray-700 text-sm';
-        header.textContent = day;
-        calendarGrid.appendChild(header);
-    });
-    
-    // Create calendar days
+    // Group dates by month over 12 weeks
+    const monthGroups = new Map();
     const currentDate = new Date(startDate);
-    while (currentDate <= endDate) {
-        const dayElement = createCalendarDay(currentDate, events);
-        calendarGrid.appendChild(dayElement);
-        currentDate.setDate(currentDate.getDate() + 1);
+    
+    for (let week = 0; week < 12; week++) {
+        const weekDates = [];
+        
+        // Get 7 days for this week
+        for (let day = 0; day < 7; day++) {
+            weekDates.push(new Date(currentDate));
+            currentDate.setDate(currentDate.getDate() + 1);
+        }
+        
+        // Group by month
+        const monthKey = `${weekDates[0].getFullYear()}-${weekDates[0].getMonth()}`;
+        const monthName = weekDates[0].toLocaleDateString('en-AU', { month: 'long', year: 'numeric' });
+        
+        if (!monthGroups.has(monthKey)) {
+            monthGroups.set(monthKey, {
+                name: monthName,
+                weeks: []
+            });
+        }
+        
+        monthGroups.get(monthKey).weeks.push(weekDates);
     }
+    
+    // Render each month
+    monthGroups.forEach(monthData => {
+        // Month header
+        const monthSection = document.createElement('div');
+        monthSection.className = 'month-section';
+        
+        const monthHeader = document.createElement('div');
+        monthHeader.className = 'bg-gray-100 px-4 py-3 rounded-t-lg border-b border-gray-200';
+        monthHeader.innerHTML = `<h3 class="text-lg font-semibold text-gray-800">${monthData.name}</h3>`;
+        monthSection.appendChild(monthHeader);
+        
+        // Month calendar grid
+        const monthCalendar = document.createElement('div');
+        monthCalendar.className = 'bg-white rounded-b-lg overflow-hidden';
+        
+        // Day headers
+        const headerRow = document.createElement('div');
+        headerRow.className = 'grid grid-cols-7 gap-px bg-gray-200';
+        
+        const dayNames = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+        dayNames.forEach(day => {
+            const header = document.createElement('div');
+            header.className = 'bg-gray-100 p-3 text-center font-semibold text-gray-700 text-sm';
+            header.textContent = day;
+            headerRow.appendChild(header);
+        });
+        monthCalendar.appendChild(headerRow);
+        
+        // Weeks grid
+        const weeksContainer = document.createElement('div');
+        weeksContainer.className = 'grid grid-cols-7 gap-px bg-gray-200';
+        
+        monthData.weeks.forEach(week => {
+            week.forEach(date => {
+                const dayElement = createCalendarDay(date, events);
+                weeksContainer.appendChild(dayElement);
+            });
+        });
+        
+        monthCalendar.appendChild(weeksContainer);
+        monthSection.appendChild(monthCalendar);
+        calendarGrid.appendChild(monthSection);
+    });
 }
 
 function createCalendarDay(date, events) {
