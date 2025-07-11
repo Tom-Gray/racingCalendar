@@ -851,7 +851,26 @@ function createCalendarDay(date, events) {
     return dayElement;
 }
 
-// List Rendering
+// Group events by date
+function groupEventsByDate(events) {
+    const grouped = new Map();
+    events.forEach(event => {
+        const eventDate = new Date(event.eventDate);
+        const dateKey = eventDate.toDateString(); // e.g., "Wed Jul 09 2025"
+        if (!grouped.has(dateKey)) {
+            grouped.set(dateKey, {
+                date: eventDate,
+                events: []
+            });
+        }
+        grouped.get(dateKey).events.push(event);
+    });
+    
+    // Sort by date
+    return new Map([...grouped.entries()].sort((a, b) => a[1].date - b[1].date));
+}
+
+// List Rendering - Updated for day-based panels
 function renderEventsList(events) {
     if (!eventsList) {
         console.error('eventsList element not found!');
@@ -868,10 +887,109 @@ function renderEventsList(events) {
         return;
     }
     
-    events.forEach(event => {
-        const eventElement = createEventListItem(event);
-        eventsList.appendChild(eventElement);
+    const groupedEvents = groupEventsByDate(events);
+    
+    groupedEvents.forEach((dayData, dateKey) => {
+        const dayPanel = createDayPanel(dayData.date, dayData.events);
+        eventsList.appendChild(dayPanel);
     });
+}
+
+// Create a day panel containing multiple events
+function createDayPanel(date, events) {
+    const dayPanel = document.createElement('div');
+    dayPanel.className = 'day-panel border-b border-gray-200 last:border-b-0';
+    
+    // Day header
+    const dayHeader = document.createElement('div');
+    dayHeader.className = 'day-header bg-gray-50 px-6 py-4 border-b border-gray-100';
+    
+    const headerContent = document.createElement('div');
+    headerContent.className = 'flex items-center justify-between';
+    
+    const dateDisplay = document.createElement('h3');
+    dateDisplay.className = 'text-xs font-semibold text-gray-800';
+    dateDisplay.textContent = formatDateFull(date);
+    
+    headerContent.appendChild(dateDisplay);
+    
+    // Only show event counter if there are multiple events
+    if (events.length > 1) {
+        const eventCount = document.createElement('span');
+        eventCount.className = 'text-sm text-gray-500 bg-gray-200 px-3 py-1 rounded-full';
+        eventCount.textContent = `${events.length} events`;
+        headerContent.appendChild(eventCount);
+    }
+    dayHeader.appendChild(headerContent);
+    dayPanel.appendChild(dayHeader);
+    
+    // Events container
+    const eventsContainer = document.createElement('div');
+    eventsContainer.className = 'events-container';
+    
+    events.forEach((event, index) => {
+        const eventItem = createDayEventItem(event, index === events.length - 1);
+        eventsContainer.appendChild(eventItem);
+    });
+    
+    dayPanel.appendChild(eventsContainer);
+    
+    return dayPanel;
+}
+
+// Create an event item within a day panel (simplified version)
+function createDayEventItem(event, isLast) {
+    const eventItem = document.createElement('div');
+    eventItem.className = `day-event-item px-6 py-4 hover:bg-gray-50 cursor-pointer transition-colors ${!isLast ? 'border-b border-gray-100' : ''}`;
+    eventItem.addEventListener('click', () => openEvent(event));
+    
+    const eventContent = document.createElement('div');
+    eventContent.className = 'flex items-start justify-between gap-4';
+    
+    const eventInfo = document.createElement('div');
+    eventInfo.className = 'flex-1 min-w-0';
+    
+    const eventName = document.createElement('div');
+    eventName.className = 'event-name text-base font-medium text-gray-900 mb-1 leading-tight';
+    eventName.textContent = event.eventName;
+    
+    const eventClub = document.createElement('div');
+    eventClub.className = 'event-club flex items-center gap-2';
+    
+    const clubTag = document.createElement('span');
+    clubTag.className = 'club-tag px-2 py-1 rounded text-xs font-medium';
+    clubTag.textContent = event.clubName;
+    
+    // Apply club color if the club is selected
+    if (selectedClubs.has(event.clubName)) {
+        const clubColor = assignClubColor(event.clubName);
+        clubTag.style.backgroundColor = clubColor;
+        clubTag.style.color = 'white';
+        // Add colored left border to the entire event item
+        eventItem.style.borderLeft = `4px solid ${clubColor}`;
+        eventItem.style.paddingLeft = '22px'; // Adjust padding to account for border
+    } else {
+        clubTag.classList.add('bg-gray-200', 'text-gray-700');
+    }
+    
+    eventClub.appendChild(clubTag);
+    eventInfo.appendChild(eventName);
+    eventInfo.appendChild(eventClub);
+    eventContent.appendChild(eventInfo);
+    
+    // Add external link icon
+    const linkIcon = document.createElement('div');
+    linkIcon.className = 'flex-shrink-0 text-gray-400 hover:text-gray-600 transition-colors';
+    linkIcon.innerHTML = `
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+        </svg>
+    `;
+    eventContent.appendChild(linkIcon);
+    
+    eventItem.appendChild(eventContent);
+    
+    return eventItem;
 }
 
 function createEventListItem(event) {
@@ -937,6 +1055,16 @@ function formatDate(dateString) {
         weekday: 'short', 
         year: 'numeric', 
         month: 'short', 
+        day: 'numeric' 
+    };
+    return date.toLocaleDateString('en-AU', options);
+}
+
+function formatDateFull(date) {
+    const options = { 
+        weekday: 'long', 
+        year: 'numeric', 
+        month: 'long', 
         day: 'numeric' 
     };
     return date.toLocaleDateString('en-AU', options);
