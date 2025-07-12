@@ -156,9 +156,9 @@ function updateStatisticsDisplay() {
             
             <!-- Data Freshness -->
             <div class="bg-gradient-to-br from-green-500 to-green-600 text-white rounded-xl p-6 text-center shadow-lg hover:shadow-xl transition-shadow">
-                <div class="text-2xl font-bold mb-2">Daily</div>
-                <div class="text-lg opacity-90">Updates</div>
-                <div class="text-sm opacity-75 mt-2">Last: ${lastUpdated}</div>
+                <div class="text-2xl font-bold mb-2">Daily Updates</div>
+                <div class="text-lg opacity-90">Newest Event Posted:</div>
+                <div class="text-sm opacity-75 mt-2">${lastUpdated}</div>
             </div>
         </div>
     `;
