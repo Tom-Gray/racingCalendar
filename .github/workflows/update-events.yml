@@ -9,7 +9,7 @@ on:
       update_clubs:
         description: 'Also update clubs list'
         required: false
-        default: false
+        default: true
         type: boolean
 
 permissions:
