@@ -95,8 +95,12 @@
 
             <!-- Calendar View -->
             <div id="calendar-view" class="bg-white rounded-xl shadow-lg overflow-hidden">
-                <div class="px-6 py-4 bg-gray-50 border-b border-gray-200">
-                    <h2 id="calendar-title" class="text-xl font-semibold text-gray-800">Next 12 Weeks</h2>
+                <div class="px-6 py-4 bg-gray-50 border-b border-gray-200 flex items-center justify-between">
+                    <h2 id="calendar-title" class="text-xl font-semibold text-gray-800"></h2>
+                    <div class="view-toggle md:flex bg-gray-100 rounded-lg p-1">
+                        <button id="twelve-week-view-btn" class="px-6 py-2 rounded-md font-medium transition-all text-gray-600 hover:text-gray-800">Next 12 Weeks</button>
+                        <button id="all-events-view-btn" class="px-6 py-2 rounded-md font-medium transition-all bg-primary text-white shadow-sm">Full Schedule</button>
+                    </div>
                 </div>
                 <div id="calendar-grid" class="p-4"></div>
             </div>
