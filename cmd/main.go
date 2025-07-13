@@ -182,6 +182,7 @@ func updateClubs() error {
 	// Merge scraped clubs with existing clubs
 	newClubsCount := 0
 	updatedClubsCount := 0
+	var newClubNames []string
 
 	for clubURL, scrapedClub := range scrapedClubs {
 		if existingClub, exists := clubMap[clubURL]; exists {
@@ -194,6 +195,7 @@ func updateClubs() error {
 			// Add new club
 			clubMap[clubURL] = scrapedClub
 			newClubsCount++
+			newClubNames = append(newClubNames, scrapedClub.ClubName)
 		}
 	}
 
@@ -230,6 +232,12 @@ func updateClubs() error {
 	fmt.Printf("Club update summary:\n")
 	fmt.Printf("  Total clubs: %d\n", len(clubList))
 	fmt.Printf("  New clubs found: %d\n", newClubsCount)
+	if newClubsCount > 0 {
+		sort.Strings(newClubNames)
+		for _, name := range newClubNames {
+			fmt.Printf("    - %s\n", name)
+		}
+	}
 	fmt.Printf("  Existing clubs updated: %d\n", updatedClubsCount)
 	if migrationCount > 0 {
 		fmt.Printf("  Clubs migrated (added lastSeen): %d\n", migrationCount)
