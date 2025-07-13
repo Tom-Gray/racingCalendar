@@ -4,6 +4,7 @@ let clubs = [];
 let selectedClubs = new Set();
 let clubColors = new Map(); // New: track assigned colors for clubs
 let currentView = 'list';
+let showAllEvents = false;
 let isFirstTime = true;
 
 // Color palette for clubs
@@ -34,7 +35,7 @@ const CLUB_COLOR_PALETTE = [
 let calendarViewBtn, listViewBtn, clubSearchInput, clubDropdown;
 let selectedClubsContainer, calendarView, listView, calendarGrid, eventsList;
 let loadingElement, errorElement, onboardingBanner;
-let toggleClubListBtn, clubListPanel, clubListContainer;
+let clubListPanel, clubListContainer, twelveWeekViewBtn, allEventsViewBtn;
 
 // Mobile detection
 function isMobileDevice() {
@@ -84,6 +85,8 @@ function initializeElements() {
     onboardingBanner = document.getElementById('onboarding-banner');
     clubListPanel = document.getElementById('club-list-panel');
     clubListContainer = document.getElementById('club-list-container');
+    twelveWeekViewBtn = document.getElementById('twelve-week-view-btn');
+    allEventsViewBtn = document.getElementById('all-events-view-btn');
     
     // Check for missing critical elements
     const criticalElements = {
@@ -133,6 +136,9 @@ function setupEventListeners() {
     if (dismissBtn) {
         dismissBtn.addEventListener('click', dismissOnboarding);
     }
+
+    twelveWeekViewBtn.addEventListener('click', () => setCalendarView('12-weeks'));
+    allEventsViewBtn.addEventListener('click', () => setCalendarView('all-events'));
     
     // Click outside to close club list - improved detection
     document.addEventListener('mousedown', (e) => {
@@ -583,6 +589,26 @@ function removeClubFilter(club) {
     saveState();
 }
 
+function setCalendarView(view) {
+    showAllEvents = view === 'all-events';
+    updateDisplay();
+    updateCalendarViewButtons();
+}
+
+function updateCalendarViewButtons() {
+    if (showAllEvents) {
+        allEventsViewBtn.classList.add('bg-primary', 'text-white', 'shadow-sm');
+        allEventsViewBtn.classList.remove('text-gray-600', 'hover:text-gray-800');
+        twelveWeekViewBtn.classList.remove('bg-primary', 'text-white', 'shadow-sm');
+        twelveWeekViewBtn.classList.add('text-gray-600', 'hover:text-gray-800');
+    } else {
+        twelveWeekViewBtn.classList.add('bg-primary', 'text-white', 'shadow-sm');
+        twelveWeekViewBtn.classList.remove('text-gray-600', 'hover:text-gray-800');
+        allEventsViewBtn.classList.remove('bg-primary', 'text-white', 'shadow-sm');
+        allEventsViewBtn.classList.add('text-gray-600', 'hover:text-gray-800');
+    }
+}
+
 // Club List Management
 
 function showClubList() {
@@ -726,19 +752,38 @@ function renderCalendar(events) {
         console.error('calendarGrid element not found!');
         return;
     }
-    
+
     calendarGrid.innerHTML = '';
     calendarGrid.className = 'space-y-6'; // Change from grid to flex column
-    
+
     const today = new Date();
     const startDate = new Date(today);
     startDate.setDate(today.getDate() - today.getDay()); // Start of current week
-    
-    // Group dates by month over 12 weeks
+
+    const calendarTitle = document.getElementById('calendar-title');
+    let weeksToShow = 12;
+
+    if (showAllEvents) {
+        calendarTitle.textContent = 'All Upcoming Events';
+        const lastEventDate = events.reduce((maxDate, event) => {
+            const eventDate = new Date(event.eventDate);
+            return eventDate > maxDate ? eventDate : maxDate;
+        }, new Date(0));
+
+        if (lastEventDate > startDate) {
+            const diffTime = Math.abs(lastEventDate - startDate);
+            const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+            weeksToShow = Math.ceil(diffDays / 7);
+        }
+    } else {
+        calendarTitle.textContent = 'Next 12 Weeks';
+    }
+
+    // Group dates by month over calculated weeks
     const monthGroups = new Map();
     const currentDate = new Date(startDate);
-    
-    for (let week = 0; week < 12; week++) {
+
+    for (let week = 0; week < weeksToShow; week++) {
         const weekDates = [];
         
         // Get 7 days for this week
