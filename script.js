@@ -52,6 +52,7 @@ document.addEventListener('DOMContentLoaded', function() {
         initializeElements();
         loadState();
         setupEventListeners();
+        updateCalendarViewButtons();
         loadEvents();
 
         // Responsive view logic on load
