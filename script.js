@@ -151,10 +151,13 @@ function setupEventListeners() {
 
 // State Management
 function loadState() {
-    const savedFilters = getCookie('selectedClubs');
-    const savedView = getCookie('currentView');
-    const savedColors = getCookie('clubColors');
-    const hasSeenOnboarding = getCookie('hasSeenOnboarding');
+    // Run migration first to preserve existing cookie data
+    migrateCookiesToLocalStorage();
+    
+    const savedFilters = getFromStorage('selectedClubs');
+    const savedView = getFromStorage('currentView');
+    const savedColors = getFromStorage('clubColors');
+    const hasSeenOnboarding = getFromStorage('hasSeenOnboarding');
     
     if (savedFilters) {
         selectedClubs = new Set(JSON.parse(savedFilters));
@@ -180,27 +183,52 @@ function loadState() {
 }
 
 function saveState() {
-    setCookie('selectedClubs', JSON.stringify([...selectedClubs]), 365);
-    setCookie('currentView', currentView, 365);
-    setCookie('clubColors', JSON.stringify([...clubColors]), 365);
+    saveToStorage('selectedClubs', JSON.stringify([...selectedClubs]));
+    saveToStorage('currentView', currentView);
+    saveToStorage('clubColors', JSON.stringify([...clubColors]));
 }
 
-// Cookie utilities
-function setCookie(name, value, days) {
-    const expires = new Date();
-    expires.setTime(expires.getTime() + (days * 24 * 60 * 60 * 1000));
-    document.cookie = `${name}=${value};expires=${expires.toUTCString()};path=/`;
-}
-
-function getCookie(name) {
-    const nameEQ = name + "=";
-    const ca = document.cookie.split(';');
-    for (let i = 0; i < ca.length; i++) {
-        let c = ca[i];
-        while (c.charAt(0) === ' ') c = c.substring(1, c.length);
-        if (c.indexOf(nameEQ) === 0) return c.substring(nameEQ.length, c.length);
+// Storage utilities
+function saveToStorage(key, value) {
+    try {
+        localStorage.setItem(key, value);
+    } catch (error) {
+        console.warn(`Failed to save to localStorage: ${error.message}`);
     }
-    return null;
+}
+
+function getFromStorage(key) {
+    try {
+        return localStorage.getItem(key);
+    } catch (error) {
+        console.warn(`Failed to read from localStorage: ${error.message}`);
+        return null;
+    }
+}
+
+// Migration function for backward compatibility
+function migrateCookiesToLocalStorage() {
+    // Helper function to get cookie (temporary for migration)
+    function getCookie(name) {
+        const nameEQ = name + "=";
+        const ca = document.cookie.split(';');
+        for (let i = 0; i < ca.length; i++) {
+            let c = ca[i];
+            while (c.charAt(0) === ' ') c = c.substring(1, c.length);
+            if (c.indexOf(nameEQ) === 0) return c.substring(nameEQ.length, c.length);
+        }
+        return null;
+    }
+
+    // Check if we have old cookie data but no localStorage data
+    if (!getFromStorage('selectedClubs') && getCookie('selectedClubs')) {
+        console.log('Migrating cookie data to localStorage...');
+        saveToStorage('selectedClubs', getCookie('selectedClubs'));
+        saveToStorage('currentView', getCookie('currentView') || 'list');
+        saveToStorage('clubColors', getCookie('clubColors') || '[]');
+        saveToStorage('hasSeenOnboarding', getCookie('hasSeenOnboarding') || 'false');
+        console.log('Migration completed');
+    }
 }
 
 // Critical error handler
@@ -1091,7 +1119,7 @@ function showOnboarding() {
 
 function dismissOnboarding() {
     onboardingBanner.classList.add('hidden');
-    setCookie('hasSeenOnboarding', 'true', 365);
+    saveToStorage('hasSeenOnboarding', 'true');
 }
 
 // Utility Functions
