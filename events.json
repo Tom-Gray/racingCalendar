@@ -1,41 +1,5 @@
 [
   {
-    "eventName": "Thursday Motorpacing [with Intro Session]",
-    "eventDate": "2025-08-14T00:00:00Z",
-    "clubName": "Brunswick Cycling Club",
-    "eventUrl": "https://entryboss.cc/races/25044"
-  },
-  {
-    "eventName": "EPIC GATES",
-    "eventDate": "2025-08-14T00:00:00Z",
-    "clubName": "Park Orchards BMX Club",
-    "eventUrl": "https://entryboss.cc/races/26628"
-  },
-  {
-    "eventName": "EASTFIELD vs LILYDALE – BMX AUTUMN-WINTER SERIES  - SERIES ENTRY",
-    "eventDate": "2025-08-14T00:00:00Z",
-    "clubName": "Maroondah BMX Club",
-    "eventUrl": "https://entryboss.cc/races/25509"
-  },
-  {
-    "eventName": "Coaching with Bodi",
-    "eventDate": "2025-08-14T00:00:00Z",
-    "clubName": "Maroondah BMX Club",
-    "eventUrl": "https://entryboss.cc/races/26733"
-  },
-  {
-    "eventName": "Winter Thursday Night Gates 14 August",
-    "eventDate": "2025-08-14T00:00:00Z",
-    "clubName": "Knox BMX - Coaching \u0026 Gates",
-    "eventUrl": "https://entryboss.cc/races/26711"
-  },
-  {
-    "eventName": "Thursday Pace and Race",
-    "eventDate": "2025-08-14T00:00:00Z",
-    "clubName": "Preston Cycling Club",
-    "eventUrl": "https://entryboss.cc/races/26706"
-  },
-  {
     "eventName": "NBMX Stinger Series Round 9",
     "eventDate": "2025-08-15T00:00:00Z",
     "clubName": "Northern BMX",
@@ -46,42 +10,6 @@
     "eventDate": "2025-08-15T00:00:00Z",
     "clubName": "Knox BMX - Racing",
     "eventUrl": "https://entryboss.cc/races/26712"
-  },
-  {
-    "eventName": "CCC \u0026 VETS Combined Winter Series - Race 10",
-    "eventDate": "2025-08-16T00:00:00Z",
-    "clubName": "Colac Cycling Club",
-    "eventUrl": "https://entryboss.cc/races/26683"
-  },
-  {
-    "eventName": "BOTW 2025 - Round 1: Bendigo",
-    "eventDate": "2025-08-16T00:00:00Z",
-    "clubName": "Western Region BMX",
-    "eventUrl": "https://entryboss.cc/races/26260"
-  },
-  {
-    "eventName": "Saturday Gates",
-    "eventDate": "2025-08-16T00:00:00Z",
-    "clubName": "Frankston BMX",
-    "eventUrl": "https://entryboss.cc/races/26751"
-  },
-  {
-    "eventName": "BOTW 2025 Series Entry",
-    "eventDate": "2025-08-16T00:00:00Z",
-    "clubName": "Western Region BMX",
-    "eventUrl": "https://entryboss.cc/races/25417"
-  },
-  {
-    "eventName": "Cupra Brighton Winter Criterium Series @ Casey Fields",
-    "eventDate": "2025-08-16T00:00:00Z",
-    "clubName": "Blackburn Cycling Club",
-    "eventUrl": "https://entryboss.cc/races/25642"
-  },
-  {
-    "eventName": "BOTW 2024 (Series Entry)",
-    "eventDate": "2025-08-16T00:00:00Z",
-    "clubName": "Western Region BMX",
-    "eventUrl": "https://entryboss.cc/races/21186"
   },
   {
     "eventName": "R22 VU Criterium",
@@ -96,16 +24,16 @@
     "eventUrl": "https://entryboss.cc/races/25274"
   },
   {
-    "eventName": "2023 Best of the West Series - SERIES ENTRY (All 4 Rounds)",
+    "eventName": "BOTW 2024 (Series Entry)",
     "eventDate": "2025-08-16T00:00:00Z",
     "clubName": "Western Region BMX",
-    "eventUrl": "https://entryboss.cc/races/16678"
+    "eventUrl": "https://entryboss.cc/races/21186"
   },
   {
-    "eventName": "Winter Track Series 2025 Round 3",
+    "eventName": "CCC \u0026 VETS Combined Winter Series - Race 10",
     "eventDate": "2025-08-16T00:00:00Z",
-    "clubName": "AusCycling (Victoria)",
-    "eventUrl": "https://entryboss.cc/races/25404"
+    "clubName": "Colac Cycling Club",
+    "eventUrl": "https://entryboss.cc/races/26683"
   },
   {
     "eventName": "Avenel Rd Out \u0026 Back Twice Handicap",
@@ -114,16 +42,52 @@
     "eventUrl": "https://entryboss.cc/races/26000"
   },
   {
-    "eventName": "Tour de Metro Race 3 - Criterium - Graded scratch races @ National Boulevard",
-    "eventDate": "2025-08-17T00:00:00Z",
-    "clubName": "Northern Cycling",
-    "eventUrl": "https://entryboss.cc/races/26227"
+    "eventName": "2023 Best of the West Series - SERIES ENTRY (All 4 Rounds)",
+    "eventDate": "2025-08-16T00:00:00Z",
+    "clubName": "Western Region BMX",
+    "eventUrl": "https://entryboss.cc/races/16678"
+  },
+  {
+    "eventName": "Saturday Gates",
+    "eventDate": "2025-08-16T00:00:00Z",
+    "clubName": "Frankston BMX",
+    "eventUrl": "https://entryboss.cc/races/26751"
+  },
+  {
+    "eventName": "BOTW 2025 Series Entry",
+    "eventDate": "2025-08-16T00:00:00Z",
+    "clubName": "Western Region BMX",
+    "eventUrl": "https://entryboss.cc/races/25417"
+  },
+  {
+    "eventName": "BOTW 2025 - Round 1: Bendigo",
+    "eventDate": "2025-08-16T00:00:00Z",
+    "clubName": "Western Region BMX",
+    "eventUrl": "https://entryboss.cc/races/26260"
+  },
+  {
+    "eventName": "Cancelled - Cupra Brighton Winter Criterium Series @ Casey Fields",
+    "eventDate": "2025-08-16T00:00:00Z",
+    "clubName": "Blackburn Cycling Club",
+    "eventUrl": "https://entryboss.cc/races/25642"
   },
   {
     "eventName": "Tour de Metro Race 3 - Criterium - Graded scratch races @ National Boulevard",
     "eventDate": "2025-08-17T00:00:00Z",
     "clubName": "Eastern Cycling Club",
     "eventUrl": "https://entryboss.cc/races/26227"
+  },
+  {
+    "eventName": "Mildura - Series 3 Round 4 - Flats, Flannies and Sidehacks",
+    "eventDate": "2025-08-17T00:00:00Z",
+    "clubName": "Mildura BMX Club",
+    "eventUrl": "https://entryboss.cc/races/26523"
+  },
+  {
+    "eventName": "BOTW 2025 - Round 2: Ballarat",
+    "eventDate": "2025-08-17T00:00:00Z",
+    "clubName": "Western Region BMX",
+    "eventUrl": "https://entryboss.cc/races/26348"
   },
   {
     "eventName": "Dirt Squirts 2025 Winter Race 1",
@@ -138,16 +102,10 @@
     "eventUrl": "https://entryboss.cc/races/26342"
   },
   {
-    "eventName": "Mildura - Series 3 Round 4 - Flats, Flannies and Sidehacks",
+    "eventName": "Tour de Metro Race 3 - Criterium - Graded scratch races @ National Boulevard",
     "eventDate": "2025-08-17T00:00:00Z",
-    "clubName": "Mildura BMX Club",
-    "eventUrl": "https://entryboss.cc/races/26523"
-  },
-  {
-    "eventName": "BOTW 2025 - Round 2: Ballarat",
-    "eventDate": "2025-08-17T00:00:00Z",
-    "clubName": "Western Region BMX",
-    "eventUrl": "https://entryboss.cc/races/26348"
+    "clubName": "Northern Cycling",
+    "eventUrl": "https://entryboss.cc/races/26227"
   },
   {
     "eventName": "Tuesday Night Track Racing - Winter Championship - at DISC",
@@ -204,22 +162,10 @@
     "eventUrl": "https://entryboss.cc/races/26137"
   },
   {
-    "eventName": "2025 Victorian Schools MTB Series - Round 4 You Yangs",
+    "eventName": "BBN Velo-Pro Winter Sprint/Keirin Series 2025",
     "eventDate": "2025-08-23T00:00:00Z",
-    "clubName": "Geelong Mountain Bike Club",
-    "eventUrl": "https://entryboss.cc/races/25166"
-  },
-  {
-    "eventName": "BOTW 2025 - Round 3: Sunbury",
-    "eventDate": "2025-08-23T00:00:00Z",
-    "clubName": "Western Region BMX",
-    "eventUrl": "https://entryboss.cc/races/26349"
-  },
-  {
-    "eventName": "2025 Victorian Schools MTB Series - Round 4 You Yangs",
-    "eventDate": "2025-08-23T00:00:00Z",
-    "clubName": "AusCycling (Victoria)",
-    "eventUrl": "https://entryboss.cc/races/25166"
+    "clubName": "Blackburn Cycling Club",
+    "eventUrl": "https://entryboss.cc/races/26539"
   },
   {
     "eventName": "Criterium - Graded scratch races - METEC @ 4pm",
@@ -228,10 +174,16 @@
     "eventUrl": "https://entryboss.cc/races/26197"
   },
   {
-    "eventName": "BBN Velo-Pro Winter Sprint/Keirin Series 2025",
+    "eventName": "2025 Victorian Schools MTB Series - Round 4 You Yangs",
     "eventDate": "2025-08-23T00:00:00Z",
-    "clubName": "Blackburn Cycling Club",
-    "eventUrl": "https://entryboss.cc/races/26539"
+    "clubName": "Geelong Mountain Bike Club",
+    "eventUrl": "https://entryboss.cc/races/25166"
+  },
+  {
+    "eventName": "2025 Victorian Schools MTB Series - Round 4 You Yangs",
+    "eventDate": "2025-08-23T00:00:00Z",
+    "clubName": "AusCycling (Victoria)",
+    "eventUrl": "https://entryboss.cc/races/25166"
   },
   {
     "eventName": "Bluetop/ Return Handicap",
@@ -246,28 +198,28 @@
     "eventUrl": "https://entryboss.cc/races/26775"
   },
   {
-    "eventName": "2025 Rob Vernon Memorial Handicap",
-    "eventDate": "2025-08-24T00:00:00Z",
-    "clubName": "AusCycling (Victoria)",
-    "eventUrl": "https://entryboss.cc/races/26054"
-  },
-  {
-    "eventName": "Criterium - Graded scratch races",
-    "eventDate": "2025-08-24T00:00:00Z",
-    "clubName": "Northern Cycling",
-    "eventUrl": "https://entryboss.cc/races/26214"
-  },
-  {
-    "eventName": "Mildura - Series 3 Round 5",
-    "eventDate": "2025-08-24T00:00:00Z",
-    "clubName": "Mildura BMX Club",
-    "eventUrl": "https://entryboss.cc/races/26524"
+    "eventName": "BOTW 2025 - Round 3: Sunbury",
+    "eventDate": "2025-08-23T00:00:00Z",
+    "clubName": "Western Region BMX",
+    "eventUrl": "https://entryboss.cc/races/26349"
   },
   {
     "eventName": "Winter Junior Clinic",
     "eventDate": "2025-08-24T00:00:00Z",
     "clubName": "Brunswick Cycling Club",
     "eventUrl": "https://entryboss.cc/races/25076"
+  },
+  {
+    "eventName": "2025 Rob Vernon Memorial Handicap",
+    "eventDate": "2025-08-24T00:00:00Z",
+    "clubName": "AusCycling (Victoria)",
+    "eventUrl": "https://entryboss.cc/races/26054"
+  },
+  {
+    "eventName": "Mildura - Series 3 Round 5",
+    "eventDate": "2025-08-24T00:00:00Z",
+    "clubName": "Mildura BMX Club",
+    "eventUrl": "https://entryboss.cc/races/26524"
   },
   {
     "eventName": "GSCC Aggregate Handicap Race - 1 lap + Forest Rd, finish Larcombes Rd B, 41km",
@@ -278,14 +230,20 @@
   {
     "eventName": "2025 Victorian Schools MTB Series - Round 5 Ballarat",
     "eventDate": "2025-08-24T00:00:00Z",
-    "clubName": "AusCycling (Victoria)",
+    "clubName": "Ballarat Sebastopol CC",
     "eventUrl": "https://entryboss.cc/races/25167"
   },
   {
     "eventName": "2025 Victorian Schools MTB Series - Round 5 Ballarat",
     "eventDate": "2025-08-24T00:00:00Z",
-    "clubName": "Ballarat Sebastopol CC",
+    "clubName": "AusCycling (Victoria)",
     "eventUrl": "https://entryboss.cc/races/25167"
+  },
+  {
+    "eventName": "Criterium - Graded scratch races",
+    "eventDate": "2025-08-24T00:00:00Z",
+    "clubName": "Northern Cycling",
+    "eventUrl": "https://entryboss.cc/races/26214"
   },
   {
     "eventName": "Tuesday Night Track - Winter Championship - Sprints at DISC",
@@ -300,16 +258,16 @@
     "eventUrl": "https://entryboss.cc/races/25741"
   },
   {
-    "eventName": "NBMX Gates 27/08/25",
-    "eventDate": "2025-08-27T00:00:00Z",
-    "clubName": "Northern BMX",
-    "eventUrl": "https://entryboss.cc/races/26513"
-  },
-  {
     "eventName": "Wednesday Gates",
     "eventDate": "2025-08-27T00:00:00Z",
     "clubName": "Frankston BMX",
     "eventUrl": "https://entryboss.cc/races/26580"
+  },
+  {
+    "eventName": "NBMX Gates 27/08/25",
+    "eventDate": "2025-08-27T00:00:00Z",
+    "clubName": "Northern BMX",
+    "eventUrl": "https://entryboss.cc/races/26513"
   },
   {
     "eventName": "GSCC WEDNESDAY SUPERVETS - Handicap",
@@ -330,16 +288,10 @@
     "eventUrl": "https://entryboss.cc/races/25046"
   },
   {
-    "eventName": "GMBC 3 Hours at the Stockies Round 5 (Sat 30th August)",
+    "eventName": "GVMTB CLUB - SHUTTLE DAY",
     "eventDate": "2025-08-30T00:00:00Z",
-    "clubName": "Geelong Mountain Bike Club",
-    "eventUrl": "https://entryboss.cc/races/26139"
-  },
-  {
-    "eventName": "THE BASH round 2",
-    "eventDate": "2025-08-30T00:00:00Z",
-    "clubName": "Geelong Cycling Club",
-    "eventUrl": "https://entryboss.cc/races/26774"
+    "clubName": "Goulburn Valley MTB Club",
+    "eventUrl": "https://entryboss.cc/races/26772"
   },
   {
     "eventName": "Kermesse - Graded scratch races @ Yarra Glen",
@@ -348,16 +300,16 @@
     "eventUrl": "https://entryboss.cc/races/26198"
   },
   {
-    "eventName": "Hornet Havoc 2025",
+    "eventName": "THE BASH round 2",
     "eventDate": "2025-08-30T00:00:00Z",
-    "clubName": "Northern BMX",
-    "eventUrl": "https://entryboss.cc/races/26477"
+    "clubName": "Geelong Cycling Club",
+    "eventUrl": "https://entryboss.cc/races/26774"
   },
   {
-    "eventName": "GVMTB CLUB - SHUTTLE DAY",
+    "eventName": "GMBC 3 Hours at the Stockies Round 5 (Sat 30th August)",
     "eventDate": "2025-08-30T00:00:00Z",
-    "clubName": "Goulburn Valley MTB Club",
-    "eventUrl": "https://entryboss.cc/races/26772"
+    "clubName": "Geelong Mountain Bike Club",
+    "eventUrl": "https://entryboss.cc/races/26139"
   },
   {
     "eventName": "Harry Salmon Memorial Race 2025",
@@ -366,16 +318,22 @@
     "eventUrl": "https://entryboss.cc/races/26773"
   },
   {
-    "eventName": "Chookas Wheelrace Schoolhouse Hill [5 laps]",
-    "eventDate": "2025-08-31T00:00:00Z",
-    "clubName": "Northern Cycling",
-    "eventUrl": "https://entryboss.cc/races/26231"
+    "eventName": "Hornet Havoc 2025",
+    "eventDate": "2025-08-30T00:00:00Z",
+    "clubName": "Northern BMX",
+    "eventUrl": "https://entryboss.cc/races/26477"
   },
   {
-    "eventName": "Final Round - Round 6! Eastfield VS Lilydale",
+    "eventName": "GSCC Aggregate Handicap Race - 3, Laps + Nobles Rd, finish Larcombes Rd B - 49km",
     "eventDate": "2025-08-31T00:00:00Z",
-    "clubName": "Maroondah BMX Club",
-    "eventUrl": "https://entryboss.cc/races/26732"
+    "clubName": "Geelong \u0026 Surfcoast Cycling Club",
+    "eventUrl": "https://entryboss.cc/races/26343"
+  },
+  {
+    "eventName": "MO 2025 Session #5",
+    "eventDate": "2025-08-31T00:00:00Z",
+    "clubName": "Momnium",
+    "eventUrl": "https://entryboss.cc/races/24819"
   },
   {
     "eventName": "Ponkeen Creek Rd Out \u0026 Back Gravel Race",
@@ -390,16 +348,22 @@
     "eventUrl": "https://entryboss.cc/races/26141"
   },
   {
-    "eventName": "GSCC Aggregate Handicap Race - 3, Laps + Nobles Rd, finish Larcombes Rd B - 49km",
+    "eventName": "Chookas Wheelrace Schoolhouse Hill [5 laps]",
     "eventDate": "2025-08-31T00:00:00Z",
-    "clubName": "Geelong \u0026 Surfcoast Cycling Club",
-    "eventUrl": "https://entryboss.cc/races/26343"
+    "clubName": "Northern Cycling",
+    "eventUrl": "https://entryboss.cc/races/26231"
   },
   {
-    "eventName": "MO 2025 Session #5",
+    "eventName": "Final Round - Round 6! Eastfield VS Lilydale",
     "eventDate": "2025-08-31T00:00:00Z",
-    "clubName": "Momnium",
-    "eventUrl": "https://entryboss.cc/races/24819"
+    "clubName": "Maroondah BMX Club",
+    "eventUrl": "https://entryboss.cc/races/26732"
+  },
+  {
+    "eventName": "EASTFIELD vs LILYDALE – BMX AUTUMN-WINTER SERIES  - SERIES ENTRY",
+    "eventDate": "2025-08-31T00:00:00Z",
+    "clubName": "Maroondah BMX Club",
+    "eventUrl": "https://entryboss.cc/races/25509"
   },
   {
     "eventName": "Mildura - Series 3 Round 6",
@@ -450,6 +414,12 @@
     "eventUrl": "https://entryboss.cc/races/26138"
   },
   {
+    "eventName": "Northwood Rd Out \u0026 Back Handicap",
+    "eventDate": "2025-09-06T00:00:00Z",
+    "clubName": "Seymour Broadford Cycling Club",
+    "eventUrl": "https://entryboss.cc/races/25996"
+  },
+  {
     "eventName": "Criterium - Graded scratch races @ Casey",
     "eventDate": "2025-09-06T00:00:00Z",
     "clubName": "Eastern Cycling Club",
@@ -462,10 +432,10 @@
     "eventUrl": "https://entryboss.cc/races/26350"
   },
   {
-    "eventName": "Northwood Rd Out \u0026 Back Handicap",
-    "eventDate": "2025-09-06T00:00:00Z",
-    "clubName": "Seymour Broadford Cycling Club",
-    "eventUrl": "https://entryboss.cc/races/25996"
+    "eventName": "Mildura - Series 3 Round 7",
+    "eventDate": "2025-09-07T00:00:00Z",
+    "clubName": "Mildura BMX Club",
+    "eventUrl": "https://entryboss.cc/races/26526"
   },
   {
     "eventName": "BOTW 2025 - Round 5: Geelong",
@@ -478,12 +448,6 @@
     "eventDate": "2025-09-07T00:00:00Z",
     "clubName": "Northern Cycling",
     "eventUrl": "https://entryboss.cc/races/26230"
-  },
-  {
-    "eventName": "Mildura - Series 3 Round 7",
-    "eventDate": "2025-09-07T00:00:00Z",
-    "clubName": "Mildura BMX Club",
-    "eventUrl": "https://entryboss.cc/races/26526"
   },
   {
     "eventName": "Gate Practice",
@@ -516,22 +480,34 @@
     "eventUrl": "https://entryboss.cc/races/25048"
   },
   {
-    "eventName": "NBMX Stinger Series Round 10",
-    "eventDate": "2025-09-12T00:00:00Z",
-    "clubName": "Northern BMX",
-    "eventUrl": "https://entryboss.cc/races/24133"
-  },
-  {
     "eventName": "NBMX Father's Day Unclipped Classic",
     "eventDate": "2025-09-12T00:00:00Z",
     "clubName": "Northern BMX",
     "eventUrl": "https://entryboss.cc/races/24150"
   },
   {
+    "eventName": "NBMX Stinger Series Round 10",
+    "eventDate": "2025-09-12T00:00:00Z",
+    "clubName": "Northern BMX",
+    "eventUrl": "https://entryboss.cc/races/24133"
+  },
+  {
+    "eventName": "Park Orchards Twilight Clubby #7",
+    "eventDate": "2025-09-13T00:00:00Z",
+    "clubName": "Park Orchards BMX Club",
+    "eventUrl": "https://entryboss.cc/races/26645"
+  },
+  {
     "eventName": "Longwood Rd Out \u0026 Back Handicap",
     "eventDate": "2025-09-13T00:00:00Z",
     "clubName": "Seymour Broadford Cycling Club",
     "eventUrl": "https://entryboss.cc/races/25997"
+  },
+  {
+    "eventName": "Cupra Brighton Winter Criterium Series @ Casey Fields",
+    "eventDate": "2025-09-13T00:00:00Z",
+    "clubName": "Blackburn Cycling Club",
+    "eventUrl": "https://entryboss.cc/races/25643"
   },
   {
     "eventName": "Criterium - Graded scratch races @ The Loop",
@@ -546,34 +522,10 @@
     "eventUrl": "https://entryboss.cc/races/26750"
   },
   {
-    "eventName": "Park Orchards Twilight Clubby #7",
-    "eventDate": "2025-09-13T00:00:00Z",
-    "clubName": "Park Orchards BMX Club",
-    "eventUrl": "https://entryboss.cc/races/26645"
-  },
-  {
-    "eventName": "Cupra Brighton Winter Criterium Series @ Casey Fields",
-    "eventDate": "2025-09-13T00:00:00Z",
-    "clubName": "Blackburn Cycling Club",
-    "eventUrl": "https://entryboss.cc/races/25643"
-  },
-  {
-    "eventName": "2025 Victorian Time Trial Series (VTTS) Round 5 | 1 in 20",
-    "eventDate": "2025-09-14T00:00:00Z",
-    "clubName": "AusCycling (Victoria)",
-    "eventUrl": "https://entryboss.cc/races/26769"
-  },
-  {
     "eventName": "Mildura - Series 3 Round 8",
     "eventDate": "2025-09-14T00:00:00Z",
     "clubName": "Mildura BMX Club",
     "eventUrl": "https://entryboss.cc/races/26527"
-  },
-  {
-    "eventName": "Dirt Squirts 2025 Winter Race 3",
-    "eventDate": "2025-09-14T00:00:00Z",
-    "clubName": "Geelong Mountain Bike Club",
-    "eventUrl": "https://entryboss.cc/races/26142"
   },
   {
     "eventName": "Criterium - Graded scratch races",
@@ -582,22 +534,34 @@
     "eventUrl": "https://entryboss.cc/races/26215"
   },
   {
+    "eventName": "2025 Victorian Time Trial Series (VTTS) Round 5 | 1 in 20",
+    "eventDate": "2025-09-14T00:00:00Z",
+    "clubName": "AusCycling (Victoria)",
+    "eventUrl": "https://entryboss.cc/races/26769"
+  },
+  {
     "eventName": "GSCC Aggregate Handicap Race - Forest Rd + 2 laps, finish Larcombes Rd A - 57km",
     "eventDate": "2025-09-14T00:00:00Z",
     "clubName": "Geelong \u0026 Surfcoast Cycling Club",
     "eventUrl": "https://entryboss.cc/races/26345"
   },
   {
-    "eventName": "Gate Practice",
-    "eventDate": "2025-09-16T00:00:00Z",
-    "clubName": "Sunbury BMX Club",
-    "eventUrl": "https://entryboss.cc/races/25744"
+    "eventName": "Dirt Squirts 2025 Winter Race 3",
+    "eventDate": "2025-09-14T00:00:00Z",
+    "clubName": "Geelong Mountain Bike Club",
+    "eventUrl": "https://entryboss.cc/races/26142"
   },
   {
     "eventName": "Tuesday Night Track Racing - at DISC",
     "eventDate": "2025-09-16T00:00:00Z",
     "clubName": "Brunswick Cycling Club",
     "eventUrl": "https://entryboss.cc/races/25070"
+  },
+  {
+    "eventName": "Gate Practice",
+    "eventDate": "2025-09-16T00:00:00Z",
+    "clubName": "Sunbury BMX Club",
+    "eventUrl": "https://entryboss.cc/races/25744"
   },
   {
     "eventName": "GSCC WEDNESDAY SUPERVETS - Handicap",
@@ -624,28 +588,16 @@
     "eventUrl": "https://entryboss.cc/races/23592"
   },
   {
-    "eventName": "Kermesse - Graded scratch races @ Gruyere",
-    "eventDate": "2025-09-20T00:00:00Z",
-    "clubName": "Eastern Cycling Club",
-    "eventUrl": "https://entryboss.cc/races/26201"
-  },
-  {
     "eventName": "Highlands School/ Return Handicap",
     "eventDate": "2025-09-20T00:00:00Z",
     "clubName": "Seymour Broadford Cycling Club",
     "eventUrl": "https://entryboss.cc/races/25998"
   },
   {
-    "eventName": "GSCC Graded Scratch Race - 4/3 laps",
-    "eventDate": "2025-09-21T00:00:00Z",
-    "clubName": "Geelong \u0026 Surfcoast Cycling Club",
-    "eventUrl": "https://entryboss.cc/races/26346"
-  },
-  {
-    "eventName": "Criterium - Graded scratch races",
-    "eventDate": "2025-09-21T00:00:00Z",
-    "clubName": "Northern Cycling",
-    "eventUrl": "https://entryboss.cc/races/26216"
+    "eventName": "Kermesse - Graded scratch races @ Gruyere",
+    "eventDate": "2025-09-20T00:00:00Z",
+    "clubName": "Eastern Cycling Club",
+    "eventUrl": "https://entryboss.cc/races/26201"
   },
   {
     "eventName": "WCC Melbourne Metro Cyclo-Cross",
@@ -654,16 +606,28 @@
     "eventUrl": "https://entryboss.cc/races/26157"
   },
   {
-    "eventName": "Tuesday Night Track - Sprints at DISC",
-    "eventDate": "2025-09-23T00:00:00Z",
-    "clubName": "Brunswick Cycling Club",
-    "eventUrl": "https://entryboss.cc/races/25071"
+    "eventName": "Criterium - Graded scratch races",
+    "eventDate": "2025-09-21T00:00:00Z",
+    "clubName": "Northern Cycling",
+    "eventUrl": "https://entryboss.cc/races/26216"
+  },
+  {
+    "eventName": "GSCC Graded Scratch Race - 4/3 laps",
+    "eventDate": "2025-09-21T00:00:00Z",
+    "clubName": "Geelong \u0026 Surfcoast Cycling Club",
+    "eventUrl": "https://entryboss.cc/races/26346"
   },
   {
     "eventName": "Gate Practice",
     "eventDate": "2025-09-23T00:00:00Z",
     "clubName": "Sunbury BMX Club",
     "eventUrl": "https://entryboss.cc/races/25745"
+  },
+  {
+    "eventName": "Tuesday Night Track - Sprints at DISC",
+    "eventDate": "2025-09-23T00:00:00Z",
+    "clubName": "Brunswick Cycling Club",
+    "eventUrl": "https://entryboss.cc/races/25071"
   },
   {
     "eventName": "GSCC WEDNESDAY SUPERVETS - Handicap",
@@ -690,22 +654,28 @@
     "eventUrl": "https://entryboss.cc/races/26368"
   },
   {
-    "eventName": "Criterium - Graded scratch races - METEC",
-    "eventDate": "2025-09-27T00:00:00Z",
-    "clubName": "Eastern Cycling Club",
-    "eventUrl": "https://entryboss.cc/races/26755"
-  },
-  {
     "eventName": "Timed Gate Start Session #1",
     "eventDate": "2025-09-27T00:00:00Z",
     "clubName": "AusCycling (Victoria)",
     "eventUrl": "https://entryboss.cc/races/25397"
   },
   {
+    "eventName": "Criterium - Graded scratch races - METEC",
+    "eventDate": "2025-09-27T00:00:00Z",
+    "clubName": "Eastern Cycling Club",
+    "eventUrl": "https://entryboss.cc/races/26755"
+  },
+  {
     "eventName": "MO 2024 Session #6",
     "eventDate": "2025-09-28T00:00:00Z",
     "clubName": "Momnium",
     "eventUrl": "https://entryboss.cc/races/24820"
+  },
+  {
+    "eventName": "Ponkeen Creek Rd Out \u0026 Back Gravel Race",
+    "eventDate": "2025-09-28T00:00:00Z",
+    "clubName": "Seymour Broadford Cycling Club",
+    "eventUrl": "https://entryboss.cc/races/25999"
   },
   {
     "eventName": "Gate Opening Systems / Mary and Harry Tams Handicap",
@@ -718,12 +688,6 @@
     "eventDate": "2025-09-28T00:00:00Z",
     "clubName": "Brunswick Cycling Club",
     "eventUrl": "https://entryboss.cc/races/25077"
-  },
-  {
-    "eventName": "Ponkeen Creek Rd Out \u0026 Back Gravel Race",
-    "eventDate": "2025-09-28T00:00:00Z",
-    "clubName": "Seymour Broadford Cycling Club",
-    "eventUrl": "https://entryboss.cc/races/25999"
   },
   {
     "eventName": "Tuesday Night Track Racing - at DISC",
@@ -744,16 +708,16 @@
     "eventUrl": "https://entryboss.cc/races/26635"
   },
   {
-    "eventName": "Club Championship - Round 13",
-    "eventDate": "2025-10-04T00:00:00Z",
-    "clubName": "Sunbury BMX Club",
-    "eventUrl": "https://entryboss.cc/races/25756"
-  },
-  {
     "eventName": "Criterium - Graded scratch races @ Casey",
     "eventDate": "2025-10-04T00:00:00Z",
     "clubName": "Eastern Cycling Club",
     "eventUrl": "https://entryboss.cc/races/26756"
+  },
+  {
+    "eventName": "Club Championship - Round 13",
+    "eventDate": "2025-10-04T00:00:00Z",
+    "clubName": "Sunbury BMX Club",
+    "eventUrl": "https://entryboss.cc/races/25756"
   },
   {
     "eventName": "Northern Cycling Club Championship, Age Championship and Secret Handicap [mass start]",
@@ -768,16 +732,16 @@
     "eventUrl": "https://entryboss.cc/races/26366"
   },
   {
-    "eventName": "CCW Summer Series GSR @ METEC Round 1",
-    "eventDate": "2025-10-07T00:00:00Z",
-    "clubName": "Eastern Cycling Club",
-    "eventUrl": "https://entryboss.cc/races/26406"
-  },
-  {
     "eventName": "Gate Practice",
     "eventDate": "2025-10-07T00:00:00Z",
     "clubName": "Sunbury BMX Club",
     "eventUrl": "https://entryboss.cc/races/25747"
+  },
+  {
+    "eventName": "CCW Summer Series GSR @ METEC Round 1",
+    "eventDate": "2025-10-07T00:00:00Z",
+    "clubName": "Eastern Cycling Club",
+    "eventUrl": "https://entryboss.cc/races/26406"
   },
   {
     "eventName": "EPIC GATES",
@@ -786,10 +750,16 @@
     "eventUrl": "https://entryboss.cc/races/26636"
   },
   {
-    "eventName": "Road Race - Graded scratch races @ Seymour",
+    "eventName": "Road Race - The Seymour 100",
     "eventDate": "2025-10-11T00:00:00Z",
     "clubName": "Eastern Cycling Club",
     "eventUrl": "https://entryboss.cc/races/26757"
+  },
+  {
+    "eventName": "Dirt Squirts 2025 Winter Race 4",
+    "eventDate": "2025-10-12T00:00:00Z",
+    "clubName": "Geelong Mountain Bike Club",
+    "eventUrl": "https://entryboss.cc/races/26143"
   },
   {
     "eventName": "Criterium - Graded scratch races",
@@ -802,12 +772,6 @@
     "eventDate": "2025-10-12T00:00:00Z",
     "clubName": "Geelong \u0026 Surfcoast Cycling Club",
     "eventUrl": "https://entryboss.cc/races/26367"
-  },
-  {
-    "eventName": "Dirt Squirts 2025 Winter Race 4",
-    "eventDate": "2025-10-12T00:00:00Z",
-    "clubName": "Geelong Mountain Bike Club",
-    "eventUrl": "https://entryboss.cc/races/26143"
   },
   {
     "eventName": "CCW Summer Series GSR @ METEC Round 2",
@@ -834,10 +798,10 @@
     "eventUrl": "https://entryboss.cc/races/26021"
   },
   {
-    "eventName": "Park Orchards Twilight Clubby #8",
+    "eventName": "Club Championship - Round 14",
     "eventDate": "2025-10-18T00:00:00Z",
-    "clubName": "Park Orchards BMX Club",
-    "eventUrl": "https://entryboss.cc/races/26646"
+    "clubName": "Sunbury BMX Club",
+    "eventUrl": "https://entryboss.cc/races/25757"
   },
   {
     "eventName": "Criterium - Graded scratch races @ The Loop",
@@ -846,16 +810,10 @@
     "eventUrl": "https://entryboss.cc/races/26758"
   },
   {
-    "eventName": "Club Championship - Round 14",
+    "eventName": "Park Orchards Twilight Clubby #8",
     "eventDate": "2025-10-18T00:00:00Z",
-    "clubName": "Sunbury BMX Club",
-    "eventUrl": "https://entryboss.cc/races/25757"
-  },
-  {
-    "eventName": "GSCC Graded Scratch Race - Forest, + 0/1/2 laps, finish Larcombes A -",
-    "eventDate": "2025-10-19T00:00:00Z",
-    "clubName": "Geelong \u0026 Surfcoast Cycling Club",
-    "eventUrl": "https://entryboss.cc/races/26370"
+    "clubName": "Park Orchards BMX Club",
+    "eventUrl": "https://entryboss.cc/races/26646"
   },
   {
     "eventName": "Criterium - Graded scratch races",
@@ -864,16 +822,22 @@
     "eventUrl": "https://entryboss.cc/races/26218"
   },
   {
-    "eventName": "CCW Summer Series GSR @ METEC Round 3",
-    "eventDate": "2025-10-21T00:00:00Z",
-    "clubName": "Eastern Cycling Club",
-    "eventUrl": "https://entryboss.cc/races/26759"
+    "eventName": "GSCC Graded Scratch Race - Forest, + 0/1/2 laps, finish Larcombes A -",
+    "eventDate": "2025-10-19T00:00:00Z",
+    "clubName": "Geelong \u0026 Surfcoast Cycling Club",
+    "eventUrl": "https://entryboss.cc/races/26370"
   },
   {
     "eventName": "Gate Practice",
     "eventDate": "2025-10-21T00:00:00Z",
     "clubName": "Sunbury BMX Club",
     "eventUrl": "https://entryboss.cc/races/25749"
+  },
+  {
+    "eventName": "CCW Summer Series GSR @ METEC Round 3",
+    "eventDate": "2025-10-21T00:00:00Z",
+    "clubName": "Eastern Cycling Club",
+    "eventUrl": "https://entryboss.cc/races/26759"
   },
   {
     "eventName": "EPIC GATES",
@@ -894,10 +858,10 @@
     "eventUrl": "https://entryboss.cc/races/26781"
   },
   {
-    "eventName": "Winter Junior Clinic",
+    "eventName": "Criterium - Graded scratch races",
     "eventDate": "2025-10-26T00:00:00Z",
-    "clubName": "Brunswick Cycling Club",
-    "eventUrl": "https://entryboss.cc/races/25078"
+    "clubName": "Northern Cycling",
+    "eventUrl": "https://entryboss.cc/races/26219"
   },
   {
     "eventName": "Dirt Squirts 2025 Winter Race 5",
@@ -906,10 +870,10 @@
     "eventUrl": "https://entryboss.cc/races/26144"
   },
   {
-    "eventName": "Criterium - Graded scratch races",
+    "eventName": "Winter Junior Clinic",
     "eventDate": "2025-10-26T00:00:00Z",
-    "clubName": "Northern Cycling",
-    "eventUrl": "https://entryboss.cc/races/26219"
+    "clubName": "Brunswick Cycling Club",
+    "eventUrl": "https://entryboss.cc/races/25078"
   },
   {
     "eventName": "CCW Summer Series GSR @ METEC Round 4",
@@ -948,10 +912,10 @@
     "eventUrl": "https://entryboss.cc/races/26220"
   },
   {
-    "eventName": "Melbourne Cup on Wheels Handicap hosted by SuperVets - 38Kms",
+    "eventName": "CCW Summer Series GSR @ METEC Round 5",
     "eventDate": "2025-11-04T00:00:00Z",
-    "clubName": "Geelong \u0026 Surfcoast Cycling Club",
-    "eventUrl": "https://entryboss.cc/races/26372"
+    "clubName": "Eastern Cycling Club",
+    "eventUrl": "https://entryboss.cc/races/26761"
   },
   {
     "eventName": "Angelo De Francesco Memorial Handicap",
@@ -960,10 +924,10 @@
     "eventUrl": "https://entryboss.cc/races/26233"
   },
   {
-    "eventName": "CCW Summer Series GSR @ METEC Round 5",
+    "eventName": "Melbourne Cup on Wheels Handicap hosted by SuperVets - 38Kms",
     "eventDate": "2025-11-04T00:00:00Z",
-    "clubName": "Eastern Cycling Club",
-    "eventUrl": "https://entryboss.cc/races/26761"
+    "clubName": "Geelong \u0026 Surfcoast Cycling Club",
+    "eventUrl": "https://entryboss.cc/races/26372"
   },
   {
     "eventName": "EPIC GATES",
@@ -972,16 +936,16 @@
     "eventUrl": "https://entryboss.cc/races/26640"
   },
   {
-    "eventName": "Criterium - Graded scratch races",
-    "eventDate": "2025-11-09T00:00:00Z",
-    "clubName": "Northern Cycling",
-    "eventUrl": "https://entryboss.cc/races/26221"
-  },
-  {
     "eventName": "GSCC Aggregate Handicap Race - 4 laps, finish Larcombes Rd A - 49km",
     "eventDate": "2025-11-09T00:00:00Z",
     "clubName": "Geelong \u0026 Surfcoast Cycling Club",
     "eventUrl": "https://entryboss.cc/races/26455"
+  },
+  {
+    "eventName": "Criterium - Graded scratch races",
+    "eventDate": "2025-11-09T00:00:00Z",
+    "clubName": "Northern Cycling",
+    "eventUrl": "https://entryboss.cc/races/26221"
   },
   {
     "eventName": "CCW Summer Series GSR @ METEC Round 6",
@@ -1002,16 +966,16 @@
     "eventUrl": "https://entryboss.cc/races/25759"
   },
   {
-    "eventName": "Cycle House Graded Scratch Race Series Race 1",
-    "eventDate": "2025-11-16T00:00:00Z",
-    "clubName": "Northern Cycling",
-    "eventUrl": "https://entryboss.cc/races/26224"
-  },
-  {
     "eventName": "GSCC Graded Scratch Race - Winchelsea, Kermese (Timed)",
     "eventDate": "2025-11-16T00:00:00Z",
     "clubName": "Geelong \u0026 Surfcoast Cycling Club",
     "eventUrl": "https://entryboss.cc/races/26456"
+  },
+  {
+    "eventName": "Cycle House Graded Scratch Race Series Race 1",
+    "eventDate": "2025-11-16T00:00:00Z",
+    "clubName": "Northern Cycling",
+    "eventUrl": "https://entryboss.cc/races/26224"
   },
   {
     "eventName": "CCW Summer Series GSR @ METEC Round 7",
@@ -1104,28 +1068,28 @@
     "eventUrl": "https://entryboss.cc/races/26232"
   },
   {
-    "eventName": "2025 Tour of Bright (VRS Rd 4) - INDIVIDUAL RIDERS",
-    "eventDate": "2025-12-07T00:00:00Z",
-    "clubName": "AusCycling (Victoria)",
-    "eventUrl": "https://entryboss.cc/races/26168"
-  },
-  {
     "eventName": "2025 Tour of Bright (VRS Rd 4) - REGISTERED TEAM RIDERS",
     "eventDate": "2025-12-07T00:00:00Z",
     "clubName": "AusCycling (Victoria)",
     "eventUrl": "https://entryboss.cc/races/26169"
   },
   {
-    "eventName": "John Windsor Christmas Handicap Race - 38km",
-    "eventDate": "2025-12-14T00:00:00Z",
-    "clubName": "Geelong \u0026 Surfcoast Cycling Club",
-    "eventUrl": "https://entryboss.cc/races/26458"
+    "eventName": "2025 Tour of Bright (VRS Rd 4) - INDIVIDUAL RIDERS",
+    "eventDate": "2025-12-07T00:00:00Z",
+    "clubName": "AusCycling (Victoria)",
+    "eventUrl": "https://entryboss.cc/races/26168"
   },
   {
     "eventName": "Criterium - Graded scratch races",
     "eventDate": "2025-12-14T00:00:00Z",
     "clubName": "Northern Cycling",
     "eventUrl": "https://entryboss.cc/races/26222"
+  },
+  {
+    "eventName": "John Windsor Christmas Handicap Race - 38km",
+    "eventDate": "2025-12-14T00:00:00Z",
+    "clubName": "Geelong \u0026 Surfcoast Cycling Club",
+    "eventUrl": "https://entryboss.cc/races/26458"
   },
   {
     "eventName": "Criterium - Graded scratch races",
