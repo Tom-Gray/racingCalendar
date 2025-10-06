@@ -6,6 +6,8 @@ let clubColors = new Map(); // New: track assigned colors for clubs
 let currentView = 'list';
 let showAllEvents = false;
 let isFirstTime = true;
+let hideBMXEvents = false;
+let hideMTBEvents = false;
 
 // Color palette for clubs
 const CLUB_COLOR_PALETTE = [
@@ -36,6 +38,7 @@ let calendarViewBtn, listViewBtn, clubSearchInput, clubDropdown;
 let selectedClubsContainer, calendarView, listView, calendarGrid, eventsList;
 let loadingElement, errorElement, onboardingBanner;
 let clubListPanel, clubListContainer, twelveWeekViewBtn, allEventsViewBtn;
+let hideBMXCheckbox, hideMTBCheckbox;
 
 // Mobile detection
 function isMobileDevice() {
@@ -88,6 +91,8 @@ function initializeElements() {
     clubListContainer = document.getElementById('club-list-container');
     twelveWeekViewBtn = document.getElementById('twelve-week-view-btn');
     allEventsViewBtn = document.getElementById('all-events-view-btn');
+    hideBMXCheckbox = document.getElementById('hide-bmx-checkbox');
+    hideMTBCheckbox = document.getElementById('hide-mtb-checkbox');
     
     // Check for missing critical elements
     const criticalElements = {
@@ -141,6 +146,23 @@ function setupEventListeners() {
     twelveWeekViewBtn.addEventListener('click', () => setCalendarView('12-weeks'));
     allEventsViewBtn.addEventListener('click', () => setCalendarView('all-events'));
     
+    // BMX and MTB filter checkboxes
+    if (hideBMXCheckbox) {
+        hideBMXCheckbox.addEventListener('change', (e) => {
+            hideBMXEvents = e.target.checked;
+            saveState();
+            updateDisplay();
+        });
+    }
+    
+    if (hideMTBCheckbox) {
+        hideMTBCheckbox.addEventListener('change', (e) => {
+            hideMTBEvents = e.target.checked;
+            saveState();
+            updateDisplay();
+        });
+    }
+    
     // Click outside to close club list - improved detection
     document.addEventListener('mousedown', (e) => {
         if (!clubSearchInput.contains(e.target) && !clubListPanel.contains(e.target)) {
@@ -158,6 +180,8 @@ function loadState() {
     const savedView = getFromStorage('currentView');
     const savedColors = getFromStorage('clubColors');
     const hasSeenOnboarding = getFromStorage('hasSeenOnboarding');
+    const savedHideBMX = getFromStorage('hideBMXEvents');
+    const savedHideMTB = getFromStorage('hideMTBEvents');
     
     if (savedFilters) {
         selectedClubs = new Set(JSON.parse(savedFilters));
@@ -176,6 +200,18 @@ function loadState() {
         clubColors = new Map(colorData);
     }
     
+    // Load BMX and MTB filter preferences
+    hideBMXEvents = savedHideBMX === 'true';
+    hideMTBEvents = savedHideMTB === 'true';
+    
+    // Update checkbox states if elements exist
+    if (hideBMXCheckbox) {
+        hideBMXCheckbox.checked = hideBMXEvents;
+    }
+    if (hideMTBCheckbox) {
+        hideMTBCheckbox.checked = hideMTBEvents;
+    }
+    
     // Ensure all selected clubs have colors assigned
     selectedClubs.forEach(club => assignClubColor(club));
     
@@ -186,6 +222,8 @@ function saveState() {
     saveToStorage('selectedClubs', JSON.stringify([...selectedClubs]));
     saveToStorage('currentView', currentView);
     saveToStorage('clubColors', JSON.stringify([...clubColors]));
+    saveToStorage('hideBMXEvents', hideBMXEvents.toString());
+    saveToStorage('hideMTBEvents', hideMTBEvents.toString());
 }
 
 // Storage utilities
@@ -768,11 +806,29 @@ function updateDisplay() {
 }
 
 function getFilteredEvents() {
-    if (selectedClubs.size === 0) {
-        return events;
+    let filteredEvents = events;
+    
+    // Apply club filter if clubs are selected
+    if (selectedClubs.size > 0) {
+        filteredEvents = filteredEvents.filter(event => selectedClubs.has(event.clubName));
     }
     
-    return events.filter(event => selectedClubs.has(event.clubName));
+    // Apply BMX filter if enabled
+    if (hideBMXEvents) {
+        filteredEvents = filteredEvents.filter(event => 
+            !event.clubName.toLowerCase().includes('bmx')
+        );
+    }
+    
+    // Apply MTB filter if enabled
+    if (hideMTBEvents) {
+        filteredEvents = filteredEvents.filter(event => {
+            const clubNameLower = event.clubName.toLowerCase();
+            return !clubNameLower.includes('mtb') && !clubNameLower.includes('mountain bike');
+        });
+    }
+    
+    return filteredEvents;
 }
 
 // Calendar Rendering
