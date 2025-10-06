@@ -5,12 +5,6 @@ on:
     # Run daily at 6 AM UTC (4 PM AEST)
     - cron: '0 6 * * *'
   workflow_dispatch:
-    inputs:
-      update_clubs:
-        description: 'Also update clubs list'
-        required: false
-        default: true
-        type: boolean
 
 permissions:
   contents: write
@@ -34,7 +28,6 @@ jobs:
       run: go mod tidy
     
     - name: Update clubs (if requested)
-      if: ${{ github.event.inputs.update_clubs == 'true' }}
       run: go run cmd/main.go update-clubs
     
     - name: Update events
