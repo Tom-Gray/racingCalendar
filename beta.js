@@ -536,8 +536,8 @@ function groupEventsByDate(events) {
     const grouped = {};
     
     events.forEach(event => {
-        const date = new Date(event.eventDate);
-        const dateKey = date.toISOString().split('T')[0];
+        // Extract date directly from the ISO string to avoid timezone issues
+        const dateKey = event.eventDate.split('T')[0];
         
         if (!grouped[dateKey]) {
             grouped[dateKey] = [];
@@ -660,7 +660,8 @@ function generateMonthGrid(year, month, events) {
     // Group events by date for quick lookup
     const eventsByDate = {};
     events.forEach(event => {
-        const dateKey = new Date(event.eventDate).toISOString().split('T')[0];
+        // Extract date directly from ISO string to avoid timezone issues
+        const dateKey = event.eventDate.split('T')[0];
         if (!eventsByDate[dateKey]) {
             eventsByDate[dateKey] = [];
         }
@@ -672,7 +673,11 @@ function generateMonthGrid(year, month, events) {
         const date = new Date(startDate);
         date.setDate(date.getDate() + i);
         
-        const dateKey = date.toISOString().split('T')[0];
+        // Create date key in local timezone to match event dates
+        const dateYear = date.getFullYear();
+        const dateMonth = String(date.getMonth() + 1).padStart(2, '0');
+        const dateDay = String(date.getDate()).padStart(2, '0');
+        const dateKey = `${dateYear}-${dateMonth}-${dateDay}`;
         const dayEvents = eventsByDate[dateKey] || [];
         
         grid.push({
@@ -689,6 +694,9 @@ function generateMonthGrid(year, month, events) {
 function createMonthDayCell(dayData) {
     const cell = document.createElement('div');
     cell.className = 'calendar-day-cell';
+    
+    // Store the full date as a data attribute for accurate selection
+    cell.dataset.date = dayData.date.toISOString().split('T')[0];
     
     if (!dayData.isCurrentMonth) {
         cell.classList.add('other-month');
@@ -769,7 +777,8 @@ function generateWeekData(weekStart, events) {
     // Group events by date
     const eventsByDate = {};
     events.forEach(event => {
-        const dateKey = new Date(event.eventDate).toISOString().split('T')[0];
+        // Extract date directly from ISO string to avoid timezone issues
+        const dateKey = event.eventDate.split('T')[0];
         if (!eventsByDate[dateKey]) {
             eventsByDate[dateKey] = [];
         }
@@ -864,6 +873,8 @@ function navigatePeriod(direction) {
 function handleTouchStart(e) {
     state.touchStartX = e.touches[0].clientX;
     state.touchStartY = e.touches[0].clientY;
+    state.touchEndX = e.touches[0].clientX;
+    state.touchEndY = e.touches[0].clientY;
 }
 
 function handleTouchMove(e) {
@@ -875,8 +886,14 @@ function handleTouchEnd(e) {
     const deltaX = state.touchEndX - state.touchStartX;
     const deltaY = state.touchEndY - state.touchStartY;
     
-    // Only process horizontal swipes
-    if (Math.abs(deltaX) > Math.abs(deltaY) && Math.abs(deltaX) > 50) {
+    // Calculate total distance moved
+    const distance = Math.sqrt(deltaX * deltaX + deltaY * deltaY);
+    
+    // Only process as swipe if moved more than 50px and mostly horizontal
+    if (distance > 50 && Math.abs(deltaX) > Math.abs(deltaY) * 2) {
+        // Prevent default to stop click events from firing
+        e.preventDefault();
+        
         if (deltaX > 0) {
             // Swipe right - go to previous period
             navigatePeriod(-1);
@@ -1008,14 +1025,10 @@ function updateCalendarSelection() {
     
     // If there's a selected date, add 'selected' class to that cell
     if (state.selectedDate && state.currentView === 'calendar') {
-        const selectedDate = new Date(state.selectedDate);
         allCells.forEach(cell => {
-            const dayNumber = cell.querySelector('.calendar-day-number');
-            if (dayNumber) {
-                const cellDate = new Date(state.currentDate.getFullYear(), state.currentDate.getMonth(), parseInt(dayNumber.textContent));
-                if (isSameDay(cellDate, selectedDate)) {
-                    cell.classList.add('selected');
-                }
+            // Compare the stored date attribute directly with the selected date
+            if (cell.dataset.date === state.selectedDate) {
+                cell.classList.add('selected');
             }
         });
     }
