@@ -9,15 +9,15 @@ echo "Frontend will be available at: http://localhost:8000"
 echo "Press Ctrl+C to stop the server"
 echo ""
 
-# Check if Node.js is available
-if command -v node &> /dev/null; then
-    echo "✅ Using Node.js development server..."
+# Check if Python 3 is available
+if command -v python3 &> /dev/null; then
+    echo "✅ Using Python 3 development server..."
     echo ""
-    node server.js
+    python3 -m http.server 8000
 else
-    echo "❌ Error: Node.js not found."
+    echo "❌ Error: Python 3 not found."
     echo ""
-    echo "Please install Node.js from: https://nodejs.org/"
+    echo "Please install Python 3."
     echo ""
     exit 1
 fi
