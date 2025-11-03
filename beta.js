@@ -240,8 +240,24 @@ function loadFallbackData() {
 }
 
 function assignClubColors() {
-    state.clubs.forEach((club, index) => {
-        const colorIndex = index % COLOR_PALETTE.length;
+    // Create a shuffled copy of the color palette for better distribution
+    const shuffledColors = [...COLOR_PALETTE];
+    
+    // Simple hash function to generate consistent but distributed indices
+    const hashString = (str) => {
+        let hash = 0;
+        for (let i = 0; i < str.length; i++) {
+            const char = str.charCodeAt(i);
+            hash = ((hash << 5) - hash) + char;
+            hash = hash & hash; // Convert to 32-bit integer
+        }
+        return Math.abs(hash);
+    };
+    
+    state.clubs.forEach((club) => {
+        // Use club name hash to pick a color, ensuring consistent assignment
+        const hash = hashString(club.clubName);
+        const colorIndex = hash % COLOR_PALETTE.length;
         state.clubColors.set(club.clubName, COLOR_PALETTE[colorIndex]);
     });
 }
