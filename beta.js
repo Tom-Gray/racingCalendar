@@ -71,8 +71,6 @@ function initializeElements() {
     // Header elements
     elements.filterButton = document.getElementById('filterButton');
     elements.filterCount = document.getElementById('filterCount');
-    elements.activeFiltersContainer = document.getElementById('activeFiltersContainer');
-    elements.activeFiltersChips = document.getElementById('activeFiltersChips');
     
     // State elements
     elements.loadingState = document.getElementById('loadingState');
@@ -199,6 +197,12 @@ async function loadData() {
         
         // Render club filters
         renderClubFilters();
+        
+        // Update filter button display to show active filters
+        updateSelectedClubsDisplay();
+        
+        // Sync navigation buttons with loaded state
+        switchView(state.currentView);
         
         // Update display
         updateDisplay();
@@ -433,42 +437,18 @@ function renderClubFilters() {
 }
 
 function updateSelectedClubsDisplay() {
-    if (state.selectedClubs.size === 0) {
-        elements.activeFiltersContainer.classList.add('hidden');
+    // Calculate total active filters (clubs + event type filters)
+    const totalFilters = state.selectedClubs.size + 
+                        (state.hideBMXEvents ? 1 : 0) + 
+                        (state.hideMTBEvents ? 1 : 0);
+    
+    if (totalFilters === 0) {
         elements.filterCount.classList.add('hidden');
         return;
     }
     
-    elements.activeFiltersContainer.classList.remove('hidden');
     elements.filterCount.classList.remove('hidden');
-    elements.filterCount.textContent = state.selectedClubs.size;
-    
-    elements.activeFiltersChips.innerHTML = '';
-    
-    state.selectedClubs.forEach(clubName => {
-        const color = state.clubColors.get(clubName);
-        const chip = document.createElement('div');
-        chip.className = 'filter-chip';
-        chip.style.backgroundColor = color;
-        chip.innerHTML = `
-            <span>${clubName}</span>
-            <button data-club="${clubName}">
-                <svg class="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
-                </svg>
-            </button>
-        `;
-        
-        chip.querySelector('button').addEventListener('click', () => {
-            state.selectedClubs.delete(clubName);
-            saveState();
-            updateSelectedClubsDisplay();
-            renderClubFilters();
-            updateDisplay();
-        });
-        
-        elements.activeFiltersChips.appendChild(chip);
-    });
+    elements.filterCount.textContent = totalFilters;
 }
 
 // ===================================
