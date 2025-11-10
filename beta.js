@@ -375,6 +375,7 @@ function filterClubList() {
 // ===================================
 
 function showFilterDrawer() {
+    renderClubFilters();
     elements.filterDrawer.classList.remove('hidden');
     elements.filterDrawer.classList.add('drawer-open');
     elements.filterDrawer.classList.remove('drawer-closing');
@@ -402,7 +403,21 @@ function applyFilters() {
 function renderClubFilters() {
     elements.clubFiltersList.innerHTML = '';
     
-    state.clubs.forEach(club => {
+    // Sort clubs: selected clubs first (alphabetically), then unselected clubs (alphabetically)
+    const sortedClubs = [...state.clubs].sort((a, b) => {
+        const aSelected = state.selectedClubs.has(a.clubName);
+        const bSelected = state.selectedClubs.has(b.clubName);
+        
+        // If selection status differs, selected clubs come first
+        if (aSelected !== bSelected) {
+            return bSelected ? 1 : -1;
+        }
+        
+        // Within same selection status, sort alphabetically
+        return a.clubName.localeCompare(b.clubName);
+    });
+    
+    sortedClubs.forEach(club => {
         const item = document.createElement('div');
         item.className = 'club-filter-item';
         item.dataset.club = club.clubName;
