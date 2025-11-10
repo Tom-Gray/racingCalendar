@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>About - Victorian Cycling Calendar</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#2563eb',
+                        secondary: '#64748b',
+                        accent: '#f59e0b',
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="beta.css">
+    <script src="about-content.js"></script>
+</head>
+<body class="bg-gray-50 overflow-x-hidden mobile-about">
+    
+    <!-- Header -->
+    <header class="fixed top-0 left-0 right-0 bg-white shadow-sm z-40">
+        <div class="px-4 py-3">
+            <div class="flex items-center justify-between gap-2">
+                <div class="flex items-center gap-2">
+                    <a href="beta.html" class="p-2 rounded-lg hover:bg-gray-100 active:bg-gray-200 transition-colors">
+                        <svg class="w-5 h-5 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+                        </svg>
+                    </a>
+                    <div>
+                        <h1 class="text-lg font-bold text-gray-900">About</h1>
+                        <p class="text-xs text-gray-500">VIC Cycling</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content Area -->
+    <main class="pt-16 pb-6">
+        
+        <!-- What is this Section -->
+        <div class="px-4 py-4" data-section="what-is-this">
+            <div class="bg-white rounded-lg border border-gray-200 overflow-hidden">
+                <div class="px-4 py-3 bg-gray-50 border-b border-gray-200">
+                    <h2 class="text-base font-semibold text-gray-900">What is this?</h2>
+                </div>
+                <div class="px-4 py-4 space-y-3" data-content>
+                    <!-- Content loaded by about-content.js -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Statistics Section -->
+        <div class="px-4 py-4">
+            <div class="bg-white rounded-lg border border-gray-200 overflow-hidden">
+                <div class="px-4 py-3 bg-gray-50 border-b border-gray-200">
+                    <h2 class="text-base font-semibold text-gray-900 text-center">Numbers</h2>
+                </div>
+                <div id="statistics-container" class="px-4 py-4">
+                    <!-- Statistics will be loaded here by JavaScript -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Contact Section -->
+        <div class="px-4 py-4" data-section="contact">
+            <div class="bg-white rounded-lg border border-gray-200 overflow-hidden">
+                <div class="px-4 py-3 bg-gray-50 border-b border-gray-200">
+                    <h2 class="text-base font-semibold text-gray-900">Contact</h2>
+                </div>
+                <div class="px-4 py-4 space-y-3" data-content>
+                    <!-- Content loaded by about-content.js -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer Info -->
+        <div class="px-4 py-4">
+            <div class="bg-gray-100 rounded-lg p-4 text-center">
+                <p class="text-xs text-gray-600 mb-2">
+                    Data sourced from <a href="https://entryboss.cc" target="_blank" rel="noopener" class="text-primary hover:underline font-medium">EntryBoss</a>
+                </p>
+                <p class="text-xs text-gray-500">
+                    Events link directly to EntryBoss for registration
+                </p>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- JavaScript -->
+    <script src="about-stats.js"></script>
+    <script data-goatcounter="https://swinkistom.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"></script>
+
+</body>
+</html>

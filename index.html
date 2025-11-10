@@ -4,6 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Victorian Cycling Races - EntryBoss Discovery Tool</title>
+    
+    <!-- Mobile Detection and Redirect -->
+    <script>
+        (function() {
+            // Check if user explicitly wants desktop version
+            const urlParams = new URLSearchParams(window.location.search);
+            const forceDesktop = urlParams.get('desktop') === 'true';
+            
+            // Detect mobile device
+            const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) 
+                           || window.innerWidth < 768;
+            
+            // Redirect mobile users to beta (unless they forced desktop view)
+            if (isMobile && !forceDesktop && !window.location.pathname.includes('beta.html')) {
+                window.location.href = 'beta.html' + window.location.search;
+            }
+        })();
+    </script>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="tailwind-overrides.css">
     <script>
