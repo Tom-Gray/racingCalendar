@@ -18,7 +18,7 @@ const aboutContent = {
 };
 
 // Function to render content into desktop about page
-function renderDesktopAboutContent() {
+function initDesktopAboutContent() {
     // Render "What is this?" section
     const whatIsThisContainer = document.querySelector('.prose.prose-lg');
     if (whatIsThisContainer) {
@@ -40,7 +40,7 @@ function renderDesktopAboutContent() {
 }
 
 // Function to render content into mobile about page
-function renderMobileAboutContent() {
+function initMobileAboutContent() {
     // Render "What is this?" section
     const whatIsThisContainer = document.querySelector('[data-section="what-is-this"]');
     if (whatIsThisContainer) {
@@ -71,13 +71,3 @@ function renderMobileAboutContent() {
         }
     }
 }
-
-// Auto-render on page load
-document.addEventListener('DOMContentLoaded', function() {
-    // Check if this is the mobile or desktop version
-    if (document.body.classList.contains('mobile-about')) {
-        renderMobileAboutContent();
-    } else if (document.querySelector('.prose.prose-lg')) {
-        renderDesktopAboutContent();
-    }
-});

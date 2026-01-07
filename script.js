@@ -50,7 +50,7 @@ function isMobileDevice() {
 /* Removed debug logging functionality */
 
 // Initialize the app with error handling
-document.addEventListener('DOMContentLoaded', function() {
+function initDesktopApp() {
     try {
         initializeElements();
         loadState();
@@ -73,7 +73,7 @@ document.addEventListener('DOMContentLoaded', function() {
         console.error(`Initialization failed: ${error.message}`);
         showCriticalError(error);
     }
-});
+}
 
 function initializeElements() {
     calendarViewBtn = document.getElementById('calendar-view-btn');

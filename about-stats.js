@@ -5,12 +5,7 @@ let statsData = {
     loaded: false
 };
 
-// Initialize statistics when page loads
-document.addEventListener('DOMContentLoaded', function() {
-    loadStatistics();
-});
-
-async function loadStatistics() {
+async function initAboutStats() {
     try {
         showStatsLoading();
         

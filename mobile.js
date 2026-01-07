@@ -36,11 +36,7 @@ const elements = {};
 // Initialization
 // ===================================
 
-document.addEventListener('DOMContentLoaded', () => {
-    initializeApp();
-});
-
-async function initializeApp() {
+async function initMobileApp() {
     console.log('Initializing mobile app...');
     
     // Cache DOM elements

@@ -2,28 +2,11 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <title>Victorian Cycling Races - EntryBoss Discovery Tool</title>
-    
-    <!-- Mobile Detection and Redirect -->
-    <script>
-        (function() {
-            // Check if user explicitly wants desktop version
-            const urlParams = new URLSearchParams(window.location.search);
-            const forceDesktop = urlParams.get('desktop') === 'true';
-            
-            // Detect mobile device
-            const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) 
-                           || window.innerWidth < 768;
-            
-            // Redirect mobile users to mobile (unless they forced desktop view)
-            if (isMobile && !forceDesktop && !window.location.pathname.includes('mobile.html')) {
-                window.location.href = 'mobile.html' + window.location.search;
-            }
-        })();
-    </script>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="tailwind-overrides.css">
     <script>
         tailwind.config = {
             theme: {
@@ -37,132 +20,55 @@
         }
     </script>
 </head>
-<body class="min-h-screen flex flex-col bg-gray-50 font-sans text-gray-800">
-    <header class="bg-gradient-to-br from-primary to-secondary text-white shadow-lg">
-        <div class="max-w-6xl mx-auto px-5 py-8">
-            <div class="flex items-center justify-between">
-                <div>
-                    <h1 class="text-4xl font-bold mb-2">Victorian Cycling Races</h1>
-                    <p class="text-lg opacity-90">Discover upcoming cycling races across Victoria</p>
-                </div>
-                <nav>
-                    <a href="about.html" class="bg-white bg-opacity-20 hover:bg-opacity-30 px-4 py-2 rounded-lg transition-all font-medium">
-                        About
-                    </a>
-                </nav>
-            </div>
-        </div>
-    </header>
+<body>
 
-    <!-- Onboarding Banner -->
-    <div id="onboarding-banner" class="bg-yellow-200 border-l-4 border-yellow-500 hidden animate-pulse text-right">
-        <div class="max-w-6xl mx-auto px-5 py-4">
-            <div class="flex items-center gap-4 relative">
-                <span class="font-semibold text-gray-800">To get started, filter by your favourite clubs!</span>
-                <div class="text-2xl text-orange-500 animate-bounce">↓</div>
-                <button id="dismiss-onboarding" class="ml-auto text-2xl text-gray-600 hover:text-gray-800 px-1">×</button>
-            </div>
-        </div>
-    </div>
+    <div id="root"></div>
 
-    <main class="flex-1 py-8">
-        <div class="max-w-6xl mx-auto px-5">
-            <!-- Controls -->
-            <div class="controls-container bg-white rounded-xl shadow-lg p-6 mb-8">
-                <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-6">
-                    <div class="view-toggle hidden md:flex bg-gray-100 rounded-lg p-1">
-                        <button id="calendar-view-btn" class="px-6 py-2 rounded-md font-medium transition-all text-gray-600 hover:text-gray-800">Calendar View</button>
-                        <button id="list-view-btn" class="px-6 py-2 rounded-md font-medium transition-all bg-primary text-white shadow-sm">List View</button>
-                    </div>
-                    
-                    <div class="flex-1 lg:max-w-md">
-                        <div class="relative">
-                            <input 
-                                type="text" 
-                                id="club-search" 
-                                placeholder="Filter clubs..." 
-                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
-                            >
-                            
-                            <!-- Unified Club List -->
-                            <div id="club-list-panel" class="absolute top-full left-0 right-0 bg-white border border-gray-200 rounded-lg shadow-lg mt-1 hidden z-10 max-h-80 overflow-y-auto">
-                                <div class="p-3 border-b border-gray-100 bg-gray-50">
-                                    <h3 class="font-medium text-gray-700 text-sm">All Clubs</h3>
-                                </div>
-                                <div id="club-list-container" class="p-2">
-                                    <!-- Club list will be populated here -->
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Event Type Filters -->
-                <div class="flex flex-wrap gap-4 mt-6 pt-6 border-t border-gray-200">
-                    <label class="flex items-center gap-2 cursor-pointer">
-                        <input 
-                            type="checkbox" 
-                            id="hide-bmx-checkbox" 
-                            class="w-4 h-4 text-primary bg-gray-100 border-gray-300 rounded focus:ring-2 focus:ring-primary"
-                        >
-                        <span class="text-sm text-gray-700">Hide BMX Events</span>
-                    </label>
-                    
-                    <label class="flex items-center gap-2 cursor-pointer">
-                        <input 
-                            type="checkbox" 
-                            id="hide-mtb-checkbox" 
-                            class="w-4 h-4 text-primary bg-gray-100 border-gray-300 rounded focus:ring-2 focus:ring-primary"
-                        >
-                        <span class="text-sm text-gray-700">Hide MTB Events</span>
-                    </label>
-                </div>
-                
-                <div id="selected-clubs" class="flex flex-wrap gap-2 mt-6"></div>
-            </div>
+    <script>
+        (async function() {
+            const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) || window.innerWidth < 768;
+            const root = document.getElementById('root');
 
-            <!-- Loading State -->
-            <div id="loading" class="text-center py-12 bg-white rounded-xl shadow-lg">
-                <div class="inline-block w-10 h-10 border-4 border-gray-200 border-t-primary rounded-full animate-spin mb-4"></div>
-                <p class="text-gray-600">Loading events...</p>
-            </div>
+            function loadCSS(href) {
+                const link = document.createElement('link');
+                link.rel = 'stylesheet';
+                link.href = href;
+                document.head.appendChild(link);
+            }
 
-            <!-- Error State -->
-            <div id="error" class="text-center py-12 bg-white rounded-xl shadow-lg hidden">
-                <p class="text-red-600">Failed to load events. Please try again later.</p>
-            </div>
+            function loadJS(src) {
+                return new Promise((resolve, reject) => {
+                    const script = document.createElement('script');
+                    script.src = src;
+                    script.async = false;
+                    script.onload = resolve;
+                    script.onerror = reject;
+                    document.body.appendChild(script);
+                });
+            }
 
-            <!-- Calendar View -->
-            <div id="calendar-view" class="bg-white rounded-xl shadow-lg overflow-hidden">
-                <div class="px-6 py-4 bg-gray-50 border-b border-gray-200 flex items-center justify-between">
-                    <h2 id="calendar-title" class="text-xl font-semibold text-gray-800"></h2>
-                    <div class="view-toggle md:flex bg-gray-100 rounded-lg p-1">
-                        <button id="twelve-week-view-btn" class="px-6 py-2 rounded-md font-medium transition-all text-gray-600 hover:text-gray-800">Next 12 Weeks</button>
-                        <button id="all-events-view-btn" class="px-6 py-2 rounded-md font-medium transition-all bg-primary text-white shadow-sm">Full Schedule</button>
-                    </div>
-                </div>
-                <div id="calendar-grid" class="p-4"></div>
-            </div>
+            async function loadContent(url, targetElement) {
+                const response = await fetch(url);
+                const text = await response.text();
+                const parser = new DOMParser();
+                const doc = parser.parseFromString(text, 'text/html');
+                targetElement.innerHTML = doc.body.innerHTML;
+            }
 
-            <!-- List View -->
-            <div id="list-view" class="bg-white rounded-xl shadow-lg overflow-hidden hidden">
-                <div class="px-6 py-4 bg-gray-50 border-b border-gray-200">
-                    <h2 class="text-xl font-semibold text-gray-800">Upcoming Events</h2>
-                </div>
-                <div id="events-list" class="divide-y divide-gray-200"></div>
-            </div>
-        </div>
-    </main>
+            if (isMobile) {
+                loadCSS('mobile.css');
+                await loadContent('mobile_page.html', root);
+                await loadJS('mobile.js');
+                initMobileApp();
 
-    <footer class="bg-gray-800 text-white py-6 mt-8">
-        <div class="max-w-6xl mx-auto px-5 text-center">
-            <p class="mb-2">Data sourced from <a href="https://entryboss.cc" target="_blank" rel="noopener" class="text-primary hover:text-blue-300 transition-colors">EntryBoss</a></p>
-            <p class="text-gray-400">Events link directly to EntryBoss for registration</p>
-        </div>
-    </footer>
-
-    <script src="script.js"></script>
-    <script data-goatcounter="https://swinkistom.goatcounter.com/count"
-        async src="//gc.zgo.at/count.js"></script>
+            } else {
+                loadCSS('tailwind-overrides.css');
+                await loadContent('desktop.html', root);
+                await loadJS('script.js');
+                initDesktopApp();
+            }
+        })();
+    </script>
+    <script data-goatcounter="https://swinkistom.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 </body>
 </html>
