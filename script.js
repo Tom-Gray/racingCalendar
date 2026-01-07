@@ -4,7 +4,6 @@ let clubs = [];
 let selectedClubs = new Set();
 let clubColors = new Map(); // New: track assigned colors for clubs
 let currentView = 'list';
-let showAllEvents = false;
 let isFirstTime = true;
 let hideBMXEvents = false;
 let hideMTBEvents = false;
@@ -37,7 +36,7 @@ const CLUB_COLOR_PALETTE = [
 let calendarViewBtn, listViewBtn, clubSearchInput, clubDropdown;
 let selectedClubsContainer, calendarView, listView, calendarGrid, eventsList;
 let loadingElement, errorElement, onboardingBanner;
-let clubListPanel, clubListContainer, twelveWeekViewBtn, allEventsViewBtn;
+let clubListPanel, clubListContainer;
 let hideBMXCheckbox, hideMTBCheckbox;
 
 // Mobile detection
@@ -55,7 +54,6 @@ function initDesktopApp() {
         initializeElements();
         loadState();
         setupEventListeners();
-        updateCalendarViewButtons();
         loadEvents();
 
         // Responsive view logic on load
@@ -89,8 +87,6 @@ function initializeElements() {
     onboardingBanner = document.getElementById('onboarding-banner');
     clubListPanel = document.getElementById('club-list-panel');
     clubListContainer = document.getElementById('club-list-container');
-    twelveWeekViewBtn = document.getElementById('twelve-week-view-btn');
-    allEventsViewBtn = document.getElementById('all-events-view-btn');
     hideBMXCheckbox = document.getElementById('hide-bmx-checkbox');
     hideMTBCheckbox = document.getElementById('hide-mtb-checkbox');
     
@@ -142,9 +138,6 @@ function setupEventListeners() {
     if (dismissBtn) {
         dismissBtn.addEventListener('click', dismissOnboarding);
     }
-
-    twelveWeekViewBtn.addEventListener('click', () => setCalendarView('12-weeks'));
-    allEventsViewBtn.addEventListener('click', () => setCalendarView('all-events'));
     
     // BMX and MTB filter checkboxes
     if (hideBMXCheckbox) {
@@ -656,26 +649,6 @@ function removeClubFilter(club) {
     saveState();
 }
 
-function setCalendarView(view) {
-    showAllEvents = view === 'all-events';
-    updateDisplay();
-    updateCalendarViewButtons();
-}
-
-function updateCalendarViewButtons() {
-    if (showAllEvents) {
-        allEventsViewBtn.classList.add('bg-primary', 'text-white', 'shadow-sm');
-        allEventsViewBtn.classList.remove('text-gray-600', 'hover:text-gray-800');
-        twelveWeekViewBtn.classList.remove('bg-primary', 'text-white', 'shadow-sm');
-        twelveWeekViewBtn.classList.add('text-gray-600', 'hover:text-gray-800');
-    } else {
-        twelveWeekViewBtn.classList.add('bg-primary', 'text-white', 'shadow-sm');
-        twelveWeekViewBtn.classList.remove('text-gray-600', 'hover:text-gray-800');
-        allEventsViewBtn.classList.remove('bg-primary', 'text-white', 'shadow-sm');
-        allEventsViewBtn.classList.add('text-gray-600', 'hover:text-gray-800');
-    }
-}
-
 // Club List Management
 
 function showClubList() {
@@ -846,22 +819,21 @@ function renderCalendar(events) {
     startDate.setDate(today.getDate() - today.getDay()); // Start of current week
 
     const calendarTitle = document.getElementById('calendar-title');
-    let weeksToShow = 12;
+    
+    // Always show all upcoming events
+    calendarTitle.textContent = 'All Upcoming Events';
+    
+    // Calculate weeks needed to show all events
+    let weeksToShow = 12; // Default minimum
+    const lastEventDate = events.reduce((maxDate, event) => {
+        const eventDate = new Date(event.eventDate);
+        return eventDate > maxDate ? eventDate : maxDate;
+    }, new Date(0));
 
-    if (showAllEvents) {
-        calendarTitle.textContent = 'All Upcoming Events';
-        const lastEventDate = events.reduce((maxDate, event) => {
-            const eventDate = new Date(event.eventDate);
-            return eventDate > maxDate ? eventDate : maxDate;
-        }, new Date(0));
-
-        if (lastEventDate > startDate) {
-            const diffTime = Math.abs(lastEventDate - startDate);
-            const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
-            weeksToShow = Math.ceil(diffDays / 7);
-        }
-    } else {
-        calendarTitle.textContent = 'Next 12 Weeks';
+    if (lastEventDate > startDate) {
+        const diffTime = Math.abs(lastEventDate - startDate);
+        const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+        weeksToShow = Math.ceil(diffDays / 7);
     }
 
     // Group dates by month over calculated weeks
@@ -1223,3 +1195,6 @@ function handleResponsiveViews() {
         switchView(currentView);
     }
 }
+
+// Export initDesktopApp to window
+window.initDesktopApp = initDesktopApp;
