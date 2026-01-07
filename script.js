@@ -926,8 +926,8 @@ function createCalendarDay(date, events) {
     // Add events to day
     dayEvents.slice(0, 3).forEach(event => { // Limit to 3 events per day for space
         const eventElement = document.createElement('div');
-        eventElement.className = 'text-white px-2 py-1 mb-1 rounded text-xs cursor-pointer transition-all hover:shadow-md hover:-translate-y-0.5 border-l-2 border-white/30';
-        eventElement.textContent = truncateText(event.eventName, 20);
+        eventElement.className = 'text-white px-2 py-2 mb-1 rounded text-xs cursor-pointer transition-all hover:shadow-md hover:-translate-y-0.5 border-l-2 border-white/30 whitespace-normal';
+        eventElement.textContent = truncateText(event.eventName, 50);
         eventElement.title = `${event.eventName} - ${event.clubName}`;
         
         // Apply club color if the club is selected
@@ -1000,17 +1000,17 @@ function renderEventsList(events) {
 // Create a day panel containing multiple events
 function createDayPanel(date, events) {
     const dayPanel = document.createElement('div');
-    dayPanel.className = 'day-panel border-b border-gray-200 last:border-b-0';
+    dayPanel.className = 'day-panel bg-white rounded-xl shadow-md overflow-hidden';
     
     // Day header
     const dayHeader = document.createElement('div');
-    dayHeader.className = 'day-header bg-gray-50 px-6 py-4 border-b border-gray-100';
+    dayHeader.className = 'day-header bg-gray-50 px-6 py-4 border-b border-gray-200';
     
     const headerContent = document.createElement('div');
     headerContent.className = 'flex items-center justify-between';
     
     const dateDisplay = document.createElement('h3');
-    dateDisplay.className = 'text-xs font-semibold text-gray-800';
+    dateDisplay.className = 'text-lg font-semibold text-gray-800';
     dateDisplay.textContent = formatDateFull(date);
     
     headerContent.appendChild(dateDisplay);
@@ -1027,10 +1027,10 @@ function createDayPanel(date, events) {
     
     // Events container
     const eventsContainer = document.createElement('div');
-    eventsContainer.className = 'events-container';
+    eventsContainer.className = 'events-container divide-y divide-gray-100';
     
     events.forEach((event, index) => {
-        const eventItem = createDayEventItem(event, index === events.length - 1);
+        const eventItem = createDayEventItem(event);
         eventsContainer.appendChild(eventItem);
     });
     
@@ -1040,9 +1040,9 @@ function createDayPanel(date, events) {
 }
 
 // Create an event item within a day panel (simplified version)
-function createDayEventItem(event, isLast) {
+function createDayEventItem(event) {
     const eventItem = document.createElement('div');
-    eventItem.className = `day-event-item px-6 py-4 hover:bg-gray-50 cursor-pointer transition-colors ${!isLast ? 'border-b border-gray-100' : ''}`;
+    eventItem.className = 'day-event-item px-6 py-5 hover:bg-gray-50 cursor-pointer transition-colors';
     eventItem.addEventListener('click', () => openEvent(event));
     
     const eventContent = document.createElement('div');

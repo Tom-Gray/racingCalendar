@@ -1,12 +1,12 @@
-<header class="bg-gradient-to-br from-primary to-secondary text-white shadow-lg">
-        <div class="max-w-6xl mx-auto px-5 py-8">
+<header class="bg-white border-b border-gray-200">
+        <div class="max-w-6xl mx-auto px-5 py-6">
             <div class="flex items-center justify-between">
                 <div>
-                    <h1 class="text-4xl font-bold mb-2">Victorian Cycling Races</h1>
-                    <p class="text-lg opacity-90">Discover upcoming cycling races across Victoria</p>
+                    <h1 class="text-3xl font-bold text-gray-900">Victorian Cycling Races</h1>
+                    <p class="text-gray-500">Discover upcoming cycling races across Victoria</p>
                 </div>
                 <nav>
-                    <a href="about.html" class="bg-white bg-opacity-20 hover:bg-opacity-30 px-4 py-2 rounded-lg transition-all font-medium">
+                    <a href="about.html" class="bg-gray-100 hover:bg-gray-200 text-gray-700 px-4 py-2 rounded-lg font-medium">
                         About
                     </a>
                 </nav>
@@ -15,12 +15,16 @@
     </header>
 
     <!-- Onboarding Banner -->
-    <div id="onboarding-banner" class="bg-yellow-200 border-l-4 border-yellow-500 hidden animate-pulse text-right">
-        <div class="max-w-6xl mx-auto px-5 py-4">
-            <div class="flex items-center gap-4 relative">
-                <span class="font-semibold text-gray-800">To get started, filter by your favourite clubs!</span>
-                <div class="text-2xl text-orange-500 animate-bounce">↓</div>
-                <button id="dismiss-onboarding" class="ml-auto text-2xl text-gray-600 hover:text-gray-800 px-1">×</button>
+    <div id="onboarding-banner" class="hidden">
+        <div class="max-w-6xl mx-auto px-5 mb-6">
+            <div class="bg-primary/10 border-l-4 border-primary text-primary-dark p-4 rounded-r-lg flex items-center justify-between">
+                <div class="flex items-center">
+                    <svg class="w-6 h-6 mr-3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                      <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd" />
+                    </svg>
+                    <span class="font-semibold">To get started, filter by your favourite clubs!</span>
+                </div>
+                <button id="dismiss-onboarding" class="text-xl hover:text-primary transition-colors p-1">×</button>
             </div>
         </div>
     </div>
@@ -28,24 +32,27 @@
     <main class="flex-1 py-8">
         <div class="max-w-6xl mx-auto px-5">
             <!-- Controls -->
-            <div class="controls-container bg-white rounded-xl shadow-lg p-6 mb-8">
-                <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-6">
-                    <div class="view-toggle hidden md:flex bg-gray-100 rounded-lg p-1">
-                        <button id="calendar-view-btn" class="px-6 py-2 rounded-md font-medium transition-all text-gray-600 hover:text-gray-800">Calendar View</button>
-                        <button id="list-view-btn" class="px-6 py-2 rounded-md font-medium transition-all bg-primary text-white shadow-sm">List View</button>
+            <div class="controls-container bg-white rounded-xl shadow-lg p-8 mb-8">
+                <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-8">
+                    <div class="view-toggle hidden md:flex bg-gray-100 rounded-full p-1">
+                        <button id="calendar-view-btn" class="px-6 py-2 rounded-full font-medium text-sm text-gray-600 hover:text-gray-800 transition-all">Calendar</button>
+                        <button id="list-view-btn" class="px-6 py-2 rounded-full font-medium text-sm bg-primary text-white shadow-md">List</button>
                     </div>
                     
-                    <div class="flex-1 lg:max-w-md">
+                    <div class="flex-1 lg:max-w-lg">
                         <div class="relative">
+                            <svg class="absolute left-4 top-1/2 -translate-y-1/2 h-5 w-5 text-gray-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd" />
+                            </svg>
                             <input 
                                 type="text" 
                                 id="club-search" 
-                                placeholder="Filter clubs..." 
-                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
+                                placeholder="Search for clubs..." 
+                                class="w-full pl-11 pr-4 py-3 border border-gray-300 rounded-full focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
                             >
                             
                             <!-- Unified Club List -->
-                            <div id="club-list-panel" class="absolute top-full left-0 right-0 bg-white border border-gray-200 rounded-lg shadow-lg mt-1 hidden z-10 max-h-80 overflow-y-auto">
+                            <div id="club-list-panel" class="absolute top-full left-0 right-0 bg-white border border-gray-200 rounded-lg shadow-lg mt-2 hidden z-10 max-h-80 overflow-y-auto">
                                 <div class="p-3 border-b border-gray-100 bg-gray-50">
                                     <h3 class="font-medium text-gray-700 text-sm">All Clubs</h3>
                                 </div>
@@ -58,27 +65,27 @@
                 </div>
                 
                 <!-- Event Type Filters -->
-                <div class="flex flex-wrap gap-4 mt-6 pt-6 border-t border-gray-200">
-                    <label class="flex items-center gap-2 cursor-pointer">
+                <div class="flex flex-wrap gap-6 mt-6 pt-6 border-t border-gray-200">
+                    <label class="flex items-center gap-2 cursor-pointer text-sm text-gray-700 hover:text-primary">
                         <input 
                             type="checkbox" 
                             id="hide-bmx-checkbox" 
                             class="w-4 h-4 text-primary bg-gray-100 border-gray-300 rounded focus:ring-2 focus:ring-primary"
                         >
-                        <span class="text-sm text-gray-700">Hide BMX Events</span>
+                        Hide BMX Events
                     </label>
                     
-                    <label class="flex items-center gap-2 cursor-pointer">
+                    <label class="flex items-center gap-2 cursor-pointer text-sm text-gray-700 hover:text-primary">
                         <input 
                             type="checkbox" 
                             id="hide-mtb-checkbox" 
                             class="w-4 h-4 text-primary bg-gray-100 border-gray-300 rounded focus:ring-2 focus:ring-primary"
                         >
-                        <span class="text-sm text-gray-700">Hide MTB Events</span>
+                        Hide MTB Events
                     </label>
                 </div>
                 
-                <div id="selected-clubs" class="flex flex-wrap gap-2 mt-6"></div>
+                <div id="selected-clubs" class="flex flex-wrap gap-3 mt-6"></div>
             </div>
 
             <!-- Loading State -->
@@ -105,7 +112,7 @@
                 <div class="px-6 py-4 bg-gray-50 border-b border-gray-200">
                     <h2 class="text-xl font-semibold text-gray-800">Upcoming Events</h2>
                 </div>
-                <div id="events-list" class="divide-y divide-gray-200"></div>
+                <div id="events-list" class="space-y-8"></div>
             </div>
         </div>
     </main>
