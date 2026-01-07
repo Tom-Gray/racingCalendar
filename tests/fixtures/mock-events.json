@@ -1,0 +1,62 @@
+[
+  {
+    "id": "1",
+    "title": "Brunswick CC Road Race",
+    "date": "2026-01-15",
+    "time": "09:00",
+    "club": "Brunswick Cycling Club",
+    "type": "Road",
+    "location": "Yarra Boulevard",
+    "url": "https://entryboss.cc/events/123"
+  },
+  {
+    "id": "2",
+    "title": "Eastern Vets Track Night",
+    "date": "2026-01-18",
+    "time": "18:30",
+    "club": "Eastern Veterans Cycling Club",
+    "type": "Track",
+    "location": "DISC Velodrome",
+    "url": "https://entryboss.cc/events/124"
+  },
+  {
+    "id": "3",
+    "title": "Hawthorn MTB Series Round 1",
+    "date": "2026-01-20",
+    "time": "10:00",
+    "club": "Hawthorn Cycling Club",
+    "type": "MTB",
+    "location": "Lysterfield Park",
+    "url": "https://entryboss.cc/events/125"
+  },
+  {
+    "id": "4",
+    "title": "BMX Victoria State Championships",
+    "date": "2026-01-22",
+    "time": "08:00",
+    "club": "BMX Victoria",
+    "type": "BMX",
+    "location": "Knox BMX Club",
+    "url": "https://entryboss.cc/events/126"
+  },
+  {
+    "id": "5",
+    "title": "Brunswick CC Criterium",
+    "date": "2026-01-25",
+    "time": "07:00",
+    "club": "Brunswick Cycling Club",
+    "type": "Road",
+    "location": "Albert Park",
+    "url": "https://entryboss.cc/events/127"
+  },
+  {
+    "id": "6",
+    "title": "Eastern Vets Road Race",
+    "date": "2026-01-28",
+    "time": "09:30",
+    "club": "Eastern Veterans Cycling Club",
+    "type": "Road",
+    "location": "Arthurs Seat",
+    "url": "https://entryboss.cc/events/128"
+  }
+]

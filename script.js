@@ -4,7 +4,6 @@ let clubs = [];
 let selectedClubs = new Set();
 let clubColors = new Map(); // New: track assigned colors for clubs
 let currentView = 'list';
-let showAllEvents = false;
 let isFirstTime = true;
 let hideBMXEvents = false;
 let hideMTBEvents = false;
@@ -37,7 +36,7 @@ const CLUB_COLOR_PALETTE = [
 let calendarViewBtn, listViewBtn, clubSearchInput, clubDropdown;
 let selectedClubsContainer, calendarView, listView, calendarGrid, eventsList;
 let loadingElement, errorElement, onboardingBanner;
-let clubListPanel, clubListContainer, twelveWeekViewBtn, allEventsViewBtn;
+let clubListPanel, clubListContainer;
 let hideBMXCheckbox, hideMTBCheckbox;
 
 // Mobile detection
@@ -50,12 +49,11 @@ function isMobileDevice() {
 /* Removed debug logging functionality */
 
 // Initialize the app with error handling
-document.addEventListener('DOMContentLoaded', function() {
+function initDesktopApp() {
     try {
         initializeElements();
         loadState();
         setupEventListeners();
-        updateCalendarViewButtons();
         loadEvents();
 
         // Responsive view logic on load
@@ -73,7 +71,7 @@ document.addEventListener('DOMContentLoaded', function() {
         console.error(`Initialization failed: ${error.message}`);
         showCriticalError(error);
     }
-});
+}
 
 function initializeElements() {
     calendarViewBtn = document.getElementById('calendar-view-btn');
@@ -89,8 +87,6 @@ function initializeElements() {
     onboardingBanner = document.getElementById('onboarding-banner');
     clubListPanel = document.getElementById('club-list-panel');
     clubListContainer = document.getElementById('club-list-container');
-    twelveWeekViewBtn = document.getElementById('twelve-week-view-btn');
-    allEventsViewBtn = document.getElementById('all-events-view-btn');
     hideBMXCheckbox = document.getElementById('hide-bmx-checkbox');
     hideMTBCheckbox = document.getElementById('hide-mtb-checkbox');
     
@@ -142,9 +138,6 @@ function setupEventListeners() {
     if (dismissBtn) {
         dismissBtn.addEventListener('click', dismissOnboarding);
     }
-
-    twelveWeekViewBtn.addEventListener('click', () => setCalendarView('12-weeks'));
-    allEventsViewBtn.addEventListener('click', () => setCalendarView('all-events'));
     
     // BMX and MTB filter checkboxes
     if (hideBMXCheckbox) {
@@ -656,26 +649,6 @@ function removeClubFilter(club) {
     saveState();
 }
 
-function setCalendarView(view) {
-    showAllEvents = view === 'all-events';
-    updateDisplay();
-    updateCalendarViewButtons();
-}
-
-function updateCalendarViewButtons() {
-    if (showAllEvents) {
-        allEventsViewBtn.classList.add('bg-primary', 'text-white', 'shadow-sm');
-        allEventsViewBtn.classList.remove('text-gray-600', 'hover:text-gray-800');
-        twelveWeekViewBtn.classList.remove('bg-primary', 'text-white', 'shadow-sm');
-        twelveWeekViewBtn.classList.add('text-gray-600', 'hover:text-gray-800');
-    } else {
-        twelveWeekViewBtn.classList.add('bg-primary', 'text-white', 'shadow-sm');
-        twelveWeekViewBtn.classList.remove('text-gray-600', 'hover:text-gray-800');
-        allEventsViewBtn.classList.remove('bg-primary', 'text-white', 'shadow-sm');
-        allEventsViewBtn.classList.add('text-gray-600', 'hover:text-gray-800');
-    }
-}
-
 // Club List Management
 
 function showClubList() {
@@ -846,22 +819,21 @@ function renderCalendar(events) {
     startDate.setDate(today.getDate() - today.getDay()); // Start of current week
 
     const calendarTitle = document.getElementById('calendar-title');
-    let weeksToShow = 12;
+    
+    // Always show all upcoming events
+    calendarTitle.textContent = 'All Upcoming Events';
+    
+    // Calculate weeks needed to show all events
+    let weeksToShow = 12; // Default minimum
+    const lastEventDate = events.reduce((maxDate, event) => {
+        const eventDate = new Date(event.eventDate);
+        return eventDate > maxDate ? eventDate : maxDate;
+    }, new Date(0));
 
-    if (showAllEvents) {
-        calendarTitle.textContent = 'All Upcoming Events';
-        const lastEventDate = events.reduce((maxDate, event) => {
-            const eventDate = new Date(event.eventDate);
-            return eventDate > maxDate ? eventDate : maxDate;
-        }, new Date(0));
-
-        if (lastEventDate > startDate) {
-            const diffTime = Math.abs(lastEventDate - startDate);
-            const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
-            weeksToShow = Math.ceil(diffDays / 7);
-        }
-    } else {
-        calendarTitle.textContent = 'Next 12 Weeks';
+    if (lastEventDate > startDate) {
+        const diffTime = Math.abs(lastEventDate - startDate);
+        const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+        weeksToShow = Math.ceil(diffDays / 7);
     }
 
     // Group dates by month over calculated weeks
@@ -954,8 +926,8 @@ function createCalendarDay(date, events) {
     // Add events to day
     dayEvents.slice(0, 3).forEach(event => { // Limit to 3 events per day for space
         const eventElement = document.createElement('div');
-        eventElement.className = 'text-white px-2 py-1 mb-1 rounded text-xs cursor-pointer transition-all hover:shadow-md hover:-translate-y-0.5 border-l-2 border-white/30';
-        eventElement.textContent = truncateText(event.eventName, 20);
+        eventElement.className = 'text-white px-2 py-2 mb-1 rounded text-xs cursor-pointer transition-all hover:shadow-md hover:-translate-y-0.5 border-l-2 border-white/30 whitespace-normal';
+        eventElement.textContent = truncateText(event.eventName, 50);
         eventElement.title = `${event.eventName} - ${event.clubName}`;
         
         // Apply club color if the club is selected
@@ -1028,17 +1000,17 @@ function renderEventsList(events) {
 // Create a day panel containing multiple events
 function createDayPanel(date, events) {
     const dayPanel = document.createElement('div');
-    dayPanel.className = 'day-panel border-b border-gray-200 last:border-b-0';
+    dayPanel.className = 'day-panel bg-white rounded-xl shadow-md overflow-hidden';
     
     // Day header
     const dayHeader = document.createElement('div');
-    dayHeader.className = 'day-header bg-gray-50 px-6 py-4 border-b border-gray-100';
+    dayHeader.className = 'day-header bg-gray-50 px-6 py-4 border-b border-gray-200';
     
     const headerContent = document.createElement('div');
     headerContent.className = 'flex items-center justify-between';
     
     const dateDisplay = document.createElement('h3');
-    dateDisplay.className = 'text-xs font-semibold text-gray-800';
+    dateDisplay.className = 'text-lg font-semibold text-gray-800';
     dateDisplay.textContent = formatDateFull(date);
     
     headerContent.appendChild(dateDisplay);
@@ -1055,10 +1027,10 @@ function createDayPanel(date, events) {
     
     // Events container
     const eventsContainer = document.createElement('div');
-    eventsContainer.className = 'events-container';
+    eventsContainer.className = 'events-container divide-y divide-gray-100';
     
     events.forEach((event, index) => {
-        const eventItem = createDayEventItem(event, index === events.length - 1);
+        const eventItem = createDayEventItem(event);
         eventsContainer.appendChild(eventItem);
     });
     
@@ -1068,9 +1040,9 @@ function createDayPanel(date, events) {
 }
 
 // Create an event item within a day panel (simplified version)
-function createDayEventItem(event, isLast) {
+function createDayEventItem(event) {
     const eventItem = document.createElement('div');
-    eventItem.className = `day-event-item px-6 py-4 hover:bg-gray-50 cursor-pointer transition-colors ${!isLast ? 'border-b border-gray-100' : ''}`;
+    eventItem.className = 'day-event-item px-6 py-5 hover:bg-gray-50 cursor-pointer transition-colors';
     eventItem.addEventListener('click', () => openEvent(event));
     
     const eventContent = document.createElement('div');
@@ -1223,3 +1195,6 @@ function handleResponsiveViews() {
         switchView(currentView);
     }
 }
+
+// Export initDesktopApp to window
+window.initDesktopApp = initDesktopApp;
