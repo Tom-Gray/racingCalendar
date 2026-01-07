@@ -16,9 +16,9 @@
             const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) 
                            || window.innerWidth < 768;
             
-            // Redirect mobile users to beta (unless they forced desktop view)
-            if (isMobile && !forceDesktop && !window.location.pathname.includes('beta.html')) {
-                window.location.href = 'beta.html' + window.location.search;
+            // Redirect mobile users to mobile (unless they forced desktop view)
+            if (isMobile && !forceDesktop && !window.location.pathname.includes('mobile.html')) {
+                window.location.href = 'mobile.html' + window.location.search;
             }
         })();
     </script>

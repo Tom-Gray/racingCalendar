@@ -1,5 +1,5 @@
 // ===================================
-// Mobile Beta Site - JavaScript
+// Mobile Site - JavaScript
 // ===================================
 
 // Color Palette for Club Color Coding (20 colors)
@@ -41,7 +41,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 async function initializeApp() {
-    console.log('Initializing mobile beta app...');
+    console.log('Initializing mobile app...');
     
     // Cache DOM elements
     initializeElements();
@@ -272,7 +272,7 @@ function assignClubColors() {
 
 function loadState() {
     try {
-        const savedState = localStorage.getItem('betaAppState');
+        const savedState = localStorage.getItem('mobileAppState');
         if (savedState) {
             const parsed = JSON.parse(savedState);
             state.selectedClubs = new Set(parsed.selectedClubs || []);
@@ -301,7 +301,7 @@ function saveState() {
             hideMTBEvents: state.hideMTBEvents,
             isFirstTime: state.isFirstTime
         };
-        localStorage.setItem('betaAppState', JSON.stringify(stateToSave));
+        localStorage.setItem('mobileAppState', JSON.stringify(stateToSave));
     } catch (error) {
         console.error('Error saving state:', error);
     }
@@ -1061,4 +1061,4 @@ function dismissOnboarding() {
     saveState();
 }
 
-console.log('Mobile beta app loaded');
+console.log('Mobile app loaded');
