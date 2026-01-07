@@ -3,13 +3,12 @@
   "version": "1.0.0",
   "description": "A lightweight web tool that aggregates cycling events from EntryBoss for Victorian clubs",
   "scripts": {
-    "test": "playwright test",
-    "test:headed": "playwright test --headed",
-    "test:debug": "playwright test --debug",
-    "test:report": "playwright show-report",
-    "test:install": "playwright install",
-    "test:data": "playwright test tests/data-loading.spec.js",
-    "test:deploy": "playwright test tests/data-loading.spec.js --reporter=line"
+    "test": "npx playwright test",
+    "test:headed": "npx playwright test --headed",
+    "test:debug": "npx playwright test --debug",
+    "test:report": "npx playwright show-report",
+    "test:install": "npx playwright install",
+    "test:ui": "npx playwright test --ui"
   },
   "keywords": [
     "cycling",
@@ -22,6 +21,6 @@
   "author": "EntryBoss Discovery Tool",
   "license": "MIT",
   "devDependencies": {
-    "@playwright/test": "^1.40.0"
+    "@playwright/test": "^1.57.0"
   }
 }

@@ -1,0 +1,38 @@
+[
+  {
+    "eventName": "Test Event 1 - Track Racing",
+    "eventDate": "2025-08-01T00:00:00Z",
+    "clubName": "Brunswick Cycling Club",
+    "eventUrl": "https://entryboss.cc/races/test1"
+  },
+  {
+    "eventName": "Test Event 2 - Road Race",
+    "eventDate": "2025-08-01T00:00:00Z",
+    "clubName": "Eastern Cycling Club",
+    "eventUrl": "https://entryboss.cc/races/test2"
+  },
+  {
+    "eventName": "Test Event 3 - Criterium",
+    "eventDate": "2025-08-05T00:00:00Z",
+    "clubName": "Colac Cycling Club",
+    "eventUrl": "https://entryboss.cc/races/test3"
+  },
+  {
+    "eventName": "Test BMX Event",
+    "eventDate": "2025-08-10T00:00:00Z",
+    "clubName": "BMX Victoria",
+    "eventUrl": "https://entryboss.cc/races/test4"
+  },
+  {
+    "eventName": "Test MTB Event - Mountain Bike Race",
+    "eventDate": "2025-08-15T00:00:00Z",
+    "clubName": "MTB Victoria",
+    "eventUrl": "https://entryboss.cc/races/test5"
+  },
+  {
+    "eventName": "Test Event 4 - Time Trial",
+    "eventDate": "2025-08-20T00:00:00Z",
+    "clubName": "Brunswick Cycling Club",
+    "eventUrl": "https://entryboss.cc/races/test6"
+  }
+]
