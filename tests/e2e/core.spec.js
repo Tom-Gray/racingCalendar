@@ -3,7 +3,7 @@ const { test, expect } = require('@playwright/test');
 test.describe('Core Functionality', () => {
   test.beforeEach(async ({ page }) => {
     // Set up route interception for mock data
-    await page.route('**/events.json', async (route) => {
+    await page.route('**/events-vic.json', async (route) => {
       const json = require('../fixtures/mock-events.json');
       await route.fulfill({ json });
     });
@@ -49,7 +49,7 @@ test.describe('Core Functionality', () => {
 
   test('should handle errors gracefully', async ({ page }) => {
     // Intercept and fail the events request
-    await page.route('**/events.json', (route) => {
+    await page.route('**/events-vic.json', (route) => {
       route.abort('failed');
     });
     
