@@ -2,6 +2,17 @@
 // Mobile Site - JavaScript
 // ===================================
 
+// State Configuration
+const STATE_CONFIG = {
+    VIC: { name: 'Victoria', file: 'events-vic.json' },
+    NSW: { name: 'New South Wales', file: 'events-nsw.json' },
+    QLD: { name: 'Queensland', file: 'events-qld.json' },
+    SA: { name: 'South Australia', file: 'events-sa.json' },
+    TAS: { name: 'Tasmania', file: 'events-tas.json' },
+    ACT: { name: 'Australian Capital Territory', file: 'events-act.json' },
+    WA: { name: 'Western Australia', file: 'events-wa.json' }
+};
+
 // Color Palette for Club Color Coding (20 colors)
 const COLOR_PALETTE = [
     '#ef4444', '#f97316', '#f59e0b', '#eab308', '#84cc16',
@@ -26,7 +37,8 @@ const state = {
     touchStartX: 0,
     touchStartY: 0,
     touchEndX: 0,
-    touchEndY: 0
+    touchEndY: 0,
+    selectedState: 'VIC' // Default state
 };
 
 // DOM Elements (cached for performance)
@@ -212,7 +224,8 @@ async function loadData() {
 
 async function loadEvents() {
     try {
-        const response = await fetch('events-vic.json');
+        const eventsFile = STATE_CONFIG[state.selectedState].file;
+        const response = await fetch(eventsFile);
         if (!response.ok) throw new Error('Failed to fetch events');
         return await response.json();
     } catch (error) {
@@ -222,14 +235,12 @@ async function loadEvents() {
 }
 
 async function loadClubs() {
-    try {
-        const response = await fetch('clubs.json');
-        if (!response.ok) throw new Error('Failed to fetch clubs');
-        return await response.json();
-    } catch (error) {
-        console.error('Error loading clubs:', error);
-        return loadFallbackData().clubs;
-    }
+    // Extract clubs from the state-specific events (ignore clubs.json as it's global)
+    // This ensures clubs shown are only from the current state
+    const uniqueClubNames = [...new Set(state.events.map(event => event.clubName))];
+    return uniqueClubNames.map(clubName => ({ clubName })).sort((a, b) => 
+        a.clubName.localeCompare(b.clubName)
+    );
 }
 
 function loadFallbackData() {
@@ -277,10 +288,14 @@ function loadState() {
             state.hideBMXEvents = parsed.hideBMXEvents || false;
             state.hideMTBEvents = parsed.hideMTBEvents || false;
             state.isFirstTime = parsed.isFirstTime !== false;
+            state.selectedState = parsed.selectedState || 'VIC';
             
             // Update checkboxes
             elements.hideBMXCheckbox.checked = state.hideBMXEvents;
             elements.hideMTBCheckbox.checked = state.hideMTBEvents;
+            
+            // Update header title
+            updateStateDisplay();
         }
     } catch (error) {
         console.error('Error loading state:', error);
@@ -295,7 +310,8 @@ function saveState() {
             calendarMode: state.calendarMode,
             hideBMXEvents: state.hideBMXEvents,
             hideMTBEvents: state.hideMTBEvents,
-            isFirstTime: state.isFirstTime
+            isFirstTime: state.isFirstTime,
+            selectedState: state.selectedState
         };
         localStorage.setItem('mobileAppState', JSON.stringify(stateToSave));
     } catch (error) {
@@ -1056,5 +1072,66 @@ function dismissOnboarding() {
     state.isFirstTime = false;
     saveState();
 }
+
+// ===================================
+// State Selection Functions
+// ===================================
+
+function updateStateDisplay() {
+    // Update header title
+    const headerTitle = document.querySelector('header h1');
+    if (headerTitle) {
+        headerTitle.textContent = `${state.selectedState} Cycling`;
+    }
+}
+
+function setupStateSelectorListeners() {
+    // Add click handlers for state selection buttons in the filter drawer
+    const stateButtons = document.querySelectorAll('.mobile-state-option');
+    stateButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            const newState = button.getAttribute('data-state');
+            if (newState && newState !== state.selectedState) {
+                state.selectedState = newState;
+                
+                // Clear all club filters when switching states
+                state.selectedClubs.clear();
+                
+                saveState();
+                updateStateDisplay();
+                
+                // Highlight the selected state button
+                stateButtons.forEach(btn => {
+                    if (btn.getAttribute('data-state') === newState) {
+                        btn.style.backgroundColor = '#3b82f620';
+                        btn.style.borderColor = '#3b82f6';
+                        btn.style.borderWidth = '2px';
+                    } else {
+                        btn.style.backgroundColor = '';
+                        btn.style.borderColor = '';
+                        btn.style.borderWidth = '';
+                    }
+                });
+                
+                // Reload data for the new state
+                loadData();
+            }
+        });
+    });
+    
+    // Highlight the currently selected state on load
+    stateButtons.forEach(btn => {
+        if (btn.getAttribute('data-state') === state.selectedState) {
+            btn.style.backgroundColor = '#3b82f620';
+            btn.style.borderColor = '#3b82f6';
+            btn.style.borderWidth = '2px';
+        }
+    });
+}
+
+// Call this after DOM is ready
+document.addEventListener('DOMContentLoaded', () => {
+    setupStateSelectorListeners();
+});
 
 console.log('Mobile app loaded');

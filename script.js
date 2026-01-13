@@ -1,3 +1,14 @@
+// State Configuration
+const STATE_CONFIG = {
+    VIC: { name: 'Victoria', file: 'events-vic.json' },
+    NSW: { name: 'New South Wales', file: 'events-nsw.json' },
+    QLD: { name: 'Queensland', file: 'events-qld.json' },
+    SA: { name: 'South Australia', file: 'events-sa.json' },
+    TAS: { name: 'Tasmania', file: 'events-tas.json' },
+    ACT: { name: 'Australian Capital Territory', file: 'events-act.json' },
+    WA: { name: 'Western Australia', file: 'events-wa.json' }
+};
+
 // App State
 let events = [];
 let clubs = [];
@@ -7,6 +18,7 @@ let currentView = 'list';
 let isFirstTime = true;
 let hideBMXEvents = false;
 let hideMTBEvents = false;
+let selectedState = 'VIC'; // Default state
 
 // Color palette for clubs
 const CLUB_COLOR_PALETTE = [
@@ -54,6 +66,8 @@ function initDesktopApp() {
         initializeElements();
         loadState();
         setupEventListeners();
+        setupStateSelectorListeners();
+        updateStateDisplay();
         loadEvents();
 
         // Responsive view logic on load
@@ -175,6 +189,16 @@ function loadState() {
     const hasSeenOnboarding = getFromStorage('hasSeenOnboarding');
     const savedHideBMX = getFromStorage('hideBMXEvents');
     const savedHideMTB = getFromStorage('hideMTBEvents');
+    const savedState = getFromStorage('selectedState');
+    const hasSeenStateSelector = getFromStorage('hasSeenStateSelector');
+    
+    // Load selected state or default to VIC
+    selectedState = savedState || 'VIC';
+    
+    // Show state selection modal on first visit
+    if (!hasSeenStateSelector) {
+        showStateSelectionModal();
+    }
     
     if (savedFilters) {
         selectedClubs = new Set(JSON.parse(savedFilters));
@@ -339,12 +363,13 @@ async function loadEvents() {
             }
         };
         
-        // Load events first (more critical)
+        // Load events for the selected state
+        const eventsFile = STATE_CONFIG[selectedState].file;
         let eventsResponse;
         try {
-            eventsResponse = await fetchWithTimeout('./events-vic.json');
+            eventsResponse = await fetchWithTimeout(`./${eventsFile}`);
         } catch (fetchError) {
-            throw new Error(`Failed to fetch events-vic.json: ${fetchError.message}`);
+            throw new Error(`Failed to fetch ${eventsFile}: ${fetchError.message}`);
         }
         
         if (!eventsResponse.ok) {
@@ -354,7 +379,7 @@ async function loadEvents() {
         try {
             events = await eventsResponse.json();
         } catch (parseError) {
-            throw new Error(`Failed to parse events-vic.json: ${parseError.message}`);
+            throw new Error(`Failed to parse ${eventsFile}: ${parseError.message}`);
         }
         
         // Load clubs (less critical, can fallback)
@@ -365,17 +390,8 @@ async function loadEvents() {
             clubsResponse = null;
         }
         
-        // Try to load clubs from clubs.json, fallback to extracting from events
-        if (clubsResponse && clubsResponse.ok) {
-            try {
-                const clubsData = await clubsResponse.json();
-                clubs = clubsData.map(club => club.clubName).sort();
-            } catch (clubsError) {
-                clubs = [...new Set(events.map(event => event.clubName))].sort();
-            }
-        } else {
-            clubs = [...new Set(events.map(event => event.clubName))].sort();
-        }
+        // Extract clubs from the state-specific events (ignore clubs.json as it's global)
+        clubs = [...new Set(events.map(event => event.clubName))].sort();
         
         // Assign colors to clubs
         assignClubColors();
@@ -1196,5 +1212,98 @@ function handleResponsiveViews() {
     }
 }
 
+// State Selection Functions
+function showStateSelectionModal() {
+    const modal = document.getElementById('state-selection-modal');
+    if (modal) {
+        modal.classList.remove('hidden');
+        
+        // Add click listeners to state selection buttons
+        const stateButtons = modal.querySelectorAll('.state-selection-option');
+        stateButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const state = button.getAttribute('data-state');
+                selectState(state);
+                hideStateSelectionModal();
+            });
+        });
+    }
+}
+
+function hideStateSelectionModal() {
+    const modal = document.getElementById('state-selection-modal');
+    if (modal) {
+        modal.classList.add('hidden');
+        saveToStorage('hasSeenStateSelector', 'true');
+    }
+}
+
+function selectState(state) {
+    if (STATE_CONFIG[state]) {
+        selectedState = state;
+        saveToStorage('selectedState', state);
+        
+        // Clear all club filters when switching states
+        selectedClubs.clear();
+        updateSelectedClubsDisplay();
+        saveState();
+        
+        updateStateDisplay();
+        // Reload events for the new state
+        loadEvents();
+    }
+}
+
+function updateStateDisplay() {
+    // Update header title and subtitle
+    const siteTitle = document.getElementById('site-title');
+    const siteSubtitle = document.getElementById('site-subtitle');
+    const currentStateLabel = document.getElementById('current-state-label');
+    
+    if (siteTitle) {
+        siteTitle.textContent = `${STATE_CONFIG[selectedState].name} Cycling Races`;
+    }
+    if (siteSubtitle) {
+        siteSubtitle.textContent = `Discover upcoming cycling races across ${STATE_CONFIG[selectedState].name}`;
+    }
+    if (currentStateLabel) {
+        currentStateLabel.textContent = selectedState;
+    }
+    
+    // Update page title
+    document.title = `${STATE_CONFIG[selectedState].name} Cycling Races - EntryBoss Discovery Tool`;
+}
+
+function setupStateSelectorListeners() {
+    // State selector dropdown toggle
+    const stateSelectorBtn = document.getElementById('state-selector-btn');
+    const stateSelectorDropdown = document.getElementById('state-selector-dropdown');
+    
+    if (stateSelectorBtn && stateSelectorDropdown) {
+        stateSelectorBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            stateSelectorDropdown.classList.toggle('hidden');
+        });
+        
+        // Close dropdown when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!stateSelectorBtn.contains(e.target) && !stateSelectorDropdown.contains(e.target)) {
+                stateSelectorDropdown.classList.add('hidden');
+            }
+        });
+        
+        // State option click handlers
+        const stateOptions = stateSelectorDropdown.querySelectorAll('.state-option');
+        stateOptions.forEach(option => {
+            option.addEventListener('click', () => {
+                const state = option.getAttribute('data-state');
+                selectState(state);
+                stateSelectorDropdown.classList.add('hidden');
+            });
+        });
+    }
+}
+
 // Export initDesktopApp to window
 window.initDesktopApp = initDesktopApp;
+// Export initDesktopApp to window

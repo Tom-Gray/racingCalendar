@@ -1,13 +1,30 @@
 // About page statistics functionality
+
+// State Configuration
+const STATE_CONFIG = {
+    VIC: { name: 'Victoria', file: 'events-vic.json' },
+    NSW: { name: 'New South Wales', file: 'events-nsw.json' },
+    QLD: { name: 'Queensland', file: 'events-qld.json' },
+    SA: { name: 'South Australia', file: 'events-sa.json' },
+    TAS: { name: 'Tasmania', file: 'events-tas.json' },
+    ACT: { name: 'Australian Capital Territory', file: 'events-act.json' },
+    WA: { name: 'Western Australia', file: 'events-wa.json' }
+};
+
 let statsData = {
     events: [],
     clubs: [],
-    loaded: false
+    loaded: false,
+    selectedState: 'VIC'
 };
 
 async function initAboutStats() {
     try {
         showStatsLoading();
+        
+        // Get selected state from localStorage
+        const savedState = getSelectedState();
+        statsData.selectedState = savedState;
         
         // Check if we're running from file:// protocol
         const isFileProtocol = window.location.protocol === 'file:';
@@ -40,9 +57,10 @@ async function initAboutStats() {
             }
         };
         
-        // Load events and clubs data
+        // Load events for the selected state
+        const eventsFile = STATE_CONFIG[statsData.selectedState].file;
         const [eventsResponse, clubsResponse] = await Promise.all([
-            fetchWithTimeout('./events-vic.json').catch(() => null),
+            fetchWithTimeout(`./${eventsFile}`).catch(() => null),
             fetchWithTimeout('./clubs.json').catch(() => null)
         ]);
         
@@ -133,20 +151,22 @@ function updateStatisticsDisplay() {
         }
     }
     
+    const stateName = STATE_CONFIG[statsData.selectedState].name;
+    
     statsContainer.innerHTML = `
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
             <!-- Events Count -->
             <div class="bg-gradient-to-br from-primary to-secondary text-white rounded-xl p-6 text-center shadow-lg hover:shadow-xl transition-shadow">
                 <div class="text-3xl font-bold mb-2">${eventCount.toLocaleString()}</div>
                 <div class="text-lg opacity-90">Events Tracked</div>
-                <div class="text-sm opacity-75 mt-2">Across Victoria</div>
+                <div class="text-sm opacity-75 mt-2">Across ${stateName}</div>
             </div>
             
             <!-- Clubs Count -->
             <div class="bg-gradient-to-br from-secondary to-primary text-white rounded-xl p-6 text-center shadow-lg hover:shadow-xl transition-shadow">
                 <div class="text-3xl font-bold mb-2">${clubCount}</div>
                 <div class="text-lg opacity-90">Cycling Clubs</div>
-                <div class="text-sm opacity-75 mt-2">Victorian clubs</div>
+                <div class="text-sm opacity-75 mt-2">${stateName} clubs</div>
             </div>
             
             <!-- Data Freshness -->
@@ -179,5 +199,27 @@ function showFallbackNotice() {
     const statsContainer = document.getElementById('statistics-container');
     if (statsContainer && statsContainer.parentNode) {
         statsContainer.parentNode.insertBefore(notice, statsContainer.nextSibling);
+    }
+}
+
+function getSelectedState() {
+    try {
+        // Check desktop app state first
+        const desktopState = localStorage.getItem('selectedState');
+        if (desktopState) {
+            return desktopState;
+        }
+        
+        // Check mobile app state
+        const mobileState = localStorage.getItem('mobileAppState');
+        if (mobileState) {
+            const parsed = JSON.parse(mobileState);
+            return parsed.selectedState || 'VIC';
+        }
+        
+        return 'VIC';
+    } catch (error) {
+        console.error('Error getting selected state:', error);
+        return 'VIC';
     }
 }

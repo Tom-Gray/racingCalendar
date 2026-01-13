@@ -2,10 +2,52 @@
         <div class="max-w-6xl mx-auto px-5 py-6">
             <div class="flex items-center justify-between">
                 <div>
-                    <h1 class="text-3xl font-bold text-gray-900">Victorian Cycling Races</h1>
-                    <p class="text-gray-500">Discover upcoming cycling races across Victoria</p>
+                    <h1 id="site-title" class="text-3xl font-bold text-gray-900">Victorian Cycling Races</h1>
+                    <p id="site-subtitle" class="text-gray-500">Discover upcoming cycling races across Victoria</p>
                 </div>
-                <nav>
+                <nav class="flex items-center gap-3">
+                    <div class="relative">
+                        <button id="state-selector-btn" class="flex items-center gap-2 bg-gray-100 hover:bg-gray-200 text-gray-700 px-4 py-2 rounded-lg font-medium transition-colors">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+                            </svg>
+                            <span id="current-state-label">VIC</span>
+                        </button>
+                        <div id="state-selector-dropdown" class="hidden absolute right-0 mt-2 w-64 bg-white rounded-lg shadow-xl border border-gray-200 z-50">
+                            <div class="p-2">
+                                <div class="px-3 py-2 text-xs font-semibold text-gray-500 uppercase">Select State</div>
+                                <button data-state="VIC" class="state-option w-full text-left px-3 py-2 rounded hover:bg-gray-100 transition-colors">
+                                    <div class="font-medium text-gray-900">Victoria</div>
+                                    <div class="text-xs text-gray-500">VIC</div>
+                                </button>
+                                <button data-state="NSW" class="state-option w-full text-left px-3 py-2 rounded hover:bg-gray-100 transition-colors">
+                                    <div class="font-medium text-gray-900">New South Wales</div>
+                                    <div class="text-xs text-gray-500">NSW</div>
+                                </button>
+                                <button data-state="QLD" class="state-option w-full text-left px-3 py-2 rounded hover:bg-gray-100 transition-colors">
+                                    <div class="font-medium text-gray-900">Queensland</div>
+                                    <div class="text-xs text-gray-500">QLD</div>
+                                </button>
+                                <button data-state="SA" class="state-option w-full text-left px-3 py-2 rounded hover:bg-gray-100 transition-colors">
+                                    <div class="font-medium text-gray-900">South Australia</div>
+                                    <div class="text-xs text-gray-500">SA</div>
+                                </button>
+                                <button data-state="TAS" class="state-option w-full text-left px-3 py-2 rounded hover:bg-gray-100 transition-colors">
+                                    <div class="font-medium text-gray-900">Tasmania</div>
+                                    <div class="text-xs text-gray-500">TAS</div>
+                                </button>
+                                <button data-state="ACT" class="state-option w-full text-left px-3 py-2 rounded hover:bg-gray-100 transition-colors">
+                                    <div class="font-medium text-gray-900">Australian Capital Territory</div>
+                                    <div class="text-xs text-gray-500">ACT</div>
+                                </button>
+                                <button data-state="WA" class="state-option w-full text-left px-3 py-2 rounded hover:bg-gray-100 transition-colors">
+                                    <div class="font-medium text-gray-900">Western Australia</div>
+                                    <div class="text-xs text-gray-500">WA</div>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
                     <a href="about.html" class="bg-gray-100 hover:bg-gray-200 text-gray-700 px-4 py-2 rounded-lg font-medium">
                         About
                     </a>
@@ -13,6 +55,44 @@
             </div>
         </div>
     </header>
+
+    <!-- State Selection Modal (First Launch) -->
+    <div id="state-selection-modal" class="hidden fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4">
+        <div class="bg-white rounded-2xl shadow-2xl max-w-md w-full p-6">
+            <h2 class="text-2xl font-bold text-gray-900 mb-2">Welcome!</h2>
+            <p class="text-gray-600 mb-6">Select your state to see cycling events in your area:</p>
+            <div class="space-y-2">
+                <button data-state="VIC" class="state-selection-option w-full text-left px-4 py-3 rounded-lg border-2 border-gray-200 hover:border-primary hover:bg-primary/5 transition-all">
+                    <div class="font-semibold text-gray-900">Victoria</div>
+                    <div class="text-sm text-gray-500">VIC</div>
+                </button>
+                <button data-state="NSW" class="state-selection-option w-full text-left px-4 py-3 rounded-lg border-2 border-gray-200 hover:border-primary hover:bg-primary/5 transition-all">
+                    <div class="font-semibold text-gray-900">New South Wales</div>
+                    <div class="text-sm text-gray-500">NSW</div>
+                </button>
+                <button data-state="QLD" class="state-selection-option w-full text-left px-4 py-3 rounded-lg border-2 border-gray-200 hover:border-primary hover:bg-primary/5 transition-all">
+                    <div class="font-semibold text-gray-900">Queensland</div>
+                    <div class="text-sm text-gray-500">QLD</div>
+                </button>
+                <button data-state="SA" class="state-selection-option w-full text-left px-4 py-3 rounded-lg border-2 border-gray-200 hover:border-primary hover:bg-primary/5 transition-all">
+                    <div class="font-semibold text-gray-900">South Australia</div>
+                    <div class="text-sm text-gray-500">SA</div>
+                </button>
+                <button data-state="TAS" class="state-selection-option w-full text-left px-4 py-3 rounded-lg border-2 border-gray-200 hover:border-primary hover:bg-primary/5 transition-all">
+                    <div class="font-semibold text-gray-900">Tasmania</div>
+                    <div class="text-sm text-gray-500">TAS</div>
+                </button>
+                <button data-state="ACT" class="state-selection-option w-full text-left px-4 py-3 rounded-lg border-2 border-gray-200 hover:border-primary hover:bg-primary/5 transition-all">
+                    <div class="font-semibold text-gray-900">Australian Capital Territory</div>
+                    <div class="text-sm text-gray-500">ACT</div>
+                </button>
+                <button data-state="WA" class="state-selection-option w-full text-left px-4 py-3 rounded-lg border-2 border-gray-200 hover:border-primary hover:bg-primary/5 transition-all">
+                    <div class="font-semibold text-gray-900">Western Australia</div>
+                    <div class="text-sm text-gray-500">WA</div>
+                </button>
+            </div>
+        </div>
+    </div>
 
     <!-- Onboarding Banner -->
     <div id="onboarding-banner" class="hidden">

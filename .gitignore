@@ -1,3 +1,4 @@
+**README.md
 # Dependencies
 node_modules/
 npm-debug.log*
@@ -56,3 +57,5 @@ dist/
 build/
 GEMINI.md
 implementation_plan.md
+README.md
+MULTI_STATE_MIGRATION.md
