@@ -49,7 +49,7 @@ jobs:
       run: |
         git config --local user.email "action@github.com"
         git config --local user.name "GitHub Action"
-        git add events.json clubs.json
+        git add events-vic.json clubs.json
         git commit -m "Auto-update events data $(date '+%Y-%m-%d %H:%M:%S')" || exit 0
         git push
     

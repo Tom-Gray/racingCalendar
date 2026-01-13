@@ -7,48 +7,6 @@ import (
 	"time"
 )
 
-func TestClubParsing(t *testing.T) {
-	// Test club name cleaning
-	testCases := []struct {
-		input    string
-		expected string
-	}{
-		{"Brunswick Cycling Club", "Brunswick Cycling Club"},
-		{"Eastern Cycling Club Open", "Eastern Cycling Club"},
-		{"  Geelong & Surfcoast Cycling Club  ", "Geelong & Surfcoast Cycling Club"},
-		{"https://entryboss.cc/calendar/brunswick", "brunswick"},
-	}
-
-	for _, tc := range testCases {
-		result := cleanClubName(tc.input)
-		if result != tc.expected {
-			t.Errorf("cleanClubName(%q) = %q, want %q", tc.input, result, tc.expected)
-		}
-	}
-}
-
-func TestVictorianClubDetection(t *testing.T) {
-	testCases := []struct {
-		clubName string
-		href     string
-		expected bool
-	}{
-		{"Brunswick Cycling Club", "/calendar/brunswick", true},
-		{"Eastern Cycling Club", "/calendar/eastern", true},
-		{"Geelong & Surfcoast CC", "/calendar/geelong", true},
-		{"Sydney CC", "/calendar/sydney", false},
-		{"Perth CC", "/calendar/perth", false},
-		{"Melbourne Track Club", "/calendar/melbourne", true},
-	}
-
-	for _, tc := range testCases {
-		result := isVictorianClub(tc.clubName, tc.href)
-		if result != tc.expected {
-			t.Errorf("isVictorianClub(%q, %q) = %v, want %v", tc.clubName, tc.href, result, tc.expected)
-		}
-	}
-}
-
 func TestDateParsing(t *testing.T) {
 	testCases := []string{
 		"Sat, 5 Jul 2025",
@@ -66,11 +24,12 @@ func TestDateParsing(t *testing.T) {
 }
 
 func TestEventStructure(t *testing.T) {
-	// Test that Event struct can be marshaled to JSON correctly
+	// Test that Event struct can be marshaled to JSON correctly with state field
 	event := Event{
 		EventName: "Test Race",
 		EventDate: "2025-07-05T00:00:00Z",
 		ClubName:  "Test Club",
+		State:     "VIC",
 		EventURL:  "https://entryboss.cc/races/12345",
 	}
 
@@ -90,17 +49,19 @@ func TestEventStructure(t *testing.T) {
 }
 
 func TestClubsJSONStructure(t *testing.T) {
-	// Test clubs.json structure with LastSeen field
+	// Test clubs.json structure with State and LastSeen fields
 	currentTime := time.Now().Format(time.RFC3339)
 	clubs := []Club{
 		{
 			ClubName: "Brunswick Cycling Club",
 			ClubURL:  "https://entryboss.cc/calendar/brunswick",
+			State:    "VIC",
 			LastSeen: currentTime,
 		},
 		{
-			ClubName: "Eastern Cycling Club",
-			ClubURL:  "https://entryboss.cc/calendar/eastern",
+			ClubName: "Sydney Cycling Club",
+			ClubURL:  "https://entryboss.cc/calendar/sydney",
+			State:    "NSW",
 			LastSeen: currentTime,
 		},
 	}
@@ -119,8 +80,11 @@ func TestClubsJSONStructure(t *testing.T) {
 		t.Errorf("Expected 2 clubs, got %d", len(unmarshaled))
 	}
 
-	// Verify LastSeen field is preserved
+	// Verify State and LastSeen fields are preserved
 	for i, club := range unmarshaled {
+		if club.State == "" {
+			t.Errorf("Club %d missing State field", i)
+		}
 		if club.LastSeen == "" {
 			t.Errorf("Club %d missing LastSeen field", i)
 		}
@@ -131,19 +95,21 @@ func TestClubsJSONStructure(t *testing.T) {
 }
 
 func TestEventsJSONStructure(t *testing.T) {
-	// Test events.json structure
+	// Test events.json structure with state field
 	now := time.Now()
 	events := []Event{
 		{
 			EventName: "Winter Criterium",
 			EventDate: now.Add(24 * time.Hour).Format("2006-01-02T15:04:05Z"),
 			ClubName:  "Brunswick Cycling Club",
+			State:     "VIC",
 			EventURL:  "https://entryboss.cc/races/12345",
 		},
 		{
 			EventName: "Road Race Championship",
 			EventDate: now.Add(48 * time.Hour).Format("2006-01-02T15:04:05Z"),
-			ClubName:  "Eastern Cycling Club",
+			ClubName:  "Sydney Cycling Club",
+			State:     "NSW",
 			EventURL:  "https://entryboss.cc/races/12346",
 		},
 	}
@@ -154,8 +120,8 @@ func TestEventsJSONStructure(t *testing.T) {
 	}
 
 	// Write test events file for frontend testing
-	if err := os.WriteFile("events.json", data, 0644); err != nil {
-		t.Logf("Could not write test events.json: %v", err)
+	if err := os.WriteFile("events-vic.json", data, 0644); err != nil {
+		t.Logf("Could not write test events-vic.json: %v", err)
 	}
 
 	var unmarshaled []Event
@@ -165,6 +131,13 @@ func TestEventsJSONStructure(t *testing.T) {
 
 	if len(unmarshaled) != 2 {
 		t.Errorf("Expected 2 events, got %d", len(unmarshaled))
+	}
+
+	// Verify state field is preserved
+	for i, event := range unmarshaled {
+		if event.State == "" {
+			t.Errorf("Event %d missing State field", i)
+		}
 	}
 }
 
@@ -237,49 +210,94 @@ func TestEnhancedDateParsing(t *testing.T) {
 	}
 }
 
-func TestClubLastSeenField(t *testing.T) {
-	// Test that Club struct properly handles LastSeen field
+func TestClubStateAndLastSeenFields(t *testing.T) {
+	// Test that Club struct properly handles State and LastSeen fields
 	currentTime := time.Now().Format(time.RFC3339)
 
 	club := Club{
 		ClubName: "Test Club",
 		ClubURL:  "https://entryboss.cc/calendar/test",
+		State:    "VIC",
 		LastSeen: currentTime,
 	}
 
 	// Test JSON marshaling
 	data, err := json.Marshal(club)
 	if err != nil {
-		t.Fatalf("Failed to marshal club with LastSeen: %v", err)
+		t.Fatalf("Failed to marshal club with State and LastSeen: %v", err)
 	}
 
 	// Test JSON unmarshaling
 	var unmarshaled Club
 	if err := json.Unmarshal(data, &unmarshaled); err != nil {
-		t.Fatalf("Failed to unmarshal club with LastSeen: %v", err)
+		t.Fatalf("Failed to unmarshal club with State and LastSeen: %v", err)
+	}
+
+	if unmarshaled.State != "VIC" {
+		t.Errorf("State field not preserved: got %q, want %q", unmarshaled.State, "VIC")
 	}
 
 	if unmarshaled.LastSeen != currentTime {
 		t.Errorf("LastSeen field not preserved: got %q, want %q", unmarshaled.LastSeen, currentTime)
 	}
 
-	// Test that empty LastSeen is handled
-	clubWithoutLastSeen := Club{
+	// Test that empty fields are handled
+	clubWithoutFields := Club{
 		ClubName: "Test Club 2",
 		ClubURL:  "https://entryboss.cc/calendar/test2",
 	}
 
-	data2, err := json.Marshal(clubWithoutLastSeen)
+	data2, err := json.Marshal(clubWithoutFields)
 	if err != nil {
-		t.Fatalf("Failed to marshal club without LastSeen: %v", err)
+		t.Fatalf("Failed to marshal club without State/LastSeen: %v", err)
 	}
 
 	var unmarshaled2 Club
 	if err := json.Unmarshal(data2, &unmarshaled2); err != nil {
-		t.Fatalf("Failed to unmarshal club without LastSeen: %v", err)
+		t.Fatalf("Failed to unmarshal club without State/LastSeen: %v", err)
+	}
+
+	if unmarshaled2.State != "" {
+		t.Errorf("Empty State should remain empty, got %q", unmarshaled2.State)
 	}
 
 	if unmarshaled2.LastSeen != "" {
 		t.Errorf("Empty LastSeen should remain empty, got %q", unmarshaled2.LastSeen)
+	}
+}
+
+func TestMultiStateSupport(t *testing.T) {
+	// Test that we can handle clubs from multiple states
+	states := []string{"VIC", "NSW", "QLD", "SA", "WA", "TAS", "ACT", "NT"}
+	currentTime := time.Now().Format(time.RFC3339)
+
+	var clubs []Club
+	for i, state := range states {
+		clubs = append(clubs, Club{
+			ClubName: "Test Club " + state,
+			ClubURL:  "https://entryboss.cc/calendar/test-" + state,
+			State:    state,
+			LastSeen: currentTime,
+		})
+
+		// Verify each club has correct state
+		if clubs[i].State != state {
+			t.Errorf("Club %d state mismatch: got %q, want %q", i, clubs[i].State, state)
+		}
+	}
+
+	// Test marshaling all clubs
+	data, err := json.MarshalIndent(clubs, "", "  ")
+	if err != nil {
+		t.Fatalf("Failed to marshal multi-state clubs: %v", err)
+	}
+
+	var unmarshaled []Club
+	if err := json.Unmarshal(data, &unmarshaled); err != nil {
+		t.Fatalf("Failed to unmarshal multi-state clubs: %v", err)
+	}
+
+	if len(unmarshaled) != len(states) {
+		t.Errorf("Expected %d clubs, got %d", len(states), len(unmarshaled))
 	}
 }

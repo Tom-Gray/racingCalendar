@@ -19,6 +19,7 @@ import (
 type Club struct {
 	ClubName string `json:"clubName"`
 	ClubURL  string `json:"clubUrl"`
+	State    string `json:"state"`
 	LastSeen string `json:"lastSeen"`
 }
 
@@ -27,19 +28,20 @@ type Event struct {
 	EventName string `json:"eventName"`
 	EventDate string `json:"eventDate"`
 	ClubName  string `json:"clubName"`
+	State     string `json:"state"`
 	EventURL  string `json:"eventUrl"`
 }
 
 var rootCmd = &cobra.Command{
 	Use:   "racecalendar",
-	Short: "EntryBoss Discovery Tool - scrape cycling events from Victorian clubs",
-	Long:  `A CLI tool to scrape cycling events from EntryBoss for Victorian clubs and generate static data files.`,
+	Short: "EntryBoss Discovery Tool - scrape cycling events from Australian clubs",
+	Long:  `A CLI tool to scrape cycling events from EntryBoss for Australian clubs and generate static data files.`,
 }
 
 var updateClubsCmd = &cobra.Command{
 	Use:   "update-clubs",
-	Short: "Update the list of Victorian cycling clubs",
-	Long:  `Scrape EntryBoss to find all Victorian cycling clubs and save them to clubs.json`,
+	Short: "Update the list of all Australian cycling clubs",
+	Long:  `Scrape EntryBoss to find all Australian cycling clubs from all states and save them to clubs.json`,
 	Run: func(cmd *cobra.Command, args []string) {
 		if err := updateClubs(); err != nil {
 			log.Fatalf("Failed to update clubs: %v", err)
@@ -48,21 +50,38 @@ var updateClubsCmd = &cobra.Command{
 	},
 }
 
+var stateFlag string
+
 var updateEventsCmd = &cobra.Command{
 	Use:   "update-events",
-	Short: "Update events from all known Victorian clubs",
-	Long:  `Read clubs.json and scrape events from each club, saving all events to events.json`,
+	Short: "Update events from clubs (all states by default, or specific state with --state flag)",
+	Long:  `Read clubs.json and scrape events. If no state specified, processes all states. Use --state to process a specific state only.`,
 	Run: func(cmd *cobra.Command, args []string) {
-		if err := updateEvents(); err != nil {
+		state := strings.ToUpper(stateFlag)
+		if err := updateEvents(state); err != nil {
 			log.Fatalf("Failed to update events: %v", err)
 		}
-		fmt.Println("Successfully updated events.json")
+	},
+}
+
+var migrateCmd = &cobra.Command{
+	Use:   "migrate",
+	Short: "Add state field to existing clubs.json (assumes VIC)",
+	Long:  `Migrate existing clubs.json to add state field with default value "VIC"`,
+	Run: func(cmd *cobra.Command, args []string) {
+		if err := migrateData(); err != nil {
+			log.Fatalf("Failed to migrate data: %v", err)
+		}
+		fmt.Println("Successfully migrated data")
 	},
 }
 
 func init() {
+	updateEventsCmd.Flags().StringVarP(&stateFlag, "state", "s", "", "State code to process (VIC, NSW, QLD, SA, WA, TAS, ACT, NT). If not specified, processes all states.")
+
 	rootCmd.AddCommand(updateClubsCmd)
 	rootCmd.AddCommand(updateEventsCmd)
+	rootCmd.AddCommand(migrateCmd)
 }
 
 func main() {
@@ -84,7 +103,6 @@ func updateClubs() error {
 	// Create map using clubURL as key for fast lookup and deduplication
 	clubMap := make(map[string]Club)
 	for _, club := range existingClubs {
-		// Handle migration: if existing club doesn't have lastSeen, don't overwrite it yet
 		clubMap[club.ClubURL] = club
 	}
 
@@ -106,27 +124,29 @@ func updateClubs() error {
 		return fmt.Errorf("failed to parse HTML: %w", err)
 	}
 
-	// Find Victorian clubs from the dropdown menu
+	// Define Australian states
+	states := []string{"ACT", "NSW", "NT", "QLD", "SA", "TAS", "VIC", "WA"}
 	scrapedClubs := make(map[string]Club)
+	var currentState string
 
-	// Look for the VIC section in the dropdown
-	var inVicSection bool
+	// Parse dropdown menu for all state sections
 	doc.Find("li").Each(func(i int, s *goquery.Selection) {
-		// Check if this is the VIC header
-		if s.HasClass("dropdown-header") && strings.Contains(strings.ToLower(s.Text()), "vic") {
-			inVicSection = true
-			fmt.Println("Found VIC section in dropdown")
-			return
+		// Check if this is a state header
+		if s.HasClass("dropdown-header") {
+			headerText := strings.ToUpper(strings.TrimSpace(s.Text()))
+			for _, state := range states {
+				if strings.Contains(headerText, state) {
+					currentState = state
+					fmt.Printf("Found %s section in dropdown\n", state)
+					return
+				}
+			}
+			// If we hit a non-state header, clear current state
+			currentState = ""
 		}
 
-		// Check if we've moved to another section
-		if s.HasClass("dropdown-header") && inVicSection && !strings.Contains(strings.ToLower(s.Text()), "vic") {
-			inVicSection = false
-			return
-		}
-
-		// If we're in the VIC section, look for club links
-		if inVicSection {
+		// If we're in a state section, look for club links
+		if currentState != "" {
 			s.Find("a[href*='/calendar/']").Each(func(j int, link *goquery.Selection) {
 				href, exists := link.Attr("href")
 				if !exists {
@@ -139,55 +159,26 @@ func updateClubs() error {
 					scrapedClubs[fullURL] = Club{
 						ClubName: clubName,
 						ClubURL:  fullURL,
+						State:    currentState,
 						LastSeen: currentTime,
 					}
-					fmt.Printf("Found Victorian club: %s -> %s\n", clubName, fullURL)
+					fmt.Printf("Found %s club: %s -> %s\n", currentState, clubName, fullURL)
 				}
 			})
 		}
 	})
 
-	// Fallback: also look for any links that might be Victorian based on content
-	if len(scrapedClubs) == 0 {
-		fmt.Println("No clubs found in dropdown, trying fallback method...")
-
-		// Look for calendar links and try to identify Victorian ones
-		doc.Find("a[href*='/calendar/']").Each(func(i int, s *goquery.Selection) {
-			href, exists := s.Attr("href")
-			if !exists {
-				return
-			}
-
-			clubName := strings.TrimSpace(s.Text())
-			if clubName == "" {
-				// Try to find club name in parent elements
-				clubName = strings.TrimSpace(s.Parent().Text())
-			}
-
-			// Clean up the club name
-			clubName = cleanClubName(clubName)
-
-			if clubName != "" && isVictorianClub(clubName, href) {
-				fullURL := "https://entryboss.cc" + href
-				scrapedClubs[fullURL] = Club{
-					ClubName: clubName,
-					ClubURL:  fullURL,
-					LastSeen: currentTime,
-				}
-				fmt.Printf("Found Victorian club (fallback): %s -> %s\n", clubName, fullURL)
-			}
-		})
-	}
-
 	// Merge scraped clubs with existing clubs
 	newClubsCount := 0
 	updatedClubsCount := 0
+	stateStats := make(map[string]int)
 	var newClubNames []string
 
 	for clubURL, scrapedClub := range scrapedClubs {
 		if existingClub, exists := clubMap[clubURL]; exists {
-			// Update existing club with new lastSeen time and potentially updated name
-			existingClub.ClubName = scrapedClub.ClubName // Update name in case it changed
+			// Update existing club with new information
+			existingClub.ClubName = scrapedClub.ClubName
+			existingClub.State = scrapedClub.State
 			existingClub.LastSeen = currentTime
 			clubMap[clubURL] = existingClub
 			updatedClubsCount++
@@ -195,8 +186,9 @@ func updateClubs() error {
 			// Add new club
 			clubMap[clubURL] = scrapedClub
 			newClubsCount++
-			newClubNames = append(newClubNames, scrapedClub.ClubName)
+			newClubNames = append(newClubNames, fmt.Sprintf("%s (%s)", scrapedClub.ClubName, scrapedClub.State))
 		}
+		stateStats[scrapedClub.State]++
 	}
 
 	// Handle migration: set lastSeen for existing clubs that don't have it
@@ -216,6 +208,9 @@ func updateClubs() error {
 	}
 
 	sort.Slice(clubList, func(i, j int) bool {
+		if clubList[i].State != clubList[j].State {
+			return clubList[i].State < clubList[j].State
+		}
 		return clubList[i].ClubName < clubList[j].ClubName
 	})
 
@@ -229,7 +224,7 @@ func updateClubs() error {
 		return fmt.Errorf("failed to write clubs.json: %w", err)
 	}
 
-	fmt.Printf("Club update summary:\n")
+	fmt.Printf("\nClub update summary:\n")
 	fmt.Printf("  Total clubs: %d\n", len(clubList))
 	fmt.Printf("  New clubs found: %d\n", newClubsCount)
 	if newClubsCount > 0 {
@@ -244,42 +239,130 @@ func updateClubs() error {
 	}
 	fmt.Printf("  Clubs preserved from previous runs: %d\n", len(clubList)-len(scrapedClubs))
 
-	return nil
-}
-
-func cleanClubName(name string) string {
-	// Remove extra whitespace and clean up club names
-	name = strings.TrimSpace(name)
-	name = regexp.MustCompile(`\s+`).ReplaceAllString(name, " ")
-
-	// Remove common prefixes/suffixes that aren't part of the actual name
-	name = strings.TrimPrefix(name, "https://entryboss.cc/calendar/")
-	name = strings.TrimSuffix(name, " Open")
-
-	return name
-}
-
-func isVictorianClub(clubName, href string) bool {
-	lowerName := strings.ToLower(clubName)
-	lowerHref := strings.ToLower(href)
-
-	// Check for Victorian indicators
-	victorianIndicators := []string{
-		"victoria", "vic", "melbourne", "geelong", "ballarat", "bendigo",
-		"casey", "eastern", "northern", "western", "southern", "morningside",
-		"brunswick", "colac", "hamilton", "frankston", "werribee", "dandenong",
-	}
-
-	for _, indicator := range victorianIndicators {
-		if strings.Contains(lowerName, indicator) || strings.Contains(lowerHref, indicator) {
-			return true
+	fmt.Printf("\nClubs by state:\n")
+	for _, state := range states {
+		if count, exists := stateStats[state]; exists {
+			fmt.Printf("  %s: %d clubs\n", state, count)
 		}
 	}
 
-	return false
+	return nil
 }
 
-func updateEvents() error {
+func updateEvents(state string) error {
+	// Determine which states to process
+	var statesToProcess []string
+	if state == "" {
+		// Process all states
+		statesToProcess = []string{"ACT", "NSW", "NT", "QLD", "SA", "TAS", "VIC", "WA"}
+		fmt.Println("No state specified - processing all states...")
+	} else {
+		// Process single state
+		statesToProcess = []string{state}
+	}
+
+	// Read all clubs from clubs.json
+	data, err := os.ReadFile("clubs.json")
+	if err != nil {
+		return fmt.Errorf("failed to read clubs.json: %w", err)
+	}
+
+	var allClubs []Club
+	if err := json.Unmarshal(data, &allClubs); err != nil {
+		return fmt.Errorf("failed to unmarshal clubs.json: %w", err)
+	}
+
+	// Track statistics across all states
+	totalEvents := 0
+	stateResults := make(map[string]int)
+
+	// Process each state
+	for stateIndex, stateCode := range statesToProcess {
+		if len(statesToProcess) > 1 {
+			fmt.Printf("\n=== Processing %s (%d/%d) ===\n", stateCode, stateIndex+1, len(statesToProcess))
+		}
+
+		// Filter clubs by state
+		var stateClubs []Club
+		for _, club := range allClubs {
+			if club.State == stateCode {
+				stateClubs = append(stateClubs, club)
+			}
+		}
+
+		if len(stateClubs) == 0 {
+			fmt.Printf("No clubs found for state %s, skipping...\n", stateCode)
+			continue
+		}
+
+		fmt.Printf("Found %d clubs in %s\n", len(stateClubs), stateCode)
+
+		var stateEvents []Event
+
+		for _, club := range stateClubs {
+			fmt.Printf("Scraping events for %s...\n", club.ClubName)
+
+			events, err := scrapeClubEvents(club)
+			if err != nil {
+				log.Printf("Failed to scrape events for %s: %v", club.ClubName, err)
+				continue
+			}
+
+			// Add state field to each event
+			for i := range events {
+				events[i].State = club.State
+			}
+
+			stateEvents = append(stateEvents, events...)
+
+			// Small delay to be respectful to the server
+			time.Sleep(1 * time.Second)
+		}
+
+		// Sort events by date
+		sort.Slice(stateEvents, func(i, j int) bool {
+			return stateEvents[i].EventDate < stateEvents[j].EventDate
+		})
+
+		// Write to state-specific events file
+		eventsFile := fmt.Sprintf("events-%s.json", strings.ToLower(stateCode))
+		eventData, err := json.MarshalIndent(stateEvents, "", "  ")
+		if err != nil {
+			return fmt.Errorf("failed to marshal events for %s: %w", stateCode, err)
+		}
+
+		if err := os.WriteFile(eventsFile, eventData, 0644); err != nil {
+			return fmt.Errorf("failed to write %s: %w", eventsFile, err)
+		}
+
+		fmt.Printf("Successfully scraped %d events from %d clubs in %s\n", len(stateEvents), len(stateClubs), stateCode)
+
+		totalEvents += len(stateEvents)
+		stateResults[stateCode] = len(stateEvents)
+
+		// Delay between states when processing multiple
+		if len(statesToProcess) > 1 && stateIndex < len(statesToProcess)-1 {
+			fmt.Println("Pausing before next state...")
+			time.Sleep(2 * time.Second)
+		}
+	}
+
+	// Print summary if multiple states were processed
+	if len(statesToProcess) > 1 {
+		fmt.Printf("\n=== Summary ===\n")
+		fmt.Printf("Total events scraped: %d\n", totalEvents)
+		fmt.Println("\nEvents by state:")
+		for _, stateCode := range statesToProcess {
+			if count, exists := stateResults[stateCode]; exists {
+				fmt.Printf("  %s: %d events\n", stateCode, count)
+			}
+		}
+	}
+
+	return nil
+}
+
+func migrateData() error {
 	// Read clubs.json
 	data, err := os.ReadFile("clubs.json")
 	if err != nil {
@@ -288,42 +371,60 @@ func updateEvents() error {
 
 	var clubs []Club
 	if err := json.Unmarshal(data, &clubs); err != nil {
-		return fmt.Errorf("failed to unmarshal clubs.json: %w", err)
+		return fmt.Errorf("failed to parse clubs.json: %w", err)
 	}
 
-	var allEvents []Event
+	// Add state: "VIC" to all clubs that don't have it
+	modified := 0
+	for i := range clubs {
+		if clubs[i].State == "" {
+			clubs[i].State = "VIC"
+			modified++
+		}
+	}
 
-	for _, club := range clubs {
-		fmt.Printf("Scraping events for %s...\n", club.ClubName)
+	// Write back to clubs.json
+	data, err = json.MarshalIndent(clubs, "", "  ")
+	if err != nil {
+		return fmt.Errorf("failed to marshal clubs: %w", err)
+	}
 
-		events, err := scrapeClubEvents(club)
-		if err != nil {
-			log.Printf("Failed to scrape events for %s: %v", club.ClubName, err)
-			continue
+	if err := os.WriteFile("clubs.json", data, 0644); err != nil {
+		return fmt.Errorf("failed to write clubs.json: %w", err)
+	}
+
+	fmt.Printf("Successfully added state field to %d clubs\n", modified)
+
+	// Check if events.json exists and needs migration
+	if eventData, err := os.ReadFile("events.json"); err == nil {
+		var events []Event
+		if err := json.Unmarshal(eventData, &events); err != nil {
+			return fmt.Errorf("failed to parse events.json: %w", err)
 		}
 
-		allEvents = append(allEvents, events...)
+		// Add state: "VIC" to all events that don't have it
+		eventsModified := 0
+		for i := range events {
+			if events[i].State == "" {
+				events[i].State = "VIC"
+				eventsModified++
+			}
+		}
 
-		// Small delay to be respectful to the server
-		time.Sleep(1 * time.Second)
+		// Write to events-vic.json
+		eventData, err = json.MarshalIndent(events, "", "  ")
+		if err != nil {
+			return fmt.Errorf("failed to marshal events: %w", err)
+		}
+
+		if err := os.WriteFile("events-vic.json", eventData, 0644); err != nil {
+			return fmt.Errorf("failed to write events-vic.json: %w", err)
+		}
+
+		fmt.Printf("Successfully migrated %d events to events-vic.json\n", eventsModified)
+		fmt.Println("Note: Original events.json preserved. You may want to remove it after verifying the migration.")
 	}
 
-	// Sort events by date
-	sort.Slice(allEvents, func(i, j int) bool {
-		return allEvents[i].EventDate < allEvents[j].EventDate
-	})
-
-	// Write to events.json
-	eventData, err := json.MarshalIndent(allEvents, "", "  ")
-	if err != nil {
-		return fmt.Errorf("failed to marshal events: %w", err)
-	}
-
-	if err := os.WriteFile("events.json", eventData, 0644); err != nil {
-		return fmt.Errorf("failed to write events.json: %w", err)
-	}
-
-	fmt.Printf("Successfully scraped %d events from %d clubs\n", len(allEvents), len(clubs))
 	return nil
 }
 

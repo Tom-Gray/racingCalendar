@@ -42,7 +42,7 @@ async function initAboutStats() {
         
         // Load events and clubs data
         const [eventsResponse, clubsResponse] = await Promise.all([
-            fetchWithTimeout('./events.json').catch(() => null),
+            fetchWithTimeout('./events-vic.json').catch(() => null),
             fetchWithTimeout('./clubs.json').catch(() => null)
         ]);
         
@@ -51,7 +51,7 @@ async function initAboutStats() {
             try {
                 statsData.events = await eventsResponse.json();
             } catch (error) {
-                console.warn('Failed to parse events.json:', error);
+                console.warn('Failed to parse events-vic.json:', error);
                 statsData.events = [];
             }
         }

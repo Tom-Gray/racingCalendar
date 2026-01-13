@@ -342,9 +342,9 @@ async function loadEvents() {
         // Load events first (more critical)
         let eventsResponse;
         try {
-            eventsResponse = await fetchWithTimeout('./events.json');
+            eventsResponse = await fetchWithTimeout('./events-vic.json');
         } catch (fetchError) {
-            throw new Error(`Failed to fetch events.json: ${fetchError.message}`);
+            throw new Error(`Failed to fetch events-vic.json: ${fetchError.message}`);
         }
         
         if (!eventsResponse.ok) {
@@ -354,7 +354,7 @@ async function loadEvents() {
         try {
             events = await eventsResponse.json();
         } catch (parseError) {
-            throw new Error(`Failed to parse events.json: ${parseError.message}`);
+            throw new Error(`Failed to parse events-vic.json: ${parseError.message}`);
         }
         
         // Load clubs (less critical, can fallback)

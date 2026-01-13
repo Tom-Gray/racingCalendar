@@ -212,7 +212,7 @@ async function loadData() {
 
 async function loadEvents() {
     try {
-        const response = await fetch('events.json');
+        const response = await fetch('events-vic.json');
         if (!response.ok) throw new Error('Failed to fetch events');
         return await response.json();
     } catch (error) {

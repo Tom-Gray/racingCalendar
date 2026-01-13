@@ -1,307 +1,662 @@
 [
   {
+    "clubName": "AusCycling (ACT)",
+    "clubUrl": "https://entryboss.cc/calendar/acact",
+    "state": "ACT",
+    "lastSeen": "2026-01-07T18:06:52+11:00"
+  },
+  {
+    "clubName": "Canberra Cycling Club",
+    "clubUrl": "https://entryboss.cc/calendar/canberra",
+    "state": "ACT",
+    "lastSeen": "2026-01-07T18:06:52+11:00"
+  },
+  {
+    "clubName": "Canberra Off-Road Cyclists",
+    "clubUrl": "https://entryboss.cc/calendar/corc",
+    "state": "ACT",
+    "lastSeen": "2026-01-07T18:06:52+11:00"
+  },
+  {
+    "clubName": "Vikings Cycling Club",
+    "clubUrl": "https://entryboss.cc/calendar/vikings",
+    "state": "ACT",
+    "lastSeen": "2026-01-07T18:06:52+11:00"
+  },
+  {
+    "clubName": "AusCycling (New South Wales)",
+    "clubUrl": "https://entryboss.cc/calendar/acnsw",
+    "state": "NSW",
+    "lastSeen": "2026-01-07T18:06:52+11:00"
+  },
+  {
+    "clubName": "Central Coast CC",
+    "clubUrl": "https://entryboss.cc/calendar/centralcoast",
+    "state": "NSW",
+    "lastSeen": "2026-01-07T18:06:52+11:00"
+  },
+  {
+    "clubName": "Hawkesbury Hornets BMX Club",
+    "clubUrl": "https://entryboss.cc/calendar/hawkesburyhornetsbmx",
+    "state": "NSW",
+    "lastSeen": "2026-01-07T18:06:52+11:00"
+  },
+  {
+    "clubName": "Macleay Valley Mountain Bikers",
+    "clubUrl": "https://entryboss.cc/calendar/macleayvalleymtb",
+    "state": "NSW",
+    "lastSeen": "2026-01-07T18:06:52+11:00"
+  },
+  {
+    "clubName": "Nambucca Valley Cycle Club",
+    "clubUrl": "https://entryboss.cc/calendar/nv",
+    "state": "NSW",
+    "lastSeen": "2026-01-07T18:06:52+11:00"
+  },
+  {
+    "clubName": "Southlake Illawarra BMX Club",
+    "clubUrl": "https://entryboss.cc/calendar/southlakeillawarrabmxclub",
+    "state": "NSW",
+    "lastSeen": "2026-01-07T18:06:52+11:00"
+  },
+  {
+    "clubName": "Tamworth Mountain Bikers",
+    "clubUrl": "https://entryboss.cc/calendar/tammtb",
+    "state": "NSW",
+    "lastSeen": "2026-01-07T18:06:52+11:00"
+  },
+  {
+    "clubName": "Western Sydney CritCross",
+    "clubUrl": "https://entryboss.cc/calendar/wscritcross",
+    "state": "NSW",
+    "lastSeen": "2026-01-07T18:06:52+11:00"
+  },
+  {
+    "clubName": "Western Sydney MTB Club",
+    "clubUrl": "https://entryboss.cc/calendar/wsmtb",
+    "state": "NSW",
+    "lastSeen": "2026-01-07T18:06:52+11:00"
+  },
+  {
+    "clubName": "Atherton BMX Club",
+    "clubUrl": "https://entryboss.cc/calendar/athertonbmx",
+    "state": "QLD",
+    "lastSeen": "2026-01-07T18:06:52+11:00"
+  },
+  {
+    "clubName": "AusCycling (Queensland)",
+    "clubUrl": "https://entryboss.cc/calendar/acq",
+    "state": "QLD",
+    "lastSeen": "2026-01-07T18:06:52+11:00"
+  },
+  {
+    "clubName": "Balmoral Cycling Club",
+    "clubUrl": "https://entryboss.cc/calendar/balmoral",
+    "state": "QLD",
+    "lastSeen": "2026-01-07T18:06:52+11:00"
+  },
+  {
+    "clubName": "CTD Industries (QLD)",
+    "clubUrl": "https://entryboss.cc/calendar/ctd",
+    "state": "QLD",
+    "lastSeen": "2026-01-07T18:06:52+11:00"
+  },
+  {
+    "clubName": "Cairns Cycling Club",
+    "clubUrl": "https://entryboss.cc/calendar/cairnscc",
+    "state": "QLD",
+    "lastSeen": "2026-01-07T18:06:52+11:00"
+  },
+  {
+    "clubName": "Hamilton Wheelers Cycling Club",
+    "clubUrl": "https://entryboss.cc/calendar/hwcc",
+    "state": "QLD",
+    "lastSeen": "2026-01-07T18:06:52+11:00"
+  },
+  {
+    "clubName": "Ipswich Offroad Cyclists",
+    "clubUrl": "https://entryboss.cc/calendar/ipswichoffroadcyclists",
+    "state": "QLD",
+    "lastSeen": "2026-01-07T18:06:52+11:00"
+  },
+  {
+    "clubName": "Mackay and District (MAD) Mountain Bike Club",
+    "clubUrl": "https://entryboss.cc/calendar/madmtb",
+    "state": "QLD",
+    "lastSeen": "2026-01-07T18:06:52+11:00"
+  },
+  {
+    "clubName": "Pine Rivers BMX Club",
+    "clubUrl": "https://entryboss.cc/calendar/pineriversbmx",
+    "state": "QLD",
+    "lastSeen": "2026-01-07T18:06:52+11:00"
+  },
+  {
+    "clubName": "RATS Cycling Club",
+    "clubUrl": "https://entryboss.cc/calendar/rats",
+    "state": "QLD",
+    "lastSeen": "2026-01-07T18:06:52+11:00"
+  },
+  {
+    "clubName": "Rockhampton Cycling Club",
+    "clubUrl": "https://entryboss.cc/calendar/rockhamptoncc",
+    "state": "QLD",
+    "lastSeen": "2026-01-07T18:06:52+11:00"
+  },
+  {
+    "clubName": "Townsville BMX Club",
+    "clubUrl": "https://entryboss.cc/calendar/townsvillebmx",
+    "state": "QLD",
+    "lastSeen": "2026-01-07T18:06:52+11:00"
+  },
+  {
+    "clubName": "Adelaide Hills Cycling Club",
+    "clubUrl": "https://entryboss.cc/calendar/ahcc",
+    "state": "SA",
+    "lastSeen": "2026-01-07T18:06:52+11:00"
+  },
+  {
+    "clubName": "Adelaide Mountain Bike Club",
+    "clubUrl": "https://entryboss.cc/calendar/ambc",
+    "state": "SA",
+    "lastSeen": "2026-01-07T18:06:52+11:00"
+  },
+  {
+    "clubName": "AusCycling (South Australia)",
+    "clubUrl": "https://entryboss.cc/calendar/acsa",
+    "state": "SA",
+    "lastSeen": "2026-01-07T18:06:52+11:00"
+  },
+  {
+    "clubName": "AusCycling SA - Superdrome",
+    "clubUrl": "https://entryboss.cc/calendar/acsasuperdrome",
+    "state": "SA",
+    "lastSeen": "2026-01-07T18:06:52+11:00"
+  },
+  {
+    "clubName": "Events to Activate",
+    "clubUrl": "https://entryboss.cc/calendar/eventstoactivate",
+    "state": "SA",
+    "lastSeen": "2026-01-07T18:06:52+11:00"
+  },
+  {
+    "clubName": "Mt Gambier Cycling Club",
+    "clubUrl": "https://entryboss.cc/calendar/mgcc",
+    "state": "SA",
+    "lastSeen": "2026-01-07T18:06:52+11:00"
+  },
+  {
+    "clubName": "Norwood Cycling Club",
+    "clubUrl": "https://entryboss.cc/calendar/norwoodcc",
+    "state": "SA",
+    "lastSeen": "2026-01-07T18:06:52+11:00"
+  },
+  {
+    "clubName": "Port Adelaide Cycling Club",
+    "clubUrl": "https://entryboss.cc/calendar/pacc",
+    "state": "SA",
+    "lastSeen": "2026-01-07T18:06:52+11:00"
+  },
+  {
+    "clubName": "South Coast Cycling",
+    "clubUrl": "https://entryboss.cc/calendar/southcoast",
+    "state": "SA",
+    "lastSeen": "2026-01-07T18:06:52+11:00"
+  },
+  {
+    "clubName": "AusCycling (Tasmania)",
+    "clubUrl": "https://entryboss.cc/calendar/actas",
+    "state": "TAS",
+    "lastSeen": "2026-01-07T18:06:52+11:00"
+  },
+  {
+    "clubName": "Hobart Wheelers Dirt Devils CC",
+    "clubUrl": "https://entryboss.cc/calendar/hwdd",
+    "state": "TAS",
+    "lastSeen": "2026-01-07T18:06:52+11:00"
+  },
+  {
+    "clubName": "Launceston BMX Club",
+    "clubUrl": "https://entryboss.cc/calendar/lbmxc",
+    "state": "TAS",
+    "lastSeen": "2026-01-07T18:06:52+11:00"
+  },
+  {
+    "clubName": "Launceston Mountain Bike Club",
+    "clubUrl": "https://entryboss.cc/calendar/lmbc",
+    "state": "TAS",
+    "lastSeen": "2026-01-07T18:06:52+11:00"
+  },
+  {
+    "clubName": "Mersey Mountain Bike Club",
+    "clubUrl": "https://entryboss.cc/calendar/mvdccmtb",
+    "state": "TAS",
+    "lastSeen": "2026-01-07T18:06:52+11:00"
+  },
+  {
+    "clubName": "Mersey Valley Devonport Cycling Club",
+    "clubUrl": "https://entryboss.cc/calendar/mvdcc",
+    "state": "TAS",
+    "lastSeen": "2026-01-07T18:06:52+11:00"
+  },
+  {
+    "clubName": "Wynyard BMX Club",
+    "clubUrl": "https://entryboss.cc/calendar/wynyardbmx",
+    "state": "TAS",
+    "lastSeen": "2026-01-07T18:06:52+11:00"
+  },
+  {
     "clubName": "ACES \u0026 Summer Track Series",
     "clubUrl": "https://entryboss.cc/calendar/aces",
-    "lastSeen": "2026-01-06T06:44:42Z"
+    "state": "VIC",
+    "lastSeen": "2026-01-07T18:06:52+11:00"
   },
   {
     "clubName": "Albury Wodonga Cycling Club Inc",
     "clubUrl": "https://entryboss.cc/calendar/awpcc",
-    "lastSeen": "2026-01-06T06:44:42Z"
+    "state": "VIC",
+    "lastSeen": "2026-01-07T18:06:52+11:00"
   },
   {
     "clubName": "Alpine Cycling Club",
     "clubUrl": "https://entryboss.cc/calendar/alpinecc",
+    "state": "VIC",
     "lastSeen": "2025-12-06T06:36:08Z"
   },
   {
     "clubName": "AusCycling (Victoria)",
     "clubUrl": "https://entryboss.cc/calendar/acv",
-    "lastSeen": "2026-01-06T06:44:42Z"
+    "state": "VIC",
+    "lastSeen": "2026-01-07T18:06:52+11:00"
   },
   {
     "clubName": "BSX",
     "clubUrl": "https://entryboss.cc/calendar/bsx",
-    "lastSeen": "2026-01-06T06:44:42Z"
+    "state": "VIC",
+    "lastSeen": "2026-01-07T18:06:52+11:00"
   },
   {
     "clubName": "Bacchus Marsh BMX Club",
     "clubUrl": "https://entryboss.cc/calendar/bacchusmarshbmx",
+    "state": "VIC",
     "lastSeen": "2025-10-25T06:33:03Z"
   },
   {
     "clubName": "Ballarat Sebastopol CC",
     "clubUrl": "https://entryboss.cc/calendar/bscc",
-    "lastSeen": "2026-01-06T06:44:42Z"
+    "state": "VIC",
+    "lastSeen": "2026-01-07T18:06:52+11:00"
   },
   {
     "clubName": "Beechworth Chain Gang Mountain Bike Club",
     "clubUrl": "https://entryboss.cc/calendar/bcgmtb",
+    "state": "VIC",
     "lastSeen": "2025-11-20T06:37:14Z"
   },
   {
     "clubName": "Bendigo \u0026 District Cycling Club",
     "clubUrl": "https://entryboss.cc/calendar/bdcc",
-    "lastSeen": "2026-01-06T06:44:42Z"
+    "state": "VIC",
+    "lastSeen": "2026-01-07T18:06:52+11:00"
   },
   {
     "clubName": "Bendigo BMX Club",
     "clubUrl": "https://entryboss.cc/calendar/bendigobmx",
+    "state": "VIC",
     "lastSeen": "2025-12-14T06:38:04Z"
   },
   {
     "clubName": "Bendigo Mountain Bike Club",
     "clubUrl": "https://entryboss.cc/calendar/mtbbendigo",
+    "state": "VIC",
     "lastSeen": "2025-09-04T04:58:29Z"
   },
   {
     "clubName": "Blackburn Cycling Club",
     "clubUrl": "https://entryboss.cc/calendar/bbn",
-    "lastSeen": "2026-01-06T06:44:42Z"
+    "state": "VIC",
+    "lastSeen": "2026-01-07T18:06:52+11:00"
   },
   {
     "clubName": "Brunswick Cycling Club",
     "clubUrl": "https://entryboss.cc/calendar/brunswick",
-    "lastSeen": "2026-01-06T06:44:42Z"
+    "state": "VIC",
+    "lastSeen": "2026-01-07T18:06:52+11:00"
   },
   {
     "clubName": "CTD Industries (VIC)",
     "clubUrl": "https://entryboss.cc/calendar/ctdvic",
-    "lastSeen": "2026-01-06T06:44:42Z"
+    "state": "VIC",
+    "lastSeen": "2026-01-07T18:06:52+11:00"
   },
   {
     "clubName": "Carnegie Caulfield CC",
     "clubUrl": "https://entryboss.cc/calendar/cccc",
+    "state": "VIC",
     "lastSeen": "2025-12-16T06:42:35Z"
   },
   {
     "clubName": "Casey BMX Club",
     "clubUrl": "https://entryboss.cc/calendar/caseybmx",
+    "state": "VIC",
     "lastSeen": "2026-01-06T06:44:42Z"
   },
   {
     "clubName": "Castlemaine Rocky Riders",
     "clubUrl": "https://entryboss.cc/calendar/rockyriders",
+    "state": "VIC",
     "lastSeen": "2025-09-04T04:58:29Z"
   },
   {
     "clubName": "Club MUD Ballarat",
     "clubUrl": "https://entryboss.cc/calendar/clubmudballarat",
+    "state": "VIC",
     "lastSeen": "2025-07-16T03:59:03Z"
   },
   {
     "clubName": "Coburg Cycling Club",
     "clubUrl": "https://entryboss.cc/calendar/coburg",
-    "lastSeen": "2026-01-06T06:44:42Z"
+    "state": "VIC",
+    "lastSeen": "2026-01-07T18:06:52+11:00"
   },
   {
     "clubName": "Colac Cycling Club",
     "clubUrl": "https://entryboss.cc/calendar/colac",
+    "state": "VIC",
     "lastSeen": "2025-12-05T06:40:30Z"
   },
   {
     "clubName": "Dirty Deeds CX",
     "clubUrl": "https://entryboss.cc/calendar/ddcx",
-    "lastSeen": "2026-01-06T06:44:42Z"
+    "state": "VIC",
+    "lastSeen": "2026-01-07T18:06:52+11:00"
   },
   {
     "clubName": "Eastern Cycling Club",
     "clubUrl": "https://entryboss.cc/calendar/ecc",
-    "lastSeen": "2026-01-06T06:44:42Z"
+    "state": "VIC",
+    "lastSeen": "2026-01-07T18:06:52+11:00"
   },
   {
     "clubName": "Eastern Region BMX",
     "clubUrl": "https://entryboss.cc/calendar/easternregionbmx",
-    "lastSeen": "2026-01-06T06:44:42Z"
+    "state": "VIC",
+    "lastSeen": "2026-01-07T18:06:52+11:00"
   },
   {
     "clubName": "Eureka Cycling Club",
     "clubUrl": "https://entryboss.cc/calendar/eurekavets",
+    "state": "VIC",
     "lastSeen": "2025-11-30T06:37:49Z"
   },
   {
     "clubName": "Footscray Cycling Club",
     "clubUrl": "https://entryboss.cc/calendar/fcc",
-    "lastSeen": "2026-01-06T06:44:42Z"
+    "state": "VIC",
+    "lastSeen": "2026-01-07T18:06:52+11:00"
   },
   {
     "clubName": "Frankston BMX",
     "clubUrl": "https://entryboss.cc/calendar/frankstonbmx",
-    "lastSeen": "2026-01-06T06:44:42Z"
+    "state": "VIC",
+    "lastSeen": "2026-01-07T18:06:52+11:00"
   },
   {
     "clubName": "Geelong \u0026 Surfcoast Cycling Club",
     "clubUrl": "https://entryboss.cc/calendar/gscc",
-    "lastSeen": "2026-01-06T06:44:42Z"
+    "state": "VIC",
+    "lastSeen": "2026-01-07T18:06:52+11:00"
   },
   {
     "clubName": "Geelong Cycling Club",
     "clubUrl": "https://entryboss.cc/calendar/geelong",
-    "lastSeen": "2026-01-06T06:44:42Z"
+    "state": "VIC",
+    "lastSeen": "2026-01-07T18:06:52+11:00"
   },
   {
     "clubName": "Geelong Mountain Bike Club",
     "clubUrl": "https://entryboss.cc/calendar/gmbc",
-    "lastSeen": "2026-01-06T06:44:42Z"
+    "state": "VIC",
+    "lastSeen": "2026-01-07T18:06:52+11:00"
   },
   {
     "clubName": "Gippsland MTB Inc",
     "clubUrl": "https://entryboss.cc/calendar/gippslandmtb",
+    "state": "VIC",
     "lastSeen": "2025-07-16T03:59:03Z"
   },
   {
     "clubName": "Goulburn Valley MTB Club",
     "clubUrl": "https://entryboss.cc/calendar/gvmtb",
+    "state": "VIC",
     "lastSeen": "2025-11-02T06:35:01Z"
   },
   {
     "clubName": "Hawthorn Cycling Club",
     "clubUrl": "https://entryboss.cc/calendar/hcc",
-    "lastSeen": "2026-01-06T06:44:42Z"
+    "state": "VIC",
+    "lastSeen": "2026-01-07T18:06:52+11:00"
   },
   {
     "clubName": "Joyride Racing",
     "clubUrl": "https://entryboss.cc/calendar/joyride",
+    "state": "VIC",
     "lastSeen": "2025-11-29T06:36:31Z"
   },
   {
     "clubName": "Knox BMX - Coaching \u0026 Gates",
     "clubUrl": "https://entryboss.cc/calendar/knoxgates",
+    "state": "VIC",
     "lastSeen": "2025-12-11T06:42:43Z"
   },
   {
     "clubName": "Knox BMX - Racing",
     "clubUrl": "https://entryboss.cc/calendar/knox",
+    "state": "VIC",
     "lastSeen": "2025-12-05T06:40:30Z"
   },
   {
     "clubName": "Lilydale BMX Club",
     "clubUrl": "https://entryboss.cc/calendar/lilydalebmx",
+    "state": "VIC",
     "lastSeen": "2025-07-16T03:59:03Z"
   },
   {
     "clubName": "Mansfield Mt Buller Cycling Club",
     "clubUrl": "https://entryboss.cc/calendar/mmbcc",
-    "lastSeen": "2026-01-06T06:44:42Z"
+    "state": "VIC",
+    "lastSeen": "2026-01-07T18:06:52+11:00"
   },
   {
     "clubName": "Maroondah BMX Club",
     "clubUrl": "https://entryboss.cc/calendar/maroondahbmx",
-    "lastSeen": "2026-01-06T06:44:42Z"
+    "state": "VIC",
+    "lastSeen": "2026-01-07T18:06:52+11:00"
   },
   {
     "clubName": "Mildura BMX Club",
     "clubUrl": "https://entryboss.cc/calendar/mildurabmx",
+    "state": "VIC",
     "lastSeen": "2025-11-09T06:34:22Z"
   },
   {
     "clubName": "Momnium",
     "clubUrl": "https://entryboss.cc/calendar/momnium",
+    "state": "VIC",
     "lastSeen": "2025-09-28T06:33:02Z"
   },
   {
     "clubName": "Mornington Cycling Club",
     "clubUrl": "https://entryboss.cc/calendar/mornington",
+    "state": "VIC",
     "lastSeen": "2025-11-16T06:35:44Z"
   },
   {
     "clubName": "Mountain Biking East Gippsland",
     "clubUrl": "https://entryboss.cc/calendar/mtbeg",
-    "lastSeen": "2026-01-06T06:44:42Z"
+    "state": "VIC",
+    "lastSeen": "2026-01-07T18:06:52+11:00"
   },
   {
     "clubName": "Northern BMX",
     "clubUrl": "https://entryboss.cc/calendar/nbmx",
+    "state": "VIC",
     "lastSeen": "2025-12-10T06:41:29Z"
   },
   {
     "clubName": "Northern Combine",
     "clubUrl": "https://entryboss.cc/calendar/combine",
-    "lastSeen": "2026-01-06T06:44:42Z"
+    "state": "VIC",
+    "lastSeen": "2026-01-07T18:06:52+11:00"
   },
   {
     "clubName": "Northern Cycling",
     "clubUrl": "https://entryboss.cc/calendar/nvca",
-    "lastSeen": "2026-01-06T06:44:42Z"
+    "state": "VIC",
+    "lastSeen": "2026-01-07T18:06:52+11:00"
   },
   {
     "clubName": "Park Orchards BMX Club",
     "clubUrl": "https://entryboss.cc/calendar/parkorchardsbmx",
-    "lastSeen": "2026-01-06T06:44:42Z"
+    "state": "VIC",
+    "lastSeen": "2026-01-07T18:06:52+11:00"
   },
   {
     "clubName": "Portland BMX Club",
     "clubUrl": "https://entryboss.cc/calendar/portlandbmx",
+    "state": "VIC",
     "lastSeen": "2025-12-10T06:41:29Z"
   },
   {
     "clubName": "Portland Cycling Club",
     "clubUrl": "https://entryboss.cc/calendar/portlandcc",
+    "state": "VIC",
     "lastSeen": "2025-10-11T06:31:51Z"
   },
   {
     "clubName": "Preston Cycling Club",
     "clubUrl": "https://entryboss.cc/calendar/preston",
-    "lastSeen": "2026-01-06T06:44:42Z"
+    "state": "VIC",
+    "lastSeen": "2026-01-07T18:06:52+11:00"
   },
   {
     "clubName": "Seymour Broadford Cycling Club",
     "clubUrl": "https://entryboss.cc/calendar/seymourbroadfordcc",
-    "lastSeen": "2026-01-06T06:44:42Z"
+    "state": "VIC",
+    "lastSeen": "2026-01-07T18:06:52+11:00"
   },
   {
     "clubName": "Shepparton BMX Club",
     "clubUrl": "https://entryboss.cc/calendar/sheppbmx",
-    "lastSeen": "2026-01-06T06:44:42Z"
+    "state": "VIC",
+    "lastSeen": "2026-01-07T18:06:52+11:00"
   },
   {
     "clubName": "Shepparton Cycling Club",
     "clubUrl": "https://entryboss.cc/calendar/shepcc",
-    "lastSeen": "2026-01-06T06:44:42Z"
+    "state": "VIC",
+    "lastSeen": "2026-01-07T18:06:52+11:00"
   },
   {
     "clubName": "St Kilda Cycling Club",
     "clubUrl": "https://entryboss.cc/calendar/skcc",
+    "state": "VIC",
     "lastSeen": "2025-12-14T06:38:04Z"
   },
   {
     "clubName": "Sunbury BMX Club",
     "clubUrl": "https://entryboss.cc/calendar/sunburybmx",
-    "lastSeen": "2026-01-06T06:44:42Z"
+    "state": "VIC",
+    "lastSeen": "2026-01-07T18:06:52+11:00"
   },
   {
     "clubName": "VICS",
     "clubUrl": "https://entryboss.cc/calendar/vics",
+    "state": "VIC",
     "lastSeen": "2025-11-15T06:34:42Z"
   },
   {
     "clubName": "Victorian Downhill Series",
     "clubUrl": "https://entryboss.cc/calendar/vdhs",
-    "lastSeen": "2026-01-06T06:44:42Z"
+    "state": "VIC",
+    "lastSeen": "2026-01-07T18:06:52+11:00"
   },
   {
     "clubName": "Warragul Cycling Club",
     "clubUrl": "https://entryboss.cc/calendar/warragulcc",
+    "state": "VIC",
     "lastSeen": "2025-11-23T06:35:55Z"
   },
   {
     "clubName": "Warrnambool BMX Club",
     "clubUrl": "https://entryboss.cc/calendar/warrnamboolbmx",
+    "state": "VIC",
     "lastSeen": "2025-12-07T06:35:53Z"
   },
   {
     "clubName": "Western Region BMX",
     "clubUrl": "https://entryboss.cc/calendar/wrbmx",
+    "state": "VIC",
     "lastSeen": "2025-09-08T06:36:52Z"
   },
   {
     "clubName": "Westside Cycle Club",
     "clubUrl": "https://entryboss.cc/calendar/westsidecc",
+    "state": "VIC",
     "lastSeen": "2025-10-19T06:34:00Z"
   },
   {
     "clubName": "Wyndam Warriors BMX Club",
     "clubUrl": "https://entryboss.cc/calendar/wyndhamwarriorsbmx",
+    "state": "VIC",
     "lastSeen": "2025-12-06T06:36:08Z"
+  },
+  {
+    "clubName": "4Five+ Athlete Collective",
+    "clubUrl": "https://entryboss.cc/calendar/4fiveplus",
+    "state": "WA",
+    "lastSeen": "2026-01-07T18:06:52+11:00"
+  },
+  {
+    "clubName": "Albany Mountain Bike Club",
+    "clubUrl": "https://entryboss.cc/calendar/albanymtbclub",
+    "state": "WA",
+    "lastSeen": "2026-01-07T18:06:52+11:00"
+  },
+  {
+    "clubName": "AusCycling (WA)",
+    "clubUrl": "https://entryboss.cc/calendar/acw",
+    "state": "WA",
+    "lastSeen": "2026-01-07T18:06:52+11:00"
+  },
+  {
+    "clubName": "Hills BMX",
+    "clubUrl": "https://entryboss.cc/calendar/hillsbmx",
+    "state": "WA",
+    "lastSeen": "2026-01-07T18:06:52+11:00"
+  },
+  {
+    "clubName": "Margaret River Off Road Cycling Association - Mrorca",
+    "clubUrl": "https://entryboss.cc/calendar/mrorca",
+    "state": "WA",
+    "lastSeen": "2026-01-07T18:06:52+11:00"
+  },
+  {
+    "clubName": "Rockingham Triathlon Club",
+    "clubUrl": "https://entryboss.cc/calendar/rtc",
+    "state": "WA",
+    "lastSeen": "2026-01-07T18:06:52+11:00"
+  },
+  {
+    "clubName": "South West Cycle Club",
+    "clubUrl": "https://entryboss.cc/calendar/swcc",
+    "state": "WA",
+    "lastSeen": "2026-01-07T18:06:52+11:00"
+  },
+  {
+    "clubName": "West Coast Masters Cycling Council",
+    "clubUrl": "https://entryboss.cc/calendar/westcoastmasterscc",
+    "state": "WA",
+    "lastSeen": "2026-01-07T18:06:52+11:00"
   }
 ]
