@@ -1,52 +1,10 @@
 [
   {
-    "eventName": "2026 Hills BMX Club Tri Series - Round 1",
-    "eventDate": "2026-01-14T00:00:00Z",
-    "clubName": "Hills BMX",
-    "state": "WA",
-    "eventUrl": "https://entryboss.cc/races/28501"
-  },
-  {
-    "eventName": "2023 Hills BMX Club Tri Series - Series Entry",
-    "eventDate": "2026-01-14T00:00:00Z",
-    "clubName": "Hills BMX",
-    "state": "WA",
-    "eventUrl": "https://entryboss.cc/races/13247"
-  },
-  {
     "eventName": "2021 Tri-Series - Series Entry",
-    "eventDate": "2026-01-14T00:00:00Z",
+    "eventDate": "2026-01-16T00:00:00Z",
     "clubName": "Hills BMX",
     "state": "WA",
     "eventUrl": "https://entryboss.cc/races/6171"
-  },
-  {
-    "eventName": "2024 Hills BMX Club Tri Series - Series Entry",
-    "eventDate": "2026-01-14T00:00:00Z",
-    "clubName": "Hills BMX",
-    "state": "WA",
-    "eventUrl": "https://entryboss.cc/races/18469"
-  },
-  {
-    "eventName": "2025 Hills BMX Club Tri Series - Series Entry",
-    "eventDate": "2026-01-14T00:00:00Z",
-    "clubName": "Hills BMX",
-    "state": "WA",
-    "eventUrl": "https://entryboss.cc/races/23295"
-  },
-  {
-    "eventName": "2026 Hills BMX Club Tri Series - Series Entry",
-    "eventDate": "2026-01-14T00:00:00Z",
-    "clubName": "Hills BMX",
-    "state": "WA",
-    "eventUrl": "https://entryboss.cc/races/28500"
-  },
-  {
-    "eventName": "2022 Hills BMX Club Tri Series - Series Entry",
-    "eventDate": "2026-01-14T00:00:00Z",
-    "clubName": "Hills BMX",
-    "state": "WA",
-    "eventUrl": "https://entryboss.cc/races/9791"
   },
   {
     "eventName": "2026 Hills BMX Club Tri Series - Round 2",
@@ -54,6 +12,41 @@
     "clubName": "Hills BMX",
     "state": "WA",
     "eventUrl": "https://entryboss.cc/races/28502"
+  },
+  {
+    "eventName": "2026 Hills BMX Club Tri Series - Series Entry",
+    "eventDate": "2026-01-16T00:00:00Z",
+    "clubName": "Hills BMX",
+    "state": "WA",
+    "eventUrl": "https://entryboss.cc/races/28500"
+  },
+  {
+    "eventName": "2025 Hills BMX Club Tri Series - Series Entry",
+    "eventDate": "2026-01-16T00:00:00Z",
+    "clubName": "Hills BMX",
+    "state": "WA",
+    "eventUrl": "https://entryboss.cc/races/23295"
+  },
+  {
+    "eventName": "2024 Hills BMX Club Tri Series - Series Entry",
+    "eventDate": "2026-01-16T00:00:00Z",
+    "clubName": "Hills BMX",
+    "state": "WA",
+    "eventUrl": "https://entryboss.cc/races/18469"
+  },
+  {
+    "eventName": "2023 Hills BMX Club Tri Series - Series Entry",
+    "eventDate": "2026-01-16T00:00:00Z",
+    "clubName": "Hills BMX",
+    "state": "WA",
+    "eventUrl": "https://entryboss.cc/races/13247"
+  },
+  {
+    "eventName": "2022 Hills BMX Club Tri Series - Series Entry",
+    "eventDate": "2026-01-16T00:00:00Z",
+    "clubName": "Hills BMX",
+    "state": "WA",
+    "eventUrl": "https://entryboss.cc/races/9791"
   },
   {
     "eventName": "Enduro Jam 2026",
@@ -105,18 +98,18 @@
     "eventUrl": "https://entryboss.cc/races/28881"
   },
   {
+    "eventName": "Summer Criterium #6",
+    "eventDate": "2026-02-08T00:00:00Z",
+    "clubName": "Peel District Cycling Club",
+    "state": "WA",
+    "eventUrl": "https://entryboss.cc/races/29044"
+  },
+  {
     "eventName": "WANGARA Criterium",
     "eventDate": "2026-02-08T00:00:00Z",
     "clubName": "West Coast Masters Cycling Council",
     "state": "WA",
     "eventUrl": "https://entryboss.cc/races/28882"
-  },
-  {
-    "eventName": "2026 AusCycling BMX Racing State Series - WA RD2 Collie",
-    "eventDate": "2026-02-08T00:00:00Z",
-    "clubName": "AusCycling (WA)",
-    "state": "WA",
-    "eventUrl": "https://entryboss.cc/races/28388"
   },
   {
     "eventName": "Summer Gravity Series # 4",
@@ -126,11 +119,32 @@
     "eventUrl": "https://entryboss.cc/races/28192"
   },
   {
+    "eventName": "2026 AusCycling BMX Racing State Series - WA RD2 Collie",
+    "eventDate": "2026-02-08T00:00:00Z",
+    "clubName": "AusCycling (WA)",
+    "state": "WA",
+    "eventUrl": "https://entryboss.cc/races/28388"
+  },
+  {
     "eventName": "Summer Gravity Series # 5",
     "eventDate": "2026-02-15T00:00:00Z",
     "clubName": "Albany Mountain Bike Club",
     "state": "WA",
     "eventUrl": "https://entryboss.cc/races/28193"
+  },
+  {
+    "eventName": "Summer Criterium #7",
+    "eventDate": "2026-02-15T00:00:00Z",
+    "clubName": "Peel District Cycling Club",
+    "state": "WA",
+    "eventUrl": "https://entryboss.cc/races/29045"
+  },
+  {
+    "eventName": "Rowdy's Cafe Enduro Triathlon \u0026 Kids Triathlon 2026",
+    "eventDate": "2026-02-22T00:00:00Z",
+    "clubName": "Rockingham Triathlon Club",
+    "state": "WA",
+    "eventUrl": "https://entryboss.cc/races/26598"
   },
   {
     "eventName": "Summer Gravity Series # 6",
@@ -147,11 +161,11 @@
     "eventUrl": "https://entryboss.cc/races/28883"
   },
   {
-    "eventName": "Rowdy's Cafe Enduro Triathlon \u0026 Kids Triathlon 2026",
-    "eventDate": "2026-02-22T00:00:00Z",
-    "clubName": "Rockingham Triathlon Club",
+    "eventName": "Summer Criterium #8",
+    "eventDate": "2026-03-01T00:00:00Z",
+    "clubName": "Peel District Cycling Club",
     "state": "WA",
-    "eventUrl": "https://entryboss.cc/races/26598"
+    "eventUrl": "https://entryboss.cc/races/29046"
   },
   {
     "eventName": "2026 AusCycling BMX Racing State Series - WA RD3 Hills",
@@ -159,6 +173,13 @@
     "clubName": "AusCycling (WA)",
     "state": "WA",
     "eventUrl": "https://entryboss.cc/races/28389"
+  },
+  {
+    "eventName": "Hilly TT \u0026 BBQ 2026",
+    "eventDate": "2026-03-29T00:00:00Z",
+    "clubName": "Peel District Cycling Club",
+    "state": "WA",
+    "eventUrl": "https://entryboss.cc/races/29047"
   },
   {
     "eventName": "WA Calibrations Triathlon \u0026 Kids Triathlon 2026",
