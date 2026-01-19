@@ -61,16 +61,13 @@
                 await loadContent('mobile_about_page.html', root);
                 await loadJS('about-content.js');
                 initMobileAboutContent();
-                await loadJS('about-stats.js');
-                initAboutStats();
-
+                
             } else {
                 loadCSS('styles.css');
                 await loadContent('desktop_about.html', root);
                 await loadJS('about-content.js');
                 initDesktopAboutContent();
-                await loadJS('about-stats.js');
-                initAboutStats();
+                
             }
         })();
     </script>
