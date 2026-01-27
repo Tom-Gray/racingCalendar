@@ -7,18 +7,18 @@
     "eventUrl": "https://entryboss.cc/races/28385"
   },
   {
-    "eventName": "Bibra Lake Criterium",
-    "eventDate": "2026-02-01T00:00:00Z",
-    "clubName": "West Coast Masters Cycling Council",
-    "state": "WA",
-    "eventUrl": "https://entryboss.cc/races/28881"
-  },
-  {
     "eventName": "The Bike Place Shoalwater Classic Triathlon 2026",
     "eventDate": "2026-02-01T00:00:00Z",
     "clubName": "Rockingham Triathlon Club",
     "state": "WA",
     "eventUrl": "https://entryboss.cc/races/26601"
+  },
+  {
+    "eventName": "Bibra Lake Criterium",
+    "eventDate": "2026-02-01T00:00:00Z",
+    "clubName": "West Coast Masters Cycling Council",
+    "state": "WA",
+    "eventUrl": "https://entryboss.cc/races/28881"
   },
   {
     "eventName": "2026 AusCycling BMX Racing State Series - WA RD2 Collie",
@@ -28,18 +28,11 @@
     "eventUrl": "https://entryboss.cc/races/28388"
   },
   {
-    "eventName": "WANGARA Criterium",
+    "eventName": "Summer Criterium #6",
     "eventDate": "2026-02-08T00:00:00Z",
-    "clubName": "West Coast Masters Cycling Council",
+    "clubName": "Peel District Cycling Club",
     "state": "WA",
-    "eventUrl": "https://entryboss.cc/races/28882"
-  },
-  {
-    "eventName": "SWCC Summer Crits round 5",
-    "eventDate": "2026-02-08T00:00:00Z",
-    "clubName": "South West Cycle Club",
-    "state": "WA",
-    "eventUrl": "https://entryboss.cc/races/29173"
+    "eventUrl": "https://entryboss.cc/races/29044"
   },
   {
     "eventName": "Summer Gravity Series # 4",
@@ -49,11 +42,18 @@
     "eventUrl": "https://entryboss.cc/races/28192"
   },
   {
-    "eventName": "Summer Criterium #6",
+    "eventName": "SWCC Summer Crits round 5",
     "eventDate": "2026-02-08T00:00:00Z",
-    "clubName": "Peel District Cycling Club",
+    "clubName": "South West Cycle Club",
     "state": "WA",
-    "eventUrl": "https://entryboss.cc/races/29044"
+    "eventUrl": "https://entryboss.cc/races/29173"
+  },
+  {
+    "eventName": "WANGARA Criterium",
+    "eventDate": "2026-02-08T00:00:00Z",
+    "clubName": "West Coast Masters Cycling Council",
+    "state": "WA",
+    "eventUrl": "https://entryboss.cc/races/28882"
   },
   {
     "eventName": "Summer Gravity Series # 5",
@@ -91,18 +91,18 @@
     "eventUrl": "https://entryboss.cc/races/26598"
   },
   {
-    "eventName": "2026 AusCycling BMX Racing State Series - WA RD3 Hills",
-    "eventDate": "2026-03-01T00:00:00Z",
-    "clubName": "AusCycling (WA)",
-    "state": "WA",
-    "eventUrl": "https://entryboss.cc/races/28389"
-  },
-  {
     "eventName": "Summer Criterium #8",
     "eventDate": "2026-03-01T00:00:00Z",
     "clubName": "Peel District Cycling Club",
     "state": "WA",
     "eventUrl": "https://entryboss.cc/races/29046"
+  },
+  {
+    "eventName": "2026 AusCycling BMX Racing State Series - WA RD3 Hills",
+    "eventDate": "2026-03-01T00:00:00Z",
+    "clubName": "AusCycling (WA)",
+    "state": "WA",
+    "eventUrl": "https://entryboss.cc/races/28389"
   },
   {
     "eventName": "Hilly TT \u0026 BBQ 2026",
