@@ -1,17 +1,17 @@
 [
   {
-    "eventName": "KT Twilight 50min Round 4",
-    "eventDate": "2026-01-29T00:00:00Z",
-    "clubName": "Mersey Mountain Bike Club",
-    "state": "TAS",
-    "eventUrl": "https://entryboss.cc/races/28249"
-  },
-  {
     "eventName": "Carrick - Oaks Road 2 Laps",
     "eventDate": "2026-02-01T00:00:00Z",
     "clubName": "Northern Vets CC (Tasmania)",
     "state": "TAS",
     "eventUrl": "https://entryboss.cc/races/29110"
+  },
+  {
+    "eventName": "MTB XC Twilight Sprint Race - Clarence MTB Park",
+    "eventDate": "2026-02-05T00:00:00Z",
+    "clubName": "Hobart Wheelers Dirt Devils CC",
+    "state": "TAS",
+    "eventUrl": "https://entryboss.cc/races/29309"
   },
   {
     "eventName": "KT Twilight 50min Round 5",
@@ -35,6 +35,20 @@
     "eventUrl": "https://entryboss.cc/races/29117"
   },
   {
+    "eventName": "Enduro Mayhem Round 1",
+    "eventDate": "2026-02-21T00:00:00Z",
+    "clubName": "Derby MTB Club",
+    "state": "TAS",
+    "eventUrl": "https://entryboss.cc/races/29264"
+  },
+  {
+    "eventName": "Tour of Tasmania Criterium",
+    "eventDate": "2026-02-22T00:00:00Z",
+    "clubName": "Tas Junior Cycling Foundation",
+    "state": "TAS",
+    "eventUrl": "https://entryboss.cc/races/29271"
+  },
+  {
     "eventName": "Watts Up Wednesday Crit Series Race 2",
     "eventDate": "2026-02-25T00:00:00Z",
     "clubName": "Hobart Wheelers Dirt Devils CC",
@@ -56,7 +70,7 @@
     "eventUrl": "https://entryboss.cc/races/28517"
   },
   {
-    "eventName": "kunanyi Challenge 2026 - Series Event 1",
+    "eventName": "kunanyi Challenge - Auscycling - Tas Hill Climb Title",
     "eventDate": "2026-03-01T00:00:00Z",
     "clubName": "Hobart Wheelers Dirt Devils CC",
     "state": "TAS",
@@ -75,13 +89,6 @@
     "clubName": "Hobart Wheelers Dirt Devils CC",
     "state": "TAS",
     "eventUrl": "https://entryboss.cc/races/29123"
-  },
-  {
-    "eventName": "Tassie Thunder 2026",
-    "eventDate": "2026-03-07T00:00:00Z",
-    "clubName": "Launceston BMX Club",
-    "state": "TAS",
-    "eventUrl": "https://entryboss.cc/races/28812"
   },
   {
     "eventName": "LAUNCESTON BMX - TWILIGHT SERIES 2021 - SERIES ENTRY",
@@ -112,6 +119,13 @@
     "eventUrl": "https://entryboss.cc/races/27935"
   },
   {
+    "eventName": "Tassie Thunder 2026",
+    "eventDate": "2026-03-07T00:00:00Z",
+    "clubName": "Launceston BMX Club",
+    "state": "TAS",
+    "eventUrl": "https://entryboss.cc/races/28812"
+  },
+  {
     "eventName": "Watts Up Wednesday Crit Series Race 4",
     "eventDate": "2026-03-11T00:00:00Z",
     "clubName": "Hobart Wheelers Dirt Devils CC",
@@ -126,11 +140,25 @@
     "eventUrl": "https://entryboss.cc/races/28252"
   },
   {
+    "eventName": "Enduro Mayhem Round 2",
+    "eventDate": "2026-03-28T00:00:00Z",
+    "clubName": "Derby MTB Club",
+    "state": "TAS",
+    "eventUrl": "https://entryboss.cc/races/29302"
+  },
+  {
     "eventName": "2026 AusCycling BMX State Series - RD2 Southern City",
     "eventDate": "2026-03-28T00:00:00Z",
     "clubName": "AusCycling (Tasmania)",
     "state": "TAS",
     "eventUrl": "https://entryboss.cc/races/28519"
+  },
+  {
+    "eventName": "Enduro Mayhem Round 3",
+    "eventDate": "2026-04-18T00:00:00Z",
+    "clubName": "Derby MTB Club",
+    "state": "TAS",
+    "eventUrl": "https://entryboss.cc/races/29303"
   },
   {
     "eventName": "2026 AusCycling BMX State Series - RD3 Launceston",
