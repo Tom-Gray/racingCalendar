@@ -1,12 +1,5 @@
 [
   {
-    "eventName": "Carrick - Oaks Road 2 Laps",
-    "eventDate": "2026-02-01T00:00:00Z",
-    "clubName": "Northern Vets CC (Tasmania)",
-    "state": "TAS",
-    "eventUrl": "https://entryboss.cc/races/29110"
-  },
-  {
     "eventName": "MTB XC Twilight Sprint Race - Clarence MTB Park",
     "eventDate": "2026-02-05T00:00:00Z",
     "clubName": "Hobart Wheelers Dirt Devils CC",
@@ -19,6 +12,13 @@
     "clubName": "Mersey Mountain Bike Club",
     "state": "TAS",
     "eventUrl": "https://entryboss.cc/races/28250"
+  },
+  {
+    "eventName": "Carrick - Westwood 2 Laps",
+    "eventDate": "2026-02-15T00:00:00Z",
+    "clubName": "Northern Vets CC (Tasmania)",
+    "state": "TAS",
+    "eventUrl": "https://entryboss.cc/races/29379"
   },
   {
     "eventName": "2026 LMBC King and Queen of the Mountain - Upper Blessington to Ben Lomond Alpine Village - Sun-15-Feb-2026",
@@ -70,18 +70,25 @@
     "eventUrl": "https://entryboss.cc/races/28517"
   },
   {
-    "eventName": "Wynyard Open 2026",
-    "eventDate": "2026-03-01T00:00:00Z",
-    "clubName": "Wynyard BMX Club",
-    "state": "TAS",
-    "eventUrl": "https://entryboss.cc/races/28671"
-  },
-  {
     "eventName": "kunanyi Challenge - Auscycling - Tas Hill Climb Title",
     "eventDate": "2026-03-01T00:00:00Z",
     "clubName": "Hobart Wheelers Dirt Devils CC",
     "state": "TAS",
     "eventUrl": "https://entryboss.cc/races/29183"
+  },
+  {
+    "eventName": "Race 1 GC Series. Bishopsbourne - Armstrongs Lane. 3 Laps.",
+    "eventDate": "2026-03-01T00:00:00Z",
+    "clubName": "Northern Vets CC (Tasmania)",
+    "state": "TAS",
+    "eventUrl": "https://entryboss.cc/races/29381"
+  },
+  {
+    "eventName": "Wynyard Open 2026",
+    "eventDate": "2026-03-01T00:00:00Z",
+    "clubName": "Wynyard BMX Club",
+    "state": "TAS",
+    "eventUrl": "https://entryboss.cc/races/28671"
   },
   {
     "eventName": "Watts Up Wednesday Crit Series Race 3",
@@ -91,11 +98,25 @@
     "eventUrl": "https://entryboss.cc/races/29123"
   },
   {
+    "eventName": "Tassie Thunder 2026",
+    "eventDate": "2026-03-07T00:00:00Z",
+    "clubName": "Launceston BMX Club",
+    "state": "TAS",
+    "eventUrl": "https://entryboss.cc/races/28812"
+  },
+  {
     "eventName": "LAUNCESTON BMX - TWILIGHT SERIES 2021 - SERIES ENTRY",
     "eventDate": "2026-03-07T00:00:00Z",
     "clubName": "Launceston BMX Club",
     "state": "TAS",
     "eventUrl": "https://entryboss.cc/races/8627"
+  },
+  {
+    "eventName": "LAUNCESTON BMX - TWILIGHT SERIES 2023 - SERIES PASS",
+    "eventDate": "2026-03-07T00:00:00Z",
+    "clubName": "Launceston BMX Club",
+    "state": "TAS",
+    "eventUrl": "https://entryboss.cc/races/14524"
   },
   {
     "eventName": "LAUNCESTON BMX - NIGHT SERIES 2024 - SERIES PASS",
@@ -112,20 +133,6 @@
     "eventUrl": "https://entryboss.cc/races/27935"
   },
   {
-    "eventName": "Tassie Thunder 2026",
-    "eventDate": "2026-03-07T00:00:00Z",
-    "clubName": "Launceston BMX Club",
-    "state": "TAS",
-    "eventUrl": "https://entryboss.cc/races/28812"
-  },
-  {
-    "eventName": "LAUNCESTON BMX - TWILIGHT SERIES 2023 - SERIES PASS",
-    "eventDate": "2026-03-07T00:00:00Z",
-    "clubName": "Launceston BMX Club",
-    "state": "TAS",
-    "eventUrl": "https://entryboss.cc/races/14524"
-  },
-  {
     "eventName": "Watts Up Wednesday Crit Series Race 4",
     "eventDate": "2026-03-11T00:00:00Z",
     "clubName": "Hobart Wheelers Dirt Devils CC",
@@ -140,11 +147,11 @@
     "eventUrl": "https://entryboss.cc/races/28252"
   },
   {
-    "eventName": "Enduro Mayhem Round 2",
-    "eventDate": "2026-03-28T00:00:00Z",
-    "clubName": "Derby MTB Club",
+    "eventName": "Race 2 GC Series. Whitemore - Glenore Road Circuit. 5 Laps.",
+    "eventDate": "2026-03-15T00:00:00Z",
+    "clubName": "Northern Vets CC (Tasmania)",
     "state": "TAS",
-    "eventUrl": "https://entryboss.cc/races/29302"
+    "eventUrl": "https://entryboss.cc/races/29382"
   },
   {
     "eventName": "2026 AusCycling BMX State Series - RD2 Southern City",
@@ -152,6 +159,20 @@
     "clubName": "AusCycling (Tasmania)",
     "state": "TAS",
     "eventUrl": "https://entryboss.cc/races/28519"
+  },
+  {
+    "eventName": "Enduro Mayhem Round 2",
+    "eventDate": "2026-03-28T00:00:00Z",
+    "clubName": "Derby MTB Club",
+    "state": "TAS",
+    "eventUrl": "https://entryboss.cc/races/29302"
+  },
+  {
+    "eventName": "Race 3 GC Series. Feature Race. Grindlewald - Atkinsons Road Hill Climb Challenge",
+    "eventDate": "2026-03-29T00:00:00Z",
+    "clubName": "Northern Vets CC (Tasmania)",
+    "state": "TAS",
+    "eventUrl": "https://entryboss.cc/races/29383"
   },
   {
     "eventName": "Enduro Mayhem Round 3",
