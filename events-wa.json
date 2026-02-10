@@ -7,13 +7,6 @@
     "eventUrl": "https://entryboss.cc/races/29437"
   },
   {
-    "eventName": "Summer Criterium #7",
-    "eventDate": "2026-02-15T00:00:00Z",
-    "clubName": "Peel District Cycling Club",
-    "state": "WA",
-    "eventUrl": "https://entryboss.cc/races/29045"
-  },
-  {
     "eventName": "Kewdale Criterium",
     "eventDate": "2026-02-15T00:00:00Z",
     "clubName": "West Coast Masters Cycling Council",
@@ -35,25 +28,18 @@
     "eventUrl": "https://entryboss.cc/races/29495"
   },
   {
+    "eventName": "Summer Criterium #7",
+    "eventDate": "2026-02-15T00:00:00Z",
+    "clubName": "Peel District Cycling Club",
+    "state": "WA",
+    "eventUrl": "https://entryboss.cc/races/29045"
+  },
+  {
     "eventName": "Spokes Cycle Club 2026 CBH Criteriums - wk 2",
     "eventDate": "2026-02-21T00:00:00Z",
     "clubName": "Spokes Cycle Club",
     "state": "WA",
     "eventUrl": "https://entryboss.cc/races/29485"
-  },
-  {
-    "eventName": "Rowdy's Cafe Enduro Triathlon \u0026 Kids Triathlon 2026",
-    "eventDate": "2026-02-22T00:00:00Z",
-    "clubName": "Rockingham Triathlon Club",
-    "state": "WA",
-    "eventUrl": "https://entryboss.cc/races/26598"
-  },
-  {
-    "eventName": "Summer Gravity Series # 6",
-    "eventDate": "2026-02-22T00:00:00Z",
-    "clubName": "Albany Mountain Bike Club",
-    "state": "WA",
-    "eventUrl": "https://entryboss.cc/races/28194"
   },
   {
     "eventName": "DOG HILL ROAD - Baldivis - Road Race",
@@ -63,11 +49,18 @@
     "eventUrl": "https://entryboss.cc/races/28883"
   },
   {
-    "eventName": "Spokes Cycle Club 2026 CBH Criteriums - wk 3",
-    "eventDate": "2026-02-28T00:00:00Z",
-    "clubName": "Spokes Cycle Club",
+    "eventName": "Summer Gravity Series # 6",
+    "eventDate": "2026-02-22T00:00:00Z",
+    "clubName": "Albany Mountain Bike Club",
     "state": "WA",
-    "eventUrl": "https://entryboss.cc/races/29486"
+    "eventUrl": "https://entryboss.cc/races/28194"
+  },
+  {
+    "eventName": "Rowdy's Cafe Enduro Triathlon \u0026 Kids Triathlon 2026",
+    "eventDate": "2026-02-22T00:00:00Z",
+    "clubName": "Rockingham Triathlon Club",
+    "state": "WA",
+    "eventUrl": "https://entryboss.cc/races/26598"
   },
   {
     "eventName": "South 32 Wambenger Cup - XCO State Round 1",
@@ -77,11 +70,11 @@
     "eventUrl": "https://entryboss.cc/races/29418"
   },
   {
-    "eventName": "2026 AusCycling BMX Racing State Series - WA RD3 Hills",
-    "eventDate": "2026-03-01T00:00:00Z",
-    "clubName": "AusCycling (WA)",
+    "eventName": "Spokes Cycle Club 2026 CBH Criteriums - wk 3",
+    "eventDate": "2026-02-28T00:00:00Z",
+    "clubName": "Spokes Cycle Club",
     "state": "WA",
-    "eventUrl": "https://entryboss.cc/races/28389"
+    "eventUrl": "https://entryboss.cc/races/29486"
   },
   {
     "eventName": "2026 SOUTH 32 WAMBENGER CUP MTB MARATHON EVENT SUNDAY MARCH 1",
@@ -96,6 +89,13 @@
     "clubName": "Peel District Cycling Club",
     "state": "WA",
     "eventUrl": "https://entryboss.cc/races/29046"
+  },
+  {
+    "eventName": "2026 AusCycling BMX Racing State Series - WA RD3 Hills",
+    "eventDate": "2026-03-01T00:00:00Z",
+    "clubName": "AusCycling (WA)",
+    "state": "WA",
+    "eventUrl": "https://entryboss.cc/races/28389"
   },
   {
     "eventName": "Spokes Cycle Club 2026 CBH Criteriums - wk 4",
@@ -126,18 +126,18 @@
     "eventUrl": "https://entryboss.cc/races/29061"
   },
   {
-    "eventName": "AusCycling WA State Junior Gravel Championships U13/U15/U17",
-    "eventDate": "2026-04-11T00:00:00Z",
-    "clubName": "4Five+ Athlete Collective",
-    "state": "WA",
-    "eventUrl": "https://entryboss.cc/races/28437"
-  },
-  {
     "eventName": "Tiger Tracks Gravel 2026 - Day 1 - Time Trial",
     "eventDate": "2026-04-11T00:00:00Z",
     "clubName": "4Five+ Athlete Collective",
     "state": "WA",
     "eventUrl": "https://entryboss.cc/races/28435"
+  },
+  {
+    "eventName": "AusCycling WA State Junior Gravel Championships U13/U15/U17",
+    "eventDate": "2026-04-11T00:00:00Z",
+    "clubName": "4Five+ Athlete Collective",
+    "state": "WA",
+    "eventUrl": "https://entryboss.cc/races/28437"
   },
   {
     "eventName": "WA Calibrations Triathlon \u0026 Kids Triathlon 2026",
