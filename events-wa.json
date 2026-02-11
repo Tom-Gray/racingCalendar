@@ -7,6 +7,13 @@
     "eventUrl": "https://entryboss.cc/races/29437"
   },
   {
+    "eventName": "Summer Criterium #7",
+    "eventDate": "2026-02-15T00:00:00Z",
+    "clubName": "Peel District Cycling Club",
+    "state": "WA",
+    "eventUrl": "https://entryboss.cc/races/29045"
+  },
+  {
     "eventName": "Kewdale Criterium",
     "eventDate": "2026-02-15T00:00:00Z",
     "clubName": "West Coast Masters Cycling Council",
@@ -26,13 +33,6 @@
     "clubName": "South West Cycle Club",
     "state": "WA",
     "eventUrl": "https://entryboss.cc/races/29495"
-  },
-  {
-    "eventName": "Summer Criterium #7",
-    "eventDate": "2026-02-15T00:00:00Z",
-    "clubName": "Peel District Cycling Club",
-    "state": "WA",
-    "eventUrl": "https://entryboss.cc/races/29045"
   },
   {
     "eventName": "Spokes Cycle Club 2026 CBH Criteriums - wk 2",
@@ -63,11 +63,11 @@
     "eventUrl": "https://entryboss.cc/races/26598"
   },
   {
-    "eventName": "South 32 Wambenger Cup - XCO State Round 1",
+    "eventName": "2026 Hills BMX Club Tri Series - Series Entry",
     "eventDate": "2026-02-28T00:00:00Z",
-    "clubName": "Ferguson Valley Mountain Bike Club",
+    "clubName": "Hills BMX",
     "state": "WA",
-    "eventUrl": "https://entryboss.cc/races/29418"
+    "eventUrl": "https://entryboss.cc/races/28500"
   },
   {
     "eventName": "Spokes Cycle Club 2026 CBH Criteriums - wk 3",
@@ -77,11 +77,53 @@
     "eventUrl": "https://entryboss.cc/races/29486"
   },
   {
-    "eventName": "2026 SOUTH 32 WAMBENGER CUP MTB MARATHON EVENT SUNDAY MARCH 1",
-    "eventDate": "2026-03-01T00:00:00Z",
+    "eventName": "South 32 Wambenger Cup - XCO State Round 1",
+    "eventDate": "2026-02-28T00:00:00Z",
     "clubName": "Ferguson Valley Mountain Bike Club",
     "state": "WA",
-    "eventUrl": "https://entryboss.cc/races/29424"
+    "eventUrl": "https://entryboss.cc/races/29418"
+  },
+  {
+    "eventName": "2023 Hills BMX Club Tri Series - Series Entry",
+    "eventDate": "2026-02-28T00:00:00Z",
+    "clubName": "Hills BMX",
+    "state": "WA",
+    "eventUrl": "https://entryboss.cc/races/13247"
+  },
+  {
+    "eventName": "2024 Hills BMX Club Tri Series - Series Entry",
+    "eventDate": "2026-02-28T00:00:00Z",
+    "clubName": "Hills BMX",
+    "state": "WA",
+    "eventUrl": "https://entryboss.cc/races/18469"
+  },
+  {
+    "eventName": "2025 Hills BMX Club Tri Series - Series Entry",
+    "eventDate": "2026-02-28T00:00:00Z",
+    "clubName": "Hills BMX",
+    "state": "WA",
+    "eventUrl": "https://entryboss.cc/races/23295"
+  },
+  {
+    "eventName": "Jade McPherson Memorial Race",
+    "eventDate": "2026-02-28T00:00:00Z",
+    "clubName": "Hills BMX",
+    "state": "WA",
+    "eventUrl": "https://entryboss.cc/races/29526"
+  },
+  {
+    "eventName": "2021 Tri-Series - Series Entry",
+    "eventDate": "2026-02-28T00:00:00Z",
+    "clubName": "Hills BMX",
+    "state": "WA",
+    "eventUrl": "https://entryboss.cc/races/6171"
+  },
+  {
+    "eventName": "2022 Hills BMX Club Tri Series - Series Entry",
+    "eventDate": "2026-02-28T00:00:00Z",
+    "clubName": "Hills BMX",
+    "state": "WA",
+    "eventUrl": "https://entryboss.cc/races/9791"
   },
   {
     "eventName": "Summer Criterium #8",
@@ -89,6 +131,13 @@
     "clubName": "Peel District Cycling Club",
     "state": "WA",
     "eventUrl": "https://entryboss.cc/races/29046"
+  },
+  {
+    "eventName": "2026 SOUTH 32 WAMBENGER CUP MTB MARATHON EVENT SUNDAY MARCH 1",
+    "eventDate": "2026-03-01T00:00:00Z",
+    "clubName": "Ferguson Valley Mountain Bike Club",
+    "state": "WA",
+    "eventUrl": "https://entryboss.cc/races/29424"
   },
   {
     "eventName": "2026 AusCycling BMX Racing State Series - WA RD3 Hills",
@@ -126,11 +175,18 @@
     "eventUrl": "https://entryboss.cc/races/29061"
   },
   {
-    "eventName": "Tiger Tracks Gravel 2026 - Day 1 - Time Trial",
-    "eventDate": "2026-04-11T00:00:00Z",
-    "clubName": "4Five+ Athlete Collective",
+    "eventName": "WA State Downhill 2026 Series Rnd 1",
+    "eventDate": "2026-03-28T00:00:00Z",
+    "clubName": "Denmark Mountain Bike Club",
     "state": "WA",
-    "eventUrl": "https://entryboss.cc/races/28435"
+    "eventUrl": "https://entryboss.cc/races/29529"
+  },
+  {
+    "eventName": "WA State Downhill 2026 Series Rnd 2",
+    "eventDate": "2026-03-29T00:00:00Z",
+    "clubName": "Denmark Mountain Bike Club",
+    "state": "WA",
+    "eventUrl": "https://entryboss.cc/races/29530"
   },
   {
     "eventName": "AusCycling WA State Junior Gravel Championships U13/U15/U17",
@@ -138,6 +194,13 @@
     "clubName": "4Five+ Athlete Collective",
     "state": "WA",
     "eventUrl": "https://entryboss.cc/races/28437"
+  },
+  {
+    "eventName": "Tiger Tracks Gravel 2026 - Day 1 - Time Trial",
+    "eventDate": "2026-04-11T00:00:00Z",
+    "clubName": "4Five+ Athlete Collective",
+    "state": "WA",
+    "eventUrl": "https://entryboss.cc/races/28435"
   },
   {
     "eventName": "WA Calibrations Triathlon \u0026 Kids Triathlon 2026",
