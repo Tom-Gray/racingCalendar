@@ -14,7 +14,7 @@
     "eventUrl": "https://entryboss.cc/races/29045"
   },
   {
-    "eventName": "Kewdale Criterium",
+    "eventName": "Kewdale Criterium - CANCELLED",
     "eventDate": "2026-02-15T00:00:00Z",
     "clubName": "West Coast Masters Cycling Council",
     "state": "WA",
@@ -63,11 +63,18 @@
     "eventUrl": "https://entryboss.cc/races/26598"
   },
   {
-    "eventName": "2026 Hills BMX Club Tri Series - Series Entry",
+    "eventName": "Jade McPherson Memorial Race",
     "eventDate": "2026-02-28T00:00:00Z",
     "clubName": "Hills BMX",
     "state": "WA",
-    "eventUrl": "https://entryboss.cc/races/28500"
+    "eventUrl": "https://entryboss.cc/races/29526"
+  },
+  {
+    "eventName": "2021 Tri-Series - Series Entry",
+    "eventDate": "2026-02-28T00:00:00Z",
+    "clubName": "Hills BMX",
+    "state": "WA",
+    "eventUrl": "https://entryboss.cc/races/6171"
   },
   {
     "eventName": "Spokes Cycle Club 2026 CBH Criteriums - wk 3",
@@ -77,6 +84,13 @@
     "eventUrl": "https://entryboss.cc/races/29486"
   },
   {
+    "eventName": "2023 Hills BMX Club Tri Series - Series Entry",
+    "eventDate": "2026-02-28T00:00:00Z",
+    "clubName": "Hills BMX",
+    "state": "WA",
+    "eventUrl": "https://entryboss.cc/races/13247"
+  },
+  {
     "eventName": "South 32 Wambenger Cup - XCO State Round 1",
     "eventDate": "2026-02-28T00:00:00Z",
     "clubName": "Ferguson Valley Mountain Bike Club",
@@ -84,11 +98,11 @@
     "eventUrl": "https://entryboss.cc/races/29418"
   },
   {
-    "eventName": "2023 Hills BMX Club Tri Series - Series Entry",
+    "eventName": "2022 Hills BMX Club Tri Series - Series Entry",
     "eventDate": "2026-02-28T00:00:00Z",
     "clubName": "Hills BMX",
     "state": "WA",
-    "eventUrl": "https://entryboss.cc/races/13247"
+    "eventUrl": "https://entryboss.cc/races/9791"
   },
   {
     "eventName": "2024 Hills BMX Club Tri Series - Series Entry",
@@ -105,32 +119,18 @@
     "eventUrl": "https://entryboss.cc/races/23295"
   },
   {
-    "eventName": "Jade McPherson Memorial Race",
+    "eventName": "2026 Hills BMX Club Tri Series - Series Entry",
     "eventDate": "2026-02-28T00:00:00Z",
     "clubName": "Hills BMX",
     "state": "WA",
-    "eventUrl": "https://entryboss.cc/races/29526"
+    "eventUrl": "https://entryboss.cc/races/28500"
   },
   {
-    "eventName": "2021 Tri-Series - Series Entry",
-    "eventDate": "2026-02-28T00:00:00Z",
-    "clubName": "Hills BMX",
-    "state": "WA",
-    "eventUrl": "https://entryboss.cc/races/6171"
-  },
-  {
-    "eventName": "2022 Hills BMX Club Tri Series - Series Entry",
-    "eventDate": "2026-02-28T00:00:00Z",
-    "clubName": "Hills BMX",
-    "state": "WA",
-    "eventUrl": "https://entryboss.cc/races/9791"
-  },
-  {
-    "eventName": "Summer Criterium #8",
+    "eventName": "2026 AusCycling BMX Racing State Series - WA RD3 Hills",
     "eventDate": "2026-03-01T00:00:00Z",
-    "clubName": "Peel District Cycling Club",
+    "clubName": "AusCycling (WA)",
     "state": "WA",
-    "eventUrl": "https://entryboss.cc/races/29046"
+    "eventUrl": "https://entryboss.cc/races/28389"
   },
   {
     "eventName": "2026 SOUTH 32 WAMBENGER CUP MTB MARATHON EVENT SUNDAY MARCH 1",
@@ -140,11 +140,11 @@
     "eventUrl": "https://entryboss.cc/races/29424"
   },
   {
-    "eventName": "2026 AusCycling BMX Racing State Series - WA RD3 Hills",
+    "eventName": "Summer Criterium #8",
     "eventDate": "2026-03-01T00:00:00Z",
-    "clubName": "AusCycling (WA)",
+    "clubName": "Peel District Cycling Club",
     "state": "WA",
-    "eventUrl": "https://entryboss.cc/races/28389"
+    "eventUrl": "https://entryboss.cc/races/29046"
   },
   {
     "eventName": "Spokes Cycle Club 2026 CBH Criteriums - wk 4",
@@ -189,13 +189,6 @@
     "eventUrl": "https://entryboss.cc/races/29530"
   },
   {
-    "eventName": "AusCycling WA State Junior Gravel Championships U13/U15/U17",
-    "eventDate": "2026-04-11T00:00:00Z",
-    "clubName": "4Five+ Athlete Collective",
-    "state": "WA",
-    "eventUrl": "https://entryboss.cc/races/28437"
-  },
-  {
     "eventName": "Tiger Tracks Gravel 2026 - Day 1 - Time Trial",
     "eventDate": "2026-04-11T00:00:00Z",
     "clubName": "4Five+ Athlete Collective",
@@ -203,11 +196,11 @@
     "eventUrl": "https://entryboss.cc/races/28435"
   },
   {
-    "eventName": "WA Calibrations Triathlon \u0026 Kids Triathlon 2026",
-    "eventDate": "2026-04-12T00:00:00Z",
-    "clubName": "Rockingham Triathlon Club",
+    "eventName": "AusCycling WA State Junior Gravel Championships U13/U15/U17",
+    "eventDate": "2026-04-11T00:00:00Z",
+    "clubName": "4Five+ Athlete Collective",
     "state": "WA",
-    "eventUrl": "https://entryboss.cc/races/26599"
+    "eventUrl": "https://entryboss.cc/races/28437"
   },
   {
     "eventName": "Tiger Tracks Gravel 2026 - Day 2 - GRoad Race",
@@ -215,6 +208,13 @@
     "clubName": "4Five+ Athlete Collective",
     "state": "WA",
     "eventUrl": "https://entryboss.cc/races/28436"
+  },
+  {
+    "eventName": "WA Calibrations Triathlon \u0026 Kids Triathlon 2026",
+    "eventDate": "2026-04-12T00:00:00Z",
+    "clubName": "Rockingham Triathlon Club",
+    "state": "WA",
+    "eventUrl": "https://entryboss.cc/races/26599"
   },
   {
     "eventName": "2026 AusCycling BMX Racing State Series - WA RD4 Eastern Goldfields",
