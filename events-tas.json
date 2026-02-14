@@ -1,40 +1,5 @@
 [
   {
-    "eventName": "2026 Clubby #1",
-    "eventDate": "2026-02-14T00:00:00Z",
-    "clubName": "Launceston BMX Club",
-    "state": "TAS",
-    "eventUrl": "https://entryboss.cc/races/29481"
-  },
-  {
-    "eventName": "2025 Night Series - Series Entry (All 3 events)",
-    "eventDate": "2026-02-14T00:00:00Z",
-    "clubName": "Launceston BMX Club",
-    "state": "TAS",
-    "eventUrl": "https://entryboss.cc/races/27935"
-  },
-  {
-    "eventName": "LAUNCESTON BMX - NIGHT SERIES 2024 - SERIES PASS",
-    "eventDate": "2026-02-14T00:00:00Z",
-    "clubName": "Launceston BMX Club",
-    "state": "TAS",
-    "eventUrl": "https://entryboss.cc/races/20374"
-  },
-  {
-    "eventName": "LAUNCESTON BMX - TWILIGHT SERIES 2023 - SERIES PASS",
-    "eventDate": "2026-02-14T00:00:00Z",
-    "clubName": "Launceston BMX Club",
-    "state": "TAS",
-    "eventUrl": "https://entryboss.cc/races/14524"
-  },
-  {
-    "eventName": "LAUNCESTON BMX - TWILIGHT SERIES 2021 - SERIES ENTRY",
-    "eventDate": "2026-02-14T00:00:00Z",
-    "clubName": "Launceston BMX Club",
-    "state": "TAS",
-    "eventUrl": "https://entryboss.cc/races/8627"
-  },
-  {
     "eventName": "2026 LMBC King and Queen of the Mountain - Upper Blessington to Ben Lomond Alpine Village - Sun-15-Feb-2026",
     "eventDate": "2026-02-15T00:00:00Z",
     "clubName": "Launceston Mountain Bike Club",
@@ -56,13 +21,6 @@
     "eventUrl": "https://entryboss.cc/races/29513"
   },
   {
-    "eventName": "Watts Up Wednesday Crit Series Race 1",
-    "eventDate": "2026-02-18T00:00:00Z",
-    "clubName": "Hobart Wheelers Dirt Devils CC",
-    "state": "TAS",
-    "eventUrl": "https://entryboss.cc/races/29117"
-  },
-  {
     "eventName": "2025-2026 LMBC Twilight Cross Country Series 2 - Race 1 - Hollybank - Wed-18-Feb-2026",
     "eventDate": "2026-02-18T00:00:00Z",
     "clubName": "Launceston Mountain Bike Club",
@@ -70,11 +28,53 @@
     "eventUrl": "https://entryboss.cc/races/29384"
   },
   {
+    "eventName": "Watts Up Wednesday Crit Series Race 1",
+    "eventDate": "2026-02-18T00:00:00Z",
+    "clubName": "Hobart Wheelers Dirt Devils CC",
+    "state": "TAS",
+    "eventUrl": "https://entryboss.cc/races/29117"
+  },
+  {
+    "eventName": "2025 Night Series - Series Entry (All 3 events)",
+    "eventDate": "2026-02-21T00:00:00Z",
+    "clubName": "Launceston BMX Club",
+    "state": "TAS",
+    "eventUrl": "https://entryboss.cc/races/27935"
+  },
+  {
+    "eventName": "LAUNCESTON BMX - NIGHT SERIES 2024 - SERIES PASS",
+    "eventDate": "2026-02-21T00:00:00Z",
+    "clubName": "Launceston BMX Club",
+    "state": "TAS",
+    "eventUrl": "https://entryboss.cc/races/20374"
+  },
+  {
+    "eventName": "LAUNCESTON BMX - TWILIGHT SERIES 2023 - SERIES PASS",
+    "eventDate": "2026-02-21T00:00:00Z",
+    "clubName": "Launceston BMX Club",
+    "state": "TAS",
+    "eventUrl": "https://entryboss.cc/races/14524"
+  },
+  {
     "eventName": "Enduro Mayhem Round 1",
     "eventDate": "2026-02-21T00:00:00Z",
     "clubName": "Derby MTB Club",
     "state": "TAS",
     "eventUrl": "https://entryboss.cc/races/29264"
+  },
+  {
+    "eventName": "LAUNCESTON BMX - TWILIGHT SERIES 2021 - SERIES ENTRY",
+    "eventDate": "2026-02-21T00:00:00Z",
+    "clubName": "Launceston BMX Club",
+    "state": "TAS",
+    "eventUrl": "https://entryboss.cc/races/8627"
+  },
+  {
+    "eventName": "2026 Clubby #1 (Rescheduled)",
+    "eventDate": "2026-02-21T00:00:00Z",
+    "clubName": "Launceston BMX Club",
+    "state": "TAS",
+    "eventUrl": "https://entryboss.cc/races/29481"
   },
   {
     "eventName": "Tour of Tasmania Criterium",
@@ -112,6 +112,13 @@
     "eventUrl": "https://entryboss.cc/races/28517"
   },
   {
+    "eventName": "kunanyi Challenge - Auscycling - Tas Hill Climb Title",
+    "eventDate": "2026-03-01T00:00:00Z",
+    "clubName": "Hobart Wheelers Dirt Devils CC",
+    "state": "TAS",
+    "eventUrl": "https://entryboss.cc/races/29183"
+  },
+  {
     "eventName": "Race 1 GC Series. Bishopsbourne - Armstrongs Lane. 3 Laps.",
     "eventDate": "2026-03-01T00:00:00Z",
     "clubName": "Northern Vets CC (Tasmania)",
@@ -124,13 +131,6 @@
     "clubName": "Wynyard BMX Club",
     "state": "TAS",
     "eventUrl": "https://entryboss.cc/races/28671"
-  },
-  {
-    "eventName": "kunanyi Challenge - Auscycling - Tas Hill Climb Title",
-    "eventDate": "2026-03-01T00:00:00Z",
-    "clubName": "Hobart Wheelers Dirt Devils CC",
-    "state": "TAS",
-    "eventUrl": "https://entryboss.cc/races/29183"
   },
   {
     "eventName": "Watts Up Wednesday Crit Series Race 3",
@@ -154,18 +154,18 @@
     "eventUrl": "https://entryboss.cc/races/28812"
   },
   {
-    "eventName": "2025-2026 LMBC Twilight Cross Country Series 2 - Race 4 - Hollybank - Wed-11-Mar-2026",
-    "eventDate": "2026-03-11T00:00:00Z",
-    "clubName": "Launceston Mountain Bike Club",
-    "state": "TAS",
-    "eventUrl": "https://entryboss.cc/races/29387"
-  },
-  {
     "eventName": "Watts Up Wednesday Crit Series Race 4",
     "eventDate": "2026-03-11T00:00:00Z",
     "clubName": "Hobart Wheelers Dirt Devils CC",
     "state": "TAS",
     "eventUrl": "https://entryboss.cc/races/29124"
+  },
+  {
+    "eventName": "2025-2026 LMBC Twilight Cross Country Series 2 - Race 4 - Hollybank - Wed-11-Mar-2026",
+    "eventDate": "2026-03-11T00:00:00Z",
+    "clubName": "Launceston Mountain Bike Club",
+    "state": "TAS",
+    "eventUrl": "https://entryboss.cc/races/29387"
   },
   {
     "eventName": "KT Twilight 50min Round 7",
