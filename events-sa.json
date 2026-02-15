@@ -1,12 +1,5 @@
 [
   {
-    "eventName": "Saturday - SA State Team Track Session",
-    "eventDate": "2026-02-14T00:00:00Z",
-    "clubName": "AusCycling SA - Superdrome",
-    "state": "SA",
-    "eventUrl": "https://entryboss.cc/races/29559"
-  },
-  {
     "eventName": "Summer Series 2026 Race 3 Tantanoola Wind Farm",
     "eventDate": "2026-02-15T00:00:00Z",
     "clubName": "Mt Gambier Cycling Club",
@@ -14,18 +7,18 @@
     "eventUrl": "https://entryboss.cc/races/29259"
   },
   {
-    "eventName": "Monday Junior Training",
-    "eventDate": "2026-02-16T00:00:00Z",
-    "clubName": "South Coast Cycling",
-    "state": "SA",
-    "eventUrl": "https://entryboss.cc/races/29145"
-  },
-  {
     "eventName": "Monday - Talent ID Program",
     "eventDate": "2026-02-16T00:00:00Z",
     "clubName": "AusCycling SA - Superdrome",
     "state": "SA",
     "eventUrl": "https://entryboss.cc/races/29558"
+  },
+  {
+    "eventName": "Monday Junior Training",
+    "eventDate": "2026-02-16T00:00:00Z",
+    "clubName": "South Coast Cycling",
+    "state": "SA",
+    "eventUrl": "https://entryboss.cc/races/29145"
   },
   {
     "eventName": "NCC Tuesday Criteriums",
@@ -63,39 +56,11 @@
     "eventUrl": "https://entryboss.cc/races/28818"
   },
   {
-    "eventName": "Cervelo Super Series - Series Pass  - Senior Riders",
-    "eventDate": "2026-02-20T00:00:00Z",
-    "clubName": "AusCycling (South Australia)",
-    "state": "SA",
-    "eventUrl": "https://entryboss.cc/races/12744"
-  },
-  {
-    "eventName": "Friday Night Beginner Come \u0026 Try / Open Track",
-    "eventDate": "2026-02-20T00:00:00Z",
-    "clubName": "AusCycling (South Australia)",
-    "state": "SA",
-    "eventUrl": "https://entryboss.cc/races/29566"
-  },
-  {
     "eventName": "99 Bikes Junior Super Series - Junior Individual Series Pass",
     "eventDate": "2026-02-20T00:00:00Z",
     "clubName": "AusCycling (South Australia)",
     "state": "SA",
     "eventUrl": "https://entryboss.cc/races/8341"
-  },
-  {
-    "eventName": "MetroMap Super Series - Seniors Individual Series Pass",
-    "eventDate": "2026-02-20T00:00:00Z",
-    "clubName": "AusCycling (South Australia)",
-    "state": "SA",
-    "eventUrl": "https://entryboss.cc/races/8340"
-  },
-  {
-    "eventName": "2023 Cervelo Super Series - Series Pass - Junior Riders",
-    "eventDate": "2026-02-20T00:00:00Z",
-    "clubName": "AusCycling (South Australia)",
-    "state": "SA",
-    "eventUrl": "https://entryboss.cc/races/17094"
   },
   {
     "eventName": "Friday Night Racing",
@@ -105,11 +70,11 @@
     "eventUrl": "https://entryboss.cc/races/29153"
   },
   {
-    "eventName": "Super Series - Series Pass",
+    "eventName": "Cervelo Super Series - Series Pass  - Senior Riders",
     "eventDate": "2026-02-20T00:00:00Z",
     "clubName": "AusCycling (South Australia)",
     "state": "SA",
-    "eventUrl": "https://entryboss.cc/races/5458"
+    "eventUrl": "https://entryboss.cc/races/12744"
   },
   {
     "eventName": "2023 Cervelo Super Series - Series Pass - Senior Riders",
@@ -119,11 +84,39 @@
     "eventUrl": "https://entryboss.cc/races/17080"
   },
   {
+    "eventName": "MetroMap Super Series - Seniors Individual Series Pass",
+    "eventDate": "2026-02-20T00:00:00Z",
+    "clubName": "AusCycling (South Australia)",
+    "state": "SA",
+    "eventUrl": "https://entryboss.cc/races/8340"
+  },
+  {
     "eventName": "99 Bikes Junior Super Series - Series Pass - Junior Riders",
     "eventDate": "2026-02-20T00:00:00Z",
     "clubName": "AusCycling (South Australia)",
     "state": "SA",
     "eventUrl": "https://entryboss.cc/races/12777"
+  },
+  {
+    "eventName": "Friday Night Beginner Come \u0026 Try / Open Track",
+    "eventDate": "2026-02-20T00:00:00Z",
+    "clubName": "AusCycling (South Australia)",
+    "state": "SA",
+    "eventUrl": "https://entryboss.cc/races/29566"
+  },
+  {
+    "eventName": "2023 Cervelo Super Series - Series Pass - Junior Riders",
+    "eventDate": "2026-02-20T00:00:00Z",
+    "clubName": "AusCycling (South Australia)",
+    "state": "SA",
+    "eventUrl": "https://entryboss.cc/races/17094"
+  },
+  {
+    "eventName": "Super Series - Series Pass",
+    "eventDate": "2026-02-20T00:00:00Z",
+    "clubName": "AusCycling (South Australia)",
+    "state": "SA",
+    "eventUrl": "https://entryboss.cc/races/5458"
   },
   {
     "eventName": "Summer Series 2026 Race 4 Glencoe Overland Track Range Hill",
@@ -154,18 +147,18 @@
     "eventUrl": "https://entryboss.cc/races/29146"
   },
   {
-    "eventName": "Wednesday Open Track Training",
-    "eventDate": "2026-02-25T00:00:00Z",
-    "clubName": "AusCycling SA - Superdrome",
-    "state": "SA",
-    "eventUrl": "https://entryboss.cc/races/29563"
-  },
-  {
     "eventName": "Wednesday Night Training",
     "eventDate": "2026-02-25T00:00:00Z",
     "clubName": "South Coast Cycling",
     "state": "SA",
     "eventUrl": "https://entryboss.cc/races/29150"
+  },
+  {
+    "eventName": "Wednesday Open Track Training",
+    "eventDate": "2026-02-25T00:00:00Z",
+    "clubName": "AusCycling SA - Superdrome",
+    "state": "SA",
+    "eventUrl": "https://entryboss.cc/races/29563"
   },
   {
     "eventName": "Moto Pace - Track and Road",
@@ -182,18 +175,18 @@
     "eventUrl": "https://entryboss.cc/races/29564"
   },
   {
-    "eventName": "Friday Night Beginner Come \u0026 Try / Open Track",
-    "eventDate": "2026-02-27T00:00:00Z",
-    "clubName": "AusCycling (South Australia)",
-    "state": "SA",
-    "eventUrl": "https://entryboss.cc/races/29567"
-  },
-  {
     "eventName": "Friday Night Racing",
     "eventDate": "2026-02-27T00:00:00Z",
     "clubName": "South Coast Cycling",
     "state": "SA",
     "eventUrl": "https://entryboss.cc/races/29154"
+  },
+  {
+    "eventName": "Friday Night Beginner Come \u0026 Try / Open Track",
+    "eventDate": "2026-02-27T00:00:00Z",
+    "clubName": "AusCycling (South Australia)",
+    "state": "SA",
+    "eventUrl": "https://entryboss.cc/races/29567"
   },
   {
     "eventName": "Saturday - SA State Team Track Session",
@@ -231,6 +224,13 @@
     "eventUrl": "https://entryboss.cc/races/29262"
   },
   {
+    "eventName": "Adelaide cup \u0026 Interclub.",
+    "eventDate": "2026-03-09T00:00:00Z",
+    "clubName": "South Coast Cycling",
+    "state": "SA",
+    "eventUrl": "https://entryboss.cc/races/29589"
+  },
+  {
     "eventName": "NCC Tuesday Criteriums",
     "eventDate": "2026-03-10T00:00:00Z",
     "clubName": "Norwood Cycling Club",
@@ -238,18 +238,18 @@
     "eventUrl": "https://entryboss.cc/races/28039"
   },
   {
-    "eventName": "2026 AusCycling BMX State Series - SA R1 Tea Tree Gully",
-    "eventDate": "2026-03-14T00:00:00Z",
-    "clubName": "AusCycling (South Australia)",
-    "state": "SA",
-    "eventUrl": "https://entryboss.cc/races/28845"
-  },
-  {
     "eventName": "Saturday - SA State Team Track Session",
     "eventDate": "2026-03-14T00:00:00Z",
     "clubName": "AusCycling SA - Superdrome",
     "state": "SA",
     "eventUrl": "https://entryboss.cc/races/29561"
+  },
+  {
+    "eventName": "2026 AusCycling BMX State Series - SA R1 Tea Tree Gully",
+    "eventDate": "2026-03-14T00:00:00Z",
+    "clubName": "AusCycling (South Australia)",
+    "state": "SA",
+    "eventUrl": "https://entryboss.cc/races/28845"
   },
   {
     "eventName": "2026 AusCycling BMX State Series - SA R2 Cross Keys",
@@ -399,18 +399,18 @@
     "eventUrl": "https://entryboss.cc/races/29287"
   },
   {
-    "eventName": "CX Season Close Event",
-    "eventDate": "2026-09-13T00:00:00Z",
-    "clubName": "Port Adelaide Cycling Club",
-    "state": "SA",
-    "eventUrl": "https://entryboss.cc/races/28279"
-  },
-  {
     "eventName": "2026 AusCycling BMX State Series - SA R4 Copper Coast",
     "eventDate": "2026-09-13T00:00:00Z",
     "clubName": "AusCycling (South Australia)",
     "state": "SA",
     "eventUrl": "https://entryboss.cc/races/28854"
+  },
+  {
+    "eventName": "CX Season Close Event",
+    "eventDate": "2026-09-13T00:00:00Z",
+    "clubName": "Port Adelaide Cycling Club",
+    "state": "SA",
+    "eventUrl": "https://entryboss.cc/races/28279"
   },
   {
     "eventName": "2026 AusCycling BMX State Series - SA R5 Blue Lake",
@@ -420,18 +420,18 @@
     "eventUrl": "https://entryboss.cc/races/28855"
   },
   {
-    "eventName": "STAMPS RD (Macclesfield)",
-    "eventDate": "2026-10-04T00:00:00Z",
-    "clubName": "Adelaide Hills Cycling Club",
-    "state": "SA",
-    "eventUrl": "https://entryboss.cc/races/29288"
-  },
-  {
     "eventName": "2026 AusCycling BMX State Series - SA R6 Blue Lake",
     "eventDate": "2026-10-04T00:00:00Z",
     "clubName": "AusCycling (South Australia)",
     "state": "SA",
     "eventUrl": "https://entryboss.cc/races/28856"
+  },
+  {
+    "eventName": "STAMPS RD (Macclesfield)",
+    "eventDate": "2026-10-04T00:00:00Z",
+    "clubName": "Adelaide Hills Cycling Club",
+    "state": "SA",
+    "eventUrl": "https://entryboss.cc/races/29288"
   },
   {
     "eventName": "2026 AusCycling BMX State Series - SA R7 Happy Valley BMX",
