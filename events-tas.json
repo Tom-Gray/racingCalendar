@@ -1,5 +1,12 @@
 [
   {
+    "eventName": "2026 Clubby #1 (Rescheduled)",
+    "eventDate": "2026-02-21T00:00:00Z",
+    "clubName": "Launceston BMX Club",
+    "state": "TAS",
+    "eventUrl": "https://entryboss.cc/races/29481"
+  },
+  {
     "eventName": "2025 Night Series - Series Entry (All 3 events)",
     "eventDate": "2026-02-21T00:00:00Z",
     "clubName": "Launceston BMX Club",
@@ -14,13 +21,6 @@
     "eventUrl": "https://entryboss.cc/races/20374"
   },
   {
-    "eventName": "Enduro Mayhem Round 1",
-    "eventDate": "2026-02-21T00:00:00Z",
-    "clubName": "Derby MTB Club",
-    "state": "TAS",
-    "eventUrl": "https://entryboss.cc/races/29264"
-  },
-  {
     "eventName": "LAUNCESTON BMX - TWILIGHT SERIES 2023 - SERIES PASS",
     "eventDate": "2026-02-21T00:00:00Z",
     "clubName": "Launceston BMX Club",
@@ -28,18 +28,18 @@
     "eventUrl": "https://entryboss.cc/races/14524"
   },
   {
+    "eventName": "Enduro Mayhem Round 1",
+    "eventDate": "2026-02-21T00:00:00Z",
+    "clubName": "Derby MTB Club",
+    "state": "TAS",
+    "eventUrl": "https://entryboss.cc/races/29264"
+  },
+  {
     "eventName": "LAUNCESTON BMX - TWILIGHT SERIES 2021 - SERIES ENTRY",
     "eventDate": "2026-02-21T00:00:00Z",
     "clubName": "Launceston BMX Club",
     "state": "TAS",
     "eventUrl": "https://entryboss.cc/races/8627"
-  },
-  {
-    "eventName": "2026 Clubby #1 (Rescheduled)",
-    "eventDate": "2026-02-21T00:00:00Z",
-    "clubName": "Launceston BMX Club",
-    "state": "TAS",
-    "eventUrl": "https://entryboss.cc/races/29481"
   },
   {
     "eventName": "Tour of Tasmania Criterium",
@@ -77,18 +77,18 @@
     "eventUrl": "https://entryboss.cc/races/28517"
   },
   {
-    "eventName": "Race 1 GC Series. Bishopsbourne - Armstrongs Lane. 3 Laps.",
-    "eventDate": "2026-03-01T00:00:00Z",
-    "clubName": "Northern Vets CC (Tasmania)",
-    "state": "TAS",
-    "eventUrl": "https://entryboss.cc/races/29381"
-  },
-  {
     "eventName": "kunanyi Challenge - Auscycling - Tas Hill Climb Title",
     "eventDate": "2026-03-01T00:00:00Z",
     "clubName": "Hobart Wheelers Dirt Devils CC",
     "state": "TAS",
     "eventUrl": "https://entryboss.cc/races/29183"
+  },
+  {
+    "eventName": "Race 1 GC Series. Bishopsbourne - Armstrongs Lane. 3 Laps.",
+    "eventDate": "2026-03-01T00:00:00Z",
+    "clubName": "Northern Vets CC (Tasmania)",
+    "state": "TAS",
+    "eventUrl": "https://entryboss.cc/races/29381"
   },
   {
     "eventName": "Wynyard Open 2026",
