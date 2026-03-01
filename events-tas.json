@@ -1,12 +1,5 @@
 [
   {
-    "eventName": "2026 AusCycling BMX State Series - RD1 Wynyard",
-    "eventDate": "2026-02-28T00:00:00Z",
-    "clubName": "AusCycling (Tasmania)",
-    "state": "TAS",
-    "eventUrl": "https://entryboss.cc/races/28517"
-  },
-  {
     "eventName": "Wynyard Open 2026",
     "eventDate": "2026-03-01T00:00:00Z",
     "clubName": "Wynyard BMX Club",
@@ -42,11 +35,25 @@
     "eventUrl": "https://entryboss.cc/races/29123"
   },
   {
+    "eventName": "LAUNCESTON BMX - TWILIGHT SERIES 2021 - SERIES ENTRY",
+    "eventDate": "2026-03-07T00:00:00Z",
+    "clubName": "Launceston BMX Club",
+    "state": "TAS",
+    "eventUrl": "https://entryboss.cc/races/8627"
+  },
+  {
     "eventName": "Tassie Thunder 2026",
     "eventDate": "2026-03-07T00:00:00Z",
     "clubName": "Launceston BMX Club",
     "state": "TAS",
     "eventUrl": "https://entryboss.cc/races/28812"
+  },
+  {
+    "eventName": "2025 Night Series - Series Entry (All 3 events)",
+    "eventDate": "2026-03-07T00:00:00Z",
+    "clubName": "Launceston BMX Club",
+    "state": "TAS",
+    "eventUrl": "https://entryboss.cc/races/27935"
   },
   {
     "eventName": "LAUNCESTON BMX - NIGHT SERIES 2024 - SERIES PASS",
@@ -61,20 +68,6 @@
     "clubName": "Launceston BMX Club",
     "state": "TAS",
     "eventUrl": "https://entryboss.cc/races/14524"
-  },
-  {
-    "eventName": "2025 Night Series - Series Entry (All 3 events)",
-    "eventDate": "2026-03-07T00:00:00Z",
-    "clubName": "Launceston BMX Club",
-    "state": "TAS",
-    "eventUrl": "https://entryboss.cc/races/27935"
-  },
-  {
-    "eventName": "LAUNCESTON BMX - TWILIGHT SERIES 2021 - SERIES ENTRY",
-    "eventDate": "2026-03-07T00:00:00Z",
-    "clubName": "Launceston BMX Club",
-    "state": "TAS",
-    "eventUrl": "https://entryboss.cc/races/8627"
   },
   {
     "eventName": "2025-2026 LMBC Twilight Cross Country Series 2 - Race 4 - Hollybank - Wed-11-Mar-2026",
@@ -126,18 +119,18 @@
     "eventUrl": "https://entryboss.cc/races/29302"
   },
   {
-    "eventName": "2026 AusCycling BMX State Series - RD2 Southern City",
-    "eventDate": "2026-03-28T00:00:00Z",
-    "clubName": "AusCycling (Tasmania)",
-    "state": "TAS",
-    "eventUrl": "https://entryboss.cc/races/28519"
-  },
-  {
     "eventName": "The Mo Flow 2026",
     "eventDate": "2026-03-28T00:00:00Z",
     "clubName": "Mersey Mountain Bike Club",
     "state": "TAS",
     "eventUrl": "https://entryboss.cc/races/29763"
+  },
+  {
+    "eventName": "2026 AusCycling BMX State Series - RD2 Southern City",
+    "eventDate": "2026-03-28T00:00:00Z",
+    "clubName": "AusCycling (Tasmania)",
+    "state": "TAS",
+    "eventUrl": "https://entryboss.cc/races/28519"
   },
   {
     "eventName": "Race 3 GC Series. Feature Race. Richie Porte Hill Climb Challenge",
