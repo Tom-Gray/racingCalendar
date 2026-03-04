@@ -188,12 +188,12 @@ async function loadData() {
         elements.loadingState.classList.remove('hidden');
         elements.errorState.classList.add('hidden');
         
-        const [eventsData, clubsData] = await Promise.all([
-            loadEvents(),
-            loadClubs()
-        ]);
-        
+        // Load events first, since loadClubs extracts from state.events
+        const eventsData = await loadEvents();
         state.events = eventsData;
+        
+        // Now load clubs using the events data
+        const clubsData = await loadClubs();
         state.clubs = clubsData;
         
         // Assign colors to clubs
@@ -288,7 +288,7 @@ function loadState() {
             state.hideBMXEvents = parsed.hideBMXEvents || false;
             state.hideMTBEvents = parsed.hideMTBEvents || false;
             state.isFirstTime = parsed.isFirstTime !== false;
-            state.selectedState = parsed.selectedState || 'VIC';
+            state.selectedState = 'VIC';
             
             // Update checkboxes
             elements.hideBMXCheckbox.checked = state.hideBMXEvents;
@@ -311,7 +311,7 @@ function saveState() {
             hideBMXEvents: state.hideBMXEvents,
             hideMTBEvents: state.hideMTBEvents,
             isFirstTime: state.isFirstTime,
-            selectedState: state.selectedState
+            selectedState: 'VIC'
         };
         localStorage.setItem('mobileAppState', JSON.stringify(stateToSave));
     } catch (error) {
@@ -1085,53 +1085,9 @@ function updateStateDisplay() {
     }
 }
 
-function setupStateSelectorListeners() {
-    // Add click handlers for state selection buttons in the filter drawer
-    const stateButtons = document.querySelectorAll('.mobile-state-option');
-    stateButtons.forEach(button => {
-        button.addEventListener('click', () => {
-            const newState = button.getAttribute('data-state');
-            if (newState && newState !== state.selectedState) {
-                state.selectedState = newState;
-                
-                // Clear all club filters when switching states
-                state.selectedClubs.clear();
-                
-                saveState();
-                updateStateDisplay();
-                
-                // Highlight the selected state button
-                stateButtons.forEach(btn => {
-                    if (btn.getAttribute('data-state') === newState) {
-                        btn.style.backgroundColor = '#3b82f620';
-                        btn.style.borderColor = '#3b82f6';
-                        btn.style.borderWidth = '2px';
-                    } else {
-                        btn.style.backgroundColor = '';
-                        btn.style.borderColor = '';
-                        btn.style.borderWidth = '';
-                    }
-                });
-                
-                // Reload data for the new state
-                loadData();
-            }
-        });
-    });
-    
-    // Highlight the currently selected state on load
-    stateButtons.forEach(btn => {
-        if (btn.getAttribute('data-state') === state.selectedState) {
-            btn.style.backgroundColor = '#3b82f620';
-            btn.style.borderColor = '#3b82f6';
-            btn.style.borderWidth = '2px';
-        }
-    });
-}
-
 // Call this after DOM is ready
 document.addEventListener('DOMContentLoaded', () => {
-    setupStateSelectorListeners();
+    // Mobile-specific initialization if needed
 });
 
 console.log('Mobile app loaded');

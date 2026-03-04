@@ -14,7 +14,7 @@ let events = [];
 let clubs = [];
 let selectedClubs = new Set();
 let clubColors = new Map(); // New: track assigned colors for clubs
-let currentView = 'list';
+let currentView = 'calendar';
 let isFirstTime = true;
 let hideBMXEvents = false;
 let hideMTBEvents = false;
@@ -72,11 +72,6 @@ function initDesktopApp() {
 
         // Responsive view logic on load
         handleResponsiveViews();
-
-        // Show onboarding if first time
-        if (isFirstTime) {
-            showOnboarding();
-        }
 
         // Responsive view logic on resize
         window.addEventListener('resize', handleResponsiveViews);
@@ -209,7 +204,7 @@ function loadState() {
         currentView = 'list';
     } else {
         // On desktop, allow calendar view as an option
-        currentView = savedView || 'list';
+        currentView = savedView || 'calendar';
     }
     
     if (savedColors) {
@@ -232,7 +227,7 @@ function loadState() {
     // Ensure all selected clubs have colors assigned
     selectedClubs.forEach(club => assignClubColor(club));
     
-    isFirstTime = !hasSeenOnboarding && selectedClubs.size === 0;
+    isFirstTime = !hasSeenOnboarding;
 }
 
 function saveState() {
@@ -279,7 +274,7 @@ function migrateCookiesToLocalStorage() {
     if (!getFromStorage('selectedClubs') && getCookie('selectedClubs')) {
         console.log('Migrating cookie data to localStorage...');
         saveToStorage('selectedClubs', getCookie('selectedClubs'));
-        saveToStorage('currentView', getCookie('currentView') || 'list');
+        saveToStorage('currentView', getCookie('currentView') || 'calendar');
         saveToStorage('clubColors', getCookie('clubColors') || '[]');
         saveToStorage('hasSeenOnboarding', getCookie('hasSeenOnboarding') || 'false');
         console.log('Migration completed');
@@ -544,6 +539,14 @@ function showLoading() {
 
 function hideLoading() {
     loadingElement.classList.add('hidden');
+    // Show the appropriate view based on currentView
+    if (currentView === 'calendar') {
+        calendarView.classList.remove('hidden');
+        listView.classList.add('hidden');
+    } else {
+        listView.classList.remove('hidden');
+        calendarView.classList.add('hidden');
+    }
 }
 
 function showError() {
@@ -942,7 +945,7 @@ function createCalendarDay(date, events) {
     // Add events to day
     dayEvents.slice(0, 3).forEach(event => { // Limit to 3 events per day for space
         const eventElement = document.createElement('div');
-        eventElement.className = 'text-white px-2 py-2 mb-1 rounded text-xs cursor-pointer transition-all hover:shadow-md hover:-translate-y-0.5 border-l-2 border-white/30 whitespace-normal';
+        eventElement.className = 'day-event-item text-white px-2 py-2 mb-1 rounded text-xs cursor-pointer transition-all hover:shadow-md hover:-translate-y-0.5 border-l-2 border-white/30 whitespace-normal';
         eventElement.textContent = truncateText(event.eventName, 50);
         eventElement.title = `${event.eventName} - ${event.clubName}`;
         
@@ -1159,11 +1162,11 @@ function openEvent(event) {
 // Onboarding
 function showOnboarding() {
     onboardingBanner.classList.remove('hidden');
+    saveToStorage('hasSeenOnboarding', 'true');
 }
 
 function dismissOnboarding() {
     onboardingBanner.classList.add('hidden');
-    saveToStorage('hasSeenOnboarding', 'true');
 }
 
 // Utility Functions
@@ -1195,6 +1198,7 @@ function truncateText(text, maxLength) {
 
 // Responsive view logic for mobile/desktop
 function handleResponsiveViews() {
+    console.log('handleResponsiveViews called, currentView is:', currentView); // DEBUG
     // Hide/show toggle and calendar view based on device width
     const viewToggle = document.querySelector('.view-toggle');
     if (isMobileDevice()) {
@@ -1235,10 +1239,17 @@ function hideStateSelectionModal() {
     if (modal) {
         modal.classList.add('hidden');
         saveToStorage('hasSeenStateSelector', 'true');
+        
+        // Show onboarding banner if it's the first time
+        if (isFirstTime) {
+            showOnboarding();
+            // We need to set isFirstTime to false so it doesn't show again
+            isFirstTime = false; 
+        }
     }
 }
 
-function selectState(state) {
+async function selectState(state) {
     if (STATE_CONFIG[state]) {
         selectedState = state;
         saveToStorage('selectedState', state);
@@ -1250,7 +1261,9 @@ function selectState(state) {
         
         updateStateDisplay();
         // Reload events for the new state
-        loadEvents();
+        await loadEvents();
+        // Explicitly update display after loading completes
+        updateDisplay();
     }
 }
 
