@@ -33,14 +33,14 @@
             function loadCSS(href) {
                 const link = document.createElement('link');
                 link.rel = 'stylesheet';
-                link.href = href;
+                link.href = href + '?v=' + new Date().getTime(); // Bust cache
                 document.head.appendChild(link);
             }
 
             function loadJS(src) {
                 return new Promise((resolve, reject) => {
                     const script = document.createElement('script');
-                    script.src = src;
+                    script.src = src + '?v=' + new Date().getTime(); // Bust cache
                     script.async = false;
                     script.onload = resolve;
                     script.onerror = reject;
@@ -58,13 +58,13 @@
 
             if (isMobile) {
                 loadCSS('mobile.css');
-                await loadContent('mobile_page.html', root);
+                await loadContent('mobile_page.html' + '?v=' + new Date().getTime(), root);
                 await loadJS('mobile.js');
                 initMobileApp();
 
             } else {
                 loadCSS('tailwind-overrides.css');
-                await loadContent('desktop.html', root);
+                await loadContent('desktop.html' + '?v=' + new Date().getTime(), root);
                 await loadJS('script.js');
                 initDesktopApp();
             }
