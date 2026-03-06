@@ -37,7 +37,8 @@ const state = {
     touchStartY: 0,
     touchEndX: 0,
     touchEndY: 0,
-    selectedState: 'VIC' // Default state
+    selectedState: 'VIC', // Default state
+    statePreferences: {} // Store preferences for each state
 };
 
 // DOM Elements (cached for performance)
@@ -286,16 +287,13 @@ function loadState() {
         const savedState = localStorage.getItem('mobileAppState');
         if (savedState) {
             const parsed = JSON.parse(savedState);
-            state.selectedClubs = new Set(parsed.selectedClubs || []);
             state.currentView = parsed.currentView || 'calendar';
-            state.hideBMXEvents = parsed.hideBMXEvents || false;
-            state.hideMTBEvents = parsed.hideMTBEvents || false;
             state.isFirstTime = parsed.isFirstTime !== false;
             state.selectedState = parsed.selectedState || 'VIC';
+            state.statePreferences = parsed.statePreferences || {};
             
-            // Update checkboxes
-            elements.hideBMXCheckbox.checked = state.hideBMXEvents;
-            elements.hideMTBCheckbox.checked = state.hideMTBEvents;
+            // Load state-specific preferences
+            loadStateSpecificPreferences();
             
             // Update header title
             updateStateDisplay();
@@ -305,15 +303,36 @@ function loadState() {
     }
 }
 
+function loadStateSpecificPreferences() {
+    const prefs = state.statePreferences[state.selectedState] || {
+        selectedClubs: [],
+        hideBMXEvents: false,
+        hideMTBEvents: false
+    };
+    
+    state.selectedClubs = new Set(prefs.selectedClubs);
+    state.hideBMXEvents = prefs.hideBMXEvents;
+    state.hideMTBEvents = prefs.hideMTBEvents;
+    
+    // Update checkboxes
+    if (elements.hideBMXCheckbox) elements.hideBMXCheckbox.checked = state.hideBMXEvents;
+    if (elements.hideMTBCheckbox) elements.hideMTBCheckbox.checked = state.hideMTBEvents;
+}
+
 function saveState() {
     try {
-        const stateToSave = {
+        // Update preferences for current state
+        state.statePreferences[state.selectedState] = {
             selectedClubs: Array.from(state.selectedClubs),
-            currentView: state.currentView,
             hideBMXEvents: state.hideBMXEvents,
-            hideMTBEvents: state.hideMTBEvents,
+            hideMTBEvents: state.hideMTBEvents
+        };
+        
+        const stateToSave = {
+            currentView: state.currentView,
             isFirstTime: state.isFirstTime,
-            selectedState: state.selectedState
+            selectedState: state.selectedState,
+            statePreferences: state.statePreferences
         };
         localStorage.setItem('mobileAppState', JSON.stringify(stateToSave));
     } catch (error) {
@@ -966,8 +985,13 @@ function selectState(stateCode) {
         return;
     }
     
+    // Save current state preferences before switching
+    saveState();
+    
     state.selectedState = stateCode;
-    state.selectedClubs.clear(); // Clear club filters when state changes
+    
+    // Load preferences for the new state
+    loadStateSpecificPreferences();
     
     saveState();
     updateStateDisplay();
