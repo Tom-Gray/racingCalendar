@@ -28,7 +28,6 @@ const state = {
     selectedClubs: new Set(),
     clubColors: new Map(),
     currentView: 'calendar', // 'list' or 'calendar'
-    calendarMode: 'month', // 'month' or 'week'
     hideBMXEvents: false,
     hideMTBEvents: false,
     isFirstTime: true,
@@ -99,8 +98,6 @@ function initializeElements() {
     elements.calendarTitle = document.getElementById('calendarTitle');
     elements.prevPeriodButton = document.getElementById('prevPeriodButton');
     elements.nextPeriodButton = document.getElementById('nextPeriodButton');
-    elements.monthModeButton = document.getElementById('monthModeButton');
-    elements.weekModeButton = document.getElementById('weekModeButton');
     
     // Bottom navigation
     elements.listViewButton = document.getElementById('listViewButton');
@@ -171,10 +168,6 @@ function setupEventListeners() {
     // Calendar navigation
     elements.prevPeriodButton.addEventListener('click', () => navigatePeriod(-1));
     elements.nextPeriodButton.addEventListener('click', () => navigatePeriod(1));
-    
-    // Calendar mode toggle
-    elements.monthModeButton.addEventListener('click', () => switchCalendarMode('month'));
-    elements.weekModeButton.addEventListener('click', () => switchCalendarMode('week'));
     
     // Retry button
     elements.retryButton.addEventListener('click', loadData);
@@ -295,7 +288,6 @@ function loadState() {
             const parsed = JSON.parse(savedState);
             state.selectedClubs = new Set(parsed.selectedClubs || []);
             state.currentView = parsed.currentView || 'calendar';
-            state.calendarMode = parsed.calendarMode || 'month';
             state.hideBMXEvents = parsed.hideBMXEvents || false;
             state.hideMTBEvents = parsed.hideMTBEvents || false;
             state.isFirstTime = parsed.isFirstTime !== false;
@@ -318,7 +310,6 @@ function saveState() {
         const stateToSave = {
             selectedClubs: Array.from(state.selectedClubs),
             currentView: state.currentView,
-            calendarMode: state.calendarMode,
             hideBMXEvents: state.hideBMXEvents,
             hideMTBEvents: state.hideMTBEvents,
             isFirstTime: state.isFirstTime,
@@ -508,21 +499,6 @@ function switchView(viewType) {
     }
 }
 
-function switchCalendarMode(mode) {
-    state.calendarMode = mode;
-    saveState();
-    updateDisplay();
-    
-    // Update mode toggle active state
-    if (mode === 'month') {
-        elements.monthModeButton.classList.add('calendar-mode-active');
-        elements.weekModeButton.classList.remove('calendar-mode-active');
-    } else {
-        elements.monthModeButton.classList.remove('calendar-mode-active');
-        elements.weekModeButton.classList.add('calendar-mode-active');
-    }
-}
-
 function updateDisplay() {
     const filteredEvents = getFilteredEvents();
     
@@ -543,11 +519,7 @@ function updateDisplay() {
         renderEventsList(filteredEvents);
     } else {
         elements.calendarView.classList.remove('hidden');
-        if (state.calendarMode === 'month') {
-            renderMonthCalendar(filteredEvents);
-        } else {
-            renderWeekCalendar(filteredEvents);
-        }
+        renderMonthCalendar(filteredEvents);
     }
 }
 
@@ -778,125 +750,11 @@ function createMonthDayCell(dayData) {
 }
 
 // ===================================
-// Calendar Rendering - Week View
-// ===================================
-
-function renderWeekCalendar(events) {
-    const weekStart = getWeekStart(state.currentDate);
-    const weekData = generateWeekData(weekStart, events);
-    
-    // Update title
-    const weekEnd = new Date(weekStart);
-    weekEnd.setDate(weekEnd.getDate() + 6);
-    elements.calendarTitle.textContent = `${formatDateShort(weekStart)} - ${formatDateShort(weekEnd)}`;
-    
-    // Render week
-    elements.calendarContainer.innerHTML = '';
-    const weekDiv = document.createElement('div');
-    weekDiv.className = 'week-calendar';
-    
-    weekData.forEach(dayData => {
-        const card = createWeekDayCard(dayData);
-        weekDiv.appendChild(card);
-    });
-    
-    elements.calendarContainer.appendChild(weekDiv);
-}
-
-function generateWeekData(weekStart, events) {
-    const weekData = [];
-    const today = new Date();
-    today.setHours(0, 0, 0, 0);
-    
-    // Group events by date
-    const eventsByDate = {};
-    events.forEach(event => {
-        // Extract date directly from ISO string to avoid timezone issues
-        const dateKey = event.eventDate.split('T')[0];
-        if (!eventsByDate[dateKey]) {
-            eventsByDate[dateKey] = [];
-        }
-        eventsByDate[dateKey].push(event);
-    });
-    
-    // Generate 7 days
-    for (let i = 0; i < 7; i++) {
-        const date = new Date(weekStart);
-        date.setDate(date.getDate() + i);
-        
-        const dateKey = date.toISOString().split('T')[0];
-        const dayEvents = eventsByDate[dateKey] || [];
-        
-        weekData.push({
-            date: date,
-            events: dayEvents,
-            isToday: isSameDay(date, today)
-        });
-    }
-    
-    return weekData;
-}
-
-function createWeekDayCard(dayData) {
-    const card = document.createElement('div');
-    card.className = 'week-day-card';
-    
-    if (dayData.isToday) {
-        card.classList.add('today');
-    }
-    
-    const header = document.createElement('div');
-    header.className = 'week-day-header';
-    header.innerHTML = `
-        <div class="week-day-name">${formatDayName(dayData.date)}</div>
-        <div class="week-day-date">${formatDateShort(dayData.date)}</div>
-    `;
-    card.appendChild(header);
-    
-    if (dayData.events.length > 0) {
-        const eventsContainer = document.createElement('div');
-        eventsContainer.className = 'week-day-events';
-        
-        dayData.events.forEach(event => {
-            const eventItem = document.createElement('div');
-            eventItem.className = 'week-event-item';
-            const color = state.clubColors.get(event.clubName) || '#6b7280';
-            eventItem.style.borderLeftColor = color;
-            eventItem.innerHTML = `
-                <div style="flex: 1;">
-                    <div style="font-size: 0.8125rem; font-weight: 600; color: #111827; margin-bottom: 0.125rem;">
-                        ${truncateText(event.eventName, 40)}
-                    </div>
-                    <div style="font-size: 0.75rem; color: #6b7280;">
-                        ${event.clubName}
-                    </div>
-                </div>
-            `;
-            eventItem.addEventListener('click', () => openEvent(event));
-            eventsContainer.appendChild(eventItem);
-        });
-        
-        card.appendChild(eventsContainer);
-    } else {
-        const noEvents = document.createElement('div');
-        noEvents.style.cssText = 'text-align: center; padding: 1rem; color: #9ca3af; font-size: 0.875rem;';
-        noEvents.textContent = 'No events';
-        card.appendChild(noEvents);
-    }
-    
-    return card;
-}
-
-// ===================================
 // Calendar Navigation
 // ===================================
 
 function navigatePeriod(direction) {
-    if (state.calendarMode === 'month') {
-        state.currentDate.setMonth(state.currentDate.getMonth() + direction);
-    } else {
-        state.currentDate.setDate(state.currentDate.getDate() + (direction * 7));
-    }
+    state.currentDate.setMonth(state.currentDate.getMonth() + direction);
     updateDisplay();
 }
 
