@@ -19,6 +19,7 @@ let isFirstTime = true;
 let hideBMXEvents = false;
 let hideMTBEvents = false;
 let selectedState = 'VIC'; // Default state
+let statePreferences = {}; // Store preferences for each state
 
 // Color palette for clubs
 const CLUB_COLOR_PALETTE = [
@@ -178,26 +179,28 @@ function loadState() {
     // Run migration first to preserve existing cookie data
     migrateCookiesToLocalStorage();
     
-    const savedFilters = getFromStorage('selectedClubs');
     const savedView = getFromStorage('currentView');
     const savedColors = getFromStorage('clubColors');
     const hasSeenOnboarding = getFromStorage('hasSeenOnboarding');
-    const savedHideBMX = getFromStorage('hideBMXEvents');
-    const savedHideMTB = getFromStorage('hideMTBEvents');
     const savedState = getFromStorage('selectedState');
     const hasSeenStateSelector = getFromStorage('hasSeenStateSelector');
+    const savedPreferences = getFromStorage('statePreferences');
     
     // Load selected state or default to VIC
     selectedState = savedState || 'VIC';
+    
+    // Load all state preferences
+    if (savedPreferences) {
+        statePreferences = JSON.parse(savedPreferences);
+    }
     
     // Show state selection modal on first visit
     if (!hasSeenStateSelector) {
         showStateSelectionModal();
     }
     
-    if (savedFilters) {
-        selectedClubs = new Set(JSON.parse(savedFilters));
-    }
+    // Load preferences for the current selected state
+    loadStateSpecificPreferences();
     
     // Force list view on mobile devices, otherwise use saved preference or default to list
     if (isMobileDevice()) {
@@ -212,9 +215,22 @@ function loadState() {
         clubColors = new Map(colorData);
     }
     
-    // Load BMX and MTB filter preferences
-    hideBMXEvents = savedHideBMX === 'true';
-    hideMTBEvents = savedHideMTB === 'true';
+    // Ensure all selected clubs have colors assigned
+    selectedClubs.forEach(club => assignClubColor(club));
+    
+    isFirstTime = !hasSeenOnboarding;
+}
+
+function loadStateSpecificPreferences() {
+    const prefs = statePreferences[selectedState] || {
+        selectedClubs: [],
+        hideBMXEvents: false,
+        hideMTBEvents: false
+    };
+    
+    selectedClubs = new Set(prefs.selectedClubs);
+    hideBMXEvents = prefs.hideBMXEvents;
+    hideMTBEvents = prefs.hideMTBEvents;
     
     // Update checkbox states if elements exist
     if (hideBMXCheckbox) {
@@ -223,19 +239,20 @@ function loadState() {
     if (hideMTBCheckbox) {
         hideMTBCheckbox.checked = hideMTBEvents;
     }
-    
-    // Ensure all selected clubs have colors assigned
-    selectedClubs.forEach(club => assignClubColor(club));
-    
-    isFirstTime = !hasSeenOnboarding;
 }
 
 function saveState() {
-    saveToStorage('selectedClubs', JSON.stringify([...selectedClubs]));
+    // Update preferences for the current state
+    statePreferences[selectedState] = {
+        selectedClubs: [...selectedClubs],
+        hideBMXEvents: hideBMXEvents,
+        hideMTBEvents: hideMTBEvents
+    };
+    
+    saveToStorage('statePreferences', JSON.stringify(statePreferences));
+    saveToStorage('selectedState', selectedState);
     saveToStorage('currentView', currentView);
     saveToStorage('clubColors', JSON.stringify([...clubColors]));
-    saveToStorage('hideBMXEvents', hideBMXEvents.toString());
-    saveToStorage('hideMTBEvents', hideMTBEvents.toString());
 }
 
 // Storage utilities
@@ -1251,13 +1268,15 @@ function hideStateSelectionModal() {
 
 async function selectState(state) {
     if (STATE_CONFIG[state]) {
+        // Save current preferences before switching
+        saveState();
+        
         selectedState = state;
         saveToStorage('selectedState', state);
         
-        // Clear all club filters when switching states
-        selectedClubs.clear();
+        // Load preferences for the new state
+        loadStateSpecificPreferences();
         updateSelectedClubsDisplay();
-        saveState();
         
         updateStateDisplay();
         // Reload events for the new state

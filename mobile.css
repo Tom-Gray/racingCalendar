@@ -68,23 +68,28 @@ body {
 }
 
 /* Filter Drawer Animations */
-#filterDrawer.drawer-open {
+#filterDrawer.drawer-open,
+#stateDrawer.drawer-open {
     display: block;
 }
 
-#filterDrawer.drawer-open #filterBackdrop {
+#filterDrawer.drawer-open #filterBackdrop,
+#stateDrawer.drawer-open #stateBackdrop {
     animation: fadeIn var(--transition-normal);
 }
 
-#filterDrawer.drawer-open #filterDrawerContent {
+#filterDrawer.drawer-open #filterDrawerContent,
+#stateDrawer.drawer-open #stateDrawerContent {
     animation: slideUp var(--transition-normal);
 }
 
-#filterDrawer.drawer-closing #filterBackdrop {
+#filterDrawer.drawer-closing #filterBackdrop,
+#stateDrawer.drawer-closing #stateBackdrop {
     animation: fadeOut var(--transition-normal);
 }
 
-#filterDrawer.drawer-closing #filterDrawerContent {
+#filterDrawer.drawer-closing #filterDrawerContent,
+#stateDrawer.drawer-closing #stateDrawerContent {
     animation: slideDown var(--transition-normal);
 }
 

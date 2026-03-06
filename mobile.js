@@ -27,8 +27,7 @@ const state = {
     clubs: [],
     selectedClubs: new Set(),
     clubColors: new Map(),
-    currentView: 'list', // 'list' or 'calendar'
-    calendarMode: 'month', // 'month' or 'week'
+    currentView: 'calendar', // 'list' or 'calendar'
     hideBMXEvents: false,
     hideMTBEvents: false,
     isFirstTime: true,
@@ -38,7 +37,8 @@ const state = {
     touchStartY: 0,
     touchEndX: 0,
     touchEndY: 0,
-    selectedState: 'VIC' // Default state
+    selectedState: 'VIC', // Default state
+    statePreferences: {} // Store preferences for each state
 };
 
 // DOM Elements (cached for performance)
@@ -79,6 +79,9 @@ function initializeElements() {
     // Header elements
     elements.filterButton = document.getElementById('filterButton');
     elements.filterCount = document.getElementById('filterCount');
+    elements.stateSelectorButton = document.getElementById('stateSelectorButton');
+    elements.headerTitle = document.getElementById('headerTitle');
+    elements.headerSubtitle = document.getElementById('headerSubtitle');
     
     // State elements
     elements.loadingState = document.getElementById('loadingState');
@@ -96,8 +99,6 @@ function initializeElements() {
     elements.calendarTitle = document.getElementById('calendarTitle');
     elements.prevPeriodButton = document.getElementById('prevPeriodButton');
     elements.nextPeriodButton = document.getElementById('nextPeriodButton');
-    elements.monthModeButton = document.getElementById('monthModeButton');
-    elements.weekModeButton = document.getElementById('weekModeButton');
     
     // Bottom navigation
     elements.listViewButton = document.getElementById('listViewButton');
@@ -114,10 +115,17 @@ function initializeElements() {
     elements.clubSearchInput = document.getElementById('clubSearchInput');
     elements.clubFiltersList = document.getElementById('clubFiltersList');
     elements.clearAllClubsButton = document.getElementById('clearAllClubsButton');
+
+    // State drawer
+    elements.stateDrawer = document.getElementById('stateDrawer');
+    elements.stateBackdrop = document.getElementById('stateBackdrop');
+    elements.stateDrawerContent = document.getElementById('stateDrawerContent');
+    elements.closeStateButton = document.getElementById('closeStateButton');
+    elements.stateOptionsContainer = document.getElementById('stateOptionsContainer');
     
     // Onboarding
     elements.onboardingOverlay = document.getElementById('onboardingOverlay');
-    elements.dismissOnboardingButton = document.getElementById('dismissOnboardingButton');
+    elements.onboardingStateOptions = document.getElementById('onboardingStateOptions');
     
     // Selected date events
     elements.selectedDateEvents = document.getElementById('selectedDateEvents');
@@ -134,6 +142,11 @@ function setupEventListeners() {
     elements.closeFilterButton.addEventListener('click', hideFilterDrawer);
     elements.filterBackdrop.addEventListener('click', hideFilterDrawer);
     elements.applyFiltersButton.addEventListener('click', applyFilters);
+
+    // State selector
+    elements.stateSelectorButton.addEventListener('click', showStateDrawer);
+    elements.closeStateButton.addEventListener('click', hideStateDrawer);
+    elements.stateBackdrop.addEventListener('click', hideStateDrawer);
     
     // Event type filters
     elements.hideBMXCheckbox.addEventListener('change', (e) => {
@@ -156,13 +169,6 @@ function setupEventListeners() {
     // Calendar navigation
     elements.prevPeriodButton.addEventListener('click', () => navigatePeriod(-1));
     elements.nextPeriodButton.addEventListener('click', () => navigatePeriod(1));
-    
-    // Calendar mode toggle
-    elements.monthModeButton.addEventListener('click', () => switchCalendarMode('month'));
-    elements.weekModeButton.addEventListener('click', () => switchCalendarMode('week'));
-    
-    // Onboarding
-    elements.dismissOnboardingButton.addEventListener('click', dismissOnboarding);
     
     // Retry button
     elements.retryButton.addEventListener('click', loadData);
@@ -201,7 +207,7 @@ async function loadData() {
         
         elements.loadingState.classList.add('hidden');
         
-        console.log(`Loaded ${state.events.length} events and ${state.clubs.length} clubs`);
+        console.log(`Loaded ${state.events.length} events and ${state.clubs.length} clubs for ${state.selectedState}`);
         
         // Render club filters
         renderClubFilters();
@@ -224,7 +230,8 @@ async function loadData() {
 
 async function loadEvents() {
     try {
-        const eventsFile = STATE_CONFIG[state.selectedState].file;
+        const config = STATE_CONFIG[state.selectedState] || STATE_CONFIG.VIC;
+        const eventsFile = config.file;
         const response = await fetch(eventsFile);
         if (!response.ok) throw new Error('Failed to fetch events');
         return await response.json();
@@ -251,9 +258,6 @@ function loadFallbackData() {
 }
 
 function assignClubColors() {
-    // Create a shuffled copy of the color palette for better distribution
-    const shuffledColors = [...COLOR_PALETTE];
-    
     // Simple hash function to generate consistent but distributed indices
     const hashString = (str) => {
         let hash = 0;
@@ -265,6 +269,7 @@ function assignClubColors() {
         return Math.abs(hash);
     };
     
+    state.clubColors.clear(); // Clear existing colors
     state.clubs.forEach((club) => {
         // Use club name hash to pick a color, ensuring consistent assignment
         const hash = hashString(club.clubName);
@@ -282,17 +287,13 @@ function loadState() {
         const savedState = localStorage.getItem('mobileAppState');
         if (savedState) {
             const parsed = JSON.parse(savedState);
-            state.selectedClubs = new Set(parsed.selectedClubs || []);
-            state.currentView = parsed.currentView || 'list';
-            state.calendarMode = parsed.calendarMode || 'month';
-            state.hideBMXEvents = parsed.hideBMXEvents || false;
-            state.hideMTBEvents = parsed.hideMTBEvents || false;
+            state.currentView = parsed.currentView || 'calendar';
             state.isFirstTime = parsed.isFirstTime !== false;
-            state.selectedState = 'VIC';
+            state.selectedState = parsed.selectedState || 'VIC';
+            state.statePreferences = parsed.statePreferences || {};
             
-            // Update checkboxes
-            elements.hideBMXCheckbox.checked = state.hideBMXEvents;
-            elements.hideMTBCheckbox.checked = state.hideMTBEvents;
+            // Load state-specific preferences
+            loadStateSpecificPreferences();
             
             // Update header title
             updateStateDisplay();
@@ -302,16 +303,36 @@ function loadState() {
     }
 }
 
+function loadStateSpecificPreferences() {
+    const prefs = state.statePreferences[state.selectedState] || {
+        selectedClubs: [],
+        hideBMXEvents: false,
+        hideMTBEvents: false
+    };
+    
+    state.selectedClubs = new Set(prefs.selectedClubs);
+    state.hideBMXEvents = prefs.hideBMXEvents;
+    state.hideMTBEvents = prefs.hideMTBEvents;
+    
+    // Update checkboxes
+    if (elements.hideBMXCheckbox) elements.hideBMXCheckbox.checked = state.hideBMXEvents;
+    if (elements.hideMTBCheckbox) elements.hideMTBCheckbox.checked = state.hideMTBEvents;
+}
+
 function saveState() {
     try {
-        const stateToSave = {
+        // Update preferences for current state
+        state.statePreferences[state.selectedState] = {
             selectedClubs: Array.from(state.selectedClubs),
-            currentView: state.currentView,
-            calendarMode: state.calendarMode,
             hideBMXEvents: state.hideBMXEvents,
-            hideMTBEvents: state.hideMTBEvents,
+            hideMTBEvents: state.hideMTBEvents
+        };
+        
+        const stateToSave = {
+            currentView: state.currentView,
             isFirstTime: state.isFirstTime,
-            selectedState: 'VIC'
+            selectedState: state.selectedState,
+            statePreferences: state.statePreferences
         };
         localStorage.setItem('mobileAppState', JSON.stringify(stateToSave));
     } catch (error) {
@@ -497,21 +518,6 @@ function switchView(viewType) {
     }
 }
 
-function switchCalendarMode(mode) {
-    state.calendarMode = mode;
-    saveState();
-    updateDisplay();
-    
-    // Update mode toggle active state
-    if (mode === 'month') {
-        elements.monthModeButton.classList.add('calendar-mode-active');
-        elements.weekModeButton.classList.remove('calendar-mode-active');
-    } else {
-        elements.monthModeButton.classList.remove('calendar-mode-active');
-        elements.weekModeButton.classList.add('calendar-mode-active');
-    }
-}
-
 function updateDisplay() {
     const filteredEvents = getFilteredEvents();
     
@@ -532,11 +538,7 @@ function updateDisplay() {
         renderEventsList(filteredEvents);
     } else {
         elements.calendarView.classList.remove('hidden');
-        if (state.calendarMode === 'month') {
-            renderMonthCalendar(filteredEvents);
-        } else {
-            renderWeekCalendar(filteredEvents);
-        }
+        renderMonthCalendar(filteredEvents);
     }
 }
 
@@ -767,125 +769,11 @@ function createMonthDayCell(dayData) {
 }
 
 // ===================================
-// Calendar Rendering - Week View
-// ===================================
-
-function renderWeekCalendar(events) {
-    const weekStart = getWeekStart(state.currentDate);
-    const weekData = generateWeekData(weekStart, events);
-    
-    // Update title
-    const weekEnd = new Date(weekStart);
-    weekEnd.setDate(weekEnd.getDate() + 6);
-    elements.calendarTitle.textContent = `${formatDateShort(weekStart)} - ${formatDateShort(weekEnd)}`;
-    
-    // Render week
-    elements.calendarContainer.innerHTML = '';
-    const weekDiv = document.createElement('div');
-    weekDiv.className = 'week-calendar';
-    
-    weekData.forEach(dayData => {
-        const card = createWeekDayCard(dayData);
-        weekDiv.appendChild(card);
-    });
-    
-    elements.calendarContainer.appendChild(weekDiv);
-}
-
-function generateWeekData(weekStart, events) {
-    const weekData = [];
-    const today = new Date();
-    today.setHours(0, 0, 0, 0);
-    
-    // Group events by date
-    const eventsByDate = {};
-    events.forEach(event => {
-        // Extract date directly from ISO string to avoid timezone issues
-        const dateKey = event.eventDate.split('T')[0];
-        if (!eventsByDate[dateKey]) {
-            eventsByDate[dateKey] = [];
-        }
-        eventsByDate[dateKey].push(event);
-    });
-    
-    // Generate 7 days
-    for (let i = 0; i < 7; i++) {
-        const date = new Date(weekStart);
-        date.setDate(date.getDate() + i);
-        
-        const dateKey = date.toISOString().split('T')[0];
-        const dayEvents = eventsByDate[dateKey] || [];
-        
-        weekData.push({
-            date: date,
-            events: dayEvents,
-            isToday: isSameDay(date, today)
-        });
-    }
-    
-    return weekData;
-}
-
-function createWeekDayCard(dayData) {
-    const card = document.createElement('div');
-    card.className = 'week-day-card';
-    
-    if (dayData.isToday) {
-        card.classList.add('today');
-    }
-    
-    const header = document.createElement('div');
-    header.className = 'week-day-header';
-    header.innerHTML = `
-        <div class="week-day-name">${formatDayName(dayData.date)}</div>
-        <div class="week-day-date">${formatDateShort(dayData.date)}</div>
-    `;
-    card.appendChild(header);
-    
-    if (dayData.events.length > 0) {
-        const eventsContainer = document.createElement('div');
-        eventsContainer.className = 'week-day-events';
-        
-        dayData.events.forEach(event => {
-            const eventItem = document.createElement('div');
-            eventItem.className = 'week-event-item';
-            const color = state.clubColors.get(event.clubName) || '#6b7280';
-            eventItem.style.borderLeftColor = color;
-            eventItem.innerHTML = `
-                <div style="flex: 1;">
-                    <div style="font-size: 0.8125rem; font-weight: 600; color: #111827; margin-bottom: 0.125rem;">
-                        ${truncateText(event.eventName, 40)}
-                    </div>
-                    <div style="font-size: 0.75rem; color: #6b7280;">
-                        ${event.clubName}
-                    </div>
-                </div>
-            `;
-            eventItem.addEventListener('click', () => openEvent(event));
-            eventsContainer.appendChild(eventItem);
-        });
-        
-        card.appendChild(eventsContainer);
-    } else {
-        const noEvents = document.createElement('div');
-        noEvents.style.cssText = 'text-align: center; padding: 1rem; color: #9ca3af; font-size: 0.875rem;';
-        noEvents.textContent = 'No events';
-        card.appendChild(noEvents);
-    }
-    
-    return card;
-}
-
-// ===================================
 // Calendar Navigation
 // ===================================
 
 function navigatePeriod(direction) {
-    if (state.calendarMode === 'month') {
-        state.currentDate.setMonth(state.currentDate.getMonth() + direction);
-    } else {
-        state.currentDate.setDate(state.currentDate.getDate() + (direction * 7));
-    }
+    state.currentDate.setMonth(state.currentDate.getMonth() + direction);
     updateDisplay();
 }
 
@@ -1062,6 +950,7 @@ function updateCalendarSelection() {
 // ===================================
 
 function showOnboarding() {
+    renderStateOptions();
     elements.onboardingOverlay.classList.remove('hidden');
     elements.onboardingOverlay.classList.add('show');
 }
@@ -1078,11 +967,101 @@ function dismissOnboarding() {
 // ===================================
 
 function updateStateDisplay() {
-    // Update header title
-    const headerTitle = document.querySelector('header h1');
-    if (headerTitle) {
-        headerTitle.textContent = `${state.selectedState} Cycling`;
+    // Update header title and subtitle
+    if (elements.headerTitle) {
+        elements.headerTitle.textContent = `${state.selectedState} Cycling`;
     }
+    if (elements.headerSubtitle) {
+        elements.headerSubtitle.textContent = STATE_CONFIG[state.selectedState].name;
+    }
+    
+    // Update page title
+    document.title = `${STATE_CONFIG[state.selectedState].name} Cycling Races - EntryBoss Discovery Tool`;
+}
+
+function selectState(stateCode) {
+    if (state.selectedState === stateCode && !state.isFirstTime) {
+        hideStateDrawer();
+        return;
+    }
+    
+    // Save current state preferences before switching
+    saveState();
+    
+    state.selectedState = stateCode;
+    
+    // Load preferences for the new state
+    loadStateSpecificPreferences();
+    
+    saveState();
+    updateStateDisplay();
+    hideStateDrawer();
+    
+    // Reload data for the new state
+    loadData();
+    
+    // If we're in onboarding, dismiss it automatically
+    if (state.isFirstTime) {
+        dismissOnboarding();
+    }
+}
+
+function showStateDrawer() {
+    renderStateOptions();
+    elements.stateDrawer.classList.remove('hidden');
+    elements.stateDrawer.classList.add('drawer-open');
+    elements.stateDrawer.classList.remove('drawer-closing');
+    document.body.style.overflow = 'hidden';
+}
+
+function hideStateDrawer() {
+    elements.stateDrawer.classList.add('drawer-closing');
+    elements.stateDrawer.classList.remove('drawer-open');
+    
+    setTimeout(() => {
+        elements.stateDrawer.classList.add('hidden');
+        elements.stateDrawer.classList.remove('drawer-closing');
+        document.body.style.overflow = '';
+    }, 250);
+}
+
+function renderStateOptions() {
+    // Populate the state drawer
+    elements.stateOptionsContainer.innerHTML = '';
+    
+    // Populate the onboarding state options
+    elements.onboardingStateOptions.innerHTML = '';
+    
+    Object.keys(STATE_CONFIG).forEach(stateCode => {
+        const config = STATE_CONFIG[stateCode];
+        
+        // Option for the drawer
+        const drawerOption = document.createElement('button');
+        drawerOption.className = `w-full text-left p-4 rounded-xl border-2 transition-all flex items-center justify-between ${state.selectedState === stateCode ? 'border-primary bg-primary/5' : 'border-gray-100 hover:border-gray-200'}`;
+        drawerOption.innerHTML = `
+            <div>
+                <div class="font-bold text-gray-900">${config.name}</div>
+                <div class="text-xs text-gray-500">${stateCode}</div>
+            </div>
+            ${state.selectedState === stateCode ? `
+                <svg class="w-6 h-6 text-primary" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                </svg>
+            ` : ''}
+        `;
+        drawerOption.addEventListener('click', () => selectState(stateCode));
+        elements.stateOptionsContainer.appendChild(drawerOption);
+        
+        // Option for onboarding
+        const onboardingOption = document.createElement('button');
+        onboardingOption.className = `p-3 rounded-xl border-2 transition-all text-center ${state.selectedState === stateCode && !state.isFirstTime ? 'border-primary bg-primary/5 ring-2 ring-primary ring-opacity-50' : 'border-gray-100 active:border-primary active:bg-primary/5'}`;
+        onboardingOption.innerHTML = `
+            <div class="font-bold text-sm text-gray-900">${stateCode}</div>
+            <div class="text-[10px] text-gray-500 truncate">${config.name}</div>
+        `;
+        onboardingOption.addEventListener('click', () => selectState(stateCode));
+        elements.onboardingStateOptions.appendChild(onboardingOption);
+    });
 }
 
 // Call this after DOM is ready
