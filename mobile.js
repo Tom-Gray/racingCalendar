@@ -27,7 +27,7 @@ const state = {
     clubs: [],
     selectedClubs: new Set(),
     clubColors: new Map(),
-    currentView: 'list', // 'list' or 'calendar'
+    currentView: 'calendar', // 'list' or 'calendar'
     calendarMode: 'month', // 'month' or 'week'
     hideBMXEvents: false,
     hideMTBEvents: false,
@@ -79,6 +79,9 @@ function initializeElements() {
     // Header elements
     elements.filterButton = document.getElementById('filterButton');
     elements.filterCount = document.getElementById('filterCount');
+    elements.stateSelectorButton = document.getElementById('stateSelectorButton');
+    elements.headerTitle = document.getElementById('headerTitle');
+    elements.headerSubtitle = document.getElementById('headerSubtitle');
     
     // State elements
     elements.loadingState = document.getElementById('loadingState');
@@ -114,10 +117,17 @@ function initializeElements() {
     elements.clubSearchInput = document.getElementById('clubSearchInput');
     elements.clubFiltersList = document.getElementById('clubFiltersList');
     elements.clearAllClubsButton = document.getElementById('clearAllClubsButton');
+
+    // State drawer
+    elements.stateDrawer = document.getElementById('stateDrawer');
+    elements.stateBackdrop = document.getElementById('stateBackdrop');
+    elements.stateDrawerContent = document.getElementById('stateDrawerContent');
+    elements.closeStateButton = document.getElementById('closeStateButton');
+    elements.stateOptionsContainer = document.getElementById('stateOptionsContainer');
     
     // Onboarding
     elements.onboardingOverlay = document.getElementById('onboardingOverlay');
-    elements.dismissOnboardingButton = document.getElementById('dismissOnboardingButton');
+    elements.onboardingStateOptions = document.getElementById('onboardingStateOptions');
     
     // Selected date events
     elements.selectedDateEvents = document.getElementById('selectedDateEvents');
@@ -134,6 +144,11 @@ function setupEventListeners() {
     elements.closeFilterButton.addEventListener('click', hideFilterDrawer);
     elements.filterBackdrop.addEventListener('click', hideFilterDrawer);
     elements.applyFiltersButton.addEventListener('click', applyFilters);
+
+    // State selector
+    elements.stateSelectorButton.addEventListener('click', showStateDrawer);
+    elements.closeStateButton.addEventListener('click', hideStateDrawer);
+    elements.stateBackdrop.addEventListener('click', hideStateDrawer);
     
     // Event type filters
     elements.hideBMXCheckbox.addEventListener('change', (e) => {
@@ -160,9 +175,6 @@ function setupEventListeners() {
     // Calendar mode toggle
     elements.monthModeButton.addEventListener('click', () => switchCalendarMode('month'));
     elements.weekModeButton.addEventListener('click', () => switchCalendarMode('week'));
-    
-    // Onboarding
-    elements.dismissOnboardingButton.addEventListener('click', dismissOnboarding);
     
     // Retry button
     elements.retryButton.addEventListener('click', loadData);
@@ -201,7 +213,7 @@ async function loadData() {
         
         elements.loadingState.classList.add('hidden');
         
-        console.log(`Loaded ${state.events.length} events and ${state.clubs.length} clubs`);
+        console.log(`Loaded ${state.events.length} events and ${state.clubs.length} clubs for ${state.selectedState}`);
         
         // Render club filters
         renderClubFilters();
@@ -224,7 +236,8 @@ async function loadData() {
 
 async function loadEvents() {
     try {
-        const eventsFile = STATE_CONFIG[state.selectedState].file;
+        const config = STATE_CONFIG[state.selectedState] || STATE_CONFIG.VIC;
+        const eventsFile = config.file;
         const response = await fetch(eventsFile);
         if (!response.ok) throw new Error('Failed to fetch events');
         return await response.json();
@@ -251,9 +264,6 @@ function loadFallbackData() {
 }
 
 function assignClubColors() {
-    // Create a shuffled copy of the color palette for better distribution
-    const shuffledColors = [...COLOR_PALETTE];
-    
     // Simple hash function to generate consistent but distributed indices
     const hashString = (str) => {
         let hash = 0;
@@ -265,6 +275,7 @@ function assignClubColors() {
         return Math.abs(hash);
     };
     
+    state.clubColors.clear(); // Clear existing colors
     state.clubs.forEach((club) => {
         // Use club name hash to pick a color, ensuring consistent assignment
         const hash = hashString(club.clubName);
@@ -283,12 +294,12 @@ function loadState() {
         if (savedState) {
             const parsed = JSON.parse(savedState);
             state.selectedClubs = new Set(parsed.selectedClubs || []);
-            state.currentView = parsed.currentView || 'list';
+            state.currentView = parsed.currentView || 'calendar';
             state.calendarMode = parsed.calendarMode || 'month';
             state.hideBMXEvents = parsed.hideBMXEvents || false;
             state.hideMTBEvents = parsed.hideMTBEvents || false;
             state.isFirstTime = parsed.isFirstTime !== false;
-            state.selectedState = 'VIC';
+            state.selectedState = parsed.selectedState || 'VIC';
             
             // Update checkboxes
             elements.hideBMXCheckbox.checked = state.hideBMXEvents;
@@ -311,7 +322,7 @@ function saveState() {
             hideBMXEvents: state.hideBMXEvents,
             hideMTBEvents: state.hideMTBEvents,
             isFirstTime: state.isFirstTime,
-            selectedState: 'VIC'
+            selectedState: state.selectedState
         };
         localStorage.setItem('mobileAppState', JSON.stringify(stateToSave));
     } catch (error) {
@@ -1062,6 +1073,7 @@ function updateCalendarSelection() {
 // ===================================
 
 function showOnboarding() {
+    renderStateOptions();
     elements.onboardingOverlay.classList.remove('hidden');
     elements.onboardingOverlay.classList.add('show');
 }
@@ -1078,11 +1090,96 @@ function dismissOnboarding() {
 // ===================================
 
 function updateStateDisplay() {
-    // Update header title
-    const headerTitle = document.querySelector('header h1');
-    if (headerTitle) {
-        headerTitle.textContent = `${state.selectedState} Cycling`;
+    // Update header title and subtitle
+    if (elements.headerTitle) {
+        elements.headerTitle.textContent = `${state.selectedState} Cycling`;
     }
+    if (elements.headerSubtitle) {
+        elements.headerSubtitle.textContent = STATE_CONFIG[state.selectedState].name;
+    }
+    
+    // Update page title
+    document.title = `${STATE_CONFIG[state.selectedState].name} Cycling Races - EntryBoss Discovery Tool`;
+}
+
+function selectState(stateCode) {
+    if (state.selectedState === stateCode && !state.isFirstTime) {
+        hideStateDrawer();
+        return;
+    }
+    
+    state.selectedState = stateCode;
+    state.selectedClubs.clear(); // Clear club filters when state changes
+    
+    saveState();
+    updateStateDisplay();
+    hideStateDrawer();
+    
+    // Reload data for the new state
+    loadData();
+    
+    // If we're in onboarding, dismiss it automatically
+    if (state.isFirstTime) {
+        dismissOnboarding();
+    }
+}
+
+function showStateDrawer() {
+    renderStateOptions();
+    elements.stateDrawer.classList.remove('hidden');
+    elements.stateDrawer.classList.add('drawer-open');
+    elements.stateDrawer.classList.remove('drawer-closing');
+    document.body.style.overflow = 'hidden';
+}
+
+function hideStateDrawer() {
+    elements.stateDrawer.classList.add('drawer-closing');
+    elements.stateDrawer.classList.remove('drawer-open');
+    
+    setTimeout(() => {
+        elements.stateDrawer.classList.add('hidden');
+        elements.stateDrawer.classList.remove('drawer-closing');
+        document.body.style.overflow = '';
+    }, 250);
+}
+
+function renderStateOptions() {
+    // Populate the state drawer
+    elements.stateOptionsContainer.innerHTML = '';
+    
+    // Populate the onboarding state options
+    elements.onboardingStateOptions.innerHTML = '';
+    
+    Object.keys(STATE_CONFIG).forEach(stateCode => {
+        const config = STATE_CONFIG[stateCode];
+        
+        // Option for the drawer
+        const drawerOption = document.createElement('button');
+        drawerOption.className = `w-full text-left p-4 rounded-xl border-2 transition-all flex items-center justify-between ${state.selectedState === stateCode ? 'border-primary bg-primary/5' : 'border-gray-100 hover:border-gray-200'}`;
+        drawerOption.innerHTML = `
+            <div>
+                <div class="font-bold text-gray-900">${config.name}</div>
+                <div class="text-xs text-gray-500">${stateCode}</div>
+            </div>
+            ${state.selectedState === stateCode ? `
+                <svg class="w-6 h-6 text-primary" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                </svg>
+            ` : ''}
+        `;
+        drawerOption.addEventListener('click', () => selectState(stateCode));
+        elements.stateOptionsContainer.appendChild(drawerOption);
+        
+        // Option for onboarding
+        const onboardingOption = document.createElement('button');
+        onboardingOption.className = `p-3 rounded-xl border-2 transition-all text-center ${state.selectedState === stateCode && !state.isFirstTime ? 'border-primary bg-primary/5 ring-2 ring-primary ring-opacity-50' : 'border-gray-100 active:border-primary active:bg-primary/5'}`;
+        onboardingOption.innerHTML = `
+            <div class="font-bold text-sm text-gray-900">${stateCode}</div>
+            <div class="text-[10px] text-gray-500 truncate">${config.name}</div>
+        `;
+        onboardingOption.addEventListener('click', () => selectState(stateCode));
+        elements.onboardingStateOptions.appendChild(onboardingOption);
+    });
 }
 
 // Call this after DOM is ready
