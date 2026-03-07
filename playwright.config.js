@@ -11,7 +11,7 @@ module.exports = defineConfig({
   
   workers: process.env.CI ? 1 : undefined,
   
-  reporter: 'html',
+  reporter: 'dot',
   
   use: {
     baseURL: 'http://localhost:8000',
