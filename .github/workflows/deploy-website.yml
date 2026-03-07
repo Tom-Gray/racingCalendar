@@ -1,6 +1,10 @@
 name: Deploy Site to Pages
 
 on:
+  push:
+    branches:
+      - main
+      - beta
   workflow_dispatch:
 
 permissions:
@@ -16,9 +20,20 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v4
     
+    - name: Determine Destination
+      id: dest
+      run: |
+        if [[ "${{ github.ref }}" == "refs/heads/beta" ]]; then
+          echo "dir=beta" >> $GITHUB_OUTPUT
+        else
+          echo "dir=" >> $GITHUB_OUTPUT
+        fi
+
     - name: Deploy to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         publish_dir: ./
+        destination_dir: ${{ steps.dest.outputs.dir }}
+        keep_files: true
         exclude_assets: '.github,go.mod,go.sum,cmd/,serve.sh,package.json,server.js,README.md,PRD.md,*-test.json,test-*.json,*-backup.*'
