@@ -28,13 +28,6 @@
     "eventUrl": "https://entryboss.cc/races/29529"
   },
   {
-    "eventName": "Wangara Criterium",
-    "eventDate": "2026-03-29T00:00:00Z",
-    "clubName": "West Coast Masters Cycling Council",
-    "state": "WA",
-    "eventUrl": "https://entryboss.cc/races/29926"
-  },
-  {
     "eventName": "WA State Downhill 2026 Series Rnd 2",
     "eventDate": "2026-03-29T00:00:00Z",
     "clubName": "Denmark Mountain Bike Club",
@@ -42,11 +35,11 @@
     "eventUrl": "https://entryboss.cc/races/29530"
   },
   {
-    "eventName": "AusCycling WA State Junior Gravel Championships U13/U15/U17",
-    "eventDate": "2026-04-11T00:00:00Z",
-    "clubName": "4Five+ Athlete Collective",
+    "eventName": "Wangara Criterium",
+    "eventDate": "2026-03-29T00:00:00Z",
+    "clubName": "West Coast Masters Cycling Council",
     "state": "WA",
-    "eventUrl": "https://entryboss.cc/races/28437"
+    "eventUrl": "https://entryboss.cc/races/29926"
   },
   {
     "eventName": "Tiger Tracks Gravel 2026 - Day 1 - Time Trial",
@@ -54,6 +47,13 @@
     "clubName": "4Five+ Athlete Collective",
     "state": "WA",
     "eventUrl": "https://entryboss.cc/races/28435"
+  },
+  {
+    "eventName": "AusCycling WA State Junior Gravel Championships U13/U15/U17",
+    "eventDate": "2026-04-11T00:00:00Z",
+    "clubName": "4Five+ Athlete Collective",
+    "state": "WA",
+    "eventUrl": "https://entryboss.cc/races/28437"
   },
   {
     "eventName": "WA Calibrations Triathlon \u0026 Kids Triathlon 2026",
