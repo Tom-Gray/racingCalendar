@@ -1,101 +1,10 @@
 [
   {
-    "eventName": "Red Hill Rippers",
-    "eventDate": "2026-03-31T00:00:00Z",
-    "clubName": "Red Hill Riders Mountain Bike Club",
-    "state": "VIC",
-    "eventUrl": "https://entryboss.cc/races/30135"
-  },
-  {
-    "eventName": "EASTFIELD vs LILYDALE – BMX AUTUMN-WINTER SERIES  - SERIES ENTRY",
-    "eventDate": "2026-03-31T00:00:00Z",
-    "clubName": "Maroondah BMX Club",
-    "state": "VIC",
-    "eventUrl": "https://entryboss.cc/races/25509"
-  },
-  {
-    "eventName": "Final Race of Season - CCW Summer Series GSR @ METEC Round 25 (Course 1)",
-    "eventDate": "2026-03-31T00:00:00Z",
-    "clubName": "Eastern Cycling Club",
-    "state": "VIC",
-    "eventUrl": "https://entryboss.cc/races/28677"
-  },
-  {
-    "eventName": "Tuesday Gates",
-    "eventDate": "2026-03-31T00:00:00Z",
-    "clubName": "Casey BMX Club",
-    "state": "VIC",
-    "eventUrl": "https://entryboss.cc/races/30171"
-  },
-  {
-    "eventName": "Tuesday gates 31/3",
-    "eventDate": "2026-03-31T00:00:00Z",
-    "clubName": "Maroondah BMX Club",
-    "state": "VIC",
-    "eventUrl": "https://entryboss.cc/races/30158"
-  },
-  {
-    "eventName": "Gate Practice",
-    "eventDate": "2026-03-31T00:00:00Z",
-    "clubName": "Sunbury BMX Club",
-    "state": "VIC",
-    "eventUrl": "https://entryboss.cc/races/28711"
-  },
-  {
-    "eventName": "Coaching with Connor",
-    "eventDate": "2026-03-31T00:00:00Z",
-    "clubName": "Maroondah BMX Club",
-    "state": "VIC",
-    "eventUrl": "https://entryboss.cc/races/30162"
-  },
-  {
-    "eventName": "Tuesday Night Track Racing - at DISC",
-    "eventDate": "2026-03-31T00:00:00Z",
-    "clubName": "Brunswick Cycling Club",
-    "state": "VIC",
-    "eventUrl": "https://entryboss.cc/races/29750"
-  },
-  {
-    "eventName": "GMBC Merch 2025 (Summer)",
-    "eventDate": "2026-03-31T00:00:00Z",
-    "clubName": "Geelong Mountain Bike Club",
-    "state": "VIC",
-    "eventUrl": "https://entryboss.cc/races/28615"
-  },
-  {
-    "eventName": "2026 BSCC CRIT CLUB CHAMPIONSHIPS",
-    "eventDate": "2026-04-01T00:00:00Z",
-    "clubName": "Ballarat Sebastopol CC",
-    "state": "VIC",
-    "eventUrl": "https://entryboss.cc/races/30147"
-  },
-  {
     "eventName": "Wednesday Gates",
     "eventDate": "2026-04-01T00:00:00Z",
     "clubName": "Frankston BMX",
     "state": "VIC",
     "eventUrl": "https://entryboss.cc/races/30044"
-  },
-  {
-    "eventName": "HCC Summer Criterium #24 Juniors, Young Guns and Women's Grades  2026-04-1",
-    "eventDate": "2026-04-01T00:00:00Z",
-    "clubName": "Hawthorn Cycling Club",
-    "state": "VIC",
-    "eventUrl": "https://entryboss.cc/races/30138"
-  },
-  {
-    "eventName": "GSCC WEDNESDAY SUPERVETS - Handicap, Blackgate Rd x 3",
-    "eventDate": "2026-04-01T00:00:00Z",
-    "clubName": "Geelong \u0026 Surfcoast Cycling Club",
-    "state": "VIC",
-    "eventUrl": "https://entryboss.cc/races/30092"
-  },
-  {
-    "eventName": "Portland BMX Clubby 1st April",
-    "eventDate": "2026-04-01T00:00:00Z",
-    "clubName": "Portland BMX Club",
-    "state": "VIC",
-    "eventUrl": "https://entryboss.cc/races/29355"
   },
   {
     "eventName": "JUNIORS COACHING Term 1 (TUESDAYS)",
@@ -112,11 +21,18 @@
     "eventUrl": "https://entryboss.cc/races/30230"
   },
   {
-    "eventName": "NBMX Gates 01/04/26",
+    "eventName": "GSCC WEDNESDAY SUPERVETS - Handicap, Blackgate Rd x 3",
     "eventDate": "2026-04-01T00:00:00Z",
-    "clubName": "Northern BMX",
+    "clubName": "Geelong \u0026 Surfcoast Cycling Club",
     "state": "VIC",
-    "eventUrl": "https://entryboss.cc/races/29666"
+    "eventUrl": "https://entryboss.cc/races/30092"
+  },
+  {
+    "eventName": "Portland BMX Clubby 1st April",
+    "eventDate": "2026-04-01T00:00:00Z",
+    "clubName": "Portland BMX Club",
+    "state": "VIC",
+    "eventUrl": "https://entryboss.cc/races/29355"
   },
   {
     "eventName": "Criterium - Wednesday Graded scratch races @ The Loop Round 13",
@@ -126,18 +42,32 @@
     "eventUrl": "https://entryboss.cc/races/28665"
   },
   {
+    "eventName": "NBMX Gates 01/04/26",
+    "eventDate": "2026-04-01T00:00:00Z",
+    "clubName": "Northern BMX",
+    "state": "VIC",
+    "eventUrl": "https://entryboss.cc/races/29666"
+  },
+  {
+    "eventName": "HCC Summer Criterium #24 Juniors, Young Guns and Women's Grades  2026-04-1",
+    "eventDate": "2026-04-01T00:00:00Z",
+    "clubName": "Hawthorn Cycling Club",
+    "state": "VIC",
+    "eventUrl": "https://entryboss.cc/races/30138"
+  },
+  {
+    "eventName": "2026 BSCC CRIT CLUB CHAMPIONSHIPS",
+    "eventDate": "2026-04-01T00:00:00Z",
+    "clubName": "Ballarat Sebastopol CC",
+    "state": "VIC",
+    "eventUrl": "https://entryboss.cc/races/30147"
+  },
+  {
     "eventName": "Thursday Motorpacing [with Intro Session]",
     "eventDate": "2026-04-02T00:00:00Z",
     "clubName": "Brunswick Cycling Club",
     "state": "VIC",
     "eventUrl": "https://entryboss.cc/races/30176"
-  },
-  {
-    "eventName": "EPIC Gates",
-    "eventDate": "2026-04-02T00:00:00Z",
-    "clubName": "Park Orchards BMX Club",
-    "state": "VIC",
-    "eventUrl": "https://entryboss.cc/races/30169"
   },
   {
     "eventName": "MMBCC SRRS - Handicap RR - Course 3 - 25km",
@@ -147,18 +77,18 @@
     "eventUrl": "https://entryboss.cc/races/27586"
   },
   {
+    "eventName": "EASTFIELD vs LILYDALE – BMX AUTUMN-WINTER SERIES  - SERIES ENTRY",
+    "eventDate": "2026-04-02T00:00:00Z",
+    "clubName": "Maroondah BMX Club",
+    "state": "VIC",
+    "eventUrl": "https://entryboss.cc/races/25509"
+  },
+  {
     "eventName": "Coaching with Bodi",
     "eventDate": "2026-04-02T00:00:00Z",
     "clubName": "Maroondah BMX Club",
     "state": "VIC",
     "eventUrl": "https://entryboss.cc/races/30161"
-  },
-  {
-    "eventName": "Thursday Pace and Race",
-    "eventDate": "2026-04-02T00:00:00Z",
-    "clubName": "Preston Cycling Club",
-    "state": "VIC",
-    "eventUrl": "https://entryboss.cc/races/30231"
   },
   {
     "eventName": "Knox BMX 2026 Easter Fun Clubby",
@@ -168,18 +98,18 @@
     "eventUrl": "https://entryboss.cc/races/30117"
   },
   {
-    "eventName": "Good Fast Friday",
-    "eventDate": "2026-04-03T00:00:00Z",
-    "clubName": "Red Hill Riders Mountain Bike Club",
+    "eventName": "EPIC Gates",
+    "eventDate": "2026-04-02T00:00:00Z",
+    "clubName": "Park Orchards BMX Club",
     "state": "VIC",
-    "eventUrl": "https://entryboss.cc/races/30141"
+    "eventUrl": "https://entryboss.cc/races/30169"
   },
   {
-    "eventName": "Good Friday Clubby",
-    "eventDate": "2026-04-03T00:00:00Z",
-    "clubName": "Ballarat Sebastopol CC",
+    "eventName": "Thursday Pace and Race",
+    "eventDate": "2026-04-02T00:00:00Z",
+    "clubName": "Preston Cycling Club",
     "state": "VIC",
-    "eventUrl": "https://entryboss.cc/races/30168"
+    "eventUrl": "https://entryboss.cc/races/30231"
   },
   {
     "eventName": "Good Friday Criterium 2026-04-03 - Supporting The Children's Hospital GF Appeal",
@@ -189,32 +119,18 @@
     "eventUrl": "https://entryboss.cc/races/30166"
   },
   {
-    "eventName": "Criterium - Graded scratch races @ Casey",
-    "eventDate": "2026-04-04T00:00:00Z",
-    "clubName": "Eastern Cycling Club",
+    "eventName": "Good Friday Clubby",
+    "eventDate": "2026-04-03T00:00:00Z",
+    "clubName": "Ballarat Sebastopol CC",
     "state": "VIC",
-    "eventUrl": "https://entryboss.cc/races/28682"
+    "eventUrl": "https://entryboss.cc/races/30168"
   },
   {
-    "eventName": "ACES Summer Track 25/26 \u0026 Easter Madison",
-    "eventDate": "2026-04-04T00:00:00Z",
-    "clubName": "ACES \u0026 Summer Track Series",
+    "eventName": "Good Fast Friday",
+    "eventDate": "2026-04-03T00:00:00Z",
+    "clubName": "Red Hill Riders Mountain Bike Club",
     "state": "VIC",
-    "eventUrl": "https://entryboss.cc/races/27379"
-  },
-  {
-    "eventName": "Easter Fun Clubby Saturday 4th April 2026",
-    "eventDate": "2026-04-04T00:00:00Z",
-    "clubName": "Geelong BMX Club",
-    "state": "VIC",
-    "eventUrl": "https://entryboss.cc/races/29894"
-  },
-  {
-    "eventName": "ACES Summer Track 25/26 \u0026 Easter Madison",
-    "eventDate": "2026-04-04T00:00:00Z",
-    "clubName": "Brunswick Cycling Club",
-    "state": "VIC",
-    "eventUrl": "https://entryboss.cc/races/27379"
+    "eventUrl": "https://entryboss.cc/races/30141"
   },
   {
     "eventName": "Easter Fun Clubby",
@@ -224,6 +140,20 @@
     "eventUrl": "https://entryboss.cc/races/30170"
   },
   {
+    "eventName": "ACES Summer Track 25/26 \u0026 Easter Madison",
+    "eventDate": "2026-04-04T00:00:00Z",
+    "clubName": "ACES \u0026 Summer Track Series",
+    "state": "VIC",
+    "eventUrl": "https://entryboss.cc/races/27379"
+  },
+  {
+    "eventName": "Criterium - Graded scratch races @ Casey",
+    "eventDate": "2026-04-04T00:00:00Z",
+    "clubName": "Eastern Cycling Club",
+    "state": "VIC",
+    "eventUrl": "https://entryboss.cc/races/28682"
+  },
+  {
     "eventName": "Shepparton BMX Gates 04/04/2026",
     "eventDate": "2026-04-04T00:00:00Z",
     "clubName": "CTD Industries (VIC)",
@@ -231,11 +161,25 @@
     "eventUrl": "https://entryboss.cc/races/29959"
   },
   {
+    "eventName": "ACES Summer Track 25/26 \u0026 Easter Madison",
+    "eventDate": "2026-04-04T00:00:00Z",
+    "clubName": "Brunswick Cycling Club",
+    "state": "VIC",
+    "eventUrl": "https://entryboss.cc/races/27379"
+  },
+  {
     "eventName": "Easter Fun Clubby Saturday 4th April 2026",
     "eventDate": "2026-04-04T00:00:00Z",
     "clubName": "Geelong BMX Club",
     "state": "VIC",
     "eventUrl": "https://entryboss.cc/races/30078"
+  },
+  {
+    "eventName": "Easter Fun Clubby Saturday 4th April 2026",
+    "eventDate": "2026-04-04T00:00:00Z",
+    "clubName": "Geelong BMX Club",
+    "state": "VIC",
+    "eventUrl": "https://entryboss.cc/races/29894"
   },
   {
     "eventName": "Gate Practice",
@@ -252,13 +196,6 @@
     "eventUrl": "https://entryboss.cc/races/29751"
   },
   {
-    "eventName": "NBMX Gates 08/04/26",
-    "eventDate": "2026-04-08T00:00:00Z",
-    "clubName": "Northern BMX",
-    "state": "VIC",
-    "eventUrl": "https://entryboss.cc/races/29669"
-  },
-  {
     "eventName": "School Holiday Gates",
     "eventDate": "2026-04-08T00:00:00Z",
     "clubName": "Frankston BMX",
@@ -266,11 +203,11 @@
     "eventUrl": "https://entryboss.cc/races/30045"
   },
   {
-    "eventName": "GSCC WEDNESDAY SUPERVETS - Handicap, 3 laps",
+    "eventName": "NBMX Gates 08/04/26",
     "eventDate": "2026-04-08T00:00:00Z",
-    "clubName": "Geelong \u0026 Surfcoast Cycling Club",
+    "clubName": "Northern BMX",
     "state": "VIC",
-    "eventUrl": "https://entryboss.cc/races/30093"
+    "eventUrl": "https://entryboss.cc/races/29669"
   },
   {
     "eventName": "Criterium - Wednesday Graded scratch races @ The Loop Round 14",
@@ -278,6 +215,13 @@
     "clubName": "Eastern Cycling Club",
     "state": "VIC",
     "eventUrl": "https://entryboss.cc/races/28666"
+  },
+  {
+    "eventName": "GSCC WEDNESDAY SUPERVETS - Handicap, 3 laps",
+    "eventDate": "2026-04-08T00:00:00Z",
+    "clubName": "Geelong \u0026 Surfcoast Cycling Club",
+    "state": "VIC",
+    "eventUrl": "https://entryboss.cc/races/30093"
   },
   {
     "eventName": "Thursday Motorpacing [with Intro Session]",
@@ -294,32 +238,18 @@
     "eventUrl": "https://entryboss.cc/races/30048"
   },
   {
-    "eventName": "Kermesse - Graded scratch races @ Yarra Glen (Reverse)",
-    "eventDate": "2026-04-11T00:00:00Z",
-    "clubName": "Eastern Cycling Club",
-    "state": "VIC",
-    "eventUrl": "https://entryboss.cc/races/28686"
-  },
-  {
-    "eventName": "Saturday 11th April - 5m Gates - 1pm",
-    "eventDate": "2026-04-11T00:00:00Z",
-    "clubName": "Shepparton BMX Club",
-    "state": "VIC",
-    "eventUrl": "https://entryboss.cc/races/30152"
-  },
-  {
-    "eventName": "Coburg Criterium #7",
-    "eventDate": "2026-04-11T00:00:00Z",
-    "clubName": "Coburg Cycling Club",
-    "state": "VIC",
-    "eventUrl": "https://entryboss.cc/races/29617"
-  },
-  {
     "eventName": "Saturday 11th April - 5m Gates - 9:30am",
     "eventDate": "2026-04-11T00:00:00Z",
     "clubName": "Shepparton BMX Club",
     "state": "VIC",
     "eventUrl": "https://entryboss.cc/races/30146"
+  },
+  {
+    "eventName": "Kermesse - Graded scratch races @ Yarra Glen (Reverse)",
+    "eventDate": "2026-04-11T00:00:00Z",
+    "clubName": "Eastern Cycling Club",
+    "state": "VIC",
+    "eventUrl": "https://entryboss.cc/races/28686"
   },
   {
     "eventName": "Highlands Rd Out \u0026 Back Twice Handicap",
@@ -336,11 +266,11 @@
     "eventUrl": "https://entryboss.cc/races/30151"
   },
   {
-    "eventName": "R1 - Lethbridge - Graded Scratch Races",
+    "eventName": "Saturday 11th April - 5m Gates - 1pm",
     "eventDate": "2026-04-11T00:00:00Z",
-    "clubName": "Footscray Cycling Club",
+    "clubName": "Shepparton BMX Club",
     "state": "VIC",
-    "eventUrl": "https://entryboss.cc/races/30234"
+    "eventUrl": "https://entryboss.cc/races/30152"
   },
   {
     "eventName": "Saturday 11th April - 5m Gates - 2.45pm",
@@ -350,32 +280,18 @@
     "eventUrl": "https://entryboss.cc/races/30153"
   },
   {
-    "eventName": "Sunday 12th April -5m Gates - 1pm",
-    "eventDate": "2026-04-12T00:00:00Z",
-    "clubName": "Shepparton BMX Club",
+    "eventName": "R1 - Lethbridge - Graded Scratch Races",
+    "eventDate": "2026-04-11T00:00:00Z",
+    "clubName": "Footscray Cycling Club",
     "state": "VIC",
-    "eventUrl": "https://entryboss.cc/races/30156"
+    "eventUrl": "https://entryboss.cc/races/30234"
   },
   {
-    "eventName": "2026 Alpe de Buffalo (BBB Cycling VJRS) | Round 1 - feat. U11 - U17 Hill Climb Victorian State Championships",
-    "eventDate": "2026-04-12T00:00:00Z",
-    "clubName": "AusCycling (Victoria)",
+    "eventName": "Coburg Criterium #7",
+    "eventDate": "2026-04-11T00:00:00Z",
+    "clubName": "Coburg Cycling Club",
     "state": "VIC",
-    "eventUrl": "https://entryboss.cc/races/29377"
-  },
-  {
-    "eventName": "2026 GSCC WOMEN'S HANDICAP CLASSIC - Fuelled by MOOR",
-    "eventDate": "2026-04-12T00:00:00Z",
-    "clubName": "Geelong \u0026 Surfcoast Cycling Club",
-    "state": "VIC",
-    "eventUrl": "https://entryboss.cc/races/29581"
-  },
-  {
-    "eventName": "Sunday 12th April - 5m Gates - 9.30am",
-    "eventDate": "2026-04-12T00:00:00Z",
-    "clubName": "Shepparton BMX Club",
-    "state": "VIC",
-    "eventUrl": "https://entryboss.cc/races/30154"
+    "eventUrl": "https://entryboss.cc/races/29617"
   },
   {
     "eventName": "Dirt Squirts 2026 Summer Race 5",
@@ -392,18 +308,25 @@
     "eventUrl": "https://entryboss.cc/races/28809"
   },
   {
-    "eventName": "Sunday 12th April - 5m Gates - 2.45pm",
+    "eventName": "Sunday 12th April - 5m Gates - 9.30am",
     "eventDate": "2026-04-12T00:00:00Z",
     "clubName": "Shepparton BMX Club",
     "state": "VIC",
-    "eventUrl": "https://entryboss.cc/races/30157"
+    "eventUrl": "https://entryboss.cc/races/30154"
   },
   {
-    "eventName": "8M GATES!! - Sunday 12th April - 8M GATES - 11.15am",
+    "eventName": "2026 Alpe de Buffalo (BBB Cycling VJRS) | Round 1 - feat. U11 - U17 Hill Climb Victorian State Championships",
+    "eventDate": "2026-04-12T00:00:00Z",
+    "clubName": "AusCycling (Victoria)",
+    "state": "VIC",
+    "eventUrl": "https://entryboss.cc/races/29377"
+  },
+  {
+    "eventName": "Sunday 12th April -5m Gates - 1pm",
     "eventDate": "2026-04-12T00:00:00Z",
     "clubName": "Shepparton BMX Club",
     "state": "VIC",
-    "eventUrl": "https://entryboss.cc/races/30155"
+    "eventUrl": "https://entryboss.cc/races/30156"
   },
   {
     "eventName": "2026 Alpe de Buffalo (BBB Cycling VJRS) | Round 1 - feat. U11 - U17 Hill Climb Victorian State Championships",
@@ -411,6 +334,27 @@
     "clubName": "Alpine Cycling Club",
     "state": "VIC",
     "eventUrl": "https://entryboss.cc/races/29377"
+  },
+  {
+    "eventName": "Sunday 12th April - 5m Gates - 2.45pm",
+    "eventDate": "2026-04-12T00:00:00Z",
+    "clubName": "Shepparton BMX Club",
+    "state": "VIC",
+    "eventUrl": "https://entryboss.cc/races/30157"
+  },
+  {
+    "eventName": "2026 GSCC WOMEN'S HANDICAP CLASSIC - Fuelled by MOOR",
+    "eventDate": "2026-04-12T00:00:00Z",
+    "clubName": "Geelong \u0026 Surfcoast Cycling Club",
+    "state": "VIC",
+    "eventUrl": "https://entryboss.cc/races/29581"
+  },
+  {
+    "eventName": "8M GATES!! - Sunday 12th April - 8M GATES - 11.15am",
+    "eventDate": "2026-04-12T00:00:00Z",
+    "clubName": "Shepparton BMX Club",
+    "state": "VIC",
+    "eventUrl": "https://entryboss.cc/races/30155"
   },
   {
     "eventName": "Tuesday Night Track Racing - at DISC",
@@ -462,25 +406,18 @@
     "eventUrl": "https://entryboss.cc/races/28585"
   },
   {
-    "eventName": "Race Number Pack Orders",
-    "eventDate": "2026-04-18T00:00:00Z",
-    "clubName": "Northern Combine",
-    "state": "VIC",
-    "eventUrl": "https://entryboss.cc/races/15603"
-  },
-  {
-    "eventName": "Longwood Rd Out \u0026 Back Handicap",
-    "eventDate": "2026-04-18T00:00:00Z",
-    "clubName": "Seymour Broadford Cycling Club",
-    "state": "VIC",
-    "eventUrl": "https://entryboss.cc/races/29845"
-  },
-  {
     "eventName": "Criterium - Graded scratch races @ Dunlop Road",
     "eventDate": "2026-04-18T00:00:00Z",
     "clubName": "Eastern Cycling Club",
     "state": "VIC",
     "eventUrl": "https://entryboss.cc/races/28685"
+  },
+  {
+    "eventName": "Race Number Pack Orders",
+    "eventDate": "2026-04-18T00:00:00Z",
+    "clubName": "Northern Combine",
+    "state": "VIC",
+    "eventUrl": "https://entryboss.cc/races/15603"
   },
   {
     "eventName": "The Heritage Handicap : Annual 20 - Paraparap 2026",
@@ -490,39 +427,11 @@
     "eventUrl": "https://entryboss.cc/races/29987"
   },
   {
-    "eventName": "Profound Civil Constructions Huntly Classic",
-    "eventDate": "2026-04-19T00:00:00Z",
-    "clubName": "Bendigo \u0026 District Cycling Club",
+    "eventName": "Longwood Rd Out \u0026 Back Handicap",
+    "eventDate": "2026-04-18T00:00:00Z",
+    "clubName": "Seymour Broadford Cycling Club",
     "state": "VIC",
-    "eventUrl": "https://entryboss.cc/races/30167"
-  },
-  {
-    "eventName": "GSCC Aggregate #3, Handicap Race - Nobles Rd, Forest Rd, Gumflats Rd finish - 34km",
-    "eventDate": "2026-04-19T00:00:00Z",
-    "clubName": "Geelong \u0026 Surfcoast Cycling Club",
-    "state": "VIC",
-    "eventUrl": "https://entryboss.cc/races/30067"
-  },
-  {
-    "eventName": "Erica Social Shuttle Ride Day 19th April 2026",
-    "eventDate": "2026-04-19T00:00:00Z",
-    "clubName": "Gippsland MTB Inc",
-    "state": "VIC",
-    "eventUrl": "https://entryboss.cc/races/30112"
-  },
-  {
-    "eventName": "Alpine Cycling Club Lake Buffalo Handicap - 42",
-    "eventDate": "2026-04-19T00:00:00Z",
-    "clubName": "Alpine Cycling Club",
-    "state": "VIC",
-    "eventUrl": "https://entryboss.cc/races/29366"
-  },
-  {
-    "eventName": "2026 Mini Muddies Round 1",
-    "eventDate": "2026-04-19T00:00:00Z",
-    "clubName": "Club MUD Ballarat",
-    "state": "VIC",
-    "eventUrl": "https://entryboss.cc/races/29807"
+    "eventUrl": "https://entryboss.cc/races/29845"
   },
   {
     "eventName": "Raymond Jarratt Handicap - Tour de Riverina 2026 Series - Race #1",
@@ -532,11 +441,11 @@
     "eventUrl": "https://entryboss.cc/races/30150"
   },
   {
-    "eventName": "Liam Davison - Memorial Handicap | Somers",
+    "eventName": "Erica Social Shuttle Ride Day 19th April 2026",
     "eventDate": "2026-04-19T00:00:00Z",
-    "clubName": "Mornington Cycling Club",
+    "clubName": "Gippsland MTB Inc",
     "state": "VIC",
-    "eventUrl": "https://entryboss.cc/races/30110"
+    "eventUrl": "https://entryboss.cc/races/30112"
   },
   {
     "eventName": "Criterium - Graded scratch races",
@@ -546,11 +455,39 @@
     "eventUrl": "https://entryboss.cc/races/28795"
   },
   {
-    "eventName": "MCC BT Cup - Series Entry (covers all 5 rounds + Club Champs for MCC Members) + Bonus Rnd 16th Feb",
+    "eventName": "Profound Civil Constructions Huntly Classic",
+    "eventDate": "2026-04-19T00:00:00Z",
+    "clubName": "Bendigo \u0026 District Cycling Club",
+    "state": "VIC",
+    "eventUrl": "https://entryboss.cc/races/30167"
+  },
+  {
+    "eventName": "Alpine Cycling Club Lake Buffalo Handicap - 42",
+    "eventDate": "2026-04-19T00:00:00Z",
+    "clubName": "Alpine Cycling Club",
+    "state": "VIC",
+    "eventUrl": "https://entryboss.cc/races/29366"
+  },
+  {
+    "eventName": "Dirt Girls Social Ride April",
+    "eventDate": "2026-04-19T00:00:00Z",
+    "clubName": "Geelong Mountain Bike Club",
+    "state": "VIC",
+    "eventUrl": "https://entryboss.cc/races/30241"
+  },
+  {
+    "eventName": "GSCC Aggregate #3, Handicap Race - Nobles Rd, Forest Rd, Gumflats Rd finish - 34km",
+    "eventDate": "2026-04-19T00:00:00Z",
+    "clubName": "Geelong \u0026 Surfcoast Cycling Club",
+    "state": "VIC",
+    "eventUrl": "https://entryboss.cc/races/30067"
+  },
+  {
+    "eventName": "Liam Davison - Memorial Handicap | Somers",
     "eventDate": "2026-04-19T00:00:00Z",
     "clubName": "Mornington Cycling Club",
     "state": "VIC",
-    "eventUrl": "https://entryboss.cc/races/29074"
+    "eventUrl": "https://entryboss.cc/races/30110"
   },
   {
     "eventName": "Winter Junior Clinic",
@@ -558,6 +495,20 @@
     "clubName": "Brunswick Cycling Club",
     "state": "VIC",
     "eventUrl": "https://entryboss.cc/races/30183"
+  },
+  {
+    "eventName": "MCC BT Cup - Series Entry (covers all 5 rounds + Club Champs for MCC Members) + Bonus Rnd 16th Feb",
+    "eventDate": "2026-04-19T00:00:00Z",
+    "clubName": "Mornington Cycling Club",
+    "state": "VIC",
+    "eventUrl": "https://entryboss.cc/races/29074"
+  },
+  {
+    "eventName": "2026 Mini Muddies Round 1",
+    "eventDate": "2026-04-19T00:00:00Z",
+    "clubName": "Club MUD Ballarat",
+    "state": "VIC",
+    "eventUrl": "https://entryboss.cc/races/29807"
   },
   {
     "eventName": "Gate Practice",
@@ -574,18 +525,18 @@
     "eventUrl": "https://entryboss.cc/races/29753"
   },
   {
-    "eventName": "Criterium - Wednesday Graded scratch races @ The Loop Round 16",
-    "eventDate": "2026-04-22T00:00:00Z",
-    "clubName": "Eastern Cycling Club",
-    "state": "VIC",
-    "eventUrl": "https://entryboss.cc/races/28668"
-  },
-  {
     "eventName": "Wednesday Gates",
     "eventDate": "2026-04-22T00:00:00Z",
     "clubName": "Frankston BMX",
     "state": "VIC",
     "eventUrl": "https://entryboss.cc/races/30046"
+  },
+  {
+    "eventName": "Criterium - Wednesday Graded scratch races @ The Loop Round 16",
+    "eventDate": "2026-04-22T00:00:00Z",
+    "clubName": "Eastern Cycling Club",
+    "state": "VIC",
+    "eventUrl": "https://entryboss.cc/races/28668"
   },
   {
     "eventName": "NBMX Gates 22/04/26",
@@ -623,6 +574,13 @@
     "eventUrl": "https://entryboss.cc/races/28810"
   },
   {
+    "eventName": "Glenaroua Gravel Grind Race",
+    "eventDate": "2026-04-26T00:00:00Z",
+    "clubName": "Seymour Broadford Cycling Club",
+    "state": "VIC",
+    "eventUrl": "https://entryboss.cc/races/29846"
+  },
+  {
     "eventName": "Criterium - Graded scratch races @ Holloway Drive",
     "eventDate": "2026-04-26T00:00:00Z",
     "clubName": "Eastern Cycling Club",
@@ -635,13 +593,6 @@
     "clubName": "Brunswick Cycling Club",
     "state": "VIC",
     "eventUrl": "https://entryboss.cc/races/29966"
-  },
-  {
-    "eventName": "Glenaroua Gravel Grind Race",
-    "eventDate": "2026-04-26T00:00:00Z",
-    "clubName": "Seymour Broadford Cycling Club",
-    "state": "VIC",
-    "eventUrl": "https://entryboss.cc/races/29846"
   },
   {
     "eventName": "Gate Practice",
@@ -658,6 +609,13 @@
     "eventUrl": "https://entryboss.cc/races/29754"
   },
   {
+    "eventName": "NBMX Gates 29/04/26",
+    "eventDate": "2026-04-29T00:00:00Z",
+    "clubName": "Northern BMX",
+    "state": "VIC",
+    "eventUrl": "https://entryboss.cc/races/29672"
+  },
+  {
     "eventName": "Criterium - Wednesday Graded scratch races @ The Loop Round 17",
     "eventDate": "2026-04-29T00:00:00Z",
     "clubName": "Eastern Cycling Club",
@@ -672,25 +630,11 @@
     "eventUrl": "https://entryboss.cc/races/30047"
   },
   {
-    "eventName": "NBMX Gates 29/04/26",
-    "eventDate": "2026-04-29T00:00:00Z",
-    "clubName": "Northern BMX",
-    "state": "VIC",
-    "eventUrl": "https://entryboss.cc/races/29672"
-  },
-  {
     "eventName": "Thursday Motorpacing [with Intro Session]",
     "eventDate": "2026-04-30T00:00:00Z",
     "clubName": "Brunswick Cycling Club",
     "state": "VIC",
     "eventUrl": "https://entryboss.cc/races/30228"
-  },
-  {
-    "eventName": "Club Championship 2026 - Round 6",
-    "eventDate": "2026-05-02T00:00:00Z",
-    "clubName": "Sunbury BMX Club",
-    "state": "VIC",
-    "eventUrl": "https://entryboss.cc/races/29579"
   },
   {
     "eventName": "Toughen Up Series Round 1 \u0026 2 - Criterium - Graded scratch races @ Broadford",
@@ -700,11 +644,25 @@
     "eventUrl": "https://entryboss.cc/races/29835"
   },
   {
+    "eventName": "Club Championship 2026 - Round 6",
+    "eventDate": "2026-05-02T00:00:00Z",
+    "clubName": "Sunbury BMX Club",
+    "state": "VIC",
+    "eventUrl": "https://entryboss.cc/races/29579"
+  },
+  {
     "eventName": "Avenel Rd Out \u0026 Back Twice Handicap",
     "eventDate": "2026-05-02T00:00:00Z",
     "clubName": "Seymour Broadford Cycling Club",
     "state": "VIC",
     "eventUrl": "https://entryboss.cc/races/29850"
+  },
+  {
+    "eventName": "Criterium - Graded scratch races",
+    "eventDate": "2026-05-03T00:00:00Z",
+    "clubName": "Northern Cycling",
+    "state": "VIC",
+    "eventUrl": "https://entryboss.cc/races/28796"
   },
   {
     "eventName": "2026 Victorian Schools Mtb Series - Red Hill Riders Mtb",
@@ -721,25 +679,18 @@
     "eventUrl": "https://entryboss.cc/races/30235"
   },
   {
-    "eventName": "FCC Tour 2026",
-    "eventDate": "2026-05-03T00:00:00Z",
-    "clubName": "Footscray Cycling Club",
-    "state": "VIC",
-    "eventUrl": "https://entryboss.cc/races/30011"
-  },
-  {
-    "eventName": "Criterium - Graded scratch races",
-    "eventDate": "2026-05-03T00:00:00Z",
-    "clubName": "Northern Cycling",
-    "state": "VIC",
-    "eventUrl": "https://entryboss.cc/races/28796"
-  },
-  {
     "eventName": "MO 2026 Session #1",
     "eventDate": "2026-05-03T00:00:00Z",
     "clubName": "Momnium",
     "state": "VIC",
     "eventUrl": "https://entryboss.cc/races/30066"
+  },
+  {
+    "eventName": "FCC Tour 2026",
+    "eventDate": "2026-05-03T00:00:00Z",
+    "clubName": "Footscray Cycling Club",
+    "state": "VIC",
+    "eventUrl": "https://entryboss.cc/races/30011"
   },
   {
     "eventName": "Gate Practice",
@@ -777,13 +728,6 @@
     "eventUrl": "https://entryboss.cc/races/30211"
   },
   {
-    "eventName": "Kobyboyn Rd Horseshoe",
-    "eventDate": "2026-05-09T00:00:00Z",
-    "clubName": "Seymour Broadford Cycling Club",
-    "state": "VIC",
-    "eventUrl": "https://entryboss.cc/races/29851"
-  },
-  {
     "eventName": "Hawthorn Trophy Race",
     "eventDate": "2026-05-09T00:00:00Z",
     "clubName": "Northern Combine",
@@ -798,11 +742,11 @@
     "eventUrl": "https://entryboss.cc/races/30143"
   },
   {
-    "eventName": "Tracey Romans Memorial - Graded scratch races",
-    "eventDate": "2026-05-10T00:00:00Z",
-    "clubName": "Northern Cycling",
+    "eventName": "Kobyboyn Rd Horseshoe",
+    "eventDate": "2026-05-09T00:00:00Z",
+    "clubName": "Seymour Broadford Cycling Club",
     "state": "VIC",
-    "eventUrl": "https://entryboss.cc/races/28802"
+    "eventUrl": "https://entryboss.cc/races/29851"
   },
   {
     "eventName": "Criterium - Graded scratch races @ Bazalgette",
@@ -810,6 +754,13 @@
     "clubName": "Eastern Cycling Club",
     "state": "VIC",
     "eventUrl": "https://entryboss.cc/races/30175"
+  },
+  {
+    "eventName": "Tracey Romans Memorial - Graded scratch races",
+    "eventDate": "2026-05-10T00:00:00Z",
+    "clubName": "Northern Cycling",
+    "state": "VIC",
+    "eventUrl": "https://entryboss.cc/races/28802"
   },
   {
     "eventName": "Gate Practice",
@@ -840,6 +791,13 @@
     "eventUrl": "https://entryboss.cc/races/30212"
   },
   {
+    "eventName": "Toughen Up Series Round 3 - Kermesse - Graded scratch races @ Jindivick",
+    "eventDate": "2026-05-16T00:00:00Z",
+    "clubName": "Eastern Cycling Club",
+    "state": "VIC",
+    "eventUrl": "https://entryboss.cc/races/29836"
+  },
+  {
     "eventName": "Longwood Rd Out \u0026 Back Handicap",
     "eventDate": "2026-05-16T00:00:00Z",
     "clubName": "Seymour Broadford Cycling Club",
@@ -852,13 +810,6 @@
     "clubName": "Northern Combine",
     "state": "VIC",
     "eventUrl": "https://entryboss.cc/races/29861"
-  },
-  {
-    "eventName": "Toughen Up Series Round 3 - Kermesse - Graded scratch races @ Jindivick",
-    "eventDate": "2026-05-16T00:00:00Z",
-    "clubName": "Eastern Cycling Club",
-    "state": "VIC",
-    "eventUrl": "https://entryboss.cc/races/29836"
   },
   {
     "eventName": "GSCC Aggregate #4 Handicap Race - Nobles Rd x 2, Layards Rd x 2, return up Nobles for 3rd time to the finish line - 41km",
@@ -938,13 +889,6 @@
     "eventUrl": "https://entryboss.cc/races/30178"
   },
   {
-    "eventName": "Memorial Handicap - Nobles Rd, + 1 lap, Noble Rd + 1 lap, finish Larcombes Rd (B) - 51 kms",
-    "eventDate": "2026-05-24T00:00:00Z",
-    "clubName": "Geelong \u0026 Surfcoast Cycling Club",
-    "state": "VIC",
-    "eventUrl": "https://entryboss.cc/races/30091"
-  },
-  {
     "eventName": "Criterium - Graded scratch races",
     "eventDate": "2026-05-24T00:00:00Z",
     "clubName": "Northern Cycling",
@@ -952,11 +896,11 @@
     "eventUrl": "https://entryboss.cc/races/28798"
   },
   {
-    "eventName": "Tuesday Night Track Racing - at DISC",
-    "eventDate": "2026-05-26T00:00:00Z",
-    "clubName": "Brunswick Cycling Club",
+    "eventName": "Memorial Handicap - Nobles Rd, + 1 lap, Noble Rd + 1 lap, finish Larcombes Rd (B) - 51 kms",
+    "eventDate": "2026-05-24T00:00:00Z",
+    "clubName": "Geelong \u0026 Surfcoast Cycling Club",
     "state": "VIC",
-    "eventUrl": "https://entryboss.cc/races/30196"
+    "eventUrl": "https://entryboss.cc/races/30091"
   },
   {
     "eventName": "Gate Practice",
@@ -964,6 +908,13 @@
     "clubName": "Sunbury BMX Club",
     "state": "VIC",
     "eventUrl": "https://entryboss.cc/races/28720"
+  },
+  {
+    "eventName": "Tuesday Night Track Racing - at DISC",
+    "eventDate": "2026-05-26T00:00:00Z",
+    "clubName": "Brunswick Cycling Club",
+    "state": "VIC",
+    "eventUrl": "https://entryboss.cc/races/30196"
   },
   {
     "eventName": "Criterium - Wednesday Graded scratch races @ The Loop Round 21",
@@ -987,18 +938,18 @@
     "eventUrl": "https://entryboss.cc/races/29854"
   },
   {
-    "eventName": "Quad Series Race 4 : GCC",
-    "eventDate": "2026-05-30T00:00:00Z",
-    "clubName": "Geelong Cycling Club",
-    "state": "VIC",
-    "eventUrl": "https://entryboss.cc/races/29988"
-  },
-  {
     "eventName": "Toughen Up Series Round 5 - Kermesse - Graded scratch races @ Yarra Glen",
     "eventDate": "2026-05-30T00:00:00Z",
     "clubName": "Eastern Cycling Club",
     "state": "VIC",
     "eventUrl": "https://entryboss.cc/races/29838"
+  },
+  {
+    "eventName": "Quad Series Race 4 : GCC",
+    "eventDate": "2026-05-30T00:00:00Z",
+    "clubName": "Geelong Cycling Club",
+    "state": "VIC",
+    "eventUrl": "https://entryboss.cc/races/29988"
   },
   {
     "eventName": "Jack Wood Memorial Handicap",
@@ -1008,13 +959,6 @@
     "eventUrl": "https://entryboss.cc/races/29863"
   },
   {
-    "eventName": "MO 2026 Session #2",
-    "eventDate": "2026-05-31T00:00:00Z",
-    "clubName": "Momnium",
-    "state": "VIC",
-    "eventUrl": "https://entryboss.cc/races/30065"
-  },
-  {
     "eventName": "Handicap",
     "eventDate": "2026-05-31T00:00:00Z",
     "clubName": "Northern Cycling",
@@ -1022,11 +966,11 @@
     "eventUrl": "https://entryboss.cc/races/29986"
   },
   {
-    "eventName": "Gate Practice",
-    "eventDate": "2026-06-02T00:00:00Z",
-    "clubName": "Sunbury BMX Club",
+    "eventName": "MO 2026 Session #2",
+    "eventDate": "2026-05-31T00:00:00Z",
+    "clubName": "Momnium",
     "state": "VIC",
-    "eventUrl": "https://entryboss.cc/races/28721"
+    "eventUrl": "https://entryboss.cc/races/30065"
   },
   {
     "eventName": "Tuesday Night Track Racing - Winter Championship - at DISC",
@@ -1034,6 +978,13 @@
     "clubName": "Brunswick Cycling Club",
     "state": "VIC",
     "eventUrl": "https://entryboss.cc/races/30197"
+  },
+  {
+    "eventName": "Gate Practice",
+    "eventDate": "2026-06-02T00:00:00Z",
+    "clubName": "Sunbury BMX Club",
+    "state": "VIC",
+    "eventUrl": "https://entryboss.cc/races/28721"
   },
   {
     "eventName": "Criterium - Wednesday Graded scratch races @ The Loop Round 22",
@@ -1064,18 +1015,18 @@
     "eventUrl": "https://entryboss.cc/races/30237"
   },
   {
-    "eventName": "Gate Practice",
-    "eventDate": "2026-06-09T00:00:00Z",
-    "clubName": "Sunbury BMX Club",
-    "state": "VIC",
-    "eventUrl": "https://entryboss.cc/races/28722"
-  },
-  {
     "eventName": "Tuesday Night Track Endurance Racing - Winter Championship - at DISC",
     "eventDate": "2026-06-09T00:00:00Z",
     "clubName": "Brunswick Cycling Club",
     "state": "VIC",
     "eventUrl": "https://entryboss.cc/races/30200"
+  },
+  {
+    "eventName": "Gate Practice",
+    "eventDate": "2026-06-09T00:00:00Z",
+    "clubName": "Sunbury BMX Club",
+    "state": "VIC",
+    "eventUrl": "https://entryboss.cc/races/28722"
   },
   {
     "eventName": "Criterium - Wednesday Graded scratch races @ The Loop Round 23",
@@ -1092,11 +1043,11 @@
     "eventUrl": "https://entryboss.cc/races/30216"
   },
   {
-    "eventName": "State Series Gates - 3pm to 5pm",
+    "eventName": "Jack McDonough Memorial",
     "eventDate": "2026-06-13T00:00:00Z",
-    "clubName": "Sunbury BMX Club",
+    "clubName": "Northern Combine",
     "state": "VIC",
-    "eventUrl": "https://entryboss.cc/races/30105"
+    "eventUrl": "https://entryboss.cc/races/29864"
   },
   {
     "eventName": "State Series Gates - 1pm to 3pm",
@@ -1106,11 +1057,18 @@
     "eventUrl": "https://entryboss.cc/races/30104"
   },
   {
-    "eventName": "Jack McDonough Memorial",
+    "eventName": "State Series Gates - 3pm to 5pm",
     "eventDate": "2026-06-13T00:00:00Z",
-    "clubName": "Northern Combine",
+    "clubName": "Sunbury BMX Club",
     "state": "VIC",
-    "eventUrl": "https://entryboss.cc/races/29864"
+    "eventUrl": "https://entryboss.cc/races/30105"
+  },
+  {
+    "eventName": "2026 AusCycling BMX State Series - RD 5 Sunbury",
+    "eventDate": "2026-06-14T00:00:00Z",
+    "clubName": "AusCycling (Victoria)",
+    "state": "VIC",
+    "eventUrl": "https://entryboss.cc/races/28476"
   },
   {
     "eventName": "ECC Team Time Trail",
@@ -1125,13 +1083,6 @@
     "clubName": "Northern Cycling",
     "state": "VIC",
     "eventUrl": "https://entryboss.cc/races/28799"
-  },
-  {
-    "eventName": "2026 AusCycling BMX State Series - RD 5 Sunbury",
-    "eventDate": "2026-06-14T00:00:00Z",
-    "clubName": "AusCycling (Victoria)",
-    "state": "VIC",
-    "eventUrl": "https://entryboss.cc/races/28476"
   },
   {
     "eventName": "Tuesday Night Track Racing - Winter Championship - at DISC",
@@ -1162,18 +1113,18 @@
     "eventUrl": "https://entryboss.cc/races/30217"
   },
   {
-    "eventName": "Kermesse - Graded scratch races @ Gruyere",
-    "eventDate": "2026-06-20T00:00:00Z",
-    "clubName": "Eastern Cycling Club",
-    "state": "VIC",
-    "eventUrl": "https://entryboss.cc/races/29832"
-  },
-  {
     "eventName": "Club Championship Rd 3",
     "eventDate": "2026-06-20T00:00:00Z",
     "clubName": "Park Orchards BMX Club",
     "state": "VIC",
     "eventUrl": "https://entryboss.cc/races/29315"
+  },
+  {
+    "eventName": "Kermesse - Graded scratch races @ Gruyere",
+    "eventDate": "2026-06-20T00:00:00Z",
+    "clubName": "Eastern Cycling Club",
+    "state": "VIC",
+    "eventUrl": "https://entryboss.cc/races/29832"
   },
   {
     "eventName": "Criterium - Graded scratch races",
@@ -1218,13 +1169,6 @@
     "eventUrl": "https://entryboss.cc/races/30218"
   },
   {
-    "eventName": "St Kilda Trophy Race",
-    "eventDate": "2026-06-27T00:00:00Z",
-    "clubName": "Northern Combine",
-    "state": "VIC",
-    "eventUrl": "https://entryboss.cc/races/29865"
-  },
-  {
     "eventName": "Criterium - Graded scratch races @ METEC (Course 2)",
     "eventDate": "2026-06-27T00:00:00Z",
     "clubName": "Eastern Cycling Club",
@@ -1232,11 +1176,25 @@
     "eventUrl": "https://entryboss.cc/races/29831"
   },
   {
+    "eventName": "St Kilda Trophy Race",
+    "eventDate": "2026-06-27T00:00:00Z",
+    "clubName": "Northern Combine",
+    "state": "VIC",
+    "eventUrl": "https://entryboss.cc/races/29865"
+  },
+  {
     "eventName": "Apple Crumble, Roobaix- BCC Gravel Crit",
     "eventDate": "2026-06-28T00:00:00Z",
     "clubName": "Brunswick Cycling Club",
     "state": "VIC",
     "eventUrl": "https://entryboss.cc/races/30185"
+  },
+  {
+    "eventName": "Bendigo Dragons Fun Clubby 28th June",
+    "eventDate": "2026-06-28T00:00:00Z",
+    "clubName": "Bendigo BMX Club",
+    "state": "VIC",
+    "eventUrl": "https://entryboss.cc/races/30240"
   },
   {
     "eventName": "MO 2026 Session #3",
@@ -1288,18 +1246,18 @@
     "eventUrl": "https://entryboss.cc/races/29830"
   },
   {
-    "eventName": "Gate Practice",
-    "eventDate": "2026-07-07T00:00:00Z",
-    "clubName": "Sunbury BMX Club",
-    "state": "VIC",
-    "eventUrl": "https://entryboss.cc/races/28726"
-  },
-  {
     "eventName": "Tuesday Night Track Racing - Winter Championship - at DISC",
     "eventDate": "2026-07-07T00:00:00Z",
     "clubName": "Brunswick Cycling Club",
     "state": "VIC",
     "eventUrl": "https://entryboss.cc/races/30198"
+  },
+  {
+    "eventName": "Gate Practice",
+    "eventDate": "2026-07-07T00:00:00Z",
+    "clubName": "Sunbury BMX Club",
+    "state": "VIC",
+    "eventUrl": "https://entryboss.cc/races/28726"
   },
   {
     "eventName": "Criterium - Wednesday Graded scratch races @ The Loop Round 27",
@@ -1316,18 +1274,18 @@
     "eventUrl": "https://entryboss.cc/races/30220"
   },
   {
-    "eventName": "Kermesse - Graded scratch races @ Gruyere",
-    "eventDate": "2026-07-11T00:00:00Z",
-    "clubName": "Eastern Cycling Club",
-    "state": "VIC",
-    "eventUrl": "https://entryboss.cc/races/29824"
-  },
-  {
     "eventName": "Combine Individual Time Trial Champs",
     "eventDate": "2026-07-11T00:00:00Z",
     "clubName": "Northern Combine",
     "state": "VIC",
     "eventUrl": "https://entryboss.cc/races/29866"
+  },
+  {
+    "eventName": "Kermesse - Graded scratch races @ Gruyere",
+    "eventDate": "2026-07-11T00:00:00Z",
+    "clubName": "Eastern Cycling Club",
+    "state": "VIC",
+    "eventUrl": "https://entryboss.cc/races/29824"
   },
   {
     "eventName": "Winter Junior Clinic",
@@ -1337,18 +1295,18 @@
     "eventUrl": "https://entryboss.cc/races/30179"
   },
   {
-    "eventName": "Gate Practice",
-    "eventDate": "2026-07-14T00:00:00Z",
-    "clubName": "Sunbury BMX Club",
-    "state": "VIC",
-    "eventUrl": "https://entryboss.cc/races/28727"
-  },
-  {
     "eventName": "Tuesday Night Track Endurance Racing - Winter Championship - at DISC",
     "eventDate": "2026-07-14T00:00:00Z",
     "clubName": "Brunswick Cycling Club",
     "state": "VIC",
     "eventUrl": "https://entryboss.cc/races/30202"
+  },
+  {
+    "eventName": "Gate Practice",
+    "eventDate": "2026-07-14T00:00:00Z",
+    "clubName": "Sunbury BMX Club",
+    "state": "VIC",
+    "eventUrl": "https://entryboss.cc/races/28727"
   },
   {
     "eventName": "Criterium - Wednesday Graded scratch races @ The Loop Round 28",
@@ -1400,13 +1358,6 @@
     "eventUrl": "https://entryboss.cc/races/30222"
   },
   {
-    "eventName": "Hell of the Surf Coast 2026 - Paraparap",
-    "eventDate": "2026-07-25T00:00:00Z",
-    "clubName": "Geelong Cycling Club",
-    "state": "VIC",
-    "eventUrl": "https://entryboss.cc/races/29989"
-  },
-  {
     "eventName": "Apple Crumble, BCC Gravel Crit",
     "eventDate": "2026-07-25T00:00:00Z",
     "clubName": "Brunswick Cycling Club",
@@ -1419,6 +1370,13 @@
     "clubName": "Eastern Cycling Club",
     "state": "VIC",
     "eventUrl": "https://entryboss.cc/races/29825"
+  },
+  {
+    "eventName": "Hell of the Surf Coast 2026 - Paraparap",
+    "eventDate": "2026-07-25T00:00:00Z",
+    "clubName": "Geelong Cycling Club",
+    "state": "VIC",
+    "eventUrl": "https://entryboss.cc/races/29989"
   },
   {
     "eventName": "MO 2026 Session #4",
@@ -1456,6 +1414,13 @@
     "eventUrl": "https://entryboss.cc/races/30223"
   },
   {
+    "eventName": "Criterium - Graded scratch races @ Casey",
+    "eventDate": "2026-08-01T00:00:00Z",
+    "clubName": "Eastern Cycling Club",
+    "state": "VIC",
+    "eventUrl": "https://entryboss.cc/races/29823"
+  },
+  {
     "eventName": "Club Championship Rd 4",
     "eventDate": "2026-08-01T00:00:00Z",
     "clubName": "Park Orchards BMX Club",
@@ -1470,11 +1435,11 @@
     "eventUrl": "https://entryboss.cc/races/29990"
   },
   {
-    "eventName": "Criterium - Graded scratch races @ Casey",
-    "eventDate": "2026-08-01T00:00:00Z",
-    "clubName": "Eastern Cycling Club",
+    "eventName": "Gate Practice",
+    "eventDate": "2026-08-04T00:00:00Z",
+    "clubName": "Sunbury BMX Club",
     "state": "VIC",
-    "eventUrl": "https://entryboss.cc/races/29823"
+    "eventUrl": "https://entryboss.cc/races/28730"
   },
   {
     "eventName": "Tuesday Night Track Racing - Winter Championship - at DISC",
@@ -1482,13 +1447,6 @@
     "clubName": "Brunswick Cycling Club",
     "state": "VIC",
     "eventUrl": "https://entryboss.cc/races/30199"
-  },
-  {
-    "eventName": "Gate Practice",
-    "eventDate": "2026-08-04T00:00:00Z",
-    "clubName": "Sunbury BMX Club",
-    "state": "VIC",
-    "eventUrl": "https://entryboss.cc/races/28730"
   },
   {
     "eventName": "Thursday Motorpacing [with Intro Session]",
@@ -1533,18 +1491,18 @@
     "eventUrl": "https://entryboss.cc/races/29992"
   },
   {
-    "eventName": "Tuesday Night Track Racing - Winter Championship - at DISC",
-    "eventDate": "2026-08-18T00:00:00Z",
-    "clubName": "Brunswick Cycling Club",
-    "state": "VIC",
-    "eventUrl": "https://entryboss.cc/races/30210"
-  },
-  {
     "eventName": "Gate Practice",
     "eventDate": "2026-08-18T00:00:00Z",
     "clubName": "Sunbury BMX Club",
     "state": "VIC",
     "eventUrl": "https://entryboss.cc/races/28732"
+  },
+  {
+    "eventName": "Tuesday Night Track Racing - Winter Championship - at DISC",
+    "eventDate": "2026-08-18T00:00:00Z",
+    "clubName": "Brunswick Cycling Club",
+    "state": "VIC",
+    "eventUrl": "https://entryboss.cc/races/30210"
   },
   {
     "eventName": "Thursday Motorpacing [with Intro Session]",
@@ -1596,18 +1554,18 @@
     "eventUrl": "https://entryboss.cc/races/30187"
   },
   {
-    "eventName": "Bendigo Dragons 2026 Club Champs Round 5",
-    "eventDate": "2026-08-30T00:00:00Z",
-    "clubName": "Bendigo BMX Club",
-    "state": "VIC",
-    "eventUrl": "https://entryboss.cc/races/30239"
-  },
-  {
     "eventName": "MO 2026 Session #5",
     "eventDate": "2026-08-30T00:00:00Z",
     "clubName": "Momnium",
     "state": "VIC",
     "eventUrl": "https://entryboss.cc/races/30062"
+  },
+  {
+    "eventName": "Bendigo Dragons 2026 Club Champs Round 5",
+    "eventDate": "2026-08-30T00:00:00Z",
+    "clubName": "Bendigo BMX Club",
+    "state": "VIC",
+    "eventUrl": "https://entryboss.cc/races/30239"
   },
   {
     "eventName": "Gate Practice",
