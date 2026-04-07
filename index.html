@@ -9,6 +9,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
+            darkMode: 'class',
             theme: {
                 extend: {
                     colors: {
@@ -54,6 +55,13 @@
                 const parser = new DOMParser();
                 const doc = parser.parseFromString(text, 'text/html');
                 targetElement.innerHTML = doc.body.innerHTML;
+            }
+
+            // Init theme early
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme === 'dark' || (!savedTheme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                document.documentElement.classList.add('dark');
+                document.documentElement.setAttribute('data-theme', 'dark');
             }
 
             if (isMobile) {

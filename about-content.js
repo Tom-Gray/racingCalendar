@@ -20,22 +20,28 @@ const aboutContent = {
 // Function to render content into desktop about page
 function initDesktopAboutContent() {
     // Render "What is this?" section
-    const whatIsThisContainer = document.querySelector('.prose.prose-lg');
+    const whatIsThisContainer = document.querySelector('[data-section="what-is-this"]');
     if (whatIsThisContainer) {
-        whatIsThisContainer.innerHTML = aboutContent.whatIsThis
-            .map(paragraph => `<p class="text-gray-700 mb-4">${paragraph}</p>`)
-            .join('');
+        const contentDiv = whatIsThisContainer.querySelector('[data-content]');
+        if (contentDiv) {
+            contentDiv.innerHTML = aboutContent.whatIsThis
+                .map(paragraph => `<p class="mb-4">${paragraph}</p>`)
+                .join('');
+        }
     }
 
     // Render contact section
-    const contactContainer = document.querySelectorAll('.prose.prose-lg')[1];
+    const contactContainer = document.querySelector('[data-section="contact"]');
     if (contactContainer) {
-        contactContainer.innerHTML = `
-            <p class="text-gray-700 mb-4">${aboutContent.contact.intro}</p>
-            <p class="text-gray-700 mb-4">
-                Drop me a note: <a href="mailto:${aboutContent.contact.email}" class="text-primary hover:underline">${aboutContent.contact.email}</a>
-            </p>
-        `;
+        const contentDiv = contactContainer.querySelector('[data-content]');
+        if (contentDiv) {
+            contentDiv.innerHTML = `
+                <p class="mb-4">${aboutContent.contact.intro}</p>
+                <p class="mb-4">
+                    Drop me a note: <a href="mailto:${aboutContent.contact.email}" class="text-blue-500 hover:underline font-bold">${aboutContent.contact.email}</a>
+                </p>
+            `;
+        }
     }
 }
 

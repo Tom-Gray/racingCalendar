@@ -1,206 +1,176 @@
-<header class="bg-white border-b border-gray-200">
-        <div class="max-w-6xl mx-auto px-5 py-6">
-            <div class="flex items-center justify-between">
-                <div>
-                    <h1 id="site-title" class="text-3xl font-bold text-gray-900">Victorian Cycling Races</h1>
-                    <p id="site-subtitle" class="text-gray-500">Discover upcoming cycling races across Victoria</p>
-                </div>
-                <nav class="flex items-center gap-3">
-                    <div class="relative">
-                        <button id="state-selector-btn" class="flex items-center gap-2 bg-gray-100 hover:bg-gray-200 text-gray-700 px-4 py-2 rounded-lg font-medium transition-colors">
-                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
-                            </svg>
-                            <span id="current-state-label">VIC</span>
-                        </button>
-                        <div id="state-selector-dropdown" class="hidden absolute right-0 mt-2 w-64 bg-white rounded-lg shadow-xl border border-gray-200 z-50">
-                            <div class="p-2">
-                                <div class="px-3 py-2 text-xs font-semibold text-gray-500 uppercase">Select State</div>
-                                <button data-state="VIC" class="state-option w-full text-left px-3 py-2 rounded hover:bg-gray-100 transition-colors">
-                                    <div class="font-medium text-gray-900">Victoria</div>
-                                    <div class="text-xs text-gray-500">VIC</div>
-                                </button>
-                                <button data-state="NSW" class="state-option w-full text-left px-3 py-2 rounded hover:bg-gray-100 transition-colors">
-                                    <div class="font-medium text-gray-900">New South Wales</div>
-                                    <div class="text-xs text-gray-500">NSW</div>
-                                </button>
-                                <button data-state="QLD" class="state-option w-full text-left px-3 py-2 rounded hover:bg-gray-100 transition-colors">
-                                    <div class="font-medium text-gray-900">Queensland</div>
-                                    <div class="text-xs text-gray-500">QLD</div>
-                                </button>
-                                <button data-state="SA" class="state-option w-full text-left px-3 py-2 rounded hover:bg-gray-100 transition-colors">
-                                    <div class="font-medium text-gray-900">South Australia</div>
-                                    <div class="text-xs text-gray-500">SA</div>
-                                </button>
-                                <button data-state="TAS" class="state-option w-full text-left px-3 py-2 rounded hover:bg-gray-100 transition-colors">
-                                    <div class="font-medium text-gray-900">Tasmania</div>
-                                    <div class="text-xs text-gray-500">TAS</div>
-                                </button>
-                                <button data-state="ACT" class="state-option w-full text-left px-3 py-2 rounded hover:bg-gray-100 transition-colors">
-                                    <div class="font-medium text-gray-900">Australian Capital Territory</div>
-                                    <div class="text-xs text-gray-500">ACT</div>
-                                </button>
-                                <button data-state="WA" class="state-option w-full text-left px-3 py-2 rounded hover:bg-gray-100 transition-colors">
-                                    <div class="font-medium text-gray-900">Western Australia</div>
-                                    <div class="text-xs text-gray-500">WA</div>
-                                </button>
-                            </div>
+<div class="flex h-screen overflow-hidden bg-[var(--bg-main)]">
+    <!-- Sidebar -->
+    <aside class="w-72 bg-[var(--bg-sidebar)] border-r border-[var(--border-color)] flex flex-col z-20 shrink-0">
+        <div class="p-6 border-b border-[var(--border-color)]">
+            <h1 id="site-title" class="text-xl font-bold text-[var(--text-primary)]">Race Calendar</h1>
+            <p id="site-subtitle" class="text-xs text-[var(--text-secondary)] mt-1">EntryBoss Discovery Tool</p>
+        </div>
+
+        <div class="flex-1 overflow-y-auto p-4 space-y-8">
+            <!-- State Selector -->
+            <section>
+                <h3 class="text-xs font-semibold text-[var(--text-muted)] uppercase tracking-wider mb-3 px-2">Location</h3>
+                <div class="relative">
+                    <button id="state-selector-btn" class="w-full flex items-center justify-between px-3 py-2 rounded-lg bg-[var(--bg-main)] border border-[var(--border-color)] text-[var(--text-secondary)] hover:bg-gray-100 dark:hover:bg-slate-800 transition-colors">
+                        <div class="flex items-center gap-2">
+                            <span class="w-2 h-2 bg-blue-500 rounded-full"></span>
+                            <span id="current-state-label" class="font-medium text-[var(--text-primary)]">VIC</span>
+                        </div>
+                        <svg class="w-4 h-4 text-[var(--text-muted)]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div id="state-selector-dropdown" class="hidden absolute left-0 right-0 mt-2 bg-[var(--bg-card)] rounded-lg shadow-xl border border-[var(--border-color)] z-50">
+                        <div class="p-2 space-y-1">
+                            <button data-state="VIC" class="state-option w-full text-left px-3 py-2 rounded hover:bg-gray-100 dark:hover:bg-slate-800 transition-colors text-sm text-[var(--text-primary)]">Victoria</button>
+                            <button data-state="NSW" class="state-option w-full text-left px-3 py-2 rounded hover:bg-gray-100 dark:hover:bg-slate-800 transition-colors text-sm text-[var(--text-primary)]">New South Wales</button>
+                            <button data-state="QLD" class="state-option w-full text-left px-3 py-2 rounded hover:bg-gray-100 dark:hover:bg-slate-800 transition-colors text-sm text-[var(--text-primary)]">Queensland</button>
+                            <button data-state="SA" class="state-option w-full text-left px-3 py-2 rounded hover:bg-gray-100 dark:hover:bg-slate-800 transition-colors text-sm text-[var(--text-primary)]">South Australia</button>
+                            <button data-state="TAS" class="state-option w-full text-left px-3 py-2 rounded hover:bg-gray-100 dark:hover:bg-slate-800 transition-colors text-sm text-[var(--text-primary)]">Tasmania</button>
+                            <button data-state="ACT" class="state-option w-full text-left px-3 py-2 rounded hover:bg-gray-100 dark:hover:bg-slate-800 transition-colors text-sm text-[var(--text-primary)]">ACT</button>
+                            <button data-state="WA" class="state-option w-full text-left px-3 py-2 rounded hover:bg-gray-100 dark:hover:bg-slate-800 transition-colors text-sm text-[var(--text-primary)]">Western Australia</button>
                         </div>
                     </div>
-                    <a href="about.html" class="bg-gray-100 hover:bg-gray-200 text-gray-700 px-4 py-2 rounded-lg font-medium">
-                        About
-                    </a>
-                </nav>
+                </div>
+            </section>
+
+            <!-- Club Search -->
+            <section>
+                <h3 class="text-xs font-semibold text-[var(--text-muted)] uppercase tracking-wider mb-3 px-2">Find Clubs</h3>
+                <div class="relative">
+                    <input type="text" id="club-search" placeholder="Search clubs..." class="w-full pl-9 pr-3 py-2 bg-[var(--bg-main)] border border-[var(--border-color)] rounded-lg text-sm text-[var(--text-primary)] focus:ring-2 focus:ring-blue-500 outline-none transition-all">
+                    <svg class="absolute left-3 top-2.5 w-4 h-4 text-[var(--text-muted)]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+                </div>
+                <div id="club-list-panel" class="mt-3 bg-[var(--bg-card)] border border-[var(--border-color)] rounded-lg overflow-hidden hidden">
+                     <div id="club-list-container" class="max-h-60 overflow-y-auto p-1"></div>
+                </div>
+                <div id="selected-clubs" class="flex flex-wrap gap-2 mt-4"></div>
+            </section>
+
+            <!-- Discipline Filters -->
+            <section>
+                <h3 class="text-xs font-semibold text-[var(--text-muted)] uppercase tracking-wider mb-3 px-2">Disciplines</h3>
+                <div class="space-y-2">
+                    <label class="flex items-center justify-between px-2 py-1.5 rounded hover:bg-gray-100 dark:hover:bg-slate-800 cursor-pointer text-sm text-[var(--text-secondary)]">
+                        <span>Hide BMX</span>
+                        <input type="checkbox" id="hide-bmx-checkbox" class="rounded border-[var(--border-color)] text-blue-600 focus:ring-blue-500">
+                    </label>
+                    <label class="flex items-center justify-between px-2 py-1.5 rounded hover:bg-gray-100 dark:hover:bg-slate-800 cursor-pointer text-sm text-[var(--text-secondary)]">
+                        <span>Hide MTB</span>
+                        <input type="checkbox" id="hide-mtb-checkbox" class="rounded border-[var(--border-color)] text-blue-600 focus:ring-blue-500">
+                    </label>
+                </div>
+            </section>
+        </div>
+
+        <div class="p-4 border-t border-[var(--border-color)]">
+            <a href="about.html" class="flex items-center gap-2 px-3 py-2 text-sm text-[var(--text-secondary)] hover:text-blue-600 transition-colors">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                About
+            </a>
+        </div>
+    </aside>
+
+    <!-- Main Content -->
+    <div class="flex-1 flex flex-col overflow-hidden">
+        <!-- Onboarding Banner -->
+        <div id="onboarding-banner" class="hidden">
+            <div class="max-w-6xl mx-auto px-8 mt-6">
+                <div class="bg-blue-500/10 border-l-4 border-blue-500 text-blue-700 dark:text-blue-400 p-4 rounded-r-lg flex items-center justify-between">
+                    <div class="flex items-center">
+                        <svg class="w-5 h-5 mr-3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                          <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd" />
+                        </svg>
+                        <span class="font-bold text-sm">To get started, filter by your favourite clubs in the sidebar!</span>
+                    </div>
+                    <button id="dismiss-onboarding" class="text-xl hover:text-blue-500 transition-colors p-1">×</button>
+                </div>
             </div>
         </div>
-    </header>
 
-    <!-- State Selection Modal (First Launch) -->
-    <div id="state-selection-modal" class="hidden fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4">
-        <div class="bg-white rounded-2xl shadow-2xl max-w-md w-full p-6">
-            <h2 class="text-2xl font-bold text-gray-900 mb-2">Welcome!</h2>
-            <p class="text-gray-600 mb-6">Select your state to see cycling events in your area:</p>
-            <div class="space-y-2">
-                <button data-state="VIC" class="state-selection-option w-full text-left px-4 py-3 rounded-lg border-2 border-gray-200 hover:border-primary hover:bg-primary/5 transition-all">
-                    <div class="font-semibold text-gray-900">Victoria</div>
-                    <div class="text-sm text-gray-500">VIC</div>
-                </button>
-                <button data-state="NSW" class="state-selection-option w-full text-left px-4 py-3 rounded-lg border-2 border-gray-200 hover:border-primary hover:bg-primary/5 transition-all">
-                    <div class="font-semibold text-gray-900">New South Wales</div>
-                    <div class="text-sm text-gray-500">NSW</div>
-                </button>
-                <button data-state="QLD" class="state-selection-option w-full text-left px-4 py-3 rounded-lg border-2 border-gray-200 hover:border-primary hover:bg-primary/5 transition-all">
-                    <div class="font-semibold text-gray-900">Queensland</div>
-                    <div class="text-sm text-gray-500">QLD</div>
-                </button>
-                <button data-state="SA" class="state-selection-option w-full text-left px-4 py-3 rounded-lg border-2 border-gray-200 hover:border-primary hover:bg-primary/5 transition-all">
-                    <div class="font-semibold text-gray-900">South Australia</div>
-                    <div class="text-sm text-gray-500">SA</div>
-                </button>
-                <button data-state="TAS" class="state-selection-option w-full text-left px-4 py-3 rounded-lg border-2 border-gray-200 hover:border-primary hover:bg-primary/5 transition-all">
-                    <div class="font-semibold text-gray-900">Tasmania</div>
-                    <div class="text-sm text-gray-500">TAS</div>
-                </button>
-                <button data-state="ACT" class="state-selection-option w-full text-left px-4 py-3 rounded-lg border-2 border-gray-200 hover:border-primary hover:bg-primary/5 transition-all">
-                    <div class="font-semibold text-gray-900">Australian Capital Territory</div>
-                    <div class="text-sm text-gray-500">ACT</div>
-                </button>
-                <button data-state="WA" class="state-selection-option w-full text-left px-4 py-3 rounded-lg border-2 border-gray-200 hover:border-primary hover:bg-primary/5 transition-all">
-                    <div class="font-semibold text-gray-900">Western Australia</div>
-                    <div class="text-sm text-gray-500">WA</div>
-                </button>
+        <header class="h-16 bg-[var(--bg-card)] border-b border-[var(--border-color)] flex items-center justify-between px-8 shrink-0 z-10">
+            <div class="flex items-center gap-6">
+                <h2 id="calendar-title" class="text-lg font-bold text-[var(--text-primary)]">Events</h2>
+                <div class="view-toggle flex bg-[var(--bg-main)] p-1 rounded-lg">
+                    <button id="calendar-view-btn" class="px-4 py-1.5 rounded-md text-sm font-medium transition-all">Calendar</button>
+                    <button id="list-view-btn" class="px-4 py-1.5 rounded-md text-sm font-medium transition-all">List</button>
+                </div>
             </div>
-        </div>
-    </div>
-
-    <!-- Onboarding Banner -->
-    <div id="onboarding-banner" class="hidden">
-        <div class="max-w-6xl mx-auto px-5 mb-6">
-            <div class="bg-primary/10 border-l-4 border-primary text-primary-dark p-4 rounded-r-lg flex items-center justify-between">
-                <div class="flex items-center">
-                    <svg class="w-6 h-6 mr-3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
-                      <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd" />
+            <div class="flex items-center gap-4">
+                <button id="dark-mode-toggle" class="w-10 h-10 flex items-center justify-center text-[var(--text-primary)] bg-[var(--bg-card)] hover:bg-[var(--bg-main)] rounded-xl border border-[var(--border-color)] transition-all shadow-sm active:scale-95" title="Toggle Dark Mode">
+                    <svg id="dark-mode-icon" class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                        <!-- Icon path will be set by JS -->
                     </svg>
-                    <span class="font-semibold">To get started, filter by your favourite clubs!</span>
-                </div>
-                <button id="dismiss-onboarding" class="text-xl hover:text-primary transition-colors p-1">×</button>
+                </button>
             </div>
+        </header>
+
+        <main class="flex-1 overflow-y-auto p-8 bg-[var(--bg-main)]">
+            <div id="loading" class="flex flex-col items-center justify-center h-full hidden">
+                <div class="w-10 h-10 border-4 border-gray-200 border-t-blue-500 rounded-full animate-spin mb-4"></div>
+                <p class="text-[var(--text-secondary)]">Loading events...</p>
+            </div>
+            <div id="error" class="flex flex-col items-center justify-center h-full hidden">
+                 <p class="text-red-500">Failed to load events.</p>
+            </div>
+
+            <div id="calendar-view" class="max-w-6xl mx-auto hidden">
+                <div id="calendar-grid" class="space-y-8"></div>
+            </div>
+
+            <div id="list-view" class="max-w-4xl mx-auto hidden">
+                <div id="events-list" class="space-y-6"></div>
+            </div>
+        </main>
+    </div>
+</div>
+
+<!-- State Selection Modal (First Launch) -->
+<div id="state-selection-modal" class="hidden fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4">
+    <div class="bg-[var(--bg-card)] rounded-2xl shadow-2xl max-w-md w-full p-8 border border-[var(--border-color)]">
+        <h2 class="text-2xl font-bold text-[var(--text-primary)] mb-2 text-center">Welcome!</h2>
+        <p class="text-[var(--text-secondary)] mb-8 text-center">Select your state to see cycling events in your area:</p>
+        <div class="grid grid-cols-1 gap-3">
+            <button data-state="VIC" class="state-selection-option w-full text-left px-5 py-4 rounded-xl border border-[var(--border-color)] hover:border-blue-500 hover:bg-blue-500/5 transition-all group">
+                <div class="flex items-center justify-between">
+                    <div class="font-bold text-[var(--text-primary)]">Victoria</div>
+                    <div class="text-xs font-bold text-[var(--text-muted)] uppercase">VIC</div>
+                </div>
+            </button>
+            <button data-state="NSW" class="state-selection-option w-full text-left px-5 py-4 rounded-xl border border-[var(--border-color)] hover:border-blue-500 hover:bg-blue-500/5 transition-all group">
+                <div class="flex items-center justify-between">
+                    <div class="font-bold text-[var(--text-primary)]">New South Wales</div>
+                    <div class="text-xs font-bold text-[var(--text-muted)] uppercase">NSW</div>
+                </div>
+            </button>
+            <button data-state="QLD" class="state-selection-option w-full text-left px-5 py-4 rounded-xl border border-[var(--border-color)] hover:border-blue-500 hover:bg-blue-500/5 transition-all group">
+                <div class="flex items-center justify-between">
+                    <div class="font-bold text-[var(--text-primary)]">Queensland</div>
+                    <div class="text-xs font-bold text-[var(--text-muted)] uppercase">QLD</div>
+                </div>
+            </button>
+            <button data-state="SA" class="state-selection-option w-full text-left px-5 py-4 rounded-xl border border-[var(--border-color)] hover:border-blue-500 hover:bg-blue-500/5 transition-all group">
+                <div class="flex items-center justify-between">
+                    <div class="font-bold text-[var(--text-primary)]">South Australia</div>
+                    <div class="text-xs font-bold text-[var(--text-muted)] uppercase">SA</div>
+                </div>
+            </button>
+            <button data-state="TAS" class="state-selection-option w-full text-left px-5 py-4 rounded-xl border border-[var(--border-color)] hover:border-blue-500 hover:bg-blue-500/5 transition-all group">
+                <div class="flex items-center justify-between">
+                    <div class="font-bold text-[var(--text-primary)]">Tasmania</div>
+                    <div class="text-xs font-bold text-[var(--text-muted)] uppercase">TAS</div>
+                </div>
+            </button>
+            <button data-state="ACT" class="state-selection-option w-full text-left px-5 py-4 rounded-xl border border-[var(--border-color)] hover:border-blue-500 hover:bg-blue-500/5 transition-all group">
+                <div class="flex items-center justify-between">
+                    <div class="font-bold text-[var(--text-primary)]">ACT</div>
+                    <div class="text-xs font-bold text-[var(--text-muted)] uppercase">ACT</div>
+                </div>
+            </button>
+            <button data-state="WA" class="state-selection-option w-full text-left px-5 py-4 rounded-xl border border-[var(--border-color)] hover:border-blue-500 hover:bg-blue-500/5 transition-all group">
+                <div class="flex items-center justify-between">
+                    <div class="font-bold text-[var(--text-primary)]">Western Australia</div>
+                    <div class="text-xs font-bold text-[var(--text-muted)] uppercase">WA</div>
+                </div>
+            </button>
         </div>
     </div>
-
-    <main class="flex-1 py-8">
-        <div class="max-w-6xl mx-auto px-5">
-            <!-- Controls -->
-            <div class="controls-container bg-white rounded-xl shadow-lg p-8 mb-8">
-                <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-8">
-                    <div class="view-toggle hidden md:flex bg-gray-100 rounded-full p-1">
-                        <button id="calendar-view-btn" class="px-6 py-2 rounded-full font-medium text-sm bg-primary text-white shadow-md">Calendar</button>
-                        <button id="list-view-btn" class="px-6 py-2 rounded-full font-medium text-sm text-gray-600 hover:text-gray-800 transition-all">List</button>
-                    </div>
-                    
-                    <div class="flex-1 lg:max-w-lg">
-                        <div class="relative">
-                            <svg class="absolute left-4 top-1/2 -translate-y-1/2 h-5 w-5 text-gray-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
-                                <path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd" />
-                            </svg>
-                            <input 
-                                type="text" 
-                                id="club-search" 
-                                placeholder="Search for clubs..." 
-                                class="w-full pl-11 pr-4 py-3 border border-gray-300 rounded-full focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
-                            >
-                            
-                            <!-- Unified Club List -->
-                            <div id="club-list-panel" class="absolute top-full left-0 right-0 bg-white border border-gray-200 rounded-lg shadow-lg mt-2 hidden z-10 max-h-80 overflow-y-auto">
-                                <div class="p-3 border-b border-gray-100 bg-gray-50">
-                                    <h3 class="font-medium text-gray-700 text-sm">All Clubs</h3>
-                                </div>
-                                <div id="club-list-container" class="p-2">
-                                    <!-- Club list will be populated here -->
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Event Type Filters -->
-                <div class="flex flex-wrap gap-6 mt-6 pt-6 border-t border-gray-200">
-                    <label class="flex items-center gap-2 cursor-pointer text-sm text-gray-700 hover:text-primary">
-                        <input 
-                            type="checkbox" 
-                            id="hide-bmx-checkbox" 
-                            class="w-4 h-4 text-primary bg-gray-100 border-gray-300 rounded focus:ring-2 focus:ring-primary"
-                        >
-                        Hide BMX Events
-                    </label>
-                    
-                    <label class="flex items-center gap-2 cursor-pointer text-sm text-gray-700 hover:text-primary">
-                        <input 
-                            type="checkbox" 
-                            id="hide-mtb-checkbox" 
-                            class="w-4 h-4 text-primary bg-gray-100 border-gray-300 rounded focus:ring-2 focus:ring-primary"
-                        >
-                        Hide MTB Events
-                    </label>
-                </div>
-                
-                <div id="selected-clubs" class="flex flex-wrap gap-3 mt-6"></div>
-            </div>
-
-            <!-- Loading State -->
-            <div id="loading" class="text-center py-12 bg-white rounded-xl shadow-lg">
-                <div class="inline-block w-10 h-10 border-4 border-gray-200 border-t-primary rounded-full animate-spin mb-4"></div>
-                <p class="text-gray-600">Loading events...</p>
-            </div>
-
-            <!-- Error State -->
-            <div id="error" class="text-center py-12 bg-white rounded-xl shadow-lg hidden">
-                <p class="text-red-600">Failed to load events. Please try again later.</p>
-            </div>
-
-            <!-- Calendar View -->
-            <div id="calendar-view" class="bg-white rounded-xl shadow-lg overflow-hidden">
-                <div class="px-6 py-4 bg-gray-50 border-b border-gray-200">
-                    <h2 id="calendar-title" class="text-xl font-semibold text-gray-800"></h2>
-                </div>
-                <div id="calendar-grid" class="p-4"></div>
-            </div>
-
-            <!-- List View -->
-            <div id="list-view" class="bg-white rounded-xl shadow-lg overflow-hidden hidden">
-                <div class="px-6 py-4 bg-gray-50 border-b border-gray-200">
-                    <h2 class="text-xl font-semibold text-gray-800">Upcoming Events</h2>
-                </div>
-                <div id="events-list" class="space-y-8"></div>
-            </div>
-        </div>
-    </main>
-
-    <footer class="bg-gray-800 text-white py-6 mt-8">
-        <div class="max-w-6xl mx-auto px-5 text-center">
-            <p class="mb-2">Data sourced from <a href="https://entryboss.cc" target="_blank" rel="noopener" class="text-primary hover:text-blue-300 transition-colors">EntryBoss</a></p>
-            <p class="text-gray-400">Events link directly to EntryBoss for registration</p>
-        </div>
-    </footer>
-            <p class="text-gray-400">Events link directly to EntryBoss for registration</p>
+</div>
