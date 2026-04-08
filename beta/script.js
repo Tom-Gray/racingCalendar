@@ -187,17 +187,6 @@ function setupEventListeners() {
     
     // Club search - unified behavior
     clubSearchInput.addEventListener('input', handleClubSearch);
-    clubSearchInput.addEventListener('focus', showClubList);
-    clubSearchInput.addEventListener('blur', (e) => {
-        // Only hide if the new focus target is not within the club list panel
-        setTimeout(() => {
-            const activeElement = document.activeElement;
-            if (!clubListPanel.contains(activeElement) && 
-                !clubSearchInput.contains(activeElement)) {
-                hideClubList();
-            }
-        }, 400); // Increased delay for Chrome compatibility
-    });
     
     // Onboarding dismiss
     const dismissBtn = document.getElementById('dismiss-onboarding');
@@ -221,13 +210,6 @@ function setupEventListeners() {
             updateDisplay();
         });
     }
-    
-    // Click outside to close club list - improved detection
-    document.addEventListener('mousedown', (e) => {
-        if (!clubSearchInput.contains(e.target) && !clubListPanel.contains(e.target)) {
-            hideClubList();
-        }
-    });
 }
 
 // State Management
@@ -689,15 +671,7 @@ function switchView(view) {
 
 // Club Filtering
 function handleClubSearch(e) {
-    const query = e.target.value.toLowerCase();
-    
-    // Always show the club list when typing (unified behavior)
-    if (clubListPanel.classList.contains('hidden')) {
-        showClubList();
-    } else {
-        // Update the existing club list with filtered results
-        renderClubList();
-    }
+    renderClubList();
 }
 
 
@@ -730,15 +704,6 @@ function removeClubFilter(club) {
 }
 
 // Club List Management
-
-function showClubList() {
-    clubListPanel.classList.remove('hidden');
-    renderClubList();
-}
-
-function hideClubList() {
-    clubListPanel.classList.add('hidden');
-}
 
 function renderClubList() {
     clubListContainer.innerHTML = '';
@@ -799,10 +764,7 @@ function renderClubList() {
 }
 
 function updateClubList() {
-    // Only update if the club list is currently visible
-    if (!clubListPanel.classList.contains('hidden')) {
-        renderClubList();
-    }
+    renderClubList();
 }
 
 function handleClubCheckbox(club, isChecked) {
@@ -850,6 +812,7 @@ function updateSelectedClubsDisplay() {
 function updateDisplay() {
     const filteredEvents = getFilteredEvents();
     updateSelectedClubsDisplay();
+    renderClubList();
     
     if (currentView === 'calendar') {
         renderCalendar(filteredEvents);
