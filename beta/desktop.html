@@ -123,6 +123,27 @@
     </div>
 </div>
 
+<!-- User Announcement Toast -->
+<div id="v2-announcement-toast" class="hidden fixed bottom-6 right-6 w-80 bg-slate-900 text-white rounded-2xl shadow-2xl p-6 border border-slate-800 z-[100] animate-in slide-in-from-bottom-10 duration-500 md:block">
+    <div class="flex items-start justify-between mb-4">
+        <div class="flex items-center gap-2">
+            <span class="px-2 py-0.5 bg-blue-500 text-[10px] font-extrabold rounded uppercase tracking-wider text-white">New</span>
+            <h4 class="font-bold text-sm">Race Calendar Updates</h4>
+        </div>
+        <button id="close-announcement" class="text-slate-500 hover:text-white transition-colors text-xl leading-none">&times;</button>
+    </div>
+    <p class="text-xs text-slate-400 mb-5 leading-relaxed">
+        We've revamped the layout and added <strong class="text-slate-200">Dark Mode!</strong> Toggle it from the top right. 
+    </p>
+    <p class="text-xs text-slate-400 mb-5 leading-relaxed">
+        Send me your feedback or suggestions.
+    </p>
+    <div class="flex items-center gap-3">
+        <button id="dismiss-announcement" class="flex-1 py-2 bg-blue-600 hover:bg-blue-700 text-white text-xs font-bold rounded-xl transition-all active:scale-95">Got it</button>
+        <a href="about.html" class="px-4 py-2 border border-slate-700 hover:border-slate-600 text-slate-300 text-xs font-bold rounded-xl transition-all">Feedback</a>
+    </div>
+</div>
+
 <!-- State Selection Modal (First Launch) -->
 <div id="state-selection-modal" class="hidden fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4">
     <div class="bg-[var(--bg-card)] rounded-2xl shadow-2xl max-w-md w-full p-8 border border-[var(--border-color)]">

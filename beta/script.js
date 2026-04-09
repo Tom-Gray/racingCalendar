@@ -120,6 +120,7 @@ function initDesktopApp() {
     try {
         initializeElements();
         initDarkMode();
+        initAnnouncement();
         loadState();
         setupEventListeners();
         setupStateSelectorListeners();
@@ -136,6 +137,36 @@ function initDesktopApp() {
         console.error(`Initialization failed: ${error.message}`);
         showCriticalError(error);
     }
+}
+
+function initAnnouncement() {
+    const toast = document.getElementById('v2-announcement-toast');
+    const closeBtn = document.getElementById('close-announcement');
+    const dismissBtn = document.getElementById('dismiss-announcement');
+    
+    if (!toast) return;
+
+    // Check if user has already seen this announcement
+    const hasSeen = localStorage.getItem('hasSeenv2Announcement');
+    
+    // Only show on desktop and if not seen
+    if (!hasSeen && !isMobileDevice()) {
+        // Delay slightly for smooth entrance after page load
+        setTimeout(() => {
+            toast.classList.remove('hidden');
+        }, 1500);
+    }
+
+    const dismissAction = () => {
+        toast.classList.add('opacity-0', 'translate-y-10');
+        setTimeout(() => {
+            toast.classList.add('hidden');
+            localStorage.setItem('hasSeenv2Announcement', 'true');
+        }, 500);
+    };
+
+    if (closeBtn) closeBtn.addEventListener('click', dismissAction);
+    if (dismissBtn) dismissBtn.addEventListener('click', dismissAction);
 }
 
 function initializeElements() {
