@@ -51,6 +51,20 @@ body {
     to { opacity: 1; transform: translateY(0); }
 }
 
+/* Toast animations */
+@keyframes slideInUp {
+    from { transform: translateY(100%); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+.animate-in {
+    animation: slideInUp 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+#v2-announcement-toast {
+    transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
 /* Ensure hidden class works properly */
 .hidden {
     display: none !important;
