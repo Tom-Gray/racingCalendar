@@ -9,6 +9,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
+            darkMode: 'class',
             theme: {
                 extend: {
                     colors: {
@@ -56,6 +57,13 @@
                 targetElement.innerHTML = doc.body.innerHTML;
             }
 
+            // Init theme
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme === 'dark' || (!savedTheme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                document.documentElement.classList.add('dark');
+                document.documentElement.setAttribute('data-theme', 'dark');
+            }
+
             if (isMobile) {
                 loadCSS('mobile.css');
                 await loadContent('mobile_about_page.html', root);
@@ -63,7 +71,7 @@
                 initMobileAboutContent();
                 
             } else {
-                loadCSS('styles.css');
+                loadCSS('tailwind-overrides.css');
                 await loadContent('desktop_about.html', root);
                 await loadJS('about-content.js');
                 initDesktopAboutContent();
