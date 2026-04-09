@@ -20,29 +20,83 @@ let hideBMXEvents = false;
 let hideMTBEvents = false;
 let selectedState = 'VIC'; // Default state
 let statePreferences = {}; // Store preferences for each state
+let isDarkMode = false;
+
+function initDarkMode() {
+    const savedTheme = localStorage.getItem('theme');
+    
+    if (savedTheme === 'dark' || (!savedTheme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+        enableDarkMode();
+    } else {
+        disableDarkMode();
+    }
+    
+    if (darkModeToggle) {
+        darkModeToggle.addEventListener('click', toggleDarkMode);
+    }
+}
+
+function toggleDarkMode() {
+    if (document.documentElement.classList.contains('dark')) {
+        disableDarkMode();
+    } else {
+        enableDarkMode();
+    }
+}
+
+function enableDarkMode() {
+    document.documentElement.classList.add('dark');
+    document.documentElement.setAttribute('data-theme', 'dark');
+    localStorage.setItem('theme', 'dark');
+    isDarkMode = true;
+    updateDarkModeUI();
+}
+
+function disableDarkMode() {
+    document.documentElement.classList.remove('dark');
+    document.documentElement.removeAttribute('data-theme');
+    localStorage.setItem('theme', 'light');
+    isDarkMode = false;
+    updateDarkModeUI();
+}
+
+function updateDarkModeUI() {
+    const icon = document.getElementById('dark-mode-icon');
+    if (!icon) return;
+    
+    if (isDarkMode) {
+        // Sun icon for dark mode
+        icon.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707M16.243 16.243l.707.707M7.757 7.757l.707.707M15 12a3 3 0 11-6 0 3 3 0 016 0z" />';
+        icon.classList.add('text-yellow-400');
+    } else {
+        // Moon icon for light mode
+        icon.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />';
+        icon.classList.remove('text-yellow-400');
+    }
+}
 
 // Color palette for clubs
 const CLUB_COLOR_PALETTE = [
-    '#667eea', // Original blue
-    '#e74c3c', // Red
-    '#f39c12', // Orange
-    '#27ae60', // Green
-    '#9b59b6', // Purple
-    '#1abc9c', // Turquoise
-    '#e67e22', // Dark orange
-    '#3498db', // Light blue
-    '#2ecc71', // Light green
-    '#f1c40f', // Yellow
-    '#e91e63', // Pink
-    '#ff6b6b', // Light red
-    '#4ecdc4', // Mint
-    '#45b7d1', // Sky blue
-    '#96ceb4', // Sage green
-    '#ffeaa7', // Light yellow
-    '#fab1a0', // Peach
-    '#fd79a8', // Rose
-    '#fdcb6e', // Gold
-    '#6c5ce7'  // Lavender
+    '#2563eb', // Blue 600
+    '#dc2626', // Red 600
+    '#d97706', // Amber 600
+    '#059669', // Emerald 600
+    '#7c3aed', // Violet 600
+    '#db2777', // Pink 600
+    '#0891b2', // Cyan 600
+    '#ea580c', // Orange 600
+    '#65a30d', // Lime 600
+    '#4f46e5', // Indigo 600
+    '#c026d3', // Fuchsia 600
+    '#0d9488', // Teal 600
+    '#e11d48', // Rose 600
+    '#0284c7', // Sky 600
+    '#16a34a', // Green 600
+    '#ca8a04', // Yellow 600
+    '#9333ea', // Purple 600
+    '#0e7490', // Cyan 700
+    '#9f1239', // Rose 700
+    '#1e40af'  // Blue 800
 ];
 
 // DOM Elements
@@ -50,7 +104,7 @@ let calendarViewBtn, listViewBtn, clubSearchInput, clubDropdown;
 let selectedClubsContainer, calendarView, listView, calendarGrid, eventsList;
 let loadingElement, errorElement, onboardingBanner;
 let clubListPanel, clubListContainer;
-let hideBMXCheckbox, hideMTBCheckbox;
+let hideBMXCheckbox, hideMTBCheckbox, darkModeToggle;
 
 // Mobile detection
 function isMobileDevice() {
@@ -65,6 +119,8 @@ function isMobileDevice() {
 function initDesktopApp() {
     try {
         initializeElements();
+        initDarkMode();
+        initAnnouncement();
         loadState();
         setupEventListeners();
         setupStateSelectorListeners();
@@ -83,6 +139,36 @@ function initDesktopApp() {
     }
 }
 
+function initAnnouncement() {
+    const toast = document.getElementById('v2-announcement-toast');
+    const closeBtn = document.getElementById('close-announcement');
+    const dismissBtn = document.getElementById('dismiss-announcement');
+    
+    if (!toast) return;
+
+    // Check if user has already seen this announcement
+    const hasSeen = localStorage.getItem('hasSeenv2Announcement');
+    
+    // Only show on desktop and if not seen
+    if (!hasSeen && !isMobileDevice()) {
+        // Delay slightly for smooth entrance after page load
+        setTimeout(() => {
+            toast.classList.remove('hidden');
+        }, 1500);
+    }
+
+    const dismissAction = () => {
+        toast.classList.add('opacity-0', 'translate-y-10');
+        setTimeout(() => {
+            toast.classList.add('hidden');
+            localStorage.setItem('hasSeenv2Announcement', 'true');
+        }, 500);
+    };
+
+    if (closeBtn) closeBtn.addEventListener('click', dismissAction);
+    if (dismissBtn) dismissBtn.addEventListener('click', dismissAction);
+}
+
 function initializeElements() {
     calendarViewBtn = document.getElementById('calendar-view-btn');
     listViewBtn = document.getElementById('list-view-btn');
@@ -99,6 +185,7 @@ function initializeElements() {
     clubListContainer = document.getElementById('club-list-container');
     hideBMXCheckbox = document.getElementById('hide-bmx-checkbox');
     hideMTBCheckbox = document.getElementById('hide-mtb-checkbox');
+    darkModeToggle = document.getElementById('dark-mode-toggle');
     
     // Check for missing critical elements
     const criticalElements = {
@@ -131,17 +218,6 @@ function setupEventListeners() {
     
     // Club search - unified behavior
     clubSearchInput.addEventListener('input', handleClubSearch);
-    clubSearchInput.addEventListener('focus', showClubList);
-    clubSearchInput.addEventListener('blur', (e) => {
-        // Only hide if the new focus target is not within the club list panel
-        setTimeout(() => {
-            const activeElement = document.activeElement;
-            if (!clubListPanel.contains(activeElement) && 
-                !clubSearchInput.contains(activeElement)) {
-                hideClubList();
-            }
-        }, 400); // Increased delay for Chrome compatibility
-    });
     
     // Onboarding dismiss
     const dismissBtn = document.getElementById('dismiss-onboarding');
@@ -165,13 +241,6 @@ function setupEventListeners() {
             updateDisplay();
         });
     }
-    
-    // Click outside to close club list - improved detection
-    document.addEventListener('mousedown', (e) => {
-        if (!clubSearchInput.contains(e.target) && !clubListPanel.contains(e.target)) {
-            hideClubList();
-        }
-    });
 }
 
 // State Management
@@ -601,18 +670,12 @@ function switchView(view) {
         console.log('Switching to calendar view');
         // Only update button styles if buttons exist (they're hidden on mobile)
         if (calendarViewBtn) {
-            calendarViewBtn.classList.add('bg-primary', 'text-white', 'shadow-sm');
-            calendarViewBtn.classList.remove('text-gray-600', 'hover:text-gray-800');
+            calendarViewBtn.className = 'px-4 py-1.5 rounded-md text-sm font-bold bg-[var(--bg-card)] text-[var(--text-primary)] shadow-sm border border-[var(--border-color)]';
             console.log('Updated calendar button styles');
-        } else {
-            console.log('Calendar view button not found');
         }
         if (listViewBtn) {
-            listViewBtn.classList.remove('bg-primary', 'text-white', 'shadow-sm');
-            listViewBtn.classList.add('text-gray-600', 'hover:text-gray-800');
+            listViewBtn.className = 'px-4 py-1.5 rounded-md text-sm font-medium text-[var(--text-secondary)] hover:text-[var(--text-primary)]';
             console.log('Updated list button styles');
-        } else {
-            console.log('List view button not found');
         }
         calendarView.classList.remove('hidden');
         listView.classList.add('hidden');
@@ -621,18 +684,12 @@ function switchView(view) {
         console.log('Switching to list view');
         // Only update button styles if buttons exist (they're hidden on mobile)
         if (listViewBtn) {
-            listViewBtn.classList.add('bg-primary', 'text-white', 'shadow-sm');
-            listViewBtn.classList.remove('text-gray-600', 'hover:text-gray-800');
+            listViewBtn.className = 'px-4 py-1.5 rounded-md text-sm font-bold bg-[var(--bg-card)] text-[var(--text-primary)] shadow-sm border border-[var(--border-color)]';
             console.log('Updated list button styles');
-        } else {
-            console.log('List view button not found');
         }
         if (calendarViewBtn) {
-            calendarViewBtn.classList.remove('bg-primary', 'text-white', 'shadow-sm');
-            calendarViewBtn.classList.add('text-gray-600', 'hover:text-gray-800');
+            calendarViewBtn.className = 'px-4 py-1.5 rounded-md text-sm font-medium text-[var(--text-secondary)] hover:text-[var(--text-primary)]';
             console.log('Updated calendar button styles');
-        } else {
-            console.log('Calendar view button not found');
         }
         listView.classList.remove('hidden');
         calendarView.classList.add('hidden');
@@ -645,15 +702,7 @@ function switchView(view) {
 
 // Club Filtering
 function handleClubSearch(e) {
-    const query = e.target.value.toLowerCase();
-    
-    // Always show the club list when typing (unified behavior)
-    if (clubListPanel.classList.contains('hidden')) {
-        showClubList();
-    } else {
-        // Update the existing club list with filtered results
-        renderClubList();
-    }
+    renderClubList();
 }
 
 
@@ -687,15 +736,6 @@ function removeClubFilter(club) {
 
 // Club List Management
 
-function showClubList() {
-    clubListPanel.classList.remove('hidden');
-    renderClubList();
-}
-
-function hideClubList() {
-    clubListPanel.classList.add('hidden');
-}
-
 function renderClubList() {
     clubListContainer.innerHTML = '';
     
@@ -706,12 +746,12 @@ function renderClubList() {
     
     filteredClubs.forEach(club => {
         const clubItem = document.createElement('div');
-        clubItem.className = 'flex items-center gap-3 px-3 py-2 hover:bg-gray-50 transition-colors';
+        clubItem.className = 'flex items-center gap-2 px-2 py-1.5 hover:bg-[var(--bg-main)] rounded-md transition-colors';
         
         const checkbox = document.createElement('input');
         checkbox.type = 'checkbox';
         checkbox.id = `club-${club.replace(/\s+/g, '-').toLowerCase()}`;
-        checkbox.className = 'w-4 h-4 text-primary bg-gray-100 border-gray-300 rounded focus:ring-primary focus:ring-2';
+        checkbox.className = 'w-3.5 h-3.5 text-blue-600 bg-[var(--bg-main)] border-[var(--border-color)] rounded focus:ring-blue-500 focus:ring-2';
         checkbox.checked = selectedClubs.has(club);
         checkbox.addEventListener('change', (e) => {
             e.stopPropagation(); // Prevent event bubbling
@@ -720,7 +760,7 @@ function renderClubList() {
         
         const label = document.createElement('label');
         label.htmlFor = checkbox.id;
-        label.className = 'flex-1 text-sm text-gray-700 cursor-pointer flex items-center justify-between';
+        label.className = 'flex-1 text-xs text-[var(--text-secondary)] hover:text-[var(--text-primary)] cursor-pointer flex items-center justify-between font-medium';
         
         // Count events for this club
         const eventCount = events.filter(event => event.clubName === club).length;
@@ -731,7 +771,7 @@ function renderClubList() {
         
         // Create event count span
         const eventCountSpan = document.createElement('span');
-        eventCountSpan.className = 'text-gray-500 text-xs ml-2';
+        eventCountSpan.className = 'text-[var(--text-muted)] text-[10px] ml-2';
         eventCountSpan.textContent = `(${eventCount})`;
         
         label.appendChild(clubNameSpan);
@@ -748,17 +788,14 @@ function renderClubList() {
     
     if (filteredClubs.length === 0) {
         const noClubs = document.createElement('div');
-        noClubs.className = 'px-3 py-4 text-center text-gray-500 text-sm';
+        noClubs.className = 'px-3 py-4 text-center text-[var(--text-muted)] text-xs';
         noClubs.textContent = 'No clubs found';
         clubListContainer.appendChild(noClubs);
     }
 }
 
 function updateClubList() {
-    // Only update if the club list is currently visible
-    if (!clubListPanel.classList.contains('hidden')) {
-        renderClubList();
-    }
+    renderClubList();
 }
 
 function handleClubCheckbox(club, isChecked) {
@@ -782,7 +819,7 @@ function updateSelectedClubsDisplay() {
     
     [...selectedClubs].sort().forEach(club => {
         const tag = document.createElement('div');
-        tag.className = 'club-tag inline-flex items-center gap-2 px-4 py-2 rounded-full text-white font-medium text-sm border-2 border-white/30 shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all';
+        tag.className = 'club-tag inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-white font-bold text-[10px] border border-white/20 shadow-sm hover:shadow-md transition-all';
         
         // Apply the club's assigned color
         const clubColor = assignClubColor(club);
@@ -792,7 +829,7 @@ function updateSelectedClubsDisplay() {
         name.textContent = club;
         
         const removeBtn = document.createElement('button');
-        removeBtn.className = 'w-5 h-5 rounded-full flex items-center justify-center hover:bg-white/20 transition-colors text-sm';
+        removeBtn.className = 'w-4 h-4 rounded-full flex items-center justify-center hover:bg-white/20 transition-colors';
         removeBtn.innerHTML = '×';
         removeBtn.addEventListener('click', () => removeClubFilter(club));
         
@@ -806,6 +843,7 @@ function updateSelectedClubsDisplay() {
 function updateDisplay() {
     const filteredEvents = getFilteredEvents();
     updateSelectedClubsDisplay();
+    renderClubList();
     
     if (currentView === 'calendar') {
         renderCalendar(filteredEvents);
@@ -848,7 +886,7 @@ function renderCalendar(events) {
     }
 
     calendarGrid.innerHTML = '';
-    calendarGrid.className = 'space-y-6'; // Change from grid to flex column
+    calendarGrid.className = 'space-y-8'; 
 
     const today = new Date();
     const startDate = new Date(today);
@@ -901,55 +939,47 @@ function renderCalendar(events) {
     
     // Render each month
     monthGroups.forEach(monthData => {
-        // Month header
+        // Month section
         const monthSection = document.createElement('div');
-        monthSection.className = 'month-section';
+        monthSection.className = 'month-section bg-[var(--bg-card)] rounded-xl border border-[var(--border-color)] shadow-sm overflow-hidden';
         
         const monthHeader = document.createElement('div');
-        monthHeader.className = 'bg-gray-100 px-4 py-3 rounded-t-lg border-b border-gray-200';
-        monthHeader.innerHTML = `<h3 class="text-lg font-semibold text-gray-800">${monthData.name}</h3>`;
+        monthHeader.className = 'bg-[var(--bg-main)] px-6 py-4 border-b border-[var(--border-color)]';
+        monthHeader.innerHTML = `<h3 class="text-lg font-bold text-[var(--text-primary)]">${monthData.name}</h3>`;
         monthSection.appendChild(monthHeader);
         
         // Month calendar grid
-        const monthCalendar = document.createElement('div');
-        monthCalendar.className = 'bg-white rounded-b-lg overflow-hidden';
+        const grid = document.createElement('div');
+        grid.className = 'grid grid-cols-7 gap-px bg-[var(--border-color)]';
         
         // Day headers
-        const headerRow = document.createElement('div');
-        headerRow.className = 'grid grid-cols-7 gap-px bg-gray-200';
-        
         const dayNames = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
         dayNames.forEach(day => {
             const header = document.createElement('div');
-            header.className = 'bg-gray-100 p-3 text-center font-semibold text-gray-700 text-sm';
+            header.className = 'bg-[var(--bg-main)] p-3 text-center text-[10px] font-bold text-[var(--text-muted)] uppercase tracking-wider';
             header.textContent = day;
-            headerRow.appendChild(header);
+            grid.appendChild(header);
         });
-        monthCalendar.appendChild(headerRow);
         
-        // Weeks grid
-        const weeksContainer = document.createElement('div');
-        weeksContainer.className = 'grid grid-cols-7 gap-px bg-gray-200';
-        
+        // Days
         monthData.weeks.forEach(week => {
             week.forEach(date => {
                 const dayElement = createCalendarDay(date, events);
-                weeksContainer.appendChild(dayElement);
+                grid.appendChild(dayElement);
             });
         });
         
-        monthCalendar.appendChild(weeksContainer);
-        monthSection.appendChild(monthCalendar);
+        monthSection.appendChild(grid);
         calendarGrid.appendChild(monthSection);
     });
 }
 
 function createCalendarDay(date, events) {
     const dayElement = document.createElement('div');
-    dayElement.className = 'bg-white p-3 min-h-[120px] border border-gray-100';
+    dayElement.className = 'bg-[var(--bg-card)] p-3 min-h-[120px]';
     
     const dayNumber = document.createElement('div');
-    dayNumber.className = 'font-semibold mb-2 text-gray-800';
+    dayNumber.className = 'text-sm font-medium mb-2 text-[var(--text-muted)]';
     dayNumber.textContent = date.getDate();
     dayElement.appendChild(dayNumber);
     
@@ -962,17 +992,16 @@ function createCalendarDay(date, events) {
     // Add events to day
     dayEvents.slice(0, 3).forEach(event => { // Limit to 3 events per day for space
         const eventElement = document.createElement('div');
-        eventElement.className = 'day-event-item text-white px-2 py-2 mb-1 rounded text-xs cursor-pointer transition-all hover:shadow-md hover:-translate-y-0.5 border-l-2 border-white/30 whitespace-normal';
-        eventElement.textContent = truncateText(event.eventName, 50);
+        eventElement.className = 'day-event-item text-white px-2 py-1.5 mb-1.5 rounded text-[10px] cursor-pointer transition-all hover:brightness-110 border-l-[3px] font-bold truncate shadow-sm';
+        eventElement.textContent = event.eventName;
         eventElement.title = `${event.eventName} - ${event.clubName}`;
         
-        // Apply club color if the club is selected
-        if (selectedClubs.has(event.clubName)) {
-            const clubColor = assignClubColor(event.clubName);
-            eventElement.style.backgroundColor = clubColor;
-        } else {
-            eventElement.style.backgroundColor = '#667eea';
-        }
+        const clubColor = assignClubColor(event.clubName);
+        eventElement.style.backgroundColor = clubColor;
+        eventElement.style.borderLeftColor = 'rgba(0,0,0,0.4)';
+        
+        // Add subtle text shadow for better contrast on bright colors
+        eventElement.style.textShadow = '0 1px 2px rgba(0,0,0,0.2)';
         
         eventElement.addEventListener('click', () => openEvent(event));
         dayElement.appendChild(eventElement);
@@ -981,7 +1010,7 @@ function createCalendarDay(date, events) {
     // Show "+X more" if there are more events
     if (dayEvents.length > 3) {
         const moreElement = document.createElement('div');
-        moreElement.className = 'text-white px-2 py-1 mb-1 rounded text-xs bg-gray-500';
+        moreElement.className = 'text-[var(--text-muted)] p-1 text-[9px] font-medium';
         moreElement.textContent = `+${dayEvents.length - 3} more`;
         dayElement.appendChild(moreElement);
     }
@@ -1036,17 +1065,17 @@ function renderEventsList(events) {
 // Create a day panel containing multiple events
 function createDayPanel(date, events) {
     const dayPanel = document.createElement('div');
-    dayPanel.className = 'day-panel bg-white rounded-xl shadow-md overflow-hidden';
+    dayPanel.className = 'day-panel bg-[var(--bg-card)] rounded-xl shadow-sm border border-[var(--border-color)] overflow-hidden';
     
     // Day header
     const dayHeader = document.createElement('div');
-    dayHeader.className = 'day-header bg-gray-50 px-6 py-4 border-b border-gray-200';
+    dayHeader.className = 'day-header bg-[var(--bg-main)] px-6 py-4 border-b border-[var(--border-color)]';
     
     const headerContent = document.createElement('div');
     headerContent.className = 'flex items-center justify-between';
     
     const dateDisplay = document.createElement('h3');
-    dateDisplay.className = 'text-lg font-semibold text-gray-800';
+    dateDisplay.className = 'text-lg font-bold text-[var(--text-primary)]';
     dateDisplay.textContent = formatDateFull(date);
     
     headerContent.appendChild(dateDisplay);
@@ -1054,7 +1083,7 @@ function createDayPanel(date, events) {
     // Only show event counter if there are multiple events
     if (events.length > 1) {
         const eventCount = document.createElement('span');
-        eventCount.className = 'text-sm text-gray-500 bg-gray-200 px-3 py-1 rounded-full';
+        eventCount.className = 'text-xs font-bold text-[var(--text-secondary)] bg-[var(--bg-card)] border border-[var(--border-color)] px-3 py-1 rounded-full shadow-sm';
         eventCount.textContent = `${events.length} events`;
         headerContent.appendChild(eventCount);
     }
@@ -1063,7 +1092,7 @@ function createDayPanel(date, events) {
     
     // Events container
     const eventsContainer = document.createElement('div');
-    eventsContainer.className = 'events-container divide-y divide-gray-100';
+    eventsContainer.className = 'events-container divide-y divide-[var(--border-color)]';
     
     events.forEach((event, index) => {
         const eventItem = createDayEventItem(event);
@@ -1078,7 +1107,7 @@ function createDayPanel(date, events) {
 // Create an event item within a day panel (simplified version)
 function createDayEventItem(event) {
     const eventItem = document.createElement('div');
-    eventItem.className = 'day-event-item px-6 py-5 hover:bg-gray-50 cursor-pointer transition-colors';
+    eventItem.className = 'day-event-item px-6 py-5 hover:bg-[var(--bg-main)]/50 cursor-pointer transition-colors';
     eventItem.addEventListener('click', () => openEvent(event));
     
     const eventContent = document.createElement('div');
@@ -1088,14 +1117,14 @@ function createDayEventItem(event) {
     eventInfo.className = 'flex-1 min-w-0';
     
     const eventName = document.createElement('div');
-    eventName.className = 'event-name text-base font-medium text-gray-900 mb-1 leading-tight';
+    eventName.className = 'event-name text-base font-bold text-[var(--text-primary)] mb-2 leading-tight';
     eventName.textContent = event.eventName;
     
     const eventClub = document.createElement('div');
     eventClub.className = 'event-club flex items-center gap-2';
     
     const clubTag = document.createElement('span');
-    clubTag.className = 'club-tag px-2 py-1 rounded text-xs font-medium';
+    clubTag.className = 'club-tag px-3 py-1 rounded-full text-[10px] font-bold shadow-sm';
     clubTag.textContent = event.clubName;
     
     // Apply club color if the club is selected
@@ -1103,11 +1132,12 @@ function createDayEventItem(event) {
         const clubColor = assignClubColor(event.clubName);
         clubTag.style.backgroundColor = clubColor;
         clubTag.style.color = 'white';
+        clubTag.style.textShadow = '0 1px 1px rgba(0,0,0,0.2)';
         // Add colored left border to the entire event item
         eventItem.style.borderLeft = `4px solid ${clubColor}`;
-        eventItem.style.paddingLeft = '22px'; // Adjust padding to account for border
+        eventItem.style.paddingLeft = '20px'; // Adjust padding to account for border
     } else {
-        clubTag.classList.add('bg-gray-200', 'text-gray-700');
+        clubTag.className += ' bg-[var(--bg-main)] text-[var(--text-secondary)] border border-[var(--border-color)]';
     }
     
     eventClub.appendChild(clubTag);
@@ -1117,9 +1147,9 @@ function createDayEventItem(event) {
     
     // Add external link icon
     const linkIcon = document.createElement('div');
-    linkIcon.className = 'flex-shrink-0 text-gray-400 hover:text-gray-600 transition-colors';
+    linkIcon.className = 'flex-shrink-0 text-[var(--text-muted)] hover:text-[var(--text-primary)] transition-colors';
     linkIcon.innerHTML = `
-        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
         </svg>
     `;
@@ -1315,12 +1345,15 @@ function setupStateSelectorListeners() {
         stateSelectorBtn.addEventListener('click', (e) => {
             e.stopPropagation();
             stateSelectorDropdown.classList.toggle('hidden');
+            stateSelectorBtn.classList.toggle('ring-2');
+            stateSelectorBtn.classList.toggle('ring-blue-500/20');
         });
         
         // Close dropdown when clicking outside
         document.addEventListener('click', (e) => {
             if (!stateSelectorBtn.contains(e.target) && !stateSelectorDropdown.contains(e.target)) {
                 stateSelectorDropdown.classList.add('hidden');
+                stateSelectorBtn.classList.remove('ring-2', 'ring-blue-500/20');
             }
         });
         
@@ -1331,6 +1364,7 @@ function setupStateSelectorListeners() {
                 const state = option.getAttribute('data-state');
                 selectState(state);
                 stateSelectorDropdown.classList.add('hidden');
+                stateSelectorBtn.classList.remove('ring-2', 'ring-blue-500/20');
             });
         });
     }
