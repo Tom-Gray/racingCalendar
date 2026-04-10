@@ -23,8 +23,7 @@ test.describe('Club Search Filters', () => {
     });
     await page.reload();
 
-    // 1. Open club dropdown
-    await page.click('#club-search');
+    // 1. Check initial state (club list should be visible immediately)
     const clubList = page.locator('#club-list-container');
     await expect(clubList).toBeVisible();
 
