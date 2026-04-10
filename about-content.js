@@ -19,6 +19,42 @@ const aboutContent = {
 
 // Function to render content into desktop about page
 function initDesktopAboutContent() {
+    // Initialize dark mode elements and behavior
+    const darkModeToggle = document.getElementById('dark-mode-toggle');
+    const isDarkMode = document.documentElement.classList.contains('dark');
+    
+    const updateDarkModeUI = () => {
+        const icon = document.getElementById('dark-mode-icon');
+        if (!icon) return;
+        const currentIsDark = document.documentElement.classList.contains('dark');
+        if (currentIsDark) {
+            icon.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707M16.243 16.243l.707.707M7.757 7.757l.707.707M15 12a3 3 0 11-6 0 3 3 0 016 0z" />';
+            icon.classList.add('text-yellow-400');
+        } else {
+            icon.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />';
+            icon.classList.remove('text-yellow-400');
+        }
+    };
+
+    const toggleDarkMode = () => {
+        if (document.documentElement.classList.contains('dark')) {
+            document.documentElement.classList.remove('dark');
+            document.documentElement.removeAttribute('data-theme');
+            localStorage.setItem('theme', 'light');
+        } else {
+            document.documentElement.classList.add('dark');
+            document.documentElement.setAttribute('data-theme', 'dark');
+            localStorage.setItem('theme', 'dark');
+        }
+        updateDarkModeUI();
+    };
+
+    if (darkModeToggle) {
+        darkModeToggle.addEventListener('click', toggleDarkMode);
+    }
+    
+    updateDarkModeUI();
+
     // Render "What is this?" section
     const whatIsThisContainer = document.querySelector('[data-section="what-is-this"]');
     if (whatIsThisContainer) {
