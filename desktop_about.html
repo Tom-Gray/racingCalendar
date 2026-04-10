@@ -29,6 +29,13 @@
     <div class="flex-1 flex flex-col overflow-hidden">
         <header class="h-16 bg-[var(--bg-card)] border-b border-[var(--border-color)] flex items-center justify-between px-8 shrink-0 z-10">
             <h2 class="text-lg font-bold text-[var(--text-primary)]">About this project</h2>
+            <div class="flex items-center gap-4">
+                <button id="dark-mode-toggle" class="w-10 h-10 flex items-center justify-center text-[var(--text-primary)] bg-[var(--bg-card)] hover:bg-[var(--bg-main)] rounded-xl border border-[var(--border-color)] transition-all shadow-sm active:scale-95" title="Toggle Dark Mode">
+                    <svg id="dark-mode-icon" class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                        <!-- Icon path will be set by JS -->
+                    </svg>
+                </button>
+            </div>
         </header>
 
         <main class="flex-1 overflow-y-auto p-8 bg-[var(--bg-main)]">
