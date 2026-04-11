@@ -27,11 +27,17 @@ jobs:
     - name: Install dependencies
       run: go mod tidy
     
-    - name: Update clubs (if requested)
+    - name: Update clubs (EntryBoss)
       run: go run cmd/main.go update-clubs
+      continue-on-error: true
     
-    - name: Update events
+    - name: Update events (EntryBoss)
       run: go run cmd/main.go update-events
+      continue-on-error: true
+
+    - name: Update events (Buncheur)
+      run: go run cmd/main.go update-buncheur
+      continue-on-error: true
     
     - name: Check for changes
       id: changes
@@ -49,7 +55,7 @@ jobs:
       run: |
         git config --local user.email "action@github.com"
         git config --local user.name "GitHub Action"
-        git add events-vic.json clubs.json
+        git add events-*.json clubs.json
         git commit -m "Auto-update events data $(date '+%Y-%m-%d %H:%M:%S')" || exit 0
         git push
     
