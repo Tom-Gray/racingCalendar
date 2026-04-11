@@ -112,4 +112,23 @@ test.describe('UI Revamp & Features', () => {
     await page.goto('http://localhost:8000');
     await expect(html).not.toHaveClass(/dark/);
   });
+
+  test('about page: should display correct contact links', async ({ page }) => {
+    // 1. Check Desktop
+    await page.goto('http://localhost:8000/about.html');
+    const emailLink = page.locator('a[href^="mailto:"]');
+    const instagramLink = page.locator('a[href*="ig.me"]');
+    
+    await expect(emailLink).toBeVisible();
+    await expect(emailLink).toContainText('hello@racingcalendar.app');
+    await expect(instagramLink).toBeVisible();
+    await expect(instagramLink).toHaveAttribute('href', /ig\.me\/m\/tom\.gray\.ok/);
+
+    // 2. Check Mobile
+    await page.setViewportSize({ width: 375, height: 812 });
+    await page.reload();
+    
+    await expect(page.locator('a[href^="mailto:"]')).toBeVisible();
+    await expect(page.locator('a[href*="ig.me"]')).toBeVisible();
+  });
 });
