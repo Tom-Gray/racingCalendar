@@ -1,26 +1,5 @@
 [
   {
-    "eventName": "Southern Ports State Down Hill - Albany",
-    "eventDate": "2026-04-19T00:00:00Z",
-    "clubName": "Albany Mountain Bike Club",
-    "state": "WA",
-    "eventUrl": "https://entryboss.cc/races/30246"
-  },
-  {
-    "eventName": "Kewdale Age Category Criterium Championships",
-    "eventDate": "2026-04-19T00:00:00Z",
-    "clubName": "West Coast Masters Cycling Council",
-    "state": "WA",
-    "eventUrl": "https://entryboss.cc/races/30281"
-  },
-  {
-    "eventName": "SWCC  Stoffers Memorial Event",
-    "eventDate": "2026-04-19T00:00:00Z",
-    "clubName": "South West Cycle Club",
-    "state": "WA",
-    "eventUrl": "https://entryboss.cc/races/30310"
-  },
-  {
     "eventName": "Stan Gurney VC Memorial Criterium",
     "eventDate": "2026-04-25T00:00:00Z",
     "clubName": "Midland Cycling Club",
@@ -42,7 +21,7 @@
     "eventUrl": "https://entryboss.cc/races/30148"
   },
   {
-    "eventName": "SWCC Gravel Event 2026 Boyanup Bull Chase",
+    "eventName": "SWCC Gravel Event 2026 Boyanup Bull Chase 50km and 75km options",
     "eventDate": "2026-05-03T00:00:00Z",
     "clubName": "South West Cycle Club",
     "state": "WA",
@@ -63,11 +42,11 @@
     "eventUrl": "https://entryboss.cc/races/28390"
   },
   {
-    "eventName": "2026 WA Downhill State Series - Rnd 4 - Dwellingup",
-    "eventDate": "2026-05-31T00:00:00Z",
-    "clubName": "Peel Downhill Mountain Bike Club",
+    "eventName": "Kate Bonner Test",
+    "eventDate": "2026-05-30T00:00:00Z",
+    "clubName": "AusCycling (WA)",
     "state": "WA",
-    "eventUrl": "https://entryboss.cc/races/29634"
+    "eventUrl": "https://entryboss.cc/races/30435"
   },
   {
     "eventName": "2026 AusCycling BMX Racing State Series - WA RD5 Eastern Goldfields",
@@ -75,6 +54,13 @@
     "clubName": "AusCycling (WA)",
     "state": "WA",
     "eventUrl": "https://entryboss.cc/races/28391"
+  },
+  {
+    "eventName": "2026 WA Downhill State Series - Rnd 4 - Dwellingup",
+    "eventDate": "2026-05-31T00:00:00Z",
+    "clubName": "Peel Downhill Mountain Bike Club",
+    "state": "WA",
+    "eventUrl": "https://entryboss.cc/races/29634"
   },
   {
     "eventName": "2026 AusCycling BMX Racing State Series - WA RD6 Southside",
