@@ -1,19 +1,5 @@
 [
   {
-    "eventName": "ANZAC Afteroon Criteriums by Coffs Harbour Cycle Club",
-    "eventDate": "2026-04-25T00:00:00Z",
-    "clubName": "Coffs Harbour Cycle Club",
-    "state": "NSW",
-    "eventUrl": "https://entryboss.cc/races/30089"
-  },
-  {
-    "eventName": "2026 Winter Criterium",
-    "eventDate": "2026-04-25T00:00:00Z",
-    "clubName": "Central Coast CC",
-    "state": "NSW",
-    "eventUrl": "https://entryboss.cc/races/30023"
-  },
-  {
     "eventName": "Hawkesbury Clubby Round 5 MAKEUP - 2026",
     "eventDate": "2026-04-26T00:00:00Z",
     "clubName": "Hawkesbury Hornets BMX Club",
@@ -26,6 +12,13 @@
     "clubName": "Southlake Illawarra BMX Club",
     "state": "NSW",
     "eventUrl": "https://entryboss.cc/races/30475"
+  },
+  {
+    "eventName": "Loomberah - Handicap",
+    "eventDate": "2026-05-02T00:00:00Z",
+    "clubName": "Tamworth Cycle Club",
+    "state": "NSW",
+    "eventUrl": "https://entryboss.cc/races/30497"
   },
   {
     "eventName": "2026 AusCycling BMX State Series - ACT/NSW RD2 Coffs Coast",
@@ -65,13 +58,6 @@
   {
     "eventName": "2026 NSW/ACT Cyclocross Series Round 1 - East Gosford",
     "eventDate": "2026-05-10T00:00:00Z",
-    "clubName": "AusCycling (New South Wales)",
-    "state": "NSW",
-    "eventUrl": "https://entryboss.cc/races/29742"
-  },
-  {
-    "eventName": "2026 NSW/ACT Cyclocross Series Round 1 - East Gosford",
-    "eventDate": "2026-05-10T00:00:00Z",
     "clubName": "Central Coast MTB Inc",
     "state": "NSW",
     "eventUrl": "https://entryboss.cc/races/29742"
@@ -82,6 +68,13 @@
     "clubName": "Central Coast MTB Inc",
     "state": "NSW",
     "eventUrl": "https://entryboss.cc/races/29538"
+  },
+  {
+    "eventName": "2026 NSW/ACT Cyclocross Series Round 1 - East Gosford",
+    "eventDate": "2026-05-10T00:00:00Z",
+    "clubName": "AusCycling (New South Wales)",
+    "state": "NSW",
+    "eventUrl": "https://entryboss.cc/races/29742"
   },
   {
     "eventName": "WSMTB CLUB DAY - FOUR - 2026",
@@ -105,18 +98,18 @@
     "eventUrl": "https://entryboss.cc/races/29534"
   },
   {
-    "eventName": "Snowy Riverina 3x3 Cross Country MTB Series - Rnd 2 Tumut - Individual Rnd Entries",
-    "eventDate": "2026-05-17T00:00:00Z",
-    "clubName": "MTB Wagga",
-    "state": "NSW",
-    "eventUrl": "https://entryboss.cc/races/29139"
-  },
-  {
     "eventName": "Snowy Riverina 3x3 Cross Country MTB Series - SERIES ENTRY - ALL 3 ROUNDS",
     "eventDate": "2026-05-17T00:00:00Z",
     "clubName": "MTB Wagga",
     "state": "NSW",
     "eventUrl": "https://entryboss.cc/races/29136"
+  },
+  {
+    "eventName": "Snowy Riverina 3x3 Cross Country MTB Series - Rnd 2 Tumut - Individual Rnd Entries",
+    "eventDate": "2026-05-17T00:00:00Z",
+    "clubName": "MTB Wagga",
+    "state": "NSW",
+    "eventUrl": "https://entryboss.cc/races/29139"
   },
   {
     "eventName": "Hawkesbury Clubby Round 6 - 2026",
@@ -140,18 +133,11 @@
     "eventUrl": "https://entryboss.cc/races/28902"
   },
   {
-    "eventName": "GRVL Tamworth - Day 1",
-    "eventDate": "2026-05-23T00:00:00Z",
-    "clubName": "Tamworth Cycle Club",
+    "eventName": "Macarthur National Rounds 3 and 4 2026 - Friday gates sessions",
+    "eventDate": "2026-05-22T00:00:00Z",
+    "clubName": "Macarthur BMX Club",
     "state": "NSW",
-    "eventUrl": "https://entryboss.cc/races/28861"
-  },
-  {
-    "eventName": "Glenugie Road Race",
-    "eventDate": "2026-05-23T00:00:00Z",
-    "clubName": "Grafton Cycle Club",
-    "state": "NSW",
-    "eventUrl": "https://entryboss.cc/races/29157"
+    "eventUrl": "https://entryboss.cc/races/30482"
   },
   {
     "eventName": "2026 Winter Criterium",
@@ -161,11 +147,25 @@
     "eventUrl": "https://entryboss.cc/races/30024"
   },
   {
+    "eventName": "Glenugie Road Race",
+    "eventDate": "2026-05-23T00:00:00Z",
+    "clubName": "Grafton Cycle Club",
+    "state": "NSW",
+    "eventUrl": "https://entryboss.cc/races/29157"
+  },
+  {
     "eventName": "Macleay Valley Coast MVMB Cross Country Series Rd 2",
     "eventDate": "2026-05-23T00:00:00Z",
     "clubName": "Macleay Valley Mountain Bikers",
     "state": "NSW",
     "eventUrl": "https://entryboss.cc/races/29030"
+  },
+  {
+    "eventName": "GRVL Tamworth - Day 1",
+    "eventDate": "2026-05-23T00:00:00Z",
+    "clubName": "Tamworth Cycle Club",
+    "state": "NSW",
+    "eventUrl": "https://entryboss.cc/races/28861"
   },
   {
     "eventName": "Central West Inter-Club Round 2 - Orange - 2026",
@@ -224,13 +224,6 @@
     "eventUrl": "https://entryboss.cc/races/28899"
   },
   {
-    "eventName": "2026 AusCycling BMX State Series - ACT/NSW RD3 Manning Valley",
-    "eventDate": "2026-06-06T00:00:00Z",
-    "clubName": "AusCycling (New South Wales)",
-    "state": "NSW",
-    "eventUrl": "https://entryboss.cc/races/28244"
-  },
-  {
     "eventName": "Pringles Road Race",
     "eventDate": "2026-06-06T00:00:00Z",
     "clubName": "Grafton Cycle Club",
@@ -238,18 +231,11 @@
     "eventUrl": "https://entryboss.cc/races/29164"
   },
   {
-    "eventName": "Jacks Ridge Triple X",
-    "eventDate": "2026-06-07T00:00:00Z",
-    "clubName": "Nambucca Valley Cycle Club",
-    "state": "NSW",
-    "eventUrl": "https://entryboss.cc/races/29263"
-  },
-  {
-    "eventName": "2026 AusCycling BMX State Series - ACT/NSW RD4 Manning Valley",
-    "eventDate": "2026-06-07T00:00:00Z",
+    "eventName": "2026 AusCycling BMX State Series - ACT/NSW RD3 Manning Valley",
+    "eventDate": "2026-06-06T00:00:00Z",
     "clubName": "AusCycling (New South Wales)",
     "state": "NSW",
-    "eventUrl": "https://entryboss.cc/races/28245"
+    "eventUrl": "https://entryboss.cc/races/28244"
   },
   {
     "eventName": "2026 Mighty 11s Memorial Class - Event 1",
@@ -259,6 +245,20 @@
     "eventUrl": "https://entryboss.cc/races/28558"
   },
   {
+    "eventName": "2026 AusCycling BMX State Series - ACT/NSW RD4 Manning Valley",
+    "eventDate": "2026-06-07T00:00:00Z",
+    "clubName": "AusCycling (New South Wales)",
+    "state": "NSW",
+    "eventUrl": "https://entryboss.cc/races/28245"
+  },
+  {
+    "eventName": "Jacks Ridge Triple X",
+    "eventDate": "2026-06-07T00:00:00Z",
+    "clubName": "Nambucca Valley Cycle Club",
+    "state": "NSW",
+    "eventUrl": "https://entryboss.cc/races/29263"
+  },
+  {
     "eventName": "2026 Ser 1 Rnd 11",
     "eventDate": "2026-06-12T00:00:00Z",
     "clubName": "Penrith BMX Club",
@@ -266,18 +266,18 @@
     "eventUrl": "https://entryboss.cc/races/29406"
   },
   {
-    "eventName": "2026 Winter Criterium (Uphill Finish)",
-    "eventDate": "2026-06-13T00:00:00Z",
-    "clubName": "Central Coast CC",
-    "state": "NSW",
-    "eventUrl": "https://entryboss.cc/races/30025"
-  },
-  {
     "eventName": "WSMTB CLUB DAY - FIVE - 2026",
     "eventDate": "2026-06-13T00:00:00Z",
     "clubName": "Western Sydney MTB Club",
     "state": "NSW",
     "eventUrl": "https://entryboss.cc/races/29623"
+  },
+  {
+    "eventName": "2026 Winter Criterium (Uphill Finish)",
+    "eventDate": "2026-06-13T00:00:00Z",
+    "clubName": "Central Coast CC",
+    "state": "NSW",
+    "eventUrl": "https://entryboss.cc/races/30025"
   },
   {
     "eventName": "Central West Inter-Club Round 3 - Rydal - 2026",
@@ -308,13 +308,6 @@
     "eventUrl": "https://entryboss.cc/races/29158"
   },
   {
-    "eventName": "Snowy Riverina 3x3 Cross Country MTB Series - Rnd 3 Wagga Wagga - Individual Rnd Entries",
-    "eventDate": "2026-06-21T00:00:00Z",
-    "clubName": "MTB Wagga",
-    "state": "NSW",
-    "eventUrl": "https://entryboss.cc/races/29141"
-  },
-  {
     "eventName": "The Woodford to Glenbrook MTB Classic",
     "eventDate": "2026-06-21T00:00:00Z",
     "clubName": "Western Sydney MTB Club",
@@ -327,6 +320,13 @@
     "clubName": "Hawkesbury Hornets BMX Club",
     "state": "NSW",
     "eventUrl": "https://entryboss.cc/races/28695"
+  },
+  {
+    "eventName": "Snowy Riverina 3x3 Cross Country MTB Series - Rnd 3 Wagga Wagga - Individual Rnd Entries",
+    "eventDate": "2026-06-21T00:00:00Z",
+    "clubName": "MTB Wagga",
+    "state": "NSW",
+    "eventUrl": "https://entryboss.cc/races/29141"
   },
   {
     "eventName": "2026 Ser 2 Rnd 1",
@@ -343,6 +343,13 @@
     "eventUrl": "https://entryboss.cc/races/30026"
   },
   {
+    "eventName": "WSMTB XC Club Championships - 2026",
+    "eventDate": "2026-06-28T00:00:00Z",
+    "clubName": "Western Sydney MTB Club",
+    "state": "NSW",
+    "eventUrl": "https://entryboss.cc/races/28907"
+  },
+  {
     "eventName": "2026 Southern Cross Junior Tour",
     "eventDate": "2026-06-28T00:00:00Z",
     "clubName": "AusCycling (New South Wales)",
@@ -355,13 +362,6 @@
     "clubName": "Western Sydney MTB Club",
     "state": "NSW",
     "eventUrl": "https://entryboss.cc/races/28906"
-  },
-  {
-    "eventName": "WSMTB XC Club Championships - 2026",
-    "eventDate": "2026-06-28T00:00:00Z",
-    "clubName": "Western Sydney MTB Club",
-    "state": "NSW",
-    "eventUrl": "https://entryboss.cc/races/28907"
   },
   {
     "eventName": "2026 Ser 2 Rnd 2",
@@ -469,18 +469,18 @@
     "eventUrl": "https://entryboss.cc/races/30029"
   },
   {
-    "eventName": "Hawkesbury Clubby Round 9 - 2026",
-    "eventDate": "2026-08-09T00:00:00Z",
-    "clubName": "Hawkesbury Hornets BMX Club",
-    "state": "NSW",
-    "eventUrl": "https://entryboss.cc/races/29051"
-  },
-  {
     "eventName": "WSMTB CLUB DAY - SEVEN - 2026",
     "eventDate": "2026-08-09T00:00:00Z",
     "clubName": "Western Sydney MTB Club",
     "state": "NSW",
     "eventUrl": "https://entryboss.cc/races/29625"
+  },
+  {
+    "eventName": "Hawkesbury Clubby Round 9 - 2026",
+    "eventDate": "2026-08-09T00:00:00Z",
+    "clubName": "Hawkesbury Hornets BMX Club",
+    "state": "NSW",
+    "eventUrl": "https://entryboss.cc/races/29051"
   },
   {
     "eventName": "Junction Hill Crit",
@@ -497,18 +497,18 @@
     "eventUrl": "https://entryboss.cc/races/28242"
   },
   {
-    "eventName": "MAXXIS - NSW State Gravity Series - Barrington (GE)",
-    "eventDate": "2026-08-16T00:00:00Z",
-    "clubName": "Barrington Bike Park",
-    "state": "NSW",
-    "eventUrl": "https://entryboss.cc/races/29957"
-  },
-  {
     "eventName": "WSMTB XC - ROUND 3 - 2026",
     "eventDate": "2026-08-16T00:00:00Z",
     "clubName": "Western Sydney MTB Club",
     "state": "NSW",
     "eventUrl": "https://entryboss.cc/races/28903"
+  },
+  {
+    "eventName": "MAXXIS - NSW State Gravity Series - Barrington (GE)",
+    "eventDate": "2026-08-16T00:00:00Z",
+    "clubName": "Barrington Bike Park",
+    "state": "NSW",
+    "eventUrl": "https://entryboss.cc/races/29957"
   },
   {
     "eventName": "2026 Ser 2 Rnd 5",
@@ -518,18 +518,18 @@
     "eventUrl": "https://entryboss.cc/races/29411"
   },
   {
-    "eventName": "2026 Winter Criterium",
-    "eventDate": "2026-08-22T00:00:00Z",
-    "clubName": "Central Coast CC",
-    "state": "NSW",
-    "eventUrl": "https://entryboss.cc/races/30030"
-  },
-  {
     "eventName": "Terrigal BMX Club 2026 Series 2 Round 3",
     "eventDate": "2026-08-22T00:00:00Z",
     "clubName": "Terrigal BMX Club",
     "state": "NSW",
     "eventUrl": "https://entryboss.cc/races/29021"
+  },
+  {
+    "eventName": "2026 Winter Criterium",
+    "eventDate": "2026-08-22T00:00:00Z",
+    "clubName": "Central Coast CC",
+    "state": "NSW",
+    "eventUrl": "https://entryboss.cc/races/30030"
   },
   {
     "eventName": "2026 Ser 2 Rnd 6",
@@ -581,18 +581,18 @@
     "eventUrl": "https://entryboss.cc/races/29413"
   },
   {
-    "eventName": "Terrigal BMX Club 2026 Series 2 Round 4",
-    "eventDate": "2026-09-12T00:00:00Z",
-    "clubName": "Terrigal BMX Club",
-    "state": "NSW",
-    "eventUrl": "https://entryboss.cc/races/29022"
-  },
-  {
     "eventName": "2026 Winter Criterium",
     "eventDate": "2026-09-12T00:00:00Z",
     "clubName": "Central Coast CC",
     "state": "NSW",
     "eventUrl": "https://entryboss.cc/races/30031"
+  },
+  {
+    "eventName": "Terrigal BMX Club 2026 Series 2 Round 4",
+    "eventDate": "2026-09-12T00:00:00Z",
+    "clubName": "Terrigal BMX Club",
+    "state": "NSW",
+    "eventUrl": "https://entryboss.cc/races/29022"
   },
   {
     "eventName": "Junction Hill Crit",
@@ -623,18 +623,18 @@
     "eventUrl": "https://entryboss.cc/races/29414"
   },
   {
-    "eventName": "Hawkesbury Clubby Round 11 - 2026",
-    "eventDate": "2026-09-20T00:00:00Z",
-    "clubName": "Hawkesbury Hornets BMX Club",
-    "state": "NSW",
-    "eventUrl": "https://entryboss.cc/races/29053"
-  },
-  {
     "eventName": "WSMTB GRAVITY - ROUND 3 - 2026",
     "eventDate": "2026-09-20T00:00:00Z",
     "clubName": "Western Sydney MTB Club",
     "state": "NSW",
     "eventUrl": "https://entryboss.cc/races/28900"
+  },
+  {
+    "eventName": "Hawkesbury Clubby Round 11 - 2026",
+    "eventDate": "2026-09-20T00:00:00Z",
+    "clubName": "Hawkesbury Hornets BMX Club",
+    "state": "NSW",
+    "eventUrl": "https://entryboss.cc/races/29053"
   },
   {
     "eventName": "Junction Hill Crit",
@@ -714,18 +714,18 @@
     "eventUrl": "https://entryboss.cc/races/29416"
   },
   {
-    "eventName": "Central West Inter-Club Round 6 - Bathurst - 2025",
-    "eventDate": "2026-11-01T00:00:00Z",
-    "clubName": "Central West Interclub Series",
-    "state": "NSW",
-    "eventUrl": "https://entryboss.cc/races/28897"
-  },
-  {
     "eventName": "Hawkesbury Clubby Round 14 - 2026",
     "eventDate": "2026-11-01T00:00:00Z",
     "clubName": "Hawkesbury Hornets BMX Club",
     "state": "NSW",
     "eventUrl": "https://entryboss.cc/races/29057"
+  },
+  {
+    "eventName": "Central West Inter-Club Round 6 - Bathurst - 2025",
+    "eventDate": "2026-11-01T00:00:00Z",
+    "clubName": "Central West Interclub Series",
+    "state": "NSW",
+    "eventUrl": "https://entryboss.cc/races/28897"
   },
   {
     "eventName": "2026 Ser 2 Rnd 11",
@@ -756,18 +756,18 @@
     "eventUrl": "https://entryboss.cc/races/28905"
   },
   {
-    "eventName": "Terrigal BMX Club 2026 Series 2 Round 7",
-    "eventDate": "2026-11-21T00:00:00Z",
-    "clubName": "Terrigal BMX Club",
-    "state": "NSW",
-    "eventUrl": "https://entryboss.cc/races/29025"
-  },
-  {
     "eventName": "Glenugie Road Race",
     "eventDate": "2026-11-21T00:00:00Z",
     "clubName": "Grafton Cycle Club",
     "state": "NSW",
     "eventUrl": "https://entryboss.cc/races/29165"
+  },
+  {
+    "eventName": "Terrigal BMX Club 2026 Series 2 Round 7",
+    "eventDate": "2026-11-21T00:00:00Z",
+    "clubName": "Terrigal BMX Club",
+    "state": "NSW",
+    "eventUrl": "https://entryboss.cc/races/29025"
   },
   {
     "eventName": "MTB Party Day and AGM 2026",

@@ -1,12 +1,5 @@
 [
   {
-    "eventName": "Stan Gurney VC Memorial Criterium",
-    "eventDate": "2026-04-25T00:00:00Z",
-    "clubName": "Midland Cycling Club",
-    "state": "WA",
-    "eventUrl": "https://entryboss.cc/races/30288"
-  },
-  {
     "eventName": "ANZAC Memorial Race - Rockingham Criterium",
     "eventDate": "2026-04-26T00:00:00Z",
     "clubName": "West Coast Masters Cycling Council",
@@ -21,18 +14,18 @@
     "eventUrl": "https://entryboss.cc/races/30148"
   },
   {
+    "eventName": "Herne Hill Road Race - Start of Winter Season",
+    "eventDate": "2026-05-03T00:00:00Z",
+    "clubName": "West Coast Masters Cycling Council",
+    "state": "WA",
+    "eventUrl": "https://entryboss.cc/races/30284"
+  },
+  {
     "eventName": "SWCC Gravel Event 2026 Boyanup Bull Chase 50km and 75km options",
     "eventDate": "2026-05-03T00:00:00Z",
     "clubName": "South West Cycle Club",
     "state": "WA",
     "eventUrl": "https://entryboss.cc/races/30312"
-  },
-  {
-    "eventName": "Herne Hill Road Race - End of Summer Season",
-    "eventDate": "2026-05-03T00:00:00Z",
-    "clubName": "West Coast Masters Cycling Council",
-    "state": "WA",
-    "eventUrl": "https://entryboss.cc/races/30284"
   },
   {
     "eventName": "2026 AusCycling BMX Racing State Series - WA RD4 Eastern Goldfields",
@@ -49,11 +42,25 @@
     "eventUrl": "https://entryboss.cc/races/28391"
   },
   {
-    "eventName": "2026 WA Downhill State Series - Rnd 4 - Dwellingup",
+    "eventName": "2026 WA Downhill State Series - Rnd 4 - Dwellingup (Slingshot)",
     "eventDate": "2026-05-31T00:00:00Z",
     "clubName": "Peel Downhill Mountain Bike Club",
     "state": "WA",
     "eventUrl": "https://entryboss.cc/races/29634"
+  },
+  {
+    "eventName": "2026 WA Downhill State Series - Rnd 5 - Nannup (Spur Rd)",
+    "eventDate": "2026-06-28T00:00:00Z",
+    "clubName": "Peel Downhill Mountain Bike Club",
+    "state": "WA",
+    "eventUrl": "https://entryboss.cc/races/30485"
+  },
+  {
+    "eventName": "2026 WA Downhill State Series - Rnd 6 - Wellington Mills (Gravity)",
+    "eventDate": "2026-07-26T00:00:00Z",
+    "clubName": "Peel Downhill Mountain Bike Club",
+    "state": "WA",
+    "eventUrl": "https://entryboss.cc/races/30486"
   },
   {
     "eventName": "2026 AusCycling BMX Racing State Series - WA RD6 Southside",
@@ -70,10 +77,24 @@
     "eventUrl": "https://entryboss.cc/races/28393"
   },
   {
+    "eventName": "2026 WA Downhill State Series - Rnd 7 - Toms Crossing (Devil's Pass)",
+    "eventDate": "2026-08-30T00:00:00Z",
+    "clubName": "Peel Downhill Mountain Bike Club",
+    "state": "WA",
+    "eventUrl": "https://entryboss.cc/races/30487"
+  },
+  {
     "eventName": "2026 AusCycling BMX Racing State Series - WA RD8 Byford",
     "eventDate": "2026-09-13T00:00:00Z",
     "clubName": "AusCycling (WA)",
     "state": "WA",
     "eventUrl": "https://entryboss.cc/races/28394"
+  },
+  {
+    "eventName": "2026 WA Downhill State Championship - Nannup (Ellis Creek)",
+    "eventDate": "2026-09-20T00:00:00Z",
+    "clubName": "Peel Downhill Mountain Bike Club",
+    "state": "WA",
+    "eventUrl": "https://entryboss.cc/races/30488"
   }
 ]
