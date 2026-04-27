@@ -1,12 +1,5 @@
 [
   {
-    "eventName": "2026 First Descent Series R2 - Mt Torrens - Dazzleland",
-    "eventDate": "2026-04-26T00:00:00Z",
-    "clubName": "Inside Line Mountain Bike Club",
-    "state": "SA",
-    "eventUrl": "https://entryboss.cc/races/29783"
-  },
-  {
     "eventName": "Wednesday Open Track Training",
     "eventDate": "2026-04-29T00:00:00Z",
     "clubName": "AusCycling SA - Superdrome",
@@ -21,6 +14,13 @@
     "eventUrl": "https://entryboss.cc/races/29714"
   },
   {
+    "eventName": "Series 1 of 2026 - R7",
+    "eventDate": "2026-05-01T00:00:00Z",
+    "clubName": "Blue Lake BMX",
+    "state": "SA",
+    "eventUrl": "https://entryboss.cc/races/30508"
+  },
+  {
     "eventName": "Super Series - Series Pass",
     "eventDate": "2026-05-02T00:00:00Z",
     "clubName": "AusCycling (South Australia)",
@@ -28,18 +28,18 @@
     "eventUrl": "https://entryboss.cc/races/5458"
   },
   {
-    "eventName": "2026 BikeChain U19 National Road Series \u0026 Santini SA Junior Road Series - Round 1 - Tour of the Riverland",
-    "eventDate": "2026-05-02T00:00:00Z",
-    "clubName": "Norwood Cycling Club",
-    "state": "SA",
-    "eventUrl": "https://entryboss.cc/races/28043"
-  },
-  {
     "eventName": "52nd Annual Riverland Cycling Weekend - Day 1 - Barry Skinner Classic (Handicap)",
     "eventDate": "2026-05-02T00:00:00Z",
     "clubName": "Norwood Cycling Club",
     "state": "SA",
     "eventUrl": "https://entryboss.cc/races/28045"
+  },
+  {
+    "eventName": "2026 BikeChain U19 National Road Series \u0026 Santini SA Junior Road Series - Round 1 - Tour of the Riverland",
+    "eventDate": "2026-05-02T00:00:00Z",
+    "clubName": "Norwood Cycling Club",
+    "state": "SA",
+    "eventUrl": "https://entryboss.cc/races/28043"
   },
   {
     "eventName": "2023 Cervelo Super Series - Series Pass - Junior Riders",
@@ -49,25 +49,11 @@
     "eventUrl": "https://entryboss.cc/races/17094"
   },
   {
-    "eventName": "2023 Cervelo Super Series - Series Pass - Senior Riders",
-    "eventDate": "2026-05-02T00:00:00Z",
-    "clubName": "AusCycling (South Australia)",
-    "state": "SA",
-    "eventUrl": "https://entryboss.cc/races/17080"
-  },
-  {
     "eventName": "MetroMap Super Series - Seniors Individual Series Pass",
     "eventDate": "2026-05-02T00:00:00Z",
     "clubName": "AusCycling (South Australia)",
     "state": "SA",
     "eventUrl": "https://entryboss.cc/races/8340"
-  },
-  {
-    "eventName": "52nd Annual Riverland Cycling Weekend - Day 1 - Barry Skinner Classic (Handicap)",
-    "eventDate": "2026-05-02T00:00:00Z",
-    "clubName": "AusCycling (South Australia)",
-    "state": "SA",
-    "eventUrl": "https://entryboss.cc/races/28045"
   },
   {
     "eventName": "2026 BikeChain U19 National Road Series \u0026 Santini SA Junior Road Series - Round 1 - Tour of the Riverland",
@@ -77,18 +63,18 @@
     "eventUrl": "https://entryboss.cc/races/28043"
   },
   {
-    "eventName": "Cervelo Super Series - Series Pass  - Senior Riders",
+    "eventName": "2023 Cervelo Super Series - Series Pass - Senior Riders",
     "eventDate": "2026-05-02T00:00:00Z",
     "clubName": "AusCycling (South Australia)",
     "state": "SA",
-    "eventUrl": "https://entryboss.cc/races/12744"
+    "eventUrl": "https://entryboss.cc/races/17080"
   },
   {
-    "eventName": "99 Bikes Junior Super Series - Series Pass - Junior Riders",
+    "eventName": "52nd Annual Riverland Cycling Weekend - Day 1 - Barry Skinner Classic (Handicap)",
     "eventDate": "2026-05-02T00:00:00Z",
     "clubName": "AusCycling (South Australia)",
     "state": "SA",
-    "eventUrl": "https://entryboss.cc/races/12777"
+    "eventUrl": "https://entryboss.cc/races/28045"
   },
   {
     "eventName": "99 Bikes Junior Super Series - Junior Individual Series Pass",
@@ -98,16 +84,23 @@
     "eventUrl": "https://entryboss.cc/races/8341"
   },
   {
-    "eventName": "52nd Annual Riverland Cycling Weekend - Day 2 - Berri Kermesse",
-    "eventDate": "2026-05-03T00:00:00Z",
-    "clubName": "Norwood Cycling Club",
+    "eventName": "99 Bikes Junior Super Series - Series Pass - Junior Riders",
+    "eventDate": "2026-05-02T00:00:00Z",
+    "clubName": "AusCycling (South Australia)",
     "state": "SA",
-    "eventUrl": "https://entryboss.cc/races/28044"
+    "eventUrl": "https://entryboss.cc/races/12777"
+  },
+  {
+    "eventName": "Cervelo Super Series - Series Pass  - Senior Riders",
+    "eventDate": "2026-05-02T00:00:00Z",
+    "clubName": "AusCycling (South Australia)",
+    "state": "SA",
+    "eventUrl": "https://entryboss.cc/races/12744"
   },
   {
     "eventName": "52nd Annual Riverland Cycling Weekend - Day 2 - Berri Kermesse",
     "eventDate": "2026-05-03T00:00:00Z",
-    "clubName": "AusCycling (South Australia)",
+    "clubName": "Norwood Cycling Club",
     "state": "SA",
     "eventUrl": "https://entryboss.cc/races/28044"
   },
@@ -133,6 +126,13 @@
     "eventUrl": "https://entryboss.cc/races/30249"
   },
   {
+    "eventName": "52nd Annual Riverland Cycling Weekend - Day 2 - Berri Kermesse",
+    "eventDate": "2026-05-03T00:00:00Z",
+    "clubName": "AusCycling (South Australia)",
+    "state": "SA",
+    "eventUrl": "https://entryboss.cc/races/28044"
+  },
+  {
     "eventName": "The Bend Time Trial",
     "eventDate": "2026-05-05T00:00:00Z",
     "clubName": "AusCycling (South Australia)",
@@ -154,18 +154,18 @@
     "eventUrl": "https://entryboss.cc/races/28274"
   },
   {
-    "eventName": "HILL CLIMB TT (Kennels to Blackburn Drive)",
-    "eventDate": "2026-05-10T00:00:00Z",
-    "clubName": "Adelaide Hills Cycling Club",
-    "state": "SA",
-    "eventUrl": "https://entryboss.cc/races/29217"
-  },
-  {
     "eventName": "GESA 2026 Round 2",
     "eventDate": "2026-05-10T00:00:00Z",
     "clubName": "Gravity Enduro SA",
     "state": "SA",
     "eventUrl": "https://entryboss.cc/races/30461"
+  },
+  {
+    "eventName": "HILL CLIMB TT (Kennels to Blackburn Drive)",
+    "eventDate": "2026-05-10T00:00:00Z",
+    "clubName": "Adelaide Hills Cycling Club",
+    "state": "SA",
+    "eventUrl": "https://entryboss.cc/races/29217"
   },
   {
     "eventName": "Moto Pace - Track and Road",
@@ -282,7 +282,7 @@
   {
     "eventName": "South Coast Cycling Club Junior Tour 2026",
     "eventDate": "2026-07-05T00:00:00Z",
-    "clubName": "South Coast Cycling",
+    "clubName": "AusCycling (South Australia)",
     "state": "SA",
     "eventUrl": "https://entryboss.cc/races/29651"
   },
@@ -292,6 +292,13 @@
     "clubName": "South Coast Cycling",
     "state": "SA",
     "eventUrl": "https://entryboss.cc/races/29655"
+  },
+  {
+    "eventName": "South Coast Cycling Club Junior Tour 2026",
+    "eventDate": "2026-07-05T00:00:00Z",
+    "clubName": "South Coast Cycling",
+    "state": "SA",
+    "eventUrl": "https://entryboss.cc/races/29651"
   },
   {
     "eventName": "Crossfire Cup Round 2",
@@ -306,13 +313,6 @@
     "clubName": "Adelaide Hills Cycling Club",
     "state": "SA",
     "eventUrl": "https://entryboss.cc/races/29276"
-  },
-  {
-    "eventName": "South Coast Cycling Club Junior Tour 2026",
-    "eventDate": "2026-07-05T00:00:00Z",
-    "clubName": "AusCycling (South Australia)",
-    "state": "SA",
-    "eventUrl": "https://entryboss.cc/races/29651"
   },
   {
     "eventName": "Whyalla Wild Dog 2026",
@@ -364,18 +364,18 @@
     "eventUrl": "https://entryboss.cc/races/28278"
   },
   {
-    "eventName": "BRADBURY (Bradbury)",
-    "eventDate": "2026-09-06T00:00:00Z",
-    "clubName": "Adelaide Hills Cycling Club",
-    "state": "SA",
-    "eventUrl": "https://entryboss.cc/races/29287"
-  },
-  {
     "eventName": "2026 State R5 - Mystery",
     "eventDate": "2026-09-06T00:00:00Z",
     "clubName": "Inside Line Mountain Bike Club",
     "state": "SA",
     "eventUrl": "https://entryboss.cc/races/29781"
+  },
+  {
+    "eventName": "BRADBURY (Bradbury)",
+    "eventDate": "2026-09-06T00:00:00Z",
+    "clubName": "Adelaide Hills Cycling Club",
+    "state": "SA",
+    "eventUrl": "https://entryboss.cc/races/29287"
   },
   {
     "eventName": "2026 AusCycling BMX State Series - SA R4 Copper Coast",
@@ -406,13 +406,6 @@
     "eventUrl": "https://entryboss.cc/races/28855"
   },
   {
-    "eventName": "2026 SA State Champs (\u0026 State Series R6) - Mt Gambier - Wheelnutz",
-    "eventDate": "2026-10-04T00:00:00Z",
-    "clubName": "Inside Line Mountain Bike Club",
-    "state": "SA",
-    "eventUrl": "https://entryboss.cc/races/29782"
-  },
-  {
     "eventName": "STAMPS RD (Macclesfield)",
     "eventDate": "2026-10-04T00:00:00Z",
     "clubName": "Adelaide Hills Cycling Club",
@@ -425,6 +418,13 @@
     "clubName": "AusCycling (South Australia)",
     "state": "SA",
     "eventUrl": "https://entryboss.cc/races/28856"
+  },
+  {
+    "eventName": "2026 SA State Champs (\u0026 State Series R6) - Mt Gambier - Wheelnutz",
+    "eventDate": "2026-10-04T00:00:00Z",
+    "clubName": "Inside Line Mountain Bike Club",
+    "state": "SA",
+    "eventUrl": "https://entryboss.cc/races/29782"
   },
   {
     "eventName": "2026 AusCycling BMX State Series - SA R7 Happy Valley BMX",
