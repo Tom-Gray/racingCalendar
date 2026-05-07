@@ -1,12 +1,5 @@
 [
   {
-    "eventName": "LAUNCESTON BMX - TWILIGHT SERIES 2021 - SERIES ENTRY",
-    "eventDate": "2026-05-09T00:00:00Z",
-    "clubName": "Launceston BMX Club",
-    "state": "TAS",
-    "eventUrl": "https://entryboss.cc/races/8627"
-  },
-  {
     "eventName": "LAUNCESTON BMX - TWILIGHT SERIES 2023 - SERIES PASS",
     "eventDate": "2026-05-09T00:00:00Z",
     "clubName": "Launceston BMX Club",
@@ -14,11 +7,11 @@
     "eventUrl": "https://entryboss.cc/races/14524"
   },
   {
-    "eventName": "2025 Night Series - Series Entry (All 3 events)",
+    "eventName": "LAUNCESTON BMX - TWILIGHT SERIES 2021 - SERIES ENTRY",
     "eventDate": "2026-05-09T00:00:00Z",
     "clubName": "Launceston BMX Club",
     "state": "TAS",
-    "eventUrl": "https://entryboss.cc/races/27935"
+    "eventUrl": "https://entryboss.cc/races/8627"
   },
   {
     "eventName": "LAUNCESTON BMX - NIGHT SERIES 2024 - SERIES PASS",
@@ -28,11 +21,11 @@
     "eventUrl": "https://entryboss.cc/races/20374"
   },
   {
-    "eventName": "2026 Night Series - Series Entry - ALL 3 ROUNDS",
+    "eventName": "2025 Night Series - Series Entry (All 3 events)",
     "eventDate": "2026-05-09T00:00:00Z",
     "clubName": "Launceston BMX Club",
     "state": "TAS",
-    "eventUrl": "https://entryboss.cc/races/30426"
+    "eventUrl": "https://entryboss.cc/races/27935"
   },
   {
     "eventName": "2026 Night Series - Round 1",
@@ -40,6 +33,13 @@
     "clubName": "Launceston BMX Club",
     "state": "TAS",
     "eventUrl": "https://entryboss.cc/races/30346"
+  },
+  {
+    "eventName": "2026 Night Series - Series Entry - ALL 3 ROUNDS",
+    "eventDate": "2026-05-09T00:00:00Z",
+    "clubName": "Launceston BMX Club",
+    "state": "TAS",
+    "eventUrl": "https://entryboss.cc/races/30426"
   },
   {
     "eventName": "2026 AusCycling BMX State Series - RD3 Launceston",
@@ -84,18 +84,18 @@
     "eventUrl": "https://entryboss.cc/races/29982"
   },
   {
-    "eventName": "Clash 4 Cash 2026",
-    "eventDate": "2026-05-30T00:00:00Z",
-    "clubName": "Southern City BMX",
-    "state": "TAS",
-    "eventUrl": "https://entryboss.cc/races/29800"
-  },
-  {
     "eventName": "Cressy Road Series - Race 2",
     "eventDate": "2026-05-30T00:00:00Z",
     "clubName": "Launceston City Cycling Club",
     "state": "TAS",
     "eventUrl": "https://entryboss.cc/races/30314"
+  },
+  {
+    "eventName": "Clash 4 Cash 2026",
+    "eventDate": "2026-05-30T00:00:00Z",
+    "clubName": "Southern City BMX",
+    "state": "TAS",
+    "eventUrl": "https://entryboss.cc/races/29800"
   },
   {
     "eventName": "St Helens - Pedalheads MTB club Comeback Race - Icarus 2026",
@@ -126,18 +126,18 @@
     "eventUrl": "https://entryboss.cc/races/30425"
   },
   {
-    "eventName": "2026 AusCycling BMX State Series - RD4 Southern City",
-    "eventDate": "2026-06-27T00:00:00Z",
-    "clubName": "AusCycling (Tasmania)",
-    "state": "TAS",
-    "eventUrl": "https://entryboss.cc/races/28521"
-  },
-  {
     "eventName": "Cressy Road Series - Race 3",
     "eventDate": "2026-06-27T00:00:00Z",
     "clubName": "Launceston City Cycling Club",
     "state": "TAS",
     "eventUrl": "https://entryboss.cc/races/30315"
+  },
+  {
+    "eventName": "2026 AusCycling BMX State Series - RD4 Southern City",
+    "eventDate": "2026-06-27T00:00:00Z",
+    "clubName": "AusCycling (Tasmania)",
+    "state": "TAS",
+    "eventUrl": "https://entryboss.cc/races/28521"
   },
   {
     "eventName": "NW MTB Series - Winter in Paradise - Round 4",
