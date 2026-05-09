@@ -1,12 +1,5 @@
 [
   {
-    "eventName": "Fergie Valley MTB XCO, ENDURO \u0026 SOCIAL RIDE",
-    "eventDate": "2026-05-24T00:00:00Z",
-    "clubName": "Ferguson Valley Mountain Bike Club",
-    "state": "WA",
-    "eventUrl": "https://entryboss.cc/races/30671"
-  },
-  {
     "eventName": "Chidlow A - Road Race",
     "eventDate": "2026-05-24T00:00:00Z",
     "clubName": "West Coast Masters Cycling Council",
@@ -14,18 +7,11 @@
     "eventUrl": "https://entryboss.cc/races/30670"
   },
   {
-    "eventName": "2026 Junior State Road Championships, Para/Transplant State Road Championships and State Open Kermesse Championships",
-    "eventDate": "2026-05-30T00:00:00Z",
-    "clubName": "AusCycling (WA)",
+    "eventName": "Ferguson Valley MTB XCO, ENDURO \u0026 SOCIAL RIDE- Pile Rd",
+    "eventDate": "2026-05-24T00:00:00Z",
+    "clubName": "Ferguson Valley Mountain Bike Club",
     "state": "WA",
-    "eventUrl": "https://entryboss.cc/races/30435"
-  },
-  {
-    "eventName": "2026 Junior State Individual Time Trial (ITT) Championships",
-    "eventDate": "2026-05-30T00:00:00Z",
-    "clubName": "AusCycling (WA)",
-    "state": "WA",
-    "eventUrl": "https://entryboss.cc/races/30514"
+    "eventUrl": "https://entryboss.cc/races/30671"
   },
   {
     "eventName": "2026 AusCycling BMX Racing State Series - WA RD4 Eastern Goldfields",
@@ -35,11 +21,18 @@
     "eventUrl": "https://entryboss.cc/races/28390"
   },
   {
-    "eventName": "2026 AusCycling BMX Racing State Series - WA RD5 Eastern Goldfields",
-    "eventDate": "2026-05-31T00:00:00Z",
+    "eventName": "2026 Junior State Individual Time Trial (ITT) Championships",
+    "eventDate": "2026-05-30T00:00:00Z",
     "clubName": "AusCycling (WA)",
     "state": "WA",
-    "eventUrl": "https://entryboss.cc/races/28391"
+    "eventUrl": "https://entryboss.cc/races/30514"
+  },
+  {
+    "eventName": "2026 Junior State Road Championships, Para/Transplant State Road Championships and State Open Kermesse Championships",
+    "eventDate": "2026-05-30T00:00:00Z",
+    "clubName": "AusCycling (WA)",
+    "state": "WA",
+    "eventUrl": "https://entryboss.cc/races/30435"
   },
   {
     "eventName": "2026 WA Downhill State Series - Rnd 4 - Dwellingup (Slingshot)",
@@ -49,7 +42,14 @@
     "eventUrl": "https://entryboss.cc/races/29634"
   },
   {
-    "eventName": "Fergie Valley MTB XCO, ENDURO \u0026 SOCIAL RIDE #2-Wellington Dam",
+    "eventName": "2026 AusCycling BMX Racing State Series - WA RD5 Eastern Goldfields",
+    "eventDate": "2026-05-31T00:00:00Z",
+    "clubName": "AusCycling (WA)",
+    "state": "WA",
+    "eventUrl": "https://entryboss.cc/races/28391"
+  },
+  {
+    "eventName": "Ferguson Valley MTB XCO, ENDURO \u0026 SOCIAL RIDE #2-Wellington Dam",
     "eventDate": "2026-06-07T00:00:00Z",
     "clubName": "Ferguson Valley Mountain Bike Club",
     "state": "WA",
@@ -70,7 +70,7 @@
     "eventUrl": "https://entryboss.cc/races/30485"
   },
   {
-    "eventName": "Fergie Valley MTB XCO, ENDURO \u0026 SOCIAL RIDE #3",
+    "eventName": "Ferguson Valley MTB XCO, ENDURO \u0026 SOCIAL RIDE #3-Pile Rd",
     "eventDate": "2026-07-05T00:00:00Z",
     "clubName": "Ferguson Valley Mountain Bike Club",
     "state": "WA",
@@ -126,18 +126,18 @@
     "eventUrl": "https://entryboss.cc/races/28394"
   },
   {
-    "eventName": "2026 WA Downhill State Championship - Nannup (Ellis Creek)",
-    "eventDate": "2026-09-20T00:00:00Z",
-    "clubName": "Peel Downhill Mountain Bike Club",
-    "state": "WA",
-    "eventUrl": "https://entryboss.cc/races/30488"
-  },
-  {
     "eventName": "Ferguson Valley MTB XCO, ENDURO \u0026 SOCIAL RIDE #6-Wellington Dam",
     "eventDate": "2026-09-20T00:00:00Z",
     "clubName": "Ferguson Valley Mountain Bike Club",
     "state": "WA",
     "eventUrl": "https://entryboss.cc/races/30680"
+  },
+  {
+    "eventName": "2026 WA Downhill State Championship - Nannup (Ellis Creek)",
+    "eventDate": "2026-09-20T00:00:00Z",
+    "clubName": "Peel Downhill Mountain Bike Club",
+    "state": "WA",
+    "eventUrl": "https://entryboss.cc/races/30488"
   },
   {
     "eventName": "Ferguson Valley MTB XCO, ENDURO \u0026 SOCIAL RIDE #7-Pile Rd",
