@@ -1,17 +1,17 @@
 [
   {
-    "eventName": "Cressy Road Series - Race 1",
-    "eventDate": "2026-05-16T00:00:00Z",
-    "clubName": "Launceston City Cycling Club",
-    "state": "TAS",
-    "eventUrl": "https://entryboss.cc/races/30313"
-  },
-  {
     "eventName": "2026 AusCycling BMX State Series - RD3 Launceston",
     "eventDate": "2026-05-16T00:00:00Z",
     "clubName": "AusCycling (Tasmania)",
     "state": "TAS",
     "eventUrl": "https://entryboss.cc/races/28520"
+  },
+  {
+    "eventName": "Cressy Road Series - Race 1",
+    "eventDate": "2026-05-16T00:00:00Z",
+    "clubName": "Launceston City Cycling Club",
+    "state": "TAS",
+    "eventUrl": "https://entryboss.cc/races/30313"
   },
   {
     "eventName": "Bracknell",
@@ -70,11 +70,11 @@
     "eventUrl": "https://entryboss.cc/races/27935"
   },
   {
-    "eventName": "2026 Night Series - Round 2",
+    "eventName": "LAUNCESTON BMX - TWILIGHT SERIES 2023 - SERIES PASS",
     "eventDate": "2026-06-13T00:00:00Z",
     "clubName": "Launceston BMX Club",
     "state": "TAS",
-    "eventUrl": "https://entryboss.cc/races/30424"
+    "eventUrl": "https://entryboss.cc/races/14524"
   },
   {
     "eventName": "LAUNCESTON BMX - NIGHT SERIES 2024 - SERIES PASS",
@@ -84,13 +84,6 @@
     "eventUrl": "https://entryboss.cc/races/20374"
   },
   {
-    "eventName": "2026 Night Series - Series Entry - ALL 3 ROUNDS",
-    "eventDate": "2026-06-13T00:00:00Z",
-    "clubName": "Launceston BMX Club",
-    "state": "TAS",
-    "eventUrl": "https://entryboss.cc/races/30426"
-  },
-  {
     "eventName": "LAUNCESTON BMX - TWILIGHT SERIES 2021 - SERIES ENTRY",
     "eventDate": "2026-06-13T00:00:00Z",
     "clubName": "Launceston BMX Club",
@@ -98,11 +91,18 @@
     "eventUrl": "https://entryboss.cc/races/8627"
   },
   {
-    "eventName": "LAUNCESTON BMX - TWILIGHT SERIES 2023 - SERIES PASS",
+    "eventName": "2026 Night Series - Series Entry - ALL 3 ROUNDS",
     "eventDate": "2026-06-13T00:00:00Z",
     "clubName": "Launceston BMX Club",
     "state": "TAS",
-    "eventUrl": "https://entryboss.cc/races/14524"
+    "eventUrl": "https://entryboss.cc/races/30426"
+  },
+  {
+    "eventName": "2026 Night Series - Round 2",
+    "eventDate": "2026-06-13T00:00:00Z",
+    "clubName": "Launceston BMX Club",
+    "state": "TAS",
+    "eventUrl": "https://entryboss.cc/races/30424"
   },
   {
     "eventName": "NW MTB Series - Winter in Paradise - Round 3",
