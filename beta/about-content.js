@@ -1,9 +1,9 @@
 // Shared About Page Content
 const aboutContent = {
     whatIsThis: [
-        "We love EntryBoss but we struggled to keep track of upcoming races across different clubs.",
-        "This site aggregates race information from EntryBoss and presents them in a more discoverable format.",
-        "We'll remember your favourite clubs and show you every posted event so you won't miss a thing. Click through to the event page to register directly on EntryBoss."
+        "It's hard to keep track of club events around the state and across the country. I built this site to help me find around me. I hope it can help you find events in your state.",
+        "This site aggregates race information from EntryBoss and Buncheur and presents it in a more discoverable format.",
+        "WIt remembers your filter settings and shows you every posted event so you won't miss a thing. Click through to the event page to register directly on EntryBoss or Buncheur."
     ],
     contact: {
         intro: "Have a question or suggestion?",
@@ -14,7 +14,9 @@ const aboutContent = {
         dataSource: "Data sourced from",
         dataSourceUrl: "https://entryboss.cc",
         dataSourceName: "EntryBoss",
-        note: "Events link directly to EntryBoss for registration"
+        secondDataSourceUrl: "https://www.buncheur.com",
+        secondDataSourceName: "buncheur.com",
+        note: "Events link directly to EntryBoss or Buncheur for registration"
     }
 };
 
