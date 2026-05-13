@@ -12,15 +12,15 @@
     "test:deploy": "playwright test tests/data-loading.spec.js --reporter=line"
   },
   "keywords": [
-    "cycling",
-    "events",
-    "calendar",
-    "entryboss",
-    "victoria",
-    "australia"
+  "cycling",
+  "events",
+  "calendar",
+  "entryboss",
+  "buncheur",
+  "victoria",
+  "australia"
   ],
-  "author": "EntryBoss Discovery Tool",
-  "license": "MIT",
+  "author": "Cycling Event Discovery Tool",  "license": "MIT",
   "devDependencies": {
     "@playwright/test": "^1.40.0"
   }

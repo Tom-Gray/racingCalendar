@@ -37,8 +37,8 @@ type Event struct {
 
 var rootCmd = &cobra.Command{
 	Use:   "racecalendar",
-	Short: "EntryBoss Discovery Tool - scrape cycling events from Australian clubs",
-	Long:  `A CLI tool to scrape cycling events from EntryBoss for Australian clubs and generate static data files.`,
+	Short: "Cycling Event Discovery Tool - scrape events from Australian clubs",
+	Long:  `A CLI tool to scrape cycling events from EntryBoss and Buncheur for Australian clubs and generate static data files.`,
 }
 
 var updateClubsCmd = &cobra.Command{
