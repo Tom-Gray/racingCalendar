@@ -1,163 +1,443 @@
 [
   {
+    "eventName": "2022 Hills BMX Club Tri Series - Series Entry",
+    "eventDate": "2026-01-14T00:00:00Z",
+    "clubName": "Hills BMX",
+    "state": "WA",
+    "eventUrl": "https://entryboss.cc/races/9791",
+    "source": "",
+    "category": ""
+  },
+  {
+    "eventName": "2025 Hills BMX Club Tri Series - Series Entry",
+    "eventDate": "2026-01-14T00:00:00Z",
+    "clubName": "Hills BMX",
+    "state": "WA",
+    "eventUrl": "https://entryboss.cc/races/23295",
+    "source": "",
+    "category": ""
+  },
+  {
+    "eventName": "2023 Hills BMX Club Tri Series - Series Entry",
+    "eventDate": "2026-01-14T00:00:00Z",
+    "clubName": "Hills BMX",
+    "state": "WA",
+    "eventUrl": "https://entryboss.cc/races/13247",
+    "source": "",
+    "category": ""
+  },
+  {
+    "eventName": "2021 Tri-Series - Series Entry",
+    "eventDate": "2026-01-14T00:00:00Z",
+    "clubName": "Hills BMX",
+    "state": "WA",
+    "eventUrl": "https://entryboss.cc/races/6171",
+    "source": "",
+    "category": ""
+  },
+  {
+    "eventName": "2026 Hills BMX Club Tri Series - Series Entry",
+    "eventDate": "2026-01-14T00:00:00Z",
+    "clubName": "Hills BMX",
+    "state": "WA",
+    "eventUrl": "https://entryboss.cc/races/28500",
+    "source": "",
+    "category": ""
+  },
+  {
+    "eventName": "2024 Hills BMX Club Tri Series - Series Entry",
+    "eventDate": "2026-01-14T00:00:00Z",
+    "clubName": "Hills BMX",
+    "state": "WA",
+    "eventUrl": "https://entryboss.cc/races/18469",
+    "source": "",
+    "category": ""
+  },
+  {
+    "eventName": "2026 Hills BMX Club Tri Series - Round 1",
+    "eventDate": "2026-01-14T00:00:00Z",
+    "clubName": "Hills BMX",
+    "state": "WA",
+    "eventUrl": "https://entryboss.cc/races/28501",
+    "source": "",
+    "category": ""
+  },
+  {
+    "eventName": "2026 Hills BMX Club Tri Series - Round 2",
+    "eventDate": "2026-01-16T00:00:00Z",
+    "clubName": "Hills BMX",
+    "state": "WA",
+    "eventUrl": "https://entryboss.cc/races/28502",
+    "source": "",
+    "category": ""
+  },
+  {
+    "eventName": "2026 Hills BMX Club Tri Series - Round 3",
+    "eventDate": "2026-01-17T00:00:00Z",
+    "clubName": "Hills BMX",
+    "state": "WA",
+    "eventUrl": "https://entryboss.cc/races/28503",
+    "source": "",
+    "category": ""
+  },
+  {
+    "eventName": "Enduro Jam 2026",
+    "eventDate": "2026-01-17T00:00:00Z",
+    "clubName": "Margaret River Off Road Cycling Association - Mrorca",
+    "state": "WA",
+    "eventUrl": "https://entryboss.cc/races/28564",
+    "source": "",
+    "category": ""
+  },
+  {
+    "eventName": "Splendid Park Criterium",
+    "eventDate": "2026-01-18T00:00:00Z",
+    "clubName": "West Coast Masters Cycling Council",
+    "state": "WA",
+    "eventUrl": "https://entryboss.cc/races/28600",
+    "source": "",
+    "category": ""
+  },
+  {
+    "eventName": "SWCC Summer Crits round 4",
+    "eventDate": "2026-01-18T00:00:00Z",
+    "clubName": "South West Cycle Club",
+    "state": "WA",
+    "eventUrl": "https://entryboss.cc/races/28820",
+    "source": "",
+    "category": ""
+  },
+  {
+    "eventName": "2026 AusCycling BMX Racing State Series - WA RD1 Westside",
+    "eventDate": "2026-01-31T00:00:00Z",
+    "clubName": "AusCycling (WA)",
+    "state": "WA",
+    "eventUrl": "https://entryboss.cc/races/28385",
+    "source": "",
+    "category": ""
+  },
+  {
+    "eventName": "The Bike Place Shoalwater Classic Triathlon 2026",
+    "eventDate": "2026-02-01T00:00:00Z",
+    "clubName": "Rockingham Triathlon Club",
+    "state": "WA",
+    "eventUrl": "https://entryboss.cc/races/26601",
+    "source": "",
+    "category": ""
+  },
+  {
+    "eventName": "2026 AusCycling BMX Racing State Series - WA RD2 Collie",
+    "eventDate": "2026-02-08T00:00:00Z",
+    "clubName": "AusCycling (WA)",
+    "state": "WA",
+    "eventUrl": "https://entryboss.cc/races/28388",
+    "source": "",
+    "category": ""
+  },
+  {
+    "eventName": "Summer Gravity Series # 4",
+    "eventDate": "2026-02-08T00:00:00Z",
+    "clubName": "Albany Mountain Bike Club",
+    "state": "WA",
+    "eventUrl": "https://entryboss.cc/races/28192",
+    "source": "",
+    "category": ""
+  },
+  {
+    "eventName": "Summer Gravity Series # 5",
+    "eventDate": "2026-02-15T00:00:00Z",
+    "clubName": "Albany Mountain Bike Club",
+    "state": "WA",
+    "eventUrl": "https://entryboss.cc/races/28193",
+    "source": "",
+    "category": ""
+  },
+  {
+    "eventName": "Summer Gravity Series # 6",
+    "eventDate": "2026-02-22T00:00:00Z",
+    "clubName": "Albany Mountain Bike Club",
+    "state": "WA",
+    "eventUrl": "https://entryboss.cc/races/28194",
+    "source": "",
+    "category": ""
+  },
+  {
+    "eventName": "Rowdy's Cafe Enduro Triathlon \u0026 Kids Triathlon 2026",
+    "eventDate": "2026-02-22T00:00:00Z",
+    "clubName": "Rockingham Triathlon Club",
+    "state": "WA",
+    "eventUrl": "https://entryboss.cc/races/26598",
+    "source": "",
+    "category": ""
+  },
+  {
+    "eventName": "2026 AusCycling BMX Racing State Series - WA RD3 Hills",
+    "eventDate": "2026-03-01T00:00:00Z",
+    "clubName": "AusCycling (WA)",
+    "state": "WA",
+    "eventUrl": "https://entryboss.cc/races/28389",
+    "source": "",
+    "category": ""
+  },
+  {
+    "eventName": "WA Calibrations Triathlon \u0026 Kids Triathlon 2026",
+    "eventDate": "2026-04-12T00:00:00Z",
+    "clubName": "Rockingham Triathlon Club",
+    "state": "WA",
+    "eventUrl": "https://entryboss.cc/races/26599",
+    "source": "",
+    "category": ""
+  },
+  {
     "eventName": "Chidlow A - Road Race",
     "eventDate": "2026-05-24T00:00:00Z",
     "clubName": "West Coast Masters Cycling Council",
     "state": "WA",
-    "eventUrl": "https://entryboss.cc/races/30670"
+    "eventUrl": "https://entryboss.cc/races/30670",
+    "source": "EntryBoss",
+    "category": ""
   },
   {
     "eventName": "Ferguson Valley MTB XCO, ENDURO \u0026 SOCIAL RIDE- Pile Rd",
     "eventDate": "2026-05-24T00:00:00Z",
     "clubName": "Ferguson Valley Mountain Bike Club",
     "state": "WA",
-    "eventUrl": "https://entryboss.cc/races/30671"
+    "eventUrl": "https://entryboss.cc/races/30671",
+    "source": "EntryBoss",
+    "category": ""
   },
   {
     "eventName": "2026 AusCycling BMX Racing State Series - WA RD4 Eastern Goldfields",
     "eventDate": "2026-05-30T00:00:00Z",
     "clubName": "AusCycling (WA)",
     "state": "WA",
-    "eventUrl": "https://entryboss.cc/races/28390"
+    "eventUrl": "https://entryboss.cc/races/28390",
+    "source": "EntryBoss",
+    "category": ""
+  },
+  {
+    "eventName": "2026 AusCycling BMX Racing State Series - WA RD4 Eastern Goldfields",
+    "eventDate": "2026-05-30T00:00:00Z",
+    "clubName": "AusCycling (WA)",
+    "state": "WA",
+    "eventUrl": "https://entryboss.cc/races/28390",
+    "source": "",
+    "category": ""
   },
   {
     "eventName": "2026 Junior State Individual Time Trial (ITT) Championships",
     "eventDate": "2026-05-30T00:00:00Z",
     "clubName": "AusCycling (WA)",
     "state": "WA",
-    "eventUrl": "https://entryboss.cc/races/30514"
+    "eventUrl": "https://entryboss.cc/races/30514",
+    "source": "EntryBoss",
+    "category": ""
   },
   {
     "eventName": "2026 Junior State Road Championships, Para/Transplant State Road Championships and State Open Kermesse Championships",
     "eventDate": "2026-05-30T00:00:00Z",
     "clubName": "AusCycling (WA)",
     "state": "WA",
-    "eventUrl": "https://entryboss.cc/races/30435"
+    "eventUrl": "https://entryboss.cc/races/30435",
+    "source": "EntryBoss",
+    "category": ""
   },
   {
     "eventName": "2026 WA Downhill State Series - Rnd 4 - Dwellingup (Slingshot)",
     "eventDate": "2026-05-31T00:00:00Z",
     "clubName": "Peel Downhill Mountain Bike Club",
     "state": "WA",
-    "eventUrl": "https://entryboss.cc/races/29634"
+    "eventUrl": "https://entryboss.cc/races/29634",
+    "source": "EntryBoss",
+    "category": ""
   },
   {
     "eventName": "2026 AusCycling BMX Racing State Series - WA RD5 Eastern Goldfields",
     "eventDate": "2026-05-31T00:00:00Z",
     "clubName": "AusCycling (WA)",
     "state": "WA",
-    "eventUrl": "https://entryboss.cc/races/28391"
+    "eventUrl": "https://entryboss.cc/races/28391",
+    "source": "",
+    "category": ""
+  },
+  {
+    "eventName": "2026 AusCycling BMX Racing State Series - WA RD5 Eastern Goldfields",
+    "eventDate": "2026-05-31T00:00:00Z",
+    "clubName": "AusCycling (WA)",
+    "state": "WA",
+    "eventUrl": "https://entryboss.cc/races/28391",
+    "source": "EntryBoss",
+    "category": ""
   },
   {
     "eventName": "Ferguson Valley MTB XCO, ENDURO \u0026 SOCIAL RIDE #2-Wellington Dam",
     "eventDate": "2026-06-07T00:00:00Z",
     "clubName": "Ferguson Valley Mountain Bike Club",
     "state": "WA",
-    "eventUrl": "https://entryboss.cc/races/30675"
+    "eventUrl": "https://entryboss.cc/races/30675",
+    "source": "EntryBoss",
+    "category": ""
   },
   {
     "eventName": "WA Junior Road State Series - Round 1",
     "eventDate": "2026-06-20T00:00:00Z",
     "clubName": "X-Speed Racing",
     "state": "WA",
-    "eventUrl": "https://entryboss.cc/races/30575"
+    "eventUrl": "https://entryboss.cc/races/30575",
+    "source": "EntryBoss",
+    "category": ""
   },
   {
     "eventName": "2026 WA Downhill State Series - Rnd 5 - Nannup (Spur Rd)",
     "eventDate": "2026-06-28T00:00:00Z",
     "clubName": "Peel Downhill Mountain Bike Club",
     "state": "WA",
-    "eventUrl": "https://entryboss.cc/races/30485"
+    "eventUrl": "https://entryboss.cc/races/30485",
+    "source": "EntryBoss",
+    "category": ""
   },
   {
     "eventName": "Ferguson Valley MTB XCO, ENDURO \u0026 SOCIAL RIDE #3-Pile Rd",
     "eventDate": "2026-07-05T00:00:00Z",
     "clubName": "Ferguson Valley Mountain Bike Club",
     "state": "WA",
-    "eventUrl": "https://entryboss.cc/races/30674"
+    "eventUrl": "https://entryboss.cc/races/30674",
+    "source": "EntryBoss",
+    "category": ""
   },
   {
     "eventName": "2026 WA Downhill State Series - Rnd 6 - Wellington Mills (Gravity)",
     "eventDate": "2026-07-26T00:00:00Z",
     "clubName": "Peel Downhill Mountain Bike Club",
     "state": "WA",
-    "eventUrl": "https://entryboss.cc/races/30486"
+    "eventUrl": "https://entryboss.cc/races/30486",
+    "source": "EntryBoss",
+    "category": ""
   },
   {
     "eventName": "Ferguson Valley MTB XCO, ENDURO \u0026 SOCIAL RIDE #4-Wellington Dam",
     "eventDate": "2026-08-02T00:00:00Z",
     "clubName": "Ferguson Valley Mountain Bike Club",
     "state": "WA",
-    "eventUrl": "https://entryboss.cc/races/30679"
+    "eventUrl": "https://entryboss.cc/races/30679",
+    "source": "EntryBoss",
+    "category": ""
   },
   {
     "eventName": "2026 AusCycling BMX Racing State Series - WA RD6 Southside",
     "eventDate": "2026-08-09T00:00:00Z",
     "clubName": "AusCycling (WA)",
     "state": "WA",
-    "eventUrl": "https://entryboss.cc/races/28392"
+    "eventUrl": "https://entryboss.cc/races/28392",
+    "source": "EntryBoss",
+    "category": ""
+  },
+  {
+    "eventName": "2026 AusCycling BMX Racing State Series - WA RD6 Southside",
+    "eventDate": "2026-08-09T00:00:00Z",
+    "clubName": "AusCycling (WA)",
+    "state": "WA",
+    "eventUrl": "https://entryboss.cc/races/28392",
+    "source": "",
+    "category": ""
   },
   {
     "eventName": "2026 AusCycling BMX Racing State Series - WA RD7 Cockburn",
     "eventDate": "2026-08-23T00:00:00Z",
     "clubName": "AusCycling (WA)",
     "state": "WA",
-    "eventUrl": "https://entryboss.cc/races/28393"
+    "eventUrl": "https://entryboss.cc/races/28393",
+    "source": "EntryBoss",
+    "category": ""
+  },
+  {
+    "eventName": "2026 AusCycling BMX Racing State Series - WA RD7 Cockburn",
+    "eventDate": "2026-08-23T00:00:00Z",
+    "clubName": "AusCycling (WA)",
+    "state": "WA",
+    "eventUrl": "https://entryboss.cc/races/28393",
+    "source": "",
+    "category": ""
   },
   {
     "eventName": "2026 WA Downhill State Series - Rnd 7 - Toms Crossing (Devil's Pass)",
     "eventDate": "2026-08-30T00:00:00Z",
     "clubName": "Peel Downhill Mountain Bike Club",
     "state": "WA",
-    "eventUrl": "https://entryboss.cc/races/30487"
+    "eventUrl": "https://entryboss.cc/races/30487",
+    "source": "EntryBoss",
+    "category": ""
   },
   {
     "eventName": "Ferguson Valley MTB XCO, ENDURO \u0026 SOCIAL RIDE #5-Pile Rd",
     "eventDate": "2026-09-06T00:00:00Z",
     "clubName": "Ferguson Valley Mountain Bike Club",
     "state": "WA",
-    "eventUrl": "https://entryboss.cc/races/30676"
+    "eventUrl": "https://entryboss.cc/races/30676",
+    "source": "EntryBoss",
+    "category": ""
   },
   {
     "eventName": "2026 AusCycling BMX Racing State Series - WA RD8 Byford",
     "eventDate": "2026-09-13T00:00:00Z",
     "clubName": "AusCycling (WA)",
     "state": "WA",
-    "eventUrl": "https://entryboss.cc/races/28394"
+    "eventUrl": "https://entryboss.cc/races/28394",
+    "source": "EntryBoss",
+    "category": ""
   },
   {
-    "eventName": "Ferguson Valley MTB XCO, ENDURO \u0026 SOCIAL RIDE #6-Wellington Dam",
-    "eventDate": "2026-09-20T00:00:00Z",
-    "clubName": "Ferguson Valley Mountain Bike Club",
+    "eventName": "2026 AusCycling BMX Racing State Series - WA RD8 Byford",
+    "eventDate": "2026-09-13T00:00:00Z",
+    "clubName": "AusCycling (WA)",
     "state": "WA",
-    "eventUrl": "https://entryboss.cc/races/30680"
+    "eventUrl": "https://entryboss.cc/races/28394",
+    "source": "",
+    "category": ""
   },
   {
     "eventName": "2026 WA Downhill State Championship - Nannup (Ellis Creek)",
     "eventDate": "2026-09-20T00:00:00Z",
     "clubName": "Peel Downhill Mountain Bike Club",
     "state": "WA",
-    "eventUrl": "https://entryboss.cc/races/30488"
+    "eventUrl": "https://entryboss.cc/races/30488",
+    "source": "EntryBoss",
+    "category": ""
+  },
+  {
+    "eventName": "Ferguson Valley MTB XCO, ENDURO \u0026 SOCIAL RIDE #6-Wellington Dam",
+    "eventDate": "2026-09-20T00:00:00Z",
+    "clubName": "Ferguson Valley Mountain Bike Club",
+    "state": "WA",
+    "eventUrl": "https://entryboss.cc/races/30680",
+    "source": "EntryBoss",
+    "category": ""
   },
   {
     "eventName": "Ferguson Valley MTB XCO, ENDURO \u0026 SOCIAL RIDE #7-Pile Rd",
     "eventDate": "2026-11-01T00:00:00Z",
     "clubName": "Ferguson Valley Mountain Bike Club",
     "state": "WA",
-    "eventUrl": "https://entryboss.cc/races/30677"
+    "eventUrl": "https://entryboss.cc/races/30677",
+    "source": "EntryBoss",
+    "category": ""
   },
   {
     "eventName": "Ferguson Valley MTB XCO, ENDURO \u0026 SOCIAL RIDE #8-Wellington Dam",
     "eventDate": "2026-11-22T00:00:00Z",
     "clubName": "Ferguson Valley Mountain Bike Club",
     "state": "WA",
-    "eventUrl": "https://entryboss.cc/races/30681"
+    "eventUrl": "https://entryboss.cc/races/30681",
+    "source": "EntryBoss",
+    "category": ""
   },
   {
     "eventName": "Ferguson Valley MTB XCO, ENDURO \u0026 SOCIAL RIDE #9 - Pile Rd",
     "eventDate": "2026-12-13T00:00:00Z",
     "clubName": "Ferguson Valley Mountain Bike Club",
     "state": "WA",
-    "eventUrl": "https://entryboss.cc/races/30678"
+    "eventUrl": "https://entryboss.cc/races/30678",
+    "source": "EntryBoss",
+    "category": ""
   }
 ]
