@@ -1333,7 +1333,7 @@ function updateStateDisplay() {
     }
     
     // Update page title
-    document.title = `${STATE_CONFIG[selectedState].name} Cycling Races - EntryBoss Discovery Tool`;
+    document.title = `${STATE_CONFIG[selectedState].name} Cycling Races - Event Discovery Tool`;
 }
 
 function setupStateSelectorListeners() {

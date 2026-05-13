@@ -976,7 +976,7 @@ function updateStateDisplay() {
     }
     
     // Update page title
-    document.title = `${STATE_CONFIG[state.selectedState].name} Cycling Races - EntryBoss Discovery Tool`;
+    document.title = `${STATE_CONFIG[state.selectedState].name} Cycling Races - Event Discovery Tool`;
 }
 
 function selectState(stateCode) {
