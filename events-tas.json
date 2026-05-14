@@ -126,21 +126,21 @@
     "category": ""
   },
   {
-    "eventName": "Cressy Road Series - Race 1",
-    "eventDate": "2026-05-16T00:00:00Z",
-    "clubName": "Launceston City Cycling Club",
-    "state": "TAS",
-    "eventUrl": "https://entryboss.cc/races/30313",
-    "source": "EntryBoss",
-    "category": ""
-  },
-  {
     "eventName": "2026 AusCycling BMX State Series - RD3 Launceston",
     "eventDate": "2026-05-16T00:00:00Z",
     "clubName": "AusCycling (Tasmania)",
     "state": "TAS",
     "eventUrl": "https://entryboss.cc/races/28520",
     "source": "",
+    "category": ""
+  },
+  {
+    "eventName": "Cressy Road Series - Race 1",
+    "eventDate": "2026-05-16T00:00:00Z",
+    "clubName": "Launceston City Cycling Club",
+    "state": "TAS",
+    "eventUrl": "https://entryboss.cc/races/30313",
+    "source": "EntryBoss",
     "category": ""
   },
   {
@@ -216,15 +216,6 @@
     "category": ""
   },
   {
-    "eventName": "LAUNCESTON BMX - TWILIGHT SERIES 2023 - SERIES PASS",
-    "eventDate": "2026-06-13T00:00:00Z",
-    "clubName": "Launceston BMX Club",
-    "state": "TAS",
-    "eventUrl": "https://entryboss.cc/races/14524",
-    "source": "EntryBoss",
-    "category": ""
-  },
-  {
     "eventName": "LAUNCESTON BMX - TWILIGHT SERIES 2021 - SERIES ENTRY",
     "eventDate": "2026-06-13T00:00:00Z",
     "clubName": "Launceston BMX Club",
@@ -270,6 +261,15 @@
     "category": ""
   },
   {
+    "eventName": "LAUNCESTON BMX - TWILIGHT SERIES 2023 - SERIES PASS",
+    "eventDate": "2026-06-13T00:00:00Z",
+    "clubName": "Launceston BMX Club",
+    "state": "TAS",
+    "eventUrl": "https://entryboss.cc/races/14524",
+    "source": "EntryBoss",
+    "category": ""
+  },
+  {
     "eventName": "NW MTB Series - Winter in Paradise - Round 3",
     "eventDate": "2026-06-14T00:00:00Z",
     "clubName": "Mersey Mountain Bike Club",
@@ -302,7 +302,7 @@
     "clubName": "AusCycling (Tasmania)",
     "state": "TAS",
     "eventUrl": "https://entryboss.cc/races/28521",
-    "source": "",
+    "source": "EntryBoss",
     "category": ""
   },
   {
@@ -311,7 +311,7 @@
     "clubName": "AusCycling (Tasmania)",
     "state": "TAS",
     "eventUrl": "https://entryboss.cc/races/28521",
-    "source": "EntryBoss",
+    "source": "",
     "category": ""
   },
   {
