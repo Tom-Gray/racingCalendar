@@ -1,10 +1,10 @@
 [
   {
-    "eventName": "2026 Hills BMX Club Tri Series - Round 1",
+    "eventName": "2022 Hills BMX Club Tri Series - Series Entry",
     "eventDate": "2026-01-14T00:00:00Z",
     "clubName": "Hills BMX",
     "state": "WA",
-    "eventUrl": "https://entryboss.cc/races/28501",
+    "eventUrl": "https://entryboss.cc/races/9791",
     "source": "",
     "category": ""
   },
@@ -54,11 +54,11 @@
     "category": ""
   },
   {
-    "eventName": "2022 Hills BMX Club Tri Series - Series Entry",
+    "eventName": "2026 Hills BMX Club Tri Series - Round 1",
     "eventDate": "2026-01-14T00:00:00Z",
     "clubName": "Hills BMX",
     "state": "WA",
-    "eventUrl": "https://entryboss.cc/races/9791",
+    "eventUrl": "https://entryboss.cc/races/28501",
     "source": "",
     "category": ""
   },
@@ -207,11 +207,11 @@
     "category": ""
   },
   {
-    "eventName": "2026 Junior State Individual Time Trial (ITT) Championships",
+    "eventName": "2026 AusCycling BMX Racing State Series - WA RD4 Eastern Goldfields",
     "eventDate": "2026-05-30T00:00:00Z",
     "clubName": "AusCycling (WA)",
     "state": "WA",
-    "eventUrl": "https://entryboss.cc/races/30514",
+    "eventUrl": "https://entryboss.cc/races/28390",
     "source": "EntryBoss",
     "category": ""
   },
@@ -225,11 +225,11 @@
     "category": ""
   },
   {
-    "eventName": "2026 AusCycling BMX Racing State Series - WA RD4 Eastern Goldfields",
+    "eventName": "2026 Junior State Individual Time Trial (ITT) Championships",
     "eventDate": "2026-05-30T00:00:00Z",
     "clubName": "AusCycling (WA)",
     "state": "WA",
-    "eventUrl": "https://entryboss.cc/races/28390",
+    "eventUrl": "https://entryboss.cc/races/30514",
     "source": "EntryBoss",
     "category": ""
   },
@@ -248,7 +248,7 @@
     "clubName": "AusCycling (WA)",
     "state": "WA",
     "eventUrl": "https://entryboss.cc/races/28391",
-    "source": "EntryBoss",
+    "source": "",
     "category": ""
   },
   {
@@ -257,7 +257,7 @@
     "clubName": "AusCycling (WA)",
     "state": "WA",
     "eventUrl": "https://entryboss.cc/races/28391",
-    "source": "",
+    "source": "EntryBoss",
     "category": ""
   },
   {
@@ -383,7 +383,7 @@
     "clubName": "AusCycling (WA)",
     "state": "WA",
     "eventUrl": "https://entryboss.cc/races/28394",
-    "source": "EntryBoss",
+    "source": "",
     "category": ""
   },
   {
@@ -392,15 +392,6 @@
     "clubName": "AusCycling (WA)",
     "state": "WA",
     "eventUrl": "https://entryboss.cc/races/28394",
-    "source": "",
-    "category": ""
-  },
-  {
-    "eventName": "2026 WA Downhill State Championship - Nannup (Ellis Creek)",
-    "eventDate": "2026-09-20T00:00:00Z",
-    "clubName": "Peel Downhill Mountain Bike Club",
-    "state": "WA",
-    "eventUrl": "https://entryboss.cc/races/30488",
     "source": "EntryBoss",
     "category": ""
   },
@@ -410,6 +401,15 @@
     "clubName": "Ferguson Valley Mountain Bike Club",
     "state": "WA",
     "eventUrl": "https://entryboss.cc/races/30680",
+    "source": "EntryBoss",
+    "category": ""
+  },
+  {
+    "eventName": "2026 WA Downhill State Championship - Nannup (Ellis Creek)",
+    "eventDate": "2026-09-20T00:00:00Z",
+    "clubName": "Peel Downhill Mountain Bike Club",
+    "state": "WA",
+    "eventUrl": "https://entryboss.cc/races/30488",
     "source": "EntryBoss",
     "category": ""
   },
