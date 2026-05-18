@@ -126,65 +126,11 @@
     "category": ""
   },
   {
-    "eventName": "Bracknell",
-    "eventDate": "2026-05-17T00:00:00Z",
-    "clubName": "Northern Vets CC (Tasmania)",
-    "state": "TAS",
-    "eventUrl": "https://entryboss.cc/races/30423",
-    "source": "EntryBoss",
-    "category": ""
-  },
-  {
-    "eventName": "NW MTB Series - Winter in Paradise - Round 2",
-    "eventDate": "2026-05-17T00:00:00Z",
-    "clubName": "Mersey Mountain Bike Club",
-    "state": "TAS",
-    "eventUrl": "https://entryboss.cc/races/30131",
-    "source": "EntryBoss",
-    "category": ""
-  },
-  {
-    "eventName": "LAUNCESTON BMX - NIGHT SERIES 2024 - SERIES PASS",
-    "eventDate": "2026-05-23T00:00:00Z",
-    "clubName": "Launceston BMX Club",
-    "state": "TAS",
-    "eventUrl": "https://entryboss.cc/races/20374",
-    "source": "EntryBoss",
-    "category": ""
-  },
-  {
-    "eventName": "Enduro Mayhem Black Edition",
-    "eventDate": "2026-05-23T00:00:00Z",
-    "clubName": "Derby MTB Club",
-    "state": "TAS",
-    "eventUrl": "https://entryboss.cc/races/30644",
-    "source": "EntryBoss",
-    "category": ""
-  },
-  {
     "eventName": "Oatlands 50 - MyRide Super series event 3",
     "eventDate": "2026-05-23T00:00:00Z",
     "clubName": "Hobart Wheelers Dirt Devils CC",
     "state": "TAS",
     "eventUrl": "https://entryboss.cc/races/29982",
-    "source": "EntryBoss",
-    "category": ""
-  },
-  {
-    "eventName": "2026 Clubby #4 - Chris Reissig Builders",
-    "eventDate": "2026-05-23T00:00:00Z",
-    "clubName": "Launceston BMX Club",
-    "state": "TAS",
-    "eventUrl": "https://entryboss.cc/races/30743",
-    "source": "EntryBoss",
-    "category": ""
-  },
-  {
-    "eventName": "2025 Night Series - Series Entry (All 3 events)",
-    "eventDate": "2026-05-23T00:00:00Z",
-    "clubName": "Launceston BMX Club",
-    "state": "TAS",
-    "eventUrl": "https://entryboss.cc/races/27935",
     "source": "EntryBoss",
     "category": ""
   },
@@ -207,11 +153,47 @@
     "category": ""
   },
   {
+    "eventName": "2025 Night Series - Series Entry (All 3 events)",
+    "eventDate": "2026-05-23T00:00:00Z",
+    "clubName": "Launceston BMX Club",
+    "state": "TAS",
+    "eventUrl": "https://entryboss.cc/races/27935",
+    "source": "EntryBoss",
+    "category": ""
+  },
+  {
+    "eventName": "LAUNCESTON BMX - NIGHT SERIES 2024 - SERIES PASS",
+    "eventDate": "2026-05-23T00:00:00Z",
+    "clubName": "Launceston BMX Club",
+    "state": "TAS",
+    "eventUrl": "https://entryboss.cc/races/20374",
+    "source": "EntryBoss",
+    "category": ""
+  },
+  {
     "eventName": "2026 Night Series - Series Entry - ALL 3 ROUNDS",
     "eventDate": "2026-05-23T00:00:00Z",
     "clubName": "Launceston BMX Club",
     "state": "TAS",
     "eventUrl": "https://entryboss.cc/races/30426",
+    "source": "EntryBoss",
+    "category": ""
+  },
+  {
+    "eventName": "2026 Clubby #4 - Chris Reissig Builders",
+    "eventDate": "2026-05-23T00:00:00Z",
+    "clubName": "Launceston BMX Club",
+    "state": "TAS",
+    "eventUrl": "https://entryboss.cc/races/30743",
+    "source": "EntryBoss",
+    "category": ""
+  },
+  {
+    "eventName": "Enduro Mayhem Black Edition",
+    "eventDate": "2026-05-23T00:00:00Z",
+    "clubName": "Derby MTB Club",
+    "state": "TAS",
+    "eventUrl": "https://entryboss.cc/races/30644",
     "source": "EntryBoss",
     "category": ""
   },
@@ -234,7 +216,7 @@
     "category": ""
   },
   {
-    "eventName": "MyRide Sawpit Hill Gravel Feature Race",
+    "eventName": "MyRide Launceston Sawpit Hill Gravel Open Race",
     "eventDate": "2026-05-31T00:00:00Z",
     "clubName": "Northern Vets CC (Tasmania)",
     "state": "TAS",
@@ -297,15 +279,6 @@
     "category": ""
   },
   {
-    "eventName": "2026 AusCycling BMX State Series - RD4 Southern City",
-    "eventDate": "2026-06-27T00:00:00Z",
-    "clubName": "AusCycling (Tasmania)",
-    "state": "TAS",
-    "eventUrl": "https://entryboss.cc/races/28521",
-    "source": "EntryBoss",
-    "category": ""
-  },
-  {
     "eventName": "Cressy Road Series - Race 3",
     "eventDate": "2026-06-27T00:00:00Z",
     "clubName": "Launceston City Cycling Club",
@@ -324,6 +297,24 @@
     "category": ""
   },
   {
+    "eventName": "2026 AusCycling BMX State Series - RD4 Southern City",
+    "eventDate": "2026-06-27T00:00:00Z",
+    "clubName": "AusCycling (Tasmania)",
+    "state": "TAS",
+    "eventUrl": "https://entryboss.cc/races/28521",
+    "source": "EntryBoss",
+    "category": ""
+  },
+  {
+    "eventName": "2026 HWDD Cyclocross Series - Race 2",
+    "eventDate": "2026-06-28T00:00:00Z",
+    "clubName": "Hobart Wheelers Dirt Devils CC",
+    "state": "TAS",
+    "eventUrl": "https://entryboss.cc/races/30764",
+    "source": "EntryBoss",
+    "category": ""
+  },
+  {
     "eventName": "2026 Clubby #5 - Scott Smith Orthodontics",
     "eventDate": "2026-07-04T00:00:00Z",
     "clubName": "Launceston BMX Club",
@@ -333,11 +324,38 @@
     "category": ""
   },
   {
+    "eventName": "2026 HWDD Cyclocross Series - Race 3",
+    "eventDate": "2026-07-04T00:00:00Z",
+    "clubName": "Hobart Wheelers Dirt Devils CC",
+    "state": "TAS",
+    "eventUrl": "https://entryboss.cc/races/30765",
+    "source": "EntryBoss",
+    "category": ""
+  },
+  {
     "eventName": "NW MTB Series - Winter in Paradise - Round 4",
     "eventDate": "2026-07-26T00:00:00Z",
     "clubName": "Mersey Mountain Bike Club",
     "state": "TAS",
     "eventUrl": "https://entryboss.cc/races/30133",
+    "source": "EntryBoss",
+    "category": ""
+  },
+  {
+    "eventName": "2026 HWDD Cyclocross Series - Race 4",
+    "eventDate": "2026-08-02T00:00:00Z",
+    "clubName": "Hobart Wheelers Dirt Devils CC",
+    "state": "TAS",
+    "eventUrl": "https://entryboss.cc/races/30766",
+    "source": "EntryBoss",
+    "category": ""
+  },
+  {
+    "eventName": "2026 AusCycling Tasmanian State CX Championships / HWDD Cyclocross Series - Race 5",
+    "eventDate": "2026-08-09T00:00:00Z",
+    "clubName": "Hobart Wheelers Dirt Devils CC",
+    "state": "TAS",
+    "eventUrl": "https://entryboss.cc/races/30767",
     "source": "EntryBoss",
     "category": ""
   },
