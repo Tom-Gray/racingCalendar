@@ -1,10 +1,10 @@
 [
   {
-    "eventName": "2026 Hills BMX Club Tri Series - Round 1",
+    "eventName": "2022 Hills BMX Club Tri Series - Series Entry",
     "eventDate": "2026-01-14T00:00:00Z",
     "clubName": "Hills BMX",
     "state": "WA",
-    "eventUrl": "https://entryboss.cc/races/28501",
+    "eventUrl": "https://entryboss.cc/races/9791",
     "source": "",
     "category": ""
   },
@@ -54,11 +54,11 @@
     "category": ""
   },
   {
-    "eventName": "2022 Hills BMX Club Tri Series - Series Entry",
+    "eventName": "2026 Hills BMX Club Tri Series - Round 1",
     "eventDate": "2026-01-14T00:00:00Z",
     "clubName": "Hills BMX",
     "state": "WA",
-    "eventUrl": "https://entryboss.cc/races/9791",
+    "eventUrl": "https://entryboss.cc/races/28501",
     "source": "",
     "category": ""
   },
@@ -212,7 +212,7 @@
     "clubName": "AusCycling (WA)",
     "state": "WA",
     "eventUrl": "https://entryboss.cc/races/28390",
-    "source": "EntryBoss",
+    "source": "",
     "category": ""
   },
   {
@@ -221,7 +221,7 @@
     "clubName": "AusCycling (WA)",
     "state": "WA",
     "eventUrl": "https://entryboss.cc/races/28390",
-    "source": "",
+    "source": "EntryBoss",
     "category": ""
   },
   {
@@ -252,21 +252,21 @@
     "category": ""
   },
   {
-    "eventName": "2026 AusCycling BMX Racing State Series - WA RD5 Eastern Goldfields",
-    "eventDate": "2026-05-31T00:00:00Z",
-    "clubName": "AusCycling (WA)",
-    "state": "WA",
-    "eventUrl": "https://entryboss.cc/races/28391",
-    "source": "",
-    "category": ""
-  },
-  {
     "eventName": "2026 WA Downhill State Series - Rnd 4 - Dwellingup (Slingshot)",
     "eventDate": "2026-05-31T00:00:00Z",
     "clubName": "Peel Downhill Mountain Bike Club",
     "state": "WA",
     "eventUrl": "https://entryboss.cc/races/29634",
     "source": "EntryBoss",
+    "category": ""
+  },
+  {
+    "eventName": "2026 AusCycling BMX Racing State Series - WA RD5 Eastern Goldfields",
+    "eventDate": "2026-05-31T00:00:00Z",
+    "clubName": "AusCycling (WA)",
+    "state": "WA",
+    "eventUrl": "https://entryboss.cc/races/28391",
+    "source": "",
     "category": ""
   },
   {
@@ -329,7 +329,7 @@
     "clubName": "AusCycling (WA)",
     "state": "WA",
     "eventUrl": "https://entryboss.cc/races/28392",
-    "source": "",
+    "source": "EntryBoss",
     "category": ""
   },
   {
@@ -338,15 +338,6 @@
     "clubName": "AusCycling (WA)",
     "state": "WA",
     "eventUrl": "https://entryboss.cc/races/28392",
-    "source": "EntryBoss",
-    "category": ""
-  },
-  {
-    "eventName": "2026 AusCycling BMX Racing State Series - WA RD7 Cockburn",
-    "eventDate": "2026-08-23T00:00:00Z",
-    "clubName": "AusCycling (WA)",
-    "state": "WA",
-    "eventUrl": "https://entryboss.cc/races/28393",
     "source": "",
     "category": ""
   },
@@ -357,6 +348,15 @@
     "state": "WA",
     "eventUrl": "https://entryboss.cc/races/28393",
     "source": "EntryBoss",
+    "category": ""
+  },
+  {
+    "eventName": "2026 AusCycling BMX Racing State Series - WA RD7 Cockburn",
+    "eventDate": "2026-08-23T00:00:00Z",
+    "clubName": "AusCycling (WA)",
+    "state": "WA",
+    "eventUrl": "https://entryboss.cc/races/28393",
+    "source": "",
     "category": ""
   },
   {
