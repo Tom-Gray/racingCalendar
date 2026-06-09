@@ -1,19 +1,19 @@
 [
   {
-    "eventName": "Sprung Super D - Hollybank (Reverb-Juggernaut-Ginger Ridge) - Sat-10-Jan-2026",
-    "eventDate": "2026-01-10T00:00:00Z",
-    "clubName": "Launceston Mountain Bike Club",
-    "state": "TAS",
-    "eventUrl": "https://entryboss.cc/races/28400",
-    "source": "",
-    "category": ""
-  },
-  {
     "eventName": "MVDCC January 2026 Carnival (Including AusCycling Tasmania Under 13 Track State Titles)",
     "eventDate": "2026-01-10T00:00:00Z",
     "clubName": "Mersey Valley Devonport Cycling Club",
     "state": "TAS",
     "eventUrl": "https://entryboss.cc/races/27757",
+    "source": "",
+    "category": ""
+  },
+  {
+    "eventName": "Sprung Super D - Hollybank (Reverb-Juggernaut-Ginger Ridge) - Sat-10-Jan-2026",
+    "eventDate": "2026-01-10T00:00:00Z",
+    "clubName": "Launceston Mountain Bike Club",
+    "state": "TAS",
+    "eventUrl": "https://entryboss.cc/races/28400",
     "source": "",
     "category": ""
   },
@@ -126,29 +126,11 @@
     "category": ""
   },
   {
-    "eventName": "2026 HWDD Cyclocross Series - Race 1 - Kings Cross at Clarendon Vale",
-    "eventDate": "2026-06-08T00:00:00Z",
-    "clubName": "Hobart Wheelers Dirt Devils CC",
-    "state": "TAS",
-    "eventUrl": "https://entryboss.cc/races/30761",
-    "source": "EntryBoss",
-    "category": ""
-  },
-  {
-    "eventName": "2025 Night Series - Series Entry (All 3 events)",
+    "eventName": "LAUNCESTON BMX - NIGHT SERIES 2024 - SERIES PASS",
     "eventDate": "2026-06-13T00:00:00Z",
     "clubName": "Launceston BMX Club",
     "state": "TAS",
-    "eventUrl": "https://entryboss.cc/races/27935",
-    "source": "EntryBoss",
-    "category": ""
-  },
-  {
-    "eventName": "2026 Night Series - Round 2",
-    "eventDate": "2026-06-13T00:00:00Z",
-    "clubName": "Launceston BMX Club",
-    "state": "TAS",
-    "eventUrl": "https://entryboss.cc/races/30424",
+    "eventUrl": "https://entryboss.cc/races/20374",
     "source": "EntryBoss",
     "category": ""
   },
@@ -162,24 +144,6 @@
     "category": ""
   },
   {
-    "eventName": "LAUNCESTON BMX - TWILIGHT SERIES 2023 - SERIES PASS",
-    "eventDate": "2026-06-13T00:00:00Z",
-    "clubName": "Launceston BMX Club",
-    "state": "TAS",
-    "eventUrl": "https://entryboss.cc/races/14524",
-    "source": "EntryBoss",
-    "category": ""
-  },
-  {
-    "eventName": "LAUNCESTON BMX - NIGHT SERIES 2024 - SERIES PASS",
-    "eventDate": "2026-06-13T00:00:00Z",
-    "clubName": "Launceston BMX Club",
-    "state": "TAS",
-    "eventUrl": "https://entryboss.cc/races/20374",
-    "source": "EntryBoss",
-    "category": ""
-  },
-  {
     "eventName": "LAUNCESTON BMX - TWILIGHT SERIES 2021 - SERIES ENTRY",
     "eventDate": "2026-06-13T00:00:00Z",
     "clubName": "Launceston BMX Club",
@@ -189,11 +153,38 @@
     "category": ""
   },
   {
+    "eventName": "LAUNCESTON BMX - TWILIGHT SERIES 2023 - SERIES PASS",
+    "eventDate": "2026-06-13T00:00:00Z",
+    "clubName": "Launceston BMX Club",
+    "state": "TAS",
+    "eventUrl": "https://entryboss.cc/races/14524",
+    "source": "EntryBoss",
+    "category": ""
+  },
+  {
+    "eventName": "2025 Night Series - Series Entry (All 3 events)",
+    "eventDate": "2026-06-13T00:00:00Z",
+    "clubName": "Launceston BMX Club",
+    "state": "TAS",
+    "eventUrl": "https://entryboss.cc/races/27935",
+    "source": "EntryBoss",
+    "category": ""
+  },
+  {
     "eventName": "2026 Night Series - Series Entry - ALL 3 ROUNDS",
     "eventDate": "2026-06-13T00:00:00Z",
     "clubName": "Launceston BMX Club",
     "state": "TAS",
     "eventUrl": "https://entryboss.cc/races/30426",
+    "source": "EntryBoss",
+    "category": ""
+  },
+  {
+    "eventName": "2026 Night Series - Round 2",
+    "eventDate": "2026-06-13T00:00:00Z",
+    "clubName": "Launceston BMX Club",
+    "state": "TAS",
+    "eventUrl": "https://entryboss.cc/races/30424",
     "source": "EntryBoss",
     "category": ""
   },
@@ -225,21 +216,21 @@
     "category": ""
   },
   {
-    "eventName": "Cressy Road Series - Race 3",
-    "eventDate": "2026-06-27T00:00:00Z",
-    "clubName": "Launceston City Cycling Club",
-    "state": "TAS",
-    "eventUrl": "https://entryboss.cc/races/30315",
-    "source": "EntryBoss",
-    "category": ""
-  },
-  {
     "eventName": "2026 AusCycling BMX State Series - RD4 Southern City",
     "eventDate": "2026-06-27T00:00:00Z",
     "clubName": "AusCycling (Tasmania)",
     "state": "TAS",
     "eventUrl": "https://entryboss.cc/races/28521",
     "source": "",
+    "category": ""
+  },
+  {
+    "eventName": "Cressy Road Series - Race 3",
+    "eventDate": "2026-06-27T00:00:00Z",
+    "clubName": "Launceston City Cycling Club",
+    "state": "TAS",
+    "eventUrl": "https://entryboss.cc/races/30315",
+    "source": "EntryBoss",
     "category": ""
   },
   {
@@ -297,20 +288,20 @@
     "category": ""
   },
   {
-    "eventName": "Deloraine",
-    "eventDate": "2026-08-02T00:00:00Z",
-    "clubName": "Northern Vets CC (Tasmania)",
-    "state": "TAS",
-    "eventUrl": "https://entryboss.cc/races/31027",
-    "source": "EntryBoss",
-    "category": ""
-  },
-  {
     "eventName": "2026 HWDD Cyclocross Series - Race 4",
     "eventDate": "2026-08-02T00:00:00Z",
     "clubName": "Hobart Wheelers Dirt Devils CC",
     "state": "TAS",
     "eventUrl": "https://entryboss.cc/races/30766",
+    "source": "EntryBoss",
+    "category": ""
+  },
+  {
+    "eventName": "Deloraine",
+    "eventDate": "2026-08-02T00:00:00Z",
+    "clubName": "Northern Vets CC (Tasmania)",
+    "state": "TAS",
+    "eventUrl": "https://entryboss.cc/races/31027",
     "source": "EntryBoss",
     "category": ""
   },
@@ -329,7 +320,7 @@
     "clubName": "AusCycling (Tasmania)",
     "state": "TAS",
     "eventUrl": "https://entryboss.cc/races/28522",
-    "source": "EntryBoss",
+    "source": "",
     "category": ""
   },
   {
@@ -338,7 +329,7 @@
     "clubName": "AusCycling (Tasmania)",
     "state": "TAS",
     "eventUrl": "https://entryboss.cc/races/28522",
-    "source": "",
+    "source": "EntryBoss",
     "category": ""
   },
   {
