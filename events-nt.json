@@ -1,14 +1,5 @@
 [
   {
-    "eventName": "Nhulunbuy BMX Club Championships 2026 - Round 1",
-    "eventDate": "2026-06-14T00:00:00Z",
-    "clubName": "Nhulunbuy BMX Club",
-    "state": "NT",
-    "eventUrl": "https://entryboss.cc/races/30985",
-    "source": "EntryBoss",
-    "category": ""
-  },
-  {
     "eventName": "Alice Springs - Track Cycling Development Academy!",
     "eventDate": "2026-06-24T00:00:00Z",
     "clubName": "AusCycling (NT)",
@@ -54,20 +45,20 @@
     "category": ""
   },
   {
-    "eventName": "AusCycling MTB XCO Northern Territory Championships",
-    "eventDate": "2026-10-16T00:00:00Z",
-    "clubName": "AusCycling (NT)",
-    "state": "NT",
-    "eventUrl": "https://entryboss.cc/races/29551",
-    "source": "EntryBoss",
-    "category": ""
-  },
-  {
     "eventName": "2026 NT Track Championships",
     "eventDate": "2026-10-16T00:00:00Z",
     "clubName": "AusCycling (NT)",
     "state": "NT",
     "eventUrl": "https://entryboss.cc/races/29269",
+    "source": "EntryBoss",
+    "category": ""
+  },
+  {
+    "eventName": "AusCycling MTB XCO Northern Territory Championships",
+    "eventDate": "2026-10-16T00:00:00Z",
+    "clubName": "AusCycling (NT)",
+    "state": "NT",
+    "eventUrl": "https://entryboss.cc/races/29551",
     "source": "EntryBoss",
     "category": ""
   }
