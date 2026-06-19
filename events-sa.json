@@ -1,14 +1,5 @@
 [
   {
-    "eventName": "Wednesday Night Training",
-    "eventDate": "2026-01-07T00:00:00Z",
-    "clubName": "South Coast Cycling",
-    "state": "SA",
-    "eventUrl": "https://entryboss.cc/races/28634",
-    "source": "",
-    "category": ""
-  },
-  {
     "eventName": "Wednesday Open Track Training - CANCELLED",
     "eventDate": "2026-01-07T00:00:00Z",
     "clubName": "AusCycling SA - Superdrome",
@@ -18,11 +9,11 @@
     "category": ""
   },
   {
-    "eventName": "-Cancelled - NCC Junior Training and Senior Skills",
-    "eventDate": "2026-01-08T00:00:00Z",
-    "clubName": "Norwood Cycling Club",
+    "eventName": "Wednesday Night Training",
+    "eventDate": "2026-01-07T00:00:00Z",
+    "clubName": "South Coast Cycling",
     "state": "SA",
-    "eventUrl": "https://entryboss.cc/races/28030",
+    "eventUrl": "https://entryboss.cc/races/28634",
     "source": "",
     "category": ""
   },
@@ -36,6 +27,15 @@
     "category": ""
   },
   {
+    "eventName": "-Cancelled - NCC Junior Training and Senior Skills",
+    "eventDate": "2026-01-08T00:00:00Z",
+    "clubName": "Norwood Cycling Club",
+    "state": "SA",
+    "eventUrl": "https://entryboss.cc/races/28030",
+    "source": "",
+    "category": ""
+  },
+  {
     "eventName": "Track Carnival (Mt Gambier) - DAY 1 of 2",
     "eventDate": "2026-01-10T00:00:00Z",
     "clubName": "South Coast Cycling",
@@ -45,20 +45,20 @@
     "category": ""
   },
   {
-    "eventName": "FORRESTON GSR (Gumeracha)",
-    "eventDate": "2026-01-11T00:00:00Z",
-    "clubName": "Adelaide Hills Cycling Club",
-    "state": "SA",
-    "eventUrl": "https://entryboss.cc/races/28618",
-    "source": "",
-    "category": ""
-  },
-  {
     "eventName": "MGCC \u0026 SCCC Track Carnival Day 2 of 2",
     "eventDate": "2026-01-11T00:00:00Z",
     "clubName": "Mt Gambier Cycling Club",
     "state": "SA",
     "eventUrl": "https://entryboss.cc/races/28565",
+    "source": "",
+    "category": ""
+  },
+  {
+    "eventName": "FORRESTON GSR (Gumeracha)",
+    "eventDate": "2026-01-11T00:00:00Z",
+    "clubName": "Adelaide Hills Cycling Club",
+    "state": "SA",
+    "eventUrl": "https://entryboss.cc/races/28618",
     "source": "",
     "category": ""
   },
@@ -135,6 +135,24 @@
     "category": ""
   },
   {
+    "eventName": "99 Bikes Junior Super Series - Junior Individual Series Pass",
+    "eventDate": "2026-01-16T00:00:00Z",
+    "clubName": "AusCycling (South Australia)",
+    "state": "SA",
+    "eventUrl": "https://entryboss.cc/races/8341",
+    "source": "",
+    "category": ""
+  },
+  {
+    "eventName": "2023 Cervelo Super Series - Series Pass - Senior Riders",
+    "eventDate": "2026-01-16T00:00:00Z",
+    "clubName": "AusCycling (South Australia)",
+    "state": "SA",
+    "eventUrl": "https://entryboss.cc/races/17080",
+    "source": "",
+    "category": ""
+  },
+  {
     "eventName": "2023 Cervelo Super Series - Series Pass - Junior Riders",
     "eventDate": "2026-01-16T00:00:00Z",
     "clubName": "AusCycling (South Australia)",
@@ -149,24 +167,6 @@
     "clubName": "South Coast Cycling",
     "state": "SA",
     "eventUrl": "https://entryboss.cc/races/28630",
-    "source": "",
-    "category": ""
-  },
-  {
-    "eventName": "Super Series - Series Pass",
-    "eventDate": "2026-01-16T00:00:00Z",
-    "clubName": "AusCycling (South Australia)",
-    "state": "SA",
-    "eventUrl": "https://entryboss.cc/races/5458",
-    "source": "",
-    "category": ""
-  },
-  {
-    "eventName": "MetroMap Super Series - Seniors Individual Series Pass",
-    "eventDate": "2026-01-16T00:00:00Z",
-    "clubName": "AusCycling (South Australia)",
-    "state": "SA",
-    "eventUrl": "https://entryboss.cc/races/8340",
     "source": "",
     "category": ""
   },
@@ -198,6 +198,15 @@
     "category": ""
   },
   {
+    "eventName": "MetroMap Super Series - Seniors Individual Series Pass",
+    "eventDate": "2026-01-16T00:00:00Z",
+    "clubName": "AusCycling (South Australia)",
+    "state": "SA",
+    "eventUrl": "https://entryboss.cc/races/8340",
+    "source": "",
+    "category": ""
+  },
+  {
     "eventName": "2026 R01 XCC | Eagle MTB Park",
     "eventDate": "2026-01-16T00:00:00Z",
     "clubName": "Adelaide Mountain Bike Club",
@@ -207,29 +216,11 @@
     "category": ""
   },
   {
-    "eventName": "2023 Cervelo Super Series - Series Pass - Senior Riders",
+    "eventName": "Super Series - Series Pass",
     "eventDate": "2026-01-16T00:00:00Z",
     "clubName": "AusCycling (South Australia)",
     "state": "SA",
-    "eventUrl": "https://entryboss.cc/races/17080",
-    "source": "",
-    "category": ""
-  },
-  {
-    "eventName": "99 Bikes Junior Super Series - Junior Individual Series Pass",
-    "eventDate": "2026-01-16T00:00:00Z",
-    "clubName": "AusCycling (South Australia)",
-    "state": "SA",
-    "eventUrl": "https://entryboss.cc/races/8341",
-    "source": "",
-    "category": ""
-  },
-  {
-    "eventName": "Adelaide Track League x Santos Tour Down Under",
-    "eventDate": "2026-01-17T00:00:00Z",
-    "clubName": "AusCycling (South Australia)",
-    "state": "SA",
-    "eventUrl": "https://entryboss.cc/races/28791",
+    "eventUrl": "https://entryboss.cc/races/5458",
     "source": "",
     "category": ""
   },
@@ -239,6 +230,15 @@
     "clubName": "AusCycling (South Australia)",
     "state": "SA",
     "eventUrl": "https://entryboss.cc/races/27880",
+    "source": "",
+    "category": ""
+  },
+  {
+    "eventName": "Adelaide Track League x Santos Tour Down Under",
+    "eventDate": "2026-01-17T00:00:00Z",
+    "clubName": "AusCycling (South Australia)",
+    "state": "SA",
+    "eventUrl": "https://entryboss.cc/races/28791",
     "source": "",
     "category": ""
   },
@@ -270,6 +270,24 @@
     "category": ""
   },
   {
+    "eventName": "Valley Drive International Hill Climb",
+    "eventDate": "2026-01-19T00:00:00Z",
+    "clubName": "AusCycling (South Australia)",
+    "state": "SA",
+    "eventUrl": "https://entryboss.cc/races/28583",
+    "source": "",
+    "category": ""
+  },
+  {
+    "eventName": "Santos Tour Down Under Group Ride 19/01",
+    "eventDate": "2026-01-19T00:00:00Z",
+    "clubName": "AusCycling (South Australia)",
+    "state": "SA",
+    "eventUrl": "https://entryboss.cc/races/27882",
+    "source": "",
+    "category": ""
+  },
+  {
     "eventName": "Para-Cycling Hill Climb x Santos Tour Down Under",
     "eventDate": "2026-01-19T00:00:00Z",
     "clubName": "AusCycling (South Australia)",
@@ -284,24 +302,6 @@
     "clubName": "South Coast Cycling",
     "state": "SA",
     "eventUrl": "https://entryboss.cc/races/28639",
-    "source": "",
-    "category": ""
-  },
-  {
-    "eventName": "Santos Tour Down Under Group Ride 19/01",
-    "eventDate": "2026-01-19T00:00:00Z",
-    "clubName": "AusCycling (South Australia)",
-    "state": "SA",
-    "eventUrl": "https://entryboss.cc/races/27882",
-    "source": "",
-    "category": ""
-  },
-  {
-    "eventName": "Valley Drive International Hill Climb",
-    "eventDate": "2026-01-19T00:00:00Z",
-    "clubName": "AusCycling (South Australia)",
-    "state": "SA",
-    "eventUrl": "https://entryboss.cc/races/28583",
     "source": "",
     "category": ""
   },
@@ -324,11 +324,11 @@
     "category": ""
   },
   {
-    "eventName": "NCC Criteriums p/b MAAP and Specialized",
+    "eventName": "Santos Tour Down Under Group Ride 21/01",
     "eventDate": "2026-01-21T00:00:00Z",
     "clubName": "AusCycling (South Australia)",
     "state": "SA",
-    "eventUrl": "https://entryboss.cc/races/28048",
+    "eventUrl": "https://entryboss.cc/races/27884",
     "source": "",
     "category": ""
   },
@@ -351,11 +351,11 @@
     "category": ""
   },
   {
-    "eventName": "Santos Tour Down Under Group Ride 21/01",
+    "eventName": "NCC Criteriums p/b MAAP and Specialized",
     "eventDate": "2026-01-21T00:00:00Z",
     "clubName": "AusCycling (South Australia)",
     "state": "SA",
-    "eventUrl": "https://entryboss.cc/races/27884",
+    "eventUrl": "https://entryboss.cc/races/28048",
     "source": "",
     "category": ""
   },
@@ -450,20 +450,20 @@
     "category": ""
   },
   {
-    "eventName": "Moto Pace - Track and Road",
-    "eventDate": "2026-01-29T00:00:00Z",
-    "clubName": "Port Adelaide Cycling Club",
-    "state": "SA",
-    "eventUrl": "https://entryboss.cc/races/28815",
-    "source": "",
-    "category": ""
-  },
-  {
     "eventName": "NCC Junior Training and Senior Skills",
     "eventDate": "2026-01-29T00:00:00Z",
     "clubName": "Norwood Cycling Club",
     "state": "SA",
     "eventUrl": "https://entryboss.cc/races/28032",
+    "source": "",
+    "category": ""
+  },
+  {
+    "eventName": "Moto Pace - Track and Road",
+    "eventDate": "2026-01-29T00:00:00Z",
+    "clubName": "Port Adelaide Cycling Club",
+    "state": "SA",
+    "eventUrl": "https://entryboss.cc/races/28815",
     "source": "",
     "category": ""
   },
@@ -630,20 +630,20 @@
     "category": ""
   },
   {
-    "eventName": "52nd Annual Riverland Cycling Weekend - Day 1 - Barry Skinner Classic (Handicap)",
-    "eventDate": "2026-05-02T00:00:00Z",
-    "clubName": "Norwood Cycling Club",
-    "state": "SA",
-    "eventUrl": "https://entryboss.cc/races/28045",
-    "source": "",
-    "category": ""
-  },
-  {
     "eventName": "2026 AusCycling BikeChain U19 National Road Series - Round 1 - Tour of the Riverland plus Junior Support Grades",
     "eventDate": "2026-05-02T00:00:00Z",
     "clubName": "Norwood Cycling Club",
     "state": "SA",
     "eventUrl": "https://entryboss.cc/races/28043",
+    "source": "",
+    "category": ""
+  },
+  {
+    "eventName": "52nd Annual Riverland Cycling Weekend - Day 1 - Barry Skinner Classic (Handicap)",
+    "eventDate": "2026-05-02T00:00:00Z",
+    "clubName": "Norwood Cycling Club",
+    "state": "SA",
+    "eventUrl": "https://entryboss.cc/races/28045",
     "source": "",
     "category": ""
   },
@@ -672,24 +672,6 @@
     "state": "SA",
     "eventUrl": "https://entryboss.cc/races/28275",
     "source": "",
-    "category": ""
-  },
-  {
-    "eventName": "2026 Giant Adelaide Crossfire Cup - Series Entry - All 4 Rounds",
-    "eventDate": "2026-06-18T00:00:00Z",
-    "clubName": "Port Adelaide Cycling Club",
-    "state": "SA",
-    "eventUrl": "https://entryboss.cc/races/30734",
-    "source": "EntryBoss",
-    "category": ""
-  },
-  {
-    "eventName": "Moto Pace - Track and Road - Cancelled",
-    "eventDate": "2026-06-18T00:00:00Z",
-    "clubName": "Port Adelaide Cycling Club",
-    "state": "SA",
-    "eventUrl": "https://entryboss.cc/races/30473",
-    "source": "EntryBoss",
     "category": ""
   },
   {
@@ -729,6 +711,15 @@
     "category": ""
   },
   {
+    "eventName": "2026 Giant Adelaide Crossfire Cup - Series Entry - All 4 Rounds",
+    "eventDate": "2026-06-25T00:00:00Z",
+    "clubName": "Port Adelaide Cycling Club",
+    "state": "SA",
+    "eventUrl": "https://entryboss.cc/races/30734",
+    "source": "EntryBoss",
+    "category": ""
+  },
+  {
     "eventName": "Moto Pace - Track and Road",
     "eventDate": "2026-06-25T00:00:00Z",
     "clubName": "Port Adelaide Cycling Club",
@@ -747,74 +738,11 @@
     "category": ""
   },
   {
-    "eventName": "South Coast Cycling Club Junior Tour - Day 2 U13 Hill Climb TT",
-    "eventDate": "2026-07-05T00:00:00Z",
-    "clubName": "South Coast Cycling",
-    "state": "SA",
-    "eventUrl": "https://entryboss.cc/races/29655",
-    "source": "EntryBoss",
-    "category": ""
-  },
-  {
-    "eventName": "99 Bikes Junior Super Series - Junior Individual Series Pass",
-    "eventDate": "2026-07-05T00:00:00Z",
-    "clubName": "AusCycling (South Australia)",
-    "state": "SA",
-    "eventUrl": "https://entryboss.cc/races/8341",
-    "source": "EntryBoss",
-    "category": ""
-  },
-  {
-    "eventName": "South Coast Cycling Club Junior Tour 2026",
-    "eventDate": "2026-07-05T00:00:00Z",
-    "clubName": "South Coast Cycling",
-    "state": "SA",
-    "eventUrl": "https://entryboss.cc/races/29651",
-    "source": "EntryBoss",
-    "category": ""
-  },
-  {
-    "eventName": "Crossfire Cup Round 2",
-    "eventDate": "2026-07-05T00:00:00Z",
-    "clubName": "Port Adelaide Cycling Club",
-    "state": "SA",
-    "eventUrl": "https://entryboss.cc/races/28276",
-    "source": "",
-    "category": ""
-  },
-  {
-    "eventName": "2026 Giant Adelaide Crossfire Cup - Round 2",
-    "eventDate": "2026-07-05T00:00:00Z",
-    "clubName": "Port Adelaide Cycling Club",
-    "state": "SA",
-    "eventUrl": "https://entryboss.cc/races/28276",
-    "source": "EntryBoss",
-    "category": ""
-  },
-  {
-    "eventName": "Super Series - Series Pass",
-    "eventDate": "2026-07-05T00:00:00Z",
-    "clubName": "AusCycling (South Australia)",
-    "state": "SA",
-    "eventUrl": "https://entryboss.cc/races/5458",
-    "source": "EntryBoss",
-    "category": ""
-  },
-  {
     "eventName": "MetroMap Super Series - Seniors Individual Series Pass",
     "eventDate": "2026-07-05T00:00:00Z",
     "clubName": "AusCycling (South Australia)",
     "state": "SA",
     "eventUrl": "https://entryboss.cc/races/8340",
-    "source": "EntryBoss",
-    "category": ""
-  },
-  {
-    "eventName": "2023 Cervelo Super Series - Series Pass - Senior Riders",
-    "eventDate": "2026-07-05T00:00:00Z",
-    "clubName": "AusCycling (South Australia)",
-    "state": "SA",
-    "eventUrl": "https://entryboss.cc/races/17080",
     "source": "EntryBoss",
     "category": ""
   },
@@ -828,11 +756,47 @@
     "category": ""
   },
   {
+    "eventName": "99 Bikes Junior Super Series - Junior Individual Series Pass",
+    "eventDate": "2026-07-05T00:00:00Z",
+    "clubName": "AusCycling (South Australia)",
+    "state": "SA",
+    "eventUrl": "https://entryboss.cc/races/8341",
+    "source": "EntryBoss",
+    "category": ""
+  },
+  {
+    "eventName": "2023 Cervelo Super Series - Series Pass - Junior Riders",
+    "eventDate": "2026-07-05T00:00:00Z",
+    "clubName": "AusCycling (South Australia)",
+    "state": "SA",
+    "eventUrl": "https://entryboss.cc/races/17094",
+    "source": "EntryBoss",
+    "category": ""
+  },
+  {
     "eventName": "South Coast Cycling Club Junior Tour 2026",
     "eventDate": "2026-07-05T00:00:00Z",
     "clubName": "AusCycling (South Australia)",
     "state": "SA",
     "eventUrl": "https://entryboss.cc/races/29651",
+    "source": "EntryBoss",
+    "category": ""
+  },
+  {
+    "eventName": "Super Series - Series Pass",
+    "eventDate": "2026-07-05T00:00:00Z",
+    "clubName": "AusCycling (South Australia)",
+    "state": "SA",
+    "eventUrl": "https://entryboss.cc/races/5458",
+    "source": "EntryBoss",
+    "category": ""
+  },
+  {
+    "eventName": "2026 Giant Adelaide Crossfire Cup - Round 2",
+    "eventDate": "2026-07-05T00:00:00Z",
+    "clubName": "Port Adelaide Cycling Club",
+    "state": "SA",
+    "eventUrl": "https://entryboss.cc/races/28276",
     "source": "EntryBoss",
     "category": ""
   },
@@ -846,11 +810,47 @@
     "category": ""
   },
   {
-    "eventName": "2023 Cervelo Super Series - Series Pass - Junior Riders",
+    "eventName": "2023 Cervelo Super Series - Series Pass - Senior Riders",
     "eventDate": "2026-07-05T00:00:00Z",
     "clubName": "AusCycling (South Australia)",
     "state": "SA",
-    "eventUrl": "https://entryboss.cc/races/17094",
+    "eventUrl": "https://entryboss.cc/races/17080",
+    "source": "EntryBoss",
+    "category": ""
+  },
+  {
+    "eventName": "South Coast Cycling Club Junior Tour 2026",
+    "eventDate": "2026-07-05T00:00:00Z",
+    "clubName": "South Coast Cycling",
+    "state": "SA",
+    "eventUrl": "https://entryboss.cc/races/29651",
+    "source": "EntryBoss",
+    "category": ""
+  },
+  {
+    "eventName": "South Coast Cycling Club Junior Tour - Day 2 U13 Hill Climb TT",
+    "eventDate": "2026-07-05T00:00:00Z",
+    "clubName": "South Coast Cycling",
+    "state": "SA",
+    "eventUrl": "https://entryboss.cc/races/29655",
+    "source": "EntryBoss",
+    "category": ""
+  },
+  {
+    "eventName": "Crossfire Cup Round 2",
+    "eventDate": "2026-07-05T00:00:00Z",
+    "clubName": "Port Adelaide Cycling Club",
+    "state": "SA",
+    "eventUrl": "https://entryboss.cc/races/28276",
+    "source": "",
+    "category": ""
+  },
+  {
+    "eventName": "Whyalla Wild Dog 2026",
+    "eventDate": "2026-07-12T00:00:00Z",
+    "clubName": "Events to Activate",
+    "state": "SA",
+    "eventUrl": "https://entryboss.cc/races/28272",
     "source": "EntryBoss",
     "category": ""
   },
@@ -869,16 +869,16 @@
     "clubName": "Events to Activate",
     "state": "SA",
     "eventUrl": "https://entryboss.cc/races/28272",
-    "source": "EntryBoss",
+    "source": "",
     "category": ""
   },
   {
-    "eventName": "Whyalla Wild Dog 2026",
+    "eventName": "NCC Winter Criteriums",
     "eventDate": "2026-07-12T00:00:00Z",
-    "clubName": "Events to Activate",
+    "clubName": "Norwood Cycling Club",
     "state": "SA",
-    "eventUrl": "https://entryboss.cc/races/28272",
-    "source": "",
+    "eventUrl": "https://entryboss.cc/races/31124",
+    "source": "EntryBoss",
     "category": ""
   },
   {
@@ -909,6 +909,15 @@
     "category": ""
   },
   {
+    "eventName": "SPRINGHEAD RD (Mt Torrens)",
+    "eventDate": "2026-08-16T00:00:00Z",
+    "clubName": "Adelaide Hills Cycling Club",
+    "state": "SA",
+    "eventUrl": "https://entryboss.cc/races/29286",
+    "source": "EntryBoss",
+    "category": ""
+  },
+  {
     "eventName": "2026 State R4 - Eagle - The Mixer",
     "eventDate": "2026-08-16T00:00:00Z",
     "clubName": "Inside Line Mountain Bike Club",
@@ -918,11 +927,11 @@
     "category": ""
   },
   {
-    "eventName": "SPRINGHEAD RD (Mt Torrens)",
-    "eventDate": "2026-08-16T00:00:00Z",
-    "clubName": "Adelaide Hills Cycling Club",
+    "eventName": "NCC Winter Criteriums",
+    "eventDate": "2026-08-23T00:00:00Z",
+    "clubName": "Norwood Cycling Club",
     "state": "SA",
-    "eventUrl": "https://entryboss.cc/races/29286",
+    "eventUrl": "https://entryboss.cc/races/31125",
     "source": "EntryBoss",
     "category": ""
   },
@@ -963,20 +972,20 @@
     "category": ""
   },
   {
-    "eventName": "2026 State R5 - Mystery",
-    "eventDate": "2026-09-06T00:00:00Z",
-    "clubName": "Inside Line Mountain Bike Club",
-    "state": "SA",
-    "eventUrl": "https://entryboss.cc/races/29781",
-    "source": "EntryBoss",
-    "category": ""
-  },
-  {
     "eventName": "BRADBURY (Bradbury)",
     "eventDate": "2026-09-06T00:00:00Z",
     "clubName": "Adelaide Hills Cycling Club",
     "state": "SA",
     "eventUrl": "https://entryboss.cc/races/29287",
+    "source": "EntryBoss",
+    "category": ""
+  },
+  {
+    "eventName": "2026 State R5 - Mystery",
+    "eventDate": "2026-09-06T00:00:00Z",
+    "clubName": "Inside Line Mountain Bike Club",
+    "state": "SA",
+    "eventUrl": "https://entryboss.cc/races/29781",
     "source": "EntryBoss",
     "category": ""
   },
@@ -1026,6 +1035,15 @@
     "category": ""
   },
   {
+    "eventName": "2026 SA State Champs (\u0026 State Series R6) - Mt Gambier - Wheelnutz",
+    "eventDate": "2026-10-04T00:00:00Z",
+    "clubName": "Inside Line Mountain Bike Club",
+    "state": "SA",
+    "eventUrl": "https://entryboss.cc/races/29782",
+    "source": "EntryBoss",
+    "category": ""
+  },
+  {
     "eventName": "STAMPS RD (Macclesfield)",
     "eventDate": "2026-10-04T00:00:00Z",
     "clubName": "Adelaide Hills Cycling Club",
@@ -1040,15 +1058,6 @@
     "clubName": "AusCycling (South Australia)",
     "state": "SA",
     "eventUrl": "https://entryboss.cc/races/28856",
-    "source": "EntryBoss",
-    "category": ""
-  },
-  {
-    "eventName": "2026 SA State Champs (\u0026 State Series R6) - Mt Gambier - Wheelnutz",
-    "eventDate": "2026-10-04T00:00:00Z",
-    "clubName": "Inside Line Mountain Bike Club",
-    "state": "SA",
-    "eventUrl": "https://entryboss.cc/races/29782",
     "source": "EntryBoss",
     "category": ""
   },
@@ -1071,20 +1080,20 @@
     "category": ""
   },
   {
-    "eventName": "FORRESTON (Gumeracha)",
-    "eventDate": "2026-11-01T00:00:00Z",
-    "clubName": "Adelaide Hills Cycling Club",
-    "state": "SA",
-    "eventUrl": "https://entryboss.cc/races/29289",
-    "source": "EntryBoss",
-    "category": ""
-  },
-  {
     "eventName": "2026 Inside Line Chainless Charity Champs",
     "eventDate": "2026-11-01T00:00:00Z",
     "clubName": "Inside Line Mountain Bike Club",
     "state": "SA",
     "eventUrl": "https://entryboss.cc/races/29787",
+    "source": "EntryBoss",
+    "category": ""
+  },
+  {
+    "eventName": "FORRESTON (Gumeracha)",
+    "eventDate": "2026-11-01T00:00:00Z",
+    "clubName": "Adelaide Hills Cycling Club",
+    "state": "SA",
+    "eventUrl": "https://entryboss.cc/races/29289",
     "source": "EntryBoss",
     "category": ""
   },
