@@ -1,19 +1,19 @@
 [
   {
-    "eventName": "MVDCC January 2026 Carnival (Including AusCycling Tasmania Under 13 Track State Titles)",
-    "eventDate": "2026-01-10T00:00:00Z",
-    "clubName": "Mersey Valley Devonport Cycling Club",
-    "state": "TAS",
-    "eventUrl": "https://entryboss.cc/races/27757",
-    "source": "",
-    "category": ""
-  },
-  {
     "eventName": "Sprung Super D - Hollybank (Reverb-Juggernaut-Ginger Ridge) - Sat-10-Jan-2026",
     "eventDate": "2026-01-10T00:00:00Z",
     "clubName": "Launceston Mountain Bike Club",
     "state": "TAS",
     "eventUrl": "https://entryboss.cc/races/28400",
+    "source": "",
+    "category": ""
+  },
+  {
+    "eventName": "MVDCC January 2026 Carnival (Including AusCycling Tasmania Under 13 Track State Titles)",
+    "eventDate": "2026-01-10T00:00:00Z",
+    "clubName": "Mersey Valley Devonport Cycling Club",
+    "state": "TAS",
+    "eventUrl": "https://entryboss.cc/races/27757",
     "source": "",
     "category": ""
   },
@@ -185,6 +185,15 @@
     "clubName": "AusCycling (Tasmania)",
     "state": "TAS",
     "eventUrl": "https://entryboss.cc/races/28521",
+    "source": "EntryBoss",
+    "category": ""
+  },
+  {
+    "eventName": "2026 AusCycling BMX State Series - RD4 Southern City",
+    "eventDate": "2026-06-27T00:00:00Z",
+    "clubName": "AusCycling (Tasmania)",
+    "state": "TAS",
+    "eventUrl": "https://entryboss.cc/races/28521",
     "source": "",
     "category": ""
   },
@@ -198,11 +207,11 @@
     "category": ""
   },
   {
-    "eventName": "2026 AusCycling BMX State Series - RD4 Southern City",
-    "eventDate": "2026-06-27T00:00:00Z",
-    "clubName": "AusCycling (Tasmania)",
+    "eventName": "2026 HWDD Cyclocross Series - Race 2 + coaching/come try- Glenorchy MTB Park",
+    "eventDate": "2026-06-28T00:00:00Z",
+    "clubName": "Hobart Wheelers Dirt Devils CC",
     "state": "TAS",
-    "eventUrl": "https://entryboss.cc/races/28521",
+    "eventUrl": "https://entryboss.cc/races/30764",
     "source": "EntryBoss",
     "category": ""
   },
@@ -216,11 +225,11 @@
     "category": ""
   },
   {
-    "eventName": "2026 HWDD Cyclocross Series - Race 2 + coaching/come try- Glenorchy MTB Park",
-    "eventDate": "2026-06-28T00:00:00Z",
-    "clubName": "Hobart Wheelers Dirt Devils CC",
+    "eventName": "2026 Clubby #5 - Scott Smith Orthodontics",
+    "eventDate": "2026-07-04T00:00:00Z",
+    "clubName": "Launceston BMX Club",
     "state": "TAS",
-    "eventUrl": "https://entryboss.cc/races/30764",
+    "eventUrl": "https://entryboss.cc/races/30744",
     "source": "EntryBoss",
     "category": ""
   },
@@ -234,15 +243,6 @@
     "category": ""
   },
   {
-    "eventName": "2026 Clubby #5 - Scott Smith Orthodontics",
-    "eventDate": "2026-07-04T00:00:00Z",
-    "clubName": "Launceston BMX Club",
-    "state": "TAS",
-    "eventUrl": "https://entryboss.cc/races/30744",
-    "source": "EntryBoss",
-    "category": ""
-  },
-  {
     "eventName": "NW MTB Series - Winter in Paradise - Round 4",
     "eventDate": "2026-07-26T00:00:00Z",
     "clubName": "Mersey Mountain Bike Club",
@@ -252,20 +252,20 @@
     "category": ""
   },
   {
-    "eventName": "Deloraine",
-    "eventDate": "2026-08-02T00:00:00Z",
-    "clubName": "Northern Vets CC (Tasmania)",
-    "state": "TAS",
-    "eventUrl": "https://entryboss.cc/races/31027",
-    "source": "EntryBoss",
-    "category": ""
-  },
-  {
     "eventName": "2026 HWDD Cyclocross Series - Race 4",
     "eventDate": "2026-08-02T00:00:00Z",
     "clubName": "Hobart Wheelers Dirt Devils CC",
     "state": "TAS",
     "eventUrl": "https://entryboss.cc/races/30766",
+    "source": "EntryBoss",
+    "category": ""
+  },
+  {
+    "eventName": "Deloraine",
+    "eventDate": "2026-08-02T00:00:00Z",
+    "clubName": "Northern Vets CC (Tasmania)",
+    "state": "TAS",
+    "eventUrl": "https://entryboss.cc/races/31027",
     "source": "EntryBoss",
     "category": ""
   },
