@@ -153,15 +153,6 @@
     "category": ""
   },
   {
-    "eventName": "Selbourne - Black Lane",
-    "eventDate": "2026-06-28T00:00:00Z",
-    "clubName": "Northern Vets CC (Tasmania)",
-    "state": "TAS",
-    "eventUrl": "https://entryboss.cc/races/31026",
-    "source": "EntryBoss",
-    "category": ""
-  },
-  {
     "eventName": "2026 HWDD Cyclocross Series - Race 2 + coaching/come try- Glenorchy MTB Park",
     "eventDate": "2026-06-28T00:00:00Z",
     "clubName": "Hobart Wheelers Dirt Devils CC",
@@ -171,38 +162,11 @@
     "category": ""
   },
   {
-    "eventName": "2025 Night Series - Series Entry (All 3 events)",
-    "eventDate": "2026-07-04T00:00:00Z",
-    "clubName": "Launceston BMX Club",
+    "eventName": "Selbourne - Black Lane",
+    "eventDate": "2026-06-28T00:00:00Z",
+    "clubName": "Northern Vets CC (Tasmania)",
     "state": "TAS",
-    "eventUrl": "https://entryboss.cc/races/27935",
-    "source": "EntryBoss",
-    "category": ""
-  },
-  {
-    "eventName": "LAUNCESTON BMX - TWILIGHT SERIES 2023 - SERIES PASS",
-    "eventDate": "2026-07-04T00:00:00Z",
-    "clubName": "Launceston BMX Club",
-    "state": "TAS",
-    "eventUrl": "https://entryboss.cc/races/14524",
-    "source": "EntryBoss",
-    "category": ""
-  },
-  {
-    "eventName": "LAUNCESTON BMX - NIGHT SERIES 2024 - SERIES PASS",
-    "eventDate": "2026-07-04T00:00:00Z",
-    "clubName": "Launceston BMX Club",
-    "state": "TAS",
-    "eventUrl": "https://entryboss.cc/races/20374",
-    "source": "EntryBoss",
-    "category": ""
-  },
-  {
-    "eventName": "2026 HWDD Cyclocross Series - Race 3",
-    "eventDate": "2026-07-04T00:00:00Z",
-    "clubName": "Hobart Wheelers Dirt Devils CC",
-    "state": "TAS",
-    "eventUrl": "https://entryboss.cc/races/30765",
+    "eventUrl": "https://entryboss.cc/races/31026",
     "source": "EntryBoss",
     "category": ""
   },
@@ -225,11 +189,47 @@
     "category": ""
   },
   {
+    "eventName": "2026 HWDD Cyclocross Series - Race 3, Baskerville Raceway",
+    "eventDate": "2026-07-04T00:00:00Z",
+    "clubName": "Hobart Wheelers Dirt Devils CC",
+    "state": "TAS",
+    "eventUrl": "https://entryboss.cc/races/30765",
+    "source": "EntryBoss",
+    "category": ""
+  },
+  {
+    "eventName": "LAUNCESTON BMX - TWILIGHT SERIES 2023 - SERIES PASS",
+    "eventDate": "2026-07-04T00:00:00Z",
+    "clubName": "Launceston BMX Club",
+    "state": "TAS",
+    "eventUrl": "https://entryboss.cc/races/14524",
+    "source": "EntryBoss",
+    "category": ""
+  },
+  {
+    "eventName": "LAUNCESTON BMX - NIGHT SERIES 2024 - SERIES PASS",
+    "eventDate": "2026-07-04T00:00:00Z",
+    "clubName": "Launceston BMX Club",
+    "state": "TAS",
+    "eventUrl": "https://entryboss.cc/races/20374",
+    "source": "EntryBoss",
+    "category": ""
+  },
+  {
     "eventName": "2026 Night Series - Series Entry - ALL 3 ROUNDS",
     "eventDate": "2026-07-04T00:00:00Z",
     "clubName": "Launceston BMX Club",
     "state": "TAS",
     "eventUrl": "https://entryboss.cc/races/30426",
+    "source": "EntryBoss",
+    "category": ""
+  },
+  {
+    "eventName": "2025 Night Series - Series Entry (All 3 events)",
+    "eventDate": "2026-07-04T00:00:00Z",
+    "clubName": "Launceston BMX Club",
+    "state": "TAS",
+    "eventUrl": "https://entryboss.cc/races/27935",
     "source": "EntryBoss",
     "category": ""
   },
@@ -302,7 +302,7 @@
     "clubName": "AusCycling (Tasmania)",
     "state": "TAS",
     "eventUrl": "https://entryboss.cc/races/28523",
-    "source": "",
+    "source": "EntryBoss",
     "category": ""
   },
   {
@@ -311,7 +311,7 @@
     "clubName": "AusCycling (Tasmania)",
     "state": "TAS",
     "eventUrl": "https://entryboss.cc/races/28523",
-    "source": "EntryBoss",
+    "source": "",
     "category": ""
   },
   {
