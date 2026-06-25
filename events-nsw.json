@@ -450,15 +450,6 @@
     "category": "Handicap"
   },
   {
-    "eventName": " ICC Wednesday Night 100 Lapper  -  11  February 2026",
-    "eventDate": "2026-02-11T00:00:00Z",
-    "clubName": "Illawarra CC",
-    "state": "NSW",
-    "eventUrl": "https://www.buncheur.com/illawarra-cc-icc-wednesday-night-100-lapper-12-1-1-3-1-1-3-4-1-3-1-4-1-1-1-1-1-1-1-1-1-1-1-1-1-1-1-1-1-1-1-1-1-1-1-1-1-1-1-1-1-1-1-1-1-1-1-3-1",
-    "source": "Buncheur",
-    "category": "Training Session"
-  },
-  {
     "eventName": "2026 MVCC Summer Crit Season - Race 18",
     "eventDate": "2026-02-11T00:00:00Z",
     "clubName": "Manning Valley CC",
@@ -466,6 +457,15 @@
     "eventUrl": "https://www.buncheur.com/manning-valley-cc-2025-mvcc-summer-crit-season-race-18",
     "source": "Buncheur",
     "category": "Criterium"
+  },
+  {
+    "eventName": " ICC Wednesday Night 100 Lapper  -  11  February 2026",
+    "eventDate": "2026-02-11T00:00:00Z",
+    "clubName": "Illawarra CC",
+    "state": "NSW",
+    "eventUrl": "https://www.buncheur.com/illawarra-cc-icc-wednesday-night-100-lapper-12-1-1-3-1-1-3-4-1-3-1-4-1-1-1-1-1-1-1-1-1-1-1-1-1-1-1-1-1-1-1-1-1-1-1-1-1-1-1-1-1-1-1-1-1-1-1-3-1",
+    "source": "Buncheur",
+    "category": "Training Session"
   },
   {
     "eventName": "WSMTB CritCross @ Penrith Paceway Round 2",
@@ -666,20 +666,20 @@
     "category": "Criterium"
   },
   {
-    "eventName": "CCCC Criterium Race",
-    "eventDate": "2026-02-22T00:00:00Z",
-    "clubName": "Central Coast CC",
-    "state": "NSW",
-    "eventUrl": "https://entryboss.cc/races/27475",
-    "source": "",
-    "category": ""
-  },
-  {
     "eventName": "2026 Masters Club Team Sprint Championships - NSW",
     "eventDate": "2026-02-22T00:00:00Z",
     "clubName": "AusCycling (New South Wales)",
     "state": "NSW",
     "eventUrl": "https://entryboss.cc/races/28596",
+    "source": "",
+    "category": ""
+  },
+  {
+    "eventName": "CCCC Criterium Race",
+    "eventDate": "2026-02-22T00:00:00Z",
+    "clubName": "Central Coast CC",
+    "state": "NSW",
+    "eventUrl": "https://entryboss.cc/races/27475",
     "source": "",
     "category": ""
   },
@@ -927,6 +927,15 @@
     "category": "Criterium"
   },
   {
+    "eventName": "NWSCC Track Day- Individual Time Trial",
+    "eventDate": "2026-03-07T00:00:00Z",
+    "clubName": "North Western Sydney CC",
+    "state": "NSW",
+    "eventUrl": "https://www.buncheur.com/north-western-sydney-cc-nwscc-track-day-individual-time-trial",
+    "source": "Buncheur",
+    "category": "Individual Time Trial"
+  },
+  {
     "eventName": "INTERCLUB ROUND 2 - ICC's Round of the Interclub Series ",
     "eventDate": "2026-03-07T00:00:00Z",
     "clubName": "Illawarra CC",
@@ -945,13 +954,13 @@
     "category": "Criterium"
   },
   {
-    "eventName": "NWSCC Track Day- Individual Time Trial",
-    "eventDate": "2026-03-07T00:00:00Z",
-    "clubName": "North Western Sydney CC",
+    "eventName": "Raw sugar Rush",
+    "eventDate": "2026-03-08T00:00:00Z",
+    "clubName": "Manning Valley CC",
     "state": "NSW",
-    "eventUrl": "https://www.buncheur.com/north-western-sydney-cc-nwscc-track-day-individual-time-trial",
+    "eventUrl": "https://www.buncheur.com/manning-valley-cc-eyecare-plus-circuit-1",
     "source": "Buncheur",
-    "category": "Individual Time Trial"
+    "category": "Criterium"
   },
   {
     "eventName": "SXCC Sunday Crits",
@@ -979,15 +988,6 @@
     "eventUrl": "https://entryboss.cc/races/27477",
     "source": "",
     "category": ""
-  },
-  {
-    "eventName": "Raw sugar Rush",
-    "eventDate": "2026-03-08T00:00:00Z",
-    "clubName": "Manning Valley CC",
-    "state": "NSW",
-    "eventUrl": "https://www.buncheur.com/manning-valley-cc-eyecare-plus-circuit-1",
-    "source": "Buncheur",
-    "category": "Criterium"
   },
   {
     "eventName": "Easts - Tuesday Night Heffron 2026 Summer Series - Round 7",
@@ -1044,15 +1044,6 @@
     "category": "Criterium"
   },
   {
-    "eventName": "Macleay Valley Coast MVMB Cross Country Series Rd 1",
-    "eventDate": "2026-03-14T00:00:00Z",
-    "clubName": "Macleay Valley Mountain Bikers",
-    "state": "NSW",
-    "eventUrl": "https://entryboss.cc/races/28588",
-    "source": "",
-    "category": ""
-  },
-  {
     "eventName": "2026 Armidale Cycling Club Crit",
     "eventDate": "2026-03-14T00:00:00Z",
     "clubName": "Armidale CC",
@@ -1062,11 +1053,29 @@
     "category": "Criterium"
   },
   {
-    "eventName": "Macleay Valley Coast MVMB GE Series Rd 1",
+    "eventName": "Macleay Valley Coast MVMB Cross Country Series Rd 1",
+    "eventDate": "2026-03-14T00:00:00Z",
+    "clubName": "Macleay Valley Mountain Bikers",
+    "state": "NSW",
+    "eventUrl": "https://entryboss.cc/races/28588",
+    "source": "",
+    "category": ""
+  },
+  {
+    "eventName": "Hawkesbury Clubby Round 4 - 2026",
+    "eventDate": "2026-03-15T00:00:00Z",
+    "clubName": "Hawkesbury Hornets BMX Club",
+    "state": "NSW",
+    "eventUrl": "https://entryboss.cc/races/28692",
+    "source": "",
+    "category": ""
+  },
+  {
+    "eventName": "Macleay Valley Coast MVMB Mini-Duro Rd 1",
     "eventDate": "2026-03-15T00:00:00Z",
     "clubName": "Macleay Valley Mountain Bikers",
     "state": "NSW",
-    "eventUrl": "https://entryboss.cc/races/28586",
+    "eventUrl": "https://entryboss.cc/races/28587",
     "source": "",
     "category": ""
   },
@@ -1089,11 +1098,11 @@
     "category": "Criterium"
   },
   {
-    "eventName": "Hawkesbury Clubby Round 4 - 2026",
+    "eventName": "Macleay Valley Coast MVMB GE Series Rd 1",
     "eventDate": "2026-03-15T00:00:00Z",
-    "clubName": "Hawkesbury Hornets BMX Club",
+    "clubName": "Macleay Valley Mountain Bikers",
     "state": "NSW",
-    "eventUrl": "https://entryboss.cc/races/28692",
+    "eventUrl": "https://entryboss.cc/races/28586",
     "source": "",
     "category": ""
   },
@@ -1105,15 +1114,6 @@
     "eventUrl": "https://www.buncheur.com/nowra-velo-nowra-velo-club-criterium-51",
     "source": "Buncheur",
     "category": "Criterium"
-  },
-  {
-    "eventName": "Macleay Valley Coast MVMB Mini-Duro Rd 1",
-    "eventDate": "2026-03-15T00:00:00Z",
-    "clubName": "Macleay Valley Mountain Bikers",
-    "state": "NSW",
-    "eventUrl": "https://entryboss.cc/races/28587",
-    "source": "",
-    "category": ""
   },
   {
     "eventName": "Easts - Tuesday Night Heffron 2026 Summer Series - Round 8",
@@ -1170,6 +1170,15 @@
     "category": "Criterium"
   },
   {
+    "eventName": "Randwick Cycling | Saturday Heffron Crits 2",
+    "eventDate": "2026-03-21T00:00:00Z",
+    "clubName": "Randwick Botany CC",
+    "state": "NSW",
+    "eventUrl": "https://www.buncheur.com/randwick-botany-cc-randwick-cycling--saturday-heffron-crits-5-9-10-1-1-6-1-1-3-1-1-2",
+    "source": "Buncheur",
+    "category": "Criterium"
+  },
+  {
     "eventName": "2026 Armidale Cycling Club Crit",
     "eventDate": "2026-03-21T00:00:00Z",
     "clubName": "Armidale CC",
@@ -1179,13 +1188,13 @@
     "category": "Criterium"
   },
   {
-    "eventName": "Randwick Cycling | Saturday Heffron Crits 2",
-    "eventDate": "2026-03-21T00:00:00Z",
-    "clubName": "Randwick Botany CC",
+    "eventName": "Ride Dungog Flow Race # 1",
+    "eventDate": "2026-03-22T00:00:00Z",
+    "clubName": "MTBA - Ride Dungog",
     "state": "NSW",
-    "eventUrl": "https://www.buncheur.com/randwick-botany-cc-randwick-cycling--saturday-heffron-crits-5-9-10-1-1-6-1-1-3-1-1-2",
+    "eventUrl": "https://www.buncheur.com/mtba-ride-dungog-ride-dungog-flow-race--1",
     "source": "Buncheur",
-    "category": "Criterium"
+    "category": "Enduro MTB"
   },
   {
     "eventName": "PMCC - Inaugural Gravel Race Season 2026 - March 22nd",
@@ -1215,15 +1224,6 @@
     "category": ""
   },
   {
-    "eventName": "SXCC Sunday Crits",
-    "eventDate": "2026-03-22T00:00:00Z",
-    "clubName": "Southern Cross CC",
-    "state": "NSW",
-    "eventUrl": "https://www.buncheur.com/southern-cross-cc-sxcc-sunday-crits-30-7",
-    "source": "Buncheur",
-    "category": "Criterium"
-  },
-  {
     "eventName": "West Head Road Race 22/03",
     "eventDate": "2026-03-22T00:00:00Z",
     "clubName": "Manly Warringah CC",
@@ -1233,13 +1233,13 @@
     "category": "Road Race"
   },
   {
-    "eventName": "Ride Dungog Flow Race # 1",
+    "eventName": "SXCC Sunday Crits",
     "eventDate": "2026-03-22T00:00:00Z",
-    "clubName": "MTBA - Ride Dungog",
+    "clubName": "Southern Cross CC",
     "state": "NSW",
-    "eventUrl": "https://www.buncheur.com/mtba-ride-dungog-ride-dungog-flow-race--1",
+    "eventUrl": "https://www.buncheur.com/southern-cross-cc-sxcc-sunday-crits-30-7",
     "source": "Buncheur",
-    "category": "Enduro MTB"
+    "category": "Criterium"
   },
   {
     "eventName": "Nowra Velo Club Criterium",
@@ -1422,20 +1422,11 @@
     "category": "Criterium"
   },
   {
-    "eventName": "Illawarra Cycle Club - Winter Criterium Series - Race 1",
+    "eventName": "NHCC HEZ Road Race",
     "eventDate": "2026-04-18T00:00:00Z",
-    "clubName": "Illawarra CC",
+    "clubName": "Newcastle Hunter CC",
     "state": "NSW",
-    "eventUrl": "https://www.buncheur.com/illawarra-cc-illawarra-cycle-club-summer-criterium-series-11-1-1-2-1-1-1-2-2-2-2-3-1-3",
-    "source": "Buncheur",
-    "category": "Criterium"
-  },
-  {
-    "eventName": "RROTY 2026 #1 Dangarsleigh 30km",
-    "eventDate": "2026-04-18T00:00:00Z",
-    "clubName": "Armidale CC",
-    "state": "NSW",
-    "eventUrl": "https://www.buncheur.com/armidale-cc-rroty-2026-1-dangarsleigh-30km",
+    "eventUrl": "https://www.buncheur.com/newcastle-hunter-cc-nhcc-hez-road-race-18-1",
     "source": "Buncheur",
     "category": "Road Race"
   },
@@ -1449,22 +1440,13 @@
     "category": "Criterium"
   },
   {
-    "eventName": "BSCC-LACC Winter Series W1",
+    "eventName": "Illawarra Cycle Club - Winter Criterium Series - Race 1",
     "eventDate": "2026-04-18T00:00:00Z",
-    "clubName": "Bankstown Sports CC",
+    "clubName": "Illawarra CC",
     "state": "NSW",
-    "eventUrl": "https://www.buncheur.com/bankstown-sports-cc-bscc-lacc-winter-series-9-10-2",
+    "eventUrl": "https://www.buncheur.com/illawarra-cc-illawarra-cycle-club-summer-criterium-series-11-1-1-2-1-1-1-2-2-2-2-3-1-3",
     "source": "Buncheur",
-    "category": "Road Race"
-  },
-  {
-    "eventName": "NHCC HEZ Road Race",
-    "eventDate": "2026-04-18T00:00:00Z",
-    "clubName": "Newcastle Hunter CC",
-    "state": "NSW",
-    "eventUrl": "https://www.buncheur.com/newcastle-hunter-cc-nhcc-hez-road-race-18-1",
-    "source": "Buncheur",
-    "category": "Road Race"
+    "category": "Criterium"
   },
   {
     "eventName": "Oatley Park - ANZUP Criterium 18/04",
@@ -1476,11 +1458,29 @@
     "category": "Criterium"
   },
   {
-    "eventName": "(START LINE ENTRIES OPEN) 2026 Southern Region Interclub Round 5",
-    "eventDate": "2026-04-19T00:00:00Z",
-    "clubName": "Camden Cycling Club",
+    "eventName": "RROTY 2026 #1 Dangarsleigh 30km",
+    "eventDate": "2026-04-18T00:00:00Z",
+    "clubName": "Armidale CC",
     "state": "NSW",
-    "eventUrl": "https://www.buncheur.com/camden-cycling-club-2026-southern-region-interclub-round-5",
+    "eventUrl": "https://www.buncheur.com/armidale-cc-rroty-2026-1-dangarsleigh-30km",
+    "source": "Buncheur",
+    "category": "Road Race"
+  },
+  {
+    "eventName": "BSCC-LACC Winter Series W1",
+    "eventDate": "2026-04-18T00:00:00Z",
+    "clubName": "Bankstown Sports CC",
+    "state": "NSW",
+    "eventUrl": "https://www.buncheur.com/bankstown-sports-cc-bscc-lacc-winter-series-9-10-2",
+    "source": "Buncheur",
+    "category": "Road Race"
+  },
+  {
+    "eventName": "Nowra Velo Club Criterium",
+    "eventDate": "2026-04-19T00:00:00Z",
+    "clubName": "Nowra Velo",
+    "state": "NSW",
+    "eventUrl": "https://www.buncheur.com/nowra-velo-nowra-velo-club-criterium-54",
     "source": "Buncheur",
     "category": "Criterium"
   },
@@ -1494,11 +1494,11 @@
     "category": "Criterium"
   },
   {
-    "eventName": "Nowra Velo Club Criterium",
+    "eventName": "(START LINE ENTRIES OPEN) 2026 Southern Region Interclub Round 5",
     "eventDate": "2026-04-19T00:00:00Z",
-    "clubName": "Nowra Velo",
+    "clubName": "Camden Cycling Club",
     "state": "NSW",
-    "eventUrl": "https://www.buncheur.com/nowra-velo-nowra-velo-club-criterium-54",
+    "eventUrl": "https://www.buncheur.com/camden-cycling-club-2026-southern-region-interclub-round-5",
     "source": "Buncheur",
     "category": "Criterium"
   },
@@ -1548,15 +1548,6 @@
     "category": "Handicap"
   },
   {
-    "eventName": "Manning Valley Cycling Club - Road race 2",
-    "eventDate": "2026-04-26T00:00:00Z",
-    "clubName": "Manning Valley CC",
-    "state": "NSW",
-    "eventUrl": "https://www.buncheur.com/manning-valley-cc-manning-valley-cycling-club-road-race-2-1",
-    "source": "Buncheur",
-    "category": "Road Race"
-  },
-  {
     "eventName": "Hawkesbury Clubby Round 7 - 2026",
     "eventDate": "2026-04-26T00:00:00Z",
     "clubName": "Hawkesbury Hornets BMX Club",
@@ -1564,6 +1555,15 @@
     "eventUrl": "https://entryboss.cc/races/28695",
     "source": "",
     "category": ""
+  },
+  {
+    "eventName": "Manning Valley Cycling Club - Road race 2",
+    "eventDate": "2026-04-26T00:00:00Z",
+    "clubName": "Manning Valley CC",
+    "state": "NSW",
+    "eventUrl": "https://www.buncheur.com/manning-valley-cc-manning-valley-cycling-club-road-race-2-1",
+    "source": "Buncheur",
+    "category": "Road Race"
   },
   {
     "eventName": "Ride Dungog Flow Race # 1",
@@ -1602,13 +1602,13 @@
     "category": "Training Session"
   },
   {
-    "eventName": "NHCC HEZ Road Race",
+    "eventName": "Illawarra Cycle Club - Winter Criterium Series - Race 2",
     "eventDate": "2026-05-02T00:00:00Z",
-    "clubName": "Newcastle Hunter CC",
+    "clubName": "Illawarra CC",
     "state": "NSW",
-    "eventUrl": "https://www.buncheur.com/newcastle-hunter-cc-nhcc-hez-road-race-18-2",
+    "eventUrl": "https://www.buncheur.com/illawarra-cc-illawarra-cycle-club-summer-criterium-series-11-1-1-2-1-1-1-2-2-2-2-3-1-3-1",
     "source": "Buncheur",
-    "category": "Road Race"
+    "category": "Criterium"
   },
   {
     "eventName": "Gravel 2026 Race Series #1",
@@ -1629,13 +1629,13 @@
     "category": "Road Race"
   },
   {
-    "eventName": "Illawarra Cycle Club - Winter Criterium Series - Race 2",
+    "eventName": "NHCC HEZ Road Race",
     "eventDate": "2026-05-02T00:00:00Z",
-    "clubName": "Illawarra CC",
+    "clubName": "Newcastle Hunter CC",
     "state": "NSW",
-    "eventUrl": "https://www.buncheur.com/illawarra-cc-illawarra-cycle-club-summer-criterium-series-11-1-1-2-1-1-1-2-2-2-2-3-1-3-1",
+    "eventUrl": "https://www.buncheur.com/newcastle-hunter-cc-nhcc-hez-road-race-18-2",
     "source": "Buncheur",
-    "category": "Criterium"
+    "category": "Road Race"
   },
   {
     "eventName": "Randwick Cycling | Saturday Heffron Crits",
@@ -2007,6 +2007,15 @@
     "category": "Training Session"
   },
   {
+    "eventName": "Sydney Soupa Winter Race Series 2026 - Race 2",
+    "eventDate": "2026-06-06T00:00:00Z",
+    "clubName": "Sutherland Shire CC",
+    "state": "NSW",
+    "eventUrl": "https://www.buncheur.com/sutherland-shire-cc-white-horse-criterium-series-7-5-1-1-3-1",
+    "source": "Buncheur",
+    "category": "Criterium"
+  },
+  {
     "eventName": "Gravel 2026 Race Series #2",
     "eventDate": "2026-06-06T00:00:00Z",
     "clubName": "Armidale CC",
@@ -2034,13 +2043,13 @@
     "category": "Road Race"
   },
   {
-    "eventName": "Sydney Soupa Winter Race Series 2026 - Race 2",
-    "eventDate": "2026-06-06T00:00:00Z",
-    "clubName": "Sutherland Shire CC",
+    "eventName": "2026 AusCycling BMX State Series - ACT/NSW RD4 Manning Valley",
+    "eventDate": "2026-06-07T00:00:00Z",
+    "clubName": "AusCycling (New South Wales)",
     "state": "NSW",
-    "eventUrl": "https://www.buncheur.com/sutherland-shire-cc-white-horse-criterium-series-7-5-1-1-3-1",
-    "source": "Buncheur",
-    "category": "Criterium"
+    "eventUrl": "https://entryboss.cc/races/28245",
+    "source": "",
+    "category": ""
   },
   {
     "eventName": "2026 Mighty 11s Memorial Class - Event 1",
@@ -2048,15 +2057,6 @@
     "clubName": "AusCycling (New South Wales)",
     "state": "NSW",
     "eventUrl": "https://entryboss.cc/races/28558",
-    "source": "",
-    "category": ""
-  },
-  {
-    "eventName": "2026 AusCycling BMX State Series - ACT/NSW RD4 Manning Valley",
-    "eventDate": "2026-06-07T00:00:00Z",
-    "clubName": "AusCycling (New South Wales)",
-    "state": "NSW",
-    "eventUrl": "https://entryboss.cc/races/28245",
     "source": "",
     "category": ""
   },
@@ -2086,6 +2086,15 @@
     "eventUrl": "https://www.buncheur.com/illawarra-cc-icc-wednesday-night-100-lapper-12-1-1-3-1-1-3-4-1-3-1-4-1-1-1-1-1-1-1-1-1-1-1-1-1-1-1-1-1-1-1-1-1-1-1-1-1-1-1-1-1-1-1-1-1-1-1-3-2-1-1-1-1-1-2-1-1-1-1-1",
     "source": "Buncheur",
     "category": "Training Session"
+  },
+  {
+    "eventName": "Illawarra Cycle Club - Winter Criterium Series - Race 6",
+    "eventDate": "2026-06-13T00:00:00Z",
+    "clubName": "Illawarra CC",
+    "state": "NSW",
+    "eventUrl": "https://www.buncheur.com/illawarra-cc-illawarra-cycle-club-summer-criterium-series-11-1-1-2-1-1-1-2-2-2-2-3-1-3-1-1-1-1-1",
+    "source": "Buncheur",
+    "category": "Criterium"
   },
   {
     "eventName": "Randwick Cycling | Saturday Heffron Crits 1",
@@ -2133,13 +2142,22 @@
     "category": "Road Race"
   },
   {
-    "eventName": "Illawarra Cycle Club - Winter Criterium Series - Race 6",
-    "eventDate": "2026-06-13T00:00:00Z",
-    "clubName": "Illawarra CC",
+    "eventName": "Sydney Soupa Winter Race Series 2026 - Race 4",
+    "eventDate": "2026-06-14T00:00:00Z",
+    "clubName": "Southern Cross CC",
     "state": "NSW",
-    "eventUrl": "https://www.buncheur.com/illawarra-cc-illawarra-cycle-club-summer-criterium-series-11-1-1-2-1-1-1-2-2-2-2-3-1-3-1-1-1-1-1",
+    "eventUrl": "https://www.buncheur.com/southern-cross-cc-sydney-soupa-winter-race-series-2026-race-4",
     "source": "Buncheur",
     "category": "Criterium"
+  },
+  {
+    "eventName": "2026 ROAD PROGRAM RACE 8 Port series 1",
+    "eventDate": "2026-06-14T00:00:00Z",
+    "clubName": "Manning Valley CC",
+    "state": "NSW",
+    "eventUrl": "https://www.buncheur.com/manning-valley-cc-eyecare-plus-circuit-1-1-1-1-1",
+    "source": "Buncheur",
+    "category": "Road Race"
   },
   {
     "eventName": "Ride Dungog Club Flow Race # 2",
@@ -2149,15 +2167,6 @@
     "eventUrl": "https://www.buncheur.com/mtba-ride-dungog-ride-dungog-flow-race--1-1-1",
     "source": "Buncheur",
     "category": "Enduro MTB"
-  },
-  {
-    "eventName": "Sydney Soupa Winter Race Series 2026 - Race 4",
-    "eventDate": "2026-06-14T00:00:00Z",
-    "clubName": "Southern Cross CC",
-    "state": "NSW",
-    "eventUrl": "https://www.buncheur.com/southern-cross-cc-sydney-soupa-winter-race-series-2026-race-4",
-    "source": "Buncheur",
-    "category": "Criterium"
   },
   {
     "eventName": "Nowra Velo Club Criterium",
@@ -2176,15 +2185,6 @@
     "eventUrl": "https://entryboss.cc/races/28698",
     "source": "",
     "category": ""
-  },
-  {
-    "eventName": "2026 ROAD PROGRAM RACE 8 Port series 1",
-    "eventDate": "2026-06-14T00:00:00Z",
-    "clubName": "Manning Valley CC",
-    "state": "NSW",
-    "eventUrl": "https://www.buncheur.com/manning-valley-cc-eyecare-plus-circuit-1-1-1-1-1",
-    "source": "Buncheur",
-    "category": "Road Race"
   },
   {
     "eventName": " ICC Wednesday Night 100 Lapper  - 17 June 2026         ",
@@ -2214,6 +2214,15 @@
     "category": "Criterium"
   },
   {
+    "eventName": "Illawarra Cycle Club - Winter Criterium Series - Race 7",
+    "eventDate": "2026-06-20T00:00:00Z",
+    "clubName": "Illawarra CC",
+    "state": "NSW",
+    "eventUrl": "https://www.buncheur.com/illawarra-cc-illawarra-cycle-club-summer-criterium-series-11-1-1-2-1-1-1-2-2-2-2-3-1-3-1-1-1-1-1-1",
+    "source": "Buncheur",
+    "category": "Criterium"
+  },
+  {
     "eventName": "NHCC HEZ Road Race",
     "eventDate": "2026-06-20T00:00:00Z",
     "clubName": "Newcastle Hunter CC",
@@ -2232,11 +2241,11 @@
     "category": "Road Race"
   },
   {
-    "eventName": "Illawarra Cycle Club - Winter Criterium Series - Race 7",
-    "eventDate": "2026-06-20T00:00:00Z",
-    "clubName": "Illawarra CC",
+    "eventName": "Nowra Velo Club Criterium",
+    "eventDate": "2026-06-21T00:00:00Z",
+    "clubName": "Nowra Velo",
     "state": "NSW",
-    "eventUrl": "https://www.buncheur.com/illawarra-cc-illawarra-cycle-club-summer-criterium-series-11-1-1-2-1-1-1-2-2-2-2-3-1-3-1-1-1-1-1-1",
+    "eventUrl": "https://www.buncheur.com/nowra-velo-nowra-velo-club-criterium-59",
     "source": "Buncheur",
     "category": "Criterium"
   },
@@ -2250,24 +2259,6 @@
     "category": "Individual Time Trial"
   },
   {
-    "eventName": "Nowra Velo Club Criterium",
-    "eventDate": "2026-06-21T00:00:00Z",
-    "clubName": "Nowra Velo",
-    "state": "NSW",
-    "eventUrl": "https://www.buncheur.com/nowra-velo-nowra-velo-club-criterium-59",
-    "source": "Buncheur",
-    "category": "Criterium"
-  },
-  {
-    "eventName": "Gates",
-    "eventDate": "2026-06-24T00:00:00Z",
-    "clubName": "Southlake Illawarra BMX Club",
-    "state": "NSW",
-    "eventUrl": "https://entryboss.cc/races/31181",
-    "source": "EntryBoss",
-    "category": ""
-  },
-  {
     "eventName": " ICC Wednesday Night 100 Lapper  - 24 June 2026          ",
     "eventDate": "2026-06-24T00:00:00Z",
     "clubName": "Illawarra CC",
@@ -2275,6 +2266,15 @@
     "eventUrl": "https://www.buncheur.com/illawarra-cc-icc-wednesday-night-100-lapper-12-1-1-3-1-1-3-4-1-3-1-4-1-1-1-1-1-1-1-1-1-1-1-1-1-1-1-1-1-1-1-1-1-1-1-1-1-1-1-1-1-1-1-1-1-1-1-3-2-1-1-1-1-1-2-1-1-1-1-1-1-1",
     "source": "Buncheur",
     "category": "Training Session"
+  },
+  {
+    "eventName": "2026 Ser 2 Rnd 1",
+    "eventDate": "2026-06-26T00:00:00Z",
+    "clubName": "Penrith BMX Club",
+    "state": "NSW",
+    "eventUrl": "https://entryboss.cc/races/29407",
+    "source": "EntryBoss",
+    "category": ""
   },
   {
     "eventName": "Maitland BMX Night Riders Friday Club Racing",
@@ -2286,11 +2286,29 @@
     "category": ""
   },
   {
-    "eventName": "2026 Ser 2 Rnd 1",
-    "eventDate": "2026-06-26T00:00:00Z",
-    "clubName": "Penrith BMX Club",
+    "eventName": "Illawarra Cycle Club - Winter Criterium Series - Race 8",
+    "eventDate": "2026-06-27T00:00:00Z",
+    "clubName": "Illawarra CC",
     "state": "NSW",
-    "eventUrl": "https://entryboss.cc/races/29407",
+    "eventUrl": "https://www.buncheur.com/illawarra-cc-illawarra-cycle-club-summer-criterium-series-11-1-1-2-1-1-1-2-2-2-2-3-1-3-1-1-1-1-1-1-1",
+    "source": "Buncheur",
+    "category": "Criterium"
+  },
+  {
+    "eventName": "Club Championships - Road Race",
+    "eventDate": "2026-06-27T00:00:00Z",
+    "clubName": "Tamworth Cycle Club",
+    "state": "NSW",
+    "eventUrl": "https://entryboss.cc/races/31166",
+    "source": "EntryBoss",
+    "category": ""
+  },
+  {
+    "eventName": "2026 Winter Criterium",
+    "eventDate": "2026-06-27T00:00:00Z",
+    "clubName": "Central Coast CC",
+    "state": "NSW",
+    "eventUrl": "https://entryboss.cc/races/30026",
     "source": "EntryBoss",
     "category": ""
   },
@@ -2313,22 +2331,13 @@
     "category": "Road Race"
   },
   {
-    "eventName": "2026 Winter Criterium",
+    "eventName": "Macarthur BMX 2026 Series 2 - Round 5",
     "eventDate": "2026-06-27T00:00:00Z",
-    "clubName": "Central Coast CC",
+    "clubName": "Macarthur BMX Club",
     "state": "NSW",
-    "eventUrl": "https://entryboss.cc/races/30026",
+    "eventUrl": "https://entryboss.cc/races/30649",
     "source": "EntryBoss",
     "category": ""
-  },
-  {
-    "eventName": "Illawarra Cycle Club - Winter Criterium Series - Race 8",
-    "eventDate": "2026-06-27T00:00:00Z",
-    "clubName": "Illawarra CC",
-    "state": "NSW",
-    "eventUrl": "https://www.buncheur.com/illawarra-cc-illawarra-cycle-club-summer-criterium-series-11-1-1-2-1-1-1-2-2-2-2-3-1-3-1-1-1-1-1-1-1",
-    "source": "Buncheur",
-    "category": "Criterium"
   },
   {
     "eventName": "RROTY 2026 #1 Dangarsleigh 30km",
@@ -2340,38 +2349,20 @@
     "category": "Road Race"
   },
   {
-    "eventName": "Macarthur BMX 2026 Series 2 - Round 5",
-    "eventDate": "2026-06-27T00:00:00Z",
-    "clubName": "Macarthur BMX Club",
-    "state": "NSW",
-    "eventUrl": "https://entryboss.cc/races/30649",
-    "source": "EntryBoss",
-    "category": ""
-  },
-  {
-    "eventName": "Club Championships - Road Race",
-    "eventDate": "2026-06-27T00:00:00Z",
-    "clubName": "Tamworth Cycle Club",
-    "state": "NSW",
-    "eventUrl": "https://entryboss.cc/races/31166",
-    "source": "EntryBoss",
-    "category": ""
-  },
-  {
-    "eventName": "WSMTB Enduro Round 3 - Club Championships - 2026",
-    "eventDate": "2026-06-28T00:00:00Z",
-    "clubName": "Western Sydney MTB Club",
-    "state": "NSW",
-    "eventUrl": "https://entryboss.cc/races/28906",
-    "source": "EntryBoss",
-    "category": ""
-  },
-  {
     "eventName": "Southlake Illawarra BMX 2026 - Series 1 Round 10",
     "eventDate": "2026-06-28T00:00:00Z",
     "clubName": "Southlake Illawarra BMX Club",
     "state": "NSW",
     "eventUrl": "https://entryboss.cc/races/31182",
+    "source": "EntryBoss",
+    "category": ""
+  },
+  {
+    "eventName": "Hawkesbury Clubby Round 9 - 2026",
+    "eventDate": "2026-06-28T00:00:00Z",
+    "clubName": "Hawkesbury Hornets BMX Club",
+    "state": "NSW",
+    "eventUrl": "https://entryboss.cc/races/29059",
     "source": "EntryBoss",
     "category": ""
   },
@@ -2385,11 +2376,20 @@
     "category": "Road Race"
   },
   {
-    "eventName": "Hawkesbury Clubby Round 9 - 2026",
+    "eventName": "WSMTB XC  Round 3 - Club Championships - 2026",
     "eventDate": "2026-06-28T00:00:00Z",
-    "clubName": "Hawkesbury Hornets BMX Club",
+    "clubName": "Western Sydney MTB Club",
     "state": "NSW",
-    "eventUrl": "https://entryboss.cc/races/29059",
+    "eventUrl": "https://entryboss.cc/races/28907",
+    "source": "EntryBoss",
+    "category": ""
+  },
+  {
+    "eventName": "WSMTB Enduro Round 3 - Club Championships - 2026",
+    "eventDate": "2026-06-28T00:00:00Z",
+    "clubName": "Western Sydney MTB Club",
+    "state": "NSW",
+    "eventUrl": "https://entryboss.cc/races/28906",
     "source": "EntryBoss",
     "category": ""
   },
@@ -2399,15 +2399,6 @@
     "clubName": "AusCycling (New South Wales)",
     "state": "NSW",
     "eventUrl": "https://entryboss.cc/races/29806",
-    "source": "EntryBoss",
-    "category": ""
-  },
-  {
-    "eventName": "WSMTB XC  Round 3 - Club Championships - 2026",
-    "eventDate": "2026-06-28T00:00:00Z",
-    "clubName": "Western Sydney MTB Club",
-    "state": "NSW",
-    "eventUrl": "https://entryboss.cc/races/28907",
     "source": "EntryBoss",
     "category": ""
   },
@@ -2430,15 +2421,6 @@
     "category": "Road Race"
   },
   {
-    "eventName": "Terrigal BMX Club 2026 Series 2 Round 1",
-    "eventDate": "2026-07-04T00:00:00Z",
-    "clubName": "Terrigal BMX Club",
-    "state": "NSW",
-    "eventUrl": "https://entryboss.cc/races/29019",
-    "source": "EntryBoss",
-    "category": ""
-  },
-  {
     "eventName": "SSCC OMNIUM  Series Race 2 of 3 ",
     "eventDate": "2026-07-04T00:00:00Z",
     "clubName": "Sutherland Shire CC",
@@ -2457,20 +2439,20 @@
     "category": "Road Race"
   },
   {
+    "eventName": "Terrigal BMX Club 2026 Series 2 Round 1",
+    "eventDate": "2026-07-04T00:00:00Z",
+    "clubName": "Terrigal BMX Club",
+    "state": "NSW",
+    "eventUrl": "https://entryboss.cc/races/29019",
+    "source": "EntryBoss",
+    "category": ""
+  },
+  {
     "eventName": "2026 NSW/ACT AusCycling Cross Country Series - Rnd 3 - Yellomundee",
     "eventDate": "2026-07-05T00:00:00Z",
     "clubName": "AusCycling (New South Wales)",
     "state": "NSW",
     "eventUrl": "https://entryboss.cc/races/30579",
-    "source": "EntryBoss",
-    "category": ""
-  },
-  {
-    "eventName": "MAXXIS - NSW State Gravity Series - Eden (GE)",
-    "eventDate": "2026-07-05T00:00:00Z",
-    "clubName": "Eden Mountain Bike Club",
-    "state": "NSW",
-    "eventUrl": "https://entryboss.cc/races/29956",
     "source": "EntryBoss",
     "category": ""
   },
@@ -2484,20 +2466,20 @@
     "category": ""
   },
   {
+    "eventName": "MAXXIS - NSW State Gravity Series - Eden (GE)",
+    "eventDate": "2026-07-05T00:00:00Z",
+    "clubName": "Eden Mountain Bike Club",
+    "state": "NSW",
+    "eventUrl": "https://entryboss.cc/races/29956",
+    "source": "EntryBoss",
+    "category": ""
+  },
+  {
     "eventName": "Macarthur BMX 2026 Series 2 - Round 6",
     "eventDate": "2026-07-11T00:00:00Z",
     "clubName": "Macarthur BMX Club",
     "state": "NSW",
     "eventUrl": "https://entryboss.cc/races/30650",
-    "source": "EntryBoss",
-    "category": ""
-  },
-  {
-    "eventName": "2026 Winter Criterium",
-    "eventDate": "2026-07-11T00:00:00Z",
-    "clubName": "Central Coast CC",
-    "state": "NSW",
-    "eventUrl": "https://entryboss.cc/races/30027",
     "source": "EntryBoss",
     "category": ""
   },
@@ -2509,6 +2491,15 @@
     "eventUrl": "https://www.buncheur.com/armidale-cc-rroty-2026-1-dangarsleigh-30km-1",
     "source": "Buncheur",
     "category": "Road Race"
+  },
+  {
+    "eventName": "2026 Winter Criterium",
+    "eventDate": "2026-07-11T00:00:00Z",
+    "clubName": "Central Coast CC",
+    "state": "NSW",
+    "eventUrl": "https://entryboss.cc/races/30027",
+    "source": "EntryBoss",
+    "category": ""
   },
   {
     "eventName": "The Butch Menz Memorial Handicap 2026",
@@ -2529,15 +2520,6 @@
     "category": ""
   },
   {
-    "eventName": "NHCC HEZ Road Race",
-    "eventDate": "2026-07-18T00:00:00Z",
-    "clubName": "Newcastle Hunter CC",
-    "state": "NSW",
-    "eventUrl": "https://www.buncheur.com/newcastle-hunter-cc-nhcc-hez-road-race-18-8",
-    "source": "Buncheur",
-    "category": "Road Race"
-  },
-  {
     "eventName": "WSMTB CLUB DAY - SIX - 2026",
     "eventDate": "2026-07-18T00:00:00Z",
     "clubName": "Western Sydney MTB Club",
@@ -2545,6 +2527,15 @@
     "eventUrl": "https://entryboss.cc/races/29624",
     "source": "EntryBoss",
     "category": ""
+  },
+  {
+    "eventName": "NHCC HEZ Road Race",
+    "eventDate": "2026-07-18T00:00:00Z",
+    "clubName": "Newcastle Hunter CC",
+    "state": "NSW",
+    "eventUrl": "https://www.buncheur.com/newcastle-hunter-cc-nhcc-hez-road-race-18-8",
+    "source": "Buncheur",
+    "category": "Road Race"
   },
   {
     "eventName": "2026 Dangarsleigh ITT 20km",
@@ -2556,20 +2547,20 @@
     "category": "Individual Time Trial"
   },
   {
-    "eventName": "Macleay Valley Coast MVMB Mini-Duro Rd 3",
-    "eventDate": "2026-07-19T00:00:00Z",
-    "clubName": "Macleay Valley Mountain Bikers",
-    "state": "NSW",
-    "eventUrl": "https://entryboss.cc/races/29036",
-    "source": "EntryBoss",
-    "category": ""
-  },
-  {
     "eventName": "Macleay Valley Coast MVMB GE Series Rd 3",
     "eventDate": "2026-07-19T00:00:00Z",
     "clubName": "Macleay Valley Mountain Bikers",
     "state": "NSW",
     "eventUrl": "https://entryboss.cc/races/29035",
+    "source": "EntryBoss",
+    "category": ""
+  },
+  {
+    "eventName": "Macleay Valley Coast MVMB Mini-Duro Rd 3",
+    "eventDate": "2026-07-19T00:00:00Z",
+    "clubName": "Macleay Valley Mountain Bikers",
+    "state": "NSW",
+    "eventUrl": "https://entryboss.cc/races/29036",
     "source": "EntryBoss",
     "category": ""
   },
@@ -2646,11 +2637,38 @@
     "category": "Road Race"
   },
   {
+    "eventName": "Nowra Velo. Mountain Individual Time Trial",
+    "eventDate": "2026-08-02T00:00:00Z",
+    "clubName": "Nowra Velo",
+    "state": "NSW",
+    "eventUrl": "https://www.buncheur.com/nowra-velo-nowra-velo-mountain-individual-time-trial",
+    "source": "Buncheur",
+    "category": "Individual Time Trial"
+  },
+  {
     "eventName": "Macarthur Mayhem 2026",
     "eventDate": "2026-08-02T00:00:00Z",
     "clubName": "Macarthur BMX Club",
     "state": "NSW",
     "eventUrl": "https://entryboss.cc/races/31092",
+    "source": "EntryBoss",
+    "category": ""
+  },
+  {
+    "eventName": "Gravel 2026 Race Series",
+    "eventDate": "2026-08-02T00:00:00Z",
+    "clubName": "Armidale CC",
+    "state": "NSW",
+    "eventUrl": "https://www.buncheur.com/armidale-cc-gravel-2026-race-series-3",
+    "source": "Buncheur",
+    "category": "Road Race"
+  },
+  {
+    "eventName": "2026 AusCycling NSW \u0026 ACT Cyclo-Cross Championships - NSW/ACT Cyclocross Series Round 5",
+    "eventDate": "2026-08-02T00:00:00Z",
+    "clubName": "AusCycling (New South Wales)",
+    "state": "NSW",
+    "eventUrl": "https://entryboss.cc/races/29961",
     "source": "EntryBoss",
     "category": ""
   },
@@ -2664,38 +2682,11 @@
     "category": "Individual Time Trial"
   },
   {
-    "eventName": "Nowra Velo. Mountain Individual Time Trial",
-    "eventDate": "2026-08-02T00:00:00Z",
-    "clubName": "Nowra Velo",
-    "state": "NSW",
-    "eventUrl": "https://www.buncheur.com/nowra-velo-nowra-velo-mountain-individual-time-trial",
-    "source": "Buncheur",
-    "category": "Individual Time Trial"
-  },
-  {
-    "eventName": "Gravel 2026 Race Series",
-    "eventDate": "2026-08-02T00:00:00Z",
-    "clubName": "Armidale CC",
-    "state": "NSW",
-    "eventUrl": "https://www.buncheur.com/armidale-cc-gravel-2026-race-series-3",
-    "source": "Buncheur",
-    "category": "Road Race"
-  },
-  {
     "eventName": "2026 Ser 2 Rnd 4",
     "eventDate": "2026-08-07T00:00:00Z",
     "clubName": "Penrith BMX Club",
     "state": "NSW",
     "eventUrl": "https://entryboss.cc/races/29410",
-    "source": "EntryBoss",
-    "category": ""
-  },
-  {
-    "eventName": "Terrigal BMX Club 2026 Series 2 Round 2",
-    "eventDate": "2026-08-08T00:00:00Z",
-    "clubName": "Terrigal BMX Club",
-    "state": "NSW",
-    "eventUrl": "https://entryboss.cc/races/29020",
     "source": "EntryBoss",
     "category": ""
   },
@@ -2709,15 +2700,6 @@
     "category": "Road Race"
   },
   {
-    "eventName": "2026 Armidale Cycling Club Crit 2",
-    "eventDate": "2026-08-08T00:00:00Z",
-    "clubName": "Armidale CC",
-    "state": "NSW",
-    "eventUrl": "https://www.buncheur.com/armidale-cc-2025-armidale-cycling-club-crit-4-1-3-2",
-    "source": "Buncheur",
-    "category": "Criterium"
-  },
-  {
     "eventName": "2026 Winter Criterium (Uphill Finish)",
     "eventDate": "2026-08-08T00:00:00Z",
     "clubName": "Central Coast CC",
@@ -2725,6 +2707,24 @@
     "eventUrl": "https://entryboss.cc/races/30029",
     "source": "EntryBoss",
     "category": ""
+  },
+  {
+    "eventName": "Terrigal BMX Club 2026 Series 2 Round 2",
+    "eventDate": "2026-08-08T00:00:00Z",
+    "clubName": "Terrigal BMX Club",
+    "state": "NSW",
+    "eventUrl": "https://entryboss.cc/races/29020",
+    "source": "EntryBoss",
+    "category": ""
+  },
+  {
+    "eventName": "2026 Armidale Cycling Club Crit 2",
+    "eventDate": "2026-08-08T00:00:00Z",
+    "clubName": "Armidale CC",
+    "state": "NSW",
+    "eventUrl": "https://www.buncheur.com/armidale-cc-2025-armidale-cycling-club-crit-4-1-3-2",
+    "source": "Buncheur",
+    "category": "Criterium"
   },
   {
     "eventName": "2026 Dangarsleigh ITT 20km",
@@ -2736,15 +2736,6 @@
     "category": "Individual Time Trial"
   },
   {
-    "eventName": "WSMTB CLUB DAY - SEVEN - 2026",
-    "eventDate": "2026-08-09T00:00:00Z",
-    "clubName": "Western Sydney MTB Club",
-    "state": "NSW",
-    "eventUrl": "https://entryboss.cc/races/29625",
-    "source": "EntryBoss",
-    "category": ""
-  },
-  {
     "eventName": "Hawkesbury Clubby Round 11 - 2026",
     "eventDate": "2026-08-09T00:00:00Z",
     "clubName": "Hawkesbury Hornets BMX Club",
@@ -2754,13 +2745,13 @@
     "category": ""
   },
   {
-    "eventName": "NHCC HEZ Road Race",
-    "eventDate": "2026-08-15T00:00:00Z",
-    "clubName": "Newcastle Hunter CC",
+    "eventName": "WSMTB CLUB DAY - SEVEN - 2026",
+    "eventDate": "2026-08-09T00:00:00Z",
+    "clubName": "Western Sydney MTB Club",
     "state": "NSW",
-    "eventUrl": "https://www.buncheur.com/newcastle-hunter-cc-nhcc-hez-road-race-18-10",
-    "source": "Buncheur",
-    "category": "Road Race"
+    "eventUrl": "https://entryboss.cc/races/29625",
+    "source": "EntryBoss",
+    "category": ""
   },
   {
     "eventName": "Junction Hill Crit",
@@ -2781,6 +2772,15 @@
     "category": "Road Race"
   },
   {
+    "eventName": "NHCC HEZ Road Race",
+    "eventDate": "2026-08-15T00:00:00Z",
+    "clubName": "Newcastle Hunter CC",
+    "state": "NSW",
+    "eventUrl": "https://www.buncheur.com/newcastle-hunter-cc-nhcc-hez-road-race-18-10",
+    "source": "Buncheur",
+    "category": "Road Race"
+  },
+  {
     "eventName": "RROTY 2026 #6 Dangarsleigh 30km",
     "eventDate": "2026-08-15T00:00:00Z",
     "clubName": "Armidale CC",
@@ -2790,11 +2790,11 @@
     "category": "Road Race"
   },
   {
-    "eventName": "2026 AusCycling BMX State Series - ACT/NSW RD5 Clarence Valley",
+    "eventName": "MAXXIS - NSW State Gravity Series - Barrington (GE)",
     "eventDate": "2026-08-16T00:00:00Z",
-    "clubName": "AusCycling (New South Wales)",
+    "clubName": "Barrington Bike Park",
     "state": "NSW",
-    "eventUrl": "https://entryboss.cc/races/28242",
+    "eventUrl": "https://entryboss.cc/races/29957",
     "source": "EntryBoss",
     "category": ""
   },
@@ -2817,11 +2817,11 @@
     "category": ""
   },
   {
-    "eventName": "MAXXIS - NSW State Gravity Series - Barrington (GE)",
+    "eventName": "2026 AusCycling BMX State Series - ACT/NSW RD5 Clarence Valley",
     "eventDate": "2026-08-16T00:00:00Z",
-    "clubName": "Barrington Bike Park",
+    "clubName": "AusCycling (New South Wales)",
     "state": "NSW",
-    "eventUrl": "https://entryboss.cc/races/29957",
+    "eventUrl": "https://entryboss.cc/races/28242",
     "source": "EntryBoss",
     "category": ""
   },
@@ -2833,33 +2833,6 @@
     "eventUrl": "https://entryboss.cc/races/29411",
     "source": "EntryBoss",
     "category": ""
-  },
-  {
-    "eventName": "Terrigal BMX Club 2026 Series 2 Round 3",
-    "eventDate": "2026-08-22T00:00:00Z",
-    "clubName": "Terrigal BMX Club",
-    "state": "NSW",
-    "eventUrl": "https://entryboss.cc/races/29021",
-    "source": "EntryBoss",
-    "category": ""
-  },
-  {
-    "eventName": "2026 Winter Criterium",
-    "eventDate": "2026-08-22T00:00:00Z",
-    "clubName": "Central Coast CC",
-    "state": "NSW",
-    "eventUrl": "https://entryboss.cc/races/30030",
-    "source": "EntryBoss",
-    "category": ""
-  },
-  {
-    "eventName": "RROTY 2026 #1 Dangarsleigh 30km",
-    "eventDate": "2026-08-22T00:00:00Z",
-    "clubName": "Armidale CC",
-    "state": "NSW",
-    "eventUrl": "https://www.buncheur.com/armidale-cc-rroty-2026-1-dangarsleigh-30km-9",
-    "source": "Buncheur",
-    "category": "Road Race"
   },
   {
     "eventName": "Macarthur BMX 2026 Series 2 - Round 7",
@@ -2880,13 +2853,31 @@
     "category": "Road Race"
   },
   {
-    "eventName": "Nowra Velo Club Criterium",
-    "eventDate": "2026-08-23T00:00:00Z",
-    "clubName": "Nowra Velo",
+    "eventName": "Terrigal BMX Club 2026 Series 2 Round 3",
+    "eventDate": "2026-08-22T00:00:00Z",
+    "clubName": "Terrigal BMX Club",
     "state": "NSW",
-    "eventUrl": "https://www.buncheur.com/nowra-velo-nowra-velo-club-criterium-60",
+    "eventUrl": "https://entryboss.cc/races/29021",
+    "source": "EntryBoss",
+    "category": ""
+  },
+  {
+    "eventName": "RROTY 2026 #1 Dangarsleigh 30km",
+    "eventDate": "2026-08-22T00:00:00Z",
+    "clubName": "Armidale CC",
+    "state": "NSW",
+    "eventUrl": "https://www.buncheur.com/armidale-cc-rroty-2026-1-dangarsleigh-30km-9",
     "source": "Buncheur",
-    "category": "Criterium"
+    "category": "Road Race"
+  },
+  {
+    "eventName": "2026 Winter Criterium",
+    "eventDate": "2026-08-22T00:00:00Z",
+    "clubName": "Central Coast CC",
+    "state": "NSW",
+    "eventUrl": "https://entryboss.cc/races/30030",
+    "source": "EntryBoss",
+    "category": ""
   },
   {
     "eventName": "Hawkesbury Clubby Round 12 - 2026",
@@ -2898,20 +2889,20 @@
     "category": ""
   },
   {
+    "eventName": "Nowra Velo Club Criterium",
+    "eventDate": "2026-08-23T00:00:00Z",
+    "clubName": "Nowra Velo",
+    "state": "NSW",
+    "eventUrl": "https://www.buncheur.com/nowra-velo-nowra-velo-club-criterium-60",
+    "source": "Buncheur",
+    "category": "Criterium"
+  },
+  {
     "eventName": "2026 Ser 2 Rnd 6",
     "eventDate": "2026-08-28T00:00:00Z",
     "clubName": "Penrith BMX Club",
     "state": "NSW",
     "eventUrl": "https://entryboss.cc/races/29412",
-    "source": "EntryBoss",
-    "category": ""
-  },
-  {
-    "eventName": "Junction Hill Crit",
-    "eventDate": "2026-08-29T00:00:00Z",
-    "clubName": "Grafton Cycle Club",
-    "state": "NSW",
-    "eventUrl": "https://entryboss.cc/races/29168",
     "source": "EntryBoss",
     "category": ""
   },
@@ -2923,6 +2914,15 @@
     "eventUrl": "https://www.buncheur.com/newcastle-hunter-cc-nhcc-hez-road-race-18-10-1",
     "source": "Buncheur",
     "category": "Road Race"
+  },
+  {
+    "eventName": "Junction Hill Crit",
+    "eventDate": "2026-08-29T00:00:00Z",
+    "clubName": "Grafton Cycle Club",
+    "state": "NSW",
+    "eventUrl": "https://entryboss.cc/races/29168",
+    "source": "EntryBoss",
+    "category": ""
   },
   {
     "eventName": "Hawkesbury Clubby Round 13 - 2026",
@@ -2943,15 +2943,6 @@
     "category": "Road Race"
   },
   {
-    "eventName": "NHCC HEZ Road Race",
-    "eventDate": "2026-09-05T00:00:00Z",
-    "clubName": "Newcastle Hunter CC",
-    "state": "NSW",
-    "eventUrl": "https://www.buncheur.com/newcastle-hunter-cc-nhcc-hez-road-race-18-11",
-    "source": "Buncheur",
-    "category": "Road Race"
-  },
-  {
     "eventName": "WSMTB CLUB DAY - EIGHT - 2026",
     "eventDate": "2026-09-05T00:00:00Z",
     "clubName": "Western Sydney MTB Club",
@@ -2961,13 +2952,13 @@
     "category": ""
   },
   {
-    "eventName": "2026 Brennan Illawarra Tour - NSW/ACT Senior Road Series - Rd 4",
+    "eventName": "NHCC HEZ Road Race",
     "eventDate": "2026-09-05T00:00:00Z",
-    "clubName": "AusCycling (New South Wales)",
+    "clubName": "Newcastle Hunter CC",
     "state": "NSW",
-    "eventUrl": "https://entryboss.cc/races/29974",
-    "source": "EntryBoss",
-    "category": ""
+    "eventUrl": "https://www.buncheur.com/newcastle-hunter-cc-nhcc-hez-road-race-18-11",
+    "source": "Buncheur",
+    "category": "Road Race"
   },
   {
     "eventName": "RROTY 2026 #1 Dangarsleigh 30km",
@@ -2979,12 +2970,12 @@
     "category": "Road Race"
   },
   {
-    "eventName": "2026 AusCycling BMX State Series - ACT/NSW RD6 Terrigal",
-    "eventDate": "2026-09-06T00:00:00Z",
+    "eventName": "2026 Brennan Illawarra Tour - NSW/ACT Senior Road Series - Rd 4",
+    "eventDate": "2026-09-05T00:00:00Z",
     "clubName": "AusCycling (New South Wales)",
     "state": "NSW",
-    "eventUrl": "https://entryboss.cc/races/28243",
-    "source": "",
+    "eventUrl": "https://entryboss.cc/races/29974",
+    "source": "EntryBoss",
     "category": ""
   },
   {
@@ -3003,6 +2994,15 @@
     "state": "NSW",
     "eventUrl": "https://entryboss.cc/races/29857",
     "source": "EntryBoss",
+    "category": ""
+  },
+  {
+    "eventName": "2026 AusCycling BMX State Series - ACT/NSW RD6 Terrigal",
+    "eventDate": "2026-09-06T00:00:00Z",
+    "clubName": "AusCycling (New South Wales)",
+    "state": "NSW",
+    "eventUrl": "https://entryboss.cc/races/28243",
+    "source": "",
     "category": ""
   },
   {
@@ -3051,13 +3051,13 @@
     "category": ""
   },
   {
-    "eventName": "Central West Inter-Club Round 5 - Yellomundee 180 - 2026",
+    "eventName": "Nowra Velo Club Criterium",
     "eventDate": "2026-09-13T00:00:00Z",
-    "clubName": "Central West Interclub Series",
+    "clubName": "Nowra Velo",
     "state": "NSW",
-    "eventUrl": "https://entryboss.cc/races/28896",
-    "source": "EntryBoss",
-    "category": ""
+    "eventUrl": "https://www.buncheur.com/nowra-velo-nowra-velo-club-criterium-61",
+    "source": "Buncheur",
+    "category": "Criterium"
   },
   {
     "eventName": "2026 CCMTB GE Round 3",
@@ -3069,13 +3069,13 @@
     "category": ""
   },
   {
-    "eventName": "Nowra Velo Club Criterium",
+    "eventName": "Central West Inter-Club Round 5 - Yellomundee 180 - 2026",
     "eventDate": "2026-09-13T00:00:00Z",
-    "clubName": "Nowra Velo",
+    "clubName": "Central West Interclub Series",
     "state": "NSW",
-    "eventUrl": "https://www.buncheur.com/nowra-velo-nowra-velo-club-criterium-61",
-    "source": "Buncheur",
-    "category": "Criterium"
+    "eventUrl": "https://entryboss.cc/races/28896",
+    "source": "EntryBoss",
+    "category": ""
   },
   {
     "eventName": "2026 Ser 2 Rnd 8",
@@ -3123,20 +3123,20 @@
     "category": ""
   },
   {
-    "eventName": "2026 Odd Spoke Cup",
-    "eventDate": "2026-09-26T00:00:00Z",
-    "clubName": "AusCycling (New South Wales)",
-    "state": "NSW",
-    "eventUrl": "https://entryboss.cc/races/29960",
-    "source": "EntryBoss",
-    "category": ""
-  },
-  {
     "eventName": "Junction Hill Crit",
     "eventDate": "2026-09-26T00:00:00Z",
     "clubName": "Grafton Cycle Club",
     "state": "NSW",
     "eventUrl": "https://entryboss.cc/races/29170",
+    "source": "EntryBoss",
+    "category": ""
+  },
+  {
+    "eventName": "2026 Odd Spoke Cup",
+    "eventDate": "2026-09-26T00:00:00Z",
+    "clubName": "AusCycling (New South Wales)",
+    "state": "NSW",
+    "eventUrl": "https://entryboss.cc/races/29960",
     "source": "EntryBoss",
     "category": ""
   },
@@ -3177,6 +3177,15 @@
     "category": "Individual Time Trial"
   },
   {
+    "eventName": "Junction Hill Crit",
+    "eventDate": "2026-10-10T00:00:00Z",
+    "clubName": "Grafton Cycle Club",
+    "state": "NSW",
+    "eventUrl": "https://entryboss.cc/races/29171",
+    "source": "EntryBoss",
+    "category": ""
+  },
+  {
     "eventName": "Terrigal BMX Club 2026 Series 2 Round 5",
     "eventDate": "2026-10-10T00:00:00Z",
     "clubName": "Terrigal BMX Club",
@@ -3186,11 +3195,11 @@
     "category": ""
   },
   {
-    "eventName": "Junction Hill Crit",
-    "eventDate": "2026-10-10T00:00:00Z",
-    "clubName": "Grafton Cycle Club",
+    "eventName": "WSMTB CLUB DAY - NINE - 2026",
+    "eventDate": "2026-10-11T00:00:00Z",
+    "clubName": "Western Sydney MTB Club",
     "state": "NSW",
-    "eventUrl": "https://entryboss.cc/races/29171",
+    "eventUrl": "https://entryboss.cc/races/29627",
     "source": "EntryBoss",
     "category": ""
   },
@@ -3209,15 +3218,6 @@
     "clubName": "Hawkesbury Hornets BMX Club",
     "state": "NSW",
     "eventUrl": "https://entryboss.cc/races/29054",
-    "source": "EntryBoss",
-    "category": ""
-  },
-  {
-    "eventName": "WSMTB CLUB DAY - NINE - 2026",
-    "eventDate": "2026-10-11T00:00:00Z",
-    "clubName": "Western Sydney MTB Club",
-    "state": "NSW",
-    "eventUrl": "https://entryboss.cc/races/29627",
     "source": "EntryBoss",
     "category": ""
   },
@@ -3348,20 +3348,20 @@
     "category": ""
   },
   {
-    "eventName": "Glenugie Road Race",
-    "eventDate": "2026-11-21T00:00:00Z",
-    "clubName": "Grafton Cycle Club",
-    "state": "NSW",
-    "eventUrl": "https://entryboss.cc/races/29165",
-    "source": "EntryBoss",
-    "category": ""
-  },
-  {
     "eventName": "Terrigal BMX Club 2026 Series 2 Round 7",
     "eventDate": "2026-11-21T00:00:00Z",
     "clubName": "Terrigal BMX Club",
     "state": "NSW",
     "eventUrl": "https://entryboss.cc/races/29025",
+    "source": "EntryBoss",
+    "category": ""
+  },
+  {
+    "eventName": "Glenugie Road Race",
+    "eventDate": "2026-11-21T00:00:00Z",
+    "clubName": "Grafton Cycle Club",
+    "state": "NSW",
+    "eventUrl": "https://entryboss.cc/races/29165",
     "source": "EntryBoss",
     "category": ""
   },
