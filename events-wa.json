@@ -9,38 +9,11 @@
     "category": ""
   },
   {
-    "eventName": "2022 Hills BMX Club Tri Series - Series Entry",
+    "eventName": "2026 Hills BMX Club Tri Series - Round 1",
     "eventDate": "2026-01-14T00:00:00Z",
     "clubName": "Hills BMX",
     "state": "WA",
-    "eventUrl": "https://entryboss.cc/races/9791",
-    "source": "",
-    "category": ""
-  },
-  {
-    "eventName": "2023 Hills BMX Club Tri Series - Series Entry",
-    "eventDate": "2026-01-14T00:00:00Z",
-    "clubName": "Hills BMX",
-    "state": "WA",
-    "eventUrl": "https://entryboss.cc/races/13247",
-    "source": "",
-    "category": ""
-  },
-  {
-    "eventName": "2021 Tri-Series - Series Entry",
-    "eventDate": "2026-01-14T00:00:00Z",
-    "clubName": "Hills BMX",
-    "state": "WA",
-    "eventUrl": "https://entryboss.cc/races/6171",
-    "source": "",
-    "category": ""
-  },
-  {
-    "eventName": "2026 Hills BMX Club Tri Series - Series Entry",
-    "eventDate": "2026-01-14T00:00:00Z",
-    "clubName": "Hills BMX",
-    "state": "WA",
-    "eventUrl": "https://entryboss.cc/races/28500",
+    "eventUrl": "https://entryboss.cc/races/28501",
     "source": "",
     "category": ""
   },
@@ -54,11 +27,38 @@
     "category": ""
   },
   {
-    "eventName": "2026 Hills BMX Club Tri Series - Round 1",
+    "eventName": "2026 Hills BMX Club Tri Series - Series Entry",
     "eventDate": "2026-01-14T00:00:00Z",
     "clubName": "Hills BMX",
     "state": "WA",
-    "eventUrl": "https://entryboss.cc/races/28501",
+    "eventUrl": "https://entryboss.cc/races/28500",
+    "source": "",
+    "category": ""
+  },
+  {
+    "eventName": "2021 Tri-Series - Series Entry",
+    "eventDate": "2026-01-14T00:00:00Z",
+    "clubName": "Hills BMX",
+    "state": "WA",
+    "eventUrl": "https://entryboss.cc/races/6171",
+    "source": "",
+    "category": ""
+  },
+  {
+    "eventName": "2023 Hills BMX Club Tri Series - Series Entry",
+    "eventDate": "2026-01-14T00:00:00Z",
+    "clubName": "Hills BMX",
+    "state": "WA",
+    "eventUrl": "https://entryboss.cc/races/13247",
+    "source": "",
+    "category": ""
+  },
+  {
+    "eventName": "2022 Hills BMX Club Tri Series - Series Entry",
+    "eventDate": "2026-01-14T00:00:00Z",
+    "clubName": "Hills BMX",
+    "state": "WA",
+    "eventUrl": "https://entryboss.cc/races/9791",
     "source": "",
     "category": ""
   },
@@ -72,15 +72,6 @@
     "category": ""
   },
   {
-    "eventName": "2026 Hills BMX Club Tri Series - Round 3",
-    "eventDate": "2026-01-17T00:00:00Z",
-    "clubName": "Hills BMX",
-    "state": "WA",
-    "eventUrl": "https://entryboss.cc/races/28503",
-    "source": "",
-    "category": ""
-  },
-  {
     "eventName": "Enduro Jam 2026",
     "eventDate": "2026-01-17T00:00:00Z",
     "clubName": "Margaret River Off Road Cycling Association - Mrorca",
@@ -90,11 +81,11 @@
     "category": ""
   },
   {
-    "eventName": "Splendid Park Criterium",
-    "eventDate": "2026-01-18T00:00:00Z",
-    "clubName": "West Coast Masters Cycling Council",
+    "eventName": "2026 Hills BMX Club Tri Series - Round 3",
+    "eventDate": "2026-01-17T00:00:00Z",
+    "clubName": "Hills BMX",
     "state": "WA",
-    "eventUrl": "https://entryboss.cc/races/28600",
+    "eventUrl": "https://entryboss.cc/races/28503",
     "source": "",
     "category": ""
   },
@@ -104,6 +95,15 @@
     "clubName": "South West Cycle Club",
     "state": "WA",
     "eventUrl": "https://entryboss.cc/races/28820",
+    "source": "",
+    "category": ""
+  },
+  {
+    "eventName": "Splendid Park Criterium",
+    "eventDate": "2026-01-18T00:00:00Z",
+    "clubName": "West Coast Masters Cycling Council",
+    "state": "WA",
+    "eventUrl": "https://entryboss.cc/races/28600",
     "source": "",
     "category": ""
   },
@@ -153,20 +153,20 @@
     "category": ""
   },
   {
-    "eventName": "Summer Gravity Series # 6",
-    "eventDate": "2026-02-22T00:00:00Z",
-    "clubName": "Albany Mountain Bike Club",
-    "state": "WA",
-    "eventUrl": "https://entryboss.cc/races/28194",
-    "source": "",
-    "category": ""
-  },
-  {
     "eventName": "Rowdy's Cafe Enduro Triathlon \u0026 Kids Triathlon 2026",
     "eventDate": "2026-02-22T00:00:00Z",
     "clubName": "Rockingham Triathlon Club",
     "state": "WA",
     "eventUrl": "https://entryboss.cc/races/26598",
+    "source": "",
+    "category": ""
+  },
+  {
+    "eventName": "Summer Gravity Series # 6",
+    "eventDate": "2026-02-22T00:00:00Z",
+    "clubName": "Albany Mountain Bike Club",
+    "state": "WA",
+    "eventUrl": "https://entryboss.cc/races/28194",
     "source": "",
     "category": ""
   },
@@ -261,6 +261,15 @@
     "category": ""
   },
   {
+    "eventName": "River Rd Climb QOM \u0026 KOM 2026",
+    "eventDate": "2026-07-19T00:00:00Z",
+    "clubName": "South West Cycle Club",
+    "state": "WA",
+    "eventUrl": "https://entryboss.cc/races/31272",
+    "source": "EntryBoss",
+    "category": ""
+  },
+  {
     "eventName": "WA Junior Road State Series - Round 2",
     "eventDate": "2026-07-25T00:00:00Z",
     "clubName": "X-Speed Racing",
@@ -320,7 +329,7 @@
     "clubName": "AusCycling (WA)",
     "state": "WA",
     "eventUrl": "https://entryboss.cc/races/28393",
-    "source": "",
+    "source": "EntryBoss",
     "category": ""
   },
   {
@@ -329,7 +338,7 @@
     "clubName": "AusCycling (WA)",
     "state": "WA",
     "eventUrl": "https://entryboss.cc/races/28393",
-    "source": "EntryBoss",
+    "source": "",
     "category": ""
   },
   {
