@@ -135,69 +135,6 @@
     "category": ""
   },
   {
-    "eventName": "LAUNCESTON BMX - NIGHT SERIES 2024 - SERIES PASS",
-    "eventDate": "2026-07-04T00:00:00Z",
-    "clubName": "Launceston BMX Club",
-    "state": "TAS",
-    "eventUrl": "https://entryboss.cc/races/20374",
-    "source": "EntryBoss",
-    "category": ""
-  },
-  {
-    "eventName": "LAUNCESTON BMX - TWILIGHT SERIES 2021 - SERIES ENTRY",
-    "eventDate": "2026-07-04T00:00:00Z",
-    "clubName": "Launceston BMX Club",
-    "state": "TAS",
-    "eventUrl": "https://entryboss.cc/races/8627",
-    "source": "EntryBoss",
-    "category": ""
-  },
-  {
-    "eventName": "2026 HWDD Cyclocross Series - Race 3, Baskerville Raceway",
-    "eventDate": "2026-07-04T00:00:00Z",
-    "clubName": "Hobart Wheelers Dirt Devils CC",
-    "state": "TAS",
-    "eventUrl": "https://entryboss.cc/races/30765",
-    "source": "EntryBoss",
-    "category": ""
-  },
-  {
-    "eventName": "2026 Clubby #5 - Scott Smith Orthodontics",
-    "eventDate": "2026-07-04T00:00:00Z",
-    "clubName": "Launceston BMX Club",
-    "state": "TAS",
-    "eventUrl": "https://entryboss.cc/races/30744",
-    "source": "EntryBoss",
-    "category": ""
-  },
-  {
-    "eventName": "2026 Night Series - Series Entry - ALL 3 ROUNDS",
-    "eventDate": "2026-07-04T00:00:00Z",
-    "clubName": "Launceston BMX Club",
-    "state": "TAS",
-    "eventUrl": "https://entryboss.cc/races/30426",
-    "source": "EntryBoss",
-    "category": ""
-  },
-  {
-    "eventName": "2025 Night Series - Series Entry (All 3 events)",
-    "eventDate": "2026-07-04T00:00:00Z",
-    "clubName": "Launceston BMX Club",
-    "state": "TAS",
-    "eventUrl": "https://entryboss.cc/races/27935",
-    "source": "EntryBoss",
-    "category": ""
-  },
-  {
-    "eventName": "LAUNCESTON BMX - TWILIGHT SERIES 2023 - SERIES PASS",
-    "eventDate": "2026-07-04T00:00:00Z",
-    "clubName": "Launceston BMX Club",
-    "state": "TAS",
-    "eventUrl": "https://entryboss.cc/races/14524",
-    "source": "EntryBoss",
-    "category": ""
-  },
-  {
     "eventName": "Pelham Tier Road Race",
     "eventDate": "2026-07-11T00:00:00Z",
     "clubName": "Hobart Wheelers Dirt Devils CC",
@@ -225,20 +162,20 @@
     "category": ""
   },
   {
-    "eventName": "Deloraine",
-    "eventDate": "2026-08-02T00:00:00Z",
-    "clubName": "Northern Vets CC (Tasmania)",
-    "state": "TAS",
-    "eventUrl": "https://entryboss.cc/races/31027",
-    "source": "EntryBoss",
-    "category": ""
-  },
-  {
     "eventName": "2026 HWDD Cyclocross Series - Race 4",
     "eventDate": "2026-08-02T00:00:00Z",
     "clubName": "Hobart Wheelers Dirt Devils CC",
     "state": "TAS",
     "eventUrl": "https://entryboss.cc/races/30766",
+    "source": "EntryBoss",
+    "category": ""
+  },
+  {
+    "eventName": "Deloraine",
+    "eventDate": "2026-08-02T00:00:00Z",
+    "clubName": "Northern Vets CC (Tasmania)",
+    "state": "TAS",
+    "eventUrl": "https://entryboss.cc/races/31027",
     "source": "EntryBoss",
     "category": ""
   },
@@ -257,7 +194,7 @@
     "clubName": "AusCycling (Tasmania)",
     "state": "TAS",
     "eventUrl": "https://entryboss.cc/races/28522",
-    "source": "EntryBoss",
+    "source": "",
     "category": ""
   },
   {
@@ -266,7 +203,7 @@
     "clubName": "AusCycling (Tasmania)",
     "state": "TAS",
     "eventUrl": "https://entryboss.cc/races/28522",
-    "source": "",
+    "source": "EntryBoss",
     "category": ""
   },
   {
@@ -303,6 +240,15 @@
     "state": "TAS",
     "eventUrl": "https://entryboss.cc/races/28523",
     "source": "",
+    "category": ""
+  },
+  {
+    "eventName": "Tower Hill Gravel - Auscycling - Tas State Gravel Titles 2026",
+    "eventDate": "2026-09-06T00:00:00Z",
+    "clubName": "Hobart Wheelers Dirt Devils CC",
+    "state": "TAS",
+    "eventUrl": "https://entryboss.cc/races/31331",
+    "source": "EntryBoss",
     "category": ""
   },
   {
