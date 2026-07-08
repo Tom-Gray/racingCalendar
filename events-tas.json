@@ -162,20 +162,20 @@
     "category": ""
   },
   {
-    "eventName": "2026 HWDD Cyclocross Series - Race 4",
-    "eventDate": "2026-08-02T00:00:00Z",
-    "clubName": "Hobart Wheelers Dirt Devils CC",
-    "state": "TAS",
-    "eventUrl": "https://entryboss.cc/races/30766",
-    "source": "EntryBoss",
-    "category": ""
-  },
-  {
     "eventName": "Deloraine",
     "eventDate": "2026-08-02T00:00:00Z",
     "clubName": "Northern Vets CC (Tasmania)",
     "state": "TAS",
     "eventUrl": "https://entryboss.cc/races/31027",
+    "source": "EntryBoss",
+    "category": ""
+  },
+  {
+    "eventName": "2026 HWDD Cyclocross Series - Race 4",
+    "eventDate": "2026-08-02T00:00:00Z",
+    "clubName": "Hobart Wheelers Dirt Devils CC",
+    "state": "TAS",
+    "eventUrl": "https://entryboss.cc/races/30766",
     "source": "EntryBoss",
     "category": ""
   },
@@ -194,7 +194,7 @@
     "clubName": "AusCycling (Tasmania)",
     "state": "TAS",
     "eventUrl": "https://entryboss.cc/races/28522",
-    "source": "",
+    "source": "EntryBoss",
     "category": ""
   },
   {
@@ -203,7 +203,7 @@
     "clubName": "AusCycling (Tasmania)",
     "state": "TAS",
     "eventUrl": "https://entryboss.cc/races/28522",
-    "source": "EntryBoss",
+    "source": "",
     "category": ""
   },
   {
