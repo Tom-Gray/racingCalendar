@@ -45,15 +45,6 @@
     "category": ""
   },
   {
-    "eventName": "MGCC \u0026 SCCC Track Carnival Day 2 of 2",
-    "eventDate": "2026-01-11T00:00:00Z",
-    "clubName": "Mt Gambier Cycling Club",
-    "state": "SA",
-    "eventUrl": "https://entryboss.cc/races/28565",
-    "source": "",
-    "category": ""
-  },
-  {
     "eventName": "FORRESTON GSR (Gumeracha)",
     "eventDate": "2026-01-11T00:00:00Z",
     "clubName": "Adelaide Hills Cycling Club",
@@ -63,11 +54,11 @@
     "category": ""
   },
   {
-    "eventName": "Monday Junior Training",
-    "eventDate": "2026-01-12T00:00:00Z",
-    "clubName": "South Coast Cycling",
+    "eventName": "MGCC \u0026 SCCC Track Carnival Day 2 of 2",
+    "eventDate": "2026-01-11T00:00:00Z",
+    "clubName": "Mt Gambier Cycling Club",
     "state": "SA",
-    "eventUrl": "https://entryboss.cc/races/28638",
+    "eventUrl": "https://entryboss.cc/races/28565",
     "source": "",
     "category": ""
   },
@@ -77,6 +68,15 @@
     "clubName": "AusCycling SA - Superdrome",
     "state": "SA",
     "eventUrl": "https://entryboss.cc/races/28539",
+    "source": "",
+    "category": ""
+  },
+  {
+    "eventName": "Monday Junior Training",
+    "eventDate": "2026-01-12T00:00:00Z",
+    "clubName": "South Coast Cycling",
+    "state": "SA",
+    "eventUrl": "https://entryboss.cc/races/28638",
     "source": "",
     "category": ""
   },
@@ -108,6 +108,15 @@
     "category": ""
   },
   {
+    "eventName": "Thursday - Development Academy \u0026 State Development",
+    "eventDate": "2026-01-15T00:00:00Z",
+    "clubName": "AusCycling SA - Superdrome",
+    "state": "SA",
+    "eventUrl": "https://entryboss.cc/races/28537",
+    "source": "",
+    "category": ""
+  },
+  {
     "eventName": "NCC Junior Training and Senior Skills",
     "eventDate": "2026-01-15T00:00:00Z",
     "clubName": "Norwood Cycling Club",
@@ -126,11 +135,11 @@
     "category": ""
   },
   {
-    "eventName": "Thursday - Development Academy \u0026 State Development",
-    "eventDate": "2026-01-15T00:00:00Z",
-    "clubName": "AusCycling SA - Superdrome",
+    "eventName": "Cervelo Super Series - Series Pass  - Senior Riders",
+    "eventDate": "2026-01-16T00:00:00Z",
+    "clubName": "AusCycling (South Australia)",
     "state": "SA",
-    "eventUrl": "https://entryboss.cc/races/28537",
+    "eventUrl": "https://entryboss.cc/races/12744",
     "source": "",
     "category": ""
   },
@@ -149,15 +158,6 @@
     "clubName": "AusCycling (South Australia)",
     "state": "SA",
     "eventUrl": "https://entryboss.cc/races/17080",
-    "source": "",
-    "category": ""
-  },
-  {
-    "eventName": "Cervelo Super Series - Series Pass  - Senior Riders",
-    "eventDate": "2026-01-16T00:00:00Z",
-    "clubName": "AusCycling (South Australia)",
-    "state": "SA",
-    "eventUrl": "https://entryboss.cc/races/12744",
     "source": "",
     "category": ""
   },
@@ -495,20 +495,20 @@
     "category": ""
   },
   {
-    "eventName": "NCC Women's and Jnr Crits",
-    "eventDate": "2026-02-05T00:00:00Z",
-    "clubName": "Norwood Cycling Club",
-    "state": "SA",
-    "eventUrl": "https://entryboss.cc/races/28042",
-    "source": "",
-    "category": ""
-  },
-  {
     "eventName": "Moto Pace - Track and Road",
     "eventDate": "2026-02-05T00:00:00Z",
     "clubName": "Port Adelaide Cycling Club",
     "state": "SA",
     "eventUrl": "https://entryboss.cc/races/28816",
+    "source": "",
+    "category": ""
+  },
+  {
+    "eventName": "NCC Women's and Jnr Crits",
+    "eventDate": "2026-02-05T00:00:00Z",
+    "clubName": "Norwood Cycling Club",
+    "state": "SA",
+    "eventUrl": "https://entryboss.cc/races/28042",
     "source": "",
     "category": ""
   },
@@ -630,20 +630,20 @@
     "category": ""
   },
   {
-    "eventName": "2026 AusCycling BikeChain U19 National Road Series - Round 1 - Tour of the Riverland plus Junior Support Grades",
-    "eventDate": "2026-05-02T00:00:00Z",
-    "clubName": "Norwood Cycling Club",
-    "state": "SA",
-    "eventUrl": "https://entryboss.cc/races/28043",
-    "source": "",
-    "category": ""
-  },
-  {
     "eventName": "52nd Annual Riverland Cycling Weekend - Day 1 - Barry Skinner Classic (Handicap)",
     "eventDate": "2026-05-02T00:00:00Z",
     "clubName": "Norwood Cycling Club",
     "state": "SA",
     "eventUrl": "https://entryboss.cc/races/28045",
+    "source": "",
+    "category": ""
+  },
+  {
+    "eventName": "2026 AusCycling BikeChain U19 National Road Series - Round 1 - Tour of the Riverland plus Junior Support Grades",
+    "eventDate": "2026-05-02T00:00:00Z",
+    "clubName": "Norwood Cycling Club",
+    "state": "SA",
+    "eventUrl": "https://entryboss.cc/races/28043",
     "source": "",
     "category": ""
   },
@@ -689,7 +689,7 @@
     "clubName": "Events to Activate",
     "state": "SA",
     "eventUrl": "https://entryboss.cc/races/28272",
-    "source": "",
+    "source": "EntryBoss",
     "category": ""
   },
   {
@@ -707,7 +707,7 @@
     "clubName": "Events to Activate",
     "state": "SA",
     "eventUrl": "https://entryboss.cc/races/28272",
-    "source": "EntryBoss",
+    "source": "",
     "category": ""
   },
   {
@@ -756,11 +756,11 @@
     "category": ""
   },
   {
-    "eventName": "2023 Cervelo Super Series - Series Pass - Senior Riders",
+    "eventName": "Super Series - Series Pass",
     "eventDate": "2026-08-01T00:00:00Z",
     "clubName": "AusCycling (South Australia)",
     "state": "SA",
-    "eventUrl": "https://entryboss.cc/races/17080",
+    "eventUrl": "https://entryboss.cc/races/5458",
     "source": "EntryBoss",
     "category": ""
   },
@@ -774,20 +774,11 @@
     "category": ""
   },
   {
-    "eventName": "Cervelo Super Series - Series Pass  - Senior Riders",
+    "eventName": "2023 Cervelo Super Series - Series Pass - Senior Riders",
     "eventDate": "2026-08-01T00:00:00Z",
     "clubName": "AusCycling (South Australia)",
     "state": "SA",
-    "eventUrl": "https://entryboss.cc/races/12744",
-    "source": "EntryBoss",
-    "category": ""
-  },
-  {
-    "eventName": "Super Series - Series Pass",
-    "eventDate": "2026-08-01T00:00:00Z",
-    "clubName": "AusCycling (South Australia)",
-    "state": "SA",
-    "eventUrl": "https://entryboss.cc/races/5458",
+    "eventUrl": "https://entryboss.cc/races/17080",
     "source": "EntryBoss",
     "category": ""
   },
@@ -819,11 +810,11 @@
     "category": ""
   },
   {
-    "eventName": "2026 South Australian State Road Championships - Juniors \u0026 Masters Road Race",
-    "eventDate": "2026-08-02T00:00:00Z",
+    "eventName": "Cervelo Super Series - Series Pass  - Senior Riders",
+    "eventDate": "2026-08-01T00:00:00Z",
     "clubName": "AusCycling (South Australia)",
     "state": "SA",
-    "eventUrl": "https://entryboss.cc/races/31389",
+    "eventUrl": "https://entryboss.cc/races/12744",
     "source": "EntryBoss",
     "category": ""
   },
@@ -837,11 +828,11 @@
     "category": ""
   },
   {
-    "eventName": "SPRINGHEAD RD (Mt Torrens)",
-    "eventDate": "2026-08-16T00:00:00Z",
-    "clubName": "Adelaide Hills Cycling Club",
+    "eventName": "2026 South Australian State Road Championships - Juniors \u0026 Masters Road Race",
+    "eventDate": "2026-08-02T00:00:00Z",
+    "clubName": "AusCycling (South Australia)",
     "state": "SA",
-    "eventUrl": "https://entryboss.cc/races/29286",
+    "eventUrl": "https://entryboss.cc/races/31389",
     "source": "EntryBoss",
     "category": ""
   },
@@ -855,11 +846,11 @@
     "category": ""
   },
   {
-    "eventName": "2026 AusCycling BMX State Series - SA R3 Gawler",
-    "eventDate": "2026-08-23T00:00:00Z",
-    "clubName": "AusCycling (South Australia)",
+    "eventName": "SPRINGHEAD RD (Mt Torrens)",
+    "eventDate": "2026-08-16T00:00:00Z",
+    "clubName": "Adelaide Hills Cycling Club",
     "state": "SA",
-    "eventUrl": "https://entryboss.cc/races/28853",
+    "eventUrl": "https://entryboss.cc/races/29286",
     "source": "EntryBoss",
     "category": ""
   },
@@ -869,6 +860,15 @@
     "clubName": "Norwood Cycling Club",
     "state": "SA",
     "eventUrl": "https://entryboss.cc/races/31125",
+    "source": "EntryBoss",
+    "category": ""
+  },
+  {
+    "eventName": "2026 AusCycling BMX State Series - SA R3 Gawler",
+    "eventDate": "2026-08-23T00:00:00Z",
+    "clubName": "AusCycling (South Australia)",
+    "state": "SA",
+    "eventUrl": "https://entryboss.cc/races/28853",
     "source": "EntryBoss",
     "category": ""
   },
@@ -918,21 +918,21 @@
     "category": ""
   },
   {
-    "eventName": "2026 AusCycling BMX State Series - SA R4 Copper Coast",
-    "eventDate": "2026-09-13T00:00:00Z",
-    "clubName": "AusCycling (South Australia)",
-    "state": "SA",
-    "eventUrl": "https://entryboss.cc/races/28854",
-    "source": "EntryBoss",
-    "category": ""
-  },
-  {
     "eventName": "CX Season Close Event",
     "eventDate": "2026-09-13T00:00:00Z",
     "clubName": "Port Adelaide Cycling Club",
     "state": "SA",
     "eventUrl": "https://entryboss.cc/races/28279",
     "source": "",
+    "category": ""
+  },
+  {
+    "eventName": "2026 AusCycling BMX State Series - SA R4 Copper Coast",
+    "eventDate": "2026-09-13T00:00:00Z",
+    "clubName": "AusCycling (South Australia)",
+    "state": "SA",
+    "eventUrl": "https://entryboss.cc/races/28854",
+    "source": "EntryBoss",
     "category": ""
   },
   {
