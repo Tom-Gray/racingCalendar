@@ -1,14 +1,5 @@
 [
   {
-    "eventName": "Nhulunbuy BMX Club Night 7 - 12 July 2026",
-    "eventDate": "2026-07-12T00:00:00Z",
-    "clubName": "Nhulunbuy BMX Club",
-    "state": "NT",
-    "eventUrl": "https://entryboss.cc/races/30952",
-    "source": "EntryBoss",
-    "category": ""
-  },
-  {
     "eventName": "Nhulunbuy BMX Club Night 8 - 26 July 2026",
     "eventDate": "2026-07-26T00:00:00Z",
     "clubName": "Nhulunbuy BMX Club",
@@ -54,6 +45,15 @@
     "category": ""
   },
   {
+    "eventName": "2026 NT Track Championships",
+    "eventDate": "2026-10-16T00:00:00Z",
+    "clubName": "AusCycling (NT)",
+    "state": "NT",
+    "eventUrl": "https://entryboss.cc/races/29269",
+    "source": "EntryBoss",
+    "category": ""
+  },
+  {
     "eventName": "AusCycling MTB XCM Northern Territory Championships",
     "eventDate": "2026-10-16T00:00:00Z",
     "clubName": "AusCycling (NT)",
@@ -68,15 +68,6 @@
     "clubName": "AusCycling (NT)",
     "state": "NT",
     "eventUrl": "https://entryboss.cc/races/29551",
-    "source": "EntryBoss",
-    "category": ""
-  },
-  {
-    "eventName": "2026 NT Track Championships",
-    "eventDate": "2026-10-16T00:00:00Z",
-    "clubName": "AusCycling (NT)",
-    "state": "NT",
-    "eventUrl": "https://entryboss.cc/races/29269",
     "source": "EntryBoss",
     "category": ""
   }
