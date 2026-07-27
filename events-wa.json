@@ -1,19 +1,19 @@
 [
   {
+    "eventName": "2025 Hills BMX Club Tri Series - Series Entry",
+    "eventDate": "2026-01-14T00:00:00Z",
+    "clubName": "Hills BMX",
+    "state": "WA",
+    "eventUrl": "https://entryboss.cc/races/23295",
+    "source": "",
+    "category": ""
+  },
+  {
     "eventName": "2024 Hills BMX Club Tri Series - Series Entry",
     "eventDate": "2026-01-14T00:00:00Z",
     "clubName": "Hills BMX",
     "state": "WA",
     "eventUrl": "https://entryboss.cc/races/18469",
-    "source": "",
-    "category": ""
-  },
-  {
-    "eventName": "2026 Hills BMX Club Tri Series - Round 1",
-    "eventDate": "2026-01-14T00:00:00Z",
-    "clubName": "Hills BMX",
-    "state": "WA",
-    "eventUrl": "https://entryboss.cc/races/28501",
     "source": "",
     "category": ""
   },
@@ -54,11 +54,11 @@
     "category": ""
   },
   {
-    "eventName": "2025 Hills BMX Club Tri Series - Series Entry",
+    "eventName": "2026 Hills BMX Club Tri Series - Round 1",
     "eventDate": "2026-01-14T00:00:00Z",
     "clubName": "Hills BMX",
     "state": "WA",
-    "eventUrl": "https://entryboss.cc/races/23295",
+    "eventUrl": "https://entryboss.cc/races/28501",
     "source": "",
     "category": ""
   },
@@ -153,20 +153,20 @@
     "category": ""
   },
   {
-    "eventName": "Rowdy's Cafe Enduro Triathlon \u0026 Kids Triathlon 2026",
-    "eventDate": "2026-02-22T00:00:00Z",
-    "clubName": "Rockingham Triathlon Club",
-    "state": "WA",
-    "eventUrl": "https://entryboss.cc/races/26598",
-    "source": "",
-    "category": ""
-  },
-  {
     "eventName": "Summer Gravity Series # 6",
     "eventDate": "2026-02-22T00:00:00Z",
     "clubName": "Albany Mountain Bike Club",
     "state": "WA",
     "eventUrl": "https://entryboss.cc/races/28194",
+    "source": "",
+    "category": ""
+  },
+  {
+    "eventName": "Rowdy's Cafe Enduro Triathlon \u0026 Kids Triathlon 2026",
+    "eventDate": "2026-02-22T00:00:00Z",
+    "clubName": "Rockingham Triathlon Club",
+    "state": "WA",
+    "eventUrl": "https://entryboss.cc/races/26598",
     "source": "",
     "category": ""
   },
@@ -207,11 +207,11 @@
     "category": ""
   },
   {
-    "eventName": "2026 WA Downhill State Series - Rnd 6 - Wellington Mills (Gravity)",
-    "eventDate": "2026-07-26T00:00:00Z",
-    "clubName": "Peel Downhill Mountain Bike Club",
+    "eventName": "Dog Hill Baldivis Road Race",
+    "eventDate": "2026-08-02T00:00:00Z",
+    "clubName": "West Coast Masters Cycling Council",
     "state": "WA",
-    "eventUrl": "https://entryboss.cc/races/30486",
+    "eventUrl": "https://entryboss.cc/races/31559",
     "source": "EntryBoss",
     "category": ""
   },
@@ -221,15 +221,6 @@
     "clubName": "Ferguson Valley Mountain Bike Club",
     "state": "WA",
     "eventUrl": "https://entryboss.cc/races/30679",
-    "source": "EntryBoss",
-    "category": ""
-  },
-  {
-    "eventName": "Dog Hill Baldivis Road Race",
-    "eventDate": "2026-08-02T00:00:00Z",
-    "clubName": "West Coast Masters Cycling Council",
-    "state": "WA",
-    "eventUrl": "https://entryboss.cc/races/31559",
     "source": "EntryBoss",
     "category": ""
   },
@@ -248,7 +239,7 @@
     "clubName": "AusCycling (WA)",
     "state": "WA",
     "eventUrl": "https://entryboss.cc/races/28392",
-    "source": "",
+    "source": "EntryBoss",
     "category": ""
   },
   {
@@ -257,7 +248,7 @@
     "clubName": "AusCycling (WA)",
     "state": "WA",
     "eventUrl": "https://entryboss.cc/races/28392",
-    "source": "EntryBoss",
+    "source": "",
     "category": ""
   },
   {
