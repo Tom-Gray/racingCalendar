@@ -1,19 +1,19 @@
 [
   {
-    "eventName": "MVDCC January 2026 Carnival (Including AusCycling Tasmania Under 13 Track State Titles)",
-    "eventDate": "2026-01-10T00:00:00Z",
-    "clubName": "Mersey Valley Devonport Cycling Club",
-    "state": "TAS",
-    "eventUrl": "https://entryboss.cc/races/27757",
-    "source": "",
-    "category": ""
-  },
-  {
     "eventName": "Sprung Super D - Hollybank (Reverb-Juggernaut-Ginger Ridge) - Sat-10-Jan-2026",
     "eventDate": "2026-01-10T00:00:00Z",
     "clubName": "Launceston Mountain Bike Club",
     "state": "TAS",
     "eventUrl": "https://entryboss.cc/races/28400",
+    "source": "",
+    "category": ""
+  },
+  {
+    "eventName": "MVDCC January 2026 Carnival (Including AusCycling Tasmania Under 13 Track State Titles)",
+    "eventDate": "2026-01-10T00:00:00Z",
+    "clubName": "Mersey Valley Devonport Cycling Club",
+    "state": "TAS",
+    "eventUrl": "https://entryboss.cc/races/27757",
     "source": "",
     "category": ""
   },
@@ -153,33 +153,6 @@
     "category": ""
   },
   {
-    "eventName": "2025 Night Series - Series Entry (All 3 events)",
-    "eventDate": "2026-08-29T00:00:00Z",
-    "clubName": "Launceston BMX Club",
-    "state": "TAS",
-    "eventUrl": "https://entryboss.cc/races/27935",
-    "source": "EntryBoss",
-    "category": ""
-  },
-  {
-    "eventName": "2026 Night Series - Series Entry - ALL 3 ROUNDS",
-    "eventDate": "2026-08-29T00:00:00Z",
-    "clubName": "Launceston BMX Club",
-    "state": "TAS",
-    "eventUrl": "https://entryboss.cc/races/30426",
-    "source": "EntryBoss",
-    "category": ""
-  },
-  {
-    "eventName": "LAUNCESTON BMX - NIGHT SERIES 2024 - SERIES PASS",
-    "eventDate": "2026-08-29T00:00:00Z",
-    "clubName": "Launceston BMX Club",
-    "state": "TAS",
-    "eventUrl": "https://entryboss.cc/races/20374",
-    "source": "EntryBoss",
-    "category": ""
-  },
-  {
     "eventName": "LAUNCESTON BMX - TWILIGHT SERIES 2023 - SERIES PASS",
     "eventDate": "2026-08-29T00:00:00Z",
     "clubName": "Launceston BMX Club",
@@ -198,11 +171,20 @@
     "category": ""
   },
   {
-    "eventName": "LAUNCESTON BMX - TWILIGHT SERIES 2021 - SERIES ENTRY",
+    "eventName": "2025 Night Series - Series Entry (All 3 events)",
     "eventDate": "2026-08-29T00:00:00Z",
     "clubName": "Launceston BMX Club",
     "state": "TAS",
-    "eventUrl": "https://entryboss.cc/races/8627",
+    "eventUrl": "https://entryboss.cc/races/27935",
+    "source": "EntryBoss",
+    "category": ""
+  },
+  {
+    "eventName": "2026 Night Series - Series Entry - ALL 3 ROUNDS",
+    "eventDate": "2026-08-29T00:00:00Z",
+    "clubName": "Launceston BMX Club",
+    "state": "TAS",
+    "eventUrl": "https://entryboss.cc/races/30426",
     "source": "EntryBoss",
     "category": ""
   },
@@ -212,6 +194,24 @@
     "clubName": "Launceston City Cycling Club",
     "state": "TAS",
     "eventUrl": "https://entryboss.cc/races/31291",
+    "source": "EntryBoss",
+    "category": ""
+  },
+  {
+    "eventName": "LAUNCESTON BMX - NIGHT SERIES 2024 - SERIES PASS",
+    "eventDate": "2026-08-29T00:00:00Z",
+    "clubName": "Launceston BMX Club",
+    "state": "TAS",
+    "eventUrl": "https://entryboss.cc/races/20374",
+    "source": "EntryBoss",
+    "category": ""
+  },
+  {
+    "eventName": "LAUNCESTON BMX - TWILIGHT SERIES 2021 - SERIES ENTRY",
+    "eventDate": "2026-08-29T00:00:00Z",
+    "clubName": "Launceston BMX Club",
+    "state": "TAS",
+    "eventUrl": "https://entryboss.cc/races/8627",
     "source": "EntryBoss",
     "category": ""
   },
@@ -351,20 +351,20 @@
     "category": ""
   },
   {
-    "eventName": "MMBC Twilight Round 2 Kelcey Tier",
-    "eventDate": "2026-11-05T00:00:00Z",
-    "clubName": "Mersey Mountain Bike Club",
-    "state": "TAS",
-    "eventUrl": "https://entryboss.cc/races/31767",
-    "source": "EntryBoss",
-    "category": ""
-  },
-  {
     "eventName": "Railton SuperVets Cycle Race 3",
     "eventDate": "2026-11-05T00:00:00Z",
     "clubName": "Northern Vets CC (Tasmania)",
     "state": "TAS",
     "eventUrl": "https://entryboss.cc/races/31809",
+    "source": "EntryBoss",
+    "category": ""
+  },
+  {
+    "eventName": "MMBC Twilight Round 2 Kelcey Tier",
+    "eventDate": "2026-11-05T00:00:00Z",
+    "clubName": "Mersey Mountain Bike Club",
+    "state": "TAS",
+    "eventUrl": "https://entryboss.cc/races/31767",
     "source": "EntryBoss",
     "category": ""
   },
