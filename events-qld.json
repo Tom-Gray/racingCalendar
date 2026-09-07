@@ -45,20 +45,20 @@
     "category": ""
   },
   {
-    "eventName": "Brisbane SX Gates - 08/01/2026",
-    "eventDate": "2026-01-08T00:00:00Z",
-    "clubName": "CTD Industries (QLD)",
-    "state": "QLD",
-    "eventUrl": "https://entryboss.cc/races/28414",
-    "source": "",
-    "category": ""
-  },
-  {
     "eventName": "Senior Track Training",
     "eventDate": "2026-01-08T00:00:00Z",
     "clubName": "Cairns Cycling Club",
     "state": "QLD",
     "eventUrl": "https://entryboss.cc/races/28236",
+    "source": "",
+    "category": ""
+  },
+  {
+    "eventName": "Brisbane SX Gates - 08/01/2026",
+    "eventDate": "2026-01-08T00:00:00Z",
+    "clubName": "CTD Industries (QLD)",
+    "state": "QLD",
+    "eventUrl": "https://entryboss.cc/races/28414",
     "source": "",
     "category": ""
   },
@@ -180,13 +180,13 @@
     "category": ""
   },
   {
-    "eventName": "Nundah Criterium (Reverse) - Sat 24th Jan 2026",
+    "eventName": "DDCC Club Criterium",
     "eventDate": "2026-01-24T00:00:00Z",
-    "clubName": "Hamilton Wheelers Cycling Club",
+    "clubName": "Darling Downs Cycling Club",
     "state": "QLD",
-    "eventUrl": "https://entryboss.cc/races/28659",
-    "source": "",
-    "category": ""
+    "eventUrl": "https://www.buncheur.com/darling-downs-cycling-club-ddcc-club-criterium-sb-travel-medicine-alliance--2-2-2-1",
+    "source": "Buncheur",
+    "category": "Criterium"
   },
   {
     "eventName": "Brisbane SX Gates - 24/01/2026",
@@ -198,13 +198,13 @@
     "category": ""
   },
   {
-    "eventName": "DDCC Club Criterium",
+    "eventName": "Nundah Criterium (Reverse) - Sat 24th Jan 2026",
     "eventDate": "2026-01-24T00:00:00Z",
-    "clubName": "Darling Downs Cycling Club",
+    "clubName": "Hamilton Wheelers Cycling Club",
     "state": "QLD",
-    "eventUrl": "https://www.buncheur.com/darling-downs-cycling-club-ddcc-club-criterium-sb-travel-medicine-alliance--2-2-2-1",
-    "source": "Buncheur",
-    "category": "Criterium"
+    "eventUrl": "https://entryboss.cc/races/28659",
+    "source": "",
+    "category": ""
   },
   {
     "eventName": "Wild West Summer XCO Series 2025/2026- Round 5 Sugar Bag Road",
@@ -441,15 +441,6 @@
     "category": "Criterium"
   },
   {
-    "eventName": "2026 AusCycling BMX State Series - QLD RD1 Central Highlands",
-    "eventDate": "2026-03-14T00:00:00Z",
-    "clubName": "AusCycling (Queensland)",
-    "state": "QLD",
-    "eventUrl": "https://entryboss.cc/races/28545",
-    "source": "",
-    "category": ""
-  },
-  {
     "eventName": "DDCC Club Criterium Mar 14th",
     "eventDate": "2026-03-14T00:00:00Z",
     "clubName": "Darling Downs Cycling Club",
@@ -459,13 +450,13 @@
     "category": "Criterium"
   },
   {
-    "eventName": "Wide Bay Road Race Series: Race 1",
-    "eventDate": "2026-03-15T00:00:00Z",
-    "clubName": "Fraser Coast Cycling Club",
+    "eventName": "2026 AusCycling BMX State Series - QLD RD1 Central Highlands",
+    "eventDate": "2026-03-14T00:00:00Z",
+    "clubName": "AusCycling (Queensland)",
     "state": "QLD",
-    "eventUrl": "https://www.buncheur.com/fraser-coast-cycling-club-fccc-january-crit-2025-1-1-2-2-1-1-1-2-2-1-1-1-1-1-1-1",
-    "source": "Buncheur",
-    "category": "Criterium"
+    "eventUrl": "https://entryboss.cc/races/28545",
+    "source": "",
+    "category": ""
   },
   {
     "eventName": "Summer Sprints 2026 Round 3 Daisy Hill",
@@ -475,6 +466,15 @@
     "eventUrl": "https://entryboss.cc/races/28602",
     "source": "",
     "category": ""
+  },
+  {
+    "eventName": "Wide Bay Road Race Series: Race 1",
+    "eventDate": "2026-03-15T00:00:00Z",
+    "clubName": "Fraser Coast Cycling Club",
+    "state": "QLD",
+    "eventUrl": "https://www.buncheur.com/fraser-coast-cycling-club-fccc-january-crit-2025-1-1-2-2-1-1-1-2-2-1-1-1-1-1-1-1",
+    "source": "Buncheur",
+    "category": "Criterium"
   },
   {
     "eventName": "2026 AusCycling BMX State Series - QLD RD2 Central Highlands",
@@ -495,20 +495,20 @@
     "category": "Criterium"
   },
   {
-    "eventName": "FCCC presents: Wide Bay Toyota Crit  Series - Race 2",
-    "eventDate": "2026-03-29T00:00:00Z",
-    "clubName": "Fraser Coast Cycling Club",
-    "state": "QLD",
-    "eventUrl": "https://www.buncheur.com/fraser-coast-cycling-club-fccc-january-crit-2025-1-1-2-2-1-1-1-2-2-1-1-1-1-1-1-1-1-1",
-    "source": "Buncheur",
-    "category": "Criterium"
-  },
-  {
     "eventName": "FCCC presents: Wide Bay Toyota Crit  Series - Race 2 2",
     "eventDate": "2026-03-29T00:00:00Z",
     "clubName": "Fraser Coast Cycling Club",
     "state": "QLD",
     "eventUrl": "https://www.buncheur.com/fraser-coast-cycling-club-fccc-january-crit-2025-1-1-2-2-1-1-1-2-2-1-1-1-1-1-1-1-1-1-2",
+    "source": "Buncheur",
+    "category": "Criterium"
+  },
+  {
+    "eventName": "FCCC presents: Wide Bay Toyota Crit  Series - Race 2",
+    "eventDate": "2026-03-29T00:00:00Z",
+    "clubName": "Fraser Coast Cycling Club",
+    "state": "QLD",
+    "eventUrl": "https://www.buncheur.com/fraser-coast-cycling-club-fccc-january-crit-2025-1-1-2-2-1-1-1-2-2-1-1-1-1-1-1-1-1-1",
     "source": "Buncheur",
     "category": "Criterium"
   },
@@ -648,15 +648,6 @@
     "category": ""
   },
   {
-    "eventName": "MAD MTBC Gravity Extravaganza Weekend (Sat + Sun)",
-    "eventDate": "2026-08-02T00:00:00Z",
-    "clubName": "Mackay and District (MAD) Mountain Bike Club",
-    "state": "QLD",
-    "eventUrl": "https://entryboss.cc/races/28068",
-    "source": "",
-    "category": ""
-  },
-  {
     "eventName": "FCCC presents: Kermesse Gravel Championship Series",
     "eventDate": "2026-08-02T00:00:00Z",
     "clubName": "Fraser Coast Cycling Club",
@@ -664,6 +655,15 @@
     "eventUrl": "https://www.buncheur.com/fraser-coast-cycling-club-fccc-presents-kermesse-gravel-championship-series",
     "source": "Buncheur",
     "category": "Kermesse"
+  },
+  {
+    "eventName": "MAD MTBC Gravity Extravaganza Weekend (Sat + Sun)",
+    "eventDate": "2026-08-02T00:00:00Z",
+    "clubName": "Mackay and District (MAD) Mountain Bike Club",
+    "state": "QLD",
+    "eventUrl": "https://entryboss.cc/races/28068",
+    "source": "",
+    "category": ""
   },
   {
     "eventName": "2026 AusCycling BMX State Series - QLD RD5 Pine Rivers",
@@ -738,42 +738,6 @@
     "category": "Criterium"
   },
   {
-    "eventName": "Beginner skills clinic - Session 5 Cornering",
-    "eventDate": "2026-09-06T00:00:00Z",
-    "clubName": "Rockhampton MTB Club",
-    "state": "QLD",
-    "eventUrl": "https://entryboss.cc/races/31574",
-    "source": "EntryBoss",
-    "category": ""
-  },
-  {
-    "eventName": "HWCC 2026 Road Race Championships Sun 6th September",
-    "eventDate": "2026-09-06T00:00:00Z",
-    "clubName": "Hamilton Wheelers Cycling Club",
-    "state": "QLD",
-    "eventUrl": "https://entryboss.cc/races/31795",
-    "source": "EntryBoss",
-    "category": ""
-  },
-  {
-    "eventName": "Flight Centre Cycle Epic 89km",
-    "eventDate": "2026-09-06T00:00:00Z",
-    "clubName": "Ipswich Offroad Cyclists",
-    "state": "QLD",
-    "eventUrl": "https://entryboss.cc/races/31406",
-    "source": "EntryBoss",
-    "category": ""
-  },
-  {
-    "eventName": "World360 Rewards Cycle Pursuit 58km",
-    "eventDate": "2026-09-06T00:00:00Z",
-    "clubName": "Ipswich Offroad Cyclists",
-    "state": "QLD",
-    "eventUrl": "https://entryboss.cc/races/31405",
-    "source": "EntryBoss",
-    "category": ""
-  },
-  {
     "eventName": "Monday Night Open Track",
     "eventDate": "2026-09-07T00:00:00Z",
     "clubName": "Townsville BMX Club",
@@ -810,20 +774,20 @@
     "category": ""
   },
   {
+    "eventName": "Skills \u0026 Drills",
+    "eventDate": "2026-09-09T00:00:00Z",
+    "clubName": "Rockhampton Cycling Club",
+    "state": "QLD",
+    "eventUrl": "https://entryboss.cc/races/32079",
+    "source": "EntryBoss",
+    "category": ""
+  },
+  {
     "eventName": "Balmoral CC weekly Wednesday track night (Sept 09)",
     "eventDate": "2026-09-09T00:00:00Z",
     "clubName": "Balmoral Cycling Club",
     "state": "QLD",
     "eventUrl": "https://entryboss.cc/races/32018",
-    "source": "EntryBoss",
-    "category": ""
-  },
-  {
-    "eventName": "Brisbane SX Gates - 10/09/2026",
-    "eventDate": "2026-09-10T00:00:00Z",
-    "clubName": "CTD Industries (QLD)",
-    "state": "QLD",
-    "eventUrl": "https://entryboss.cc/races/31909",
     "source": "EntryBoss",
     "category": ""
   },
@@ -837,20 +801,20 @@
     "category": ""
   },
   {
-    "eventName": "Pine Rivers 2026 Series 2 Round 4",
-    "eventDate": "2026-09-11T00:00:00Z",
-    "clubName": "Pine Rivers BMX Club",
+    "eventName": "UQCC - AMV 150 lap moto paced session",
+    "eventDate": "2026-09-10T00:00:00Z",
+    "clubName": "University of Queensland Cycle Club",
     "state": "QLD",
-    "eventUrl": "https://entryboss.cc/races/28939",
+    "eventUrl": "https://entryboss.cc/races/32087",
     "source": "EntryBoss",
     "category": ""
   },
   {
-    "eventName": "Friday Night Club Racing",
-    "eventDate": "2026-09-11T00:00:00Z",
-    "clubName": "Townsville BMX Club",
+    "eventName": "Brisbane SX Gates - 10/09/2026",
+    "eventDate": "2026-09-10T00:00:00Z",
+    "clubName": "CTD Industries (QLD)",
     "state": "QLD",
-    "eventUrl": "https://entryboss.cc/races/32069",
+    "eventUrl": "https://entryboss.cc/races/31909",
     "source": "EntryBoss",
     "category": ""
   },
@@ -873,29 +837,20 @@
     "category": ""
   },
   {
-    "eventName": "Mackay Cycles XCO Series Race 3",
-    "eventDate": "2026-09-12T00:00:00Z",
-    "clubName": "Mackay and District (MAD) Mountain Bike Club",
+    "eventName": "Friday Night Club Racing",
+    "eventDate": "2026-09-11T00:00:00Z",
+    "clubName": "Townsville BMX Club",
     "state": "QLD",
-    "eventUrl": "https://entryboss.cc/races/29236",
+    "eventUrl": "https://entryboss.cc/races/32069",
     "source": "EntryBoss",
     "category": ""
   },
   {
-    "eventName": "Alexander Arvo Crit - Nundah - Sat 12th September",
-    "eventDate": "2026-09-12T00:00:00Z",
-    "clubName": "Hamilton Wheelers Cycling Club",
+    "eventName": "Pine Rivers 2026 Series 2 Round 4",
+    "eventDate": "2026-09-11T00:00:00Z",
+    "clubName": "Pine Rivers BMX Club",
     "state": "QLD",
-    "eventUrl": "https://entryboss.cc/races/31880",
-    "source": "EntryBoss",
-    "category": ""
-  },
-  {
-    "eventName": "Muzz 2.0 - U Clockwise - inc. Women's A/B grade (Sept 12)",
-    "eventDate": "2026-09-12T00:00:00Z",
-    "clubName": "Balmoral Cycling Club",
-    "state": "QLD",
-    "eventUrl": "https://entryboss.cc/races/31604",
+    "eventUrl": "https://entryboss.cc/races/28939",
     "source": "EntryBoss",
     "category": ""
   },
@@ -909,6 +864,15 @@
     "category": ""
   },
   {
+    "eventName": "Alexander Arvo Crit - Nundah - Sat 12th September",
+    "eventDate": "2026-09-12T00:00:00Z",
+    "clubName": "Hamilton Wheelers Cycling Club",
+    "state": "QLD",
+    "eventUrl": "https://entryboss.cc/races/31880",
+    "source": "EntryBoss",
+    "category": ""
+  },
+  {
     "eventName": "Balmoral CC Saturday Track Session (Sept 12)",
     "eventDate": "2026-09-12T00:00:00Z",
     "clubName": "Balmoral Cycling Club",
@@ -918,11 +882,20 @@
     "category": ""
   },
   {
-    "eventName": "2026 Club Racing - Round 13",
-    "eventDate": "2026-09-13T00:00:00Z",
-    "clubName": "Hinterland BMX Club",
+    "eventName": "Mackay Cycles XCO Series Race 3",
+    "eventDate": "2026-09-12T00:00:00Z",
+    "clubName": "Mackay and District (MAD) Mountain Bike Club",
     "state": "QLD",
-    "eventUrl": "https://entryboss.cc/races/31995",
+    "eventUrl": "https://entryboss.cc/races/29236",
+    "source": "EntryBoss",
+    "category": ""
+  },
+  {
+    "eventName": "Muzz 2.0 - U Clockwise - inc. Women's A/B grade (Sept 12)",
+    "eventDate": "2026-09-12T00:00:00Z",
+    "clubName": "Balmoral Cycling Club",
+    "state": "QLD",
+    "eventUrl": "https://entryboss.cc/races/31604",
     "source": "EntryBoss",
     "category": ""
   },
@@ -936,6 +909,24 @@
     "category": ""
   },
   {
+    "eventName": "Corry Shield || Handicap",
+    "eventDate": "2026-09-13T00:00:00Z",
+    "clubName": "Mackay Cycling Club",
+    "state": "QLD",
+    "eventUrl": "https://entryboss.cc/races/31438",
+    "source": "EntryBoss",
+    "category": ""
+  },
+  {
+    "eventName": "2026 Club Racing - Round 13",
+    "eventDate": "2026-09-13T00:00:00Z",
+    "clubName": "Hinterland BMX Club",
+    "state": "QLD",
+    "eventUrl": "https://entryboss.cc/races/31995",
+    "source": "EntryBoss",
+    "category": ""
+  },
+  {
     "eventName": "2026 Road Series - The Caves - Annual Handicap",
     "eventDate": "2026-09-13T00:00:00Z",
     "clubName": "Rockhampton Cycling Club",
@@ -945,11 +936,20 @@
     "category": ""
   },
   {
-    "eventName": "Corry Shield || Handicap",
+    "eventName": "Nick Mason Memorial Crit Series - Race One 1",
     "eventDate": "2026-09-13T00:00:00Z",
-    "clubName": "Mackay Cycling Club",
+    "clubName": "Fraser Coast Cycling Club",
     "state": "QLD",
-    "eventUrl": "https://entryboss.cc/races/31438",
+    "eventUrl": "https://www.buncheur.com/fraser-coast-cycling-club-fccc-january-crit-2025-1-1-2-2-1-1-1-2-2-1-1-1-1-1-1-1-1-1-1-1-1-3-1",
+    "source": "Buncheur",
+    "category": "Criterium"
+  },
+  {
+    "eventName": "Ipswich Friday Night Crit",
+    "eventDate": "2026-09-16T00:00:00Z",
+    "clubName": "Ipswich Cycling Club",
+    "state": "QLD",
+    "eventUrl": "https://entryboss.cc/races/30381",
     "source": "EntryBoss",
     "category": ""
   },
@@ -972,15 +972,6 @@
     "category": ""
   },
   {
-    "eventName": "Ipswich Friday Night Crit",
-    "eventDate": "2026-09-16T00:00:00Z",
-    "clubName": "Ipswich Cycling Club",
-    "state": "QLD",
-    "eventUrl": "https://entryboss.cc/races/30381",
-    "source": "EntryBoss",
-    "category": ""
-  },
-  {
     "eventName": "Club Racing Mackay - Thursday 17th September 2026",
     "eventDate": "2026-09-17T00:00:00Z",
     "clubName": "Mackay and District BMX Club Inc",
@@ -999,20 +990,20 @@
     "category": ""
   },
   {
-    "eventName": "Mackay Cycling Club Track Night || Race 3",
-    "eventDate": "2026-09-18T00:00:00Z",
-    "clubName": "Mackay Cycling Club",
-    "state": "QLD",
-    "eventUrl": "https://entryboss.cc/races/31100",
-    "source": "EntryBoss",
-    "category": ""
-  },
-  {
     "eventName": "Club Champs Rd 2 18.09.26",
     "eventDate": "2026-09-18T00:00:00Z",
     "clubName": "Rockhampton BMX Club",
     "state": "QLD",
     "eventUrl": "https://entryboss.cc/races/32053",
+    "source": "EntryBoss",
+    "category": ""
+  },
+  {
+    "eventName": "Mackay Cycling Club Track Night || Race 3",
+    "eventDate": "2026-09-18T00:00:00Z",
+    "clubName": "Mackay Cycling Club",
+    "state": "QLD",
+    "eventUrl": "https://entryboss.cc/races/31100",
     "source": "EntryBoss",
     "category": ""
   },
@@ -1080,11 +1071,11 @@
     "category": ""
   },
   {
-    "eventName": "Wed. Night Gates (6pm - 8pm)",
+    "eventName": "Junior Road Holiday Clinic Session 1 - U9-U13 riders - 9am-11am",
     "eventDate": "2026-09-23T00:00:00Z",
-    "clubName": "Pine Rivers BMX Club",
+    "clubName": "Balmoral Cycling Club",
     "state": "QLD",
-    "eventUrl": "https://entryboss.cc/races/28982",
+    "eventUrl": "https://entryboss.cc/races/31665",
     "source": "EntryBoss",
     "category": ""
   },
@@ -1116,11 +1107,11 @@
     "category": ""
   },
   {
-    "eventName": "Junior Road Holiday Clinic Session 1 - U9-U13 riders - 9am-11am",
+    "eventName": "Wed. Night Gates (6pm - 8pm)",
     "eventDate": "2026-09-23T00:00:00Z",
-    "clubName": "Balmoral Cycling Club",
+    "clubName": "Pine Rivers BMX Club",
     "state": "QLD",
-    "eventUrl": "https://entryboss.cc/races/31665",
+    "eventUrl": "https://entryboss.cc/races/28982",
     "source": "EntryBoss",
     "category": ""
   },
@@ -1152,20 +1143,11 @@
     "category": ""
   },
   {
-    "eventName": "Nundah - Eric Hawkins 'A Grade Red Hot Crit' - Sat 26th Sept",
+    "eventName": "Balmoral CC Saturday Track Session (Sept 26)",
     "eventDate": "2026-09-26T00:00:00Z",
-    "clubName": "Hamilton Wheelers Cycling Club",
+    "clubName": "Balmoral Cycling Club",
     "state": "QLD",
-    "eventUrl": "https://entryboss.cc/races/32062",
-    "source": "EntryBoss",
-    "category": ""
-  },
-  {
-    "eventName": "2026 AusCycling BMX Racing State Championships - QLD",
-    "eventDate": "2026-09-26T00:00:00Z",
-    "clubName": "AusCycling (Queensland)",
-    "state": "QLD",
-    "eventUrl": "https://entryboss.cc/races/31627",
+    "eventUrl": "https://entryboss.cc/races/32025",
     "source": "EntryBoss",
     "category": ""
   },
@@ -1188,20 +1170,29 @@
     "category": ""
   },
   {
-    "eventName": "Balmoral CC Saturday Track Session (Sept 26)",
-    "eventDate": "2026-09-26T00:00:00Z",
-    "clubName": "Balmoral Cycling Club",
-    "state": "QLD",
-    "eventUrl": "https://entryboss.cc/races/32025",
-    "source": "EntryBoss",
-    "category": ""
-  },
-  {
     "eventName": "Sizzling Summer Series - Series Entry",
     "eventDate": "2026-09-26T00:00:00Z",
     "clubName": "AusCycling (Queensland)",
     "state": "QLD",
     "eventUrl": "https://entryboss.cc/races/6291",
+    "source": "EntryBoss",
+    "category": ""
+  },
+  {
+    "eventName": "2026 AusCycling BMX Racing State Championships - QLD",
+    "eventDate": "2026-09-26T00:00:00Z",
+    "clubName": "AusCycling (Queensland)",
+    "state": "QLD",
+    "eventUrl": "https://entryboss.cc/races/31627",
+    "source": "EntryBoss",
+    "category": ""
+  },
+  {
+    "eventName": "Nundah - Eric Hawkins 'A Grade Red Hot Crit' - Sat 26th Sept",
+    "eventDate": "2026-09-26T00:00:00Z",
+    "clubName": "Hamilton Wheelers Cycling Club",
+    "state": "QLD",
+    "eventUrl": "https://entryboss.cc/races/32062",
     "source": "EntryBoss",
     "category": ""
   },
@@ -1278,15 +1269,6 @@
     "category": ""
   },
   {
-    "eventName": "Mackay Cycling Club Track Night || Race 6",
-    "eventDate": "2026-10-09T00:00:00Z",
-    "clubName": "Mackay Cycling Club",
-    "state": "QLD",
-    "eventUrl": "https://entryboss.cc/races/31103",
-    "source": "EntryBoss",
-    "category": ""
-  },
-  {
     "eventName": "Pine Rivers 2026 Series 2 Round 5",
     "eventDate": "2026-10-09T00:00:00Z",
     "clubName": "Pine Rivers BMX Club",
@@ -1296,11 +1278,11 @@
     "category": ""
   },
   {
-    "eventName": "UQCC Criterium - Triple Crown Rd 1 - NUNDAH",
-    "eventDate": "2026-10-10T00:00:00Z",
-    "clubName": "University of Queensland Cycle Club",
+    "eventName": "Mackay Cycling Club Track Night || Race 6",
+    "eventDate": "2026-10-09T00:00:00Z",
+    "clubName": "Mackay Cycling Club",
     "state": "QLD",
-    "eventUrl": "https://entryboss.cc/races/29912",
+    "eventUrl": "https://entryboss.cc/races/31103",
     "source": "EntryBoss",
     "category": ""
   },
@@ -1310,6 +1292,15 @@
     "clubName": "Mackay and District (MAD) Mountain Bike Club",
     "state": "QLD",
     "eventUrl": "https://entryboss.cc/races/29237",
+    "source": "EntryBoss",
+    "category": ""
+  },
+  {
+    "eventName": "UQCC Criterium - Triple Crown Rd 1 - NUNDAH",
+    "eventDate": "2026-10-10T00:00:00Z",
+    "clubName": "University of Queensland Cycle Club",
+    "state": "QLD",
+    "eventUrl": "https://entryboss.cc/races/29912",
     "source": "EntryBoss",
     "category": ""
   },
@@ -1341,20 +1332,20 @@
     "category": ""
   },
   {
-    "eventName": "Mackay Cycling Club Track Night || Race 7",
-    "eventDate": "2026-10-16T00:00:00Z",
-    "clubName": "Mackay Cycling Club",
-    "state": "QLD",
-    "eventUrl": "https://entryboss.cc/races/31104",
-    "source": "EntryBoss",
-    "category": ""
-  },
-  {
     "eventName": "Ipswich Friday Night Crit",
     "eventDate": "2026-10-16T00:00:00Z",
     "clubName": "Ipswich Cycling Club",
     "state": "QLD",
     "eventUrl": "https://entryboss.cc/races/30382",
+    "source": "EntryBoss",
+    "category": ""
+  },
+  {
+    "eventName": "Mackay Cycling Club Track Night || Race 7",
+    "eventDate": "2026-10-16T00:00:00Z",
+    "clubName": "Mackay Cycling Club",
+    "state": "QLD",
+    "eventUrl": "https://entryboss.cc/races/31104",
     "source": "EntryBoss",
     "category": ""
   },
@@ -1413,20 +1404,20 @@
     "category": ""
   },
   {
-    "eventName": "Mackay Cycling Club Track Night || Race 8",
-    "eventDate": "2026-10-23T00:00:00Z",
-    "clubName": "Mackay Cycling Club",
-    "state": "QLD",
-    "eventUrl": "https://entryboss.cc/races/31105",
-    "source": "EntryBoss",
-    "category": ""
-  },
-  {
     "eventName": "Pine Rivers 2026 Series 2 Round 6",
     "eventDate": "2026-10-23T00:00:00Z",
     "clubName": "Pine Rivers BMX Club",
     "state": "QLD",
     "eventUrl": "https://entryboss.cc/races/28941",
+    "source": "EntryBoss",
+    "category": ""
+  },
+  {
+    "eventName": "Mackay Cycling Club Track Night || Race 8",
+    "eventDate": "2026-10-23T00:00:00Z",
+    "clubName": "Mackay Cycling Club",
+    "state": "QLD",
+    "eventUrl": "https://entryboss.cc/races/31105",
     "source": "EntryBoss",
     "category": ""
   },
@@ -1503,20 +1494,20 @@
     "category": ""
   },
   {
-    "eventName": "Corry Cycles Boogieman Series Race 3 (Day/Night)",
-    "eventDate": "2026-11-07T00:00:00Z",
-    "clubName": "Mackay and District (MAD) Mountain Bike Club",
-    "state": "QLD",
-    "eventUrl": "https://entryboss.cc/races/29239",
-    "source": "EntryBoss",
-    "category": ""
-  },
-  {
     "eventName": "November 7th XCC Hot Laps Saturday Gordonbrook Dam",
     "eventDate": "2026-11-07T00:00:00Z",
     "clubName": "Ipswich Offroad Cyclists",
     "state": "QLD",
     "eventUrl": "https://entryboss.cc/races/31613",
+    "source": "EntryBoss",
+    "category": ""
+  },
+  {
+    "eventName": "Corry Cycles Boogieman Series Race 3 (Day/Night)",
+    "eventDate": "2026-11-07T00:00:00Z",
+    "clubName": "Mackay and District (MAD) Mountain Bike Club",
+    "state": "QLD",
+    "eventUrl": "https://entryboss.cc/races/29239",
     "source": "EntryBoss",
     "category": ""
   },
