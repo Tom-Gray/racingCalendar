@@ -323,7 +323,7 @@ function saveState() {
 // ===================================
 
 function getFilteredEvents() {
-    return state.events.filter(event => {
+    return window.RaceCalendarDates.upcoming(state.events, state.selectedState).filter(event => {
         // Club filter
         if (state.selectedClubs.size > 0 && !state.selectedClubs.has(event.clubName)) {
             return false;
