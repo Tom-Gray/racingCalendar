@@ -829,7 +829,7 @@ function updateDisplay() {
 }
 
 function getFilteredEvents() {
-    let filteredEvents = events;
+    let filteredEvents = window.RaceCalendarDates.upcoming(events, selectedState);
     
     // Apply club filter if clubs are selected
     if (selectedClubs.size > 0) {
