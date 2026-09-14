@@ -97,21 +97,6 @@ func TestConflictingFreshDetailsFail(t *testing.T) {
 	}
 }
 
-func TestRefreshReplacesLegacySourceAndPreservesBuncheur(t *testing.T) {
-	fresh := Event{EventURL: "https://entryboss.cc/races/1", Source: "EntryBoss", EventName: "Current"}
-	old := Event{EventURL: "https://entryboss.cc/races/1", EventName: "Legacy"}
-	stale := Event{EventURL: "https://entryboss.cc/races/2", EventName: "No longer listed"}
-	buncheur := Event{EventURL: "https://www.buncheur.com/race", Source: "Buncheur"}
-	got := replaceEntryBossEvents([]Event{fresh}, []Event{old, stale, buncheur})
-	if !reflect.DeepEqual(got, []Event{fresh, buncheur}) {
-		t.Fatalf("unexpected merge: %+v", got)
-	}
-	again := replaceEntryBossEvents([]Event{fresh}, got)
-	if !reflect.DeepEqual(got, again) {
-		t.Fatal("repeated refresh must be idempotent")
-	}
-}
-
 type roundTripFunc func(*http.Request) (*http.Response, error)
 
 func (f roundTripFunc) RoundTrip(r *http.Request) (*http.Response, error) { return f(r) }

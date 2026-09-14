@@ -6,6 +6,7 @@ const gcc = 'Geelong Cycling Club';
 const fcc = 'Footscray Cycling Club';
 
 async function prepare(page, mobile) {
+  await page.clock.setFixedTime(new Date('2026-09-14T02:00:00Z'));
   await page.setViewportSize({ width: mobile ? 375 : 1280, height: 900 });
   await page.addInitScript(() => {
     localStorage.setItem('hasSeenStateSelector', 'true');

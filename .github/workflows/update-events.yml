@@ -29,16 +29,10 @@ jobs:
     
     - name: Update clubs (EntryBoss)
       run: go run ./cmd update-clubs
-      continue-on-error: true
     
-    - name: Update events (EntryBoss)
+    - name: Replace event snapshots (EntryBoss and Buncheur)
       run: go run ./cmd update-events
-      continue-on-error: true
 
-    - name: Update events (Buncheur)
-      run: go run ./cmd update-buncheur
-      continue-on-error: true
-    
     - name: Check for changes
       id: changes
       run: |

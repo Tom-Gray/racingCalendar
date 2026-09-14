@@ -45,18 +45,6 @@ func isEntryBossEvent(e Event) bool {
 	return e.Source == "EntryBoss" || isEntryBossURL(e.EventURL)
 }
 
-// Replace the entire old EntryBoss snapshot, including records written before
-// source was introduced. Other providers' records must survive the refresh.
-func replaceEntryBossEvents(fresh, existing []Event) []Event {
-	merged := append([]Event{}, fresh...)
-	for _, event := range existing {
-		if !isEntryBossEvent(event) {
-			merged = append(merged, event)
-		}
-	}
-	return merged
-}
-
 type ownerResolver func(string) (Club, error)
 
 func parseEventOwner(doc *goquery.Document, clubs []Club) (Club, error) {
@@ -167,7 +155,7 @@ func reconcileEvents(events []Event, resolve ownerResolver, verifyAll bool) ([]E
 
 var cleanEventsCmd = &cobra.Command{
 	Use:   "clean-events",
-	Short: "Deduplicate existing state files and resolve conflicting EntryBoss clubs",
+	Short: "Purge past events and deduplicate existing state files",
 	RunE: func(cmd *cobra.Command, args []string) error {
 		data, err := os.ReadFile("clubs.json")
 		if err != nil {
@@ -193,7 +181,12 @@ var cleanEventsCmd = &cobra.Command{
 			if err := json.Unmarshal(data, &events); err != nil {
 				return err
 			}
-			clean, err := reconcileEvents(events, resolve, false)
+			state := strings.ToUpper(strings.TrimSuffix(strings.TrimPrefix(file, "events-"), ".json"))
+			upcoming, err := upcomingEvents(events, state, time.Now())
+			if err != nil {
+				return fmt.Errorf("%s: %w", file, err)
+			}
+			clean, err := reconcileEvents(upcoming, resolve, false)
 			if err != nil {
 				return fmt.Errorf("%s: %w", file, err)
 			}
@@ -203,11 +196,6 @@ var cleanEventsCmd = &cobra.Command{
 			}
 			fmt.Printf("%s: %d -> %d events\n", file, len(events), len(clean))
 		}
-		for _, file := range files {
-			if err := os.WriteFile(file, outputs[file], 0644); err != nil {
-				return err
-			}
-		}
-		return nil
+		return replaceSnapshots(outputs)
 	},
 }
