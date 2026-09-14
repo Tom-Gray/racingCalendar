@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"log"
 	"net/http"
+	urlpkg "net/url"
 	"os"
 	"regexp"
 	"sort"
@@ -57,8 +58,8 @@ var stateFlag string
 
 var updateEventsCmd = &cobra.Command{
 	Use:   "update-events",
-	Short: "Update events from clubs (all states by default, or specific state with --state flag)",
-	Long:  `Read clubs.json and scrape events. If no state specified, processes all states. Use --state to process a specific state only.`,
+	Short: "Replace state event files with upcoming events from EntryBoss and Buncheur",
+	Long:  `Build fresh state snapshots from both sources. Existing files are replaced only after all requested states have been fetched and validated.`,
 	Run: func(cmd *cobra.Command, args []string) {
 		state := strings.ToUpper(stateFlag)
 		if err := updateEvents(state); err != nil {
@@ -68,12 +69,12 @@ var updateEventsCmd = &cobra.Command{
 }
 
 var updateBuncheurCmd = &cobra.Command{
-	Use:   "update-buncheur",
-	Short: "Update events from Buncheur (all states by default, or specific state with --state flag)",
-	Long:  `Fetch events from Buncheur API. If no state specified, processes all states. Use --state to process a specific state only.`,
+	Use:        "update-buncheur",
+	Short:      "Refresh events from both sources (compatibility alias for update-events)",
+	Deprecated: "use update-events; both sources now refresh together",
 	Run: func(cmd *cobra.Command, args []string) {
 		state := strings.ToUpper(stateFlag)
-		if err := updateBuncheur(state); err != nil {
+		if err := updateEvents(state); err != nil {
 			log.Fatalf("Failed to update Buncheur events: %v", err)
 		}
 	},
@@ -280,129 +281,25 @@ func updateClubs() error {
 	return nil
 }
 
-func updateEvents(state string) error {
-	// Determine which states to process
-	var statesToProcess []string
-	if state == "" {
-		// Process all states
-		statesToProcess = []string{"ACT", "NSW", "NT", "QLD", "SA", "TAS", "VIC", "WA"}
-		fmt.Println("No state specified - processing all states...")
-	} else {
-		// Process single state
-		statesToProcess = []string{state}
-	}
-
-	// Read all clubs from clubs.json
-	data, err := os.ReadFile("clubs.json")
-	if err != nil {
-		return fmt.Errorf("failed to read clubs.json: %w", err)
-	}
-
-	var allClubs []Club
-	if err := json.Unmarshal(data, &allClubs); err != nil {
-		return fmt.Errorf("failed to unmarshal clubs.json: %w", err)
-	}
-
-	// Track statistics across all states
-	totalEvents := 0
-	stateResults := make(map[string]int)
-	resolveOwner := newOwnerResolver(allClubs)
-
-	// Process each state
-	for stateIndex, stateCode := range statesToProcess {
-		if len(statesToProcess) > 1 {
-			fmt.Printf("\n=== Processing %s (%d/%d) ===\n", stateCode, stateIndex+1, len(statesToProcess))
-		}
-
-		// Filter clubs by state
-		var stateClubs []Club
-		for _, club := range allClubs {
-			if club.State == stateCode && (club.Source == "EntryBoss" || isEntryBossURL(club.ClubURL)) {
-				stateClubs = append(stateClubs, club)
-			}
-		}
-
-		if len(stateClubs) == 0 {
-			fmt.Printf("No clubs found for state %s, skipping...\n", stateCode)
+func fetchEntryBossEvents(state string, clubs []Club) ([]Event, error) {
+	events := []Event{}
+	for _, club := range clubs {
+		if club.State != state || !(club.Source == "EntryBoss" || isEntryBossURL(club.ClubURL)) {
 			continue
 		}
-
-		fmt.Printf("Found %d clubs in %s\n", len(stateClubs), stateCode)
-
-		var stateEvents []Event
-
-		for _, club := range stateClubs {
-			fmt.Printf("Scraping events for %s...\n", club.ClubName)
-
-			events, err := scrapeClubEvents(club)
-			if err != nil {
-				return fmt.Errorf("refusing to replace %s after scraping %s failed: %w", stateCode, club.ClubName, err)
-			}
-
-			// Add state and source fields to each event
-			for i := range events {
-				events[i].State = club.State
-				events[i].Source = "EntryBoss"
-			}
-
-			stateEvents = append(stateEvents, events...)
-
-			// Small delay to be respectful to the server
-			time.Sleep(1 * time.Second)
-		}
-
-		// Load existing events to merge
-		eventsFile := fmt.Sprintf("events-%s.json", strings.ToLower(stateCode))
-		var existingEvents []Event
-		if existingData, readErr := os.ReadFile(eventsFile); readErr == nil {
-			if err := json.Unmarshal(existingData, &existingEvents); err != nil {
-				return fmt.Errorf("refusing to replace invalid %s: %w", eventsFile, err)
-			}
-		} else if !os.IsNotExist(readErr) {
-			return readErr
-		}
-		stateEvents = replaceEntryBossEvents(stateEvents, existingEvents)
-
-		stateEvents, err = reconcileEvents(stateEvents, resolveOwner, true)
+		fmt.Printf("Scraping events for %s...\n", club.ClubName)
+		fresh, err := scrapeClubEvents(club)
 		if err != nil {
-			return fmt.Errorf("refusing to replace %s: %w", eventsFile, err)
+			return nil, fmt.Errorf("scraping %s: %w", club.ClubName, err)
 		}
-
-		// Write to state-specific events file
-		eventData, err := json.MarshalIndent(stateEvents, "", "  ")
-		if err != nil {
-			return fmt.Errorf("failed to marshal events for %s: %w", stateCode, err)
+		for i := range fresh {
+			fresh[i].State = state
+			fresh[i].Source = "EntryBoss"
 		}
-
-		if err := os.WriteFile(eventsFile, eventData, 0644); err != nil {
-			return fmt.Errorf("failed to write %s: %w", eventsFile, err)
-		}
-
-		fmt.Printf("Successfully scraped %d events from %d clubs in %s\n", len(stateEvents), len(stateClubs), stateCode)
-
-		totalEvents += len(stateEvents)
-		stateResults[stateCode] = len(stateEvents)
-
-		// Delay between states when processing multiple
-		if len(statesToProcess) > 1 && stateIndex < len(statesToProcess)-1 {
-			fmt.Println("Pausing before next state...")
-			time.Sleep(2 * time.Second)
-		}
+		events = append(events, fresh...)
+		time.Sleep(time.Second)
 	}
-
-	// Print summary if multiple states were processed
-	if len(statesToProcess) > 1 {
-		fmt.Printf("\n=== Summary ===\n")
-		fmt.Printf("Total events scraped: %d\n", totalEvents)
-		fmt.Println("\nEvents by state:")
-		for _, stateCode := range statesToProcess {
-			if count, exists := stateResults[stateCode]; exists {
-				fmt.Printf("  %s: %d events\n", stateCode, count)
-			}
-		}
-	}
-
-	return nil
+	return events, nil
 }
 
 func migrateData() error {
@@ -803,7 +700,7 @@ func extractDateComponents(text string) (year, month, day int) {
 	return
 }
 
-func updateBuncheur(state string) error {
+func fetchBuncheurEvents(state string) ([]Event, error) {
 	fmt.Printf("Fetching Buncheur events for state: %s\n", state)
 
 	// Fetch events from Buncheur
@@ -812,30 +709,33 @@ func updateBuncheur(state string) error {
 		url += "?state=" + state
 	}
 
-	resp, err := http.Get(url)
+	resp, err := entryBossClient.Get(url)
 	if err != nil {
-		return fmt.Errorf("failed to fetch Buncheur events: %w", err)
+		return nil, fmt.Errorf("failed to fetch Buncheur events: %w", err)
 	}
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		return fmt.Errorf("non-200 status code from Buncheur: %d", resp.StatusCode)
+		return nil, fmt.Errorf("non-200 status code from Buncheur: %d", resp.StatusCode)
 	}
 
 	var buncheurEvents []map[string]interface{}
 	if err := json.NewDecoder(resp.Body).Decode(&buncheurEvents); err != nil {
-		return fmt.Errorf("failed to decode Buncheur JSON: %w", err)
+		return nil, fmt.Errorf("failed to decode Buncheur JSON: %w", err)
 	}
 
+	if buncheurEvents == nil {
+		return nil, fmt.Errorf("Buncheur returned null instead of an event array")
+	}
 	fmt.Printf("Found %d events from Buncheur\n", len(buncheurEvents))
 
 	// Group events by state for processing
-	eventsByState := make(map[string][]Event)
-	scrapedClubsByState := make(map[string]map[string]Club)
+	events := []Event{}
 
 	for _, be := range buncheurEvents {
 		eventState, _ := be["state"].(string)
 		if eventState == "" {
+			log.Printf("Skipping Buncheur event without a state: %v", be["url"])
 			continue
 		}
 		// If we're filtering by state, skip others
@@ -849,8 +749,8 @@ func updateBuncheur(state string) error {
 		startDate, _ := be["start"].(string)
 		category, _ := be["item_category"].(string)
 
-		if title == "" || startDate == "" {
-			continue
+		if title == "" || startDate == "" || eventUrl == "" || clubName == "" {
+			return nil, fmt.Errorf("incomplete Buncheur event in %s", eventState)
 		}
 
 		// Normalize date to ISO8601
@@ -859,7 +759,12 @@ func updateBuncheur(state string) error {
 			eventDate = startDate + "T00:00:00Z"
 		}
 
-		fullUrl := "https://www.buncheur.com" + eventUrl
+		baseURL, _ := urlpkg.Parse("https://www.buncheur.com")
+		ref, err := urlpkg.Parse(eventUrl)
+		if err != nil {
+			return nil, err
+		}
+		fullUrl := baseURL.ResolveReference(ref).String()
 		event := Event{
 			EventName: title,
 			EventDate: eventDate,
@@ -870,117 +775,7 @@ func updateBuncheur(state string) error {
 			Category:  category,
 		}
 
-		eventsByState[eventState] = append(eventsByState[eventState], event)
-
-		// Collect club info
-		if clubName != "" {
-			if scrapedClubsByState[eventState] == nil {
-				scrapedClubsByState[eventState] = make(map[string]Club)
-			}
-			scrapedClubsByState[eventState][clubName] = Club{
-				ClubName: clubName,
-				ClubURL:  "https://www.buncheur.com" + eventUrl, // We don't have a direct club URL from this API, using event URL as a fallback/placeholder
-				State:    eventState,
-				LastSeen: time.Now().Format(time.RFC3339),
-				Source:   "Buncheur",
-			}
-		}
+		events = append(events, event)
 	}
-
-	// Update clubs.json
-	if err := syncBuncheurClubs(scrapedClubsByState); err != nil {
-		fmt.Printf("Warning: failed to sync clubs: %v\n", err)
-	}
-
-	// Update each state's events file
-	for stateCode, newEvents := range eventsByState {
-		eventsFile := fmt.Sprintf("events-%s.json", strings.ToLower(stateCode))
-		var allEvents []Event
-
-		// Load existing
-		if data, err := os.ReadFile(eventsFile); err == nil {
-			var existingEvents []Event
-			if err := json.Unmarshal(data, &existingEvents); err == nil {
-				// Filter out old Buncheur events
-				for _, e := range existingEvents {
-					if e.Source != "Buncheur" {
-						allEvents = append(allEvents, e)
-					}
-				}
-			}
-		}
-
-		// Add new Buncheur events
-		allEvents = append(allEvents, newEvents...)
-
-		// Sort
-		sort.Slice(allEvents, func(i, j int) bool {
-			return allEvents[i].EventDate < allEvents[j].EventDate
-		})
-
-		// Save
-		data, err := json.MarshalIndent(allEvents, "", "  ")
-		if err != nil {
-			fmt.Printf("Error marshaling events for %s: %v\n", stateCode, err)
-			continue
-		}
-		if err := os.WriteFile(eventsFile, data, 0644); err != nil {
-			fmt.Printf("Error writing events file for %s: %v\n", stateCode, err)
-			continue
-		}
-		fmt.Printf("Updated %s with %d Buncheur events (Total: %d)\n", eventsFile, len(newEvents), len(allEvents))
-	}
-
-	return nil
-}
-
-func syncBuncheurClubs(scrapedClubsByState map[string]map[string]Club) error {
-	// Read existing clubs
-	data, err := os.ReadFile("clubs.json")
-	if err != nil {
-		return err
-	}
-	var existingClubs []Club
-	if err := json.Unmarshal(data, &existingClubs); err != nil {
-		return err
-	}
-
-	clubMap := make(map[string]Club)
-	for _, c := range existingClubs {
-		clubMap[c.ClubName+c.State] = c
-	}
-
-	addedCount := 0
-	for _, stateClubs := range scrapedClubsByState {
-		for clubName, scrapedClub := range stateClubs {
-			key := clubName + scrapedClub.State
-			if _, exists := clubMap[key]; !exists {
-				clubMap[key] = scrapedClub
-				addedCount++
-			}
-		}
-	}
-
-	if addedCount == 0 {
-		return nil
-	}
-
-	// Convert back to slice and sort
-	var newList []Club
-	for _, c := range clubMap {
-		newList = append(newList, c)
-	}
-	sort.Slice(newList, func(i, j int) bool {
-		if newList[i].State != newList[j].State {
-			return newList[i].State < newList[j].State
-		}
-		return newList[i].ClubName < newList[j].ClubName
-	})
-
-	data, err = json.MarshalIndent(newList, "", "  ")
-	if err != nil {
-		return err
-	}
-	fmt.Printf("Added %d new clubs from Buncheur\n", addedCount)
-	return os.WriteFile("clubs.json", data, 0644)
+	return events, nil
 }
