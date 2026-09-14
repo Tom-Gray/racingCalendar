@@ -64,7 +64,7 @@ func TestRefreshReplacesBothSourcesWithoutReadingOldRecords(t *testing.T) {
 		}, nil
 	}
 	calls := 0
-	owner := func(string) (Club, error) { calls++; return Club{ClubName: "Correct club"}, nil }
+	owner := func(string) (Event, error) { calls++; return Event{ClubName: "Correct club"}, nil }
 	if err := refreshSnapshots([]string{"VIC"}, now, eb, bc, owner); err != nil {
 		t.Fatal(err)
 	}
@@ -73,7 +73,7 @@ func TestRefreshReplacesBothSourcesWithoutReadingOldRecords(t *testing.T) {
 	if err := json.Unmarshal(data, &got); err != nil {
 		t.Fatal(err)
 	}
-	if len(got) != 2 || got[0].ClubName != "Correct club" || got[1].Source != "Buncheur" || calls != 1 {
+	if len(got) != 2 || got[0].Source != "EntryBoss" || got[1].Source != "Buncheur" || calls != 0 {
 		t.Fatalf("%+v owner lookups=%d", got, calls)
 	}
 	if err := refreshSnapshots([]string{"VIC"}, now, eb, bc, owner); err != nil {
@@ -114,7 +114,10 @@ func TestSourceOrValidationFailureLeavesAllSnapshots(t *testing.T) {
 					return []Event{{EventDate: "invalid"}}, nil
 				}
 				if state == "WA" && failure == "owner" {
-					return []Event{{EventURL: "https://entryboss.cc/races/1", EventDate: "2099-01-01"}}, nil
+					return []Event{
+						{EventURL: "https://entryboss.cc/races/1", EventDate: "2099-01-01", ClubName: "First club"},
+						{EventURL: "https://entryboss.cc/races/1", EventDate: "2099-01-01", ClubName: "Second club"},
+					}, nil
 				}
 				return nil, nil
 			}
@@ -124,7 +127,7 @@ func TestSourceOrValidationFailureLeavesAllSnapshots(t *testing.T) {
 				}
 				return nil, nil
 			}
-			owner := func(string) (Club, error) { return Club{}, fmt.Errorf("missing heading") }
+			owner := func(string) (Event, error) { return Event{}, fmt.Errorf("missing heading") }
 			if err := refreshSnapshots([]string{"VIC", "WA"}, time.Now(), eb, bc, owner); err == nil {
 				t.Fatal("expected failure")
 			}
@@ -174,5 +177,17 @@ func TestBuncheurFiltersGlobalFeedAndPreservesAbsoluteURLs(t *testing.T) {
 	events, err := fetchBuncheurEvents("VIC")
 	if err != nil || len(events) != 1 || events[0].EventURL != "https://www.buncheur.com/vic" || events[0].EventDate != "2026-09-15T00:00:00Z" {
 		t.Fatalf("%+v %v", events, err)
+	}
+}
+
+func TestGroupEventsByStateKeepsEachEventOnce(t *testing.T) {
+	events := []Event{
+		{EventName: "VIC", State: "VIC"},
+		{EventName: "NSW one", State: "NSW"},
+		{EventName: "NSW two", State: "NSW"},
+	}
+	grouped := groupEventsByState(events)
+	if len(grouped["VIC"]) != 1 || len(grouped["NSW"]) != 2 || len(grouped) != 2 {
+		t.Fatalf("unexpected grouping: %+v", grouped)
 	}
 }

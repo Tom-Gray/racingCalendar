@@ -45,7 +45,7 @@ func isEntryBossEvent(e Event) bool {
 	return e.Source == "EntryBoss" || isEntryBossURL(e.EventURL)
 }
 
-type ownerResolver func(string) (Club, error)
+type eventResolver func(string) (Event, error)
 
 func parseEventOwner(doc *goquery.Document, clubs []Club) (Club, error) {
 	// Do not search the navigation menu: it contains every club on the site.
@@ -67,38 +67,64 @@ func parseEventOwner(doc *goquery.Document, clubs []Club) (Club, error) {
 	return Club{}, fmt.Errorf("event owner %q (%s) is absent from clubs.json", strings.TrimSpace(links.Text()), ownerURL)
 }
 
-func newOwnerResolver(clubs []Club) ownerResolver {
-	cache := map[string]Club{}
-	return func(raw string) (Club, error) {
+func parseCanonicalEvent(doc *goquery.Document, clubs []Club) (Event, error) {
+	club, err := parseEventOwner(doc, clubs)
+	if err != nil {
+		return Event{}, err
+	}
+
+	titleHeading := doc.Find(".race-title").First().Clone()
+	titleHeading.Find("small").Remove()
+	title := strings.TrimSpace(titleHeading.Text())
+	if title == "" {
+		return Event{}, fmt.Errorf("event title is missing")
+	}
+
+	date := ""
+	doc.Find("dl.dl-horizontal dt").Each(func(_ int, label *goquery.Selection) {
+		if strings.EqualFold(strings.TrimSpace(label.Text()), "date") {
+			date = parseDateFromText(strings.TrimSpace(label.NextFiltered("dd").Text()))
+		}
+	})
+	if date == "" {
+		return Event{}, fmt.Errorf("event date is missing or invalid")
+	}
+
+	return Event{EventName: title, EventDate: date, ClubName: club.ClubName}, nil
+}
+
+func newEventResolver(clubs []Club) eventResolver {
+	cache := map[string]Event{}
+	return func(raw string) (Event, error) {
 		key := eventIdentity(raw)
-		if club, ok := cache[key]; ok {
-			return club, nil
+		if event, ok := cache[key]; ok {
+			return event, nil
 		}
 		resp, err := entryBossClient.Get(key)
 		if err != nil {
-			return Club{}, err
+			return Event{}, err
 		}
 		defer resp.Body.Close()
 		if resp.StatusCode != http.StatusOK {
-			return Club{}, fmt.Errorf("event page returned HTTP %d", resp.StatusCode)
+			return Event{}, fmt.Errorf("event page returned HTTP %d", resp.StatusCode)
 		}
 		doc, err := goquery.NewDocumentFromReader(resp.Body)
 		if err != nil {
-			return Club{}, err
+			return Event{}, err
 		}
-		club, err := parseEventOwner(doc, clubs)
+		event, err := parseCanonicalEvent(doc, clubs)
 		if err != nil {
-			return Club{}, err
+			return Event{}, err
 		}
-		cache[key] = club
+		cache[key] = event
 		time.Sleep(100 * time.Millisecond)
-		return club, nil
+		return event, nil
 	}
 }
 
-// verifyAll is used for fresh imports: a race may only be discovered on another
-// club's calendar. Cleanup resolves conflicts while preserving unique records.
-func reconcileEvents(events []Event, resolve ownerResolver, verifyAll bool) ([]Event, error) {
+// Event pages are only fetched when a race is listed by multiple clubs. A
+// single listing remains attributed to that listing's club.
+func reconcileEvents(events []Event, resolve eventResolver) ([]Event, error) {
 	groups := map[string][]Event{}
 	keys := make([]string, 0)
 	for _, e := range events {
@@ -112,34 +138,28 @@ func reconcileEvents(events []Event, resolve ownerResolver, verifyAll bool) ([]E
 		}
 		groups[key] = append(groups[key], e)
 	}
-	if verifyAll {
-		sort.Strings(keys)
-	}
+	sort.Strings(keys)
 	result := make([]Event, 0, len(keys))
 	for _, key := range keys {
 		group := groups[key]
 		// Explicit source records are fresher than pre-source-migration copies.
 		sort.SliceStable(group, func(i, j int) bool { return group[i].Source != "" && group[j].Source == "" })
 		chosen := group[0]
-		clubs := map[string]bool{}
-		for _, e := range group {
-			clubs[e.ClubName] = true
-		}
 		if isEntryBossEvent(chosen) {
 			chosen.Source = "EntryBoss"
-			if verifyAll || len(clubs) > 1 {
-				owner, err := resolve(key)
-				if err != nil {
-					return nil, fmt.Errorf("cannot resolve owner of %s: %w", key, err)
+			if len(group) > 1 {
+				if resolve == nil {
+					return nil, fmt.Errorf("cannot resolve canonical details for %s: no resolver configured", key)
 				}
-				chosen.ClubName = owner.ClubName
+				canonical, err := resolve(key)
+				if err != nil {
+					return nil, fmt.Errorf("cannot resolve canonical details for %s: %w", key, err)
+				}
+				chosen.EventName = canonical.EventName
+				chosen.EventDate = canonical.EventDate
+				chosen.ClubName = canonical.ClubName
 				// State files remain discovery calendars; ownership does not move an
 				// event out of a state where it was listed.
-			}
-		}
-		for _, e := range group[1:] {
-			if e.Source != "" && group[0].Source != "" && (e.EventDate != chosen.EventDate || e.EventName != chosen.EventName) {
-				return nil, fmt.Errorf("conflicting current event details for %s", key)
 			}
 		}
 		result = append(result, chosen)
@@ -148,7 +168,7 @@ func reconcileEvents(events []Event, resolve ownerResolver, verifyAll bool) ([]E
 		if result[i].EventDate != result[j].EventDate {
 			return result[i].EventDate < result[j].EventDate
 		}
-		return verifyAll && result[i].EventURL < result[j].EventURL
+		return result[i].EventURL < result[j].EventURL
 	})
 	return result, nil
 }
@@ -165,7 +185,7 @@ var cleanEventsCmd = &cobra.Command{
 		if err := json.Unmarshal(data, &clubs); err != nil {
 			return err
 		}
-		resolve := newOwnerResolver(clubs)
+		resolve := newEventResolver(clubs)
 		files, err := filepath.Glob("events-*.json")
 		if err != nil {
 			return err
@@ -186,7 +206,7 @@ var cleanEventsCmd = &cobra.Command{
 			if err != nil {
 				return fmt.Errorf("%s: %w", file, err)
 			}
-			clean, err := reconcileEvents(upcoming, resolve, false)
+			clean, err := reconcileEvents(upcoming, resolve)
 			if err != nil {
 				return fmt.Errorf("%s: %w", file, err)
 			}

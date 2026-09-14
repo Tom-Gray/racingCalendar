@@ -51,7 +51,7 @@ type stateFetcher func(string) ([]Event, error)
 
 // No existing event data is read. Every requested snapshot is built and
 // validated before any file is replaced, including successful empty results.
-func refreshSnapshots(states []string, now time.Time, entryBoss, buncheur stateFetcher, resolve ownerResolver) error {
+func refreshSnapshots(states []string, now time.Time, entryBoss, buncheur stateFetcher, resolve eventResolver) error {
 	outputs := map[string][]byte{}
 	for _, state := range states {
 		eb, err := entryBoss(state)
@@ -66,7 +66,7 @@ func refreshSnapshots(states []string, now time.Time, entryBoss, buncheur stateF
 		if err != nil {
 			return err
 		}
-		fresh, err = reconcileEvents(fresh, resolve, true)
+		fresh, err = reconcileEvents(fresh, resolve)
 		if err != nil {
 			return fmt.Errorf("%s validation failed: %w", state, err)
 		}
@@ -150,5 +150,23 @@ func updateEvents(state string) error {
 	if clubs == nil {
 		return fmt.Errorf("clubs.json must contain an array")
 	}
-	return refreshSnapshots(states, time.Now(), func(state string) ([]Event, error) { return fetchEntryBossEvents(state, clubs) }, fetchBuncheurEvents, newOwnerResolver(clubs))
+	buncheurEvents, err := fetchBuncheurEvents("")
+	if err != nil {
+		return fmt.Errorf("Buncheur refresh failed: %w", err)
+	}
+	buncheurByState := groupEventsByState(buncheurEvents)
+
+	return refreshSnapshots(states, time.Now(), func(state string) ([]Event, error) {
+		return fetchEntryBossEvents(state, clubs)
+	}, func(state string) ([]Event, error) {
+		return buncheurByState[state], nil
+	}, newEventResolver(clubs))
+}
+
+func groupEventsByState(events []Event) map[string][]Event {
+	grouped := make(map[string][]Event)
+	for _, event := range events {
+		grouped[event.State] = append(grouped[event.State], event)
+	}
+	return grouped
 }
