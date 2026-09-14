@@ -75,30 +75,6 @@ function updateDarkModeUI() {
     }
 }
 
-// Color palette for clubs
-const CLUB_COLOR_PALETTE = [
-    '#2563eb', // Blue 600
-    '#dc2626', // Red 600
-    '#d97706', // Amber 600
-    '#059669', // Emerald 600
-    '#7c3aed', // Violet 600
-    '#db2777', // Pink 600
-    '#0891b2', // Cyan 600
-    '#ea580c', // Orange 600
-    '#65a30d', // Lime 600
-    '#4f46e5', // Indigo 600
-    '#c026d3', // Fuchsia 600
-    '#0d9488', // Teal 600
-    '#e11d48', // Rose 600
-    '#0284c7', // Sky 600
-    '#16a34a', // Green 600
-    '#ca8a04', // Yellow 600
-    '#9333ea', // Purple 600
-    '#0e7490', // Cyan 700
-    '#9f1239', // Rose 700
-    '#1e40af'  // Blue 800
-];
-
 // DOM Elements
 let calendarViewBtn, listViewBtn, clubSearchInput, clubDropdown;
 let selectedClubsContainer, calendarView, listView, calendarGrid, eventsList;
@@ -494,18 +470,8 @@ async function loadEvents() {
 }
 
 function assignClubColors() {
-    console.log('Assigning colors to clubs...');
-    
-    // Reset club colors
     clubColors.clear();
-    
-    // Assign a color from the palette to each club
-    clubs.forEach((club, index) => {
-        const color = CLUB_COLOR_PALETTE[index % CLUB_COLOR_PALETTE.length];
-        clubColors.set(club, color);
-    });
-    
-    console.log(`Assigned colors to ${clubColors.size} clubs`);
+    clubs.forEach(club => assignClubColor(club));
 }
 
 async function loadFallbackData() {
@@ -708,11 +674,9 @@ function handleClubSearch(e) {
 
 // Assign a color to a club if it doesn't have one
 function assignClubColor(club) {
-    if (!clubColors.has(club)) {
-        const colorIndex = clubColors.size % CLUB_COLOR_PALETTE.length;
-        clubColors.set(club, CLUB_COLOR_PALETTE[colorIndex]);
-    }
-    return clubColors.get(club);
+    const color = window.RaceCalendarColors.forClub(club);
+    clubColors.set(club, color);
+    return color;
 }
 
 function addClubFilter(club) {
@@ -744,7 +708,19 @@ function renderClubList() {
         ? clubs.filter(club => club.toLowerCase().includes(query))
         : clubs;
     
-    filteredClubs.forEach(club => {
+    // Sort clubs: selected clubs first (alphabetically), then unselected clubs (alphabetically)
+    const sortedFilteredClubs = [...filteredClubs].sort((a, b) => {
+        const aSelected = selectedClubs.has(a);
+        const bSelected = selectedClubs.has(b);
+        
+        if (aSelected !== bSelected) {
+            return bSelected ? 1 : -1;
+        }
+        
+        return a.localeCompare(b);
+    });
+    
+    sortedFilteredClubs.forEach(club => {
         const clubItem = document.createElement('div');
         clubItem.className = 'flex items-center gap-2 px-2 py-1.5 hover:bg-[var(--bg-main)] rounded-md transition-colors';
         
@@ -786,7 +762,7 @@ function renderClubList() {
         clubListContainer.appendChild(clubItem);
     });
     
-    if (filteredClubs.length === 0) {
+    if (sortedFilteredClubs.length === 0) {
         const noClubs = document.createElement('div');
         noClubs.className = 'px-3 py-4 text-center text-[var(--text-muted)] text-xs';
         noClubs.textContent = 'No clubs found';
