@@ -64,6 +64,8 @@
                 document.documentElement.setAttribute('data-theme', 'dark');
             }
 
+            await loadJS('club-colors.js');
+
             if (isMobile) {
                 loadCSS('mobile.css');
                 await loadContent('mobile_page.html' + '?v=' + new Date().getTime(), root);

@@ -99,6 +99,7 @@ func init() {
 	rootCmd.AddCommand(updateEventsCmd)
 	rootCmd.AddCommand(updateBuncheurCmd)
 	rootCmd.AddCommand(migrateCmd)
+	rootCmd.AddCommand(cleanEventsCmd)
 }
 
 func main() {
@@ -172,7 +173,7 @@ func updateClubs() error {
 
 				clubName := strings.TrimSpace(link.Text())
 				if clubName != "" {
-					fullURL := "https://entryboss.cc" + href
+					fullURL := absoluteEntryBossURL(href)
 					scrapedClubs[fullURL] = Club{
 						ClubName: clubName,
 						ClubURL:  fullURL,
@@ -305,6 +306,7 @@ func updateEvents(state string) error {
 	// Track statistics across all states
 	totalEvents := 0
 	stateResults := make(map[string]int)
+	resolveOwner := newOwnerResolver(allClubs)
 
 	// Process each state
 	for stateIndex, stateCode := range statesToProcess {
@@ -315,7 +317,7 @@ func updateEvents(state string) error {
 		// Filter clubs by state
 		var stateClubs []Club
 		for _, club := range allClubs {
-			if club.State == stateCode {
+			if club.State == stateCode && (club.Source == "EntryBoss" || isEntryBossURL(club.ClubURL)) {
 				stateClubs = append(stateClubs, club)
 			}
 		}
@@ -334,8 +336,7 @@ func updateEvents(state string) error {
 
 			events, err := scrapeClubEvents(club)
 			if err != nil {
-				log.Printf("Failed to scrape events for %s: %v", club.ClubName, err)
-				continue
+				return fmt.Errorf("refusing to replace %s after scraping %s failed: %w", stateCode, club.ClubName, err)
 			}
 
 			// Add state and source fields to each event
@@ -353,23 +354,19 @@ func updateEvents(state string) error {
 		// Load existing events to merge
 		eventsFile := fmt.Sprintf("events-%s.json", strings.ToLower(stateCode))
 		var existingEvents []Event
-		if existingData, err := os.ReadFile(eventsFile); err == nil {
-			if err := json.Unmarshal(existingData, &existingEvents); err == nil {
-				// Filter out existing EntryBoss events to replace them with fresh ones
-				var nonEntryBossEvents []Event
-				for _, e := range existingEvents {
-					if e.Source != "EntryBoss" {
-						nonEntryBossEvents = append(nonEntryBossEvents, e)
-					}
-				}
-				stateEvents = append(stateEvents, nonEntryBossEvents...)
+		if existingData, readErr := os.ReadFile(eventsFile); readErr == nil {
+			if err := json.Unmarshal(existingData, &existingEvents); err != nil {
+				return fmt.Errorf("refusing to replace invalid %s: %w", eventsFile, err)
 			}
+		} else if !os.IsNotExist(readErr) {
+			return readErr
 		}
+		stateEvents = replaceEntryBossEvents(stateEvents, existingEvents)
 
-		// Sort events by date
-		sort.Slice(stateEvents, func(i, j int) bool {
-			return stateEvents[i].EventDate < stateEvents[j].EventDate
-		})
+		stateEvents, err = reconcileEvents(stateEvents, resolveOwner, true)
+		if err != nil {
+			return fmt.Errorf("refusing to replace %s: %w", eventsFile, err)
+		}
 
 		// Write to state-specific events file
 		eventData, err := json.MarshalIndent(stateEvents, "", "  ")
@@ -475,7 +472,7 @@ func migrateData() error {
 }
 
 func scrapeClubEvents(club Club) ([]Event, error) {
-	resp, err := http.Get(club.ClubURL)
+	resp, err := entryBossClient.Get(club.ClubURL)
 	if err != nil {
 		return nil, fmt.Errorf("failed to fetch club page: %w", err)
 	}
@@ -530,7 +527,7 @@ func scrapeClubEvents(club Club) ([]Event, error) {
 						EventName: eventName,
 						EventDate: eventDate,
 						ClubName:  club.ClubName,
-						EventURL:  "https://entryboss.cc" + href,
+						EventURL:  absoluteEntryBossURL(href),
 					})
 				}
 			}
@@ -577,7 +574,7 @@ func scrapeClubEvents(club Club) ([]Event, error) {
 							EventName: eventName,
 							EventDate: eventDate,
 							ClubName:  club.ClubName,
-							EventURL:  "https://entryboss.cc" + href,
+							EventURL:  absoluteEntryBossURL(href),
 						})
 					}
 				}
@@ -625,7 +622,7 @@ func scrapeClubEvents(club Club) ([]Event, error) {
 									EventName: eventName,
 									EventDate: eventDate,
 									ClubName:  club.ClubName,
-									EventURL:  "https://entryboss.cc" + href,
+									EventURL:  absoluteEntryBossURL(href),
 								})
 							}
 						}
@@ -808,7 +805,7 @@ func extractDateComponents(text string) (year, month, day int) {
 
 func updateBuncheur(state string) error {
 	fmt.Printf("Fetching Buncheur events for state: %s\n", state)
-	
+
 	// Fetch events from Buncheur
 	url := "https://www.buncheur.com/events"
 	if state != "" {
