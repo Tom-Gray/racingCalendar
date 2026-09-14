@@ -221,16 +221,10 @@ async function loadData() {
 }
 
 async function loadEvents() {
-    try {
-        const config = STATE_CONFIG[state.selectedState] || STATE_CONFIG.VIC;
-        const eventsFile = config.file;
-        const response = await fetch(eventsFile);
-        if (!response.ok) throw new Error('Failed to fetch events');
-        return await response.json();
-    } catch (error) {
-        console.error('Error loading events:', error);
-        return loadFallbackData().events;
-    }
+    const config = STATE_CONFIG[state.selectedState] || STATE_CONFIG.VIC;
+    const response = await fetch(config.file);
+    if (!response.ok) throw new Error(`Failed to fetch ${config.file}`);
+    return response.json();
 }
 
 async function loadClubs() {
@@ -240,13 +234,6 @@ async function loadClubs() {
     return uniqueClubNames.map(clubName => ({ clubName })).sort((a, b) => 
         a.clubName.localeCompare(b.clubName)
     );
-}
-
-function loadFallbackData() {
-    return {
-        events: [],
-        clubs: []
-    };
 }
 
 function assignClubColors() {
@@ -818,27 +805,10 @@ function formatMonthYear(date) {
     return date.toLocaleDateString('en-AU', options);
 }
 
-function formatDayName(date) {
-    const options = { weekday: 'long' };
-    return date.toLocaleDateString('en-AU', options);
-}
-
-function truncateText(text, maxLength) {
-    if (text.length <= maxLength) return text;
-    return text.substring(0, maxLength) + '...';
-}
-
 function isSameDay(date1, date2) {
     return date1.getFullYear() === date2.getFullYear() &&
            date1.getMonth() === date2.getMonth() &&
            date1.getDate() === date2.getDate();
-}
-
-function getWeekStart(date) {
-    const d = new Date(date);
-    const day = d.getDay();
-    const diff = d.getDate() - day;
-    return new Date(d.setDate(diff));
 }
 
 function openEvent(event) {
