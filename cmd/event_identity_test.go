@@ -46,30 +46,29 @@ func TestReconcileLegacyAndCrossListedEvents(t *testing.T) {
 	crossListed := fresh
 	crossListed.ClubName = "Footscray Cycling Club"
 	calls := 0
-	resolver := func(url string) (Club, error) { calls++; return Club{ClubName: "Geelong Cycling Club"}, nil }
-	got, err := reconcileEvents([]Event{legacy, crossListed, fresh}, resolver, false)
+	resolver := func(url string) (Event, error) {
+		calls++
+		return Event{EventName: "Heritage Handicap", EventDate: "2026-09-19", ClubName: "Geelong Cycling Club"}, nil
+	}
+	got, err := reconcileEvents([]Event{legacy, crossListed, fresh}, resolver)
 	if err != nil || len(got) != 1 || got[0] != fresh || calls != 1 {
 		t.Fatalf("result=%+v calls=%d err=%v", got, calls, err)
 	}
-	again, err := reconcileEvents(got, resolver, false)
+	again, err := reconcileEvents(got, resolver)
 	if err != nil || !reflect.DeepEqual(got, again) || calls != 1 {
 		t.Fatal("cleanup must be idempotent")
 	}
-	reversed, err := reconcileEvents([]Event{fresh, crossListed, legacy}, resolver, false)
+	reversed, err := reconcileEvents([]Event{fresh, crossListed, legacy}, resolver)
 	if err != nil || !reflect.DeepEqual(got, reversed) {
 		t.Fatal("result must not depend on club scrape order")
 	}
 }
 
-func TestFreshSingleListingStillResolvesOwner(t *testing.T) {
+func TestSingleListingDoesNotFetchEventPage(t *testing.T) {
 	e := Event{EventURL: "https://entryboss.cc/races/31994", ClubName: "Footscray Cycling Club"}
-	got, err := reconcileEvents([]Event{e}, func(string) (Club, error) { return Club{ClubName: "Geelong & Surfcoast Cycling Club"}, nil }, true)
-	if err != nil || got[0].ClubName != "Geelong & Surfcoast Cycling Club" {
+	got, err := reconcileEvents([]Event{e}, func(string) (Event, error) { return Event{}, fmt.Errorf("event page should not be fetched") })
+	if err != nil || got[0].ClubName != "Footscray Cycling Club" {
 		t.Fatalf("%+v %v", got, err)
-	}
-	_, err = reconcileEvents([]Event{e}, func(string) (Club, error) { return Club{}, fmt.Errorf("unavailable") }, true)
-	if err == nil {
-		t.Fatal("must fail instead of publishing guessed ownership")
 	}
 }
 
@@ -79,7 +78,7 @@ func TestIdentityDoesNotMergeDifferentRaces(t *testing.T) {
 		{EventURL: "https://entryboss.cc/races/2", EventName: "Gate Practice"},
 		{EventURL: "https://www.buncheur.com/race", EventName: "Gate Practice", Source: "Buncheur"},
 	}
-	got, err := reconcileEvents(events, nil, false)
+	got, err := reconcileEvents(events, nil)
 	if err != nil || len(got) != 3 {
 		t.Fatalf("%+v %v", got, err)
 	}
@@ -88,12 +87,27 @@ func TestIdentityDoesNotMergeDifferentRaces(t *testing.T) {
 	}
 }
 
-func TestConflictingFreshDetailsFail(t *testing.T) {
-	e := Event{EventURL: "https://entryboss.cc/races/1", EventDate: "2026-09-19", Source: "EntryBoss"}
-	other := e
-	other.EventDate = "2026-09-20"
-	if _, err := reconcileEvents([]Event{e, other}, nil, false); err == nil {
-		t.Fatal("must not silently choose conflicting current dates")
+func TestConflictingCalendarDetailsUseCanonicalEvent(t *testing.T) {
+	first := Event{EventURL: "https://entryboss.cc/races/1", EventName: "Listing title", EventDate: "2026-09-19", ClubName: "First Club", Source: "EntryBoss"}
+	second := first
+	second.EventName = "Other listing title"
+	second.EventDate = "2026-09-20"
+	second.ClubName = "Second Club"
+	got, err := reconcileEvents([]Event{first, second}, func(string) (Event, error) {
+		return Event{EventName: "Canonical title", EventDate: "2026-09-21T00:00:00Z", ClubName: "Canonical Club"}, nil
+	})
+	if err != nil || len(got) != 1 || got[0].EventName != "Canonical title" || got[0].EventDate != "2026-09-21T00:00:00Z" || got[0].ClubName != "Canonical Club" {
+		t.Fatalf("got %+v, %v", got, err)
+	}
+}
+
+func TestCanonicalEventParsesTitleDateAndOwner(t *testing.T) {
+	clubs := []Club{{ClubName: "Geelong Cycling Club", ClubURL: "https://entryboss.cc/calendar/geelong"}}
+	doc, _ := goquery.NewDocumentFromReader(strings.NewReader(`<h3 class="race-title"><small><a href="/calendar/geelong">Geelong Cycling Club</a></small><br>The Heritage Handicap</h3><dl class="dl-horizontal"><dt>Date</dt><dd>Sat, 19 Sep 2026</dd></dl>`))
+	got, err := parseCanonicalEvent(doc, clubs)
+	want := Event{EventName: "The Heritage Handicap", EventDate: "2026-09-19T00:00:00Z", ClubName: "Geelong Cycling Club"}
+	if err != nil || got != want {
+		t.Fatalf("got %+v, %v; want %+v", got, err, want)
 	}
 }
 

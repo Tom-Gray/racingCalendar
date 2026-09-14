@@ -727,15 +727,13 @@ func fetchBuncheurEvents(state string) ([]Event, error) {
 	if buncheurEvents == nil {
 		return nil, fmt.Errorf("Buncheur returned null instead of an event array")
 	}
-	fmt.Printf("Found %d events from Buncheur\n", len(buncheurEvents))
-
-	// Group events by state for processing
 	events := []Event{}
+	skippedWithoutState := 0
 
 	for _, be := range buncheurEvents {
 		eventState, _ := be["state"].(string)
 		if eventState == "" {
-			log.Printf("Skipping Buncheur event without a state: %v", be["url"])
+			skippedWithoutState++
 			continue
 		}
 		// If we're filtering by state, skip others
@@ -777,5 +775,6 @@ func fetchBuncheurEvents(state string) ([]Event, error) {
 
 		events = append(events, event)
 	}
+	fmt.Printf("Fetched %d Buncheur events; retained %d with a state; skipped %d without a state\n", len(buncheurEvents), len(events), skippedWithoutState)
 	return events, nil
 }
