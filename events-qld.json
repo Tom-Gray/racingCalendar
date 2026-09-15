@@ -1,14 +1,5 @@
 [
   {
-    "eventName": "Monday Night Open Track",
-    "eventDate": "2026-09-14T00:00:00Z",
-    "clubName": "Townsville BMX Club",
-    "state": "QLD",
-    "eventUrl": "https://entryboss.cc/races/32155",
-    "source": "EntryBoss",
-    "category": ""
-  },
-  {
     "eventName": "Cairns BMX Open Gates 15-09-2026",
     "eventDate": "2026-09-15T00:00:00Z",
     "clubName": "Cairns BMX Club",
@@ -131,6 +122,15 @@
     "clubName": "Toowoomba BMX Club",
     "state": "QLD",
     "eventUrl": "https://entryboss.cc/races/32172",
+    "source": "EntryBoss",
+    "category": ""
+  },
+  {
+    "eventName": "Caboolture BMX 2026 Rd 14",
+    "eventDate": "2026-09-18T00:00:00Z",
+    "clubName": "Caboolture BMX Club",
+    "state": "QLD",
+    "eventUrl": "https://entryboss.cc/races/32207",
     "source": "EntryBoss",
     "category": ""
   },
@@ -486,6 +486,15 @@
     "category": ""
   },
   {
+    "eventName": "2026 Anna Meares Velodrome Track Series - Round 1",
+    "eventDate": "2026-10-11T00:00:00Z",
+    "clubName": "AusCycling (Queensland)",
+    "state": "QLD",
+    "eventUrl": "https://entryboss.cc/races/32150",
+    "source": "EntryBoss",
+    "category": ""
+  },
+  {
     "eventName": "Wed. Night Gates (6pm - 8pm)",
     "eventDate": "2026-10-14T00:00:00Z",
     "clubName": "Pine Rivers BMX Club",
@@ -662,6 +671,15 @@
     "clubName": "Rockhampton BMX Club",
     "state": "QLD",
     "eventUrl": "https://entryboss.cc/races/32051",
+    "source": "EntryBoss",
+    "category": ""
+  },
+  {
+    "eventName": "Mackay Track Open",
+    "eventDate": "2026-10-31T00:00:00Z",
+    "clubName": "AusCycling (Queensland)",
+    "state": "QLD",
+    "eventUrl": "https://entryboss.cc/races/32205",
     "source": "EntryBoss",
     "category": ""
   },
