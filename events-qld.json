@@ -1,41 +1,5 @@
 [
   {
-    "eventName": "Wed. Night Gates (6pm - 8pm)",
-    "eventDate": "2026-09-16T00:00:00Z",
-    "clubName": "Pine Rivers BMX Club",
-    "state": "QLD",
-    "eventUrl": "https://entryboss.cc/races/28981",
-    "source": "EntryBoss",
-    "category": ""
-  },
-  {
-    "eventName": "Ipswich Friday Night Crit",
-    "eventDate": "2026-09-16T00:00:00Z",
-    "clubName": "Ipswich Cycling Club",
-    "state": "QLD",
-    "eventUrl": "https://entryboss.cc/races/30381",
-    "source": "EntryBoss",
-    "category": ""
-  },
-  {
-    "eventName": "Balmoral CC weekly Wednesday track night (Sept 16)",
-    "eventDate": "2026-09-16T00:00:00Z",
-    "clubName": "Balmoral Cycling Club",
-    "state": "QLD",
-    "eventUrl": "https://entryboss.cc/races/32019",
-    "source": "EntryBoss",
-    "category": ""
-  },
-  {
-    "eventName": "Wednesday Night Open Track",
-    "eventDate": "2026-09-16T00:00:00Z",
-    "clubName": "Townsville BMX Club",
-    "state": "QLD",
-    "eventUrl": "https://entryboss.cc/races/32157",
-    "source": "EntryBoss",
-    "category": ""
-  },
-  {
     "eventName": "Club Racing Mackay - Thursday 17th September 2026",
     "eventDate": "2026-09-17T00:00:00Z",
     "clubName": "Mackay and District BMX Club Inc",
@@ -68,6 +32,15 @@
     "clubName": "Mackay Cycling Club",
     "state": "QLD",
     "eventUrl": "https://entryboss.cc/races/31100",
+    "source": "EntryBoss",
+    "category": ""
+  },
+  {
+    "eventName": "Atherton BMX Club Racing Friday 18/09/2026",
+    "eventDate": "2026-09-18T00:00:00Z",
+    "clubName": "Atherton BMX Club",
+    "state": "QLD",
+    "eventUrl": "https://entryboss.cc/races/32044",
     "source": "EntryBoss",
     "category": ""
   },
@@ -504,6 +477,15 @@
     "category": ""
   },
   {
+    "eventName": "North Arm Graded Road Race",
+    "eventDate": "2026-10-11T00:00:00Z",
+    "clubName": "Sunshine Coast Cycling Club",
+    "state": "QLD",
+    "eventUrl": "https://entryboss.cc/races/32257",
+    "source": "EntryBoss",
+    "category": ""
+  },
+  {
     "eventName": "Wed. Night Gates (6pm - 8pm)",
     "eventDate": "2026-10-14T00:00:00Z",
     "clubName": "Pine Rivers BMX Club",
@@ -896,6 +878,24 @@
     "clubName": "Pine Rivers BMX Club",
     "state": "QLD",
     "eventUrl": "https://entryboss.cc/races/28944",
+    "source": "EntryBoss",
+    "category": ""
+  },
+  {
+    "eventName": "2026 AusCycling MTB Cross-Country QLD State Championships - XCC",
+    "eventDate": "2026-11-28T00:00:00Z",
+    "clubName": "Ipswich Offroad Cyclists",
+    "state": "QLD",
+    "eventUrl": "https://entryboss.cc/races/31950",
+    "source": "EntryBoss",
+    "category": ""
+  },
+  {
+    "eventName": "2026 AusCycling MTB Cross-Country QLD State Championships - XCO",
+    "eventDate": "2026-11-29T00:00:00Z",
+    "clubName": "Ipswich Offroad Cyclists",
+    "state": "QLD",
+    "eventUrl": "https://entryboss.cc/races/31951",
     "source": "EntryBoss",
     "category": ""
   },
