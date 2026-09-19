@@ -1,23 +1,5 @@
 [
   {
-    "eventName": "2026 Ser 2 Rnd 8",
-    "eventDate": "2026-09-18T00:00:00Z",
-    "clubName": "Penrith BMX Club",
-    "state": "NSW",
-    "eventUrl": "https://entryboss.cc/races/29414",
-    "source": "EntryBoss",
-    "category": ""
-  },
-  {
-    "eventName": "Maitland BMX Club Racing Rd 18",
-    "eventDate": "2026-09-18T00:00:00Z",
-    "clubName": "Maitland BMX Club",
-    "state": "NSW",
-    "eventUrl": "https://entryboss.cc/races/31236",
-    "source": "EntryBoss",
-    "category": ""
-  },
-  {
     "eventName": "The Holiday Haven Flow X Round 3 2026_09_19",
     "eventDate": "2026-09-19T00:00:00Z",
     "clubName": "South Coast United Mountainbikers",
@@ -565,6 +547,15 @@
     "eventUrl": "https://entryboss.cc/races/31671",
     "source": "EntryBoss",
     "category": ""
+  },
+  {
+    "eventName": "West Head Road Race",
+    "eventDate": "2026-10-25T00:00:00Z",
+    "clubName": "Manly Warringah CC",
+    "state": "NSW",
+    "eventUrl": "https://www.buncheur.com/manly-warringah-cc-west-head-road-race-18",
+    "source": "Buncheur",
+    "category": "Road Race"
   },
   {
     "eventName": "Nowra Velo Club Mountain Time Trial Championship",
