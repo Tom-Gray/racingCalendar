@@ -1,14 +1,5 @@
 [
   {
-    "eventName": "NCC Winter Criteriums",
-    "eventDate": "2026-09-19T00:00:00Z",
-    "clubName": "Norwood Cycling Club",
-    "state": "SA",
-    "eventUrl": "https://entryboss.cc/races/31124",
-    "source": "EntryBoss",
-    "category": ""
-  },
-  {
     "eventName": "2026 First Descent Series R5 - Fox Creek - B-Rad",
     "eventDate": "2026-09-20T00:00:00Z",
     "clubName": "Inside Line Mountain Bike Club",
@@ -41,6 +32,15 @@
     "clubName": "Port Adelaide Cycling Club",
     "state": "SA",
     "eventUrl": "https://entryboss.cc/races/31540",
+    "source": "EntryBoss",
+    "category": ""
+  },
+  {
+    "eventName": "JMT Glass Series 2026 - R5",
+    "eventDate": "2026-09-25T00:00:00Z",
+    "clubName": "Blue Lake BMX",
+    "state": "SA",
+    "eventUrl": "https://entryboss.cc/races/32289",
     "source": "EntryBoss",
     "category": ""
   },
