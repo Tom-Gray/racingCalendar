@@ -1,14 +1,5 @@
 [
   {
-    "eventName": "Monday 21st September Gates",
-    "eventDate": "2026-09-21T00:00:00Z",
-    "clubName": "Shepparton BMX Club",
-    "state": "VIC",
-    "eventUrl": "https://entryboss.cc/races/32151",
-    "source": "EntryBoss",
-    "category": ""
-  },
-  {
     "eventName": "Gate Practice",
     "eventDate": "2026-09-22T00:00:00Z",
     "clubName": "Sunbury BMX Club",
@@ -86,6 +77,15 @@
     "clubName": "Geelong \u0026 Surfcoast Cycling Club",
     "state": "VIC",
     "eventUrl": "https://entryboss.cc/races/32182",
+    "source": "EntryBoss",
+    "category": ""
+  },
+  {
+    "eventName": "WED 23rd GATES",
+    "eventDate": "2026-09-23T00:00:00Z",
+    "clubName": "Shepparton BMX Club",
+    "state": "VIC",
+    "eventUrl": "https://entryboss.cc/races/32306",
     "source": "EntryBoss",
     "category": ""
   },
@@ -1058,6 +1058,15 @@
     "clubName": "Brunswick Cycling Club",
     "state": "VIC",
     "eventUrl": "https://entryboss.cc/races/32273",
+    "source": "EntryBoss",
+    "category": ""
+  },
+  {
+    "eventName": "Summer of Shred 2026",
+    "eventDate": "2026-10-29T00:00:00Z",
+    "clubName": "Mountain Biking East Gippsland",
+    "state": "VIC",
+    "eventUrl": "https://entryboss.cc/races/32297",
     "source": "EntryBoss",
     "category": ""
   },
