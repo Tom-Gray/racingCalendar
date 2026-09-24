@@ -1,23 +1,5 @@
 [
   {
-    "eventName": "Gates",
-    "eventDate": "2026-09-23T00:00:00Z",
-    "clubName": "Southlake Illawarra BMX Club",
-    "state": "NSW",
-    "eventUrl": "https://entryboss.cc/races/32324",
-    "source": "EntryBoss",
-    "category": ""
-  },
-  {
-    "eventName": " ICC Wednesday Night 100 Lapper  - 23 September 2026            ",
-    "eventDate": "2026-09-23T00:00:00Z",
-    "clubName": "Illawarra CC",
-    "state": "NSW",
-    "eventUrl": "https://www.buncheur.com/illawarra-cc-icc-wednesday-night-100-lapper-12-1-1-3-1-1-3-4-1-3-1-4-1-1-1-1-1-1-1-1-1-1-1-1-1-1-1-1-1-1-1-1-1-1-1-1-1-1-1-1-1-1-1-1-1-1-1-3-2-1-1-1-1-1-2-1-1-1-1-1-1-1-1-1-1-1-1-1-1-1-1-1-1-1-1",
-    "source": "Buncheur",
-    "category": "Training Session"
-  },
-  {
     "eventName": "2026 AusCycling BMX State Championships - NSW",
     "eventDate": "2026-09-25T00:00:00Z",
     "clubName": "AusCycling (New South Wales)",
@@ -50,6 +32,15 @@
     "clubName": "Central Coast CC",
     "state": "NSW",
     "eventUrl": "https://entryboss.cc/races/30032",
+    "source": "EntryBoss",
+    "category": ""
+  },
+  {
+    "eventName": "Open soon",
+    "eventDate": "2026-09-26T00:00:00Z",
+    "clubName": "Central Coast CC",
+    "state": "NSW",
+    "eventUrl": "https://entryboss.cc/races/31834",
     "source": "EntryBoss",
     "category": ""
   },
