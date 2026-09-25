@@ -1,23 +1,5 @@
 [
   {
-    "eventName": "Gates - Thursday 24th September 2026",
-    "eventDate": "2026-09-24T00:00:00Z",
-    "clubName": "Harbour City BMX Club",
-    "state": "QLD",
-    "eventUrl": "https://entryboss.cc/races/31341",
-    "source": "EntryBoss",
-    "category": ""
-  },
-  {
-    "eventName": "UQCC - AMV 150 lap moto paced session",
-    "eventDate": "2026-09-24T00:00:00Z",
-    "clubName": "University of Queensland Cycle Club",
-    "state": "QLD",
-    "eventUrl": "https://entryboss.cc/races/32132",
-    "source": "EntryBoss",
-    "category": ""
-  },
-  {
     "eventName": "Mackay Cycling Club Track Night || Race 4",
     "eventDate": "2026-09-25T00:00:00Z",
     "clubName": "Mackay Cycling Club",
@@ -369,6 +351,15 @@
     "category": ""
   },
   {
+    "eventName": "DDCC Club Criterium October 17th ",
+    "eventDate": "2026-10-17T00:00:00Z",
+    "clubName": "Darling Downs Cycling Club",
+    "state": "QLD",
+    "eventUrl": "https://www.buncheur.com/darling-downs-cycling-club-ddcc-club-criterium-sb-travel-medicine-alliance--2-2-2-1-1-2-1-1-1-1-1-1-1-1",
+    "source": "Buncheur",
+    "category": "Criterium"
+  },
+  {
     "eventName": "Wed. Night Gates (6pm - 8pm)",
     "eventDate": "2026-10-21T00:00:00Z",
     "clubName": "Pine Rivers BMX Club",
@@ -558,6 +549,15 @@
     "category": ""
   },
   {
+    "eventName": "DDCC Club Criterium November 7th",
+    "eventDate": "2026-11-07T00:00:00Z",
+    "clubName": "Darling Downs Cycling Club",
+    "state": "QLD",
+    "eventUrl": "https://www.buncheur.com/darling-downs-cycling-club-ddcc-club-criterium-sb-travel-medicine-alliance--2-2-2-1-1-2-1-1-1-1-1-1-1-1-1",
+    "source": "Buncheur",
+    "category": "Criterium"
+  },
+  {
     "eventName": "November 8th - Wild West Summer XCO Series 2026/2027 - Round 1 Gordonbrook Dam",
     "eventDate": "2026-11-08T00:00:00Z",
     "clubName": "Ipswich Offroad Cyclists",
@@ -619,6 +619,15 @@
     "eventUrl": "https://entryboss.cc/races/32294",
     "source": "EntryBoss",
     "category": ""
+  },
+  {
+    "eventName": "DDCC Club Criterium November 14th",
+    "eventDate": "2026-11-14T00:00:00Z",
+    "clubName": "Darling Downs Cycling Club",
+    "state": "QLD",
+    "eventUrl": "https://www.buncheur.com/darling-downs-cycling-club-ddcc-club-criterium-sb-travel-medicine-alliance--2-2-2-1-1-2-1-1-1-1-1-1-1-1-1-1",
+    "source": "Buncheur",
+    "category": "Criterium"
   },
   {
     "eventName": "November 15th - Wild West Summer XCO Series 2026/2027 - Round 2 Adare",
@@ -711,6 +720,15 @@
     "category": ""
   },
   {
+    "eventName": "DDCC Club Criterium November 28th",
+    "eventDate": "2026-11-28T00:00:00Z",
+    "clubName": "Darling Downs Cycling Club",
+    "state": "QLD",
+    "eventUrl": "https://www.buncheur.com/darling-downs-cycling-club-ddcc-club-criterium-sb-travel-medicine-alliance--2-2-2-1-1-2-1-1-1-1-1-1-1-1-1-1-1",
+    "source": "Buncheur",
+    "category": "Criterium"
+  },
+  {
     "eventName": "2026 AusCycling MTB Cross-Country QLD State Championships - XCO",
     "eventDate": "2026-11-29T00:00:00Z",
     "clubName": "Ipswich Offroad Cyclists",
@@ -770,6 +788,42 @@
     "clubName": "University of Queensland Cycle Club",
     "state": "QLD",
     "eventUrl": "https://entryboss.cc/races/32143",
+    "source": "EntryBoss",
+    "category": ""
+  },
+  {
+    "eventName": "DDCC Club Criterium December 12th",
+    "eventDate": "2026-12-12T00:00:00Z",
+    "clubName": "Darling Downs Cycling Club",
+    "state": "QLD",
+    "eventUrl": "https://www.buncheur.com/darling-downs-cycling-club-ddcc-club-criterium-sb-travel-medicine-alliance--2-2-2-1-1-2-1-1-1-1-1-1-1-1-1-1-1-1",
+    "source": "Buncheur",
+    "category": "Criterium"
+  },
+  {
+    "eventName": "December 13th - Wild West Summer XCO Series 2026/2027 - Round 3 Kooralbyn",
+    "eventDate": "2026-12-13T00:00:00Z",
+    "clubName": "Ipswich Offroad Cyclists",
+    "state": "QLD",
+    "eventUrl": "https://entryboss.cc/races/32358",
+    "source": "EntryBoss",
+    "category": ""
+  },
+  {
+    "eventName": "January 10th - Wild West Summer XCO Series 2026/2027 - Round 4 HVAP",
+    "eventDate": "2027-01-10T00:00:00Z",
+    "clubName": "Ipswich Offroad Cyclists",
+    "state": "QLD",
+    "eventUrl": "https://entryboss.cc/races/32359",
+    "source": "EntryBoss",
+    "category": ""
+  },
+  {
+    "eventName": "January 24th - Wild West Summer XCO Series 2026/2027 - Round 5 Walloon",
+    "eventDate": "2027-01-24T00:00:00Z",
+    "clubName": "Ipswich Offroad Cyclists",
+    "state": "QLD",
+    "eventUrl": "https://entryboss.cc/races/32372",
     "source": "EntryBoss",
     "category": ""
   }
