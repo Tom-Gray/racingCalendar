@@ -1,9 +1,9 @@
 // Shared About Page Content
 const aboutContent = {
     whatIsThis: [
-        "It's hard to keep track of club events around the state and across the country. I built this site to help me find around me. I hope it can help you find events in your state.",
+        "It's hard to keep track of club events across the state and the country. I built this site to help me find events near me. I hope it helps you find events in your state, too.",
         "This site aggregates race information from EntryBoss and Buncheur and presents it in a more discoverable format.",
-        "WIt remembers your filter settings and shows you every posted event so you won't miss a thing. Click through to the event page to register directly on EntryBoss or Buncheur."
+        "It remembers your filter settings and shows you every posted event so you won't miss a thing. Click through to an event page to register directly on EntryBoss or Buncheur."
     ],
     contact: {
         intro: "Have a question or suggestion?",

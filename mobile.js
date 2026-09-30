@@ -311,20 +311,22 @@ function saveState() {
 
 function getFilteredEvents() {
     return window.RaceCalendarDates.upcoming(state.events, state.selectedState).filter(event => {
+        const eventText = `${event.eventName} ${event.clubName}`.toLowerCase();
+
         // Club filter
         if (state.selectedClubs.size > 0 && !state.selectedClubs.has(event.clubName)) {
             return false;
         }
         
         // BMX filter
-        if (state.hideBMXEvents && event.eventName.toLowerCase().includes('bmx')) {
+        if (state.hideBMXEvents && eventText.includes('bmx')) {
             return false;
         }
         
         // MTB filter
         if (state.hideMTBEvents && (
-            event.eventName.toLowerCase().includes('mtb') ||
-            event.eventName.toLowerCase().includes('mountain bike')
+            eventText.includes('mtb') ||
+            eventText.includes('mountain bike')
         )) {
             return false;
         }

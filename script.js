@@ -21,6 +21,8 @@ let hideMTBEvents = false;
 let selectedState = 'VIC'; // Default state
 let statePreferences = {}; // Store preferences for each state
 let isDarkMode = false;
+let calendarExpanded = false;
+const expandedCalendarDays = new Set();
 
 function initDarkMode() {
     const savedTheme = localStorage.getItem('theme');
@@ -77,7 +79,7 @@ function updateDarkModeUI() {
 
 // DOM Elements
 let calendarViewBtn, listViewBtn, clubSearchInput, clubDropdown;
-let selectedClubsContainer, calendarView, listView, calendarGrid, eventsList;
+let selectedClubsContainer, calendarView, listView, calendarGrid, eventsList, calendarExpandBtn;
 let loadingElement, errorElement, onboardingBanner;
 let clubListPanel, clubListContainer;
 let hideBMXCheckbox, hideMTBCheckbox, darkModeToggle;
@@ -153,6 +155,7 @@ function initializeElements() {
     calendarView = document.getElementById('calendar-view');
     listView = document.getElementById('list-view');
     calendarGrid = document.getElementById('calendar-grid');
+    calendarExpandBtn = document.getElementById('calendar-expand-btn');
     eventsList = document.getElementById('events-list');
     loadingElement = document.getElementById('loading');
     errorElement = document.getElementById('error');
@@ -190,6 +193,14 @@ function setupEventListeners() {
     }
     if (listViewBtn) {
         listViewBtn.addEventListener('click', () => switchView('list'));
+    }
+    if (calendarExpandBtn) {
+        calendarExpandBtn.addEventListener('click', () => {
+            calendarExpanded = !calendarExpanded;
+            expandedCalendarDays.clear();
+            updateCalendarExpandButton();
+            renderCalendar(getFilteredEvents());
+        });
     }
     
     // Club search - unified behavior
@@ -676,16 +687,17 @@ function getFilteredEvents() {
     
     // Apply BMX filter if enabled
     if (hideBMXEvents) {
-        filteredEvents = filteredEvents.filter(event => 
-            !event.clubName.toLowerCase().includes('bmx')
-        );
+        filteredEvents = filteredEvents.filter(event => {
+            const eventText = `${event.eventName} ${event.clubName}`.toLowerCase();
+            return !eventText.includes('bmx');
+        });
     }
     
     // Apply MTB filter if enabled
     if (hideMTBEvents) {
         filteredEvents = filteredEvents.filter(event => {
-            const clubNameLower = event.clubName.toLowerCase();
-            return !clubNameLower.includes('mtb') && !clubNameLower.includes('mountain bike');
+            const eventText = `${event.eventName} ${event.clubName}`.toLowerCase();
+            return !eventText.includes('mtb') && !eventText.includes('mountain bike');
         });
     }
     
@@ -693,6 +705,12 @@ function getFilteredEvents() {
 }
 
 // Calendar Rendering
+function updateCalendarExpandButton() {
+    if (!calendarExpandBtn) return;
+    calendarExpandBtn.textContent = calendarExpanded ? 'Show fewer events' : 'Show all events';
+    calendarExpandBtn.setAttribute('aria-pressed', String(calendarExpanded));
+}
+
 function renderCalendar(events) {
     if (!calendarGrid) {
         console.error('calendarGrid element not found!');
@@ -701,10 +719,12 @@ function renderCalendar(events) {
 
     calendarGrid.innerHTML = '';
     calendarGrid.className = 'space-y-8'; 
+    updateCalendarExpandButton();
 
     const today = new Date();
     const startDate = new Date(today);
     startDate.setDate(today.getDate() - today.getDay()); // Start of current week
+    startDate.setHours(0, 0, 0, 0);
 
     const calendarTitle = document.getElementById('calendar-title');
     
@@ -718,10 +738,8 @@ function renderCalendar(events) {
         return eventDate > maxDate ? eventDate : maxDate;
     }, new Date(0));
 
-    if (lastEventDate > startDate) {
-        const diffTime = Math.abs(lastEventDate - startDate);
-        const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
-        weeksToShow = Math.ceil(diffDays / 7);
+    while (new Date(startDate.getFullYear(), startDate.getMonth(), startDate.getDate() + weeksToShow * 7) <= lastEventDate) {
+        weeksToShow++;
     }
 
     // Group dates by month over calculated weeks
@@ -791,6 +809,14 @@ function renderCalendar(events) {
 function createCalendarDay(date, events) {
     const dayElement = document.createElement('div');
     dayElement.className = 'bg-[var(--bg-card)] p-3 min-h-[120px]';
+    dayElement.dataset.date = `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, '0')}-${String(date.getDate()).padStart(2, '0')}`;
+    const today = new Date();
+    today.setHours(0, 0, 0, 0);
+    if (date < today) dayElement.classList.add('calendar-day--past');
+    if (date.getTime() === today.getTime()) {
+        dayElement.classList.add('calendar-day--today');
+        dayElement.setAttribute('aria-current', 'date');
+    }
     
     const dayNumber = document.createElement('div');
     dayNumber.className = 'text-sm font-medium mb-2 text-[var(--text-muted)]';
@@ -803,10 +829,14 @@ function createCalendarDay(date, events) {
         return eventDate.toDateString() === date.toDateString();
     });
     
+    const dateKey = date.toDateString();
+    const isExpanded = calendarExpanded || expandedCalendarDays.has(dateKey);
+
     // Add events to day
-    dayEvents.slice(0, 3).forEach(event => { // Limit to 3 events per day for space
+    dayEvents.forEach((event, index) => {
         const eventElement = document.createElement('div');
         eventElement.className = 'day-event-item text-white px-2 py-1.5 mb-1.5 rounded text-[10px] cursor-pointer transition-all hover:brightness-110 border-l-[3px] font-bold truncate shadow-sm';
+        if (index >= 3 && !isExpanded) eventElement.classList.add('hidden');
         eventElement.textContent = event.eventName;
         eventElement.title = `${event.eventName} - ${event.clubName}`;
         
@@ -821,12 +851,28 @@ function createCalendarDay(date, events) {
         dayElement.appendChild(eventElement);
     });
     
-    // Show "+X more" if there are more events
+    // Let each day expand independently in the compact calendar.
     if (dayEvents.length > 3) {
-        const moreElement = document.createElement('div');
-        moreElement.className = 'text-[var(--text-muted)] p-1 text-[9px] font-medium';
-        moreElement.textContent = `+${dayEvents.length - 3} more`;
-        dayElement.appendChild(moreElement);
+        const moreButton = document.createElement('button');
+        moreButton.type = 'button';
+        moreButton.className = 'calendar-more-button block text-left text-[var(--text-secondary)] hover:text-[var(--text-primary)] px-1 py-1 text-[11px] font-semibold rounded focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-500';
+        if (calendarExpanded) moreButton.classList.add('hidden');
+        const updateDayButton = () => {
+            const expanded = expandedCalendarDays.has(dateKey);
+            moreButton.textContent = expanded ? 'Show fewer' : `+${dayEvents.length - 3} more`;
+            moreButton.setAttribute('aria-expanded', String(expanded));
+            moreButton.setAttribute('aria-label', `${expanded ? 'Show fewer events' : `Show ${dayEvents.length - 3} more events`} for ${date.toLocaleDateString('en-AU', { day: 'numeric', month: 'long', year: 'numeric' })}`);
+        };
+        updateDayButton();
+        moreButton.addEventListener('click', () => {
+            if (expandedCalendarDays.has(dateKey)) expandedCalendarDays.delete(dateKey);
+            else expandedCalendarDays.add(dateKey);
+            dayElement.querySelectorAll('.day-event-item').forEach((item, index) => {
+                if (index >= 3) item.classList.toggle('hidden', !expandedCalendarDays.has(dateKey));
+            });
+            updateDayButton();
+        });
+        dayElement.appendChild(moreButton);
     }
     
     return dayElement;
