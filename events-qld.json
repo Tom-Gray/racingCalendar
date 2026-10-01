@@ -1,41 +1,5 @@
 [
   {
-    "eventName": "Wed. Night Gates (6pm - 8pm)",
-    "eventDate": "2026-09-30T00:00:00Z",
-    "clubName": "Pine Rivers BMX Club",
-    "state": "QLD",
-    "eventUrl": "https://entryboss.cc/races/28983",
-    "source": "EntryBoss",
-    "category": ""
-  },
-  {
-    "eventName": "Balmoral CC weekly Wednesday track night (Sept 30)",
-    "eventDate": "2026-09-30T00:00:00Z",
-    "clubName": "Balmoral Cycling Club",
-    "state": "QLD",
-    "eventUrl": "https://entryboss.cc/races/32021",
-    "source": "EntryBoss",
-    "category": ""
-  },
-  {
-    "eventName": "Wednesday Holiday Open Track",
-    "eventDate": "2026-09-30T00:00:00Z",
-    "clubName": "Townsville BMX Club",
-    "state": "QLD",
-    "eventUrl": "https://entryboss.cc/races/32383",
-    "source": "EntryBoss",
-    "category": ""
-  },
-  {
-    "eventName": "Ladies Skills Session Term 4 2026",
-    "eventDate": "2026-09-30T00:00:00Z",
-    "clubName": "Mackay and District (MAD) Mountain Bike Club",
-    "state": "QLD",
-    "eventUrl": "https://entryboss.cc/races/32413",
-    "source": "EntryBoss",
-    "category": ""
-  },
-  {
     "eventName": "UQCC - AMV 150 lap moto paced session",
     "eventDate": "2026-10-01T00:00:00Z",
     "clubName": "University of Queensland Cycle Club",
@@ -113,6 +77,15 @@
     "clubName": "Pine Rivers BMX Club",
     "state": "QLD",
     "eventUrl": "https://entryboss.cc/races/28984",
+    "source": "EntryBoss",
+    "category": ""
+  },
+  {
+    "eventName": "Balmoral CC weekly Wednesday track night (Oct 07)",
+    "eventDate": "2026-10-07T00:00:00Z",
+    "clubName": "Balmoral Cycling Club",
+    "state": "QLD",
+    "eventUrl": "https://entryboss.cc/races/32438",
     "source": "EntryBoss",
     "category": ""
   },
@@ -216,6 +189,15 @@
     "category": ""
   },
   {
+    "eventName": "Muzz 2.0 - U Clockwise (Oct 10)",
+    "eventDate": "2026-10-10T00:00:00Z",
+    "clubName": "Balmoral Cycling Club",
+    "state": "QLD",
+    "eventUrl": "https://entryboss.cc/races/32446",
+    "source": "EntryBoss",
+    "category": ""
+  },
+  {
     "eventName": "UQCC Criterium - Triple Crown Rd 3 - MUZ",
     "eventDate": "2026-10-11T00:00:00Z",
     "clubName": "University of Queensland Cycle Club",
@@ -275,6 +257,15 @@
     "clubName": "Pine Rivers BMX Club",
     "state": "QLD",
     "eventUrl": "https://entryboss.cc/races/28985",
+    "source": "EntryBoss",
+    "category": ""
+  },
+  {
+    "eventName": "Balmoral CC weekly Wednesday track night (Oct 14)",
+    "eventDate": "2026-10-14T00:00:00Z",
+    "clubName": "Balmoral Cycling Club",
+    "state": "QLD",
+    "eventUrl": "https://entryboss.cc/races/32439",
     "source": "EntryBoss",
     "category": ""
   },
@@ -342,6 +333,24 @@
     "category": ""
   },
   {
+    "eventName": "Balmoral CC Saturday Track Session (Oct 17)",
+    "eventDate": "2026-10-17T00:00:00Z",
+    "clubName": "Balmoral Cycling Club",
+    "state": "QLD",
+    "eventUrl": "https://entryboss.cc/races/32442",
+    "source": "EntryBoss",
+    "category": ""
+  },
+  {
+    "eventName": "Muzz 2.0 - OG Reverse (Oct 17)",
+    "eventDate": "2026-10-17T00:00:00Z",
+    "clubName": "Balmoral Cycling Club",
+    "state": "QLD",
+    "eventUrl": "https://entryboss.cc/races/32447",
+    "source": "EntryBoss",
+    "category": ""
+  },
+  {
     "eventName": "DDCC Club Criterium October 17th ",
     "eventDate": "2026-10-17T00:00:00Z",
     "clubName": "Darling Downs Cycling Club",
@@ -356,6 +365,15 @@
     "clubName": "Pine Rivers BMX Club",
     "state": "QLD",
     "eventUrl": "https://entryboss.cc/races/28986",
+    "source": "EntryBoss",
+    "category": ""
+  },
+  {
+    "eventName": "Balmoral CC weekly Wednesday track night (Oct 21)",
+    "eventDate": "2026-10-21T00:00:00Z",
+    "clubName": "Balmoral Cycling Club",
+    "state": "QLD",
+    "eventUrl": "https://entryboss.cc/races/32440",
     "source": "EntryBoss",
     "category": ""
   },
@@ -405,6 +423,24 @@
     "category": ""
   },
   {
+    "eventName": "Balmoral CC Saturday Track Session (Oct 24)",
+    "eventDate": "2026-10-24T00:00:00Z",
+    "clubName": "Balmoral Cycling Club",
+    "state": "QLD",
+    "eventUrl": "https://entryboss.cc/races/32443",
+    "source": "EntryBoss",
+    "category": ""
+  },
+  {
+    "eventName": "Muzz 2.0 - U Reverse - inc. Women's A/B grade (Oct 24)",
+    "eventDate": "2026-10-24T00:00:00Z",
+    "clubName": "Balmoral Cycling Club",
+    "state": "QLD",
+    "eventUrl": "https://entryboss.cc/races/32445",
+    "source": "EntryBoss",
+    "category": ""
+  },
+  {
     "eventName": "Lifecycle CC - Nundah Criterium by Brisbane Bicycle Service",
     "eventDate": "2026-10-25T00:00:00Z",
     "clubName": "Lifecycle Cycling Club",
@@ -419,6 +455,15 @@
     "clubName": "Pine Rivers BMX Club",
     "state": "QLD",
     "eventUrl": "https://entryboss.cc/races/28987",
+    "source": "EntryBoss",
+    "category": ""
+  },
+  {
+    "eventName": "Balmoral CC weekly Wednesday track night (Oct 28)",
+    "eventDate": "2026-10-28T00:00:00Z",
+    "clubName": "Balmoral Cycling Club",
+    "state": "QLD",
+    "eventUrl": "https://entryboss.cc/races/32441",
     "source": "EntryBoss",
     "category": ""
   },
@@ -473,6 +518,15 @@
     "clubName": "Hamilton Wheelers Cycling Club",
     "state": "QLD",
     "eventUrl": "https://entryboss.cc/races/32403",
+    "source": "EntryBoss",
+    "category": ""
+  },
+  {
+    "eventName": "Balmoral CC Saturday Track Session (Oct 31)",
+    "eventDate": "2026-10-31T00:00:00Z",
+    "clubName": "Balmoral Cycling Club",
+    "state": "QLD",
+    "eventUrl": "https://entryboss.cc/races/32444",
     "source": "EntryBoss",
     "category": ""
   },
