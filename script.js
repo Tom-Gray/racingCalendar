@@ -21,6 +21,8 @@ let hideMTBEvents = false;
 let selectedState = 'VIC'; // Default state
 let statePreferences = {}; // Store preferences for each state
 let isDarkMode = false;
+let calendarExpanded = false;
+const expandedCalendarDays = new Set();
 
 function initDarkMode() {
     const savedTheme = localStorage.getItem('theme');
@@ -77,7 +79,7 @@ function updateDarkModeUI() {
 
 // DOM Elements
 let calendarViewBtn, listViewBtn, clubSearchInput, clubDropdown;
-let selectedClubsContainer, calendarView, listView, calendarGrid, eventsList;
+let selectedClubsContainer, calendarView, listView, calendarGrid, eventsList, calendarExpandBtn;
 let loadingElement, errorElement, onboardingBanner;
 let clubListPanel, clubListContainer;
 let hideBMXCheckbox, hideMTBCheckbox, darkModeToggle;
@@ -153,6 +155,7 @@ function initializeElements() {
     calendarView = document.getElementById('calendar-view');
     listView = document.getElementById('list-view');
     calendarGrid = document.getElementById('calendar-grid');
+    calendarExpandBtn = document.getElementById('calendar-expand-btn');
     eventsList = document.getElementById('events-list');
     loadingElement = document.getElementById('loading');
     errorElement = document.getElementById('error');
@@ -191,6 +194,14 @@ function setupEventListeners() {
     if (listViewBtn) {
         listViewBtn.addEventListener('click', () => switchView('list'));
     }
+    if (calendarExpandBtn) {
+        calendarExpandBtn.addEventListener('click', () => {
+            calendarExpanded = !calendarExpanded;
+            expandedCalendarDays.clear();
+            updateCalendarExpandButton();
+            renderCalendar(getFilteredEvents());
+        });
+    }
     
     // Club search - unified behavior
     clubSearchInput.addEventListener('input', handleClubSearch);
@@ -221,11 +232,7 @@ function setupEventListeners() {
 
 // State Management
 function loadState() {
-    // Run migration first to preserve existing cookie data
-    migrateCookiesToLocalStorage();
-    
     const savedView = getFromStorage('currentView');
-    const savedColors = getFromStorage('clubColors');
     const hasSeenOnboarding = getFromStorage('hasSeenOnboarding');
     const savedState = getFromStorage('selectedState');
     const hasSeenStateSelector = getFromStorage('hasSeenStateSelector');
@@ -254,14 +261,6 @@ function loadState() {
         // On desktop, allow calendar view as an option
         currentView = savedView || 'calendar';
     }
-    
-    if (savedColors) {
-        const colorData = JSON.parse(savedColors);
-        clubColors = new Map(colorData);
-    }
-    
-    // Ensure all selected clubs have colors assigned
-    selectedClubs.forEach(club => assignClubColor(club));
     
     isFirstTime = !hasSeenOnboarding;
 }
@@ -297,7 +296,6 @@ function saveState() {
     saveToStorage('statePreferences', JSON.stringify(statePreferences));
     saveToStorage('selectedState', selectedState);
     saveToStorage('currentView', currentView);
-    saveToStorage('clubColors', JSON.stringify([...clubColors]));
 }
 
 // Storage utilities
@@ -315,31 +313,6 @@ function getFromStorage(key) {
     } catch (error) {
         console.warn(`Failed to read from localStorage: ${error.message}`);
         return null;
-    }
-}
-
-// Migration function for backward compatibility
-function migrateCookiesToLocalStorage() {
-    // Helper function to get cookie (temporary for migration)
-    function getCookie(name) {
-        const nameEQ = name + "=";
-        const ca = document.cookie.split(';');
-        for (let i = 0; i < ca.length; i++) {
-            let c = ca[i];
-            while (c.charAt(0) === ' ') c = c.substring(1, c.length);
-            if (c.indexOf(nameEQ) === 0) return c.substring(nameEQ.length, c.length);
-        }
-        return null;
-    }
-
-    // Check if we have old cookie data but no localStorage data
-    if (!getFromStorage('selectedClubs') && getCookie('selectedClubs')) {
-        console.log('Migrating cookie data to localStorage...');
-        saveToStorage('selectedClubs', getCookie('selectedClubs'));
-        saveToStorage('currentView', getCookie('currentView') || 'calendar');
-        saveToStorage('clubColors', getCookie('clubColors') || '[]');
-        saveToStorage('hasSeenOnboarding', getCookie('hasSeenOnboarding') || 'false');
-        console.log('Migration completed');
     }
 }
 
@@ -393,9 +366,7 @@ async function loadEvents() {
             console.log('1. Run: python3 -m http.server 8000');
             console.log('2. Open: http://localhost:8000');
             
-            // Use fallback data for file:// protocol
-            await loadFallbackData();
-            return;
+            throw new Error('Events must be loaded from a web server.');
         }
         
         // Fetch with timeout and better error handling
@@ -439,14 +410,6 @@ async function loadEvents() {
             throw new Error(`Failed to parse ${eventsFile}: ${parseError.message}`);
         }
         
-        // Load clubs (less critical, can fallback)
-        let clubsResponse;
-        try {
-            clubsResponse = await fetchWithTimeout('./clubs.json');
-        } catch (fetchError) {
-            clubsResponse = null;
-        }
-        
         // Extract clubs from the state-specific events (ignore clubs.json as it's global)
         clubs = [...new Set(events.map(event => event.clubName))].sort();
         
@@ -459,127 +422,13 @@ async function loadEvents() {
     } catch (error) {
         console.error('Failed to load data:', error);
         
-        // If fetch fails (likely due to CORS or network), try fallback data
-        if (error.message.includes('fetch') || error.message.includes('Failed to fetch') || 
-            error.name === 'TypeError' || error.name === 'AbortError') {
-            await loadFallbackData();
-        } else {
-            showError();
-        }
+        showError();
     }
 }
 
 function assignClubColors() {
     clubColors.clear();
     clubs.forEach(club => assignClubColor(club));
-}
-
-async function loadFallbackData() {
-    console.log('Loading fallback data...');
-    
-    // Fallback data when files can't be loaded
-    events = [
-        {
-            eventName: "Tuesday Night Track Racing - Winter Championship - at DISC",
-            eventDate: "2025-07-01T00:00:00Z",
-            clubName: "Brunswick Cycling Club",
-            eventUrl: "https://entryboss.cc/races/25059"
-        },
-        {
-            eventName: "Thursday Motorpacing [with Intro Session]",
-            eventDate: "2025-07-03T00:00:00Z",
-            clubName: "Brunswick Cycling Club", 
-            eventUrl: "https://entryboss.cc/races/25038"
-        },
-        {
-            eventName: "Criterium - Graded scratch races @ Casey",
-            eventDate: "2025-07-05T00:00:00Z",
-            clubName: "Eastern Cycling Club",
-            eventUrl: "https://entryboss.cc/races/25496"
-        },
-        {
-            eventName: "Race 9 - CCC & VETS Combined Winter Series - Race 3",
-            eventDate: "2025-07-05T00:00:00Z",
-            clubName: "Colac Cycling Club",
-            eventUrl: "https://entryboss.cc/races/26266"
-        },
-        {
-            eventName: "Victorian Cyclo-cross Series Round 1 - Fruits of the Valley",
-            eventDate: "2025-07-05T00:00:00Z",
-            clubName: "AusCycling (Victoria)",
-            eventUrl: "https://entryboss.cc/races/24312"
-        },
-        {
-            eventName: "Tuesday Night Track Endurance Racing - Winter Championship - at DISC",
-            eventDate: "2025-07-08T00:00:00Z",
-            clubName: "Brunswick Cycling Club",
-            eventUrl: "https://entryboss.cc/races/25060"
-        },
-        {
-            eventName: "Hamilton Wheelers Championship Road Race",
-            eventDate: "2025-07-12T00:00:00Z",
-            clubName: "Hamilton Wheelers Cycling Club",
-            eventUrl: "https://entryboss.cc/races/26100"
-        },
-        {
-            eventName: "Race 11 - CCC & VETS Combined Winter Series - Race 5", 
-            eventDate: "2025-07-19T00:00:00Z",
-            clubName: "Colac Cycling Club",
-            eventUrl: "https://entryboss.cc/races/26268"
-        },
-        {
-            eventName: "Kermesse - Graded scratch races @ Yarra Glen",
-            eventDate: "2025-07-19T00:00:00Z",
-            clubName: "Eastern Cycling Club",
-            eventUrl: "https://entryboss.cc/races/26159"
-        },
-        {
-            eventName: "Victorian Cyclo-cross Series Round 2 - Castlemaine",
-            eventDate: "2025-07-26T00:00:00Z",
-            clubName: "AusCycling (Victoria)",
-            eventUrl: "https://entryboss.cc/races/24344"
-        }
-    ];
-    
-    clubs = [...new Set(events.map(event => event.clubName))].sort();
-    
-    // Assign colors to clubs in fallback data
-    assignClubColors();
-    
-    console.log(`Loaded ${events.length} fallback events and ${clubs.length} clubs`);
-    
-    // Show a notice about using fallback data
-    showFallbackNotice();
-    
-    hideLoading();
-    updateDisplay();
-}
-
-function showFallbackNotice() {
-    // Create or update notice
-    let notice = document.getElementById('fallback-notice');
-    if (!notice) {
-        notice = document.createElement('div');
-        notice.id = 'fallback-notice';
-        notice.style.cssText = `
-            background: #fff3cd;
-            border: 1px solid #ffeaa7;
-            color: #856404;
-            padding: 1rem;
-            margin: 1rem 0;
-            border-radius: 8px;
-            text-align: center;
-        `;
-        notice.innerHTML = `
-            <strong>Demo Mode:</strong> Using fallback data. 
-            For full functionality, please run: <code>python3 -m http.server 8000</code> 
-            and open <a href="http://localhost:8000" target="_blank">http://localhost:8000</a>
-        `;
-        const controlsContainer = document.querySelector('.controls-container');
-        if (controlsContainer) {
-            controlsContainer.parentNode.insertBefore(notice, controlsContainer);
-        }
-    }
 }
 
 function showLoading() {
@@ -838,16 +687,17 @@ function getFilteredEvents() {
     
     // Apply BMX filter if enabled
     if (hideBMXEvents) {
-        filteredEvents = filteredEvents.filter(event => 
-            !event.clubName.toLowerCase().includes('bmx')
-        );
+        filteredEvents = filteredEvents.filter(event => {
+            const eventText = `${event.eventName} ${event.clubName}`.toLowerCase();
+            return !eventText.includes('bmx');
+        });
     }
     
     // Apply MTB filter if enabled
     if (hideMTBEvents) {
         filteredEvents = filteredEvents.filter(event => {
-            const clubNameLower = event.clubName.toLowerCase();
-            return !clubNameLower.includes('mtb') && !clubNameLower.includes('mountain bike');
+            const eventText = `${event.eventName} ${event.clubName}`.toLowerCase();
+            return !eventText.includes('mtb') && !eventText.includes('mountain bike');
         });
     }
     
@@ -855,6 +705,12 @@ function getFilteredEvents() {
 }
 
 // Calendar Rendering
+function updateCalendarExpandButton() {
+    if (!calendarExpandBtn) return;
+    calendarExpandBtn.textContent = calendarExpanded ? 'Show fewer events' : 'Show all events';
+    calendarExpandBtn.setAttribute('aria-pressed', String(calendarExpanded));
+}
+
 function renderCalendar(events) {
     if (!calendarGrid) {
         console.error('calendarGrid element not found!');
@@ -863,10 +719,12 @@ function renderCalendar(events) {
 
     calendarGrid.innerHTML = '';
     calendarGrid.className = 'space-y-8'; 
+    updateCalendarExpandButton();
 
     const today = new Date();
     const startDate = new Date(today);
     startDate.setDate(today.getDate() - today.getDay()); // Start of current week
+    startDate.setHours(0, 0, 0, 0);
 
     const calendarTitle = document.getElementById('calendar-title');
     
@@ -880,10 +738,8 @@ function renderCalendar(events) {
         return eventDate > maxDate ? eventDate : maxDate;
     }, new Date(0));
 
-    if (lastEventDate > startDate) {
-        const diffTime = Math.abs(lastEventDate - startDate);
-        const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
-        weeksToShow = Math.ceil(diffDays / 7);
+    while (new Date(startDate.getFullYear(), startDate.getMonth(), startDate.getDate() + weeksToShow * 7) <= lastEventDate) {
+        weeksToShow++;
     }
 
     // Group dates by month over calculated weeks
@@ -953,6 +809,14 @@ function renderCalendar(events) {
 function createCalendarDay(date, events) {
     const dayElement = document.createElement('div');
     dayElement.className = 'bg-[var(--bg-card)] p-3 min-h-[120px]';
+    dayElement.dataset.date = `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, '0')}-${String(date.getDate()).padStart(2, '0')}`;
+    const today = new Date();
+    today.setHours(0, 0, 0, 0);
+    if (date < today) dayElement.classList.add('calendar-day--past');
+    if (date.getTime() === today.getTime()) {
+        dayElement.classList.add('calendar-day--today');
+        dayElement.setAttribute('aria-current', 'date');
+    }
     
     const dayNumber = document.createElement('div');
     dayNumber.className = 'text-sm font-medium mb-2 text-[var(--text-muted)]';
@@ -965,10 +829,14 @@ function createCalendarDay(date, events) {
         return eventDate.toDateString() === date.toDateString();
     });
     
+    const dateKey = date.toDateString();
+    const isExpanded = calendarExpanded || expandedCalendarDays.has(dateKey);
+
     // Add events to day
-    dayEvents.slice(0, 3).forEach(event => { // Limit to 3 events per day for space
+    dayEvents.forEach((event, index) => {
         const eventElement = document.createElement('div');
         eventElement.className = 'day-event-item text-white px-2 py-1.5 mb-1.5 rounded text-[10px] cursor-pointer transition-all hover:brightness-110 border-l-[3px] font-bold truncate shadow-sm';
+        if (index >= 3 && !isExpanded) eventElement.classList.add('hidden');
         eventElement.textContent = event.eventName;
         eventElement.title = `${event.eventName} - ${event.clubName}`;
         
@@ -983,12 +851,28 @@ function createCalendarDay(date, events) {
         dayElement.appendChild(eventElement);
     });
     
-    // Show "+X more" if there are more events
+    // Let each day expand independently in the compact calendar.
     if (dayEvents.length > 3) {
-        const moreElement = document.createElement('div');
-        moreElement.className = 'text-[var(--text-muted)] p-1 text-[9px] font-medium';
-        moreElement.textContent = `+${dayEvents.length - 3} more`;
-        dayElement.appendChild(moreElement);
+        const moreButton = document.createElement('button');
+        moreButton.type = 'button';
+        moreButton.className = 'calendar-more-button block text-left text-[var(--text-secondary)] hover:text-[var(--text-primary)] px-1 py-1 text-[11px] font-semibold rounded focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-500';
+        if (calendarExpanded) moreButton.classList.add('hidden');
+        const updateDayButton = () => {
+            const expanded = expandedCalendarDays.has(dateKey);
+            moreButton.textContent = expanded ? 'Show fewer' : `+${dayEvents.length - 3} more`;
+            moreButton.setAttribute('aria-expanded', String(expanded));
+            moreButton.setAttribute('aria-label', `${expanded ? 'Show fewer events' : `Show ${dayEvents.length - 3} more events`} for ${date.toLocaleDateString('en-AU', { day: 'numeric', month: 'long', year: 'numeric' })}`);
+        };
+        updateDayButton();
+        moreButton.addEventListener('click', () => {
+            if (expandedCalendarDays.has(dateKey)) expandedCalendarDays.delete(dateKey);
+            else expandedCalendarDays.add(dateKey);
+            dayElement.querySelectorAll('.day-event-item').forEach((item, index) => {
+                if (index >= 3) item.classList.toggle('hidden', !expandedCalendarDays.has(dateKey));
+            });
+            updateDayButton();
+        });
+        dayElement.appendChild(moreButton);
     }
     
     return dayElement;
@@ -1136,47 +1020,6 @@ function createDayEventItem(event) {
     return eventItem;
 }
 
-function createEventListItem(event) {
-    const eventElement = document.createElement('div');
-    eventElement.className = 'event-item px-6 py-4 hover:bg-gray-50 cursor-pointer transition-colors';
-    eventElement.addEventListener('click', () => openEvent(event));
-    
-    const eventName = document.createElement('div');
-    eventName.className = 'event-name text-lg font-semibold text-gray-900 mb-2';
-    eventName.textContent = event.eventName;
-    
-    const eventDetails = document.createElement('div');
-    eventDetails.className = 'event-details flex items-center gap-4 text-sm text-gray-600';
-    
-    const eventDate = document.createElement('span');
-    eventDate.className = 'font-medium';
-    eventDate.textContent = formatDate(event.eventDate);
-    
-    const eventClub = document.createElement('span');
-    eventClub.className = 'event-club-tag px-3 py-1 rounded-full text-sm';
-    eventClub.textContent = event.clubName;
-    
-    // Apply club color if the club is selected
-    if (selectedClubs.has(event.clubName)) {
-        const clubColor = assignClubColor(event.clubName);
-        eventClub.style.backgroundColor = clubColor;
-        eventClub.style.color = 'white';
-        eventClub.classList.add('font-medium');
-        // Add colored border for mobile
-        eventElement.style.borderLeftColor = clubColor;
-    } else {
-        eventClub.classList.add('bg-gray-200', 'text-gray-700');
-    }
-    
-    eventDetails.appendChild(eventDate);
-    eventDetails.appendChild(eventClub);
-    
-    eventElement.appendChild(eventName);
-    eventElement.appendChild(eventDetails);
-    
-    return eventElement;
-}
-
 // Event Interaction
 function openEvent(event) {
     window.open(event.eventUrl, '_blank', 'noopener,noreferrer');
@@ -1192,18 +1035,6 @@ function dismissOnboarding() {
     onboardingBanner.classList.add('hidden');
 }
 
-// Utility Functions
-function formatDate(dateString) {
-    const date = new Date(dateString);
-    const options = { 
-        weekday: 'short', 
-        year: 'numeric', 
-        month: 'short', 
-        day: 'numeric' 
-    };
-    return date.toLocaleDateString('en-AU', options);
-}
-
 function formatDateFull(date) {
     const options = { 
         weekday: 'long', 
@@ -1212,11 +1043,6 @@ function formatDateFull(date) {
         day: 'numeric' 
     };
     return date.toLocaleDateString('en-AU', options);
-}
-
-function truncateText(text, maxLength) {
-    if (text.length <= maxLength) return text;
-    return text.substring(0, maxLength - 3) + '...';
 }
 
 // Responsive view logic for mobile/desktop
