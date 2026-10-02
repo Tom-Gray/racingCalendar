@@ -1,14 +1,5 @@
 [
   {
-    "eventName": "UQCC - AMV 150 lap moto paced session",
-    "eventDate": "2026-10-01T00:00:00Z",
-    "clubName": "University of Queensland Cycle Club",
-    "state": "QLD",
-    "eventUrl": "https://entryboss.cc/races/32133",
-    "source": "EntryBoss",
-    "category": ""
-  },
-  {
     "eventName": "Ipswich Friday Night Crit",
     "eventDate": "2026-10-02T00:00:00Z",
     "clubName": "Ipswich Cycling Club",
@@ -540,6 +531,15 @@
     "category": ""
   },
   {
+    "eventName": "Skippy Park Crit",
+    "eventDate": "2026-11-01T00:00:00Z",
+    "clubName": "Sunshine Coast Cycling Club",
+    "state": "QLD",
+    "eventUrl": "https://entryboss.cc/races/32456",
+    "source": "EntryBoss",
+    "category": ""
+  },
+  {
     "eventName": "Wed. Night Gates (6pm - 8pm)",
     "eventDate": "2026-11-04T00:00:00Z",
     "clubName": "Pine Rivers BMX Club",
@@ -734,6 +734,15 @@
     "clubName": "Ipswich Cycling Club",
     "state": "QLD",
     "eventUrl": "https://entryboss.cc/races/30384",
+    "source": "EntryBoss",
+    "category": ""
+  },
+  {
+    "eventName": "Girraween Crit",
+    "eventDate": "2026-11-22T00:00:00Z",
+    "clubName": "Sunshine Coast Cycling Club",
+    "state": "QLD",
+    "eventUrl": "https://entryboss.cc/races/32458",
     "source": "EntryBoss",
     "category": ""
   },
