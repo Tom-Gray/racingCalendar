@@ -1,14 +1,5 @@
 [
   {
-    "eventName": "Saturday Track Training",
-    "eventDate": "2026-10-03T00:00:00Z",
-    "clubName": "Vikings Cycling Club",
-    "state": "ACT",
-    "eventUrl": "https://entryboss.cc/races/32373",
-    "source": "EntryBoss",
-    "category": ""
-  },
-  {
     "eventName": "2022 CCC Summer Crits Team Signup",
     "eventDate": "2026-10-05T00:00:00Z",
     "clubName": "Canberra Cycling Club",
@@ -374,6 +365,15 @@
     "clubName": "Vikings Cycling Club",
     "state": "ACT",
     "eventUrl": "https://entryboss.cc/races/32337",
+    "source": "EntryBoss",
+    "category": ""
+  },
+  {
+    "eventName": "CCC Women's Program",
+    "eventDate": "2026-11-07T00:00:00Z",
+    "clubName": "Canberra Cycling Club",
+    "state": "ACT",
+    "eventUrl": "https://entryboss.cc/races/32490",
     "source": "EntryBoss",
     "category": ""
   },
