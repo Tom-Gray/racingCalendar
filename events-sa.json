@@ -1,50 +1,5 @@
 [
   {
-    "eventName": "Moto Pace - Track and Road",
-    "eventDate": "2026-10-08T00:00:00Z",
-    "clubName": "Port Adelaide Cycling Club",
-    "state": "SA",
-    "eventUrl": "https://entryboss.cc/races/31542",
-    "source": "EntryBoss",
-    "category": ""
-  },
-  {
-    "eventName": "Cervelo Super Series - Series Pass  - Senior Riders",
-    "eventDate": "2026-10-09T00:00:00Z",
-    "clubName": "AusCycling (South Australia)",
-    "state": "SA",
-    "eventUrl": "https://entryboss.cc/races/12744",
-    "source": "EntryBoss",
-    "category": ""
-  },
-  {
-    "eventName": "99 Bikes Junior Super Series - Series Pass - Junior Riders",
-    "eventDate": "2026-10-09T00:00:00Z",
-    "clubName": "AusCycling (South Australia)",
-    "state": "SA",
-    "eventUrl": "https://entryboss.cc/races/12777",
-    "source": "EntryBoss",
-    "category": ""
-  },
-  {
-    "eventName": "2023 Cervelo Super Series - Series Pass - Senior Riders",
-    "eventDate": "2026-10-09T00:00:00Z",
-    "clubName": "AusCycling (South Australia)",
-    "state": "SA",
-    "eventUrl": "https://entryboss.cc/races/17080",
-    "source": "EntryBoss",
-    "category": ""
-  },
-  {
-    "eventName": "2023 Cervelo Super Series - Series Pass - Junior Riders",
-    "eventDate": "2026-10-09T00:00:00Z",
-    "clubName": "AusCycling (South Australia)",
-    "state": "SA",
-    "eventUrl": "https://entryboss.cc/races/17094",
-    "source": "EntryBoss",
-    "category": ""
-  },
-  {
     "eventName": "4 week Friday Night Pass",
     "eventDate": "2026-10-09T00:00:00Z",
     "clubName": "South Coast Cycling",
@@ -68,33 +23,6 @@
     "clubName": "AusCycling (South Australia)",
     "state": "SA",
     "eventUrl": "https://entryboss.cc/races/32416",
-    "source": "EntryBoss",
-    "category": ""
-  },
-  {
-    "eventName": "Super Series - Series Pass",
-    "eventDate": "2026-10-09T00:00:00Z",
-    "clubName": "AusCycling (South Australia)",
-    "state": "SA",
-    "eventUrl": "https://entryboss.cc/races/5458",
-    "source": "EntryBoss",
-    "category": ""
-  },
-  {
-    "eventName": "MetroMap Super Series - Seniors Individual Series Pass",
-    "eventDate": "2026-10-09T00:00:00Z",
-    "clubName": "AusCycling (South Australia)",
-    "state": "SA",
-    "eventUrl": "https://entryboss.cc/races/8340",
-    "source": "EntryBoss",
-    "category": ""
-  },
-  {
-    "eventName": "99 Bikes Junior Super Series - Junior Individual Series Pass",
-    "eventDate": "2026-10-09T00:00:00Z",
-    "clubName": "AusCycling (South Australia)",
-    "state": "SA",
-    "eventUrl": "https://entryboss.cc/races/8341",
     "source": "EntryBoss",
     "category": ""
   },
@@ -153,6 +81,42 @@
     "category": ""
   },
   {
+    "eventName": "Cervelo Super Series - Series Pass  - Senior Riders",
+    "eventDate": "2026-10-16T00:00:00Z",
+    "clubName": "AusCycling (South Australia)",
+    "state": "SA",
+    "eventUrl": "https://entryboss.cc/races/12744",
+    "source": "EntryBoss",
+    "category": ""
+  },
+  {
+    "eventName": "99 Bikes Junior Super Series - Series Pass - Junior Riders",
+    "eventDate": "2026-10-16T00:00:00Z",
+    "clubName": "AusCycling (South Australia)",
+    "state": "SA",
+    "eventUrl": "https://entryboss.cc/races/12777",
+    "source": "EntryBoss",
+    "category": ""
+  },
+  {
+    "eventName": "2023 Cervelo Super Series - Series Pass - Senior Riders",
+    "eventDate": "2026-10-16T00:00:00Z",
+    "clubName": "AusCycling (South Australia)",
+    "state": "SA",
+    "eventUrl": "https://entryboss.cc/races/17080",
+    "source": "EntryBoss",
+    "category": ""
+  },
+  {
+    "eventName": "2023 Cervelo Super Series - Series Pass - Junior Riders",
+    "eventDate": "2026-10-16T00:00:00Z",
+    "clubName": "AusCycling (South Australia)",
+    "state": "SA",
+    "eventUrl": "https://entryboss.cc/races/17094",
+    "source": "EntryBoss",
+    "category": ""
+  },
+  {
     "eventName": "Friday Night Racing",
     "eventDate": "2026-10-16T00:00:00Z",
     "clubName": "South Coast Cycling",
@@ -167,6 +131,33 @@
     "clubName": "AusCycling (South Australia)",
     "state": "SA",
     "eventUrl": "https://entryboss.cc/races/32417",
+    "source": "EntryBoss",
+    "category": ""
+  },
+  {
+    "eventName": "Super Series - Series Pass",
+    "eventDate": "2026-10-16T00:00:00Z",
+    "clubName": "AusCycling (South Australia)",
+    "state": "SA",
+    "eventUrl": "https://entryboss.cc/races/5458",
+    "source": "EntryBoss",
+    "category": ""
+  },
+  {
+    "eventName": "MetroMap Super Series - Seniors Individual Series Pass",
+    "eventDate": "2026-10-16T00:00:00Z",
+    "clubName": "AusCycling (South Australia)",
+    "state": "SA",
+    "eventUrl": "https://entryboss.cc/races/8340",
+    "source": "EntryBoss",
+    "category": ""
+  },
+  {
+    "eventName": "99 Bikes Junior Super Series - Junior Individual Series Pass",
+    "eventDate": "2026-10-16T00:00:00Z",
+    "clubName": "AusCycling (South Australia)",
+    "state": "SA",
+    "eventUrl": "https://entryboss.cc/races/8341",
     "source": "EntryBoss",
     "category": ""
   },
@@ -351,6 +342,15 @@
     "category": ""
   },
   {
+    "eventName": "FOCUS Super Series - Round 5 \u0026 6 - The Bend (inc. U19/U23/Elite SA State Championships)",
+    "eventDate": "2026-11-01T00:00:00Z",
+    "clubName": "AusCycling (South Australia)",
+    "state": "SA",
+    "eventUrl": "https://entryboss.cc/races/31840",
+    "source": "EntryBoss",
+    "category": ""
+  },
+  {
     "eventName": "Tantanoola Wind Farm - Sunday November 1 2026 - Race 4",
     "eventDate": "2026-11-01T00:00:00Z",
     "clubName": "Mt Gambier Cycling Club",
@@ -365,6 +365,15 @@
     "clubName": "Port Adelaide Cycling Club",
     "state": "SA",
     "eventUrl": "https://entryboss.cc/races/32551",
+    "source": "EntryBoss",
+    "category": ""
+  },
+  {
+    "eventName": "FOCUS Super Series - Round 7 - Norton Summit Kermesse",
+    "eventDate": "2026-11-07T00:00:00Z",
+    "clubName": "AusCycling (South Australia)",
+    "state": "SA",
+    "eventUrl": "https://entryboss.cc/races/31841",
     "source": "EntryBoss",
     "category": ""
   },
