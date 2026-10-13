@@ -1,14 +1,5 @@
 [
   {
-    "eventName": "Easts - Tuesday Night Heffron Season 42 - Week 1",
-    "eventDate": "2026-10-13T00:00:00Z",
-    "clubName": "Eastern Suburbs CC",
-    "state": "NSW",
-    "eventUrl": "https://www.buncheur.com/eastern-suburbs-cc-tuesday-night-heffron--7-10-2-1-1-1-1-1-1-1-2-1-3-2-1-1-1-2",
-    "source": "Buncheur",
-    "category": "Handicap"
-  },
-  {
     "eventName": "Twilight Racing - SERIES ENTRY - Term 4 2022",
     "eventDate": "2026-10-14T00:00:00Z",
     "clubName": "Tamworth Mountain Bikers",
@@ -115,6 +106,15 @@
     "eventUrl": "https://www.buncheur.com/illawarra-cc-icc-wednesday-night-100-lapper-12-1-1-3-1-1-3-4-1-3-1-4-1-1-1-1-1-1-1-1-1-1-1-1-1-1-1-1-1-1-1-1-1-1-1-1-1-1-1-1-1-1-1-1-1-1-1-3-2-1-1-1-1-1-2-1-1-1-1-1-1-1-1-1-1-1-1-1-1-1-1-1-1-1-1-1-1",
     "source": "Buncheur",
     "category": "Training Session"
+  },
+  {
+    "eventName": "MVCC SUMMER CRIT SEASON ",
+    "eventDate": "2026-10-14T00:00:00Z",
+    "clubName": "Manning Valley CC",
+    "state": "NSW",
+    "eventUrl": "https://www.buncheur.com/manning-valley-cc-mvcc-winter-road-season-race-12-1-1",
+    "source": "Buncheur",
+    "category": "Criterium"
   },
   {
     "eventName": "Illawarra Cycle Club - Thursday Night Criterium - Omnium Series Week 1: POINT SCORE",
@@ -243,6 +243,15 @@
     "category": "Individual Time Trial"
   },
   {
+    "eventName": "Easts - Tuesday Night Heffron Season 42 - Week 1",
+    "eventDate": "2026-10-20T00:00:00Z",
+    "clubName": "Eastern Suburbs CC",
+    "state": "NSW",
+    "eventUrl": "https://www.buncheur.com/eastern-suburbs-cc-tuesday-night-heffron--7-10-2-1-1-1-1-1-1-1-2-1-3-2-1-1-1-2",
+    "source": "Buncheur",
+    "category": "Handicap"
+  },
+  {
     "eventName": "Twilight Racing - INDIVIDUAL ROUND 2 ENTRY - Term 4 2026",
     "eventDate": "2026-10-21T00:00:00Z",
     "clubName": "Tamworth Mountain Bikers",
@@ -367,6 +376,15 @@
     "eventUrl": "https://www.buncheur.com/penrith-cc-trek-compass-series-round--1-2",
     "source": "Buncheur",
     "category": "Individual Time Trial"
+  },
+  {
+    "eventName": "PMCC - 2026 Thrumster Crit 25 October",
+    "eventDate": "2026-10-25T00:00:00Z",
+    "clubName": "Port Macquarie CC",
+    "state": "NSW",
+    "eventUrl": "https://www.buncheur.com/port-macquarie-cc-pmcc-summer-twilight-crit-race-season--7-2-1-1-1-1-1-1",
+    "source": "Buncheur",
+    "category": "Criterium"
   },
   {
     "eventName": "SXCC Sunday Crits",
