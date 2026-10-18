@@ -1,59 +1,5 @@
 [
   {
-    "eventName": "Atherton October Overdrive Carnival",
-    "eventDate": "2026-10-17T00:00:00Z",
-    "clubName": "Atherton BMX Club",
-    "state": "QLD",
-    "eventUrl": "https://entryboss.cc/races/28804",
-    "source": "EntryBoss",
-    "category": ""
-  },
-  {
-    "eventName": "COASTAL 8/4HR MTB Race",
-    "eventDate": "2026-10-17T00:00:00Z",
-    "clubName": "Cairns Mountain Bike Club",
-    "state": "QLD",
-    "eventUrl": "https://entryboss.cc/races/29451",
-    "source": "EntryBoss",
-    "category": ""
-  },
-  {
-    "eventName": "Lister Sprinter Challenge - Nundah Sat 17th Oct 2026",
-    "eventDate": "2026-10-17T00:00:00Z",
-    "clubName": "Hamilton Wheelers Cycling Club",
-    "state": "QLD",
-    "eventUrl": "https://entryboss.cc/races/31246",
-    "source": "EntryBoss",
-    "category": ""
-  },
-  {
-    "eventName": "Balmoral CC Saturday Track Session (Oct 17)",
-    "eventDate": "2026-10-17T00:00:00Z",
-    "clubName": "Balmoral Cycling Club",
-    "state": "QLD",
-    "eventUrl": "https://entryboss.cc/races/32442",
-    "source": "EntryBoss",
-    "category": ""
-  },
-  {
-    "eventName": "Muzz 2.0 - OG Reverse (Oct 17)",
-    "eventDate": "2026-10-17T00:00:00Z",
-    "clubName": "Balmoral Cycling Club",
-    "state": "QLD",
-    "eventUrl": "https://entryboss.cc/races/32447",
-    "source": "EntryBoss",
-    "category": ""
-  },
-  {
-    "eventName": "DDCC Club Criterium October 17th ",
-    "eventDate": "2026-10-17T00:00:00Z",
-    "clubName": "Darling Downs Cycling Club",
-    "state": "QLD",
-    "eventUrl": "https://www.buncheur.com/darling-downs-cycling-club-ddcc-club-criterium-sb-travel-medicine-alliance--2-2-2-1-1-2-1-1-1-1-1-1-1-1",
-    "source": "Buncheur",
-    "category": "Criterium"
-  },
-  {
     "eventName": "Nick Mason Memorial Crit Series - Race Three Final",
     "eventDate": "2026-10-18T00:00:00Z",
     "clubName": "Fraser Coast Cycling Club",
@@ -63,11 +9,29 @@
     "category": "Criterium"
   },
   {
+    "eventName": "Monday Night Open Track",
+    "eventDate": "2026-10-19T00:00:00Z",
+    "clubName": "Townsville BMX Club",
+    "state": "QLD",
+    "eventUrl": "https://entryboss.cc/races/32702",
+    "source": "EntryBoss",
+    "category": ""
+  },
+  {
     "eventName": "Cairns BMX Open Gates 20-10-2026",
     "eventDate": "2026-10-20T00:00:00Z",
     "clubName": "Cairns BMX Club",
     "state": "QLD",
     "eventUrl": "https://entryboss.cc/races/32697",
+    "source": "EntryBoss",
+    "category": ""
+  },
+  {
+    "eventName": "Tuesday Night Open Track",
+    "eventDate": "2026-10-20T00:00:00Z",
+    "clubName": "Townsville BMX Club",
+    "state": "QLD",
+    "eventUrl": "https://entryboss.cc/races/32704",
     "source": "EntryBoss",
     "category": ""
   },
@@ -86,6 +50,15 @@
     "clubName": "Balmoral Cycling Club",
     "state": "QLD",
     "eventUrl": "https://entryboss.cc/races/32440",
+    "source": "EntryBoss",
+    "category": ""
+  },
+  {
+    "eventName": "Wednesday Night Open Track",
+    "eventDate": "2026-10-21T00:00:00Z",
+    "clubName": "Townsville BMX Club",
+    "state": "QLD",
+    "eventUrl": "https://entryboss.cc/races/32708",
     "source": "EntryBoss",
     "category": ""
   },
@@ -131,6 +104,15 @@
     "clubName": "Cairns BMX Club",
     "state": "QLD",
     "eventUrl": "https://entryboss.cc/races/32698",
+    "source": "EntryBoss",
+    "category": ""
+  },
+  {
+    "eventName": "Friday Night Club Racing",
+    "eventDate": "2026-10-23T00:00:00Z",
+    "clubName": "Townsville BMX Club",
+    "state": "QLD",
+    "eventUrl": "https://entryboss.cc/races/32703",
     "source": "EntryBoss",
     "category": ""
   },
@@ -239,6 +221,15 @@
     "clubName": "Pine Rivers BMX Club",
     "state": "QLD",
     "eventUrl": "https://entryboss.cc/races/28942",
+    "source": "EntryBoss",
+    "category": ""
+  },
+  {
+    "eventName": "Ashmore BMX Club Racing 30-10-2026",
+    "eventDate": "2026-10-30T00:00:00Z",
+    "clubName": "Ashmore BMX",
+    "state": "QLD",
+    "eventUrl": "https://entryboss.cc/races/32710",
     "source": "EntryBoss",
     "category": ""
   },
