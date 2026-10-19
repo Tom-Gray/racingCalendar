@@ -1,68 +1,5 @@
 [
   {
-    "eventName": "WSMTB XC - ROUND 5 of 6 - 2026",
-    "eventDate": "2026-10-18T00:00:00Z",
-    "clubName": "Western Sydney MTB Club",
-    "state": "NSW",
-    "eventUrl": "https://entryboss.cc/races/28904",
-    "source": "EntryBoss",
-    "category": ""
-  },
-  {
-    "eventName": "2026 CCMTB GE Round 3",
-    "eventDate": "2026-10-18T00:00:00Z",
-    "clubName": "Central Coast MTB Inc",
-    "state": "NSW",
-    "eventUrl": "https://entryboss.cc/races/29540",
-    "source": "EntryBoss",
-    "category": ""
-  },
-  {
-    "eventName": "Hawkesbury Clubby Round 17 - 2026",
-    "eventDate": "2026-10-18T00:00:00Z",
-    "clubName": "Hawkesbury Hornets BMX Club",
-    "state": "NSW",
-    "eventUrl": "https://entryboss.cc/races/30912",
-    "source": "EntryBoss",
-    "category": ""
-  },
-  {
-    "eventName": "99 Bikes Criterium",
-    "eventDate": "2026-10-18T00:00:00Z",
-    "clubName": "Central Coast CC",
-    "state": "NSW",
-    "eventUrl": "https://entryboss.cc/races/31670",
-    "source": "EntryBoss",
-    "category": ""
-  },
-  {
-    "eventName": "2026 AusCycling NSW XCC \u0026 XCO State Championships",
-    "eventDate": "2026-10-18T00:00:00Z",
-    "clubName": "AusCycling (New South Wales)",
-    "state": "NSW",
-    "eventUrl": "https://entryboss.cc/races/32176",
-    "source": "EntryBoss",
-    "category": ""
-  },
-  {
-    "eventName": "NHCC HEZ Road Race",
-    "eventDate": "2026-10-18T00:00:00Z",
-    "clubName": "Newcastle Hunter CC",
-    "state": "NSW",
-    "eventUrl": "https://www.buncheur.com/newcastle-hunter-cc-nhcc-hez-road-race-19",
-    "source": "Buncheur",
-    "category": "Road Race"
-  },
-  {
-    "eventName": "Nowra Velo Club Individual Time Trial  ",
-    "eventDate": "2026-10-18T00:00:00Z",
-    "clubName": "Nowra Velo",
-    "state": "NSW",
-    "eventUrl": "https://www.buncheur.com/nowra-velo-nowra-velo-handicap-road-race-approx-54-kilometres--3",
-    "source": "Buncheur",
-    "category": "Individual Time Trial"
-  },
-  {
     "eventName": "Easts - Tuesday Night Heffron Season 42 - Week 1",
     "eventDate": "2026-10-20T00:00:00Z",
     "clubName": "Eastern Suburbs CC",
@@ -178,6 +115,15 @@
     "eventUrl": "https://www.buncheur.com/illawarra-cc-icc-wednesday-night-100-lapper-12-1-1-3-1-1-3-4-1-3-1-4-1-1-1-1-1-1-1-1-1-1-1-1-1-1-1-1-1-1-1-1-1-1-1-1-1-1-1-1-1-1-1-1-1-1-1-3-2-1-1-1-1-1-2-1-1-1-1-1-1-1-1-1-1-1-1-1-1-1-1-1-1-1-1-1",
     "source": "Buncheur",
     "category": "Training Session"
+  },
+  {
+    "eventName": "MVCC Summer Crits - Race 2",
+    "eventDate": "2026-10-21T00:00:00Z",
+    "clubName": "Manning Valley CC",
+    "state": "NSW",
+    "eventUrl": "https://www.buncheur.com/manning-valley-cc-mvcc-summer-crits-race-2",
+    "source": "Buncheur",
+    "category": "Criterium"
   },
   {
     "eventName": "Illawarra Cycle Club - Thursday Night Criterium - Omnium Series Week 2: Scratch Race",
@@ -342,6 +288,15 @@
     "category": "Training Session"
   },
   {
+    "eventName": "MVCC Summer Crits - Race 3",
+    "eventDate": "2026-10-28T00:00:00Z",
+    "clubName": "Manning Valley CC",
+    "state": "NSW",
+    "eventUrl": "https://www.buncheur.com/manning-valley-cc-mvcc-summer-crits-race-3",
+    "source": "Buncheur",
+    "category": "Criterium"
+  },
+  {
     "eventName": "Illawarra Cycle Club - Thursday Night Criterium - Omnium Series Week 3: Elimination Race",
     "eventDate": "2026-10-29T00:00:00Z",
     "clubName": "Illawarra CC",
@@ -493,6 +448,15 @@
     "eventUrl": "https://entryboss.cc/races/32619",
     "source": "EntryBoss",
     "category": ""
+  },
+  {
+    "eventName": "MVCC Summer Crits - Race 4",
+    "eventDate": "2026-11-04T00:00:00Z",
+    "clubName": "Manning Valley CC",
+    "state": "NSW",
+    "eventUrl": "https://www.buncheur.com/manning-valley-cc-mvcc-summer-crits-race-4",
+    "source": "Buncheur",
+    "category": "Criterium"
   },
   {
     "eventName": "LACC/PLCC Armory Crit Racing                                                  ",
@@ -655,6 +619,15 @@
     "eventUrl": "https://entryboss.cc/races/32620",
     "source": "EntryBoss",
     "category": ""
+  },
+  {
+    "eventName": "MVCC Summer Crits - Race 5",
+    "eventDate": "2026-11-11T00:00:00Z",
+    "clubName": "Manning Valley CC",
+    "state": "NSW",
+    "eventUrl": "https://www.buncheur.com/manning-valley-cc-mvcc-summer-crits-race-5",
+    "source": "Buncheur",
+    "category": "Criterium"
   },
   {
     "eventName": "LACC/PLCC Armory Crit Racing                                                   ",
