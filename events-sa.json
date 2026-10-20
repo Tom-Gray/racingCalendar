@@ -1,14 +1,5 @@
 [
   {
-    "eventName": "Monday Junior Training",
-    "eventDate": "2026-10-19T00:00:00Z",
-    "clubName": "South Coast Cycling",
-    "state": "SA",
-    "eventUrl": "https://entryboss.cc/races/32314",
-    "source": "EntryBoss",
-    "category": ""
-  },
-  {
     "eventName": "NCC Summer Criteriums",
     "eventDate": "2026-10-20T00:00:00Z",
     "clubName": "Norwood Cycling Club",
@@ -23,6 +14,15 @@
     "clubName": "South Coast Cycling",
     "state": "SA",
     "eventUrl": "https://entryboss.cc/races/32311",
+    "source": "EntryBoss",
+    "category": ""
+  },
+  {
+    "eventName": "Spring into Summer Series Rd 2",
+    "eventDate": "2026-10-21T00:00:00Z",
+    "clubName": "Cross Keys BMX",
+    "state": "SA",
+    "eventUrl": "https://entryboss.cc/races/32661",
     "source": "EntryBoss",
     "category": ""
   },
