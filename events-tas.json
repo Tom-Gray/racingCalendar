@@ -1,14 +1,5 @@
 [
   {
-    "eventName": "Monday Track",
-    "eventDate": "2026-10-19T00:00:00Z",
-    "clubName": "Hobart Wheelers Dirt Devils CC",
-    "state": "TAS",
-    "eventUrl": "https://entryboss.cc/races/32210",
-    "source": "EntryBoss",
-    "category": ""
-  },
-  {
     "eventName": "2026-2027 LMBC My Ride Twilight Series - Cross Country 1 - Race 1 - Kate Reed NRA - Wed-21-Oct-2026",
     "eventDate": "2026-10-21T00:00:00Z",
     "clubName": "Launceston Mountain Bike Club",
@@ -131,6 +122,15 @@
     "clubName": "Launceston City Cycling Club",
     "state": "TAS",
     "eventUrl": "https://entryboss.cc/races/32040",
+    "source": "EntryBoss",
+    "category": ""
+  },
+  {
+    "eventName": "XCO - HWDD Cross Country Sunday Sends",
+    "eventDate": "2026-11-01T00:00:00Z",
+    "clubName": "Hobart Wheelers Dirt Devils CC",
+    "state": "TAS",
+    "eventUrl": "https://entryboss.cc/races/32721",
     "source": "EntryBoss",
     "category": ""
   },
