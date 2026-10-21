@@ -1,23 +1,5 @@
 [
   {
-    "eventName": "Cairns BMX Open Gates 20-10-2026",
-    "eventDate": "2026-10-20T00:00:00Z",
-    "clubName": "Cairns BMX Club",
-    "state": "QLD",
-    "eventUrl": "https://entryboss.cc/races/32697",
-    "source": "EntryBoss",
-    "category": ""
-  },
-  {
-    "eventName": "Tuesday Night Open Track",
-    "eventDate": "2026-10-20T00:00:00Z",
-    "clubName": "Townsville BMX Club",
-    "state": "QLD",
-    "eventUrl": "https://entryboss.cc/races/32704",
-    "source": "EntryBoss",
-    "category": ""
-  },
-  {
     "eventName": "Wed. Night Gates (6pm - 8pm)",
     "eventDate": "2026-10-21T00:00:00Z",
     "clubName": "Pine Rivers BMX Club",
@@ -135,7 +117,7 @@
     "category": ""
   },
   {
-    "eventName": "Nundah Crit + HWCC Annual Presentations",
+    "eventName": "DELETED - Nundah Crit + HWCC Annual Presentations",
     "eventDate": "2026-10-24T00:00:00Z",
     "clubName": "Hamilton Wheelers Cycling Club",
     "state": "QLD",
@@ -153,6 +135,24 @@
     "category": ""
   },
   {
+    "eventName": "2026 Club Racing -Round 15",
+    "eventDate": "2026-10-24T00:00:00Z",
+    "clubName": "Hinterland BMX Club",
+    "state": "QLD",
+    "eventUrl": "https://entryboss.cc/races/32739",
+    "source": "EntryBoss",
+    "category": ""
+  },
+  {
+    "eventName": "Nundah Criterium - HWCC Annual Presentations  - Sat 24th October 2026",
+    "eventDate": "2026-10-24T00:00:00Z",
+    "clubName": "Hamilton Wheelers Cycling Club",
+    "state": "QLD",
+    "eventUrl": "https://entryboss.cc/races/32746",
+    "source": "EntryBoss",
+    "category": ""
+  },
+  {
     "eventName": "Lifecycle CC - Nundah Criterium by Brisbane Bicycle Service",
     "eventDate": "2026-10-25T00:00:00Z",
     "clubName": "Lifecycle Cycling Club",
@@ -162,7 +162,7 @@
     "category": ""
   },
   {
-    "eventName": "PlumbCall Crit Series - Race 1",
+    "eventName": "Trade Tools Crit Series - Race 1",
     "eventDate": "2026-10-25T00:00:00Z",
     "clubName": "Fraser Coast Cycling Club",
     "state": "QLD",
@@ -176,6 +176,15 @@
     "clubName": "Pine Rivers BMX Club",
     "state": "QLD",
     "eventUrl": "https://entryboss.cc/races/32648",
+    "source": "EntryBoss",
+    "category": ""
+  },
+  {
+    "eventName": "Cairns BMX Open Gates 27-10-2026",
+    "eventDate": "2026-10-27T00:00:00Z",
+    "clubName": "Cairns BMX Club",
+    "state": "QLD",
+    "eventUrl": "https://entryboss.cc/races/32735",
     "source": "EntryBoss",
     "category": ""
   },
