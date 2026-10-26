@@ -1,23 +1,5 @@
 [
   {
-    "eventName": "Midland Traders 100",
-    "eventDate": "2026-10-25T00:00:00Z",
-    "clubName": "Midland Cycling Club",
-    "state": "WA",
-    "eventUrl": "https://entryboss.cc/races/32385",
-    "source": "EntryBoss",
-    "category": ""
-  },
-  {
-    "eventName": "Herne Hill Memorial Handicap",
-    "eventDate": "2026-10-25T00:00:00Z",
-    "clubName": "West Coast Masters Cycling Council",
-    "state": "WA",
-    "eventUrl": "https://entryboss.cc/races/32712",
-    "source": "EntryBoss",
-    "category": ""
-  },
-  {
     "eventName": "Ferguson Valley MTB XCO, ENDURO \u0026 SOCIAL RIDE #7-Pile Rd",
     "eventDate": "2026-11-01T00:00:00Z",
     "clubName": "Ferguson Valley Mountain Bike Club",
@@ -72,6 +54,15 @@
     "category": ""
   },
   {
+    "eventName": "Summer Gravity Series 2026 Round # 2",
+    "eventDate": "2026-11-12T00:00:00Z",
+    "clubName": "Albany Mountain Bike Club",
+    "state": "WA",
+    "eventUrl": "https://entryboss.cc/races/32793",
+    "source": "EntryBoss",
+    "category": ""
+  },
+  {
     "eventName": "Westral Wheel Race Carnival 2026 inc State Keirin \u0026 Omnium Championships",
     "eventDate": "2026-11-15T00:00:00Z",
     "clubName": "AusCycling (WA)",
@@ -81,11 +72,38 @@
     "category": ""
   },
   {
+    "eventName": "Summer Gravity Series 2026 Round # 3",
+    "eventDate": "2026-11-19T00:00:00Z",
+    "clubName": "Albany Mountain Bike Club",
+    "state": "WA",
+    "eventUrl": "https://entryboss.cc/races/32794",
+    "source": "EntryBoss",
+    "category": ""
+  },
+  {
     "eventName": "Ferguson Valley MTB XCO, ENDURO \u0026 SOCIAL RIDE #8-Wellington Dam",
     "eventDate": "2026-11-22T00:00:00Z",
     "clubName": "Ferguson Valley Mountain Bike Club",
     "state": "WA",
     "eventUrl": "https://entryboss.cc/races/30681",
+    "source": "EntryBoss",
+    "category": ""
+  },
+  {
+    "eventName": "Summer Gravity Series 2026 Round # 4",
+    "eventDate": "2026-11-26T00:00:00Z",
+    "clubName": "Albany Mountain Bike Club",
+    "state": "WA",
+    "eventUrl": "https://entryboss.cc/races/32795",
+    "source": "EntryBoss",
+    "category": ""
+  },
+  {
+    "eventName": "Summer Gravity Series 2026 Round # 5",
+    "eventDate": "2026-12-03T00:00:00Z",
+    "clubName": "Albany Mountain Bike Club",
+    "state": "WA",
+    "eventUrl": "https://entryboss.cc/races/32796",
     "source": "EntryBoss",
     "category": ""
   },
