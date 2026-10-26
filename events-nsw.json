@@ -1,77 +1,5 @@
 [
   {
-    "eventName": "Hawkesbury Clubby Round 18 - 2026",
-    "eventDate": "2026-10-25T00:00:00Z",
-    "clubName": "Hawkesbury Hornets BMX Club",
-    "state": "NSW",
-    "eventUrl": "https://entryboss.cc/races/29055",
-    "source": "EntryBoss",
-    "category": ""
-  },
-  {
-    "eventName": "Coastal Bike Co",
-    "eventDate": "2026-10-25T00:00:00Z",
-    "clubName": "Central Coast CC",
-    "state": "NSW",
-    "eventUrl": "https://entryboss.cc/races/31671",
-    "source": "EntryBoss",
-    "category": ""
-  },
-  {
-    "eventName": "Cav Crits Oct 25th",
-    "eventDate": "2026-10-25T00:00:00Z",
-    "clubName": "Byron Bay Cycle Club",
-    "state": "NSW",
-    "eventUrl": "https://entryboss.cc/races/32699",
-    "source": "EntryBoss",
-    "category": ""
-  },
-  {
-    "eventName": "West Head Road Race",
-    "eventDate": "2026-10-25T00:00:00Z",
-    "clubName": "Manly Warringah CC",
-    "state": "NSW",
-    "eventUrl": "https://www.buncheur.com/manly-warringah-cc-west-head-road-race-18",
-    "source": "Buncheur",
-    "category": "Road Race"
-  },
-  {
-    "eventName": "Nowra Velo Club Mountain Time Trial Championship",
-    "eventDate": "2026-10-25T00:00:00Z",
-    "clubName": "Nowra Velo",
-    "state": "NSW",
-    "eventUrl": "https://www.buncheur.com/nowra-velo-nowra-velo-mountain-individual-time-trial-1",
-    "source": "Buncheur",
-    "category": "Individual Time Trial"
-  },
-  {
-    "eventName": "Trek Compass ITT Series Round 4",
-    "eventDate": "2026-10-25T00:00:00Z",
-    "clubName": "Penrith CC",
-    "state": "NSW",
-    "eventUrl": "https://www.buncheur.com/penrith-cc-trek-compass-series-round--1-2",
-    "source": "Buncheur",
-    "category": "Individual Time Trial"
-  },
-  {
-    "eventName": "PMCC - 2026 Thrumster Crit 25 October",
-    "eventDate": "2026-10-25T00:00:00Z",
-    "clubName": "Port Macquarie CC",
-    "state": "NSW",
-    "eventUrl": "https://www.buncheur.com/port-macquarie-cc-pmcc-summer-twilight-crit-race-season--7-2-1-1-1-1-1-1",
-    "source": "Buncheur",
-    "category": "Criterium"
-  },
-  {
-    "eventName": "SXCC Sunday Crits",
-    "eventDate": "2026-10-25T00:00:00Z",
-    "clubName": "Southern Cross CC",
-    "state": "NSW",
-    "eventUrl": "https://www.buncheur.com/southern-cross-cc-sxcc-sunday-crits-31-3",
-    "source": "Buncheur",
-    "category": "Criterium"
-  },
-  {
     "eventName": "Easts - Tuesday Night Heffron Season 42 - Week 2",
     "eventDate": "2026-10-27T00:00:00Z",
     "clubName": "Eastern Suburbs CC",
@@ -311,6 +239,15 @@
     "clubName": "Nowra Velo",
     "state": "NSW",
     "eventUrl": "https://www.buncheur.com/nowra-velo-nowra-velo-club-criterium-64",
+    "source": "Buncheur",
+    "category": "Criterium"
+  },
+  {
+    "eventName": "PMCC/Percival Propeerty - 2026 Thrumster Crit 1 November",
+    "eventDate": "2026-11-01T00:00:00Z",
+    "clubName": "Port Macquarie CC",
+    "state": "NSW",
+    "eventUrl": "https://www.buncheur.com/port-macquarie-cc-pmcc-summer-twilight-crit-race-season--7-2-1-1-1-1-1-1-1",
     "source": "Buncheur",
     "category": "Criterium"
   },
@@ -585,6 +522,15 @@
     "category": "Criterium"
   },
   {
+    "eventName": "2026 44th Sydney 1000",
+    "eventDate": "2026-11-14T00:00:00Z",
+    "clubName": "AusCycling (New South Wales)",
+    "state": "NSW",
+    "eventUrl": "https://entryboss.cc/races/31850",
+    "source": "EntryBoss",
+    "category": ""
+  },
+  {
     "eventName": "6 Hour Solo / Team Race",
     "eventDate": "2026-11-14T00:00:00Z",
     "clubName": "New England Mountain Bikers",
@@ -599,6 +545,15 @@
     "clubName": "Macarthur BMX Club",
     "state": "NSW",
     "eventUrl": "https://entryboss.cc/races/32569",
+    "source": "EntryBoss",
+    "category": ""
+  },
+  {
+    "eventName": "2026 Rivers to Ranges Tri-Track Challenge - Rnd 2 - Blue Mountains BMX",
+    "eventDate": "2026-11-14T00:00:00Z",
+    "clubName": "Penrith BMX Club",
+    "state": "NSW",
+    "eventUrl": "https://entryboss.cc/races/32748",
     "source": "EntryBoss",
     "category": ""
   },
@@ -630,20 +585,11 @@
     "category": ""
   },
   {
-    "eventName": "2026 Rivers to Ranges Tri-Track Challenge - Rnd 3 - Blue Mountains BMX",
-    "eventDate": "2026-11-15T00:00:00Z",
-    "clubName": "Penrith BMX Club",
-    "state": "NSW",
-    "eventUrl": "https://entryboss.cc/races/32747",
-    "source": "EntryBoss",
-    "category": ""
-  },
-  {
     "eventName": "2026 Rivers to Ranges Tri-Track Challenge - Rnd 3 - Hawkesbury BMX",
     "eventDate": "2026-11-15T00:00:00Z",
     "clubName": "Penrith BMX Club",
     "state": "NSW",
-    "eventUrl": "https://entryboss.cc/races/32748",
+    "eventUrl": "https://entryboss.cc/races/32747",
     "source": "EntryBoss",
     "category": ""
   },
