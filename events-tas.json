@@ -1,14 +1,5 @@
 [
   {
-    "eventName": "Monday Track",
-    "eventDate": "2026-10-26T00:00:00Z",
-    "clubName": "Hobart Wheelers Dirt Devils CC",
-    "state": "TAS",
-    "eventUrl": "https://entryboss.cc/races/32211",
-    "source": "EntryBoss",
-    "category": ""
-  },
-  {
     "eventName": "2026-2027 LMBC My Ride Twilight Series - Cross Country 1 - Race 2 - Trevallyn NRA - Wed-28-Oct-2026",
     "eventDate": "2026-10-28T00:00:00Z",
     "clubName": "Launceston Mountain Bike Club",
@@ -212,6 +203,15 @@
     "clubName": "Mersey Mountain Bike Club",
     "state": "TAS",
     "eventUrl": "https://entryboss.cc/races/31768",
+    "source": "EntryBoss",
+    "category": ""
+  },
+  {
+    "eventName": "Highlands Gravelfest",
+    "eventDate": "2026-11-21T00:00:00Z",
+    "clubName": "Hobart Wheelers Dirt Devils CC",
+    "state": "TAS",
+    "eventUrl": "https://entryboss.cc/races/32676",
     "source": "EntryBoss",
     "category": ""
   },
