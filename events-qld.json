@@ -1,14 +1,5 @@
 [
   {
-    "eventName": "Monday Night Open Track",
-    "eventDate": "2026-10-26T00:00:00Z",
-    "clubName": "Townsville BMX Club",
-    "state": "QLD",
-    "eventUrl": "https://entryboss.cc/races/32783",
-    "source": "EntryBoss",
-    "category": ""
-  },
-  {
     "eventName": "Club Coaching Payments Term 4 2026",
     "eventDate": "2026-10-27T00:00:00Z",
     "clubName": "Pine Rivers BMX Club",
@@ -243,6 +234,15 @@
     "category": ""
   },
   {
+    "eventName": "Trade Tools Crit Series - Race 1",
+    "eventDate": "2026-11-01T00:00:00Z",
+    "clubName": "Fraser Coast Cycling Club",
+    "state": "QLD",
+    "eventUrl": "https://www.buncheur.com/fraser-coast-cycling-club-fccc-january-crit-2025-1-1-2-2-1-1-1-2-2-1-1-1-1-1-1-1-1-1-1-1-1-3-1-1-1-1-1",
+    "source": "Buncheur",
+    "category": "Criterium"
+  },
+  {
     "eventName": "Wed. Night Gates (6pm - 8pm)",
     "eventDate": "2026-11-04T00:00:00Z",
     "clubName": "Pine Rivers BMX Club",
@@ -293,6 +293,15 @@
     "clubName": "Mackay Cycling Club",
     "state": "QLD",
     "eventUrl": "https://entryboss.cc/races/31108",
+    "source": "EntryBoss",
+    "category": ""
+  },
+  {
+    "eventName": "Cairns BMX Club Night 06-11-2026 Round 24",
+    "eventDate": "2026-11-06T00:00:00Z",
+    "clubName": "Cairns BMX Club",
+    "state": "QLD",
+    "eventUrl": "https://entryboss.cc/races/32825",
     "source": "EntryBoss",
     "category": ""
   },
@@ -432,7 +441,7 @@
     "category": ""
   },
   {
-    "eventName": "Happy Rock Interclub Challenge Rd 5 (Rocky)",
+    "eventName": "Happy Rock Interclub Challenge Rd 3 (Rocky)",
     "eventDate": "2026-11-14T00:00:00Z",
     "clubName": "Rockhampton BMX Club",
     "state": "QLD",
