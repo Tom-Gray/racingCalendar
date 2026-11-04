@@ -1,23 +1,5 @@
 [
   {
-    "eventName": "Wednesday Night Training",
-    "eventDate": "2026-11-04T00:00:00Z",
-    "clubName": "South Coast Cycling",
-    "state": "SA",
-    "eventUrl": "https://entryboss.cc/races/32837",
-    "source": "EntryBoss",
-    "category": ""
-  },
-  {
-    "eventName": "Spring into Summer Series Rd4",
-    "eventDate": "2026-11-04T00:00:00Z",
-    "clubName": "Cross Keys BMX",
-    "state": "SA",
-    "eventUrl": "https://entryboss.cc/races/32913",
-    "source": "EntryBoss",
-    "category": ""
-  },
-  {
     "eventName": "2026 Giant Adelaide Crossfire Cup - Series Entry - All 4 Rounds",
     "eventDate": "2026-11-05T00:00:00Z",
     "clubName": "Port Adelaide Cycling Club",
@@ -419,6 +401,15 @@
     "clubName": "Mt Gambier Cycling Club",
     "state": "SA",
     "eventUrl": "https://entryboss.cc/races/32191",
+    "source": "EntryBoss",
+    "category": ""
+  },
+  {
+    "eventName": "Battle of the Border - MGCC Round 1",
+    "eventDate": "2026-12-06T00:00:00Z",
+    "clubName": "Mt Gambier Cycling Club",
+    "state": "SA",
+    "eventUrl": "https://entryboss.cc/races/32945",
     "source": "EntryBoss",
     "category": ""
   },
