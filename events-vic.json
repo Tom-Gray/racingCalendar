@@ -1,14 +1,5 @@
 [
   {
-    "eventName": "NBMX Stinger Series Round 10",
-    "eventDate": "2026-11-06T00:00:00Z",
-    "clubName": "Northern BMX",
-    "state": "VIC",
-    "eventUrl": "https://entryboss.cc/races/30828",
-    "source": "EntryBoss",
-    "category": ""
-  },
-  {
     "eventName": "THUNDERDOME 2026",
     "eventDate": "2026-11-07T00:00:00Z",
     "clubName": "Knox BMX - Racing",
@@ -297,6 +288,15 @@
     "category": ""
   },
   {
+    "eventName": "R10 - Thu - VU Criterium",
+    "eventDate": "2026-11-12T00:00:00Z",
+    "clubName": "Footscray Cycling Club",
+    "state": "VIC",
+    "eventUrl": "https://entryboss.cc/races/32982",
+    "source": "EntryBoss",
+    "category": ""
+  },
+  {
     "eventName": "GMBC 2026 No Frills Spring Series Race Round 3 at Kurrajong (13th November)",
     "eventDate": "2026-11-13T00:00:00Z",
     "clubName": "Geelong Mountain Bike Club",
@@ -360,7 +360,7 @@
     "category": ""
   },
   {
-    "eventName": "R10 - Sat - VU Criterium (FCC x CCC - Race 3)",
+    "eventName": "R11 - Sat - VU Criterium (FCC x CCC - Race 3)",
     "eventDate": "2026-11-14T00:00:00Z",
     "clubName": "Footscray Cycling Club",
     "state": "VIC",
@@ -567,7 +567,7 @@
     "category": ""
   },
   {
-    "eventName": "R11 - Thu - VU Criterium",
+    "eventName": "R12 - Thu - VU Criterium",
     "eventDate": "2026-11-19T00:00:00Z",
     "clubName": "Footscray Cycling Club",
     "state": "VIC",
@@ -747,6 +747,15 @@
     "category": ""
   },
   {
+    "eventName": "Mount Buffalo Hill Climb",
+    "eventDate": "2026-11-22T00:00:00Z",
+    "clubName": "Alpine Cycling Club",
+    "state": "VIC",
+    "eventUrl": "https://entryboss.cc/races/32976",
+    "source": "EntryBoss",
+    "category": ""
+  },
+  {
     "eventName": "Monday 23rd November Gates",
     "eventDate": "2026-11-23T00:00:00Z",
     "clubName": "Shepparton BMX Club",
@@ -891,7 +900,7 @@
     "category": ""
   },
   {
-    "eventName": "R12 - Thu - VU Criterium",
+    "eventName": "R13 - Thu - VU Criterium",
     "eventDate": "2026-11-26T00:00:00Z",
     "clubName": "Footscray Cycling Club",
     "state": "VIC",
@@ -1328,6 +1337,15 @@
     "clubName": "Geelong Mountain Bike Club",
     "state": "VIC",
     "eventUrl": "https://entryboss.cc/races/32369",
+    "source": "EntryBoss",
+    "category": ""
+  },
+  {
+    "eventName": "Hornet Havoc 2026 incorporating the 2026 Victorian BMX Retro Championships",
+    "eventDate": "2026-12-12T00:00:00Z",
+    "clubName": "Northern BMX",
+    "state": "VIC",
+    "eventUrl": "https://entryboss.cc/races/32799",
     "source": "EntryBoss",
     "category": ""
   },

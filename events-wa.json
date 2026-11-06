@@ -1,14 +1,5 @@
 [
   {
-    "eventName": "Summer Gravity Series 2026 Round # 1",
-    "eventDate": "2026-11-05T00:00:00Z",
-    "clubName": "Albany Mountain Bike Club",
-    "state": "WA",
-    "eventUrl": "https://entryboss.cc/races/32782",
-    "source": "EntryBoss",
-    "category": ""
-  },
-  {
     "eventName": "2026 Friday Night Track Series Round 3 (incl. Elimination State Championships)",
     "eventDate": "2026-11-06T00:00:00Z",
     "clubName": "AusCycling (WA)",
@@ -121,7 +112,7 @@
     "eventDate": "2026-12-06T00:00:00Z",
     "clubName": "Peel District Cycling Club",
     "state": "WA",
-    "eventUrl": "https://entryboss.cc/races/32943",
+    "eventUrl": "https://entryboss.cc/races/32977",
     "source": "EntryBoss",
     "category": ""
   },
@@ -144,6 +135,15 @@
     "category": ""
   },
   {
+    "eventName": "Peel Crits #3 - Nambeelup Sunset",
+    "eventDate": "2026-12-19T00:00:00Z",
+    "clubName": "Peel District Cycling Club",
+    "state": "WA",
+    "eventUrl": "https://entryboss.cc/races/32979",
+    "source": "EntryBoss",
+    "category": ""
+  },
+  {
     "eventName": "Woodbridge \u0026 Endeavour Physiotherapy Supermix Triathlon \u0026 Kids Triathlon 2027",
     "eventDate": "2027-01-03T00:00:00Z",
     "clubName": "Rockingham Triathlon Club",
@@ -153,11 +153,38 @@
     "category": ""
   },
   {
+    "eventName": "Peel Crits #4 - Nambeelup Sunset",
+    "eventDate": "2027-01-30T00:00:00Z",
+    "clubName": "Peel District Cycling Club",
+    "state": "WA",
+    "eventUrl": "https://entryboss.cc/races/32980",
+    "source": "EntryBoss",
+    "category": ""
+  },
+  {
     "eventName": "The Bike Place Shoalwater Classic Triathlon 2027",
     "eventDate": "2027-01-31T00:00:00Z",
     "clubName": "Rockingham Triathlon Club",
     "state": "WA",
     "eventUrl": "https://entryboss.cc/races/31514",
+    "source": "EntryBoss",
+    "category": ""
+  },
+  {
+    "eventName": "Peel Crits #5 - Rockingham",
+    "eventDate": "2027-02-14T00:00:00Z",
+    "clubName": "Peel District Cycling Club",
+    "state": "WA",
+    "eventUrl": "https://entryboss.cc/races/32978",
+    "source": "EntryBoss",
+    "category": ""
+  },
+  {
+    "eventName": "Peel Crits #6 - Nambeelup Sunset",
+    "eventDate": "2027-02-27T00:00:00Z",
+    "clubName": "Peel District Cycling Club",
+    "state": "WA",
+    "eventUrl": "https://entryboss.cc/races/32981",
     "source": "EntryBoss",
     "category": ""
   },
