@@ -1,122 +1,5 @@
 [
   {
-    "eventName": "Terrigal BMX Club 2026 Series 2 Round 6",
-    "eventDate": "2026-11-07T00:00:00Z",
-    "clubName": "Terrigal BMX Club",
-    "state": "NSW",
-    "eventUrl": "https://entryboss.cc/races/29024",
-    "source": "EntryBoss",
-    "category": ""
-  },
-  {
-    "eventName": "WSMTB CLUB DAY - TEN - 2026",
-    "eventDate": "2026-11-07T00:00:00Z",
-    "clubName": "Western Sydney MTB Club",
-    "state": "NSW",
-    "eventUrl": "https://entryboss.cc/races/29628",
-    "source": "EntryBoss",
-    "category": ""
-  },
-  {
-    "eventName": "Castle Hill BMX - Club Series 2-8",
-    "eventDate": "2026-11-07T00:00:00Z",
-    "clubName": "Castle Hill BMX",
-    "state": "NSW",
-    "eventUrl": "https://entryboss.cc/races/31287",
-    "source": "EntryBoss",
-    "category": ""
-  },
-  {
-    "eventName": "2026 Dubbo Track Open Carnival",
-    "eventDate": "2026-11-07T00:00:00Z",
-    "clubName": "AusCycling (New South Wales)",
-    "state": "NSW",
-    "eventUrl": "https://entryboss.cc/races/31592",
-    "source": "EntryBoss",
-    "category": ""
-  },
-  {
-    "eventName": "Macarthur BMX 2026 Series 3 - Round 5",
-    "eventDate": "2026-11-07T00:00:00Z",
-    "clubName": "Macarthur BMX Club",
-    "state": "NSW",
-    "eventUrl": "https://entryboss.cc/races/32568",
-    "source": "EntryBoss",
-    "category": ""
-  },
-  {
-    "eventName": "Jacaranda Criterium",
-    "eventDate": "2026-11-07T00:00:00Z",
-    "clubName": "Grafton Cycle Club",
-    "state": "NSW",
-    "eventUrl": "https://entryboss.cc/races/32670",
-    "source": "EntryBoss",
-    "category": ""
-  },
-  {
-    "eventName": "RROTY 2026 #10 Dangarsleigh 30km",
-    "eventDate": "2026-11-07T00:00:00Z",
-    "clubName": "Armidale CC",
-    "state": "NSW",
-    "eventUrl": "https://www.buncheur.com/armidale-cc-rroty-2026-1-dangarsleigh-30km-7",
-    "source": "Buncheur",
-    "category": "Road Race"
-  },
-  {
-    "eventName": "Randwick Cycling | Saturday Heffron Crits",
-    "eventDate": "2026-11-07T00:00:00Z",
-    "clubName": "Randwick Botany CC",
-    "state": "NSW",
-    "eventUrl": "https://www.buncheur.com/randwick-botany-cc-randwick-cycling--saturday-heffron-crits-5-9-10-1-1-6-1-1-3-1-1-1-1-2-1-2-1-1-3-2-1-1-1-1-1-1",
-    "source": "Buncheur",
-    "category": "Criterium"
-  },
-  {
-    "eventName": "Central West Inter-Club Round 6 - Bathurst - 2026",
-    "eventDate": "2026-11-08T00:00:00Z",
-    "clubName": "Central West Interclub Series",
-    "state": "NSW",
-    "eventUrl": "https://entryboss.cc/races/28897",
-    "source": "EntryBoss",
-    "category": ""
-  },
-  {
-    "eventName": "Hawkesbury Clubby Round 20 - 2026",
-    "eventDate": "2026-11-08T00:00:00Z",
-    "clubName": "Hawkesbury Hornets BMX Club",
-    "state": "NSW",
-    "eventUrl": "https://entryboss.cc/races/30913",
-    "source": "EntryBoss",
-    "category": ""
-  },
-  {
-    "eventName": "Rob Hodgson Memorial Super Crit",
-    "eventDate": "2026-11-08T00:00:00Z",
-    "clubName": "Central Coast CC",
-    "state": "NSW",
-    "eventUrl": "https://entryboss.cc/races/31673",
-    "source": "EntryBoss",
-    "category": ""
-  },
-  {
-    "eventName": "Fitzroy Falls XCO",
-    "eventDate": "2026-11-08T00:00:00Z",
-    "clubName": "Highlands Trails",
-    "state": "NSW",
-    "eventUrl": "https://entryboss.cc/races/32741",
-    "source": "EntryBoss",
-    "category": ""
-  },
-  {
-    "eventName": "SXCC Spring Series - Rnd 1",
-    "eventDate": "2026-11-08T00:00:00Z",
-    "clubName": "Southern Cross CC",
-    "state": "NSW",
-    "eventUrl": "https://www.buncheur.com/southern-cross-cc-sxcc-sunday-crits-31-7",
-    "source": "Buncheur",
-    "category": "Criterium"
-  },
-  {
     "eventName": "Easts - Tuesday Night Heffron Season 42 - Week 3",
     "eventDate": "2026-11-10T00:00:00Z",
     "clubName": "Eastern Suburbs CC",
@@ -387,6 +270,15 @@
     "category": ""
   },
   {
+    "eventName": "West Head Road Race",
+    "eventDate": "2026-11-15T00:00:00Z",
+    "clubName": "Manly Warringah CC",
+    "state": "NSW",
+    "eventUrl": "https://www.buncheur.com/manly-warringah-cc-west-head-road-race-19",
+    "source": "Buncheur",
+    "category": "Road Race"
+  },
+  {
     "eventName": "NHCC HEZ Road Race",
     "eventDate": "2026-11-15T00:00:00Z",
     "clubName": "Newcastle Hunter CC",
@@ -466,15 +358,6 @@
     "eventUrl": "https://entryboss.cc/races/32853",
     "source": "EntryBoss",
     "category": ""
-  },
-  {
-    "eventName": "MWCC Friday Night HART 20/11",
-    "eventDate": "2026-11-20T00:00:00Z",
-    "clubName": "Manly Warringah CC",
-    "state": "NSW",
-    "eventUrl": "https://www.buncheur.com/manly-warringah-cc-friday-night-hart-7-2",
-    "source": "Buncheur",
-    "category": "Criterium"
   },
   {
     "eventName": "White Horse Criterium Series - Race 5 of 8  Summer 2026",
@@ -646,15 +529,6 @@
     "eventUrl": "https://entryboss.cc/races/31243",
     "source": "EntryBoss",
     "category": ""
-  },
-  {
-    "eventName": "MWCC Friday Night HART 27/11",
-    "eventDate": "2026-11-27T00:00:00Z",
-    "clubName": "Manly Warringah CC",
-    "state": "NSW",
-    "eventUrl": "https://www.buncheur.com/manly-warringah-cc-friday-night-hart-7-3",
-    "source": "Buncheur",
-    "category": "Criterium"
   },
   {
     "eventName": "White Horse Criterium Series - Race 6 of 8  Summer 2026 ",
