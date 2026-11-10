@@ -1,23 +1,5 @@
 [
   {
-    "eventName": "Cairns BMX Open Gates 10-11-2026",
-    "eventDate": "2026-11-10T00:00:00Z",
-    "clubName": "Cairns BMX Club",
-    "state": "QLD",
-    "eventUrl": "https://entryboss.cc/races/32962",
-    "source": "EntryBoss",
-    "category": ""
-  },
-  {
-    "eventName": "Tuesday Night Open Track",
-    "eventDate": "2026-11-10T00:00:00Z",
-    "clubName": "Townsville BMX Club",
-    "state": "QLD",
-    "eventUrl": "https://entryboss.cc/races/33008",
-    "source": "EntryBoss",
-    "category": ""
-  },
-  {
     "eventName": "Wed. Night Gates (6pm - 8pm)",
     "eventDate": "2026-11-11T00:00:00Z",
     "clubName": "Pine Rivers BMX Club",
@@ -113,6 +95,15 @@
     "clubName": "Toowoomba BMX Club",
     "state": "QLD",
     "eventUrl": "https://entryboss.cc/races/33004",
+    "source": "EntryBoss",
+    "category": ""
+  },
+  {
+    "eventName": "Club Champs Rd5 13.11.26",
+    "eventDate": "2026-11-13T00:00:00Z",
+    "clubName": "Rockhampton BMX Club",
+    "state": "QLD",
+    "eventUrl": "https://entryboss.cc/races/33043",
     "source": "EntryBoss",
     "category": ""
   },
@@ -248,6 +239,15 @@
     "clubName": "Cairns BMX Club",
     "state": "QLD",
     "eventUrl": "https://entryboss.cc/races/32964",
+    "source": "EntryBoss",
+    "category": ""
+  },
+  {
+    "eventName": "Beginner Coaching",
+    "eventDate": "2026-11-17T00:00:00Z",
+    "clubName": "Ashmore BMX",
+    "state": "QLD",
+    "eventUrl": "https://entryboss.cc/races/33040",
     "source": "EntryBoss",
     "category": ""
   },
@@ -509,6 +509,24 @@
     "clubName": "Lifecycle Cycling Club",
     "state": "QLD",
     "eventUrl": "https://entryboss.cc/races/29428",
+    "source": "EntryBoss",
+    "category": ""
+  },
+  {
+    "eventName": "2027 AusCycling U9-U17 Track State Championships - Queensland",
+    "eventDate": "2026-12-06T00:00:00Z",
+    "clubName": "AusCycling (Queensland)",
+    "state": "QLD",
+    "eventUrl": "https://entryboss.cc/races/31832",
+    "source": "EntryBoss",
+    "category": ""
+  },
+  {
+    "eventName": "2027 AusCycling Masters Track State Championships - Queensland",
+    "eventDate": "2026-12-06T00:00:00Z",
+    "clubName": "AusCycling (Queensland)",
+    "state": "QLD",
+    "eventUrl": "https://entryboss.cc/races/31833",
     "source": "EntryBoss",
     "category": ""
   },
