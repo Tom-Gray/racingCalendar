@@ -1,23 +1,5 @@
 [
   {
-    "eventName": "Maitland BMX Club Racing - Non Scoring",
-    "eventDate": "2026-11-13T00:00:00Z",
-    "clubName": "Maitland BMX Club",
-    "state": "NSW",
-    "eventUrl": "https://entryboss.cc/races/31241",
-    "source": "EntryBoss",
-    "category": ""
-  },
-  {
-    "eventName": "2026 Rivers to Ranges Tri-Track Challenge - Rnd 1 - Penrith BMX",
-    "eventDate": "2026-11-13T00:00:00Z",
-    "clubName": "Penrith BMX Club",
-    "state": "NSW",
-    "eventUrl": "https://entryboss.cc/races/32740",
-    "source": "EntryBoss",
-    "category": ""
-  },
-  {
     "eventName": "2026 Rivers to Ranges Tri-Track Challenge - SERIES ENTRY - All 3 Rounds",
     "eventDate": "2026-11-13T00:00:00Z",
     "clubName": "Penrith BMX Club",
@@ -25,33 +7,6 @@
     "eventUrl": "https://entryboss.cc/races/32745",
     "source": "EntryBoss",
     "category": ""
-  },
-  {
-    "eventName": "Southlake Illawarra BMX 2026 - Series 2 Round 8",
-    "eventDate": "2026-11-13T00:00:00Z",
-    "clubName": "Southlake Illawarra BMX Club",
-    "state": "NSW",
-    "eventUrl": "https://entryboss.cc/races/32852",
-    "source": "EntryBoss",
-    "category": ""
-  },
-  {
-    "eventName": "MWCC Friday Night HART 13/11",
-    "eventDate": "2026-11-13T00:00:00Z",
-    "clubName": "Manly Warringah CC",
-    "state": "NSW",
-    "eventUrl": "https://www.buncheur.com/manly-warringah-cc-friday-night-hart-7-1",
-    "source": "Buncheur",
-    "category": "Criterium"
-  },
-  {
-    "eventName": "White Horse Criterium Series - Race 4 of 8  Summer 2026  ",
-    "eventDate": "2026-11-13T00:00:00Z",
-    "clubName": "Sutherland Shire CC",
-    "state": "NSW",
-    "eventUrl": "https://www.buncheur.com/sutherland-shire-cc-white-horse-criterium-series-7-1-4-2-1-1-1-1-1-1-1-2-1-2",
-    "source": "Buncheur",
-    "category": "Criterium"
   },
   {
     "eventName": "2026 44th Sydney 1000",
@@ -806,6 +761,24 @@
     "clubName": "Central Coast CC",
     "state": "NSW",
     "eventUrl": "https://entryboss.cc/races/31777",
+    "source": "EntryBoss",
+    "category": ""
+  },
+  {
+    "eventName": "Del Rio Shuttle Bookings Post Track Work",
+    "eventDate": "2026-12-13T00:00:00Z",
+    "clubName": "Western Sydney MTB Club",
+    "state": "NSW",
+    "eventUrl": "https://entryboss.cc/races/33067",
+    "source": "EntryBoss",
+    "category": ""
+  },
+  {
+    "eventName": "Del Rio Trail Work Sign Up",
+    "eventDate": "2026-12-13T00:00:00Z",
+    "clubName": "Western Sydney MTB Club",
+    "state": "NSW",
+    "eventUrl": "https://entryboss.cc/races/33068",
     "source": "EntryBoss",
     "category": ""
   },
