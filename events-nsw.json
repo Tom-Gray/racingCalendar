@@ -1,14 +1,5 @@
 [
   {
-    "eventName": "Easts - Tuesday Night Heffron Season 42 - Week 4",
-    "eventDate": "2026-11-17T00:00:00Z",
-    "clubName": "Eastern Suburbs CC",
-    "state": "NSW",
-    "eventUrl": "https://www.buncheur.com/eastern-suburbs-cc-tuesday-night-heffron--7-10-2-1-1-1-1-1-1-1-2-1-3-2-1-1-1-2-3",
-    "source": "Buncheur",
-    "category": "Handicap"
-  },
-  {
     "eventName": "Twilight Racing - SERIES ENTRY - Term 4 2022",
     "eventDate": "2026-11-18T00:00:00Z",
     "clubName": "Tamworth Mountain Bikers",
@@ -95,6 +86,24 @@
     "clubName": "Tamworth Mountain Bikers",
     "state": "NSW",
     "eventUrl": "https://entryboss.cc/races/32621",
+    "source": "EntryBoss",
+    "category": ""
+  },
+  {
+    "eventName": "LMBMX Club Race 18th Nov",
+    "eventDate": "2026-11-18T00:00:00Z",
+    "clubName": "Lake Macquarie BMX Club",
+    "state": "NSW",
+    "eventUrl": "https://entryboss.cc/races/33094",
+    "source": "EntryBoss",
+    "category": ""
+  },
+  {
+    "eventName": "Gates",
+    "eventDate": "2026-11-18T00:00:00Z",
+    "clubName": "Southlake Illawarra BMX Club",
+    "state": "NSW",
+    "eventUrl": "https://entryboss.cc/races/33095",
     "source": "EntryBoss",
     "category": ""
   },
@@ -592,6 +601,24 @@
     "eventUrl": "https://entryboss.cc/races/32924",
     "source": "EntryBoss",
     "category": ""
+  },
+  {
+    "eventName": "MWCC - The Wall Femmes",
+    "eventDate": "2026-12-06T00:00:00Z",
+    "clubName": "Manly Warringah CC",
+    "state": "NSW",
+    "eventUrl": "https://www.buncheur.com/manly-warringah-cc-mwcc-the-wall-femmes",
+    "source": "Buncheur",
+    "category": "Road Race"
+  },
+  {
+    "eventName": "MWCC The Wall - Mens",
+    "eventDate": "2026-12-06T00:00:00Z",
+    "clubName": "Manly Warringah CC",
+    "state": "NSW",
+    "eventUrl": "https://www.buncheur.com/manly-warringah-cc-mwcc-the-wall-mens-1",
+    "source": "Buncheur",
+    "category": "Road Race"
   },
   {
     "eventName": "NHCC HEZ Road Race",
