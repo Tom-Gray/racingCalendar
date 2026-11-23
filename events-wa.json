@@ -1,23 +1,5 @@
 [
   {
-    "eventName": "Wangara Criterium",
-    "eventDate": "2026-11-22T00:00:00Z",
-    "clubName": "West Coast Masters Cycling Council",
-    "state": "WA",
-    "eventUrl": "https://entryboss.cc/races/33011",
-    "source": "EntryBoss",
-    "category": ""
-  },
-  {
-    "eventName": "SWCC Summer Crits 2026/27 Round 1",
-    "eventDate": "2026-11-22T00:00:00Z",
-    "clubName": "South West Cycle Club",
-    "state": "WA",
-    "eventUrl": "https://entryboss.cc/races/33064",
-    "source": "EntryBoss",
-    "category": ""
-  },
-  {
     "eventName": "Summer Gravity Series 2026 Round # 4",
     "eventDate": "2026-11-26T00:00:00Z",
     "clubName": "Albany Mountain Bike Club",
@@ -153,6 +135,15 @@
     "category": ""
   },
   {
+    "eventName": "Australia Day Criterium",
+    "eventDate": "2027-01-26T00:00:00Z",
+    "clubName": "Roues Chaudes Cycling Club",
+    "state": "WA",
+    "eventUrl": "https://entryboss.cc/races/33132",
+    "source": "EntryBoss",
+    "category": ""
+  },
+  {
     "eventName": "Peel Crits #4 - Nambeelup Sunset",
     "eventDate": "2027-01-30T00:00:00Z",
     "clubName": "Peel District Cycling Club",
@@ -171,11 +162,29 @@
     "category": ""
   },
   {
+    "eventName": "Henk Vogels Snr Memorial",
+    "eventDate": "2027-01-31T00:00:00Z",
+    "clubName": "Roues Chaudes Cycling Club",
+    "state": "WA",
+    "eventUrl": "https://entryboss.cc/races/33134",
+    "source": "EntryBoss",
+    "category": ""
+  },
+  {
     "eventName": "Peel Crits #5 - Rockingham",
     "eventDate": "2027-02-14T00:00:00Z",
     "clubName": "Peel District Cycling Club",
     "state": "WA",
     "eventUrl": "https://entryboss.cc/races/32978",
+    "source": "EntryBoss",
+    "category": ""
+  },
+  {
+    "eventName": "Renae's Race",
+    "eventDate": "2027-02-21T00:00:00Z",
+    "clubName": "Roues Chaudes Cycling Club",
+    "state": "WA",
+    "eventUrl": "https://entryboss.cc/races/33133",
     "source": "EntryBoss",
     "category": ""
   },
