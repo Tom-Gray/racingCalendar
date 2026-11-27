@@ -1,23 +1,5 @@
 [
   {
-    "eventName": "Maitland BMX Club Racing - Non Scoring",
-    "eventDate": "2026-11-27T00:00:00Z",
-    "clubName": "Maitland BMX Club",
-    "state": "NSW",
-    "eventUrl": "https://entryboss.cc/races/31243",
-    "source": "EntryBoss",
-    "category": ""
-  },
-  {
-    "eventName": "White Horse Criterium Series - Race 6 of 8  Summer 2026 ",
-    "eventDate": "2026-11-27T00:00:00Z",
-    "clubName": "Sutherland Shire CC",
-    "state": "NSW",
-    "eventUrl": "https://www.buncheur.com/sutherland-shire-cc-white-horse-criterium-series-7-1-4-2-1-1-1-1-1-1-1-2-1-3-1",
-    "source": "Buncheur",
-    "category": "Criterium"
-  },
-  {
     "eventName": "Castle Hill BMX - Club Series 2-10",
     "eventDate": "2026-11-28T00:00:00Z",
     "clubName": "Castle Hill BMX",
@@ -124,6 +106,15 @@
     "eventUrl": "https://www.buncheur.com/southern-cross-cc-sxcc-sunday-crits-31-11",
     "source": "Buncheur",
     "category": "Criterium"
+  },
+  {
+    "eventName": "Easts - Tuesday Night Heffron Season 42 - Week 5",
+    "eventDate": "2026-12-01T00:00:00Z",
+    "clubName": "Eastern Suburbs CC",
+    "state": "NSW",
+    "eventUrl": "https://www.buncheur.com/eastern-suburbs-cc-tuesday-night-heffron--7-10-2-1-1-1-1-1-1-1-2-1-3-2-1-1-1-2-3-1",
+    "source": "Buncheur",
+    "category": "Handicap"
   },
   {
     "eventName": "LACC/PLCC Armory Crit Racing                                                      ",
